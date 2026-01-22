@@ -4,3 +4,5 @@ Disallow: /admin/
 Disallow: /private/
 
 Sitemap: https://jorgeramirezgroup.com/sitemap.xml
+
+Sitemap: https://jorgeramirezgroup.com/sitemap_additions.xml
