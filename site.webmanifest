@@ -1,0 +1,105 @@
+{
+  "name": "The Jorge Ramirez Group - NJ Real Estate",
+  "short_name": "Jorge Ramirez",
+  "description": "Top real estate agent serving Northern & Central New Jersey. 500+ homes sold, 4.9-star rating.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#d4af37",
+  "orientation": "portrait-primary",
+  "categories": ["business", "real estate", "property"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/images/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-wide.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Homepage of The Jorge Ramirez Group"
+    },
+    {
+      "src": "/images/screenshot-mobile.jpg",
+      "sizes": "750x1334",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Mobile view of The Jorge Ramirez Group"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Get Home Valuation",
+      "short_name": "Valuation",
+      "description": "Get a free home valuation",
+      "url": "/#contact",
+      "icons": [{"src": "/images/icon-valuation.png", "sizes": "96x96"}]
+    },
+    {
+      "name": "Browse Towns",
+      "short_name": "Towns",
+      "description": "Explore NJ communities",
+      "url": "/#communities",
+      "icons": [{"src": "/images/icon-towns.png", "sizes": "96x96"}]
+    },
+    {
+      "name": "Contact Jorge",
+      "short_name": "Contact",
+      "description": "Call or message Jorge",
+      "url": "/#contact",
+      "icons": [{"src": "/images/icon-contact.png", "sizes": "96x96"}]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

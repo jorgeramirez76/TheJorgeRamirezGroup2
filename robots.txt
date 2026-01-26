@@ -1,8 +1,123 @@
+# robots.txt for thejorgeramirezgroup.com
+# Last Updated: 2026-01-26
+
+# Default rules for all crawlers
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /private/
+Disallow: /api/
+Disallow: /cdn-cgi/
+Disallow: /*.json$
+Disallow: /tmp/
 
-Sitemap: https://jorgeramirezgroup.com/sitemap.xml
+# Allow important resources
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /towns/
 
-Sitemap: https://jorgeramirezgroup.com/sitemap_additions.xml
+# Crawl-delay for general bots (be nice to server)
+Crawl-delay: 1
+
+# ============================================
+# GOOGLE SPECIFIC
+# ============================================
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Googlebot-Video
+Allow: /videos/
+
+# ============================================
+# BING SPECIFIC
+# ============================================
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 1
+
+User-agent: msnbot
+Allow: /
+Crawl-delay: 1
+
+# ============================================
+# AI CRAWLERS (ChatGPT, Perplexity, etc.)
+# ============================================
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: Anthropic-AI
+Allow: /
+Allow: /llms.txt
+
+User-agent: cohere-ai
+Allow: /
+
+# ============================================
+# SOCIAL MEDIA CRAWLERS
+# ============================================
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+# ============================================
+# SEO TOOLS (Allow for monitoring)
+# ============================================
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 2
+
+# ============================================
+# SITEMAPS
+# ============================================
+Sitemap: https://thejorgeramirezgroup.com/sitemap.xml
+Sitemap: https://thejorgeramirezgroup.com/sitemap-towns.xml
+Sitemap: https://thejorgeramirezgroup.com/sitemap-images.xml
+
+# ============================================
+# AI CONTENT FILE
+# ============================================
+# LLMs.txt location for AI search engines
+# https://thejorgeramirezgroup.com/llms.txt
