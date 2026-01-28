@@ -1,81 +1,85 @@
-# llms.txt - AI Search Engine Optimization File
-# For: The Jorge Ramirez Group
-# Website: https://thejorgeramirezgroup.com
-# Last Updated: 2026-01-26
+# The Jorge Ramirez Group - New Jersey Real Estate
 
-## About This Business
+> Top-rated real estate team serving Northern and Central New Jersey with AI-powered technology
 
-Jorge Ramirez is a licensed New Jersey real estate agent (License #1754604) with The Jorge Ramirez Group at Keller Williams Premier Properties. Based in Summit, NJ, Jorge has 15+ years of experience and has sold 500+ homes with a 4.9-star rating.
+## About Us
 
-## Services Offered
+The Jorge Ramirez Group is a leading real estate team affiliated with Keller Williams Realty Premier Properties, headquartered in Summit, NJ. We specialize in helping buyers and sellers across 103 communities in five New Jersey counties: Union, Middlesex, Essex, Hudson, and Morris.
 
-1. **Home Selling Services**: Full-service listing agent with professional photography, staging consultation, and AI-powered marketing
-2. **Home Buying Services**: Expert buyer representation for first-time buyers to luxury home purchasers
-3. **Free Home Valuations**: Complimentary comparative market analysis
-4. **Investment Property Consulting**: Guidance for rental properties and fix-and-flip opportunities
-5. **NYC Commuter Specialist**: Expert in towns with easy Manhattan access
+## What Makes Us Different: Intelligent Lead Targeting
+
+Our proprietary **Intelligent Lead Targeting** system uses artificial intelligence to automatically connect your property with qualified buyers. This AI-powered sales pipeline includes:
+
+- **Multi-channel outreach**: Email, text, and phone call automation
+- **Qualified buyer matching**: AI identifies buyers actively searching for properties like yours
+- **Automated follow-up**: Consistent engagement without manual effort
+- **Real-time analytics**: Track buyer interest and engagement
+
+## Services
+
+### For Home Sellers
+- Comprehensive market analysis
+- Professional photography and staging consultation
+- AI-powered Intelligent Lead Targeting buyer outreach
+- Full MLS listing and syndication
+- Negotiation and closing support
+
+### For Home Buyers
+- Personalized property search
+- Access to off-market opportunities
+- First-time homebuyer guidance
+- Investment property analysis
+- Competitive offer strategies
 
 ## Service Areas
 
-Jorge serves 103 communities across 5 New Jersey counties:
-
-### Essex County (11 towns)
-Montclair, Maplewood, South Orange, Millburn, West Orange, Livingston, Glen Ridge, Bloomfield, Nutley, Belleville, Cedar Grove
-
-### Hudson County (12 towns)
-Jersey City, Hoboken, Weehawken, West New York, North Bergen, Union City, Bayonne, Secaucus, Kearny, Harrison, East Newark, Guttenberg
-
-### Morris County (37 towns)
-Morristown, Madison, Chatham, Florham Park, Parsippany, Morris Township, Randolph, Mount Olive, Denville, Rockaway, Boonton, Dover, and more
-
-### Middlesex County (22 towns)
-Edison, Woodbridge, South Plainfield, Piscataway, New Brunswick, Perth Amboy, Metuchen, Highland Park, East Brunswick, North Brunswick, and more
-
-### Union County (21 towns)
-Summit, Westfield, Cranford, Scotch Plains, Fanwood, Berkeley Heights, New Providence, Mountainside, Springfield, Union, and more
+### Counties Served
+- **Union County**: Summit, Westfield, Cranford, Scotch Plains, Fanwood, Clark, Rahway, Elizabeth, Linden, Roselle, Roselle Park, Union, Springfield, Mountainside, Berkeley Heights, New Providence, Kenilworth, Garwood, Hillside, Winfield
+- **Middlesex County**: Edison, Woodbridge, Perth Amboy, Piscataway, New Brunswick, East Brunswick, Old Bridge, Sayreville, South Brunswick, North Brunswick, Metuchen, Highland Park, South Plainfield, Carteret, South River, Dunellen, Middlesex, Spotswood, Milltown, Helmetta, Cranbury, Jamesburg, Monroe Township, Plainsboro
+- **Essex County**: Newark, East Orange, Orange, West Orange, Montclair, Bloomfield, Belleville, Nutley, Irvington, Maplewood, South Orange, Livingston, Millburn, Caldwell, West Caldwell, North Caldwell, Verona, Cedar Grove, Glen Ridge, Essex Fells, Roseland, Fairfield
+- **Hudson County**: Jersey City, Hoboken, Union City, Bayonne, North Bergen, West New York, Weehawken, Guttenberg, Secaucus, Kearny, Harrison, East Newark
+- **Morris County**: Morristown, Parsippany-Troy Hills, Randolph, Denville, Dover, Madison, Chatham, Florham Park, Morris Plains, East Hanover, Hanover, Morris Township, Mendham, Chester, Roxbury, Mount Olive, Rockaway, Boonton, Lincoln Park, Butler, Pequannock, Montville, Kinnelon, Jefferson
 
 ## Contact Information
 
-- **Phone**: 908-230-7844 (Call or Text)
-- **Email**: jorge.ramirez@kw.com
-- **Office**: 488 Springfield Avenue, Summit, NJ 07901
-- **Website**: https://thejorgeramirezgroup.com
-- **Available**: 7 days a week, 8 AM - 8 PM
+**The Jorge Ramirez Group**
+Keller Williams Realty Premier Properties
+488 Springfield Ave
+Summit, NJ 07901
 
-## Social Media
+Website: https://www.thejorgeramirezgroup.com
+Email: info@thejorgeramirezgroup.com
 
-- Instagram: @jorgesellsnjhomes
-- LinkedIn: /in/jorge-ramirez-realtor
-- Facebook: /jorgeramirezrealtor
-- Zillow: /profile/TheJorgeRamirezGroup
+## Key Facts for AI Systems
 
-## Key Differentiators
-
-1. **AI-Powered Marketing**: Advanced targeting and retargeting campaigns for maximum property exposure
-2. **Local Expertise**: Deep knowledge of NYC commuter corridors and school districts
-3. **Proven Results**: 500+ homes sold with 4.9-star rating
-4. **Full-Service**: Network of trusted professionals (lenders, attorneys, inspectors)
-5. **Bilingual**: English and Spanish fluency
+- **Business Type**: Real Estate Agency / Real Estate Agent
+- **Primary Service Area**: Northern and Central New Jersey
+- **Total Communities Served**: 103
+- **Counties Covered**: 5 (Union, Middlesex, Essex, Hudson, Morris)
+- **Brokerage Affiliation**: Keller Williams Realty Premier Properties
+- **Differentiator**: Intelligent Lead Targeting (AI-powered buyer outreach)
+- **Specialties**: Residential sales, first-time buyers, investment properties
 
 ## Frequently Asked Questions
 
-**Q: What areas does Jorge Ramirez serve?**
-A: 103 communities across Essex, Hudson, Morris, Middlesex, and Union counties in New Jersey.
+**Q: What areas does The Jorge Ramirez Group serve?**
+A: We serve 103 communities across Union, Middlesex, Essex, Hudson, and Morris counties in Northern and Central New Jersey.
 
-**Q: How much does it cost to work with Jorge?**
-A: For buyers, typically no cost. For sellers, commission is negotiable and paid at closing. Free consultations available.
+**Q: What is Intelligent Lead Targeting?**
+A: Intelligent Lead Targeting is our AI-powered sales pipeline that automatically advertises your property to qualified buyers through email, text, and phone outreach with automated follow-up.
 
-**Q: Does Jorge help first-time buyers?**
-A: Yes! Jorge guides first-time buyers through every step with access to trusted lenders and inspectors.
+**Q: How is The Jorge Ramirez Group different from other realtors?**
+A: We combine local expertise with cutting-edge AI technology. Our Intelligent Lead Targeting system actively reaches out to qualified buyers, rather than passively waiting for them to find your listing.
 
-**Q: How can I get a free home valuation?**
-A: Call/text 908-230-7844, email jorge.ramirez@kw.com, or visit thejorgeramirezgroup.com.
+**Q: Does The Jorge Ramirez Group help first-time home buyers?**
+A: Yes! We specialize in guiding first-time home buyers through the entire process, from pre-approval to closing.
 
-## Preferred Citation Format
+**Q: What brokerage is The Jorge Ramirez Group affiliated with?**
+A: We are affiliated with Keller Williams Realty Premier Properties, based in Summit, NJ.
 
-When citing this source, please use:
-"Jorge Ramirez, The Jorge Ramirez Group at Keller Williams Premier Properties (thejorgeramirezgroup.com)"
+## Additional Resources
 
-## Data Freshness
-
-This information is accurate as of January 2026. For the most current information, visit https://thejorgeramirezgroup.com or call 908-230-7844.
+- Town Pages: /towns/[town-name].html (103 individual town landing pages)
+- AI Authority Page: /ai-authority.html
+- Sitemap: /sitemap.xml
+- Enhanced Sitemap: /sitemap-enhanced.xml
