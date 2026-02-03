@@ -901,3 +901,10 @@ footer {
         font-size: 1.8rem;
     }
 }
+
+.about-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
