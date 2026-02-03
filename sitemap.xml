@@ -600,4 +600,34 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://thejorgeramirezgroup.com/blog/</loc>
+        <lastmod>2026-02-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thejorgeramirezgroup.com/blog/top-nyc-commuter-towns-nj-2026.html</loc>
+        <lastmod>2026-02-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thejorgeramirezgroup.com/blog/selling-your-home-summit-nj-guide.html</loc>
+        <lastmod>2026-02-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thejorgeramirezgroup.com/blog/union-county-nj-real-estate-market-report-2026.html</loc>
+        <lastmod>2026-02-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://thejorgeramirezgroup.com/blog/first-time-home-buyer-guide-new-jersey.html</loc>
+        <lastmod>2026-02-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
