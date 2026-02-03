@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Sell Your Home Faster & For More Money | The Jorge Ramirez Group</title>
+    <meta name="description" content="See how our AI-powered buyer targeting system puts your listing in front of the exact buyers looking for a home like yours—before your competitors do.">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .marketing-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 60px;
+        }
+        
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-section p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .problem-section {
+            background: #fff3cd;
+            padding: 40px;
+            border-left: 5px solid #ff6b6b;
+            margin-bottom: 60px;
+            border-radius: 8px;
+        }
+        
+        .problem-section h2 {
+            color: #c92a2a;
+            margin-top: 0;
+        }
+        
+        .solution-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .solution-intro h2 {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .flow-diagram {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .flow-step {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .flow-step:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .step-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .flow-step h3 {
+            color: #333;
+            margin: 15px 0;
+            font-size: 1.4em;
+        }
+        
+        .flow-step p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .comparison-section {
+            background: #f8f9fa;
+            padding: 60px 40px;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .comparison-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .comparison-card.traditional {
+            border-color: #dee2e6;
+        }
+        
+        .comparison-card.our-way {
+            border-color: #51cf66;
+            background: #f8fff8;
+        }
+        
+        .comparison-card h3 {
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        
+        .comparison-card.traditional h3 {
+            color: #868e96;
+        }
+        
+        .comparison-card.our-way h3 {
+            color: #2f9e44;
+        }
+        
+        .comparison-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .comparison-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .comparison-list li:before {
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+        
+        .traditional .comparison-list li:before {
+            content: "❌";
+        }
+        
+        .our-way .comparison-list li:before {
+            content: "✅";
+        }
+        
+        .technology-section {
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .tech-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        .tech-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .tech-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .tech-card h4 {
+            margin: 15px 0;
+            font-size: 1.2em;
+        }
+        
+        .results-section {
+            background: linear-gradient(135deg, #51cf66 0%, #37b24d 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .result-stat {
+            text-align: center;
+        }
+        
+        .result-stat .big-number {
+            font-size: 3.5em;
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .result-stat .label {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        .cta-section {
+            background: #333;
+            color: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section .btn-primary {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-section .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .cta-section .btn-secondary {
+            display: inline-block;
+            padding: 18px 40px;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-section .btn-secondary:hover {
+            background: white;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.8em;
+            }
+            
+            .hero-section p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/jorge-logo.jpg" alt="The Jorge Ramirez Group" class="logo-img" width="250" height="100">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#buy">Buy</a></li>
+                <li><a href="index.html#sell">Sell</a></li>
+                <li><a href="index.html#communities">Communities</a></li>
+                <li><a href="blog/">Blog</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact" class="nav-btn-consultation">Consultation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="marketing-page">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>We Don't Just List Your Home.<br>We Hunt Down Your Buyer.</h1>
+            <p>Using AI-powered targeting and YouTube ads, we put your listing in front of the exact buyers actively searching for a home like yours—while your competitors are still waiting for open house sign-ins.</p>
+        </div>
+
+        <!-- Problem Section -->
+        <div class="problem-section">
+            <h2>🚨 The Problem With Traditional Real Estate Marketing</h2>
+            <p style="font-size: 1.1em; line-height: 1.7;">
+                Most agents list your home on the MLS, throw it on Zillow, maybe post on Instagram... and then <strong>wait</strong>. They're <em>hoping</em> the right buyer stumbles across your listing. That's not a strategy—that's a lottery.
+            </p>
+            <p style="font-size: 1.1em; line-height: 1.7; margin-bottom: 0;">
+                Meanwhile, your home sits on the market longer than it should, and buyers start wondering, <em>"What's wrong with this one?"</em>
+            </p>
+        </div>
+
+        <!-- Solution Intro -->
+        <div class="solution-intro">
+            <h2>Our Solution: Proactive Buyer Targeting</h2>
+            <p style="font-size: 1.15em; color: #666; line-height: 1.7;">
+                We use the same technology that Amazon and Netflix use to find <em>their</em> customers—except we're finding <strong>your buyer</strong>. Here's exactly how it works:
+            </p>
+        </div>
+
+        <!-- Flow Diagram -->
+        <div class="flow-diagram">
+            <!-- Step 1 -->
+            <div class="flow-step">
+                <div class="step-number">1</div>
+                <div class="step-icon">🏡</div>
+                <h3>Your Home Gets Listed</h3>
+                <p>Professional photos, video tours, detailed description, floor plans—the works. We create a listing that converts browsers into buyers.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flow-step">
+                <div class="step-number">2</div>
+                <div class="step-icon">🎯</div>
+                <h3>AI Identifies Your Buyer</h3>
+                <p>Our system analyzes Google's data to find people actively searching for homes in your town, your price range, with your features.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flow-step">
+                <div class="step-number">3</div>
+                <div class="step-icon">📺</div>
+                <h3>YouTube Ads Target Them</h3>
+                <p>Your listing appears as video ads while they're watching YouTube—showing them exactly what they're looking for before they find it elsewhere.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="flow-step">
+                <div class="step-number">4</div>
+                <div class="step-icon">💬</div>
+                <h3>GoHighLevel Captures Interest</h3>
+                <p>When they click, our AI assistant immediately engages them via text, answers questions, and schedules showings—24/7, no delays.</p>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="flow-step">
+                <div class="step-number">5</div>
+                <div class="step-icon">🔄</div>
+                <h3>Automated Follow-Up</h3>
+                <p>The system nurtures interested buyers with additional photos, neighborhood info, and showing reminders—keeping your home top of mind.</p>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="flow-step">
+                <div class="step-number">6</div>
+                <div class="step-icon">✅</div>
+                <h3>You Get Qualified Buyers</h3>
+                <p>Only serious, pre-qualified buyers who've already seen your listing details get to your door—no tire-kickers, no time-wasters.</p>
+            </div>
+        </div>
+
+        <!-- Technology Section -->
+        <div class="technology-section">
+            <h2 style="font-size: 2.2em; margin-bottom: 20px;">The Technology Behind It</h2>
+            <p style="font-size: 1.1em; color: #666; max-width: 800px; margin: 0 auto 40px; line-height: 1.7;">
+                We've invested in the same tools that billion-dollar companies use to find customers. Here's what's working for your listing:
+            </p>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="icon">🤖</div>
+                    <h4>AI-Powered Targeting</h4>
+                    <p>Google's machine learning identifies buyers based on search behavior, demographics, and intent signals.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="icon">📹</div>
+                    <h4>YouTube Video Ads</h4>
+                    <p>Your listing appears to buyers watching real estate content, home tours, and moving guides.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="icon">💻</div>
+                    <h4>GoHighLevel CRM</h4>
+                    <p>Automated text/email campaigns that respond instantly, book showings, and send reminders.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="icon">📊</div>
+                    <h4>Real-Time Analytics</h4>
+                    <p>See exactly how many people viewed your listing, clicked your ad, and requested showings.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Section -->
+        <div class="comparison-section">
+            <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 10px;">Traditional Agent vs. The Jorge Ramirez Group</h2>
+            <p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 40px;">
+                See the difference for yourself:
+            </p>
+            <div class="comparison-grid">
+                <!-- Traditional -->
+                <div class="comparison-card traditional">
+                    <h3>❌ Traditional Agent</h3>
+                    <ul class="comparison-list">
+                        <li>Lists on MLS and waits</li>
+                        <li>Posts on social media (maybe)</li>
+                        <li>Hosts open houses on weekends</li>
+                        <li>Buyers find you by accident</li>
+                        <li>Manual follow-up (if at all)</li>
+                        <li>No idea who's interested until they call</li>
+                        <li>Tire-kickers waste your time</li>
+                        <li>Days of market = higher price drops</li>
+                    </ul>
+                </div>
+
+                <!-- Our Way -->
+                <div class="comparison-card our-way">
+                    <h3>✅ The Jorge Ramirez Group</h3>
+                    <ul class="comparison-list">
+                        <li>Proactively targets qualified buyers</li>
+                        <li>YouTube ads reach buyers before competitors</li>
+                        <li>24/7 AI assistant answers questions instantly</li>
+                        <li>We find your buyer—they don't find you</li>
+                        <li>Automated follow-up nurtures interest</li>
+                        <li>Real-time dashboard shows engagement</li>
+                        <li>Only pre-qualified buyers at your door</li>
+                        <li>Faster sales = better prices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section">
+            <h2 style="font-size: 2.2em; margin-bottom: 20px;">What This Means For You</h2>
+            <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 40px; opacity: 0.95;">
+                When you work with us, you're not just getting a listing agent—you're getting a full marketing team powered by AI. Here's what that looks like:
+            </p>
+            <div class="results-grid">
+                <div class="result-stat">
+                    <div class="big-number">24/7</div>
+                    <div class="label">Instant Response Time</div>
+                </div>
+                <div class="result-stat">
+                    <div class="big-number">1000+</div>
+                    <div class="label">Targeted Buyers Reached</div>
+                </div>
+                <div class="result-stat">
+                    <div class="big-number">3X</div>
+                    <div class="label">More Qualified Showings</div>
+                </div>
+                <div class="result-stat">
+                    <div class="big-number">30%</div>
+                    <div class="label">Faster Sales on Average</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Ready to Sell Smarter, Not Harder?</h2>
+            <p style="font-size: 1.2em; max-width: 700px; margin: 20px auto;">
+                Let's talk about your home. I'll show you exactly how we'll find your buyer and get you the best price—without the months of waiting.
+            </p>
+            <div style="margin-top: 40px;">
+                <a href="https://value.thejorgeramirezgroup.com" class="btn-primary" target="_blank" rel="noopener">Get Your Home Value →</a>
+                <a href="tel:908-230-7844" class="btn-secondary">Call/Text: (908) 230-7844</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 1.1em; opacity: 0.9;">
+                Free consultation. No pressure. Just real talk about how we can get your home sold.
+            </p>
+        </div>
+
+        <!-- Additional Info -->
+        <div style="text-align: center; margin: 60px 0; padding: 40px; background: #f8f9fa; border-radius: 12px;">
+            <h3 style="font-size: 1.8em; margin-bottom: 20px;">Common Questions</h3>
+            <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: #667eea; font-size: 1.3em; margin-bottom: 10px;">How much does this cost me?</h4>
+                    <p style="line-height: 1.7; color: #666;">
+                        <strong>Nothing extra.</strong> All of this technology and targeting is included in our standard commission. You get million-dollar marketing without paying million-dollar fees.
+                    </p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: #667eea; font-size: 1.3em; margin-bottom: 10px;">Does this really work?</h4>
+                    <p style="line-height: 1.7; color: #666;">
+                        Ask yourself: when you want to buy something, where do you look? Google. YouTube. Online. That's where buyers are—and that's where we put your listing. We're not reinventing the wheel; we're just using it better than everyone else.
+                    </p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: #667eea; font-size: 1.3em; margin-bottom: 10px;">What if my home doesn't sell?</h4>
+                    <p style="line-height: 1.7; color: #666;">
+                        If we've targeted thousands of qualified buyers, shown them your home dozens of times, and nobody's buying—it's not a marketing problem. It's a pricing problem. And we'll tell you that upfront, not after 90 days of sitting on the market.
+                    </p>
+                </div>
+                <div style="margin-bottom: 0;">
+                    <h4 style="color: #667eea; font-size: 1.3em; margin-bottom: 10px;">Can I see the data?</h4>
+                    <p style="line-height: 1.7; color: #666;">
+                        <strong>Absolutely.</strong> You'll get weekly reports showing exactly how many people saw your ad, clicked your listing, asked questions, and requested showings. Full transparency, always.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 60px; padding: 40px; background: #333; color: white; text-align: center;">
+        <p style="font-size: 1.1em; margin-bottom: 20px;">&copy; 2026 The Jorge Ramirez Group. All Rights Reserved.</p>
+        <p style="margin-bottom: 10px;">
+            Licensed Real Estate Salesperson | Keller Williams Premier Properties<br>
+            488 Springfield Avenue, Summit, NJ 07901
+        </p>
+        <p style="font-size: 1.2em; font-weight: 600; color: #667eea;">
+            📞 (908) 230-7844 | 📧 jorgeramirez76@gmail.com
+        </p>
+    </footer>
+</body>
+</html>
