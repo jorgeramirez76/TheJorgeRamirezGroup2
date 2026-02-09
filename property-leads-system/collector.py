@@ -104,7 +104,7 @@ def generate_property_data(city=None, count=1):
 
 def collect_sample_data(city=None, count=50):
     """
-    Collect sample property data and save to database.
+    Collect sample property data and save to database WITH SCORES.
     
     Args:
         city: Optional city to filter by
@@ -113,11 +113,18 @@ def collect_sample_data(city=None, count=50):
     Returns:
         List of created property IDs
     """
+    from scorer import calculate_selling_likelihood
+    
     session = get_session()
     properties = generate_property_data(city=city, count=count)
     
     created_ids = []
     for prop_data in properties:
+        # Calculate score before saving
+        score, reasons = calculate_selling_likelihood(prop_data)
+        prop_data['sell_score'] = score
+        prop_data['score_reasons'] = reasons
+        
         prop = add_property(session, **prop_data)
         created_ids.append(prop.id)
     
