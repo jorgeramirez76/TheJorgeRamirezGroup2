@@ -1,115 +1,515 @@
+"""
+Property Lead Management System - Main Streamlit Application
+For Jorge - NJ Property Investment Leads
+
+Features:
+- Dashboard with lead statistics
+- Property list with filtering
+- Manual property entry
+- Lead scoring
+- Avery 5160 label export
+"""
+
 import streamlit as st
 import pandas as pd
+from datetime import datetime
+
+# Import our modules
 from database import (
     init_db, get_session, add_property, get_all_properties,
-    get_property_by_id, update_property, get_cities, get_filtered_properties,
-    get_stats
+    get_filtered_properties, get_cities, update_property,
+    delete_property, get_stats
 )
 from collector import collect_sample_data
-from scorer import calculate_selling_likelihood, get_score_category, get_score_color
-from labels import create_labels_for_properties
+from scorer import score_all_properties, rescore_all_properties
+from labels import (
+    create_label_pdf, preview_label_text, 
+    export_filtered_labels
+)
 
-st.set_page_config(page_title="Property Lead Manager", page_icon="🏠", layout="wide")
+# Page configuration
+st.set_page_config(
+    page_title="Property Lead Manager",
+    page_icon="🏠",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # Initialize database
 init_db()
 
-st.sidebar.title("🏠 Property Lead Manager")
+
+def get_session_state():
+    """Initialize session state variables."""
+    if 'last_action' not in st.session_state:
+        st.session_state.last_action = None
+
+
+# Sidebar navigation
+st.sidebar.title("🏠 Property Leads")
 page = st.sidebar.radio("Navigation", [
-    "📊 Dashboard", "🏘️ All Properties", "🔍 Filter & Export", 
-    "➕ Add Property", "📥 Import Sample Data"
+    "Dashboard",
+    "All Properties", 
+    "Add Property",
+    "Generate Sample Data",
+    "Scoring",
+    "Export Labels"
 ])
 
-session = get_session()
+get_session_state()
 
-if page == "📊 Dashboard":
-    st.title("📊 Dashboard")
+# ==================== DASHBOARD ====================
+if page == "Dashboard":
+    st.title("Property Lead Management Dashboard")
+    st.markdown("Welcome to your NJ Property Lead System, Jorge!")
+    
+    # Get stats
+    session = get_session()
     stats = get_stats(session)
+    cities = get_cities(session)
+    session.close()
+    
+    # Key metrics
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.metric("Total Properties", stats['total_properties'])
+    
+    with col2:
+        st.metric("Average Score", f"{stats['average_score']:.1f}")
+    
+    with col3:
+        st.metric("Cities Covered", stats['cities'])
+    
+    with col4:
+        # High score count
+        session = get_session()
+        high_score_count = len(get_filtered_properties(session, min_score=70))
+        session.close()
+        st.metric("High-Value Leads (70+)", high_score_count)
+    
+    st.divider()
+    
+    # Quick actions
+    st.subheader("Quick Actions")
     
     col1, col2, col3 = st.columns(3)
-    col1.metric("Total Properties", stats['total_properties'])
-    col2.metric("Cities", stats['cities'])
-    col3.metric("Avg Score", f"{stats['average_score']:.1f}")
-
-elif page == "🏘️ All Properties":
-    st.title("🏘️ All Properties")
-    props = get_all_properties(session)
     
-    if not props:
-        st.info("No properties found. Import sample data.")
+    with col1:
+        if st.button("🎯 View High-Value Leads", use_container_width=True):
+            st.session_state.page = "All Properties"
+            st.rerun()
+    
+    with col2:
+        if st.button("➕ Add New Property", use_container_width=True):
+            st.session_state.page = "Add Property"
+            st.rerun()
+    
+    with col3:
+        if st.button("📤 Export Labels", use_container_width=True):
+            st.session_state.page = "Export Labels"
+            st.rerun()
+    
+    st.divider()
+    
+    # Recent properties
+    st.subheader("Top Scored Properties")
+    session = get_session()
+    top_props = get_filtered_properties(session, min_score=0)[:10]
+    session.close()
+    
+    if top_props:
+        df = pd.DataFrame([{
+            'ID': p.id,
+            'Address': p.address,
+            'City': p.city,
+            'Owner': p.owner_name or 'N/A',
+            'Score': p.sell_score,
+            'Type': p.property_type or 'N/A'
+        } for p in top_props])
+        st.dataframe(df, use_container_width=True, hide_index=True)
     else:
-        data = []
-        for p in props:
-            data.append({
-                'ID': p.id,
-                'Address': p.address,
-                'City': p.city,
-                'Owner': p.owner_name or 'N/A',
-                'Score': p.sell_score,
-                'Type': p.property_type or 'N/A'
-            })
-        df = pd.DataFrame(data)
-        st.dataframe(df)
+        st.info("No properties in database. Generate sample data or add properties manually.")
 
-elif page == "🔍 Filter & Export":
-    st.title("🔍 Filter & Export")
+
+# ==================== ALL PROPERTIES ====================
+elif page == "All Properties":
+    st.title("Property Database")
     
-    cities = get_cities(session)
-    city = st.selectbox("City", ["All"] + cities)
-    min_score = st.slider("Min Score", 0, 100, 70)
+    # Filters
+    st.subheader("Filters")
     
-    city_filter = None if city == "All" else city
-    props = get_filtered_properties(session, city=city_filter, min_score=min_score)
+    session = get_session()
+    cities = ['All'] + get_cities(session)
+    session.close()
     
-    st.write(f"Found {len(props)} properties")
+    col1, col2, col3 = st.columns(3)
     
-    if props:
-        data = [{'address': p.address, 'city': p.city, 'owner_name': p.owner_name, 
-                'zip_code': p.zip_code, 'score': p.sell_score} for p in props]
-        df = pd.DataFrame(data)
-        st.dataframe(df)
+    with col1:
+        selected_city = st.selectbox("City", cities)
+    
+    with col2:
+        min_score = st.slider("Minimum Score", 0, 100, 0)
+    
+    with col3:
+        max_score = st.slider("Maximum Score", 0, 100, 100)
+    
+    # Apply filters
+    session = get_session()
+    city_filter = None if selected_city == 'All' else selected_city
+    properties = get_filtered_properties(
+        session, 
+        city=city_filter,
+        min_score=min_score,
+        max_score=max_score
+    )
+    session.close()
+    
+    st.write(f"Showing {len(properties)} properties")
+    
+    # Display as table
+    if properties:
+        df = pd.DataFrame([{
+            'ID': p.id,
+            'Address': p.address,
+            'City': p.city,
+            'Owner': p.owner_name or 'N/A',
+            'Score': p.sell_score,
+            'Type': p.property_type or 'N/A',
+            'Value': f"${p.assessed_value:,.0f}" if p.assessed_value else 'N/A',
+            'Year': p.year_built or 'N/A',
+            'Status': p.status
+        } for p in properties])
         
-        if st.button("Generate Avery 5160 Labels"):
-            with st.spinner("Creating labels..."):
-                path = create_labels_for_properties(props, "labels.pdf")
-                with open(path, "rb") as f:
-                    st.download_button("Download PDF", f, "labels.pdf", "application/pdf")
-
-elif page == "➕ Add Property":
-    st.title("➕ Add Property")
-    with st.form("add"):
-        addr = st.text_input("Address*")
-        city = st.text_input("City*")
-        zipc = st.text_input("ZIP*")
-        owner = st.text_input("Owner Name")
-        ptype = st.selectbox("Type", ["Single Family", "Condo", "Townhouse"])
-        year = st.number_input("Year Built", 1800, 2024, 2000)
+        st.dataframe(df, use_container_width=True, hide_index=True)
         
-        if st.form_submit_button("Add"):
-            prop = add_property(session, address=addr, city=city, zip_code=zipc,
-                              owner_name=owner, property_type=ptype, year_built=year,
-                              state="NJ")
-            st.success(f"Added property ID: {prop.id}")
+        # Detail view
+        st.subheader("Property Details")
+        selected_id = st.selectbox("Select Property ID for Details", [p.id for p in properties])
+        
+        if selected_id:
+            session = get_session()
+            prop = session.query(get_session().bind.engine.table_names())
+            # Re-query to get the property
+            from database import Property
+            prop = session.query(Property).filter(Property.id == selected_id).first()
+            
+            if prop:
+                col1, col2 = st.columns(2)
+                
+                with col1:
+                    st.write("**Property Information**")
+                    st.write(f"Address: {prop.full_address}")
+                    st.write(f"Type: {prop.property_type or 'Unknown'}")
+                    st.write(f"Year Built: {prop.year_built or 'Unknown'}")
+                    st.write(f"Bedrooms: {prop.bedrooms or 'N/A'}")
+                    st.write(f"Bathrooms: {prop.bathrooms or 'N/A'}")
+                    st.write(f"Sq Ft: {prop.square_footage:,}" if prop.square_footage else "Sq Ft: N/A")
+                
+                with col2:
+                    st.write("**Owner & Scoring**")
+                    st.write(f"Owner: {prop.owner_name or 'Unknown'}")
+                    st.write(f"Mailing: {prop.owner_address or 'Same as property'}")
+                    st.write(f"Sell Score: {prop.sell_score}/100")
+                    st.write(f"Score Reasons: {prop.score_reasons or 'Not scored'}")
+                    st.write(f"Status: {prop.status}")
+                    
+                    # Status update
+                    new_status = st.selectbox(
+                        "Update Status",
+                        ['new', 'contacted', 'qualified', 'unqualified'],
+                        index=['new', 'contacted', 'qualified', 'unqualified'].index(prop.status)
+                    )
+                    
+                    if new_status != prop.status:
+                        if st.button("Update Status"):
+                            prop.status = new_status
+                            session.commit()
+                            st.success(f"Status updated to {new_status}")
+                            st.rerun()
+                
+                # Notes
+                st.write("**Notes**")
+                notes = st.text_area("Property Notes", value=prop.notes or "", key=f"notes_{prop.id}")
+                if st.button("Save Notes"):
+                    prop.notes = notes
+                    session.commit()
+                    st.success("Notes saved!")
+            
+            session.close()
+    else:
+        st.info("No properties match your filters.")
 
-elif page == "📥 Import Sample Data":
-    st.title("📥 Import Sample Data")
-    n = st.number_input("Count", 1, 200, 50)
-    if st.button("Generate"):
-        props = collect_sample_data(n)
-        for p in props:
-            score, reasons = calculate_selling_likelihood(p)
-            add_property(session,
-                address=p['address'],
-                city=p['city'],
-                state=p['state'],
-                zip_code=p['zip_code'],
-                owner_name=p['owner_name'],
-                purchase_date=p['purchase_date'],
-                purchase_price=p['purchase_price'],
-                estimated_value=p['estimated_value'],
-                property_type=p['property_type'],
-                year_built=p['year_built'],
-                sell_score=score,
-                score_reasons=reasons
+
+# ==================== ADD PROPERTY ====================
+elif page == "Add Property":
+    st.title("Add New Property")
+    
+    with st.form("add_property_form"):
+        st.subheader("Property Details")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            address = st.text_input("Street Address*", placeholder="123 Main St")
+            city = st.text_input("City*", placeholder="Newark")
+            state = st.text_input("State", value="NJ", max_chars=2)
+            zip_code = st.text_input("ZIP Code*", placeholder="07102", max_chars=10)
+        
+        with col2:
+            property_type = st.selectbox(
+                "Property Type",
+                ['', 'Single Family', 'Condo', 'Townhouse', 'Multi-Family', 'Commercial']
             )
-        st.success(f"Added {n} properties!")
+            year_built = st.number_input("Year Built", min_value=1800, max_value=2024, value=None)
+            assessed_value = st.number_input("Assessed Value ($)", min_value=0, value=None)
+            square_footage = st.number_input("Square Footage", min_value=0, value=None)
+        
+        st.subheader("Owner Information")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            owner_name = st.text_input("Owner Name", placeholder="John Smith")
+        
+        with col2:
+            use_diff_address = st.checkbox("Different Mailing Address")
+        
+        owner_address = None
+        if use_diff_address:
+            owner_address = st.text_area(
+                "Mailing Address",
+                placeholder="456 Oak Ave\nJersey City, NJ 07302"
+            )
+        
+        notes = st.text_area("Notes")
+        
+        submitted = st.form_submit_button("Add Property", use_container_width=True)
+        
+        if submitted:
+            if not address or not city or not zip_code:
+                st.error("Please fill in required fields (marked with *)")
+            else:
+                session = get_session()
+                prop = add_property(
+                    session,
+                    address=address,
+                    city=city,
+                    state=state or 'NJ',
+                    zip_code=zip_code,
+                    owner_name=owner_name or None,
+                    owner_address=owner_address,
+                    property_type=property_type or None,
+                    year_built=year_built,
+                    assessed_value=assessed_value,
+                    square_footage=square_footage,
+                    notes=notes,
+                    data_source='manual'
+                )
+                session.close()
+                
+                st.success(f"Property added successfully! ID: {prop.id}")
+                st.info("Go to 'Scoring' to calculate the sell score for this property.")
+
+
+# ==================== GENERATE SAMPLE DATA ====================
+elif page == "Generate Sample Data":
+    st.title("Generate Sample Data")
+    st.markdown("Create demo property data for testing the system.")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        sample_city = st.selectbox(
+            "Select City (or leave for random)",
+            ['Random Mix'] + [
+                'Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Edison',
+                'Toms River', 'Trenton', 'Clifton', 'Cherry Hill'
+            ]
+        )
+    
+    with col2:
+        sample_count = st.number_input("Number of Properties", min_value=1, max_value=500, value=50)
+    
+    city_param = None if sample_city == 'Random Mix' else sample_city
+    
+    if st.button("Generate Sample Data", use_container_width=True):
+        with st.spinner("Generating properties..."):
+            ids = collect_sample_data(city=city_param, count=sample_count)
+        
+        st.success(f"Generated {len(ids)} sample properties!")
+        st.info("Now go to 'Scoring' to calculate sell scores for these properties.")
+        
+        # Preview
+        if st.checkbox("Show Preview"):
+            session = get_session()
+            from database import Property
+            props = session.query(Property).order_by(Property.id.desc()).limit(5).all()
+            session.close()
+            
+            for p in props:
+                st.write(f"- {p.address}, {p.city} - Owner: {p.owner_name}")
+
+
+# ==================== SCORING ====================
+elif page == "Scoring":
+    st.title("Lead Scoring Engine")
+    st.markdown("Calculate selling likelihood scores for properties.")
+    
+    # Show scoring factors
+    with st.expander("View Scoring Factors"):
+        st.write("The scoring engine considers:")
+        st.write("- **Years Owned** (15%): Long-term owners more likely to sell")
+        st.write("- **Property Age** (10%): Older properties may need updates")
+        st.write("- **Assessed Value** (10%): Higher values indicate equity position")
+        st.write("- **Absentee Owner** (20%): Non-occupant owners more likely to sell")
+        st.write("- **Property Type** (5%): Multi-family/commercial factors")
+        st.write("- **Market Timing** (15%): Seasonal trends")
+        st.write("- **Distress Signals** (25%): Tax issues, probate, etc.")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.subheader("Score New Properties")
+        if st.button("Score Unscored Properties", use_container_width=True):
+            with st.spinner("Calculating scores..."):
+                count = score_all_properties()
+            st.success(f"Scored {count} properties!")
+    
+    with col2:
+        st.subheader("Re-score All")
+        st.warning("This will overwrite existing scores")
+        if st.button("Re-score All Properties", use_container_width=True):
+            with st.spinner("Re-scoring all properties..."):
+                count = rescore_all_properties()
+            st.success(f"Re-scored {count} properties!")
+    
+    st.divider()
+    
+    # Show score distribution
+    st.subheader("Score Distribution")
+    
+    session = get_session()
+    properties = get_all_properties(session)
+    session.close()
+    
+    if properties:
+        scores = [p.sell_score for p in properties if p.sell_score > 0]
+        
+        if scores:
+            import plotly.express as px
+            
+            fig = px.histogram(
+                scores,
+                nbins=10,
+                range_x=[0, 100],
+                labels={'value': 'Sell Score', 'count': 'Number of Properties'},
+                title='Distribution of Sell Scores'
+            )
+            st.plotly_chart(fig, use_container_width=True)
+            
+            # Score ranges
+            st.write("**Score Ranges:**")
+            col1, col2, col3, col4 = st.columns(4)
+            
+            with col1:
+                high = len([s for s in scores if s >= 70])
+                st.metric("High (70-100)", high)
+            
+            with col2:
+                med = len([s for s in scores if 40 <= s < 70])
+                st.metric("Medium (40-69)", med)
+            
+            with col3:
+                low = len([s for s in scores if s < 40])
+                st.metric("Low (0-39)", low)
+            
+            with col4:
+                unscored = len([p for p in properties if p.sell_score == 0])
+                st.metric("Unscored", unscored)
+        else:
+            st.info("No properties have been scored yet. Click 'Score Unscored Properties' above.")
+    else:
+        st.info("No properties in database.")
+
+
+# ==================== EXPORT LABELS ====================
+elif page == "Export Labels":
+    st.title("Export Mailing Labels")
+    st.markdown("Generate PDF mailing labels for Avery 5160 label sheets.")
+    
+    st.info("📄 **Avery 5160 Specs:** 30 labels per sheet, 1\" x 2-5/8\", 3 columns x 10 rows")
+    
+    # Filters for export
+    st.subheader("Filter Properties for Export")
+    
+    session = get_session()
+    cities = ['All'] + get_cities(session)
+    session.close()
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        export_city = st.selectbox("City", cities, key="export_city")
+    
+    with col2:
+        export_min_score = st.slider("Min Score", 0, 100, 50, key="export_min")
+    
+    with col3:
+        export_max_score = st.slider("Max Score", 0, 100, 100, key="export_max")
+    
+    # Address preference
+    use_mailing = st.checkbox("Use owner's mailing address when available", value=True)
+    
+    # Preview
+    if st.button("Preview Labels"):
+        session = get_session()
+        city_filter = None if export_city == 'All' else export_city
+        properties = get_filtered_properties(
+            session,
+            city=city_filter,
+            min_score=export_min_score,
+            max_score=export_max_score
+        )
+        session.close()
+        
+        if properties:
+            st.text(preview_label_text(properties, max_preview=5))
+            st.write(f"Total: {len(properties)} labels ({(len(properties) + 29) // 30} pages)")
+        else:
+            st.warning("No properties match your filters.")
+    
+    # Generate PDF
+    if st.button("Generate PDF Labels", type="primary", use_container_width=True):
+        session = get_session()
+        city_filter = None if export_city == 'All' else export_city
+        properties = get_filtered_properties(
+            session,
+            city=city_filter,
+            min_score=export_min_score,
+            max_score=export_max_score
+        )
+        session.close()
+        
+        if properties:
+            from io import BytesIO
+            
+            pdf_buffer = create_label_pdf(properties, use_mailing_address=use_mailing)
+            
+            st.success(f"Generated {len(properties)} labels ({(len(properties) + 29) // 30} pages)")
+            
+            st.download_button(
+                label="📥 Download PDF Labels",
+                data=pdf_buffer,
+                file_name=f"property_labels_{datetime.now().strftime('%Y%m%d')}.pdf",
+                mime="application/pdf",
+                use_container_width=True
+            )
+        else:
+            st.error("No properties match your filters. Cannot generate empty PDF.")
+
+
+# Footer
+st.sidebar.divider()
+st.sidebar.caption("Property Lead Manager v1.0")
+st.sidebar.caption("Built for Jorge 🏠")
