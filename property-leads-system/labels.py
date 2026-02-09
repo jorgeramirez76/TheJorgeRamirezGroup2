@@ -1,7 +1,8 @@
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
 from reportlab.pdfgen import canvas
-from typing import List, Dict
+from typing import List
+from pathlib import Path
 
 LABEL_WIDTH = 2.625 * inch
 LABEL_HEIGHT = 1.0 * inch
@@ -9,10 +10,8 @@ MARGIN_LEFT = 0.1875 * inch
 MARGIN_TOP = 0.5 * inch
 COL_GAP = 0.125 * inch
 
-def create_labels_for_properties(props: List[Dict], filename: str) -> str:
-    from pathlib import Path
+def create_labels_for_properties(props, filename: str) -> str:
     output = Path(__file__).parent / filename
-    
     c = canvas.Canvas(str(output), pagesize=letter)
     width, height = letter
     
@@ -23,10 +22,10 @@ def create_labels_for_properties(props: List[Dict], filename: str) -> str:
         x = MARGIN_LEFT + col * (LABEL_WIDTH + COL_GAP)
         y = height - MARGIN_TOP - (row + 1) * LABEL_HEIGHT
         
-        name = prop.get('owner_name', 'Current Resident')
-        addr = prop.get('address', '')
-        city = prop.get('city', '')
-        zipc = prop.get('zip_code', '')
+        name = prop.owner_name or 'Current Resident'
+        addr = prop.address
+        city = prop.city
+        zipc = prop.zip_code
         
         c.setFont("Helvetica-Bold", 10)
         c.drawString(x + 0.1*inch, y + 0.7*inch, name)
