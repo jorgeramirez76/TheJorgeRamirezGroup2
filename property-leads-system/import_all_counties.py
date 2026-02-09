@@ -11,7 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from database import init_db, get_session, add_property
-from scorer import calculate_selling_likelihood
+from scorer import calculate_sell_score
 
 # Import all county collectors
 from union_county_collector import UnionCountyCollector
@@ -54,7 +54,18 @@ def main():
     try:
         for record in collector.search_by_city(args.city, max_pages=args.max_pages):
             try:
-                score, reasons = calculate_selling_likelihood(record.to_dict())
+                # Create temporary property object for scoring
+                from database import Property
+                temp_prop = Property(
+                    address=record.address,
+                    city=record.city,
+                    owner_name=record.owner_name,
+                    assessed_value=record.assessed_value,
+                    year_built=record.year_built,
+                    owner_address=None,
+                    property_type=None
+                )
+                score, reasons = calculate_sell_score(temp_prop)
                 
                 add_property(session,
                     address=record.address,

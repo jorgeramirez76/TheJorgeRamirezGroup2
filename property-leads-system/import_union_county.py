@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from union_county_collector import UnionCountyCollector
 from database import init_db, get_session, add_property
-from scorer import calculate_selling_likelihood
+from scorer import calculate_sell_score
 
 def main():
     parser = argparse.ArgumentParser(description='Import Union County property data')
@@ -38,7 +38,18 @@ def main():
         for record in collector.search_by_city(args.city, max_pages=args.max_pages):
             try:
                 # Calculate score
-                score, reasons = calculate_selling_likelihood(record.to_dict())
+                # Create temporary property object for scoring
+            from database import Property
+            temp_prop = Property(
+                address=record.address,
+                city=record.city,
+                owner_name=record.owner_name,
+                assessed_value=record.assessed_value,
+                year_built=record.year_built,
+                owner_address=None,
+                property_type=None
+            )
+            score, reasons = calculate_sell_score(temp_prop)
                 
                 # Add to database
                 add_property(session,

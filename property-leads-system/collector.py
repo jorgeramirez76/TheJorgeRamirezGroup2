@@ -113,7 +113,8 @@ def collect_sample_data(city=None, count=50):
     Returns:
         List of created property IDs
     """
-    from scorer import calculate_selling_likelihood
+    from scorer import calculate_sell_score
+    from database import Property
     
     session = get_session()
     properties = generate_property_data(city=city, count=count)
@@ -121,7 +122,16 @@ def collect_sample_data(city=None, count=50):
     created_ids = []
     for prop_data in properties:
         # Calculate score before saving
-        score, reasons = calculate_selling_likelihood(prop_data)
+        temp_prop = Property(
+            address=prop_data['address'],
+            city=prop_data['city'],
+            owner_name=prop_data['owner_name'],
+            assessed_value=prop_data.get('assessed_value'),
+            year_built=prop_data.get('year_built'),
+            owner_address=prop_data.get('owner_address'),
+            property_type=prop_data.get('property_type')
+        )
+        score, reasons = calculate_sell_score(temp_prop)
         prop_data['sell_score'] = score
         prop_data['score_reasons'] = reasons
         
