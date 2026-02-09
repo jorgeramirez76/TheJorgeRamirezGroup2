@@ -18,7 +18,7 @@ from datetime import datetime
 from database import (
     init_db, get_session, add_property, get_all_properties,
     get_filtered_properties, get_cities, update_property,
-    delete_property, get_stats
+    delete_property, get_stats, Property
 )
 from collector import collect_sample_data
 from scorer import score_all_properties, rescore_all_properties
@@ -85,15 +85,21 @@ if page == "Dashboard":
         # High score count
         session = get_session()
         high_score_count = len(get_filtered_properties(session, min_score=70))
+        # Check for unscored properties
+        unscored = session.query(Property).filter((Property.sell_score == 0) | (Property.sell_score == None)).count()
         session.close()
         st.metric("High-Value Leads (70+)", high_score_count)
+        
+    # Warning if there are unscored properties
+    if unscored > 0:
+        st.warning(f"⚠️ {unscored} properties have no score. Click '🔄 Rescore All' above to calculate scores.")
     
     st.divider()
     
     # Quick actions
     st.subheader("Quick Actions")
     
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
     
     with col1:
         if st.button("🎯 View High-Value Leads", use_container_width=True):
@@ -108,6 +114,13 @@ if page == "Dashboard":
     with col3:
         if st.button("📤 Export Labels", use_container_width=True):
             st.session_state.page = "Export Labels"
+            st.rerun()
+    
+    with col4:
+        if st.button("🔄 Rescore All", use_container_width=True):
+            with st.spinner("Recalculating all scores..."):
+                count = rescore_all_properties()
+            st.success(f"Rescored {count} properties!")
             st.rerun()
     
     st.divider()
