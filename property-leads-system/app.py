@@ -473,16 +473,36 @@ elif page == "Scoring":
         scores = [p.sell_score for p in properties if p.sell_score > 0]
         
         if scores:
-            import plotly.express as px
+            # Use Streamlit's native bar chart instead of plotly
+            import pandas as pd
             
-            fig = px.histogram(
-                scores,
-                nbins=10,
-                range_x=[0, 100],
-                labels={'value': 'Sell Score', 'count': 'Number of Properties'},
-                title='Distribution of Sell Scores'
-            )
-            st.plotly_chart(fig, use_container_width=True)
+            # Create bins for the histogram
+            bins = [0, 20, 40, 60, 80, 100]
+            labels = ['0-20', '21-40', '41-60', '61-80', '81-100']
+            
+            # Count properties in each bin
+            bin_counts = {}
+            for label in labels:
+                bin_counts[label] = 0
+            
+            for score in scores:
+                if score <= 20:
+                    bin_counts['0-20'] += 1
+                elif score <= 40:
+                    bin_counts['21-40'] += 1
+                elif score <= 60:
+                    bin_counts['41-60'] += 1
+                elif score <= 80:
+                    bin_counts['61-80'] += 1
+                else:
+                    bin_counts['81-100'] += 1
+            
+            chart_data = pd.DataFrame({
+                'Score Range': list(bin_counts.keys()),
+                'Number of Properties': list(bin_counts.values())
+            })
+            
+            st.bar_chart(chart_data.set_index('Score Range'))
             
             # Score ranges
             st.write("**Score Ranges:**")
