@@ -112,6 +112,25 @@ if page == "Dashboard":
     
     st.divider()
     
+    # Scoring explanation
+    with st.expander("ℹ️ How Are Scores Calculated?"):
+        st.write("Each property gets a 0-100 score based on these factors:")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write("**Property Factors:**")
+            st.write("• Years Owned (15%) - Longer = higher score")
+            st.write("• Property Age (10%) - Older = higher score")
+            st.write("• Assessed Value (10%) - Higher equity = higher score")
+            st.write("• Property Type (5%) - Multi-family scores higher")
+        with col2:
+            st.write("**Owner/Market Factors:**")
+            st.write("• Absentee Owner (20%) - Different address = higher score")
+            st.write("• Market Timing (15%) - Seasonal trends")
+            st.write("• Distress Signals (25%) - Tax issues, probate, etc.")
+        st.write("\n**Score Ranges:** 🔴 70-100 Hot | 🟠 50-69 Warm | 🟡 30-49 Cool | ⚪ 0-29 Cold")
+    
+    st.divider()
+    
     # Recent properties
     st.subheader("Top Scored Properties")
     session = get_session()
@@ -210,9 +229,53 @@ elif page == "All Properties":
                     st.write("**Owner & Scoring**")
                     st.write(f"Owner: {prop.owner_name or 'Unknown'}")
                     st.write(f"Mailing: {prop.owner_address or 'Same as property'}")
-                    st.write(f"Sell Score: {prop.sell_score}/100")
-                    st.write(f"Score Reasons: {prop.score_reasons or 'Not scored'}")
-                    st.write(f"Status: {prop.status}")
+                    
+                    # Score display with color coding
+                    score = prop.sell_score or 0
+                    if score >= 70:
+                        score_color = "🔴"
+                        score_label = "HOT LEAD"
+                    elif score >= 50:
+                        score_color = "🟠"
+                        score_label = "WARM LEAD"
+                    elif score >= 30:
+                        score_color = "🟡"
+                        score_label = "COOL LEAD"
+                    else:
+                        score_color = "⚪"
+                        score_label = "COLD LEAD"
+                    
+                    st.markdown(f"**Sell Score: {score}/100** {score_color} *{score_label}*")
+                    
+                    # Detailed scoring breakdown
+                    with st.expander("📊 View Detailed Scoring Breakdown"):
+                        st.write("**Factors Contributing to Score:**")
+                        
+                        if prop.score_reasons:
+                            reasons = prop.score_reasons.split(';')
+                            for reason in reasons:
+                                if reason.strip():
+                                    st.write(f"  ✅ {reason.strip()}")
+                        else:
+                            st.write("  • Not yet scored")
+                        
+                        st.divider()
+                        st.write("**Scoring Factors Used:**")
+                        st.write("  • Years Owned (15% weight)")
+                        st.write("  • Property Age (10% weight)")
+                        st.write("  • Assessed Value (10% weight)")
+                        st.write("  • Absentee Owner (20% weight)")
+                        st.write("  • Property Type (5% weight)")
+                        st.write("  • Market Timing (15% weight)")
+                        st.write("  • Distress Signals (25% weight)")
+                        
+                        if prop.year_built:
+                            age = datetime.now().year - prop.year_built
+                            st.write(f"\n  **Property Age:** {age} years")
+                        if prop.assessed_value:
+                            st.write(f"  **Assessed Value:** ${prop.assessed_value:,.0f}")
+                    
+                    st.write(f"Status: **{prop.status.upper()}**")
                     
                     # Status update
                     new_status = st.selectbox(
