@@ -98,5 +98,18 @@ elif page == "📥 Import Sample Data":
         props = collect_sample_data(n)
         for p in props:
             score, reasons = calculate_selling_likelihood(p)
-            add_property(session, **p, sell_score=score, score_reasons=reasons)
+            add_property(session,
+                address=p['address'],
+                city=p['city'],
+                state=p['state'],
+                zip_code=p['zip_code'],
+                owner_name=p['owner_name'],
+                purchase_date=p['purchase_date'],
+                purchase_price=p['purchase_price'],
+                estimated_value=p['estimated_value'],
+                property_type=p['property_type'],
+                year_built=p['year_built'],
+                sell_score=score,
+                score_reasons=reasons
+            )
         st.success(f"Added {n} properties!")
