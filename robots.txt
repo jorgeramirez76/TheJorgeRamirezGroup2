@@ -1,123 +1,73 @@
-# robots.txt for thejorgeramirezgroup.com
-# Last Updated: 2026-01-26
+# robots.txt — thejorgeramirezgroup.com
+# Updated: 2026-02-24
+# Configured for traditional SEO + AI GEO optimization
+# Allows all major AI crawlers: GPTBot, ClaudeBot, PerplexityBot, Googlebot-Extended
 
-# Default rules for all crawlers
 User-agent: *
 Allow: /
-Disallow: /admin/
 Disallow: /private/
-Disallow: /api/
-Disallow: /cdn-cgi/
-Disallow: /*.json$
-Disallow: /tmp/
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /*.php$
 
-# Allow important resources
-Allow: /css/
-Allow: /js/
-Allow: /images/
-Allow: /towns/
-
-# Crawl-delay for general bots (be nice to server)
-Crawl-delay: 1
-
-# ============================================
-# GOOGLE SPECIFIC
-# ============================================
+# Google
 User-agent: Googlebot
 Allow: /
-Disallow: /admin/
 Disallow: /private/
 
-User-agent: Googlebot-Image
-Allow: /images/
-
-User-agent: Googlebot-Video
-Allow: /videos/
-
-# ============================================
-# BING SPECIFIC
-# ============================================
-User-agent: Bingbot
-Allow: /
-Disallow: /admin/
-Disallow: /private/
-Crawl-delay: 1
-
-User-agent: msnbot
-Allow: /
-Crawl-delay: 1
-
-# ============================================
-# AI CRAWLERS (ChatGPT, Perplexity, etc.)
-# ============================================
-User-agent: GPTBot
-Allow: /
-Allow: /llms.txt
-Disallow: /admin/
-Disallow: /private/
-
-User-agent: ChatGPT-User
-Allow: /
-Allow: /llms.txt
-
+# Google Extended (Gemini AI training)
 User-agent: Google-Extended
 Allow: /
-Allow: /llms.txt
 
-User-agent: PerplexityBot
+# OpenAI ChatGPT crawler
+User-agent: GPTBot
 Allow: /
-Allow: /llms.txt
+Allow: /towns/
+Allow: /blog/
 
+# OpenAI search crawler
+User-agent: OAI-SearchBot
+Allow: /
+
+# ChatGPT user crawler
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude crawler
 User-agent: ClaudeBot
 Allow: /
-Allow: /llms.txt
+Allow: /towns/
+Allow: /blog/
 
-User-agent: Anthropic-AI
-Allow: /
-Allow: /llms.txt
-
-User-agent: cohere-ai
+# Claude extended (AI training)
+User-agent: Claude-Web
 Allow: /
 
-# ============================================
-# SOCIAL MEDIA CRAWLERS
-# ============================================
-User-agent: facebookexternalhit
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+Allow: /towns/
+Allow: /blog/
+
+# Bing / Copilot
+User-agent: Bingbot
 Allow: /
 
-User-agent: Twitterbot
+# Meta AI
+User-agent: FacebookBot
 Allow: /
 
-User-agent: LinkedInBot
+# Apple AI
+User-agent: Applebot
 Allow: /
 
-User-agent: Pinterest
+# Common AI research crawlers
+User-agent: CCBot
 Allow: /
 
-# ============================================
-# SEO TOOLS (Allow for monitoring)
-# ============================================
-User-agent: AhrefsBot
+User-agent: omgili
 Allow: /
-Crawl-delay: 2
 
-User-agent: SemrushBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: MJ12bot
-Allow: /
-Crawl-delay: 2
-
-# ============================================
-# SITEMAPS
-# ============================================
-Sitemap: https://thejorgeramirezgroup.com/sitemap.xml
-Sitemap: https://thejorgeramirezgroup.com/sitemap-towns.xml
-Sitemap: https://thejorgeramirezgroup.com/sitemap-images.xml
-
-# ============================================
-# AI CONTENT FILE
-# ============================================
-# LLMs.txt location for AI search engines
-# https://thejorgeramirezgroup.com/llms.txt
+# Sitemap declaration
+Sitemap: https://www.thejorgeramirezgroup.com/sitemap.xml
+Sitemap: https://www.thejorgeramirezgroup.com/sitemap-towns.xml
