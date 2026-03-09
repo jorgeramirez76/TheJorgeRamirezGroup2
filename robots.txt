@@ -68,6 +68,10 @@ Allow: /
 User-agent: omgili
 Allow: /
 
+# AI Context File (llms.txt)
+# https://llmstxt.org — structured context for AI language models
+LLMs: https://thejorgeramirezgroup.com/llms.txt
+
 # Sitemap declaration
 Sitemap: https://www.thejorgeramirezgroup.com/sitemap.xml
 Sitemap: https://www.thejorgeramirezgroup.com/sitemap-towns.xml
