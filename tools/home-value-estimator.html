@@ -1,0 +1,119 @@
+Sure, below is a complete, self-contained HTML file for Jorge Ramirez's Home Value Estimator Landing Page. This file includes HTML, CSS, and JavaScript to create a clean, modern UI that matches a dark professional real estate brand. The page also includes a form to capture lead information such as name, email, and phone number.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Value Estimator | The Jorge Ramirez Group</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .form-container {
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+        }
+        .form-container input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+        .contact-info {
+            margin-top: 40px;
+            font-size: 1.1em;
+        }
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Home Value Estimator</h1>
+        <p>Discover the estimated value of your home with The Jorge Ramirez Group.</p>
+        <div class="form-container">
+            <form id="leadForm">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                <button type="submit">Get Estimate</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <p>For more information, contact us at <a href="tel:908-230-7844">908-230-7844</a> or visit <a href="https://thejorgeramirezgroup.com" target="_blank">thejorgeramirezgroup.com</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            // Here you can add code to send the data to a server or process it as needed
+            alert(`Thank you, ${name}! We'll be in touch.`);
+            // Reset form
+            document.getElementById('leadForm').reset();
+        });
+    </script>
+</body>
+</html>
+```
+
+This HTML file includes:
+- A clean and modern UI with a dark theme.
+- A form to capture the user's name, email, and phone number.
+- JavaScript to handle form submission and display a thank you message.
+- Contact information and links to Jorge Ramirez's real estate group.
+
+You can copy and paste this code into an `.html` file and open it in a web browser to see the result.
