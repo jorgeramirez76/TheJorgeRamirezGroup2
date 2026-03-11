@@ -245,13 +245,17 @@ Calculator Results:
       };
 
       try {
-        const res = await fetch('https://api.web3forms.com/submit', {
+        const res = await fetch('https://formsubmit.co/ajax/jorge.ramirez@kw.com', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body)
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: `Mortgage Calculator Lead — ${name}`,
+            name, email, phone,
+            message: body.message
+          })
         });
         const data = await res.json();
-        if (data.success) {
+        if (data.success === 'true' || data.success === true) {
           document.getElementById('success-msg').style.display = 'block';
           document.getElementById('error-msg').style.display = 'none';
         } else {

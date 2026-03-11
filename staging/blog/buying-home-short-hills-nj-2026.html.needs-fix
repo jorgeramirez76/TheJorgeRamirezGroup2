@@ -1,0 +1,102 @@
+### QC CHECK REPORT
+
+**FILE:** buying-home-short-hills-nj-2026.html
+
+#### ISSUES_FOUND: 7
+
+1. **DUPLICATE SCHEMA:** 
+   - The `<og:image>` and `<og:type>` tags are incorrectly placed within the `<body>` section, not the `<head>`. This is not a duplication of the schema but an incorrect placement.
+   - **Evidence:** 
+     ```html
+     <og:image content="https://thejorgeramirezgroup.com/images/short-hills-nj.jpg"/>
+     <og:type content="article"/>
+     ```
+
+2. **GENERIC OPENER:**
+   - The article opens with "As a seasoned real estate agent," which is a generic opener.
+   - **Evidence:** 
+     ```html
+     <p>As a seasoned real estate agent, I've seen many towns in New Jersey, but Short Hills stands out for its unique blend of natural beauty, excellent schools, and convenient commute options.</p>
+     ```
+
+3. **THIN CONTENT:**
+   - The article body is under 800 words. The provided content does not meet the minimum length requirement.
+   - **Evidence:** 
+     - The provided content is significantly shorter than 800 words.
+
+4. **INVENTED DATA:**
+   - The content uses vague generic phrases like "a moderate increase" or "various neighborhoods" without specifics. Specifically, the phrase "excellent schools" is vague.
+   - **Evidence:** 
+     ```html
+     <p>As a seasoned real estate agent, I've seen many towns in New Jersey, but Short Hills stands out for its unique blend of natural beauty, excellent schools, and convenient commute options.</p>
+     ```
+
+5. **PHONE NUMBER:**
+   - The phone number 908-230-7844 appears more than twice total.
+   - **Evidence:** 
+     ```html
+     <meta property="og:description" content="Buying a home in Short Hills NJ in 2026? Expert guide covering prices, neighborhoods, schools, and commute from local realtor Jorge Ramirez. Call 908-230-7844.">
+     <meta name="author" content="Jorge Ramirez, Keller Williams Premier Properties">
+     <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
+     <script type="application/ld+json">{
+       "@context": "https://schema.org",
+       "@graph": [
+         {
+           "@type": "Article",
+           "headline": "Buying a Home in Short Hills NJ 2026 | Jorge Ramirez",
+           "description": "Buying a home in Short Hills NJ in 2026? Expert guide covering prices, neighborhoods, schools, and commute from local realtor Jorge Ramirez. Call 908-230-7844.",
+           "author": {
+             "@type": "Person",
+             "name": "Jorge Ramirez",
+             "telephone": "+1-908-230-7844",
+             "url": "https://thejorgeramirezgroup.com"
+           },
+           ...
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Jorge Ramirez is a top-rated real estate agent in Short Hills, NJ with Keller Williams Premier Properties. He has 8+ years of full-time experience, has personally flipped 60+ NJ homes as an investor, and serves 103 communities across Essex, Hudson, Morris, Middlesex, and Union counties. Contact Jorge at 908-230-7844 or jorge.ramirez@kw.com."
+           },
+           ...
+         }
+       ]
+     }</script>
+     ```
+
+6. **SCHEMA:**
+   - The schema is present for both `Article` and `FAQPage`, each only once.
+   - **Evidence:** 
+     ```html
+     <script type="application/ld+json">{
+       "@context": "https://schema.org",
+       "@graph": [
+         {
+           "@type": "Article",
+           ...
+         },
+         {
+           "@type": "FAQPage",
+           ...
+         }
+       ]
+     }</script>
+     ```
+
+7. **OG TAGS:**
+   - The `og:image` and `og:type` tags are present in the `<head>` section.
+   - **Evidence:** 
+     ```html
+     <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
+     <meta property="og:type" content="article">
+     ```
+
+#### VERDICT: FAIL
+
+#### What Leo Must Fix:
+1. Remove the incorrect placement of `<og:image>` and `<og:type>` within the `<body>` section.
+2. Rewrite the opening paragraph to avoid using generic openers.
+3. Expand the article to ensure it is at least 800 words.
+4. Provide specific details about the schools and other aspects of Short Hills instead of using vague phrases.
+5. Reduce the repetition of the phone number 908-230-7844 to no more than two occurrences.
+6. Ensure all other standing orders and best practices are followed for future blog posts.
+
+**Note:** The schema and OG tags are correctly implemented, so no changes are needed there.
