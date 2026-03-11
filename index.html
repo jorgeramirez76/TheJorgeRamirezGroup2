@@ -490,7 +490,7 @@
                 <div class="resource-card">
                     <h3>💵 What Can I Actually Afford?</h3>
                     <p>Run the real numbers — monthly payment, taxes, and what that means for your budget in different NJ towns.</p>
-                    <a href="#contact" class="resource-link">Calculate Now →</a>
+                    <a href="tools/mortgage-calculator.html" class="resource-link">Calculate Now →</a>
                 </div>
                 <div class="resource-card">
                     <h3>📍 Which Town Is Right for Me?</h3>
@@ -618,22 +618,23 @@
             
             <div class="contact-grid">
                 <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <form id="contactForm" onsubmit="submitContactForm(event)">
+                        <input type="hidden" name="access_key" value="WEB3FORMS_KEY">
+                        <input type="hidden" name="subject" value="New Lead from thejorgeramirezgroup.com">
+                        <input type="hidden" name="from_name" value="Jorge Ramirez Group Website">
+                        <input type="checkbox" name="botcheck" style="display:none">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
-                        
                         <div class="form-group">
                             <label for="email">Email Address *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
-                        
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
                             <input type="tel" id="phone" name="phone" required>
                         </div>
-                        
                         <div class="form-group">
                             <label for="interest">I'm interested in...</label>
                             <select id="interest" name="interest">
@@ -644,13 +645,13 @@
                                 <option value="consultation">Free Consultation</option>
                             </select>
                         </div>
-                        
                         <div class="form-group">
                             <label for="message">Tell me about your needs</label>
                             <textarea id="message" name="message" placeholder="Share details about your ideal property, timeline, or any questions..."></textarea>
                         </div>
-                        
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit" class="submit-btn" id="contactSubmitBtn">Send Message</button>
+                        <div id="contactSuccess" style="display:none;margin-top:16px;padding:16px;background:#d4edda;border-radius:8px;color:#155724;font-weight:600;">✅ Message sent! Jorge will be in touch shortly.</div>
+                        <div id="contactError" style="display:none;margin-top:16px;padding:16px;background:#f8d7da;border-radius:8px;color:#721c24;">Something went wrong. Please call Jorge directly at <a href="tel:908-230-7844">908-230-7844</a>.</div>
                     </form>
                 </div>
                 
@@ -759,5 +760,38 @@
     
     <script src="js/communities-data.js"></script>
     <script src="js/main.js"></script>
+    <script>
+    async function submitContactForm(e) {
+      e.preventDefault();
+      const btn = document.getElementById('contactSubmitBtn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      const form = document.getElementById('contactForm');
+      const data = Object.fromEntries(new FormData(form));
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const json = await res.json();
+        if (json.success) {
+          document.getElementById('contactSuccess').style.display = 'block';
+          document.getElementById('contactError').style.display = 'none';
+          form.reset();
+        } else {
+          throw new Error('Failed');
+        }
+      } catch(err) {
+        document.getElementById('contactError').style.display = 'block';
+        document.getElementById('contactSuccess').style.display = 'none';
+      } finally {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+      }
+    }
+    </script>
 </body>
 </html>

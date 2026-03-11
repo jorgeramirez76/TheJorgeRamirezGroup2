@@ -1,148 +1,266 @@
-Certainly! Below is a complete, functional HTML file that includes the Mortgage Calculator Widget, styled to match a dark professional real estate brand. It also captures lead information through a form.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mortgage Calculator - The Jorge Ramirez Group</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #1e1e1e;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            max-width: 500px;
-        }
-        h1, h2 {
-            color: #ffffff;
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #e0e0e0;
-        }
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="number"] {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #424242;
-            border-radius: 4px;
-            background-color: #373737;
-            color: #e0e0e0;
-        }
-        input[type="submit"] {
-            width: 100%;
-            padding: 0.75rem;
-            background-color: #00796b;
-            border: none;
-            border-radius: 4px;
-            color: #ffffff;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #006d60;
-        }
-        .result {
-            margin-top: 2rem;
-            padding: 1rem;
-            background-color: #263238;
-            border-radius: 4px;
-            color: #e0e0e0;
-        }
-        .contact-info {
-            margin-top: 2rem;
-            text-align: center;
-        }
-        .contact-info a {
-            color: #00796b;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NJ Mortgage Calculator 2026 | How Much Can I Afford? | Jorge Ramirez</title>
+  <meta name="description" content="Use this free NJ mortgage calculator to find out how much home you can afford. Includes property taxes, PMI, and HOA. Call Jorge Ramirez at 908-230-7844.">
+  <link rel="canonical" href="https://thejorgeramirezgroup.com/tools/mortgage-calculator.html">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background: #f8f9fa; }
+    .calc-wrapper { max-width: 800px; margin: 60px auto; padding: 0 20px 60px; }
+    .calc-header { text-align: center; margin-bottom: 40px; }
+    .calc-header h1 { font-size: 2rem; color: #1a1a2e; margin-bottom: 10px; }
+    .calc-header p { color: #666; font-size: 1rem; }
+    .calc-card { background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 40px; }
+    .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+    @media(max-width:600px){ .input-grid { grid-template-columns: 1fr; } }
+    .input-group label { display: block; font-weight: 600; color: #333; margin-bottom: 6px; font-size: 0.9rem; }
+    .input-group input, .input-group select {
+      width: 100%; padding: 12px 16px; border: 2px solid #e0e0e0;
+      border-radius: 8px; font-size: 1rem; font-family: inherit;
+      transition: border-color 0.2s; box-sizing: border-box;
+    }
+    .input-group input:focus, .input-group select:focus { outline: none; border-color: #667eea; }
+    .calc-btn {
+      width: 100%; padding: 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white; border: none; border-radius: 8px; font-size: 1.1rem;
+      font-weight: 700; cursor: pointer; font-family: inherit; transition: opacity 0.2s;
+    }
+    .calc-btn:hover { opacity: 0.9; }
+    .results { display: none; margin-top: 30px; padding: 30px; background: #f0f4ff; border-radius: 10px; }
+    .results h2 { font-size: 1.3rem; color: #1a1a2e; margin-bottom: 20px; }
+    .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media(max-width:500px){ .results-grid { grid-template-columns: 1fr; } }
+    .result-item { background: white; padding: 16px; border-radius: 8px; text-align: center; }
+    .result-item .amount { font-size: 1.6rem; font-weight: 700; color: #667eea; }
+    .result-item .label { font-size: 0.8rem; color: #666; margin-top: 4px; }
+    .result-total { background: linear-gradient(135deg,#667eea,#764ba2); color: white; }
+    .result-total .amount, .result-total .label { color: white; }
+    .cta-box { margin-top: 30px; padding: 25px; background: #1a1a2e; border-radius: 10px; text-align: center; color: white; }
+    .cta-box h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .cta-box p { margin: 0 0 16px; font-size: 0.9rem; opacity: 0.85; }
+    .cta-box a { display: inline-block; padding: 12px 28px; background: #667eea; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+    .lead-section { margin-top: 30px; border-top: 2px solid #e0e0e0; padding-top: 25px; }
+    .lead-section h3 { font-size: 1rem; color: #333; margin-bottom: 16px; }
+    .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media(max-width:500px){ .lead-grid { grid-template-columns: 1fr; } }
+    .lead-grid input { width: 100%; padding: 10px 14px; border: 2px solid #e0e0e0; border-radius: 8px; font-family: inherit; font-size: 0.95rem; box-sizing: border-box; }
+    .send-btn { margin-top: 12px; width: 100%; padding: 13px; background: #28a745; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+    .send-btn:hover { background: #218838; }
+    .success-msg { display: none; padding: 16px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; color: #155724; text-align: center; margin-top: 12px; font-weight: 600; }
+    .error-msg { display: none; padding: 16px; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; color: #721c24; text-align: center; margin-top: 12px; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Mortgage Calculator</h1>
-        <form id="mortgageForm">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="loanAmount">Loan Amount:</label>
-                <input type="number" id="loanAmount" name="loanAmount" required>
-            </div>
-            <div class="form-group">
-                <label for="interestRate">Interest Rate (%):</label>
-                <input type="number" id="interestRate" name="interestRate" step="0.01" required>
-            </div>
-            <div class="form-group">
-                <label for="loanTerm">Loan Term (Years):</label>
-                <input type="number" id="loanTerm" name="loanTerm" required>
-            </div>
-            <input type="submit" value="Calculate">
-        </form>
-        <div class="result" id="result"></div>
-        <div class="contact-info">
-            <p>Contact us directly: <a href="tel:908-230-7844">908-230-7844</a></p>
-            <p>Visit our website: <a href="https://thejorgeramirezgroup.com" target="_blank">thejorgeramirezgroup.com</a></p>
-        </div>
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">The Jorge Ramirez Group</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/index.html#communities">Towns</a>
+        <a href="/blog/">Blog</a>
+        <a href="/index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="calc-wrapper">
+    <div class="calc-header">
+      <h1>How Much House Can You Afford in NJ?</h1>
+      <p>Most people have no idea how much the real number is — property taxes in NJ change everything. This calculator factors them in.</p>
     </div>
 
-    <script>
-        document.getElementById('mortgageForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+    <div class="calc-card">
+      <div class="input-grid">
+        <div class="input-group">
+          <label>Home Price ($)</label>
+          <input type="number" id="homePrice" value="500000" min="50000" step="10000">
+        </div>
+        <div class="input-group">
+          <label>Down Payment ($)</label>
+          <input type="number" id="downPayment" value="100000" min="0" step="5000">
+        </div>
+        <div class="input-group">
+          <label>Interest Rate (%)</label>
+          <input type="number" id="interestRate" value="7.0" min="1" max="20" step="0.05">
+        </div>
+        <div class="input-group">
+          <label>Loan Term</label>
+          <select id="loanTerm">
+            <option value="30" selected>30 Years</option>
+            <option value="20">20 Years</option>
+            <option value="15">15 Years</option>
+            <option value="10">10 Years</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>Annual Property Tax ($)</label>
+          <input type="number" id="propertyTax" value="12000" min="0" step="500">
+        </div>
+        <div class="input-group">
+          <label>HOA / Monthly ($)</label>
+          <input type="number" id="hoa" value="0" min="0" step="50">
+        </div>
+      </div>
 
-            const loanAmount = parseFloat(document.getElementById('loanAmount').value);
-            const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
-            const loanTerm = parseInt(document.getElementById('loanTerm').value) * 12;
+      <button class="calc-btn" onclick="calculate()">Calculate My Monthly Payment</button>
 
-            const monthlyPayment = (loanAmount * interestRate) / (1 - Math.pow(1 + interestRate, -loanTerm));
+      <div class="results" id="results">
+        <h2>Your Estimated Monthly Payment Breakdown</h2>
+        <div class="results-grid">
+          <div class="result-item">
+            <div class="amount" id="res-principal">$0</div>
+            <div class="label">Principal & Interest</div>
+          </div>
+          <div class="result-item">
+            <div class="amount" id="res-tax">$0</div>
+            <div class="label">Property Tax (monthly)</div>
+          </div>
+          <div class="result-item">
+            <div class="amount" id="res-pmi">$0</div>
+            <div class="label">PMI (if &lt;20% down)</div>
+          </div>
+          <div class="result-item">
+            <div class="amount" id="res-hoa">$0</div>
+            <div class="label">HOA</div>
+          </div>
+          <div class="result-item result-total" style="grid-column: span 2">
+            <div class="amount" id="res-total">$0</div>
+            <div class="label">Total Monthly Payment</div>
+          </div>
+        </div>
 
-            document.getElementById('result').innerHTML = `
-                <h2>Calculation Result</h2>
-                <p>Monthly Payment: $${monthlyPayment.toFixed(2)}</p>
-            `;
+        <div class="cta-box">
+          <h3>Out of curiosity — do these numbers work for your situation?</h3>
+          <p>I've helped hundreds of NJ buyers figure out what they could actually afford vs. what the banks said they could. Sometimes those numbers are very different. If you want a real conversation — no pressure — I'm happy to help you think through it.</p>
+          <a href="tel:908-230-7844">Call Jorge: 908-230-7844</a>
+        </div>
+
+        <div class="lead-section">
+          <h3>Want me to send you this breakdown + a list of homes in your price range?</h3>
+          <div class="lead-grid">
+            <input type="text" id="lead-name" placeholder="Your Name">
+            <input type="tel" id="lead-phone" placeholder="Phone Number">
+            <input type="email" id="lead-email" placeholder="Email Address" style="grid-column: span 2">
+          </div>
+          <button class="send-btn" onclick="sendLead()">Send Me the Breakdown</button>
+          <div class="success-msg" id="success-msg">✅ Got it! Jorge will be in touch shortly with your personalized breakdown.</div>
+          <div class="error-msg" id="error-msg">Something went wrong. Please call Jorge directly at 908-230-7844.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · <a href="tel:908-230-7844">908-230-7844</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function fmt(n) {
+      return '$' + Math.round(n).toLocaleString();
+    }
+
+    function calculate() {
+      const homePrice    = parseFloat(document.getElementById('homePrice').value) || 0;
+      const downPayment  = parseFloat(document.getElementById('downPayment').value) || 0;
+      const annualRate   = parseFloat(document.getElementById('interestRate').value) || 0;
+      const termYears    = parseInt(document.getElementById('loanTerm').value) || 30;
+      const annualTax    = parseFloat(document.getElementById('propertyTax').value) || 0;
+      const monthlyHOA   = parseFloat(document.getElementById('hoa').value) || 0;
+
+      const loanAmount   = homePrice - downPayment;
+      const monthlyRate  = (annualRate / 100) / 12;
+      const numPayments  = termYears * 12;
+
+      // Principal & Interest
+      let pi = 0;
+      if (monthlyRate === 0) {
+        pi = loanAmount / numPayments;
+      } else {
+        pi = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+      }
+
+      // Property tax monthly
+      const taxMonthly = annualTax / 12;
+
+      // PMI: ~0.5% annually if down < 20%
+      const downPct = homePrice > 0 ? (downPayment / homePrice) : 0;
+      const pmi = downPct < 0.20 ? (loanAmount * 0.005) / 12 : 0;
+
+      const total = pi + taxMonthly + pmi + monthlyHOA;
+
+      document.getElementById('res-principal').textContent = fmt(pi);
+      document.getElementById('res-tax').textContent       = fmt(taxMonthly);
+      document.getElementById('res-pmi').textContent       = fmt(pmi);
+      document.getElementById('res-hoa').textContent       = fmt(monthlyHOA);
+      document.getElementById('res-total').textContent     = fmt(total);
+
+      // Store for lead submission
+      window._calcResults = { homePrice, downPayment, loanAmount, annualRate, termYears, pi, taxMonthly, pmi, monthlyHOA, total };
+
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    async function sendLead() {
+      const name  = document.getElementById('lead-name').value.trim();
+      const email = document.getElementById('lead-email').value.trim();
+      const phone = document.getElementById('lead-phone').value.trim();
+
+      if (!name || !email) {
+        alert('Please enter your name and email.');
+        return;
+      }
+
+      const r = window._calcResults || {};
+      const body = {
+        access_key: 'WEB3FORMS_KEY',
+        subject: `New Mortgage Calculator Lead — ${name}`,
+        name,
+        email,
+        phone,
+        message: `
+Mortgage Calculator Lead
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Calculator Results:
+- Home Price: $${(r.homePrice||0).toLocaleString()}
+- Down Payment: $${(r.downPayment||0).toLocaleString()}
+- Loan Amount: $${(r.loanAmount||0).toLocaleString()}
+- Interest Rate: ${r.annualRate||0}%
+- Term: ${r.termYears||30} years
+- P&I: $${Math.round(r.pi||0).toLocaleString()}/mo
+- Property Tax: $${Math.round(r.taxMonthly||0).toLocaleString()}/mo
+- PMI: $${Math.round(r.pmi||0).toLocaleString()}/mo
+- Total Monthly: $${Math.round(r.total||0).toLocaleString()}/mo
+        `.trim()
+      };
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
         });
-    </script>
+        const data = await res.json();
+        if (data.success) {
+          document.getElementById('success-msg').style.display = 'block';
+          document.getElementById('error-msg').style.display = 'none';
+        } else {
+          document.getElementById('error-msg').style.display = 'block';
+        }
+      } catch(e) {
+        document.getElementById('error-msg').style.display = 'block';
+      }
+    }
+  </script>
 </body>
 </html>
-```
-
-### Explanation:
-- **HTML Structure**: The HTML is structured into a form for capturing lead information and mortgage details, and a result section to display the calculated monthly payment.
-- **CSS Styling**: The CSS provides a clean, modern, and dark-themed UI to match a professional real estate brand.
-- **JavaScript Functionality**: The JavaScript handles form submission, calculates the monthly mortgage payment using the formula for an annuity, and displays the result.
-
-This file is self-contained and can be directly used as an HTML file in any web browser.
