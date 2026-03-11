@@ -1,0 +1,46 @@
+### Structured Report
+
+**FILE:** buying-home-kenilworth-nj-2026.html
+
+**ISSUES_FOUND:** 5
+
+1. **DUPLICATE SCHEMA:** Not applicable; only one `<script type="application/ld+json">` is defined.
+2. **PLACEHOLDER TEXT:** Not applicable; no placeholder text found.
+3. **INVENTED DATA:** 
+   - "various neighborhoods" without specifics: Not applicable; specific neighborhoods are not mentioned, but the content is detailed enough.
+   - "a moderate increase" without specifics: Not applicable; specific information about the market is provided.
+4. **PHONE NUMBER:** 908-230-7844 appears more than 2 times total.
+   - Occurrences: 
+     - "Contact Jorge Ramirez at 908-230-7844 or jorge.ramirez@kw.com."
+     - "Call 908-230-7844 for a free, no-pressure consultation."
+     - "Call or text 908-230-7844 for a free, no-pressure consultation."
+5. **THIN CONTENT:** The article body is under 800 words.
+   - Word count: Approximately 350 words.
+6. **GENERIC OPENER:** The article opens with "As a seasoned real estate expert in Union County, I've seen numerous homebuyers flock to Kenilworth, NJ..."
+   - Opening sentence: "As a seasoned real estate expert in Union County, I've seen numerous homebuyers flock to Kenilworth, NJ, for its unbeatable blend of affordability, charm, and convenience."
+7. **CANONICAL URL:** Matches the filename correctly.
+   - Canonical URL: `https://thejorgeramirezgroup.com/blog/buying-home-kenilworth-nj-2026.html`
+8. **META DESCRIPTION:** Present, under 155 chars, and ends with punctuation.
+   - Meta Description: `"Buying a home in Kenilworth NJ in 2026? Expert guide covering prices, neighborhoods, schools, and commute from local realtor Jorge Ramirez. Call 908-230-7844."`
+9. **OG TAGS:** Present.
+   - `og:image`: `https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg`
+   - `og:type`: `article`
+10. **SCHEMA:** Both `Article` and `FAQPage` schemas are present.
+    - `Article` schema: Present.
+    - `FAQPage` schema: Present.
+
+**VERDICT:** FAIL
+
+**What Leo must fix:**
+1. **Reduce the repetition of the phone number (908-230-7844) to no more than 2 occurrences.**
+2. **Increase the article body to at least 800 words to ensure it is not thin content.**
+3. **Consider changing the generic opener to make the content more engaging and less formulaic.**
+
+Example of revised content for phone number repetition:
+- Remove one of the occurrences of the phone number in the FAQ section or the introductory paragraph.
+
+Example of revised content for article length:
+- Add more detailed information about the neighborhoods, market trends, and other relevant data to reach the required word count.
+
+Example of revised content for generic opener:
+- "Exploring the vibrant community of Kenilworth, NJ, and what it offers for homebuyers in 2026..."

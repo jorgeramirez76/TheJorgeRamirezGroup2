@@ -1,0 +1,32 @@
+### Structured Report
+
+**ISSUES_FOUND: 7**
+
+1. **DUPLICATE SCHEMA**: No duplicate `<script type="application/ld+json">` for the same `@type` found.
+2. **PLACEHOLDER TEXT**: No placeholder text found.
+3. **INVENTED DATA**: 
+   - "various neighborhoods" is vague. The content should specify which neighborhoods are being referred to.
+4. **PHONE NUMBER**: The phone number "908-230-7844" appears 3 times total. It should be used no more than 2 times.
+5. **THIN CONTENT**: The article body is under 800 words. It is essential to provide more detailed information to meet the content requirement.
+6. **GENERIC OPENER**: The article opens with "Hi I'm Jorge". This is a generic opener and should be avoided.
+7. **CANONICAL URL**: The canonical URL `https://thejorgeramirezgroup.com/blog/buying-home-mountainside-nj-2026.html` exactly matches the filename `buying-home-mountainside-nj-2026.html`.
+8. **META DESCRIPTION**: 
+   - Present: `Buying a home in Mountainside NJ in 2026? Expert guide covering prices, neighborhoods, schools, and commute from local realtor Jorge Ramirez. Call 908-230-7844.`
+   - Length: 153 characters (under 155 chars)
+   - Ends with punctuation: Yes
+9. **OG TAGS**: 
+   - `og:image` is present: `https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg`
+   - `og:type` is present: `article`
+10. **SCHEMA**: 
+    - `Article` schema is present.
+    - `FAQPage` schema is present.
+
+**VERDICT: FAIL**
+
+**What Leo must fix:**
+1. Consolidate the use of the phone number "908-230-7844" to no more than 2 times.
+2. Replace the vague phrase "various neighborhoods" with specific neighborhood names.
+3. Add more detailed content to reach at least 800 words.
+4. Remove the generic opener "Hi I'm Jorge" and provide a more engaging start to the article.
+
+By addressing these issues, the blog post will meet the quality standards and be ready for publication.

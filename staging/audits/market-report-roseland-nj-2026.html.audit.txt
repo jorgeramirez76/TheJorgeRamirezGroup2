@@ -1,0 +1,31 @@
+### Structured Report
+
+**ISSUES_FOUND: 8**
+
+1. **DUPLICATE SCHEMA**: Not applicable, there is only one `<script type="application/ld+json">` for the same `@type`.
+2. **PLACEHOLDER TEXT**: Not applicable, no placeholder text found.
+3. **INVENTED DATA**: Not applicable, the content provides specific data points like median home price, days on market, and inventory level.
+4. **PHONE NUMBER**: The phone number "908-230-7844" appears 3 times. The exact text that proves it:
+   - `telephone": "+1-908-230-7844"`
+   - `Call or text 908-230-7844 for a free, no-pressure consultation.`
+   - `Contact Jorge at 908-230-7844 or jorge.ramirez@kw.com.`
+5. **THIN CONTENT**: The article body is under 800 words. The exact text that proves it:
+   - The content provided is a brief summary of the market report without additional details.
+6. **GENERIC OPENER**: Not applicable, the article does not open with a generic opener.
+7. **CANONICAL URL**: The canonical URL matches the filename `market-report-roseland-nj-2026.html`. The exact text that proves it:
+   - `<link rel="canonical" href="https://thejorgeramirezgroup.com/blog/market-report-roseland-nj-2026.html">`
+8. **META DESCRIPTION**: Present, under 155 characters, and ends with punctuation. The exact text that proves it:
+   - `<meta name="description" content="Roseland NJ real estate market report for 2026. Median prices, inventory, days on market, and buyer vs seller conditions from local expert Jorge Ramirez.">`
+9. **OG TAGS**: Both `og:image` and `og:type` are present. The exact text that proves it:
+   - `<meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">`
+   - `<meta property="og:type" content="article">`
+10. **SCHEMA**: Both `Article` and `FAQPage` schema are present. The exact text that proves it:
+    - `"@type": "Article"`
+    - `"@type": "FAQPage"`
+
+**VERDICT: FAIL**
+
+**Leo must fix:**
+
+1. **PHONE NUMBER**: Reduce the repetition of the phone number "908-230-7844" to a maximum of 2 times.
+2. **THIN CONTENT**: Expand the article body to at least 800 words by adding more detailed information about the Roseland NJ real estate market, trends, analysis, and other relevant data points.

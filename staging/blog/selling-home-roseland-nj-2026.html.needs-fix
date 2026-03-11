@@ -1,0 +1,27 @@
+### Structured Report
+
+**FILE:** selling-home-roseland-nj-2026.html
+
+**ISSUES_FOUND:** 8
+
+1. **DUPLICATE SCHEMA:** Not applicable. The <script type="application/ld+json"> is defined only once.
+2. **PLACEHOLDER TEXT:** Not applicable. No placeholder text found.
+3. **INVENTED DATA:** Not applicable. The content provides specific data without vague phrases.
+4. **PHONE NUMBER:** The phone number 908-230-7844 appears three times. 
+   - First occurrence: "Call 908-230-7844."
+   - Second occurrence: "telephone": "+1-908-230-7844"
+   - Third occurrence: "Call or text 908-230-7844"
+5. **THIN CONTENT:** The article body is under 800 words. It contains approximately 270 words.
+6. **GENERIC OPENER:** Not applicable. The article does not open with generic phrases.
+7. **CANONICAL URL:** The canonical URL "https://thejorgeramirezgroup.com/blog/selling-home-roseland-nj-2026.html" exactly matches the filename "selling-home-roseland-nj-2026.html".
+8. **META DESCRIPTION:** The meta description is present, under 155 chars, and ends with punctuation.
+9. **OG TAGS:** Both og:image and og:type are present.
+10. **SCHEMA:** Both Article and FAQPage schemas are present.
+
+**VERDICT:** FAIL
+
+**Leo must fix:**
+1. Reduce the repetition of the phone number 908-230-7844 to a maximum of two occurrences.
+2. Increase the article body to at least 800 words to ensure it is not considered thin content. 
+
+These corrections are necessary to meet the quality standards and ensure the content is SEO-friendly and informative.

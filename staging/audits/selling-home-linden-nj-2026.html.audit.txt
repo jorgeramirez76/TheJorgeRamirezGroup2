@@ -1,0 +1,27 @@
+### QC CHECK REPORT
+
+**FILE:** selling-home-linden-nj-2026.html
+
+#### ISSUES_FOUND: 9
+
+1. **DUPLICATE SCHEMA:** The `og:image` and `og:type` attributes are incorrectly placed inside an `<img>` tag: `<img src="jorge-ramirez-headshot.jpg" alt="Jorge Ramirez" og:image og:type="image">`. These attributes should be in the `<head>` section, not in the `<img>` tag.
+2. **INVENTED DATA:** The content uses a vague phrase: "Here are some key statistics:" without specific data provided for the statistics listed. The statistics themselves are specific but the phrasing suggests a lack of detail.
+3. **PHONE NUMBER:** The phone number 908-230-7844 appears more than 2 times total.
+4. **THIN CONTENT:** The article body is under 800 words. The current content provided is only a partial article.
+5. **GENERIC OPENER:** The article opens with "As a homeowner in Linden, it's essential to understand the current market conditions." This is not a generic opener, but the article could use a more engaging opening line to hook the reader.
+6. **CANONICAL URL:** The canonical URL `https://thejorgeramirezgroup.com/blog/selling-home-linden-nj-2026.html` exactly matches the filename `selling-home-linden-nj-2026.html`. This is correct.
+7. **META DESCRIPTION:** The meta description is present, under 155 chars, and ends with punctuation: "Selling your home in Linden NJ in 2026? Get expert pricing strategy, prep tips, and market insights from Jorge Ramirez at Keller Williams. Call 908-230-7844." This is correct.
+8. **OG TAGS:** The `og:image` and `og:type` tags are present and correctly formatted. This is correct.
+9. **SCHEMA:** Both `Article` and `FAQPage` schema are present and correctly formatted. This is correct.
+
+#### VERDICT: FAIL
+
+**Leo must fix:**
+
+1. Remove `og:image` and `og:type` attributes from the `<img>` tag and ensure they are correctly placed in the `<head>` section.
+2. Provide more specific and detailed content to avoid using vague phrases like "Here are some key statistics:" and ensure the article body is at least 800 words.
+3. Reduce the repetition of the phone number 908-230-7844. It should appear no more than 2 times.
+4. Consider rewriting the opening paragraph to use a more engaging hook.
+5. Complete the article to ensure it meets the minimum word count requirement of 800 words.
+
+By addressing these issues, the blog post will meet the quality and SEO standards required.

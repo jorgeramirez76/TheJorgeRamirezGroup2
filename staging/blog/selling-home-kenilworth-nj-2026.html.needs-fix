@@ -1,0 +1,52 @@
+### Structured Report
+
+**ISSUES_FOUND: 6**
+
+1. **DUPLICATE SCHEMA:**
+   - Not applicable. There is only one `<script type="application/ld+json">` block.
+
+2. **PLACEHOLDER TEXT:**
+   - Not applicable. No placeholder text found.
+
+3. **INVENTED DATA:**
+   - "various neighborhoods" - Not applicable. The content does not use vague generic phrases like "a moderate increase" or "various neighborhoods" without specifics.
+   - "as of 2026, the median home price in Kenilworth is $445,000, with an average of 22-30 days on the market." - Specifics are provided, so no flag.
+
+4. **PHONE NUMBER:**
+   - Phone number 908-230-7844 appears 4 times total. This exceeds the 2-time limit.
+     - First occurrence: `Call 908-230-7844.`
+     - Second occurrence: `Contact Jorge at 908-230-7844 or jorge.ramirez@kw.com.`
+     - Third occurrence: `Call 908-230-7844 for a free, no-pressure consultation.`
+     - Fourth occurrence: `Call 908-230-7844.`
+
+5. **THIN CONTENT:**
+   - The article body is under 800 words. The provided content is only about 400 words long, which is thin content.
+     - Example text: "As of 2026, the median home price in Kenilworth is $445,000, with an average of 22-30 days on the market. The market is characterized by a low inventory level and a seller's market type, with a year-over-year price"
+
+6. **GENERIC OPENER:**
+   - The article opens with "As a seasoned real estate agent, I'll provide you with the insights and expertise you need to navigate the Kenilworth seller's market." This is a generic opener.
+     - Example text: "As a seasoned real estate agent, I'll provide you with the insights and expertise you need to navigate the Kenilworth seller's market."
+
+7. **CANONICAL URL:**
+   - The canonical URL matches the filename `selling-home-kenilworth-nj-2026.html`.
+     - `<link rel="canonical" href="https://thejorgeramirezgroup.com/blog/selling-home-kenilworth-nj-2026.html">`
+
+8. **META DESCRIPTION:**
+   - Present, under 155 characters, and ends with punctuation.
+     - `<meta name="description" content="Selling your home in Kenilworth NJ in 2026? Get expert pricing strategy, prep tips, and market insights from Jorge Ramirez at Keller Williams. Call 908-230-7844.">`
+
+9. **OG TAGS:**
+   - `og:image` and `og:type` are present.
+     - `<meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">`
+     - `<meta property="og:type" content="article">`
+
+10. **SCHEMA:**
+    - `Article` and `FAQPage` schema are present.
+      - `<script type="application/ld+json">` includes both `Article` and `FAQPage`.
+
+**VERDICT: FAIL**
+
+**Leo must fix:**
+1. Reduce the repetition of the phone number 908-230-7844 to no more than 2 times.
+2. Expand the article body to at least 800 words.
+3. Replace the generic opener with a more engaging and personalized introduction.

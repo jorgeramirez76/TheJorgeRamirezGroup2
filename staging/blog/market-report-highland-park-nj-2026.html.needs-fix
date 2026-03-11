@@ -1,0 +1,35 @@
+### QC REPORT FOR market-report-highland-park-nj-2026.html
+
+#### ISSUES_FOUND: 4
+
+1. **DUPLICATE SCHEMA**: 
+   - The `<div itemscope itemtype="https://schema.org/FAQPage">` is defined in the body of the document but does not contain any data, which seems unnecessary and could be considered a duplicate of the existing `FAQPage` schema in the `<script type="application/ld+json">`.
+   - **Exact Text**: `<div itemscope itemtype="https://schema.org/FAQPage"></div>`
+
+2. **INVENTED DATA**: 
+   - The content uses vague generic phrases like "a balanced market" and "moderate, indicating a relatively stable supply and demand" without specifics.
+   - **Exact Text**: 
+     - "As we dive into the Highland Park real estate market for March 2026, key statistics paint a picture of a balanced market."
+     - "Inventory levels are moderate, indicating a relatively stable supply and demand."
+
+3. **PHONE NUMBER**: 
+   - The phone number 908-230-7844 appears more than 2 times total (3 times).
+   - **Exact Text**: 
+     - "Jorge Ramirez is a licensed NJ real estate agent (License #1754604) who specializes in Highland Park and 102 other NJ communities. Call or text 908-230-7844 for a free, no-pressure consultation."
+     - "Contact Jorge at 908-230-7844 or jorge.ramirez@kw.com."
+     - "Call 908-230-7844."
+
+4. **THIN CONTENT**: 
+   - The article body is under 800 words.
+   - **Exact Text**: The article body contains approximately 150 words, well below the 800-word threshold.
+
+#### VERDICT: FAIL
+
+#### What Leo must fix:
+
+1. **Remove the unnecessary `<div itemscope itemtype="https://schema.org/FAQPage">` in the body of the document**.
+2. **Replace vague generic phrases with specific data**. For example, instead of saying "a balanced market," provide specific statistics or trends.
+3. **Limit the repetition of the phone number**. Ensure the phone number appears no more than 2 times.
+4. **Expand the article body to meet the minimum word count requirement of 800 words**. Add more detailed information about the real estate market in Highland Park, NJ for 2026.
+
+By addressing these issues, the blog post will meet the quality and SEO standards required.

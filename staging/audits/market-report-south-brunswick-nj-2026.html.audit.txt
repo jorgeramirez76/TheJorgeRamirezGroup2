@@ -1,0 +1,56 @@
+### Structured Report
+
+**ISSUES_FOUND: 5**
+
+1. **DUPLICATE SCHEMA**: Not found. The `<script type="application/ld+json">` is defined only once for the same `@type`.
+
+2. **PLACEHOLDER TEXT**: Not found. No [brackets], "Lorem ipsum", "[specific...]", or obviously unfilled template text.
+
+3. **INVENTED DATA**: Found. The phrase "Below is a s" suggests that content was cut off or is incomplete, indicating vague generic phrasing. 
+   - **Exact Text**: `Below is a s`
+
+4. **PHONE NUMBER**: Found. The phone number 908-230-7844 appears more than 2 times.
+   - **Exact Text**: `908-230-7844` (appears 4 times)
+
+5. **THIN CONTENT**: Found. The article body is under 800 words.
+   - **Exact Text**: The article is cut off and incomplete, with only a brief snippet provided.
+
+6. **GENERIC OPENER**: Not found. The article does not open with "I am excited to share", "As a seasoned", or "Hi I'm Jorge".
+
+7. **CANONICAL URL**: Matches the filename. The canonical URL is `https://thejorgeramirezgroup.com/blog/market-report-south-brunswick-nj-2026.html`, which matches the filename `market-report-south-brunswick-nj-2026.html`.
+
+8. **META DESCRIPTION**: Present, under 155 chars, and ends with punctuation.
+   - **Exact Text**: `South Brunswick NJ real estate market report for 2026. Median prices, inventory, days on market, and buyer vs seller conditions from local expert Jorge Ramirez.`
+
+9. **OG TAGS**: Present. Both `og:image` and `og:type` are present.
+   - **Exact Text**: 
+     ```html
+     <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
+     <meta property="og:type" content="article">
+     ```
+
+10. **SCHEMA**: Present. Both `Article` and `FAQPage` schema are present.
+    - **Exact Text**: 
+      ```html
+      <script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            ...
+          },
+          {
+            "@type": "FAQPage",
+            ...
+          }
+        ]
+      }</script>
+      ```
+
+**VERDICT: FAIL**
+
+**Leo must fix:**
+1. Complete the article body to ensure it is over 800 words.
+2. Remove duplicate or unnecessary phone number mentions (908-230-7844 should appear no more than 2 times).
+3. Ensure the article body does not end abruptly with "Below is a s" and complete the content.
+4. If the article body cannot be expanded to over 800 words, ensure the content is as detailed and informative as possible within the given length.

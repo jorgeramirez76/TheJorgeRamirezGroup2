@@ -1,0 +1,47 @@
+### Structured Report
+
+**FILE:** selling-home-old-bridge-nj-2026.html
+
+**ISSUES_FOUND: 7**
+
+1. **DUPLICATE SCHEMA:** The `<og:image>` and `<og:type>` tags are incorrectly placed inside the `<article>` tag, which is not valid HTML. They should be within the `<head>` section.
+   - **Exact Text:** `<og:image content="https://thejorgeramirezgroup.com/headshot.jpg"/>`
+   - **Exact Text:** `<og:type content="article"/>`
+
+2. **INVENTED DATA:** The content uses vague generic phrases like "a moderate inventory level, with a seller's market currently in place" without specifics.
+   - **Exact Text:** "This represents a moderate inventory level, with a seller's market currently in place."
+
+3. **PHONE NUMBER:** The phone number 908-230-7844 appears more than 2 times total.
+   - **Occurrences:** 
+     - First: "Call 908-230-7844."
+     - Second: "telephone": "+1-908-230-7844"
+     - Third: "Contact Jorge at 908-230-7844"
+
+4. **THIN CONTENT:** The article body is under 800 words.
+   - **Exact Text:** The content provided is incomplete and does not meet the 800-word threshold.
+
+5. **GENERIC OPENER:** The article opens with a vague, generic opener.
+   - **Exact Text:** The article starts with "As a homeowner in Old Bridge, you're likely aware of the current market conditions."
+
+6. **META DESCRIPTION:** The meta description is present, under 155 characters, and ends with punctuation.
+   - **Exact Text:** `<meta name="description" content="Selling your home in Old Bridge NJ in 2026? Get expert pricing strategy, prep tips, and market insights from Jorge Ramirez at Keller Williams. Call 908-230-7844.">`
+   - **Verdict:** PASS
+
+7. **OG TAGS:** The `og:image` and `og:type` tags are present in the `<head>` section.
+   - **Exact Text:** `<meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">`
+   - **Exact Text:** `<meta property="og:type" content="article">`
+   - **Verdict:** PASS
+
+8. **SCHEMA:** Both `Article` and `FAQPage` schema are present in the `<head>` section.
+   - **Exact Text:** `<script type="application/ld+json">` contains both `Article` and `FAQPage` types.
+   - **Verdict:** PASS
+
+### VERDICT: FAIL
+
+**Leo must fix:**
+
+1. Remove the incorrect `<og:image>` and `<og:type>` tags from the `<article>` tag and ensure they are only in the `<head>` section.
+2. Provide specific data instead of vague phrases such as "a moderate inventory level, with a seller's market currently in place."
+3. Reduce or consolidate the usage of the phone number 908-230-7844 to no more than two times.
+4. Expand the article body to meet the minimum 800-word requirement.
+5. Start the article with a more engaging, specific opening instead of a generic one.

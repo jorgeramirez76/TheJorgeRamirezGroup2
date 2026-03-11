@@ -1,0 +1,40 @@
+### Structured Report for `market-report-old-bridge-nj-2026.html`
+
+**ISSUES_FOUND: 6**
+
+1. **INVENTED DATA:**
+   - Issue: The content uses vague generic phrases like "median home price," "average days on market," and "inventory level" without providing specific details for "year-over-".
+   - Proof: `<li>Median Home Price: $430,000</li><li>Average Days on Market: 25-32 days</li><li>Inventory Level: moderate</li><li>Market Type: seller's market</li><li>Year-over-`
+
+2. **PHONE NUMBER:**
+   - Issue: The phone number 908-230-7844 appears more than 2 times.
+   - Proof: 
+     - `telephone": "+1-908-230-7844"`
+     - `Call or text 908-230-7844 for a free, no-pressure consultation.`
+     - `Contact Jorge at 908-230-7844 or jorge.ramirez@kw.com.`
+     - `call Jorge Ramirez at 908-230-7844.`
+
+3. **THIN CONTENT:**
+   - Issue: The article body is under 800 words.
+   - Proof: The provided content is very brief, ending abruptly with "Year-over-".
+
+4. **GENERIC OPENER:**
+   - Issue: The article opens with a generic introduction.
+   - Proof: `<p>Welcome to the Old Bridge, New Jersey real estate market report for March 2026. As a local expert and Realtor, I, Jorge Ramirez, will provide you with an in-depth analysis of the current market trends and conditions.</p>`
+
+5. **INCOMPLETE CONTENT:**
+   - Issue: The content is cut off abruptly at "Year-over-".
+   - Proof: `<li>Year-over-`
+
+6. **DUPLICATE SCHEMA:**
+   - Issue: There are no duplicate schemas for the same @type.
+   - Proof: The schema includes one `Article` and one `FAQPage`, each defined once.
+
+**VERDICT: FAIL**
+
+**Leo must fix:**
+1. Provide more specific and detailed market data for the year-over period and ensure all statistics are fully elaborated.
+2. Reduce the repetition of the phone number 908-230-7844 to no more than two occurrences.
+3. Expand the article body to meet or exceed 800 words with detailed content.
+4. Avoid using generic openers and start with a more engaging introduction.
+5. Complete the content to ensure it is not cut off.

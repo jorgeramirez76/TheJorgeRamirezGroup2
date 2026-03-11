@@ -1,0 +1,46 @@
+### Structured Report
+
+**ISSUES_FOUND: 6**
+
+1. **INVENTED DATA**: The content uses vague generic phrases like "various neighborhoods" without specifics.
+   - **Exact Text**: "Home prices in Mountain Lakes, NJ vary by property type, condition, and location within town."
+
+2. **PHONE NUMBER**: The phone number 908-230-7844 appears more than 2 times total.
+   - **Exact Text**: 
+     - "Call or text 908-230-7844 for a free, no-pressure consultation."
+     - "Contact Jorge at 908-230-7844 or jorge.ramirez@kw.com."
+     - "Call 908-230-7844."
+
+3. **THIN CONTENT**: The article body is under 800 words.
+   - **Exact Text**: The provided content is incomplete and does not reach 800 words.
+
+4. **GENERIC OPENER**: The article opens with a generic phrase "As a top real estate agent in Morris County, I've seen firsthand..."
+   - **Exact Text**: "As a top real estate agent in Morris County, I've seen firsthand the allure of Mountain Lakes, NJ."
+
+5. **CANONICAL URL**: The canonical URL exactly matches the filename `buying-home-mountain-lakes-nj-2026.html`.
+   - **Exact Text**: `<link rel="canonical" href="https://thejorgeramirezgroup.com/blog/buying-home-mountain-lakes-nj-2026.html">`
+   - **Note**: This is correct, so no issue here.
+
+6. **META DESCRIPTION**: The meta description is present, under 155 characters, and ends with punctuation.
+   - **Exact Text**: `<meta name="description" content="Buying a home in Mountain Lakes NJ in 2026? Expert guide covering prices, neighborhoods, schools, and commute from local realtor Jorge Ramirez. Call 908-230-7844.">`
+   - **Note**: This is correct, so no issue here.
+
+7. **OG TAGS**: Both `og:image` and `og:type` are present.
+   - **Exact Text**: 
+     - `<meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">`
+     - `<meta property="og:type" content="article">`
+   - **Note**: These are correct, so no issue here.
+
+8. **SCHEMA**: Both `Article` and `FAQPage` schema are present.
+   - **Exact Text**: 
+     - `<script type="application/ld+json">` contains `"@type": "Article"`
+     - `<script type="application/ld+json">` contains `"@type": "FAQPage"`
+   - **Note**: These are correct, so no issue here.
+
+### VERDICT: FAIL
+
+**Leo must fix the following:**
+1. Replace vague generic phrases like "various neighborhoods" with specific details about Mountain Lakes, NJ neighborhoods.
+2. Reduce the repetition of the phone number 908-230-7844 to no more than 2 occurrences.
+3. Complete the article body to ensure it is at least 800 words.
+4. Consider revising the opening generic phrase to make it more specific and engaging.

@@ -1,0 +1,42 @@
+### Structured Report
+
+**ISSUES_FOUND: 4**
+
+1. **DUPLICATE SCHEMA:** No duplicate `<script type="application/ld+json">` defined for the same `@type`. The schema is well-defined with one `Article` and one `FAQPage`.
+
+2. **PLACEHOLDER TEXT:** No placeholder text found such as [brackets], "Lorem ipsum", "[specific...]", or obviously unfilled template text.
+
+3. **INVENTED DATA:** The content uses a vague generic phrase "various neighborhoods" without specifics:
+   - "various neighborhoods" is not explicitly mentioned, but "median home price of $390,000" lacks context and specifics about the year or data source. This could be flagged as invented data since it doesn't specify the exact year or source of the information.
+
+4. **PHONE NUMBER:** The phone number 908-230-7844 appears more than 2 times total:
+   - "telephone": "+1-908-230-7844"
+   - "Call 908-230-7844"
+   - "Contact Jorge at 908-230-7844"
+
+5. **THIN CONTENT:** The article body is under 800 words:
+   - The provided HTML content is not complete, and the body text is cut off. Assuming the full article is not provided, the current content is indeed thin.
+
+6. **GENERIC OPENER:** The article opens with "As a seasoned real estate agent in Union County":
+   - "As a seasoned real estate agent in Union County, I've seen many buyers and sellers navigate the market in Rahway, NJ."
+
+7. **CANONICAL URL:** The canonical URL exactly matches the filename `buying-home-rahway-nj-2026.html`:
+   - `<link rel="canonical" href="https://thejorgeramirezgroup.com/blog/buying-home-rahway-nj-2026.html">`
+
+8. **META DESCRIPTION:** The meta description is present, under 155 characters, and ends with punctuation:
+   - `<meta name="description" content="Buying a home in Rahway NJ in 2026? Expert guide covering prices, neighborhoods, schools, and commute from local realtor Jorge Ramirez. Call 908-230-7844.">`
+
+9. **OG TAGS:** Both `og:image` and `og:type` are present:
+   - `<meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">`
+   - `<meta property="og:type" content="article">`
+
+10. **SCHEMA:** Both `Article` and `FAQPage` schema are present:
+    - `<script type="application/ld+json">` contains `@type": "Article"` and `@type": "FAQPage"`.
+
+**VERDICT: FAIL**
+
+**Leo must fix:**
+1. Reduce the repetition of the phone number 908-230-7844 to no more than 2 times.
+2. Ensure the article body is at least 800 words by adding more detailed content, including specific data and context.
+3. Provide specific data sources and years for any numerical claims, such as the median home price.
+4. Consider rephrasing the generic opener if possible to make it more engaging and personal.

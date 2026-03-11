@@ -1,0 +1,18 @@
+### ISSUES_FOUND: 3
+
+1. **THIN CONTENT**: The article body is under 800 words. The provided content is approximately 200-300 words.
+   - **Exact Text**: The article only contains two paragraphs and does not provide sufficient detail or information to meet the minimum word count requirement.
+
+2. **GENERIC OPENER**: The article opens with "As a seasoned real estate expert in Metuchen, I've seen the market fluctuate over the years."
+   - **Exact Text**: "As a seasoned real estate expert in Metuchen, I've seen the market fluctuate over the years."
+
+3. **INVENTED DATA**: The content uses vague generic phrases like "various neighborhoods" without specifics.
+   - **Exact Text**: "Currently, the median home price in Metuchen is $565,000, with an average of 18-24 days on the market. This presents a seller's market, with a year-over-year price change of +7%." 
+   - **Note**: While specific data is provided, the statement about the market being a "seller's market" could be considered vague without more context or data.
+
+### VERDICT: FAIL
+
+### What Leo must fix:
+1. **Expand the article body**: The content needs to be expanded to include more information, details, and data points to reach at least 800 words.
+2. **Revise the opener**: Avoid using generic openers and start with more engaging or specific content.
+3. **Provide more specific data**: Use more detailed and specific data points to avoid vague statements, especially regarding the real estate market conditions in Metuchen, NJ.

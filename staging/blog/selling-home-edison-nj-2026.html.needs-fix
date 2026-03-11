@@ -1,0 +1,39 @@
+### Structured Report
+
+**FILE:** selling-home-edison-nj-2026.html
+
+**ISSUES_FOUND:** 7
+
+1. **DUPLICATE SCHEMA:** Not found. The `<script type="application/ld+json">` is defined only once for the same `@type`.
+2. **PLACEHOLDER TEXT:** Not found. No placeholder text like [brackets], "Lorem ipsum", or obviously unfilled template text.
+3. **INVENTED DATA:** Found.
+   - "The current median home price in Edison is $490,000, with an average of 22-30 days on the market. This represents a moderate inventory level, with a market type that favors sellers. Over the past year, prices have increased by 6%, making it an attractive time to sell."
+     - **Flag:** "moderate inventory level" and "a market type that favors sellers" are vague.
+4. **PHONE NUMBER:** Found.
+   - "908-230-7844" appears 4 times.
+     - **Flag:** Appears more than 2 times.
+5. **THIN CONTENT:** Found.
+   - The article body is under 800 words.
+     - **Flag:** The article body ends abruptly, suggesting incomplete content.
+6. **GENERIC OPENER:** Not found. The article does not open with "I am excited to share" or "As a seasoned" or "Hi I'm Jorge".
+7. **CANONICAL URL:** Found.
+   - `<link rel="canonical" href="https://thejorgeramirezgroup.com/blog/selling-home-edison-nj-2026.html">`
+     - **Flag:** Matches the filename selling-home-edison-nj-2026.html.
+8. **META DESCRIPTION:** Found.
+   - `<meta name="description" content="Selling your home in Edison NJ in 2026? Get expert pricing strategy, prep tips, and market insights from Jorge Ramirez at Keller Williams. Call 908-230-7844.">`
+     - **Flag:** Present, under 155 chars, ends with punctuation.
+9. **OG TAGS:** Found.
+   - `<meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">`
+   - `<meta property="og:type" content="article">`
+     - **Flag:** Both are present.
+10. **SCHEMA:** Found.
+    - `<script type="application/ld+json">` contains `@type": "Article"` and `@type": "FAQPage"`.
+      - **Flag:** Both are present.
+
+**VERDICT:** FAIL
+
+**What Leo must fix:**
+1. **Invented Data:** Replace vague phrases with specific data. For example, instead of "moderate inventory level," specify the exact number of homes available. Instead of "a market type that favors sellers," explain why the market is favorable.
+2. **Phone Number:** Reduce the repetition of the phone number "908-230-7844" to a maximum of 2 times.
+3. **Thin Content:** Complete the article to ensure it is at least 800 words, providing comprehensive and detailed information about selling a home in Edison, NJ.
+4. **Article Continuation:** Ensure the article body is complete and does not end abruptly. Add the missing content after "Here are some key statist".

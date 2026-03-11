@@ -1,0 +1,42 @@
+### QC CHECK REPORT
+
+**FILE:** market-report-springfield-nj-2026.html
+
+#### ISSUES_FOUND: 5
+
+1. **INVENTED DATA:** 
+   - **Issue:** The content uses vague generic phrases like "a moderate increase" or "various neighborhoods" without specifics.
+   - **Exact Text:** "The year-over-year price change is +6%, showing a steady increase in property values." (This is somewhat specific, but "steady increase" could be considered vague compared to more concrete language.)
+
+2. **PHONE NUMBER:** 
+   - **Issue:** The phone number 908-230-7844 appears more than 2 times total.
+   - **Exact Text:** 
+     - "telephone": "+1-908-230-7844",
+     - "Call or text 908-230-7844 for a free, no-pressure consultation."
+     - "Contact Jorge at 908-230-7844 or jorge.ramirez@kw.com."
+     - "Call 908-230-7844."
+
+3. **THIN CONTENT:** 
+   - **Issue:** The article body is under 800 words.
+   - **Exact Text:** The content provided is only a partial article with a few paragraphs and no additional detailed information.
+
+4. **GENERIC OPENER:** 
+   - **Issue:** The article opens with generic text.
+   - **Exact Text:** "As we dive into the Springfield, NJ real estate market for March 2026, we see a median home price of $560,000, with an average of 20-28 days on the market." (While not explicitly generic, it could be considered lacking a more engaging opener.)
+
+5. **SCHEMA:** 
+   - **Issue:** The <script type="application/ld+json"> is present, but the document ends abruptly with "Year-over-Year Pric" which indicates incomplete schema or content.
+   - **Exact Text:** The schema is present, but the article and schema are cut off.
+
+#### VERDICT: FAIL
+
+**Leo must fix:**
+1. Provide more specific data and avoid vague phrases like "steady increase" in the content.
+2. Limit the repetition of the phone number 908-230-7844 to a maximum of 2 times.
+3. Expand the article body to ensure it is at least 800 words.
+4. Consider starting the article with a more engaging opener.
+5. Complete the article and schema to ensure all data is present and correct.
+
+**Additional Notes:**
+- Ensure that all other required elements like meta description, canonical URL, and other SEO tags are correctly implemented and verified.
+- The canonical URL matches the filename correctly, but ensure consistency in all future posts.

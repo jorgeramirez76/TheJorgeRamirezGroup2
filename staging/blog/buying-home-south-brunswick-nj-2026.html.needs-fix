@@ -1,0 +1,39 @@
+### QC CHECK REPORT FOR: buying-home-south-brunswick-nj-2026.html
+
+#### ISSUES_FOUND: 7
+
+1. **DUPLICATE SCHEMA**: Not present. Each `@type` (Article and FAQPage) is defined only once.
+
+2. **PLACEHOLDER TEXT**: Not present. No [brackets], "Lorem ipsum", or other obviously unfilled template text found.
+
+3. **INVENTED DATA**: Present.
+   - "various neighborhoods" in the incomplete sentence: "covering everything from market conditions to step-by-step buying advi"
+
+4. **PHONE NUMBER**: Present more than 2 times.
+   - Appears 3 times: "Call 908-230-7844", "Contact Jorge at 908-230-7844", and "Call 908-230-7844"
+
+5. **THIN CONTENT**: Present.
+   - The article body is incomplete and under 800 words. The content provided only has a partial sentence at the end.
+
+6. **GENERIC OPENER**: Present.
+   - The article opens with "As a seasoned real estate agent in Middlesex County, I've seen numerous homebuyers flock to South Brunswick, NJ..."
+
+7. **CANONICAL URL**: Present and correct.
+   - `<link rel="canonical" href="https://thejorgeramirezgroup.com/blog/buying-home-south-brunswick-nj-2026.html">` matches the filename.
+
+8. **META DESCRIPTION**: Present, under 155 chars, and ends with punctuation.
+   - `<meta name="description" content="Buying a home in South Brunswick NJ in 2026? Expert guide covering prices, neighborhoods, schools, and commute from local realtor Jorge Ramirez. Call 908-230-7844.">`
+
+9. **OG TAGS**: Present.
+   - `og:image` and `og:type` are present.
+
+10. **SCHEMA**: Present.
+    - Both `Article` and `FAQPage` schema are present.
+
+#### VERDICT: FAIL
+
+#### WHAT LEO MUST FIX:
+1. **Invented Data**: Replace vague phrases like "various neighborhoods" with specific details.
+2. **Phone Number**: Reduce the repetition of the phone number (908-230-7844) to no more than 2 times.
+3. **Thin Content**: Complete the article body and ensure it is at least 800 words.
+4. **Generic Opener**: Avoid generic openers like "As a seasoned real estate agent in Middlesex County, I've seen numerous homebuyers flock to South Brunswick, NJ...". Start with a more engaging and specific introduction.

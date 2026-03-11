@@ -1,0 +1,146 @@
+Certainly! Below is a fully self-contained HTML file that includes CSS and JavaScript to create a "Town Comparison Widget" for Jorge Ramirez, a NJ Real Estate Agent. The widget includes a form to capture lead information and has a clean, modern UI matching a dark professional real estate brand.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Town Comparison Widget</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .widget-container {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            padding: 20px;
+        }
+        .widget-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .widget-header h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #8a8a8a;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #b0b0b0;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background-color: #282828;
+            color: #e0e0e0;
+        }
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #6a1b9a;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #511281;
+        }
+        .form-group .message {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .form-group .message.success {
+            color: #4caf50;
+        }
+        .form-group .message.error {
+            color: #f44336;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .contact-info a {
+            color: #6a1b9a;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget-container">
+        <div class="widget-header">
+            <h2>Town Comparison Widget</h2>
+        </div>
+        <form id="leadForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+                <div class="message" id="formMessage"></div>
+            </div>
+        </form>
+        <div class="contact-info">
+            <p>Contact us: <a href="tel:908-230-7844">908-230-7844</a> | <a href="https://thejorgeramirezgroup.com" target="_blank">thejorgeramirezgroup.com</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const formMessage = document.getElementById('formMessage');
+
+            if (name && email && phone) {
+                // Here you can add code to send the data to a server or handle it as needed
+                formMessage.className = 'message success';
+                formMessage.textContent = 'Thank you! Your information has been submitted.';
+                this.reset();
+            } else {
+                formMessage.className = 'message error';
+                formMessage.textContent = 'Please fill in all fields.';
+            }
+        });
+    </script>
+</body>
+</html>
+```
+
+This HTML file includes a form to capture the lead's name, email, and phone number. The form submission is handled with JavaScript to provide feedback to the user. The UI is styled using CSS to match a dark, professional real estate theme. You can copy and paste this code into an HTML file and open it in a web browser to see the widget in action.
