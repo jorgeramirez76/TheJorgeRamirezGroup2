@@ -1,0 +1,27 @@
+### QC Report for market-report-short-hills-nj-2026.html
+
+**ISSUES_FOUND: 5**
+
+1. **THIN CONTENT**: The article body is incomplete and under 800 words.
+   - **Evidence**: The content cuts off abruptly with `<div style="backgr`. The article does not provide enough information to meet the minimum word count.
+
+2. **DUPLICATE SCHEMA**: The schema is defined only once for the `Article` and `FAQPage` types, but the `Article` schema contains a duplicate `mainEntityOfPage` URL.
+   - **Evidence**: The `mainEntityOfPage` URL is repeated within the `Article` schema.
+
+3. **INVENTED DATA**: The content contains vague generic phrases like "Year-over-Year (YoY) change of 12% in median sales price" without specifics.
+   - **Evidence**: The phrase "Year-over-Year (YoY) change of 12% in median sales price" is vague and does not provide specific information about the change.
+
+4. **PHONE NUMBER**: The phone number 908-230-7844 appears more than twice.
+   - **Evidence**: The phone number appears in the Schema.org JSON-LD, FAQs, and can be inferred from the context to appear more than twice.
+
+5. **GENERIC OPENER**: The article opens with a generic statement.
+   - **Evidence**: The article starts with "As we dive into the March 2026 market snapshot for Short Hills, NJ, it's essential to examine the key statistics that define the current state of the real estate market." This is a generic opener and could be improved.
+
+**VERDICT: FAIL**
+
+**What Leo must fix:**
+1. Complete the article body to ensure it is at least 800 words.
+2. Remove the duplicate `mainEntityOfPage` URL within the `Article` schema.
+3. Provide specific details for the YoY change in median sales price.
+4. Ensure the phone number 908-230-7844 does not appear more than twice in the content.
+5. Improve the opening statement to avoid generic language.

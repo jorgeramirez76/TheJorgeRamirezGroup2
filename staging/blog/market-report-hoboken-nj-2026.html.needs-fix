@@ -1,0 +1,38 @@
+### QC CHECK REPORT
+
+**FILE:** market-report-hoboken-nj-2026.html
+
+#### ISSUES FOUND: 7
+
+1. **DUPLICATE SCHEMA:** Not applicable. The `<script type="application/ld+json">` is defined only once for the same `@type`.
+2. **PLACEHOLDER TEXT:** Not applicable. There are no placeholders like [brackets], "Lorem ipsum", or obviously unfilled template text.
+3. **INVENTED DATA:** The content uses vague generic phrases like "without specifics" (e.g., "Hoboken, NJ is one of the top communities in NJ County" without specifying what makes it top). 
+   - **Exact Text:** "Hoboken, NJ is one of the top communities in NJ County."
+4. **PHONE NUMBER:** The phone number 908-230-7844 appears more than 2 times total (3 times).
+   - **Exact Text:** 
+     - `telephone": "+1-908-230-7844"`
+     - `Call or text 908-230-7844`
+     - `Contact Jorge at 908-230-7844`
+5. **THIN CONTENT:** The article body is under 800 words. The provided content is incomplete and does not reach the necessary word count.
+6. **GENERIC OPENER:** The article opens with a vague and generic statement, which does not provide context or interest.
+   - **Exact Text:** "As we dive into the Hoboken real estate market for March 2026, it's essential to understand the current state of affairs."
+7. **CANONICAL URL:** The canonical URL exactly matches the filename `market-report-hoboken-nj-2026.html`.
+   - **Exact Text:** `<link rel="canonical" href="https://thejorgeramirezgroup.com/blog/market-report-hoboken-nj-2026.html">`
+8. **META DESCRIPTION:** The meta description is present, under 155 chars, and ends with a period.
+   - **Exact Text:** `<meta name="description" content="Hoboken NJ real estate market report for 2026. Median prices, inventory, days on market, and buyer vs seller conditions from local expert Jorge Ramirez.">`
+9. **OG TAGS:** Both `og:image` and `og:type` are present.
+   - **Exact Text:** 
+     - `<meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">`
+     - `<meta property="og:type" content="article">`
+10. **SCHEMA:** Both `Article` and `FAQPage` schema are present.
+    - **Exact Text:** 
+      - `@type": "Article"`
+      - `@type": "FAQPage"`
+
+#### VERDICT: FAIL
+
+**Leo must fix the following issues:**
+1. **Reduce the repetition of the phone number 908-230-7844.**
+2. **Add more specific details to avoid vague generic phrases.**
+3. **Complete the article to ensure it is at least 800 words.**
+4. **Rewrite the opening statement to be more engaging and specific.**

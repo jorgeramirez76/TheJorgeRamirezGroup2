@@ -1,0 +1,40 @@
+### Structured Report
+
+**ISSUES_FOUND: 6**
+
+1. **DUPLICATE SCHEMA:**
+   - **Issue:** `<script type="application/ld+json">` is defined once for `Article` and once for `FAQPage`, which is correct. However, there is a duplicate canonical URL tag.
+   - **Exact Text:**
+     - First Canonical URL: `<link rel="canonical" href="https://thejorgeramirezgroup.com/blog/buying-home-jersey-city-nj-2026.html">`
+     - Second Canonical URL: `<link rel="canonical" href="https://thejorgeramirezgroup.com/buying-a-home-in-jersey-city-nj-2026-complete-buyers-guide">`
+
+2. **CANONICAL URL:**
+   - **Issue:** The canonical URL does not exactly match the filename `buying-home-jersey-city-nj-2026.html`.
+   - **Exact Text:**
+     - Canonical URL: `<link rel="canonical" href="https://thejorgeramirezgroup.com/buying-a-home-in-jersey-city-nj-2026-complete-buyers-guide">`
+
+3. **THIN CONTENT:**
+   - **Issue:** The article body is under 800 words.
+   - **Exact Text:** The provided content is incomplete and does not reach 800 words.
+
+4. **GENERIC OPENER:**
+   - **Issue:** The article opens with "As a seasoned real estate agent", which is a generic opener.
+   - **Exact Text:** "As a seasoned real estate agent, I've seen many buyers flock to Jersey City, NJ, and for good reason."
+
+5. **INVENTED DATA:**
+   - **Issue:** The content uses vague generic phrases like "a unique blend of urban and suburban living" without specifics.
+   - **Exact Text:** "The city offers a unique blend of urban and suburban living, with a thriving downtown area and easy access to New York City. With a median home price of $425,000, Jersey City is an attractive option for buyers looking for a mix"
+
+6. **PHONE NUMBER:**
+   - **Issue:** The phone number 908-230-7844 appears more than 2 times total.
+   - **Exact Text:** "Call 908-230-7844." appears three times in the schema and body text.
+
+**VERDICT: FAIL**
+
+**Leo must fix:**
+
+1. Remove the duplicate canonical URL and ensure it matches the filename `buying-home-jersey-city-nj-2026.html`.
+2. Expand the article body to reach at least 800 words.
+3. Change the generic opener to a more engaging and unique introduction.
+4. Replace vague phrases with specific details about Jersey City.
+5. Limit the repetition of the phone number to a maximum of two times in the article.

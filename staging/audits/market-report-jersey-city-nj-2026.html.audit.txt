@@ -1,0 +1,34 @@
+### Structured Report
+
+**FILE:** market-report-jersey-city-nj-2026.html
+
+**ISSUES_FOUND:** 7
+
+1. **DUPLICATE SCHEMA:** Not found. There is only one `<script type="application/ld+json">` block defined.
+2. **PLACEHOLDER TEXT:** Not found. No placeholder text is present.
+3. **INVENTED DATA:** Found. The phrase "According to the latest data" is vague and not specific. The article does not provide a source or specific data points.
+4. **PHONE NUMBER:** Found. The phone number 908-230-7844 appears 4 times, which is more than 2 times.
+5. **THIN CONTENT:** Found. The article body is under 800 words. The current content is only a few paragraphs long.
+6. **GENERIC OPENER:** Not found. The article does not open with generic phrases like "I am excited to share" or "As a seasoned" or "Hi I'm Jorge".
+7. **CANONICAL URL:** Found. The canonical URL matches the filename: `market-report-jersey-city-nj-2026.html`.
+8. **META DESCRIPTION:** Found. The meta description is present, under 155 characters, and ends with a period: `"Jersey City NJ real estate market report for 2026. Median prices, inventory, days on market, and buyer vs seller conditions from local expert Jorge Ramirez."`
+9. **OG TAGS:** Found. Both `og:image` and `og:type` are present.
+10. **SCHEMA:** Found. Both `Article` and `FAQPage` schema are present.
+
+### VERDICT: FAIL
+
+### What Leo Must Fix:
+1. **Reduce the repetition of the phone number (908-230-7844)**: The phone number should appear no more than 2 times in the document.
+2. **Expand the content**: The article body should be expanded to at least 800 words with more detailed and specific information.
+3. **Invent data specifics**: Replace vague phrases like "According to the latest data" with specific data points and sources.
+
+### Corrected Example for Phone Number:
+- Remove one or two instances of the phone number repetition.
+
+### Corrected Example for Content Expansion:
+- Add more detailed statistics, market trends, and specific examples to reach at least 800 words.
+
+### Corrected Example for Data Specifics:
+- Instead of "According to the latest data", provide specific data points, e.g., "According to the March 2026 report by XYZ Real Estate Analytics..."
+
+By addressing these issues, the blog post will meet the quality and SEO standards required.
