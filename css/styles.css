@@ -908,3 +908,52 @@ footer {
     display: block;
     object-fit: cover;
 }
+
+/* Blog Author Photo Styles */
+.author-photo-sm {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-bio-inline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: 10px;
+}
+
+.agent-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--light-gray);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-red);
+}
+
+.agent-card img {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .agent-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .agent-card img {
+        max-width: 120px;
+    }
+}
