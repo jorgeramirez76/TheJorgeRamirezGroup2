@@ -1,5 +1,5 @@
 # robots.txt — thejorgeramirezgroup.com
-# Updated: 2026-02-24
+# Updated: 2026-03-17
 # Configured for traditional SEO + AI GEO optimization
 # Allows all major AI crawlers: GPTBot, ClaudeBot, PerplexityBot, Googlebot-Extended
 
@@ -8,12 +8,16 @@ Allow: /
 Disallow: /private/
 Disallow: /admin/
 Disallow: /cgi-bin/
+Disallow: /staging/
+Disallow: /features/
 Disallow: /*.php$
 
 # Google
 User-agent: Googlebot
 Allow: /
 Disallow: /private/
+Disallow: /staging/
+Disallow: /features/
 
 # Google Extended (Gemini AI training)
 User-agent: Google-Extended
@@ -73,5 +77,4 @@ Allow: /
 LLMs: https://thejorgeramirezgroup.com/llms.txt
 
 # Sitemap declaration
-Sitemap: https://www.thejorgeramirezgroup.com/sitemap.xml
-Sitemap: https://www.thejorgeramirezgroup.com/sitemap-towns.xml
+Sitemap: https://thejorgeramirezgroup.com/sitemap.xml

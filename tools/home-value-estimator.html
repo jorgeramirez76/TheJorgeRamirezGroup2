@@ -1,119 +1,77 @@
-Sure, below is a complete, self-contained HTML file for Jorge Ramirez's Home Value Estimator Landing Page. This file includes HTML, CSS, and JavaScript to create a clean, modern UI that matches a dark professional real estate brand. The page also includes a form to capture lead information such as name, email, and phone number.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Value Estimator | The Jorge Ramirez Group</title>
+    <title>Free Home Value Estimator | What's My Home Worth? | Jorge Ramirez NJ</title>
+    <meta name="description" content="Find out what your New Jersey home is worth in today's market. Free home value estimate from Jorge Ramirez, licensed NJ real estate agent. No obligation. Call 908-230-7844.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thejorgeramirezgroup.com/tools/home-value-estimator.html">
+    <meta property="og:title" content="Free Home Value Estimator | Jorge Ramirez NJ Real Estate">
+    <meta property="og:description" content="Find out what your NJ home is worth. Free estimate from licensed NJ agent Jorge Ramirez.">
+    <meta property="og:url" content="https://thejorgeramirezgroup.com/tools/home-value-estimator.html">
+    <meta property="og:type" content="website">
+    <meta name="geo.region" content="US-NJ">
+    <meta name="geo.placename" content="Summit, New Jersey">
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            height: 100%;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            flex-direction: column;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
-        }
-        .form-container {
-            background-color: #1e1e1e;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            max-width: 500px;
-        }
-        .form-container input {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #444;
-            border-radius: 5px;
-            background-color: #1e1e1e;
-            color: #ffffff;
-        }
-        .form-container button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #ffffff;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .form-container button:hover {
-            background-color: #0056b3;
-        }
-        .contact-info {
-            margin-top: 40px;
-            font-size: 1.1em;
-        }
-        .contact-info a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
+        .estimator-page { max-width: 800px; margin: 0 auto; padding: 100px 20px 60px; text-align: center; }
+        .estimator-page h1 { font-size: 2.5em; margin-bottom: 20px; line-height: 1.2; }
+        .estimator-page .subtitle { font-size: 1.2em; color: #666; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .value-cta { display: inline-block; padding: 20px 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 10px; font-size: 1.3em; font-weight: 700; margin: 20px 0; transition: all 0.3s ease; }
+        .value-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+        .why-section { text-align: left; margin-top: 60px; padding: 40px; background: #f8f9fa; border-radius: 12px; }
+        .why-section h2 { margin-bottom: 20px; }
+        .why-section ul { padding-left: 20px; }
+        .why-section li { margin-bottom: 12px; line-height: 1.6; color: #555; }
+        .contact-box { margin-top: 40px; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Home Value Estimator</h1>
-        <p>Discover the estimated value of your home with The Jorge Ramirez Group.</p>
-        <div class="form-container">
-            <form id="leadForm">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
-                <button type="submit">Get Estimate</button>
-            </form>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo"><img src="../images/jorge-logo.jpg" alt="The Jorge Ramirez Group" class="logo-img" width="250" height="100"></a>
+            <ul class="nav-links">
+                <li><a href="/#buy">Buy</a></li>
+                <li><a href="/sell-your-home.html">Sell</a></li>
+                <li><a href="/how-we-sell-your-home.html">How We Sell</a></li>
+                <li><a href="/#communities">Communities</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
         </div>
-        <div class="contact-info">
-            <p>For more information, contact us at <a href="tel:908-230-7844">908-230-7844</a> or visit <a href="https://thejorgeramirezgroup.com" target="_blank">thejorgeramirezgroup.com</a></p>
+    </nav>
+
+    <div class="estimator-page">
+        <h1>What Is Your New Jersey Home Worth Right Now?</h1>
+        <p class="subtitle">Get a free, no-obligation home value estimate based on current market data in your area. Most NJ homeowners are surprised — usually in a good way.</p>
+
+        <a href="https://value.thejorgeramirezgroup.com" class="value-cta" target="_blank" rel="noopener">Get My Free Home Value Estimate →</a>
+
+        <p style="color: #999; margin-top: 15px; font-size: 0.9em;">Opens our home valuation tool. Takes less than 60 seconds. No spam, no pressure.</p>
+
+        <div class="why-section">
+            <h2>Why Get a Home Valuation — Even If You're Not Selling Today</h2>
+            <ul>
+                <li><strong>Know where you stand financially.</strong> Your home is likely your largest asset. Understanding its current value helps you make smarter decisions about refinancing, equity, and long-term plans.</li>
+                <li><strong>Zillow estimates are often wrong.</strong> Automated tools don't account for condition, renovations, neighborhood micro-trends, or what's actually selling near you. A local agent analysis is far more accurate.</li>
+                <li><strong>Timing matters.</strong> NJ market conditions change quarter to quarter. Knowing your home's value now gives you the information to act when the timing is right for you — not when you're forced to.</li>
+                <li><strong>No pressure, no obligation.</strong> This is just information. Jorge Ramirez provides honest home valuations with zero sales pressure. You'll know your number — what you do with it is up to you.</li>
+            </ul>
+        </div>
+
+        <div class="contact-box">
+            <h2>Prefer to Talk to a Person?</h2>
+            <p style="color: #666; margin-bottom: 15px;">Call or text Jorge directly for a personalized market analysis of your home.</p>
+            <p style="font-size: 1.3em; font-weight: 700;"><a href="tel:+19082307844" style="color: #667eea;">908-230-7844</a></p>
+            <p style="color: #999; margin-top: 10px;">Available 7 days a week. Based in Summit, NJ.</p>
         </div>
     </div>
 
-    <script>
-        document.getElementById('leadForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-
-            // Here you can add code to send the data to a server or process it as needed
-            alert(`Thank you, ${name}! We'll be in touch.`);
-            // Reset form
-            document.getElementById('leadForm').reset();
-        });
-    </script>
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jorge Ramirez - Keller Williams Premier Properties. 488 Springfield Ave, Summit, NJ 07901 | 908-230-7844</p>
+        </div>
+    </footer>
 </body>
 </html>
-```
-
-This HTML file includes:
-- A clean and modern UI with a dark theme.
-- A form to capture the user's name, email, and phone number.
-- JavaScript to handle form submission and display a thank you message.
-- Contact information and links to Jorge Ramirez's real estate group.
-
-You can copy and paste this code into an `.html` file and open it in a web browser to see the result.
