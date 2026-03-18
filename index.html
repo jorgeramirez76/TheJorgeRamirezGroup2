@@ -130,6 +130,28 @@
     }
     </script>
     
+    <!-- JSON-LD Structured Data: WebSite Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "The Jorge Ramirez Group",
+      "alternateName": "Jorge Ramirez Real Estate",
+      "url": "https://thejorgeramirezgroup.com",
+      "description": "New Jersey real estate website for The Jorge Ramirez Group at Keller Williams Premier Properties. Helping NJ homeowners sell for top dollar and buyers find the right home across 103 communities in Essex, Hudson, Morris, Middlesex, and Union counties.",
+      "publisher": {
+        "@type": "RealEstateAgent",
+        "name": "Jorge Ramirez",
+        "@id": "https://thejorgeramirezgroup.com/#agent"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://thejorgeramirezgroup.com/#communities?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <!-- JSON-LD Structured Data: Person Schema -->
     <script type="application/ld+json">
     {
