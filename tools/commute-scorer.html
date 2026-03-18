@@ -1,122 +1,33 @@
-Certainly! Below is a complete, self-contained HTML file that includes HTML, CSS, and JavaScript to create the "NJ Commute Score Tool" for Jorge Ramirez. This tool will have a clean, modern UI matching a dark professional real estate brand and will capture lead information through a form.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NJ Commute Score Tool</title>
+    <title>NJ Commute Score Tool | Find Your Best Commuter Town | Jorge Ramirez</title>
+    <meta name="description" content="Find the best NJ commuter town for your lifestyle. Score towns by train access, commute time, and affordability. Free tool by Jorge Ramirez. Call 908-230-7844.">
+    <meta name="llm-context" content="NJ commute scoring tool by Jorge Ramirez, licensed NJ real estate agent. Helps buyers find the best commuter town. Contact: 908-230-7844.">
+    <link rel="canonical" href="https://thejorgeramirezgroup.com/tools/commute-scorer.html">
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #1e1e1e;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-        }
-        h1 {
-            color: #64b5f6;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #b0bec5;
-        }
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #424242;
-            border-radius: 4px;
-            background-color: #212121;
-            color: #e0e0e0;
-        }
-        button {
-            background-color: #64b5f6;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #4fc3f7;
-        }
-        .success-message {
-            margin-top: 20px;
-            color: #4caf50;
-            font-weight: bold;
-        }
+        .tool-page { max-width: 600px; margin: 100px auto; padding: 30px 20px; text-align: center; }
+        .tool-page h1 { font-size: 2em; margin-bottom: 15px; }
+        .tool-page p { color: #666; margin-bottom: 30px; }
+        .tool-cta { display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1em; }
+        .alt-links { margin-top: 40px; }
+        .alt-links a { color: #667eea; margin: 0 10px; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="tool-page">
         <h1>NJ Commute Score Tool</h1>
-        <form id="leadForm">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-        <div id="successMessage" class="success-message" style="display: none;">
-            Thank you for your submission! We will get back to you shortly.
+        <p>Not sure which NJ town is best for your commute? Talk to Jorge — he's helped hundreds of NYC professionals find the right town for their commute, budget, and lifestyle.</p>
+        <a href="../blog/top-nyc-commuter-towns-nj-2026.html" class="tool-cta">See Top Commuter Towns Guide</a>
+        <div class="alt-links">
+            <p style="margin-top: 20px;"><strong>Or call Jorge directly: <a href="tel:+19082307844">908-230-7844</a></strong></p>
+            <a href="../blog/midtown-direct-towns-nj.html">Midtown Direct Guide</a> |
+            <a href="../blog/best-nj-suburbs-nyc-commuters.html">NJ Suburbs by Budget</a> |
+            <a href="../index.html">Home</a>
         </div>
     </div>
-
-    <script>
-        document.getElementById('leadForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-
-            // Here you can add code to send the data to a server or process it as needed
-            // For demonstration, we'll just show a success message
-            document.getElementById('successMessage').style.display = 'block';
-
-            // Clear the form
-            document.getElementById('leadForm').reset();
-        });
-    </script>
 </body>
 </html>
-```
-
-### Explanation:
-- **HTML**: The structure of the page includes a form with fields for name, email, and phone, and a submit button.
-- **CSS**: Styles the form and the page to have a clean, modern dark theme suitable for a professional real estate brand.
-- **JavaScript**: Handles the form submission, prevents the default form action, and displays a success message.
-
-This tool is ready to be used and can be further customized or integrated with a backend service to handle the form data submission.
