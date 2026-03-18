@@ -216,98 +216,452 @@
       line-height: 1.7;
     }
 
-    .topnav { background: var(--dark); padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--gold); }
-    .topnav-logo { color: var(--white); font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+    /* -- TOP NAV -- */
+    .topnav {
+      background: var(--dark);
+      padding: 14px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--gold);
+    }
+    .topnav-logo {
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
     .topnav-logo span { color: var(--gold); }
-    .topnav-links { display: flex; gap: 28px; align-items: center; }
-    .topnav-links a { color: #ccc; text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .topnav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .topnav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
     .topnav-links a:hover { color: var(--gold); }
-    .topnav-cta { background: var(--gold); color: var(--dark) !important; padding: 8px 18px; border-radius: 4px; font-weight: 600 !important; }
+    .topnav-cta {
+      background: var(--gold);
+      color: var(--dark) !important;
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+    }
 
-    .breadcrumb { background: var(--light); padding: 10px 40px; font-size: 0.82rem; color: var(--text-light); border-bottom: 1px solid var(--border); }
+    /* -- BREADCRUMB -- */
+    .breadcrumb {
+      background: var(--light);
+      padding: 10px 40px;
+      font-size: 0.82rem;
+      color: var(--text-light);
+      border-bottom: 1px solid var(--border);
+    }
     .breadcrumb a { color: var(--accent); text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
     .breadcrumb span { margin: 0 6px; color: #aaa; }
 
-    .hero { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 50%, #1a2a4a 100%); padding: 70px 40px 60px; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: linear-gradient(135deg, transparent, rgba(201,168,76,0.08)); pointer-events: none; }
-    .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-    .hero-county { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
-    .hero-title { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; color: var(--white); margin-bottom: 15px; line-height: 1.2; }
-    .hero-subtitle { color: #ccc; font-size: 1.15rem; margin-bottom: 30px; max-width: 700px; }
-    .hero-ctas { display: flex; gap: 15px; flex-wrap: wrap; }
+    /* -- HERO -- */
+    .hero {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 50%, #1a2a4a 100%);
+      padding: 70px 40px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 40%;
+      background: linear-gradient(135deg, transparent, rgba(201,168,76,0.08));
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-county {
+      color: var(--gold);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+    .hero-subtitle {
+      color: #ccc;
+      font-size: 1.15rem;
+      margin-bottom: 30px;
+      max-width: 700px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+    /* -- CONTAINER -- */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
 
-    .market-snapshot { background: var(--light); padding: 60px 40px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .market-snapshot h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 40px; color: var(--dark); }
-    .snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .snapshot-card { background: var(--white); padding: 25px; border-radius: 8px; border: 1px solid var(--border); text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
-    .snapshot-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-    .snapshot-icon { font-size: 2.5rem; margin-bottom: 15px; }
-    .snapshot-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; color: var(--dark); }
-    .snapshot-value { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 600; color: var(--accent); margin: 10px 0; }
-    .snapshot-label { font-size: 0.85rem; color: var(--text-light); }
+    /* -- MARKET SNAPSHOT -- */
+    .market-snapshot {
+      background: var(--light);
+      padding: 60px 40px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .market-snapshot h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 40px;
+      color: var(--dark);
+    }
+    .snapshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .snapshot-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .snapshot-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .snapshot-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .snapshot-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    .snapshot-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 10px 0;
+    }
+    .snapshot-label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
 
-    .neighborhoods { padding: 60px 40px; }
-    .neighborhoods h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 20px; color: var(--dark); }
-    .neighborhoods > .container > p { font-size: 1.05rem; margin-bottom: 40px; color: var(--text-light); }
-    .neighborhoods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .neighborhood-card { background: var(--light); padding: 30px; border-radius: 8px; border-left: 4px solid var(--gold); }
-    .neighborhood-card h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: var(--dark); }
-    .neighborhood-card p { color: var(--text-light); line-height: 1.6; }
+    /* -- NEIGHBORHOODS -- */
+    .neighborhoods {
+      padding: 60px 40px;
+    }
+    .neighborhoods h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+    .neighborhoods > .container > p {
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+    }
+    .neighborhoods-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .neighborhood-card {
+      background: var(--light);
+      padding: 30px;
+      border-radius: 8px;
+      border-left: 4px solid var(--gold);
+    }
+    .neighborhood-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .neighborhood-card p {
+      color: var(--text-light);
+      line-height: 1.6;
+    }
 
-    .schools { background: var(--white); padding: 60px 40px; border-top: 1px solid var(--border); }
-    .schools h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 20px; color: var(--dark); }
-    .schools > .container > p { font-size: 1.05rem; margin-bottom: 30px; color: var(--text-light); }
-    .schools-highlight { background: var(--light); padding: 30px; border-radius: 8px; border-left: 4px solid var(--gold); }
-    .schools-highlight h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 15px; color: var(--dark); }
-    .schools-highlight p { margin-bottom: 12px; color: var(--text-light); }
+    /* -- SCHOOLS -- */
+    .schools {
+      background: var(--white);
+      padding: 60px 40px;
+      border-top: 1px solid var(--border);
+    }
+    .schools h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+    .schools > .container > p {
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+      color: var(--text-light);
+    }
+    .schools-highlight {
+      background: var(--light);
+      padding: 30px;
+      border-radius: 8px;
+      border-left: 4px solid var(--gold);
+    }
+    .schools-highlight h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+    .schools-highlight p {
+      margin-bottom: 12px;
+      color: var(--text-light);
+    }
 
-    .commute { background: var(--light); padding: 60px 40px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .commute h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 20px; color: var(--dark); }
-    .commute > .container > p { font-size: 1.05rem; margin-bottom: 40px; color: var(--text-light); }
-    .commute-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-    .commute-card { background: var(--white); padding: 25px; border-radius: 8px; border: 1px solid var(--border); }
-    .commute-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; color: var(--dark); }
-    .commute-card p { font-size: 0.95rem; color: var(--text-light); margin-bottom: 8px; }
+    /* -- COMMUTE -- */
+    .commute {
+      background: var(--light);
+      padding: 60px 40px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .commute h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+    .commute > .container > p {
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+    }
+    .commute-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .commute-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .commute-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    .commute-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
 
-    .process { padding: 60px 40px; }
-    .process h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 20px; color: var(--dark); }
-    .process > .container > p { font-size: 1.05rem; margin-bottom: 40px; color: var(--text-light); }
-    .process-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .process-col h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 15px; color: var(--dark); }
-    .process-col p { color: var(--text-light); margin-bottom: 12px; line-height: 1.7; }
-    .process-col ul { color: var(--text-light); margin-left: 20px; margin-bottom: 15px; }
-    .process-col ul li { margin-bottom: 8px; line-height: 1.6; }
+    /* -- PROCESS -- */
+    .process {
+      padding: 60px 40px;
+    }
+    .process h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+    .process > .container > p {
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+    }
+    .process-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .process-col h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+    .process-col p {
+      color: var(--text-light);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .process-col ul {
+      color: var(--text-light);
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    .process-col ul li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
 
-    .faq { background: var(--light); padding: 60px 40px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .faq h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 40px; color: var(--dark); }
-    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .faq-item { background: var(--white); padding: 25px; border-radius: 8px; border-left: 4px solid var(--gold); }
-    .faq-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 12px; color: var(--dark); }
-    .faq-item p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
+    /* -- FAQ -- */
+    .faq {
+      background: var(--light);
+      padding: 60px 40px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .faq h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 40px;
+      color: var(--dark);
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .faq-item {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 8px;
+      border-left: 4px solid var(--gold);
+    }
+    .faq-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .faq-item p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
 
-    .cta-final { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%); color: var(--white); padding: 60px 40px; text-align: center; }
-    .cta-final h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; margin-bottom: 15px; color: var(--gold); }
-    .cta-final > .container > p { font-size: 1.1rem; margin-bottom: 30px; color: #ddd; }
-    .cta-buttons { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 20px; }
-    .btn { display: inline-block; padding: 12px 24px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.2s; font-size: 0.95rem; }
-    .btn-primary { background: var(--gold); color: var(--dark); }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .btn-secondary { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
-    .btn-secondary:hover { background: var(--gold); color: var(--dark); }
-    .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
-    .btn-outline:hover { background: var(--white); color: var(--dark); }
-    .btn-large { padding: 16px 32px; font-size: 1.05rem; }
-    .cta-note { font-size: 0.9rem; color: #aaa; }
+    /* -- CTA FINAL -- */
+    .cta-final {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+      color: var(--white);
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .cta-final h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--gold);
+    }
+    .cta-final > .container > p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #ddd;
+    }
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+    }
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: var(--dark);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--dark);
+    }
+    .btn-large {
+      padding: 16px 32px;
+      font-size: 1.05rem;
+    }
+    .cta-note {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
 
-    .footer { background: var(--dark); color: var(--text-light); padding: 40px; text-align: center; border-top: 2px solid var(--gold); }
-    .footer p { margin: 8px 0; font-size: 0.95rem; }
+    /* -- FOOTER -- */
+    .footer {
+      background: var(--dark);
+      color: var(--text-light);
+      padding: 40px;
+      text-align: center;
+      border-top: 2px solid var(--gold);
+    }
+    .footer p {
+      margin: 8px 0;
+      font-size: 0.95rem;
+    }
     .footer strong { color: var(--white); }
     .footer a { color: var(--gold); text-decoration: none; }
     .footer a:hover { text-decoration: underline; }
 
+    /* -- RESPONSIVE -- */
     @media (max-width: 768px) {
       .hero-title { font-size: 2rem; }
       .cta-final h2 { font-size: 1.8rem; }
@@ -491,6 +845,53 @@
             <li><strong>Corporate relocation expertise:</strong> If your employer is covering relocation costs, I understand how relocation packages work and coordinate seamlessly with relocation companies to protect your benefits</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE & COMMUNITY SECTION -->
+  <section class="neighborhoods" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <h2>Lifestyle & Community in Basking Ridge</h2>
+      <p>Basking Ridge offers a lifestyle that blends small-town charm, outdoor recreation, and corporate convenience. The community's identity is rooted in its colonial history, natural beauty, and the strong sense of belonging that comes from an engaged, family-oriented population.</p>
+      <div class="neighborhoods-grid">
+        <div class="neighborhood-card">
+          <h3>The Village Center & Downtown</h3>
+          <p>Basking Ridge's village center along South Finley Avenue and Henry Street provides a genuine small-town gathering place. The Basking Ridge Oak -- estimated at over 600 years old and one of the oldest white oak trees in North America -- anchors the village green in front of the Basking Ridge Presbyterian Church (founded 1717). Surrounding the green you will find locally owned shops, restaurants including Vine and Grain & Cane, a farmers market, and the kind of walkable streetscape that fosters neighborly connections. Annual events like the Basking Ridge Street Fair and holiday festivities on the green draw thousands of residents together throughout the year.</p>
+        </div>
+        <div class="neighborhood-card">
+          <h3>Parks, Trails & Outdoor Recreation</h3>
+          <p>Somerset County's park system is one of the best in NJ, and Basking Ridge residents benefit directly. Lord Stirling Park and the Great Swamp Outdoor Education Center offer nature trails, environmental programs, and connections to the Great Swamp watershed. Pleasant Valley Park provides sports fields, playgrounds, and walking paths. The Cross Estate Gardens, maintained by the NJ Conservation Foundation, offer a stunning public garden just minutes from downtown. For golf, the Basking Ridge Country Club and the Hills golf course serve the community. Youth and adult sports leagues run year-round through the Bernards Township Recreation Department, making it easy for families to stay active and connected.</p>
+        </div>
+        <div class="neighborhood-card">
+          <h3>Community Character & Traditions</h3>
+          <p>Basking Ridge has the kind of community character that is hard to manufacture. The annual Memorial Day Parade, the Basking Ridge Fire Company Carnival, PTO-organized school events, and the active Bernards Township Library create a year-round calendar of connection points. The township's historical society preserves the community's Revolutionary War heritage (George Washington's troops wintered nearby). New residents consistently report that they built their social network quickly through school involvement, sports leagues, and neighborhood events. The community skews toward established professionals with families -- the kind of neighbors who organize block parties and look out for each other's kids.</p>
+        </div>
+        <div class="neighborhood-card">
+          <h3>Why Corporate Families Choose Basking Ridge</h3>
+          <p>The typical Basking Ridge buyer falls into one of two profiles: families relocating for a corporate position in the I-287/I-78 corridor, or families upgrading from smaller homes in less prestigious school districts. Both groups are drawn to the same combination: top-rated Ridge High School, spacious lots (many homes sit on half-acre to one-acre parcels), reasonable pricing compared to Midtown Direct towns, and proximity to major employers. For dual-income households where one spouse works locally at a corporate campus and the other commutes to NYC 2-3 days a week, Basking Ridge offers the ideal compromise -- space and schools for the family, manageable commutes for both parents.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY JORGE SECTION -->
+  <section class="schools">
+    <div class="container">
+      <h2>Why Work With Jorge Ramirez in Basking Ridge</h2>
+      <p>Basking Ridge is a market driven by corporate relocations, family upgrades, and school-district demand. Navigating it successfully requires an agent who understands these buyer profiles and can position sellers and buyers accordingly.</p>
+      <div class="schools-highlight">
+        <h3>Data-Driven Expertise With Investor Experience</h3>
+        <p>Jorge Ramirez has been a full-time licensed real estate agent since 2017 and has personally completed 60+ investment property transactions -- buying, renovating, and selling homes across Northern and Central New Jersey. This hands-on experience means Jorge evaluates properties with an investor's eye: he sees not just what a home is today, but what it could be with strategic improvements. For sellers, this translates into actionable advice about which pre-listing improvements will yield the highest return. For buyers, it means realistic assessments of renovation costs and total ownership expenses.</p>
+        <p>As a member of Keller Williams Premier Properties based at 488 Springfield Avenue in Summit, NJ, Jorge serves buyers and sellers throughout Somerset County, Morris County, Union County, and Essex County. His client base includes corporate relocations, growing families, and investors seeking strong fundamentals.</p>
+        <p><strong>What sets Jorge apart in Basking Ridge:</strong></p>
+        <p>-- Understanding of The Hills, village center, Liberty Corner, and corporate corridor sub-markets and their distinct buyer profiles<br>
+        -- Experience working with corporate relocation companies and understanding how relocation packages affect the transaction<br>
+        -- Investor background that provides unique insight into property condition, renovation potential, and true market value<br>
+        -- Ability to market to multiple buyer pools including corporate relocations, local upgraders, and NYC commuters<br>
+        -- Responsive communication -- available 8am-9pm, 7 days a week<br>
+        -- NJ Real Estate License #1754604</p>
+        <p><em>Ready to discuss your Basking Ridge real estate goals? Call Jorge at (908) 230-7844 or email jorge.ramirez@kw.com for a free, no-obligation consultation.</em></p>
       </div>
     </div>
   </section>
