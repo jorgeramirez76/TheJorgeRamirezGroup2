@@ -36,275 +36,429 @@
     }
   }
   </script>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --dark: #0f1117;
+      --dark-2: #1a1f2e;
+      --mid: #2d3347;
+      --light: #f5f3ee;
+      --white: #ffffff;
+      --text: #2c2c2c;
+      --text-light: #666;
+      --accent: #1a4b8c;
+      --green: #22c55e;
+      --border: #e2ddd6;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .topnav { background: var(--dark); padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--gold); }
+    .topnav-logo { color: var(--white); font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+    .topnav-logo span { color: var(--gold); }
+    .topnav-links { display: flex; gap: 28px; align-items: center; }
+    .topnav-links a { color: #ccc; text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .topnav-links a:hover { color: var(--gold); }
+    .topnav-cta { background: var(--gold); color: var(--dark) !important; padding: 8px 18px; border-radius: 4px; font-weight: 600 !important; }
+
+    .breadcrumb { background: var(--light); padding: 10px 40px; font-size: 0.82rem; color: var(--text-light); border-bottom: 1px solid var(--border); }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 6px; color: #aaa; }
+
+    .hero { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 50%, #1a2a4a 100%); padding: 70px 40px 60px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: linear-gradient(135deg, transparent, rgba(201,168,76,0.08)); pointer-events: none; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-county { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; color: var(--white); margin-bottom: 15px; line-height: 1.2; }
+    .hero-subtitle { color: #ccc; font-size: 1.15rem; margin-bottom: 30px; max-width: 700px; }
+    .hero-ctas { display: flex; gap: 15px; flex-wrap: wrap; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+    .market-snapshot { background: var(--light); padding: 60px 40px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .market-snapshot h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 40px; color: var(--dark); }
+    .snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .snapshot-card { background: var(--white); padding: 25px; border-radius: 8px; border: 1px solid var(--border); text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+    .snapshot-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    .snapshot-icon { font-size: 2.5rem; margin-bottom: 15px; }
+    .snapshot-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; color: var(--dark); }
+    .snapshot-value { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 600; color: var(--accent); margin: 10px 0; }
+    .snapshot-label { font-size: 0.85rem; color: var(--text-light); }
+
+    .neighborhoods { padding: 60px 40px; }
+    .neighborhoods h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 20px; color: var(--dark); }
+    .neighborhoods > .container > p { font-size: 1.05rem; margin-bottom: 40px; color: var(--text-light); }
+    .neighborhoods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .neighborhood-card { background: var(--light); padding: 30px; border-radius: 8px; border-left: 4px solid var(--gold); }
+    .neighborhood-card h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: var(--dark); }
+    .neighborhood-card p { color: var(--text-light); line-height: 1.6; }
+
+    .schools { background: var(--white); padding: 60px 40px; border-top: 1px solid var(--border); }
+    .schools h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 20px; color: var(--dark); }
+    .schools > .container > p { font-size: 1.05rem; margin-bottom: 30px; color: var(--text-light); }
+    .schools-highlight { background: var(--light); padding: 30px; border-radius: 8px; border-left: 4px solid var(--gold); }
+    .schools-highlight h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 15px; color: var(--dark); }
+    .schools-highlight p { margin-bottom: 12px; color: var(--text-light); }
+
+    .commute { background: var(--light); padding: 60px 40px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .commute h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 20px; color: var(--dark); }
+    .commute > .container > p { font-size: 1.05rem; margin-bottom: 40px; color: var(--text-light); }
+    .commute-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .commute-card { background: var(--white); padding: 25px; border-radius: 8px; border: 1px solid var(--border); }
+    .commute-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; color: var(--dark); }
+    .commute-card p { font-size: 0.95rem; color: var(--text-light); margin-bottom: 8px; }
+
+    .process { padding: 60px 40px; }
+    .process h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 20px; color: var(--dark); }
+    .process > .container > p { font-size: 1.05rem; margin-bottom: 40px; color: var(--text-light); }
+    .process-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .process-col h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 15px; color: var(--dark); }
+    .process-col p { color: var(--text-light); margin-bottom: 12px; line-height: 1.7; }
+    .process-col ul { color: var(--text-light); margin-left: 20px; margin-bottom: 15px; }
+    .process-col ul li { margin-bottom: 8px; line-height: 1.6; }
+
+    .faq { background: var(--light); padding: 60px 40px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .faq h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 40px; color: var(--dark); }
+    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .faq-item { background: var(--white); padding: 25px; border-radius: 8px; border-left: 4px solid var(--gold); }
+    .faq-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 12px; color: var(--dark); }
+    .faq-item p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
+
+    .cta-final { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%); color: var(--white); padding: 60px 40px; text-align: center; }
+    .cta-final h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; margin-bottom: 15px; color: var(--gold); }
+    .cta-final > .container > p { font-size: 1.1rem; margin-bottom: 30px; color: #ddd; }
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 20px; }
+    .btn { display: inline-block; padding: 12px 24px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.2s; font-size: 0.95rem; }
+    .btn-primary { background: var(--gold); color: var(--dark); }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-secondary { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+    .btn-secondary:hover { background: var(--gold); color: var(--dark); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--dark); }
+    .btn-large { padding: 16px 32px; font-size: 1.05rem; }
+    .cta-note { font-size: 0.9rem; color: #aaa; }
+
+    .footer { background: var(--dark); color: var(--text-light); padding: 40px; text-align: center; border-top: 2px solid var(--gold); }
+    .footer p { margin: 8px 0; font-size: 0.95rem; }
+    .footer strong { color: var(--white); }
+    .footer a { color: var(--gold); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2rem; }
+      .cta-final h2 { font-size: 1.8rem; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; text-align: center; }
+      .cta-buttons { flex-direction: column; }
+      .cta-buttons .btn { width: 100%; }
+      .topnav-links { gap: 15px; }
+      .topnav-links a { font-size: 0.75rem; }
+      .process-columns { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <header class="blog-hero">
-    <div class="hero__content">
-      <h1>Short Hills, NJ Real Estate Guide</h1>
-      <p>By Jorge Ramirez | 8 min read</p>
+  <!-- TOP NAV -->
+  <nav class="topnav">
+    <a href="https://thejorgeramirezgroup.com/" class="topnav-logo">Jorge Ramirez <span>Group</span></a>
+    <div class="topnav-links">
+      <a href="https://thejorgeramirezgroup.com/">Home</a>
+      <a href="https://thejorgeramirezgroup.com/#communities">Communities</a>
+      <a href="https://thejorgeramirezgroup.com/#about">About</a>
+      <a href="https://thejorgeramirezgroup.com/sell-your-home.html">Sell Your Home</a>
+      <a href="https://thejorgeramirezgroup.com/blog">Blog</a>
+      <a href="https://thejorgeramirezgroup.com/home-valuation.html" class="topnav-cta">Free Home Value</a>
     </div>
-  </header>
+  </nav>
 
-  <main class="blog-content">
-    <article>
-      <section>
-        <p><strong>Short Hills is a desirable New Jersey community that attracts families, professionals, and investors seeking quality schools, good property values, and convenient access to employment centers and New York City.</strong> With deep market knowledge and years of helping families find their ideal homes in Short Hills, I can guide you through the buying or selling process with confidence and expertise.</p>
-        <p>Whether you're a first-time homebuyer looking to establish roots, a growing family seeking better schools, or an investor exploring opportunities, Short Hills offers compelling advantages. I've helped hundreds of families navigate the Short Hills real estate market, and I'm committed to delivering the same level of expertise and care to you.</p>
-        <p>In this comprehensive guide, you'll learn about Short Hills's market dynamics, top neighborhoods, schools, commute options, and what makes this community special. Let's explore whether Short Hills is the right place for your next home.</p>
-        <p>The decision to buy or sell a home is one of the most significant financial and personal decisions you'll make. It deserves careful consideration, expert guidance, and a trusted partner who understands both the market and your goals. That's where my experience comes in.</p>
-        <p>Real estate is not just about transactions—it's about families, dreams, and building futures. Every client I work with is unique, with their own preferences, timeline, and priorities. My job is to listen, understand, and deliver solutions that work specifically for you.</p>
-        <p>Over the years serving Short Hills, I've developed deep expertise in what drives the market here. I understand the nuances of different neighborhoods, the factors that affect property values, and how to position your home—or find the right home—for success. I've also built strong relationships with other agents, lenders, inspectors, and service providers, which gives my clients a significant advantage.</p>
-        <p>When you work with me, you're not just getting a real estate agent—you're getting a partner who has invested years in understanding this community and the market that serves it. I stay current on market trends, school ratings, development plans, and neighborhood changes that affect property values.</p>
-      </section>
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="https://thejorgeramirezgroup.com">Home</a>
+    <span>&rsaquo;</span>
+    <a href="https://thejorgeramirezgroup.com/#communities">Communities</a>
+    <span>&rsaquo;</span>
+    <span>Short Hills, NJ</span>
+  </div>
 
-      <section>
-        <h2>Market Overview and Current Conditions in Short Hills</h2>
-        <p>The real estate market in Short Hills is dynamic and influenced by multiple factors—both local and regional. Understanding these market conditions is essential for making informed decisions whether you're buying, selling, or investing.</p>
-        <p>The Short Hills market reflects broader trends in Northern New Jersey while maintaining its own unique character. Current conditions show balanced inventory, with homes typically selling within reasonable timeframes. This indicates a stable market where both buyers and sellers have negotiating flexibility—not a "seller's market" where sellers can demand premium prices, nor a "buyer's market" where buyers can lowball aggressively.</p>
-        <p>Home prices in Short Hills have shown steady appreciation over the past decade. This consistent growth—rather than explosive bubbles—suggests a healthy, sustainable market driven by fundamental demand factors like schools, location, and community quality. Unlike some real estate markets that experience boom-bust cycles, Short Hills has experienced reliable, if modest, appreciation.</p>
-        <p>Price appreciation has been steady, making Short Hills an attractive option for both homeowners and investors. Historical data shows that homes purchased in Short Hills a decade ago have appreciated meaningfully, providing returns through both cash flow (if rented) and appreciation (whether owner-occupied or held as investment).</p>
-        <p><strong>Market Snapshot:</strong></p>
-        <ul>
-          <li>Balanced inventory with homes for multiple buyer types and price ranges</li>
-          <li>Steady appreciation reflecting community fundamentals and school quality</li>
-          <li>Growing interest from relocating families and remote-work professionals</li>
-          <li>Strong school district reputation driving sustained demand</li>
-          <li>Diverse housing options at various price points and styles</li>
-          <li>Reasonable Days on Market indicating healthy buyer-seller balance</li>
-          <li>Multiple neighborhoods appealing to different demographics</li>
-        </ul>
-        <p>Understanding current market conditions helps you make better decisions. If you're buying, knowing that it's a balanced market means you have time to find the right property without rushing. If you're selling, it means you should price competitively to attract buyers while market momentum works in your favor.</p>
-      </section>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-county">Essex County</div>
+      <h1 class="hero-title">Real Estate in Short Hills, NJ</h1>
+      <p class="hero-subtitle">One of New Jersey's most prestigious addresses. Short Hills -- a section of Millburn Township -- combines a 10/10-rated school district, a 30-minute Midtown Direct express to Penn Station, and a luxury housing market anchored by The Mall at Short Hills. Jorge Ramirez provides expert guidance for buyers and sellers in this elite market.</p>
+      <div class="hero-ctas">
+        <a href="tel:908-230-7844" class="btn btn-primary">Call Jorge (908) 230-7844</a>
+        <a href="mailto:jorge.ramirez@kw.com" class="btn btn-secondary">Email Inquiry</a>
+      </div>
+    </div>
+  </section>
 
-      <section>
-        <h2>Why Families Choose Short Hills</h2>
-        <p>Families relocating to Northern New Jersey have many choices. Yet Short Hills consistently ranks among their top selections. Why? Several factors make Short Hills special:</p>
-        <p><strong>Education and Schools</strong></p>
-        <p>Schools are the primary consideration for most families. Short Hills schools consistently deliver strong academics, dedicated teachers, and comprehensive programs. The school district has invested in modern facilities, technology, and curriculum that prepares students for college and careers. Test scores are consistently above state and national averages. Parents in Short Hills are actively involved in schools through PTAs, volunteering, and community support—this level of engagement creates an environment where students thrive.</p>
-        <p><strong>Community and Belonging</strong></p>
-        <p>Beyond statistics, Short Hills is a place where people feel connected. Neighbors know each other, community organizations thrive, and there's genuine pride in the community. You'll find active civic groups, volunteer organizations, and social networks that help new residents integrate quickly. This sense of community makes Short Hills feel like home rather than just a place to live.</p>
-        <p><strong>Safety and Security</strong></p>
-        <p>Safe neighborhoods are essential for families. Short Hills maintains strong community policing, active neighborhood watch programs, and low crime rates. Parents feel comfortable letting children play outside and teenagers walk to school. This sense of safety is invaluable and directly impacts quality of life.</p>
-        <p><strong>Amenities and Recreation</strong></p>
-        <p>Parks, recreation, shopping, dining, and cultural activities are all accessible. Short Hills has beautiful parks with playgrounds, sports facilities, and trails. The community supports diverse activities—from youth sports to adult fitness classes to cultural events. Families can find activities for all interests and ages.</p>
-        <p><strong>Convenience and Location</strong></p>
-        <p>Commuting to work or school should be manageable. Short Hills offers convenient access to highways, transit, and job centers throughout Northern New Jersey. For those commuting to New York City, the commute is reasonable. For those with local jobs, the community is well-positioned relative to employment centers.</p>
-        <p><strong>Value and Affordability</strong></p>
-        <p>Short Hills offers excellent value relative to comparable communities with similar quality schools and amenities. You get top-rated schools and strong community without the premium pricing of some neighboring towns.</p>
-        <p>When families visit Short Hills, they often comment that it "feels right." This intangible quality—where the community matches their values and lifestyle—is often the deciding factor in choosing to relocate here.</p>
-      </section>
+  <!-- MARKET SNAPSHOT SECTION -->
+  <section class="market-snapshot">
+    <div class="container">
+      <h2>Market Snapshot: Short Hills, NJ</h2>
+      <div class="snapshot-grid">
+        <div class="snapshot-card">
+          <div class="snapshot-icon">💰</div>
+          <h3>Median Home Price</h3>
+          <p class="snapshot-value">$1,350,000</p>
+          <p class="snapshot-label">Estates, colonials & mid-century moderns</p>
+        </div>
+        <div class="snapshot-card">
+          <div class="snapshot-icon">⏱️</div>
+          <h3>Days on Market (DOM)</h3>
+          <p class="snapshot-value">21 days</p>
+          <p class="snapshot-label">Luxury homes require precise pricing</p>
+        </div>
+        <div class="snapshot-card">
+          <div class="snapshot-icon">📚</div>
+          <h3>School Rating</h3>
+          <p class="snapshot-value">10/10</p>
+          <p class="snapshot-label">Millburn School District</p>
+        </div>
+        <div class="snapshot-card">
+          <div class="snapshot-icon">🚂</div>
+          <h3>NYC Commute</h3>
+          <p class="snapshot-value">~30 min</p>
+          <p class="snapshot-label">Midtown Direct express to Penn Station</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section>
-        <h2>Neighborhoods and Residential Areas in Short Hills</h2>
-        <p>Short Hills encompasses several distinct neighborhoods and residential areas, each with its own character and appeal. Understanding these areas helps you find the perfect location for your needs.</p>
-        <p><strong>Downtown and Central Commercial Area</strong></p>
-        <p>The central area of Short Hills features walkable streets, local shops, restaurants, and community amenities. Homes here range from historic properties with original character to well-maintained colonial-style homes. The downtown area attracts those who value walkability, convenience, and community connection. Living downtown puts you close to schools, shopping, and dining with minimal driving.</p>
-        <p><strong>Residential Neighborhoods</strong></p>
-        <p>Tree-lined streets with single-family homes form the backbone of Short Hills's residential character. These neighborhoods feature homes from modest cottages to large colonials, each with its own style and price point. Families appreciate the quiet streets, good schools, and strong community feel. Most homes have yards providing space for children and pets, gardens, or simple outdoor relaxation.</p>
-        <p><strong>Estate and Premium Areas</strong></p>
-        <p>For those seeking more space, larger properties, and premium features, Short Hills offers beautiful estate homes on larger lots. These properties often feature mature landscaping, updated systems, and premium locations near parks or scenic areas. Estate living offers privacy while maintaining community connection.</p>
-        <p><strong>Near-School Communities</strong></p>
-        <p>Properties within walking distance of top-rated schools command premium pricing due to convenience. Families with children value the ability to walk or bike to school. These neighborhoods are particularly desirable and show stronger appreciation over time.</p>
-        <p><strong>Highway-Adjacent Properties</strong></p>
-        <p>Some neighborhoods have excellent highway access for commuters. While not as quiet as interior neighborhoods, these areas offer convenience for those prioritizing commute time over neighborhood aesthetics.</p>
-        <p>When exploring neighborhoods, I recommend visiting at different times—morning school commute, evening activity, weekend recreation. You'll get a genuine feel for each area's pace and character. Morning visits show you school traffic and commute activity. Evening visits reveal community activity and dining options. Weekend visits show park usage and neighborhood life.</p>
-      </section>
+  <!-- NEIGHBORHOODS SECTION -->
+  <section class="neighborhoods">
+    <div class="container">
+      <h2>Neighborhoods & Community</h2>
+      <p>Short Hills is technically a section of Millburn Township, but it functions as its own distinct community with a unique identity, architecture, and price tier. Understanding the sub-neighborhoods within Short Hills is critical to finding the right home -- and pricing a listing correctly.</p>
+      <div class="neighborhoods-grid">
+        <div class="neighborhood-card">
+          <h3>Old Short Hills</h3>
+          <p>The historic heart of the community, Old Short Hills features grand estates on half-acre to multi-acre lots along winding, tree-canopied roads like Old Short Hills Road and Hobart Avenue. Many properties date to the early 1900s with original architectural details, though most have been extensively updated. Prices range from $1.5M to $3M+. This is the address within the address -- where Short Hills' prestige and history converge. Buyers here prioritize character, land, and proximity to the Short Hills train station.</p>
+        </div>
+        <div class="neighborhood-card">
+          <h3>Glenwood</h3>
+          <p>A highly sought-after pocket near Glenwood Elementary School, this neighborhood offers a mix of expanded colonials, newer construction, and well-maintained mid-century homes. Prices typically range from $1.2M to $2M. Families love the walkability to Glenwood Elementary (rated 10/10) and the flat, kid-friendly streets. It is one of the most competitive areas in Short Hills for young families, with homes frequently receiving multiple offers within days of listing.</p>
+        </div>
+        <div class="neighborhood-card">
+          <h3>Hobart Gap Area</h3>
+          <p>Situated on the western side of Short Hills near the South Mountain Reservation, Hobart Gap offers slightly larger lots and a more secluded feel. You will find colonials, split-levels, and some newer custom builds in the $1M to $1.8M range. Residents enjoy direct access to hiking trails in the Reservation, including the popular Hemlock Falls trail. Hobart Gap attracts buyers who want the Short Hills school district and address but prefer a quieter, more nature-oriented setting.</p>
+        </div>
+        <div class="neighborhood-card">
+          <h3>Millburn Downtown & The Mall</h3>
+          <p>While technically Millburn rather than Short Hills, the downtown Millburn area and properties near The Mall at Short Hills share the same school district and tax base. Millburn's walkable downtown along Main Street offers restaurants, specialty shops, and the Paper Mill Playhouse. Homes here are generally more modest in size and price ($800K to $1.3M), attracting buyers who want Millburn Township schools without the Short Hills premium. The Mall at Short Hills -- featuring Neiman Marcus, Nordstrom, Tiffany, and Louis Vuitton -- is a regional luxury retail destination.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section>
-        <h2>Schools and Education Excellence in Short Hills</h2>
-        <p>Schools are often the primary consideration for families evaluating Short Hills. The educational system here is one of the community's greatest strengths.</p>
-        <p><strong>Academic Excellence</strong></p>
-        <p>The Short Hills School District consistently delivers strong academics through:</p>
-        <ul>
-          <li>Consistent test score performance above state and national averages in reading, math, and science</li>
-          <li>Strong STEM programs with modern labs, technology integration, and experienced teachers</li>
-          <li>Comprehensive liberal arts curriculum fostering creative and critical thinking skills</li>
-          <li>AP and honors programs for advanced learners with college-level coursework</li>
-          <li>Special education services supporting diverse learning needs and abilities</li>
-          <li>English Language Learner programs supporting multilingual student populations</li>
-          <li>Gifted and talented programs identifying and nurturing exceptional students</li>
-          <li>College placement rates showing strong percentage of graduates attending four-year universities</li>
-        </ul>
-        <p><strong>Extracurricular and Enrichment Opportunities</strong></p>
-        <p>The Short Hills schools provide comprehensive opportunities beyond the classroom:</p>
-        <ul>
-          <li>Competitive athletic programs across multiple sports (football, soccer, basketball, baseball, volleyball, etc.)</li>
-          <li>Comprehensive arts programs including music, band, orchestra, theater, and visual arts</li>
-          <li>Clubs and organizations fostering student interests and leadership (debate, robotics, key club, etc.)</li>
-          <li>Community service and volunteer opportunities building character and civic engagement</li>
-          <li>Academic competitions and debate teams competing regionally and statewide</li>
-          <li>Music festivals, art shows, and theatrical productions showcasing student talent</li>
-          <li>Field trips and experiential learning connecting classroom learning to real-world applications</li>
-        </ul>
-        <p><strong>Dedicated Staff and Resources</strong></p>
-        <p>Teachers in Short Hills schools are dedicated professionals committed to student success. The district invests in professional development, modern facilities, and educational resources. Administrators foster collaborative cultures where students thrive. Parent-teacher organizations actively support school initiatives with fundraising and volunteer work. This combination of dedicated staff, administrative support, and community involvement creates a learning environment where students flourish.</p>
-        <p><strong>Impact on Property Values</strong></p>
-        <p>School quality directly impacts property values. Homes in top-rated school districts command premium pricing due to consistent buyer demand from families with children. These homes also appreciate more steadily over time as the school system's reputation remains strong. Even if your children are grown, choosing a home in a strong school district is a smart investment that provides resale value and protects your investment.</p>
-        <p><strong>College Preparation and Success</strong></p>
-        <p>A significant percentage of Short Hills graduates attend four-year colleges and universities at competitive institutions. The schools provide comprehensive college counseling, AP courses, test preparation, and guidance that sets students up for success in higher education. College counselors work individually with students to identify appropriate institutions and support applications.</p>
-      </section>
+  <!-- SCHOOLS SECTION -->
+  <section class="schools">
+    <div class="container">
+      <h2>Schools & Education</h2>
+      <p>The Millburn School District is rated 10/10 and consistently ranks as the #1 or #2 public school district in New Jersey. For many buyers, the schools alone justify the premium price of Short Hills real estate. This is not an exaggeration -- school quality is the single most powerful driver of home values in this market.</p>
+      <div class="schools-highlight">
+        <h3>Millburn Township Public Schools</h3>
+        <p>The district serves approximately 4,800 students across seven schools: five elementary schools (Deerfield, Glenwood, Hartshorn, South Mountain, and Wyoming), Millburn Middle School, and Millburn High School. Every school in the district earns a GreatSchools rating of 9 or 10 out of 10.</p>
+        <p>Millburn High School is consistently ranked among the top 25 public high schools in New Jersey. The school offers 30+ AP courses, a renowned math and science curriculum that produces National Merit Scholars annually, award-winning performing arts programs, and competitive athletics. College placement is exceptional -- graduates regularly attend Ivy League schools, Stanford, MIT, and other top-tier universities.</p>
+        <p>The elementary schools maintain rigorous academics with small class sizes. Glenwood and Hartshorn are particularly sought-after by Short Hills buyers. The district's investment in technology, foreign language instruction starting in elementary school, and gifted programs creates an educational experience that rivals many private schools.</p>
+        <p><strong>School Rating: 10/10</strong> -- among the highest-rated public school districts in the United States</p>
+        <p><em>Elementary school assignment depends on your specific address. Contact Jorge Ramirez for current school boundary maps, as they can determine significant price differences between otherwise similar properties.</em></p>
+      </div>
+    </div>
+  </section>
 
-      <section>
-        <h2>Commuting to New York City and Regional Transportation</h2>
-        <p>For professionals working in New York City or seeking urban job markets, Short Hills offers an excellent base. The commute to Manhattan is manageable, and multiple transportation options provide flexibility.</p>
-        <p><strong>Public Transportation Options</strong></p>
-        <p>New Jersey Transit provides comprehensive service including:</p>
-        <ul>
-          <li>Bus routes connecting to regional hubs and employment centers</li>
-          <li>Regional rail lines with express service during rush hours reaching Penn Station and other Manhattan locations</li>
-          <li>Park and ride facilities at transit stations allowing drivers to avoid Manhattan traffic</li>
-          <li>Carpooling and vanpool networks reducing commute costs and environmental impact</li>
-          <li>Discount programs for commuters including NJ Transit passes and vanpool subsidies</li>
-          <li>Real-time transit information helping commuters plan trips efficiently</li>
-        </ul>
-        <p><strong>Highway Access for Driving Commuters</strong></p>
-        <p>For those preferring to drive:</p>
-        <ul>
-          <li>Interstate 287 connecting to New York City and other regional employment centers</li>
-          <li>Route 22 and Route 23 providing alternative routes with less congestion than major interstates</li>
-          <li>I-78 providing direct access to downtown Manhattan and the Holland Tunnel</li>
-          <li>Well-maintained roads and modern infrastructure supporting efficient commuting</li>
-          <li>Multiple routes providing options for avoiding congestion and traffic incidents</li>
-        </ul>
-        <p><strong>The Commuting Reality</strong></p>
-        <p>Commuting to New York City from Short Hills is a daily reality for many residents. Most find it manageable—they use the time productively reading, catching up on news, listening to podcasts, or relaxing before the workday begins. Others appreciate the separation between home and work life that the commute provides, using the transition time to shift mental gears.</p>
-        <p>The train commute allows you to work, read, or relax during travel. The driving commute provides personal time and flexibility. Many commuters develop close friendships with fellow commuters, creating a social community. Over time, commuters develop routines and strategies that make the commute part of their lifestyle rather than an ordeal.</p>
-        <p><strong>Impact of Remote and Hybrid Work</strong></p>
-        <p>The shift to hybrid and remote work has changed commuting patterns significantly. Many professionals work from home 2-3 days per week, using transit for occasional trips to the office. On those days, they typically go during off-peak hours, reducing congestion. This flexibility makes Short Hills's location even more attractive, as the commute becomes a part-time reality rather than a daily requirement.</p>
-        <p><strong>Alternative Employment Centers</strong></p>
-        <p>Beyond New York City, Short Hills has excellent access to employment centers throughout Northern New Jersey. Corporate parks in Summit, Livingston, Newark, and other nearby communities are easily accessible by car or transit. Many residents work locally rather than commuting to Manhattan, providing added flexibility and shorter commutes.</p>
-      </section>
+  <!-- COMMUTE & TRANSPORTATION SECTION -->
+  <section class="commute">
+    <div class="container">
+      <h2>Commute & Transportation</h2>
+      <p>Short Hills offers one of the fastest and most convenient commutes to Manhattan in all of New Jersey. The Midtown Direct service from Short Hills station is a primary reason high-income professionals choose this community over comparably prestigious towns without direct train access.</p>
+      <div class="commute-grid">
+        <div class="commute-card">
+          <h3>🚂 NJ Transit Midtown Direct</h3>
+          <p><strong>~30 minutes express</strong> to NY Penn Station</p>
+          <p>Short Hills station sits on the Morris & Essex Line with Midtown Direct express service -- no transfer at Hoboken. Peak-hour trains run every 15-20 minutes. The 30-minute express is one of the fastest commutes available from a top-rated NJ school district. Commuter parking is available at the station, and many Old Short Hills residents walk to the platform. A monthly pass runs approximately $300.</p>
+        </div>
+        <div class="commute-card">
+          <h3>🚗 Highway Access</h3>
+          <p><strong>Route 24, I-78, Garden State Parkway</strong></p>
+          <p>Route 24 connects Short Hills directly to I-287 for access to Morris County corporate campuses. I-78 provides a straight route to Newark and the Holland Tunnel for drivers heading to downtown Manhattan (approximately 45-55 minutes depending on traffic). The Garden State Parkway is accessible within 10 minutes for north-south travel. For dual-income households where one partner commutes by train and the other drives, Short Hills' highway access is ideal.</p>
+        </div>
+        <div class="commute-card">
+          <h3>✈️ Newark Airport (EWR)</h3>
+          <p><strong>20-25 minutes</strong> via I-78</p>
+          <p>Newark Liberty International Airport is one of the closest major airports to any premium NJ suburb. The 20-25 minute drive via I-78 makes Short Hills particularly attractive to executives and consultants who fly frequently for business. All three NYC-area airports (EWR, JFK, LGA) are accessible, but Newark's proximity is a genuine lifestyle advantage.</p>
+        </div>
+        <div class="commute-card">
+          <h3>🏙️ Hybrid Work Reality</h3>
+          <p><strong>2-3 days in office</strong> is the new norm</p>
+          <p>The shift to hybrid work has amplified Short Hills' appeal. Professionals who commute to Manhattan only 2-3 days per week find the 30-minute express train perfectly manageable -- and on work-from-home days, they enjoy the space, quiet, and quality of life that Short Hills provides. This trend has actually increased demand and pushed prices higher since 2020.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section>
-        <h2>Community Character and Lifestyle in Short Hills</h2>
-        <p>Beyond the practical factors like schools and commutes, Short Hills offers a particular lifestyle that appeals to many.</p>
-        <p><strong>Community Events and Traditions</strong></p>
-        <p>Regular festivals, farmers markets, parades, and cultural events throughout the year bring neighbors together and create community traditions. These events become part of the annual calendar—holiday celebrations, summer concerts, community clean-ups. Families participate together, creating memories and neighborhood connections.</p>
-        <p><strong>Parks and Recreation</strong></p>
-        <p>Beautiful parks with playgrounds, sports facilities, and trails provide outdoor recreation. Youth sports leagues, adult fitness classes, and recreational programs serve all ages. Parks serve as neighborhood gathering places where friendships form and community bonds strengthen.</p>
-        <p><strong>Local Business District and Shops</strong></p>
-        <p>Independent shops, restaurants, and services support the local economy and provide community gathering places. Rather than visiting chain stores, Short Hills residents often shop locally, supporting local businesses and building relationships with local owners.</p>
-        <p><strong>Houses of Worship and Faith Communities</strong></p>
-        <p>Multiple houses of worship serve diverse faiths and provide spiritual guidance and community support. Faith communities organize charitable activities, social events, and support for members during difficult times.</p>
-        <p><strong>Civic Involvement and Community Organizations</strong></p>
-        <p>Active town government, volunteer opportunities, and engaged residents work to improve the community. Town forums, community organizations, and volunteer groups provide ways to get involved and make a difference.</p>
-        <p><strong>Safety and Security</strong></p>
-        <p>Strong police presence, neighborhood watch programs, and community policing build safe neighborhoods. Residents feel secure, and this translates to higher quality of life and stronger sense of belonging.</p>
-        <p><strong>Overall Lifestyle</strong></p>
-        <p>The lifestyle in Short Hills is notably different from urban areas. It's slower-paced, more community-oriented, and focused on family and neighborhood connections. Yet it's not remote or isolated—urban amenities are accessible when needed. This balance attracts those seeking suburban living without sacrificing access to urban opportunities.</p>
-      </section>
+  <!-- BUYING OR SELLING SECTION -->
+  <section class="process">
+    <div class="container">
+      <h2>Buying or Selling in Short Hills?</h2>
+      <p>Short Hills is a luxury market that demands a different level of expertise. Pricing a $1.5M colonial requires different skills than pricing a $400K starter home. Marketing an estate property requires a different strategy than listing a townhome. Jorge Ramirez brings the experience and market knowledge this tier of real estate demands.</p>
+      <div class="process-columns">
+        <div class="process-col">
+          <h3>Selling Your Short Hills Home</h3>
+          <p>The luxury market is unforgiving of pricing mistakes. In Short Hills, overpricing by even 5-8% can result in a home sitting for 60+ days -- and in this market, extended days on market signals to buyers that something is wrong. The result is almost always a price cut below what the home would have sold for if priced correctly from day one.</p>
+          <p>My approach for Short Hills sellers:</p>
+          <ul>
+            <li><strong>Precision pricing:</strong> I analyze recent comparable sales within specific Short Hills sub-neighborhoods (Old Short Hills, Glenwood, Hobart Gap), not just township-wide averages that obscure critical price differences</li>
+            <li><strong>Premium presentation:</strong> Professional staging, architectural photography, drone footage, and video walkthroughs are standard -- not optional -- for homes in this price range</li>
+            <li><strong>Targeted luxury marketing:</strong> I reach qualified buyers through channels they actually use, including direct outreach to NYC-based relocation agents and high-net-worth buyer networks</li>
+            <li><strong>Renovation ROI guidance:</strong> With 60+ personal flips completed, I know exactly which updates add value at this price point and which are wasted money</li>
+          </ul>
+          <p><a href="https://value.thejorgeramirezgroup.com" class="btn btn-primary" style="margin-top:10px;">Get Your Free Short Hills Home Valuation</a></p>
+        </div>
+        <div class="process-col">
+          <h3>Buying in Short Hills</h3>
+          <p>Buying in Short Hills means competing with well-qualified, highly motivated buyers -- many coming from Manhattan finance, law, and tech with strong cash positions. Preparation is not optional; it is required. Here is how I give my buyers an edge:</p>
+          <ul>
+            <li><strong>Sub-neighborhood education:</strong> There is a $500K+ price difference between similar-sized homes in Old Short Hills versus other parts of the township. I help you understand what you are actually paying for</li>
+            <li><strong>School zone strategy:</strong> Glenwood Elementary and Hartshorn Elementary serve different areas of Short Hills. Your specific address determines your school, and this affects both lifestyle and resale value</li>
+            <li><strong>Off-market access:</strong> In a market where inventory is perpetually tight, my agent network surfaces properties before they hit the MLS</li>
+            <li><strong>Due diligence on older homes:</strong> Many Short Hills homes are 50-100 years old. I help buyers evaluate the true cost of ownership including roof, HVAC, foundation, and potential renovation needs</li>
+            <li><strong>Offer strategy for luxury:</strong> At this price point, the negotiation dynamics differ. I structure offers that protect your interests while remaining competitive against other strong buyers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section>
-        <h2>Real Estate Investment Opportunities in Short Hills</h2>
-        <p>For investors, Short Hills presents attractive opportunities. The combination of quality schools, reasonable prices, and steady demand creates a strong foundation for property appreciation.</p>
-        <p><strong>Investment Strategy: Owner-Occupied Single-Family Homes</strong></p>
-        <p>Single-family homes in good school districts attract consistent buyer demand. Families prioritize education, making homes near top-rated schools reliably desirable. Price appreciation has been steady, providing returns through both cash flow (if rented) and appreciation. These homes offer lower volatility than other investments while providing solid returns.</p>
-        <p><strong>Investment Strategy: Multi-Unit Rental Properties</strong></p>
-        <p>Rental demand comes from young professionals and families unable or unwilling to purchase. Multi-unit properties in accessible locations provide reliable rental income. The Short Hills market supports healthy rental rates from consistent tenant demand. Landlords in quality school districts can charge premium rents from tenants seeking good neighborhoods.</p>
-        <p><strong>Investment Strategy: Value-Add Renovations</strong></p>
-        <p>Fixer-upper properties represent opportunities to add value through renovation. Discerning buyers appreciate modern updates, improved systems, and improved aesthetics. The strong market supports these improvements with appreciation in resale value. Investors with construction knowledge or relationships with contractors can generate significant returns through strategic renovations.</p>
-        <p><strong>Investment Strategy: New Development Partnerships</strong></p>
-        <p>Partnerships with developers building new communities provide investment opportunities. New construction attracts buyers seeking modern homes with warranties and no deferred maintenance issues.</p>
-        <p><strong>Historical Appreciation and Returns</strong></p>
-        <p>Historical data shows that Short Hills properties appreciate at a reliable 3-4% annually. This conservative growth reflects the stability and desirability of the market. While not as dramatic as speculative markets, this steady appreciation compounds significantly over time. A $300,000 property appreciating at 3.5% annually becomes worth $540,000 in 20 years—an 80% increase beyond inflation.</p>
-        <p><strong>Cap Rates and Rental Income</strong></p>
-        <p>Rental properties in Short Hills typically show cap rates of 4-6%, making them attractive to income-focused investors. Combined with appreciation potential and tax benefits (mortgage interest deductions, depreciation, etc.), real estate investments in Short Hills offer balanced returns.</p>
-        <p><strong>Why Short Hills for Investment</strong></p>
-        <p>The fundamentals supporting real estate values in Short Hills are strong and sustainable. Quality schools drive consistent demand. Growing population provides tenant base. Strong community reduces vacancy and tenant quality issues. This combination makes Short Hills a stable, predictable investment market.</p>
-      </section>
+  <!-- LIFESTYLE & COMMUNITY SECTION -->
+  <section class="neighborhoods" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <h2>Lifestyle & Community in Short Hills</h2>
+      <p>Short Hills offers a lifestyle that blends suburban tranquility with sophisticated amenities. The community attracts families and professionals who appreciate quality in every detail -- from the architecture of their homes to the restaurants they frequent and the cultural institutions they support.</p>
+      <div class="neighborhoods-grid">
+        <div class="neighborhood-card">
+          <h3>The Mall at Short Hills & Dining</h3>
+          <p>The Mall at Short Hills is not just a shopping center -- it is one of the highest-grossing malls in America and a defining feature of the community's upscale identity. Anchored by Neiman Marcus, Nordstrom, and Bloomingdale's, with luxury boutiques including Tiffany & Co., Louis Vuitton, Gucci, Cartier, and Hermes, the mall is a regional destination. Beyond the mall, the broader Millburn-Short Hills area offers excellent dining options ranging from casual spots along Millburn Avenue to upscale restaurants. The community's proximity to Maplewood and South Orange adds even more dining and nightlife options within a 10-minute drive.</p>
+        </div>
+        <div class="neighborhood-card">
+          <h3>South Mountain Reservation</h3>
+          <p>The 2,110-acre South Mountain Reservation is one of Short Hills' greatest lifestyle amenities. This Essex County park offers over 20 miles of hiking and biking trails, including the popular route to Hemlock Falls. Turtle Back Zoo, located within the reservation, is a family favorite. The reservation provides a genuine nature escape minutes from your doorstep -- a rare amenity for a community this close to Manhattan. Residents use the trails year-round for running, hiking, mountain biking, and cross-country skiing. Living near the reservation's Hobart Gap entrance is a specific selling point for properties in that area.</p>
+        </div>
+        <div class="neighborhood-card">
+          <h3>Paper Mill Playhouse & Cultural Life</h3>
+          <p>The Paper Mill Playhouse in Millburn is one of the leading regional theaters in the United States, producing professional-quality musicals and plays year-round. Many Broadway shows have premiered or been developed at Paper Mill. Beyond the playhouse, the Millburn-Short Hills community supports an active arts scene including gallery exhibitions, the Millburn Free Public Library (an excellent community resource), and seasonal events organized by the Millburn-Short Hills Chamber of Commerce. The community's cultural depth is part of what distinguishes it from other wealthy NJ suburbs.</p>
+        </div>
+        <div class="neighborhood-card">
+          <h3>Why High-Income Families Choose Short Hills</h3>
+          <p>The typical Short Hills buyer is a high-income professional or executive -- often from Manhattan finance, law, consulting, or technology -- who needs three things: the best possible public schools so they can redirect private school tuition toward their mortgage, a fast commute to Penn Station, and a home and community that reflects their success. Short Hills delivers on all three. The 10/10 Millburn district rivals private schools costing $40K-$60K per year. The 30-minute Midtown Direct express is the fastest commute from any top-rated NJ school district. And the homes, grounds, and overall community aesthetic project affluence without ostentation. For many families, the decision comes down to Short Hills or private school in Manhattan -- and Short Hills wins on both quality of life and financial logic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section>
-        <h2>The Home Buying Process: A Detailed Roadmap</h2>
-        <p>Whether you're a first-time buyer or an experienced investor, understanding the home buying process in Short Hills helps you navigate the journey successfully.</p>
-        <p><strong>Step 1: Get Pre-Approved for Mortgage Financing</strong></p>
-        <p>Before house hunting, get pre-approved for a mortgage. Contact lenders (banks, credit unions, mortgage brokers) to understand your borrowing capacity. Pre-approval requires financial documentation but typically takes 2-3 business days. Pre-approval shows sellers you're serious and identifies your budget. It distinguishes you from casual browsers and positions you to move quickly on attractive properties.</p>
-        <p><strong>Step 2: Find and Hire a Real Estate Agent</strong></p>
-        <p>Working with a local agent who knows Short Hills is invaluable. I provide market insights, identify properties matching your criteria, and guide you through negotiations. I have access to all available listings through the MLS and the relationships to find off-market opportunities. I understand neighborhood dynamics that affect value and quality of life.</p>
-        <p><strong>Step 3: Search for Properties Matching Your Criteria</strong></p>
-        <p>Based on your criteria—price range, neighborhood, style, size, special features—I identify suitable properties. We tour properties, discuss pros and cons, and identify your top choices. This process typically takes weeks as you consider multiple properties.</p>
-        <p><strong>Step 4: Make an Offer on the Right Property</strong></p>
-        <p>When you find the right property, I help you craft a competitive offer considering recent sales, market conditions, property condition, and negotiating strategy. Timing and strategy matter—a well-positioned offer often wins in competitive situations. Aggressive offers may scare sellers; lowball offers get rejected immediately. I help you find the sweet spot.</p>
-        <p><strong>Step 5: Inspection and Appraisal</strong></p>
-        <p>You hire a home inspector to identify any issues before closing. Simultaneously, your lender orders an appraisal confirming the property's value. These typically take 7-10 days. The inspection report may reveal issues requiring negotiation or re-inspection.</p>
-        <p><strong>Step 6: Negotiate Repairs or Credits</strong></p>
-        <p>If inspection reveals issues, you negotiate repairs or credits with the seller. The appraisal might require renegotiating price if it comes in below your offer. I guide these negotiations toward acceptable outcomes for both sides.</p>
-        <p><strong>Step 7: Final Walkthrough and Closing</strong></p>
-        <p>You do a final walkthrough confirming any agreed repairs were completed and the property is in expected condition. Then you close on the property—sign documents, transfer funds, and get your keys. Closing typically happens 45-60 days after your offer.</p>
-        <p><strong>Throughout this process, I'm your advocate, guide, and problem-solver.</strong></p>
-      </section>
+  <!-- WHY JORGE SECTION -->
+  <section class="schools">
+    <div class="container">
+      <h2>Why Work With Jorge Ramirez in Short Hills</h2>
+      <p>The luxury market demands an agent who understands both the numbers and the nuances. Short Hills is not a market where generic strategies work -- it requires precision, market knowledge, and the ability to serve discerning clients.</p>
+      <div class="schools-highlight">
+        <h3>Luxury Market Expertise With an Investor's Eye</h3>
+        <p>Jorge Ramirez has been a full-time licensed real estate agent since 2017 and has personally completed 60+ investment property transactions -- buying, renovating, and selling homes across Northern and Central New Jersey. This hands-on investor background gives Jorge a unique perspective in the luxury market: he understands construction quality, renovation costs, and the difference between improvements that add value and those that are purely cosmetic. When evaluating a $1.5M colonial in Short Hills, Jorge can assess the roof, HVAC, foundation, and renovation potential with the eye of someone who has done it himself -- not just an agent who reads inspection reports.</p>
+        <p>As a member of Keller Williams Premier Properties based at 488 Springfield Avenue in Summit, NJ, Jorge serves buyers and sellers throughout Essex County, Union County, Morris County, and beyond. His approach combines rigorous data analysis with a personal touch that high-net-worth clients appreciate.</p>
+        <p><strong>What sets Jorge apart in Short Hills:</strong></p>
+        <p>-- Deep understanding of sub-neighborhood pricing (Old Short Hills vs. Glenwood vs. Hobart Gap vs. Millburn)<br>
+        -- Investor background that provides unique insight into property value, renovation potential, and negotiation leverage<br>
+        -- Network of luxury buyers including NYC-based relocation agents and high-net-worth buyer contacts<br>
+        -- Premium marketing capabilities including architectural photography, drone footage, and video tours<br>
+        -- Responsive communication -- available 8am-9pm, 7 days a week<br>
+        -- NJ Real Estate License #1754604</p>
+        <p><em>Ready to discuss your Short Hills real estate goals? Call Jorge at (908) 230-7844 or email jorge.ramirez@kw.com for a free, confidential consultation.</em></p>
+      </div>
+    </div>
+  </section>
 
-      <section>
-        <h2>Selling Your Short Hills Home Successfully</h2>
-        <p>If you're selling your Short Hills home, successful selling requires strategy, preparation, and expert guidance.</p>
-        <p><strong>Pricing Strategy for Maximum Return</strong></p>
-        <p>Pricing is critical. Overpriced homes linger on market and eventually sell for less than they would have at fair price. Underpriced homes sell quickly but leave money on the table. I use comparative market analysis analyzing recent sales, current listings, and pending sales to identify the optimal price that attracts buyers while maximizing proceeds. Correct pricing generates immediate buyer interest, multiple offers, and strong negotiating position.</p>
-        <p><strong>Preparing Your Home for Showings</strong></p>
-        <ul>
-          <li><strong>Curb Appeal:</strong> First impressions matter. Clean landscaping, fresh paint, updated entry, seasonal decorations make strong impact. Buyers form impressions before entering your home.</li>
-          <li><strong>Interior Cleanliness:</strong> Deep cleaning, decluttering, and depersonalizing help buyers envision themselves in the space. Remove personal photos and items. Neutral décor appeals to broader buyer base.</li>
-          <li><strong>Repairs:</strong> Fix obvious issues before listing. Buyers discount heavily for repairs needed. Fixing issues increases list price more than repair costs.</li>
-          <li><strong>Staging:</strong> Strategic furniture arrangement, neutral colors, and careful decoration highlight the home's best features. Remove oversized furniture that makes rooms look small.</li>
-        </ul>
-        <p><strong>Marketing and Generating Buyer Interest</strong></p>
-        <p>I use professional photography, virtual tours, and targeted marketing to reach potential buyers. High-quality images and video generate online interest and showings. Targeted marketing reaches qualified buyers actively searching in your price range and neighborhood.</p>
-        <p><strong>Negotiating Offers and Closing Successfully</strong></p>
-        <p>When offers arrive, I help you evaluate and negotiate. Should you accept the first offer or wait for better? I provide guidance based on market conditions and your goals. Once you accept, I guide you through inspections, title work, and closing—ensuring smooth transition and maximum proceeds.</p>
-      </section>
+  <!-- FAQ SECTION -->
+  <section class="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions About Short Hills Real Estate</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>What is the median home price in Short Hills?</h3>
+          <p>The median home price in Short Hills is approximately <strong>$1,350,000</strong>, but prices vary dramatically by sub-neighborhood. Homes in Old Short Hills and premium Glenwood locations regularly sell for $1.8M to $3M+, while properties on the Millburn side of the township can start around $800K-$1M. Understanding these micro-markets is essential -- contact Jorge for current pricing data specific to the area you are considering.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is Short Hills the same as Millburn?</h3>
+          <p>Short Hills is a section of Millburn Township -- they share the same municipal government, school district, and tax rate. However, Short Hills has its own train station, post office (07078 zip code), and distinct identity. In practice, "Short Hills" commands a price premium over "Millburn" for comparable homes, largely due to the prestige of the address and proximity to the Short Hills station and The Mall at Short Hills.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How fast is the train from Short Hills to NYC?</h3>
+          <p>The Midtown Direct express from Short Hills station to New York Penn Station takes approximately <strong>30 minutes</strong> -- one of the fastest commutes from any top-rated NJ school district. Peak-hour trains run every 15-20 minutes with no transfer required. Many buyers specifically target Short Hills because no other town in NJ offers this combination of school quality and commute speed.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How are the schools in Short Hills?</h3>
+          <p>The Millburn School District is rated <strong>10/10</strong> and consistently ranks as the #1 or #2 public school district in New Jersey. Millburn High School sends graduates to Ivy League schools, MIT, Stanford, and other elite universities annually. The district offers 30+ AP courses, produces National Merit Scholars, and maintains exceptional performing arts and athletics programs. Schools are the #1 driver of home values in Short Hills.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What types of homes are in Short Hills?</h3>
+          <p>Short Hills features a diverse architectural mix including grand Tudor and Colonial Revival estates from the 1920s-1930s, elegant mid-century moderns from the 1950s-1960s, expanded colonials, contemporary custom builds, and some newer construction infill. Lot sizes range from quarter-acre to 2+ acres in Old Short Hills. The housing stock is generally larger and more architecturally distinctive than neighboring communities, reflecting the premium market.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is The Mall at Short Hills?</h3>
+          <p>The Mall at Short Hills is one of the highest-grossing shopping centers in the United States, featuring luxury retailers including Neiman Marcus, Nordstrom, Tiffany & Co., Louis Vuitton, Gucci, Cartier, and Hermes. The mall is a regional destination and contributes to Short Hills' identity as an upscale community. Its proximity affects home values -- living near The Mall is a convenience for some buyers and a selling point for the area's affluent lifestyle.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who is the best real estate agent in Short Hills?</h3>
+          <p>Jorge Ramirez of The Jorge Ramirez Group at Keller Williams Premier Properties brings deep Essex County expertise, luxury market knowledge, and a track record of 60+ personal investment property transactions. Full-time since 2017, Jorge serves both buyers and sellers throughout Short Hills and Millburn Township. Call <strong>(908) 230-7844</strong> or email jorge.ramirez@kw.com for a free consultation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section>
-        <h2>Looking Forward: Market Trends and Investment Outlook</h2>
-        <p>Understanding market trends helps with buying, selling, and investing decisions. Several factors support Short Hills's real estate market:</p>
-        <ul>
-          <li><strong>School Reputation:</strong> Continues attracting families to the area year after year, providing consistent demand</li>
-          <li><strong>Remote Work Flexibility:</strong> Professionals can live in Short Hills while working elsewhere, expanding the buyer pool</li>
-          <li><strong>Infrastructure Improvements:</strong> Local and county investments improve quality of life, accessibility, and attractiveness</li>
-          <li><strong>Population Growth:</strong> Northern New Jersey attracts relocating families seeking better schools and communities</li>
-          <li><strong>Property Value Stability:</strong> Steady appreciation expected to continue based on fundamental market factors</li>
-          <li><strong>Development Pipeline:</strong> New construction adds housing options and supports community growth</li>
-          <li><strong>Community Investment:</strong> Local government improves parks, roads, and services enhancing livability</li>
-        </ul>
-        <p>Looking forward, Short Hills's fundamentals remain sound. The combination of quality schools, reasonable prices, and convenient location will continue to drive demand. Whether you're buying, selling, or investing, Short Hills represents a strong real estate market with long-term strength.</p>
-        <p>For families, Short Hills offers the balance of excellent schools, safe neighborhoods, and community without excessive pricing. For investors, the steady fundamentals and reliable appreciation provide stable returns. For professionals, the convenient location and community quality support both work and life balance.</p>
-      </section>
+  <!-- CTA SECTION -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>Ready to Buy or Sell in Short Hills?</h2>
+      <p>Short Hills is a luxury market that rewards expertise and punishes guesswork. Whether you are selling an estate in Old Short Hills or searching for your family's first home in the Millburn district, Jorge Ramirez delivers the precision and local knowledge this market demands.</p>
+      <div class="cta-buttons">
+        <a href="tel:908-230-7844" class="btn btn-primary btn-large">Call Jorge (908) 230-7844</a>
+        <a href="mailto:jorge.ramirez@kw.com" class="btn btn-secondary btn-large">Email Inquiry</a>
+        <a href="https://value.thejorgeramirezgroup.com" class="btn btn-outline btn-large">Free Home Valuation</a>
+      </div>
+      <p class="cta-note">Available 8am-9pm, 7 days/week | Free Consultation | NJ License #1754604</p>
+    </div>
+  </section>
 
-      <section>
-        <h2>Frequently Asked Questions About Short Hills</h2>
-        <p><strong>Q: What's the typical inventory in Short Hills?</strong></p>
-        <p>A: Short Hills maintains healthy inventory levels. On average, there are multiple properties available in different price ranges and neighborhoods. Homes in top school districts tend to sell faster due to consistent demand from families.</p>
-        
-        <p><strong>Q: How long does a typical sale take in Short Hills?</strong></p>
-        <p>A: From listing to closing typically takes 45-60 days, though well-priced homes in desirable areas may close faster. Timeline depends on property condition, price, and specific buyer requirements.</p>
-        
-        <p><strong>Q: Are there new developments and construction in Short Hills?</strong></p>
-        <p>A: Short Hills has an active development pipeline. I can provide information about new construction projects and whether new homes might suit your needs. New construction offers the advantage of modern features, warranties, and no deferred maintenance.</p>
-        
-        <p><strong>Q: What neighborhood is best for families with kids?</strong></p>
-        <p>A: Several neighborhoods work well for families. The best choice depends on school preferences, commute needs, lifestyle preferences, and budget. I'm happy to discuss options specific to your situation and priorities.</p>
-        
-        <p><strong>Q: Is Short Hills a good real estate investment?</strong></p>
-        <p>A: Yes. Short Hills's strong schools, reasonable prices, and steady market fundamentals make it attractive for both owner-occupants and investors. Historical appreciation demonstrates reliable returns.</p>
-        
-        <p><strong>Q: What closing costs should I expect?</strong></p>
-        <p>A: Closing costs typically range from 2-5% of the purchase price, including title insurance, inspections, appraisals, attorney fees, and lender fees. I can provide detailed estimates specific to your situation.</p>
-        
-        <p><strong>Q: How do I get started in Short Hills real estate?</strong></p>
-        <p>A: Call me at 908-230-7844 or visit our website to schedule a consultation. We'll discuss your goals and explore options that fit your situation perfectly. I'm here to answer questions and help you navigate the process.</p>
-      </section>
-
-      <section>
-        <h2>Let's Begin Your Short Hills Real Estate Journey</h2>
-        <p>Whether you're exploring Short Hills for the first time or you've already decided it's the right community for you, I'm here to help. My goal is to make the buying, selling, or investing process as smooth and successful as possible.</p>
-        <p>Real estate decisions deserve careful consideration. Spend time in the community. Talk to residents. Visit neighborhoods at different times. Ask questions. And when you're ready, reach out—I'm just a call away.</p>
-        <p><strong>Your Short Hills real estate journey starts with a conversation. Let's talk.</strong></p>
-        <p><strong>📞 Call or text: <a href="tel:+19082307844">908-230-7844</a></strong></p>
-        <p><a href="../index.html#contact" class="cta-btn">Schedule Your Consultation</a></p>
-      </section>
-    </article>
-  </main>
-
-  <footer class="blog-footer">
-    <p>&copy; 2026 The Jorge Ramirez Group | Keller Williams Premier Properties</p>
-    <p><a href="../index.html">Return to Homepage</a> · <a href="../counties/essex-county.html">Essex County Real Estate</a> · <a href="../sell-your-home.html">Sell Your Home</a> · <a href="../home-valuation.html">Free Home Valuation</a></p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>The Jorge Ramirez Group</strong> -- Keller Williams Premier Properties</p>
+      <p>488 Springfield Avenue, Summit, NJ 07901</p>
+      <p>(908) 230-7844 | jorge.ramirez@kw.com</p>
+      <p style="margin-top: 12px;">
+        <a href="https://thejorgeramirezgroup.com/">Home</a> &middot;
+        <a href="https://thejorgeramirezgroup.com/counties/essex-county.html">Essex County Real Estate</a> &middot;
+        <a href="https://thejorgeramirezgroup.com/sell-your-home.html">Sell Your Home</a> &middot;
+        <a href="https://thejorgeramirezgroup.com/home-valuation.html">Free Home Valuation</a>
+      </p>
+      <p style="margin-top: 15px; font-size: 0.85rem; color: #999;">
+        &copy; 2026 The Jorge Ramirez Group. All rights reserved.<br>
+        Licensed NJ Real Estate Agent #1754604
+      </p>
+    </div>
   </footer>
 </body>
 </html>
