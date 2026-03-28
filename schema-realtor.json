@@ -77,6 +77,30 @@
         "name": "First-Time Home Buyer Services",
         "description": "Complete guidance through the home buying process for first-time buyers in New Jersey"
       }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Servicios de Compra de Vivienda",
+        "description": "Asesoría experta en bienes raíces para compradores en español. Acceso a propiedades en todo Norte de Nueva Jersey."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Servicios de Venta de Vivienda",
+        "description": "Estrategia de precios, marketing digital, y negociación experta para vendedores hispanos en NJ."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Agente Inmobiliario Bilingüe",
+        "description": "Jorge Ramirez es un agente inmobiliario bilingüe (inglés/español) sirviendo más de 103 comunidades en New Jersey."
+      }
     }
   ],
   "knowsAbout": [
@@ -91,12 +115,30 @@
     "Market Analysis",
     "Real Estate Negotiation"
   ],
-  "memberOf": {
-    "@type": "Organization",
-    "name": "Keller Williams Realty Premier Properties"
-  },
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "Keller Williams Realty Premier Properties"
+    },
+    {
+      "@type": "Organization",
+      "name": "NAHREP",
+      "description": "National Association of Hispanic Real Estate Professionals"
+    }
+  ],
   "sameAs": [
     "https://www.zillow.com/profile/jorgeramirez",
-    "https://www.realtor.com/realestateagents/jorge-ramirez"
+    "https://www.realtor.com/realestateagents/jorge-ramirez",
+    "https://www.zillow.com/profile/TheJorgeRamirezGroup",
+    "https://www.linkedin.com/in/jorgeramirez1213",
+    "https://www.facebook.com/thejorgeramirezgroup",
+    "https://www.instagram.com/jorgesellsnjhomes",
+    "https://www.youtube.com/@JorgeRamirezRealEstate",
+    "https://www.google.com/maps/place/Jorge+Ramirez+Realtor+-+Keller+Williams+Premier+Properties/@40.7176144,-74.3613942,16z",
+    "https://thejorgeramirezgroup.kw.com/agent/Jorge-Ramirez/520237"
+  ],
+  "knowsLanguage": [
+    "en-US",
+    "es"
   ]
 }
