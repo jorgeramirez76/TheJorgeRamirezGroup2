@@ -4,14 +4,36 @@ Allow: /es/
 Allow: /blog/es/
 Allow: /towns/es/
 
+# Block dynamic/parameter URLs that shouldn't be indexed
+Disallow: /contact?*
+Disallow: /*?interest=*
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+
 Sitemap: https://thejorgeramirezgroup.com/sitemap.xml
 Sitemap: https://thejorgeramirezgroup.com/sitemap-es.xml
 Sitemap: https://thejorgeramirezgroup.com/sitemap-index.xml
 
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
+Disallow: /contact?*
+Disallow: /*?interest=*
 
 User-agent: Bingbot
 Allow: /
+Disallow: /contact?*
+Disallow: /*?interest=*
 Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
