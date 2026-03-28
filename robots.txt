@@ -1,80 +1,17 @@
-# robots.txt — thejorgeramirezgroup.com
-# Updated: 2026-03-17
-# Configured for traditional SEO + AI GEO optimization
-# Allows all major AI crawlers: GPTBot, ClaudeBot, PerplexityBot, Googlebot-Extended
-
 User-agent: *
 Allow: /
-Disallow: /private/
-Disallow: /admin/
-Disallow: /cgi-bin/
-Disallow: /staging/
-Disallow: /features/
-Disallow: /*.php$
+Allow: /es/
+Allow: /blog/es/
+Allow: /towns/es/
 
-# Google
+Sitemap: https://thejorgeramirezgroup.com/sitemap.xml
+Sitemap: https://thejorgeramirezgroup.com/sitemap-es.xml
+Sitemap: https://thejorgeramirezgroup.com/sitemap-index.xml
+
 User-agent: Googlebot
 Allow: /
-Disallow: /private/
-Disallow: /staging/
-Disallow: /features/
+Crawl-delay: 1
 
-# Google Extended (Gemini AI training)
-User-agent: Google-Extended
-Allow: /
-
-# OpenAI ChatGPT crawler
-User-agent: GPTBot
-Allow: /
-Allow: /towns/
-Allow: /blog/
-
-# OpenAI search crawler
-User-agent: OAI-SearchBot
-Allow: /
-
-# ChatGPT user crawler
-User-agent: ChatGPT-User
-Allow: /
-
-# Anthropic Claude crawler
-User-agent: ClaudeBot
-Allow: /
-Allow: /towns/
-Allow: /blog/
-
-# Claude extended (AI training)
-User-agent: Claude-Web
-Allow: /
-
-# Perplexity AI
-User-agent: PerplexityBot
-Allow: /
-Allow: /towns/
-Allow: /blog/
-
-# Bing / Copilot
 User-agent: Bingbot
 Allow: /
-
-# Meta AI
-User-agent: FacebookBot
-Allow: /
-
-# Apple AI
-User-agent: Applebot
-Allow: /
-
-# Common AI research crawlers
-User-agent: CCBot
-Allow: /
-
-User-agent: omgili
-Allow: /
-
-# AI Context File (llms.txt)
-# https://llmstxt.org — structured context for AI language models
-LLMs: https://thejorgeramirezgroup.com/llms.txt
-
-# Sitemap declaration
-Sitemap: https://thejorgeramirezgroup.com/sitemap.xml
+Crawl-delay: 1
