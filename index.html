@@ -325,13 +325,69 @@
       "cssSelector": ["h1", ".hero-text", ".answer-text", ".content-main", "article", ".faq-answer", ".faq-item p"]
     }
     </script>
+
+    <!-- JSON-LD: LocalBusiness Schema (critical for local SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://thejorgeramirezgroup.com/#localbusiness",
+      "name": "The Jorge Ramirez Group",
+      "image": "https://thejorgeramirezgroup.com/images/jorge-logo.jpg",
+      "url": "https://thejorgeramirezgroup.com",
+      "telephone": "+1-908-230-7844",
+      "email": "jorge.ramirez@kw.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "488 Springfield Avenue",
+        "addressLocality": "Summit",
+        "addressRegion": "NJ",
+        "postalCode": "07901",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "40.7195",
+        "longitude": "-74.3648"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday","Sunday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "$$",
+      "areaServed": [
+        {"@type": "City", "name": "Summit, NJ"},
+        {"@type": "City", "name": "Westfield, NJ"},
+        {"@type": "City", "name": "Chatham, NJ"},
+        {"@type": "City", "name": "Montclair, NJ"},
+        {"@type": "City", "name": "Maplewood, NJ"},
+        {"@type": "City", "name": "Hoboken, NJ"},
+        {"@type": "City", "name": "Jersey City, NJ"}
+      ],
+      "sameAs": [
+        "https://www.instagram.com/jorgesellsnjhomes",
+        "https://www.linkedin.com/in/jorge-ramirez-realtor",
+        "https://www.facebook.com/jorgeramirezrealtor"
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
-                <img src="images/jorge-logo.jpg" alt="The Jorge Ramirez Group - NJ Real Estate Agent" class="logo-img" width="250" height="100">
+                <img src="images/jorge-logo.jpg" alt="The Jorge Ramirez Group - NJ Real Estate Agent" class="logo-img" width="250" height="100" loading="lazy">
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#buy">Buy</a></li>
@@ -966,6 +1022,9 @@
                 <a href="towns/chatham.html">Chatham</a>
                 <a href="towns/millburn.html">Millburn / Short Hills</a>
                 <a href="towns/montclair.html">Montclair</a>
+                <a href="towns/maplewood.html">Maplewood</a>
+                <a href="towns/hoboken.html">Hoboken</a>
+                <a href="towns/jersey-city.html">Jersey City</a>
             </div>
 
             <div class="footer-section">
@@ -974,6 +1033,8 @@
                 <a href="blog/first-time-home-buyer-nj-guide.html">First-Time Buyer Guide</a>
                 <a href="blog/top-nyc-commuter-towns-nj-2026.html">Best NJ Commuter Towns</a>
                 <a href="blog/moving-from-nyc-to-nj-guide.html">Moving From NYC to NJ</a>
+                <a href="blog/nj-property-tax-guide.html">NJ Property Tax Guide</a>
+                <a href="blog/sell-your-home-fast-nj.html">Sell Fast in NJ</a>
                 <a href="tools/mortgage-calculator.html">Mortgage Calculator</a>
                 <a href="#communities">Explore All 103 Communities</a>
             </div>
