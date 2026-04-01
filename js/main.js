@@ -166,9 +166,12 @@ if (contactForm) {
 }
 
 // Initialize — show county cards
-document.addEventListener('DOMContentLoaded', () => {
+// Scripts load at bottom of page so DOM is already ready; call directly + also handle DOMContentLoaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderCountyCards);
+} else {
     renderCountyCards();
-});
+}
 
 // Lazy load images for performance
 if ('IntersectionObserver' in window) {
