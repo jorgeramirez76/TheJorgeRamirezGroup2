@@ -56,7 +56,7 @@ const countyInfo = {
         towns: 12,
         highlight: "Hoboken, Jersey City, Weehawken, Bayonne",
         description: "Waterfront living with NYC skyline views, PATH access, and vibrant urban neighborhoods.",
-        photo: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&fit=crop"
+        photo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80&fit=crop"
     },
     "Morris": {
         towns: 37,
