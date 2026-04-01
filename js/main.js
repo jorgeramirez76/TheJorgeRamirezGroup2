@@ -82,6 +82,7 @@ let activeCounty = null;
 
 function renderCountyCards() {
     const container = document.getElementById('communities-container');
+    container.classList.remove('county-open');
     container.innerHTML = Object.keys(countyInfo).map(county => {
         const info = countyInfo[county];
         return `
@@ -117,6 +118,7 @@ function openCounty(county) {
         towns.map(c => buildTownCard(c, county)).join('') +
     `</div>`;
 
+    container.classList.add('county-open');
     container.innerHTML = backBtn + countyTitle + search + townCards;
     container.scrollIntoView({behavior: 'smooth', block: 'start'});
 }

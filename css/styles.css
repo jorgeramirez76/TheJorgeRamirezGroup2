@@ -1163,6 +1163,13 @@ footer {
 /* ===== COUNTY HERO CARDS ===== */
 #communities-container {
     margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+#communities-container.county-open {
+    display: block;
 }
 
 .county-hero-card {
@@ -1174,18 +1181,8 @@ footer {
     cursor: pointer;
     transition: all 0.35s ease;
     box-shadow: var(--shadow-sm);
-    display: inline-block;
-    width: calc(33.333% - 1.4rem);
-    vertical-align: top;
-    margin: 0.7rem;
     text-align: center;
-}
-
-/* 5 county cards — use grid */
-#communities-container:not(:has(.county-back-btn)) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    min-width: 0;
 }
 
 .county-hero-card:hover {
