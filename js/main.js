@@ -44,152 +44,115 @@ if (mobileMenuBtn) {
 }
 
 // Communities rendering functionality
-function renderCommunities(filter = 'all', searchTerm = '') {
+// County info for display
+const countyInfo = {
+    "Essex": {
+        towns: 11,
+        highlight: "Maplewood, South Orange, Montclair, Livingston",
+        description: "Walkable downtowns, Midtown Direct trains, and diverse communities from Montclair to Livingston.",
+        emoji: "🏙️"
+    },
+    "Hudson": {
+        towns: 12,
+        highlight: "Hoboken, Jersey City, Weehawken, Bayonne",
+        description: "Waterfront living with NYC skyline views, PATH access, and vibrant urban neighborhoods.",
+        emoji: "🌊"
+    },
+    "Morris": {
+        towns: 37,
+        highlight: "Chatham, Madison, Morristown, Florham Park",
+        description: "Top-rated schools, green space, and premier commuter towns along the Morris & Essex Line.",
+        emoji: "🌳"
+    },
+    "Middlesex": {
+        towns: 22,
+        highlight: "Edison, Metuchen, Woodbridge, South Plainfield",
+        description: "Diverse communities with strong schools, major highway access, and excellent value.",
+        emoji: "🏘️"
+    },
+    "Union": {
+        towns: 21,
+        highlight: "Summit, Westfield, Cranford, Scotch Plains",
+        description: "Jorge's home turf — top commuter towns with outstanding schools and strong resale values.",
+        emoji: "⭐"
+    }
+};
+
+let activeCounty = null;
+
+function renderCountyCards() {
     const container = document.getElementById('communities-container');
-    
-    if (!communitiesData) {
-        container.innerHTML = '<p class="loading">Community data could not be loaded.</p>';
-        return;
-    }
-    
-    container.innerHTML = '';
-    
-    let communitiesToShow = [];
-    
-    // Gather communities based on filter
-    if (filter === 'all') {
-        Object.keys(communitiesData).forEach(county => {
-            communitiesData[county].forEach(community => {
-                communitiesToShow.push({...community, county});
-            });
-        });
-    } else {
-        if (communitiesData[filter]) {
-            communitiesData[filter].forEach(community => {
-                communitiesToShow.push({...community, county: filter});
-            });
-        }
-    }
-    
-    // Filter by search term
-    if (searchTerm) {
-        const term = searchTerm.toLowerCase();
-        communitiesToShow = communitiesToShow.filter(c => 
-            (c.town && c.town.toLowerCase().includes(term)) ||
-            (c.description && c.description.toLowerCase().includes(term)) ||
-            (c.schools && c.schools.toLowerCase().includes(term)) ||
-            (c.primary_transit && c.primary_transit.toLowerCase().includes(term)) ||
-            (c.county && c.county.toLowerCase().includes(term)) ||
-            (c.notes && c.notes.toLowerCase().includes(term))
-        );
-    }
-    
-    // Render community cards
-    if (communitiesToShow.length === 0) {
-        container.innerHTML = '<p class="loading">No communities found matching your search.</p>';
-        return;
-    }
-    
-    communitiesToShow.forEach(community => {
-        const card = document.createElement('div');
-        card.className = 'community-card';
-        
-        // Truncate text for display
-        const truncate = (text, length) => {
-            if (!text) return '';
-            return text.length > length ? text.substring(0, length) + '...' : text;
-        };
-        
-        card.innerHTML = `
-            <h3>${community.town || 'Unknown'}</h3>
-            <span class="county-badge">${community.county} County</span>
-            <p class="community-desc">${truncate(community.description, 150)}</p>
-            <div class="community-details">
-                ${community.schools ? `
-                <div class="detail-item">
-                    <span class="detail-label">Schools:</span> ${truncate(community.schools, 100)}
-                </div>
-                ` : ''}
-                ${community.commute_to_nyc ? `
-                <div class="detail-item">
-                    <span class="detail-label">NYC Commute:</span> ${truncate(community.commute_to_nyc, 100)}
-                </div>
-                ` : ''}
-                ${community.primary_transit ? `
-                <div class="detail-item">
-                    <span class="detail-label">Transit:</span> ${truncate(community.primary_transit, 100)}
-                </div>
-                ` : ''}
-                ${community.highways ? `
-                <div class="detail-item">
-                    <span class="detail-label">Highways:</span> ${truncate(community.highways, 80)}
-                </div>
-                ` : ''}
-            </div>
-            ${renderTransitBadges(community)}
-        `;
-        container.appendChild(card);
-    });
+    container.innerHTML = Object.keys(countyInfo).map(county => {
+        const info = countyInfo[county];
+        return `
+        <div class="county-hero-card" data-county="${county}" onclick="openCounty('${county}')">
+            <div class="county-emoji">${info.emoji}</div>
+            <div class="county-hero-name">${county} County</div>
+            <div class="county-hero-towns">${info.towns} Communities</div>
+            <div class="county-hero-highlight">${info.highlight}</div>
+            <p class="county-hero-desc">${info.description}</p>
+            <div class="county-hero-cta">Explore ${county} County →</div>
+        </div>`;
+    }).join('');
 }
 
-// Render transit badges based on transit type
-function renderTransitBadges(community) {
-    if (!community.primary_transit) return '';
-    
-    const transit = community.primary_transit.toLowerCase();
-    let badges = '<div class="transit-badges">';
-    
-    if (transit.includes('path') || transit.includes('train') || transit.includes('nj transit') || transit.includes('rail')) {
-        badges += '<span class="transit-badge">🚆 Train Access</span>';
-    }
-    if (transit.includes('bus')) {
-        badges += '<span class="transit-badge">🚌 Bus Service</span>';
-    }
-    if (transit.includes('ferry')) {
-        badges += '<span class="transit-badge">⛴️ Ferry Service</span>';
-    }
-    if (transit.includes('light rail')) {
-        badges += '<span class="transit-badge">🚊 Light Rail</span>';
-    }
-    if (community.commute_to_nyc && (community.commute_to_nyc.includes('10') || community.commute_to_nyc.includes('15') || community.commute_to_nyc.includes('20'))) {
-        badges += '<span class="transit-badge">⚡ Fast Commute</span>';
-    }
-    
-    badges += '</div>';
-    return badges;
+function openCounty(county) {
+    activeCounty = county;
+    const container = document.getElementById('communities-container');
+
+    const towns = communitiesData[county] || [];
+
+    const backBtn = `<div class="county-back-btn" onclick="closeCounty()">\u2190 All Counties</div>`;
+    const countyTitle = `<div class="county-open-header">
+        <h3>${county} County — ${towns.length} Communities</h3>
+        <p>${countyInfo[county].description}</p>
+    </div>`;
+
+    const search = `<div class="county-search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="town-search" placeholder="Search towns in ${county} County..." oninput="filterTowns('${county}', this.value)">
+    </div>`;
+
+    const townCards = `<div class="communities-grid" id="towns-grid">` +
+        towns.map(c => buildTownCard(c, county)).join('') +
+    `</div>`;
+
+    container.innerHTML = backBtn + countyTitle + search + townCards;
+    container.scrollIntoView({behavior: 'smooth', block: 'start'});
 }
 
-// County tab functionality
-document.querySelectorAll('.county-tab').forEach(tab => {
-    tab.addEventListener('click', function() {
-        // Update active state
-        document.querySelectorAll('.county-tab').forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-        
-        // Clear search
-        const searchInput = document.getElementById('community-search');
-        if (searchInput) {
-            searchInput.value = '';
-        }
-        
-        // Render communities
-        renderCommunities(this.dataset.county);
-    });
-});
+function closeCounty() {
+    activeCounty = null;
+    renderCountyCards();
+}
 
-// Search functionality
-const searchInput = document.getElementById('community-search');
-if (searchInput) {
-    let searchTimeout;
-    searchInput.addEventListener('input', function(e) {
-        // Debounce search
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => {
-            const activeTab = document.querySelector('.county-tab.active');
-            const countyFilter = activeTab ? activeTab.dataset.county : 'all';
-            renderCommunities(countyFilter, e.target.value);
-        }, 300);
-    });
+function filterTowns(county, term) {
+    const grid = document.getElementById('towns-grid');
+    if (!grid) return;
+    const towns = communitiesData[county] || [];
+    const filtered = term
+        ? towns.filter(c => c.town.toLowerCase().includes(term.toLowerCase()) || (c.description && c.description.toLowerCase().includes(term.toLowerCase())))
+        : towns;
+    grid.innerHTML = filtered.map(c => buildTownCard(c, county)).join('');
+}
+
+function buildTownCard(c, county) {
+    const slug = c.url_slug || c.town.toLowerCase().replace(/\s+/g, '-');
+    const transitBadges = c.primary_transit
+        ? `<div class="transit-badges"><span class="transit-badge">🚆 ${c.primary_transit.split(' ').slice(0,4).join(' ')}</span></div>`
+        : '';
+    return `
+    <div class="community-card">
+        <span class="county-badge">${county} County</span>
+        <h3>${c.town}</h3>
+        <p class="community-desc">${c.description || ''}</p>
+        ${transitBadges}
+        <div class="community-details">
+            ${c.commute_to_nyc ? `<div class="detail-item"><span class="detail-label">NYC Commute:</span> ${c.commute_to_nyc}</div>` : ''}
+            ${c.schools ? `<div class="detail-item"><span class="detail-label">Schools:</span> ${c.schools.substring(0,100)}...</div>` : ''}
+        </div>
+        <a href="communities/${slug}" class="community-link">Explore ${c.town} →</a>
+    </div>`;
 }
 
 // Form submission handler
@@ -202,9 +165,9 @@ if (contactForm) {
     });
 }
 
-// Initialize - render all communities on page load
+// Initialize — show county cards
 document.addEventListener('DOMContentLoaded', () => {
-    renderCommunities('all');
+    renderCountyCards();
 });
 
 // Lazy load images for performance
