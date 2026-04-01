@@ -74,7 +74,7 @@ const countyInfo = {
         towns: 21,
         highlight: "Summit, Westfield, Cranford, Scotch Plains",
         description: "Jorge's home turf — top commuter towns with outstanding schools and strong resale values.",
-        photo: "https://images.unsplash.com/photo-1575517111839-3a3843ee7f5d?w=600&q=80&fit=crop"
+        photo: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80&fit=crop"
     }
 };
 
