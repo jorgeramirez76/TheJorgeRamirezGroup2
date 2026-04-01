@@ -1183,6 +1183,7 @@ footer {
     box-shadow: var(--shadow-sm);
     text-align: center;
     min-width: 0;
+    overflow: hidden;
 }
 
 .county-hero-card:hover {
@@ -1191,9 +1192,24 @@ footer {
     border-top-color: var(--primary-red);
 }
 
-.county-emoji {
-    font-size: 2.5rem;
-    margin-bottom: 0.8rem;
+.county-hero-photo {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1px;
+    margin: -2.5rem -2rem 1.5rem;
+    width: calc(100% + 4rem);
+    transition: transform 0.4s ease;
+    overflow: hidden;
+}
+
+.county-hero-card:hover .county-hero-photo {
+    transform: scale(1.03);
+}
+
+.county-hero-body {
+    padding-top: 0.5rem;
 }
 
 .county-hero-name {
@@ -1316,4 +1332,15 @@ footer {
 
 .community-link:hover {
     color: var(--gold);
+}
+
+/* Replace emoji icons with luxury gold accent lines */
+.feature-icon {
+    display: none;
+}
+.feature-icon-line {
+    width: 32px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 1.4rem;
 }

@@ -50,31 +50,31 @@ const countyInfo = {
         towns: 11,
         highlight: "Maplewood, South Orange, Montclair, Livingston",
         description: "Walkable downtowns, Midtown Direct trains, and diverse communities from Montclair to Livingston.",
-        emoji: "🏙️"
+        photo: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&fit=crop"
     },
     "Hudson": {
         towns: 12,
         highlight: "Hoboken, Jersey City, Weehawken, Bayonne",
         description: "Waterfront living with NYC skyline views, PATH access, and vibrant urban neighborhoods.",
-        emoji: "🌊"
+        photo: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&fit=crop"
     },
     "Morris": {
         towns: 37,
         highlight: "Chatham, Madison, Morristown, Florham Park",
         description: "Top-rated schools, green space, and premier commuter towns along the Morris & Essex Line.",
-        emoji: "🌳"
+        photo: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80&fit=crop"
     },
     "Middlesex": {
         towns: 22,
         highlight: "Edison, Metuchen, Woodbridge, South Plainfield",
         description: "Diverse communities with strong schools, major highway access, and excellent value.",
-        emoji: "🏘️"
+        photo: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80&fit=crop"
     },
     "Union": {
         towns: 21,
         highlight: "Summit, Westfield, Cranford, Scotch Plains",
         description: "Jorge's home turf — top commuter towns with outstanding schools and strong resale values.",
-        emoji: "⭐"
+        photo: "https://images.unsplash.com/photo-1575517111839-3a3843ee7f5d?w=600&q=80&fit=crop"
     }
 };
 
@@ -87,12 +87,14 @@ function renderCountyCards() {
         const info = countyInfo[county];
         return `
         <div class="county-hero-card" data-county="${county}" onclick="openCounty('${county}')">
-            <div class="county-emoji">${info.emoji}</div>
-            <div class="county-hero-name">${county} County</div>
-            <div class="county-hero-towns">${info.towns} Communities</div>
-            <div class="county-hero-highlight">${info.highlight}</div>
-            <p class="county-hero-desc">${info.description}</p>
-            <div class="county-hero-cta">Explore ${county} County →</div>
+            <div class="county-hero-photo" style="background-image:url('${info.photo}')"></div>
+            <div class="county-hero-body">
+                <div class="county-hero-name">${county} County</div>
+                <div class="county-hero-towns">${info.towns} Communities</div>
+                <div class="county-hero-highlight">${info.highlight}</div>
+                <p class="county-hero-desc">${info.description}</p>
+                <div class="county-hero-cta">Explore ${county} County →</div>
+            </div>
         </div>`;
     }).join('');
 }
