@@ -4,7 +4,10 @@ Allow: /es/
 Allow: /blog/es/
 Allow: /towns/es/
 
-# Block dynamic/parameter URLs that shouldn't be indexed
+# Preferred domain (no www)
+Host: thejorgeramirezgroup.com
+
+# Block dynamic/parameter URLs
 Disallow: /contact?*
 Disallow: /*?interest=*
 Disallow: /*?utm_*
@@ -22,6 +25,7 @@ Disallow: /*?interest=*
 
 User-agent: Bingbot
 Allow: /
+Host: thejorgeramirezgroup.com
 Disallow: /contact?*
 Disallow: /*?interest=*
 Crawl-delay: 1
