@@ -140,7 +140,7 @@ nav.scrolled {
     transition: all 0.3s ease;
 }
 
-/* Hero Section */
+/* ===== HERO SECTION — ROTATING CAROUSEL ===== */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -150,7 +150,7 @@ nav.scrolled {
     overflow: hidden;
 }
 
-.hero-image-container {
+.hero-carousel {
     position: absolute;
     top: 0;
     left: 0;
@@ -159,12 +159,22 @@ nav.scrolled {
     z-index: 0;
 }
 
-.hero-image {
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(0.6) contrast(1.1) saturate(0.9);
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    filter: brightness(0.55) contrast(1.1) saturate(0.9);
+    will-change: opacity;
+}
+
+.hero-slide.active {
+    opacity: 1;
 }
 
 .hero-overlay {
@@ -175,11 +185,11 @@ nav.scrolled {
     height: 100%;
     background: linear-gradient(
         135deg,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0.5) 50%,
-        rgba(0, 0, 0, 0.6) 100%
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.55) 100%
     );
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-content {
@@ -189,18 +199,6 @@ nav.scrolled {
     color: var(--white);
     max-width: 1000px;
     padding: 150px 2rem 100px;
-    animation: fadeInUp 1s ease;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .hero h1 {
@@ -214,6 +212,36 @@ nav.scrolled {
     letter-spacing: -0.5px;
 }
 
+.hero-eyebrow {
+    display: block;
+    font-size: 0.45em;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 0.4em;
+    opacity: 0;
+    animation: fadeSlideDown 0.8s ease 0.2s forwards;
+}
+
+.hero-name {
+    display: block;
+    opacity: 0;
+    animation: fadeSlideUp 1s ease 0.5s forwards;
+}
+
+.hero-tagline {
+    display: block;
+    font-size: 0.38em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 0.4em;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease 0.8s forwards;
+}
+
 .hero-subtitle {
     font-size: 1.3rem;
     margin-bottom: 2.5rem;
@@ -223,6 +251,8 @@ nav.scrolled {
     margin-left: auto;
     margin-right: auto;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease 1s forwards;
 }
 
 .hero-buttons {
@@ -230,6 +260,55 @@ nav.scrolled {
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease 1.2s forwards;
+}
+
+/* Scroll-down indicator */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 1s ease 2s forwards;
+}
+
+.scroll-arrow {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid rgba(255,255,255,0.6);
+    border-bottom: 2px solid rgba(255,255,255,0.6);
+    transform: rotate(45deg);
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.6; }
+    50% { transform: rotate(45deg) translate(6px, 6px); opacity: 1; }
+}
+
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .btn-primary {
@@ -1343,4 +1422,232 @@ footer {
     height: 2px;
     background: var(--gold);
     margin-bottom: 1.4rem;
+    transition: width 0.5s ease;
+}
+
+/* ===== STAGGERED REVEAL ANIMATIONS ===== */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Section headers get a separate reveal */
+.section-header.reveal-item {
+    transform: translateY(20px);
+}
+
+.section-header.revealed {
+    transform: translateY(0);
+}
+
+/* ===== BUTTON MICRO-INTERACTIONS ===== */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 0 30px rgba(255,255,255,0.2), 0 8px 25px rgba(255,255,255,0.3);
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Nav CTA button pulse */
+.nav-btn-consultation {
+    position: relative;
+}
+
+.nav-btn-consultation::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 8px;
+    background: var(--primary-red);
+    opacity: 0;
+    z-index: -1;
+    animation: ctaPulse 3s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+    0%, 100% { opacity: 0; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.05); }
+}
+
+/* ===== TESTIMONIAL AVATAR STYLES ===== */
+.testimonial-avatar {
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Testimonial star animation */
+.testimonial-stars {
+    opacity: 0.3;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonial-stars.stars-animated {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== GOLD ACCENT ANIMATIONS ===== */
+.feature-card:hover .feature-icon-line {
+    width: 56px;
+}
+
+/* Gold border top shimmer on hover for testimonials */
+#testimonials .feature-card {
+    border-top: 3px solid var(--gold);
+    transition: all 0.4s ease, border-color 0.4s ease;
+}
+
+#testimonials .feature-card:hover {
+    border-top-color: var(--gold-light);
+    box-shadow: var(--shadow-hover), 0 -2px 20px rgba(184, 150, 46, 0.15);
+}
+
+/* Section tag gold underline animation */
+.section-tag {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-tag::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    animation: tagShimmer 3s ease-in-out infinite;
+}
+
+@keyframes tagShimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* ===== FORM FOCUS ANIMATIONS ===== */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 3px rgba(196, 18, 48, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Submit button loading state */
+.submit-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.submit-btn:hover::after {
+    width: 400px;
+    height: 400px;
+}
+
+.submit-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ===== CREDENTIAL ITEMS ANIMATION ===== */
+.credential-item {
+    transition: all 0.3s ease;
+}
+
+.credential-item:hover {
+    transform: translateX(5px);
+    border-left-color: var(--primary-red);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== COUNTY CARD ENHANCED HOVER ===== */
+.county-hero-card {
+    will-change: transform;
+}
+
+.county-hero-photo {
+    transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.county-hero-card:hover .county-hero-photo {
+    transform: scale(1.08);
+}
+
+/* ===== RESPONSIVE HERO ===== */
+@media (max-width: 768px) {
+    .hero-scroll-indicator {
+        bottom: 1.5rem;
+    }
+    .scroll-arrow {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-scroll-indicator {
+        display: none;
+    }
 }

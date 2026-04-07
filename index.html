@@ -73,8 +73,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Preload hero image for faster LCP -->
-    <link rel="preload" as="image" href="images/hero.webp" type="image/webp">
+    <!-- Preload first hero carousel image for faster LCP -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop">
 
     <link rel="stylesheet" href="css/styles.css">
     <!-- AI Context File — helps ChatGPT, Perplexity, Claude, Gemini understand this site -->
@@ -432,20 +432,21 @@
         </div>
     </nav>
     
-    <!-- Hero Section -->
+    <!-- Hero Section — Rotating Image Carousel -->
     <section class="hero" id="home">
-        <div class="hero-image-container">
-            <picture>
-                <source srcset="images/hero.webp" type="image/webp">
-                <img src="images/hero.jpg" alt="Luxury homes in New Jersey - Jorge Ramirez Group Real Estate" class="hero-image" width="1600" height="1067" loading="eager" fetchpriority="high">
-            </picture>
+        <div class="hero-carousel">
+            <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop')"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fit=crop')"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&fit=crop')"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80&fit=crop')"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1920&q=80&fit=crop')"></div>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
             <h1>
-                <span style="display:block; font-size:0.45em; font-weight:500; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-bottom:0.4em;">Top NJ Real Estate Agent</span>
-                Jorge Ramirez
-                <span style="display:block; font-size:0.38em; font-weight:400; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-top:0.4em;">Keller Williams Premier Properties &nbsp;·&nbsp; Summit, NJ</span>
+                <span class="hero-eyebrow">Top NJ Real Estate Agent</span>
+                <span class="hero-name">Jorge Ramirez</span>
+                <span class="hero-tagline">Keller Williams Premier Properties &nbsp;·&nbsp; Summit, NJ</span>
             </h1>
             <p class="hero-subtitle">Most homeowners are surprised — in a good way. Find out what your home could sell for right now, with zero pressure and no obligation.</p>
             <div class="hero-buttons">
@@ -453,25 +454,28 @@
                 <a href="#contact" class="btn-secondary">Talk to Jorge First</a>
             </div>
         </div>
+        <div class="hero-scroll-indicator" onclick="document.querySelector('.stats-bar').scrollIntoView({behavior:'smooth'})">
+            <span class="scroll-arrow"></span>
+        </div>
     </section>
     
     <!-- Stats Bar -->
     <div class="stats-bar">
         <div class="stats-grid">
             <div class="stat-card">
-                <span class="stat-number">103</span>
+                <span class="stat-number" data-target="103" data-suffix="">0</span>
                 <span class="stat-label">NJ Communities</span>
             </div>
             <div class="stat-card">
-                <span class="stat-number">60+</span>
+                <span class="stat-number" data-target="60" data-suffix="+">0</span>
                 <span class="stat-label">Homes Flipped Personally</span>
             </div>
             <div class="stat-card">
-                <span class="stat-number">8+</span>
+                <span class="stat-number" data-target="8" data-suffix="+">0</span>
                 <span class="stat-label">Years Full-Time</span>
             </div>
             <div class="stat-card">
-                <span class="stat-number">7</span>
+                <span class="stat-number" data-target="7" data-suffix="">0</span>
                 <span class="stat-label">Days a Week</span>
             </div>
         </div>
@@ -617,37 +621,55 @@
                 <p>Real results from real clients across Essex, Union, Morris, and Hudson counties.</p>
             </div>
             <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                <div class="feature-card">
+                <div class="feature-card testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Michael T." loading="lazy" width="56" height="56">
+                    </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;Jorge sold our Summit home in 9 days &mdash; $47,000 over asking. He priced it perfectly and the targeted marketing brought buyers we never would have reached through a traditional listing. He was straight with us from day one.&rdquo;</p>
                     <div class="testimonial-author">&mdash; Michael &amp; Lisa T.</div>
                     <div class="testimonial-location">Summit, NJ &bull; Sold 2025</div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop&crop=face" alt="Diane R." loading="lazy" width="56" height="56">
+                    </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;We had an expired listing with another agent for 90 days. Jorge took over, changed the pricing strategy, and had a full-price offer in 3 weeks. Wish we had called him first.&rdquo;</p>
                     <div class="testimonial-author">&mdash; Diane R.</div>
                     <div class="testimonial-location">Westfield, NJ &bull; Sold 2025</div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&h=120&fit=crop&crop=face" alt="David K." loading="lazy" width="56" height="56">
+                    </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;As first-time buyers relocating from NYC, we were completely lost. Jorge walked every property with us like he was the one buying it. His investor background meant he caught things the inspector even missed. Closed on our Chatham home in 6 weeks.&rdquo;</p>
                     <div class="testimonial-author">&mdash; David &amp; Sarah K.</div>
                     <div class="testimonial-location">Chatham, NJ &bull; Purchased 2025</div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop&crop=face" alt="Patricia M." loading="lazy" width="56" height="56">
+                    </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;I inherited my mother&rsquo;s home and had no idea where to start. Jorge handled everything &mdash; estate coordination, light repairs, pricing, all of it. He never pushed me and got us $30K above what I thought was possible.&rdquo;</p>
                     <div class="testimonial-author">&mdash; Patricia M.</div>
                     <div class="testimonial-location">Cranford, NJ &bull; Sold 2026</div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face" alt="Robert H." loading="lazy" width="56" height="56">
+                    </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;We tried to sell FSBO for 4 months. After we listed with Jorge, we had an accepted offer in 11 days. His buyer targeting system found people we never could have reached on our own. Should have called him first.&rdquo;</p>
                     <div class="testimonial-author">&mdash; Robert &amp; Karen H.</div>
                     <div class="testimonial-location">Maplewood, NJ &bull; Sold 2026</div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&crop=face" alt="Tom F." loading="lazy" width="56" height="56">
+                    </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;Jorge told us the truth about our home&rsquo;s value even though it wasn&rsquo;t what we wanted to hear. We priced it his way, had 8 showings the first weekend, and closed for more than our original ask. His honesty saved us months.&rdquo;</p>
                     <div class="testimonial-author">&mdash; Tom &amp; Angela F.</div>

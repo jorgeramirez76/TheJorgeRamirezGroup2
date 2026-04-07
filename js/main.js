@@ -50,31 +50,31 @@ const countyInfo = {
         towns: 11,
         highlight: "Maplewood, South Orange, Montclair, Livingston",
         description: "Walkable downtowns, Midtown Direct trains, and diverse communities from Montclair to Livingston.",
-        photo: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&fit=crop"
+        photo: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80&fit=crop"
     },
     "Hudson": {
         towns: 12,
         highlight: "Hoboken, Jersey City, Weehawken, Bayonne",
         description: "Waterfront living with NYC skyline views, PATH access, and vibrant urban neighborhoods.",
-        photo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80&fit=crop"
+        photo: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80&fit=crop"
     },
     "Morris": {
         towns: 37,
         highlight: "Chatham, Madison, Morristown, Florham Park",
         description: "Top-rated schools, green space, and premier commuter towns along the Morris & Essex Line.",
-        photo: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80&fit=crop"
+        photo: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&fit=crop"
     },
     "Middlesex": {
         towns: 22,
         highlight: "Edison, Metuchen, Woodbridge, South Plainfield",
         description: "Diverse communities with strong schools, major highway access, and excellent value.",
-        photo: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80&fit=crop"
+        photo: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80&fit=crop"
     },
     "Union": {
         towns: 21,
         highlight: "Summit, Westfield, Cranford, Scotch Plains",
         description: "Jorge's home turf — top commuter towns with outstanding schools and strong resale values.",
-        photo: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80&fit=crop"
+        photo: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80&fit=crop"
     }
 };
 
@@ -195,24 +195,139 @@ if ('IntersectionObserver' in window) {
     });
 }
 
-// Add fade-in animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+// ============================
+// HERO IMAGE CAROUSEL
+// ============================
+(function initHeroCarousel() {
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length === 0) return;
 
-const fadeInObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+    let current = 0;
+    const INTERVAL = 5000; // 5 seconds
+
+    setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }, INTERVAL);
+})();
+
+// ============================
+// HERO PARALLAX ON SCROLL
+// ============================
+(function initParallax() {
+    const hero = document.querySelector('.hero');
+    const carousel = document.querySelector('.hero-carousel');
+    if (!hero || !carousel) return;
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                if (scrolled < window.innerHeight) {
+                    carousel.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
     });
-}, observerOptions);
+})();
 
-document.querySelectorAll('.community-card, .stat-card, .info-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    fadeInObserver.observe(el);
-});
+// ============================
+// ANIMATED NUMBER COUNTERS
+// ============================
+(function initCounters() {
+    const counters = document.querySelectorAll('.stat-number[data-target]');
+    if (counters.length === 0) return;
+
+    let counted = false;
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !counted) {
+                counted = true;
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const suffix = counter.getAttribute('data-suffix') || '';
+                    const duration = 2000;
+                    const startTime = performance.now();
+
+                    function updateCounter(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Ease-out cubic
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const value = Math.round(eased * target);
+                        counter.textContent = value + suffix;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        }
+                    }
+                    requestAnimationFrame(updateCounter);
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    counterObserver.observe(document.querySelector('.stats-bar'));
+})();
+
+// ============================
+// STAGGERED FADE-IN ON SCROLL
+// ============================
+(function initStaggeredReveal() {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Find all animatable children in this section
+                const cards = entry.target.querySelectorAll('.feature-card, .resource-card, .stat-card, .info-card, .community-card, .faq-item, .credential-item, .testimonial-card');
+                cards.forEach((card, i) => {
+                    card.style.transitionDelay = `${i * 100}ms`;
+                    card.classList.add('revealed');
+                });
+                // Also reveal the section header
+                const header = entry.target.querySelector('.section-header');
+                if (header) header.classList.add('revealed');
+
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    // Observe all content sections
+    document.querySelectorAll('.content-section, .stats-bar, #communities').forEach(section => {
+        // Mark children as hidden initially
+        section.querySelectorAll('.feature-card, .resource-card, .stat-card, .info-card, .community-card, .faq-item, .credential-item, .testimonial-card').forEach(card => {
+            card.classList.add('reveal-item');
+        });
+        const header = section.querySelector('.section-header');
+        if (header) header.classList.add('reveal-item');
+
+        revealObserver.observe(section);
+    });
+})();
+
+// ============================
+// TESTIMONIAL STAR ANIMATION
+// ============================
+(function initStarAnimation() {
+    const starObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const stars = entry.target.querySelectorAll('.testimonial-stars');
+                stars.forEach((el, i) => {
+                    setTimeout(() => {
+                        el.classList.add('stars-animated');
+                    }, i * 150);
+                });
+                starObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    const testimonialSection = document.getElementById('testimonials');
+    if (testimonialSection) starObserver.observe(testimonialSection);
+})();
