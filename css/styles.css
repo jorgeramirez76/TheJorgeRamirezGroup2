@@ -167,6 +167,7 @@ nav.scrolled {
     height: 100%;
     background-size: cover;
     background-position: center;
+    background-color: #1A1A1A;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
     filter: brightness(0.55) contrast(1.1) saturate(0.9);

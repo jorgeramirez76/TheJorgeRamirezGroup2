@@ -73,8 +73,10 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Preload first hero carousel image for faster LCP -->
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop">
+    <!-- Preload hero fallback for faster LCP -->
+    <link rel="preload" as="image" href="images/hero.webp" type="image/webp">
+    <!-- Preconnect to Unsplash for carousel images -->
+    <link rel="preconnect" href="https://images.unsplash.com">
 
     <link rel="stylesheet" href="css/styles.css">
     <!-- AI Context File — helps ChatGPT, Perplexity, Claude, Gemini understand this site -->
@@ -435,11 +437,11 @@
     <!-- Hero Section — Rotating Image Carousel -->
     <section class="hero" id="home">
         <div class="hero-carousel">
-            <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop')"></div>
-            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fit=crop')"></div>
-            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&fit=crop')"></div>
-            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80&fit=crop')"></div>
-            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1920&q=80&fit=crop')"></div>
+            <div class="hero-slide active" data-bg="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop"></div>
+            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fit=crop"></div>
+            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&fit=crop"></div>
+            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80&fit=crop"></div>
+            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1920&q=80&fit=crop"></div>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -463,19 +465,19 @@
     <div class="stats-bar">
         <div class="stats-grid">
             <div class="stat-card">
-                <span class="stat-number" data-target="103" data-suffix="">0</span>
+                <span class="stat-number" data-target="103" data-suffix="">103</span>
                 <span class="stat-label">NJ Communities</span>
             </div>
             <div class="stat-card">
-                <span class="stat-number" data-target="60" data-suffix="+">0</span>
+                <span class="stat-number" data-target="60" data-suffix="+">60+</span>
                 <span class="stat-label">Homes Flipped Personally</span>
             </div>
             <div class="stat-card">
-                <span class="stat-number" data-target="8" data-suffix="+">0</span>
+                <span class="stat-number" data-target="8" data-suffix="+">8+</span>
                 <span class="stat-label">Years Full-Time</span>
             </div>
             <div class="stat-card">
-                <span class="stat-number" data-target="7" data-suffix="">0</span>
+                <span class="stat-number" data-target="7" data-suffix="">7</span>
                 <span class="stat-label">Days a Week</span>
             </div>
         </div>

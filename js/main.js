@@ -202,8 +202,32 @@ if ('IntersectionObserver' in window) {
     const slides = document.querySelectorAll('.hero-slide');
     if (slides.length === 0) return;
 
+    // Load background images from data-bg attribute
+    let loadedCount = 0;
+    slides.forEach(slide => {
+        const url = slide.getAttribute('data-bg');
+        if (url) {
+            const img = new Image();
+            img.onload = () => {
+                slide.style.backgroundImage = `url('${url}')`;
+                loadedCount++;
+            };
+            img.onerror = () => {
+                // Fallback to local hero image
+                slide.style.backgroundImage = "url('images/hero.jpg')";
+                loadedCount++;
+            };
+            img.src = url;
+        }
+    });
+
+    // Set first slide background immediately as well (inline fallback)
+    if (slides[0] && !slides[0].style.backgroundImage) {
+        slides[0].style.backgroundImage = "url('images/hero.jpg')";
+    }
+
     let current = 0;
-    const INTERVAL = 5000; // 5 seconds
+    const INTERVAL = 5000;
 
     setInterval(() => {
         slides[current].classList.remove('active');
@@ -240,7 +264,8 @@ if ('IntersectionObserver' in window) {
 // ============================
 (function initCounters() {
     const counters = document.querySelectorAll('.stat-number[data-target]');
-    if (counters.length === 0) return;
+    const statsBar = document.querySelector('.stats-bar');
+    if (counters.length === 0 || !statsBar) return;
 
     let counted = false;
 
@@ -248,16 +273,19 @@ if ('IntersectionObserver' in window) {
         entries.forEach(entry => {
             if (entry.isIntersecting && !counted) {
                 counted = true;
+                counterObserver.disconnect();
+
                 counters.forEach(counter => {
                     const target = parseInt(counter.getAttribute('data-target'));
                     const suffix = counter.getAttribute('data-suffix') || '';
+                    // Reset to 0 right before animating
+                    counter.textContent = '0' + suffix;
                     const duration = 2000;
                     const startTime = performance.now();
 
                     function updateCounter(currentTime) {
                         const elapsed = currentTime - startTime;
                         const progress = Math.min(elapsed / duration, 1);
-                        // Ease-out cubic
                         const eased = 1 - Math.pow(1 - progress, 3);
                         const value = Math.round(eased * target);
                         counter.textContent = value + suffix;
@@ -270,9 +298,9 @@ if ('IntersectionObserver' in window) {
                 });
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.15, rootMargin: '0px 0px 50px 0px' });
 
-    counterObserver.observe(document.querySelector('.stats-bar'));
+    counterObserver.observe(statsBar);
 })();
 
 // ============================
