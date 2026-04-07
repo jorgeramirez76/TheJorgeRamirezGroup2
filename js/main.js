@@ -56,7 +56,7 @@ const countyInfo = {
         towns: 12,
         highlight: "Hoboken, Jersey City, Weehawken, Bayonne",
         description: "Waterfront living with NYC skyline views, PATH access, and vibrant urban neighborhoods.",
-        photo: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80&fit=crop"
+        photo: "https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80&fit=crop"
     },
     "Morris": {
         towns: 37,
@@ -68,13 +68,13 @@ const countyInfo = {
         towns: 22,
         highlight: "Edison, Metuchen, Woodbridge, South Plainfield",
         description: "Diverse communities with strong schools, major highway access, and excellent value.",
-        photo: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80&fit=crop"
+        photo: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80&fit=crop"
     },
     "Union": {
         towns: 21,
         highlight: "Summit, Westfield, Cranford, Scotch Plains",
         description: "Jorge's home turf — top commuter towns with outstanding schools and strong resale values.",
-        photo: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80&fit=crop"
+        photo: "https://images.unsplash.com/photo-1598228723793-52759bba239c?w=600&q=80&fit=crop"
     }
 };
 
