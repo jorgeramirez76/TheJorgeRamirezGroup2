@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search NJ Homes for Sale | Jorge Ramirez Group</title>
+    <meta name="description" content="Search homes for sale across 103 NJ communities. Summit, Westfield, Chatham, Short Hills and more. MLS listings updated daily. Jorge Ramirez Group at Keller Williams.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thejorgeramirezgroup.com/property-search.html">
+    <meta property="og:title" content="Search NJ Homes for Sale | Jorge Ramirez Group">
+    <meta property="og:description" content="Browse MLS listings across 103 NJ communities. Updated daily.">
+    <meta property="og:url" content="https://thejorgeramirezgroup.com/property-search.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="ai-content-declaration" content="human-authored, AI-enhanced">
+    <meta name="llm-context" content="Property search page for The Jorge Ramirez Group, a Keller Williams real estate team in New Jersey. Provides MLS home search across 103 communities in Union, Essex, Morris, Middlesex, and Hudson counties.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebPage","name":"NJ Property Search","description":"Search homes for sale across 103 NJ communities","url":"https://thejorgeramirezgroup.com/property-search.html","isPartOf":{"@type":"WebSite","name":"The Jorge Ramirez Group","url":"https://thejorgeramirezgroup.com"},"provider":{"@type":"RealEstateAgent","name":"Jorge Ramirez","telephone":"+1-908-230-7844","areaServed":{"@type":"State","name":"New Jersey"}}}
+    </script>
+
+    <style>
+        .search-hero {
+            background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 10rem 5% 4rem;
+            text-align: center;
+        }
+        .search-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .search-hero p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .search-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .search-tab {
+            padding: 0.7rem 2rem;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 9999px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: transparent;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .search-tab:hover, .search-tab.active {
+            background: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+        .search-frame-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .search-frame-wrapper {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 10;
+        }
+        .search-frame-wrapper iframe {
+            width: 100%;
+            min-height: 800px;
+            border: none;
+            display: block;
+        }
+        .search-fallback {
+            padding: 3rem;
+            text-align: center;
+        }
+        .search-fallback h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .search-fallback p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .search-fallback .btn-primary {
+            display: inline-block;
+            background: var(--primary-red);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .search-fallback .btn-primary:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(196,18,48,0.3);
+        }
+        .quick-links {
+            padding: 4rem 5%;
+            background: var(--light-gray);
+        }
+        .quick-links h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .quick-link {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-gray);
+            transition: all 0.3s;
+            border: 1px solid var(--border-light);
+        }
+        .quick-link:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-red);
+        }
+        .quick-link strong {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .quick-link span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        .cta-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .cta-banner p {
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-banner a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-red);
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .cta-banner a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        @media (max-width: 768px) {
+            .search-hero h1 { font-size: 2rem; }
+            .search-tabs { flex-wrap: wrap; }
+            .search-frame-wrapper iframe { min-height: 600px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV (same as homepage) -->
+<nav id="navbar">
+    <a href="/" class="logo" style="text-decoration:none;display:flex;align-items:center;gap:0.5rem;">
+        <img src="images/logo.png" alt="Jorge Ramirez Group" style="height:40px;" onerror="this.style.display='none'">
+        <span style="color:white;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;">Jorge Ramirez Group</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:2rem;">
+        <a href="/" style="color:white;text-decoration:none;font-size:0.9rem;font-weight:500;">Home</a>
+        <a href="/sell-your-home.html" style="color:white;text-decoration:none;font-size:0.9rem;font-weight:500;">Sell</a>
+        <a href="/buy-a-home.html" style="color:white;text-decoration:none;font-size:0.9rem;font-weight:500;">Buy</a>
+        <a href="/property-search.html" style="color:var(--gold);text-decoration:none;font-size:0.9rem;font-weight:600;">Search</a>
+        <a href="/home-valuation.html" style="color:white;text-decoration:none;font-size:0.9rem;font-weight:500;">Home Value</a>
+        <a href="tel:9082307844" style="background:var(--primary-red);color:white;padding:0.6rem 1.5rem;border-radius:9999px;text-decoration:none;font-weight:600;font-size:0.85rem;">908-230-7844</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="search-hero">
+    <h1>Find Your Next Home in New Jersey</h1>
+    <p>Search MLS listings across 103 communities in Union, Essex, Morris, Middlesex, and Hudson counties. Updated daily.</p>
+    <div class="search-tabs">
+        <button class="search-tab active" onclick="loadSearch('buy')">Buy</button>
+        <button class="search-tab" onclick="loadSearch('sell')">Sell</button>
+        <button class="search-tab" onclick="loadSearch('rent')">Rent</button>
+    </div>
+</section>
+
+<!-- SEARCH FRAME -->
+<div class="search-frame-container">
+    <div class="search-frame-wrapper" id="searchFrame">
+        <!-- Try KW iframe first -->
+        <iframe
+            id="kwSearch"
+            src="https://thejorgeramirezgroup.kw.com/listings-search/"
+            title="Search NJ Homes for Sale"
+            loading="lazy"
+            allow="geolocation"
+            onerror="showFallback()"
+        ></iframe>
+
+        <!-- Fallback if iframe is blocked -->
+        <div class="search-fallback" id="searchFallback" style="display:none;">
+            <h3>Search NJ Homes for Sale</h3>
+            <p>Browse the full MLS with all available listings in New Jersey — filter by town, price, beds, baths, and more.</p>
+            <a href="https://thejorgeramirezgroup.kw.com/listings-search/" class="btn-primary" target="_blank">Open Full MLS Search →</a>
+            <p style="margin-top:2rem;font-size:0.85rem;color:var(--text-light);">Or call Jorge directly: <a href="tel:9082307844" style="color:var(--primary-red);font-weight:600;">908-230-7844</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- QUICK LINKS TO TOWNS -->
+<section class="quick-links">
+    <h2>Popular NJ Communities</h2>
+    <div class="quick-links-grid">
+        <a href="/summit-nj-homes-for-sale.html" class="quick-link"><strong>Summit</strong><span>Union County</span></a>
+        <a href="/westfield-nj-homes-for-sale.html" class="quick-link"><strong>Westfield</strong><span>Union County</span></a>
+        <a href="https://thejorgeramirezgroup.kw.com/listings-search/?city=Chatham" class="quick-link" target="_blank"><strong>Chatham</strong><span>Morris County</span></a>
+        <a href="https://thejorgeramirezgroup.kw.com/listings-search/?city=Short+Hills" class="quick-link" target="_blank"><strong>Short Hills</strong><span>Essex County</span></a>
+        <a href="https://thejorgeramirezgroup.kw.com/listings-search/?city=Montclair" class="quick-link" target="_blank"><strong>Montclair</strong><span>Essex County</span></a>
+        <a href="https://thejorgeramirezgroup.kw.com/listings-search/?city=Maplewood" class="quick-link" target="_blank"><strong>Maplewood</strong><span>Essex County</span></a>
+        <a href="https://thejorgeramirezgroup.kw.com/listings-search/?city=Cranford" class="quick-link" target="_blank"><strong>Cranford</strong><span>Union County</span></a>
+        <a href="https://thejorgeramirezgroup.kw.com/listings-search/?city=Hoboken" class="quick-link" target="_blank"><strong>Hoboken</strong><span>Hudson County</span></a>
+        <a href="https://thejorgeramirezgroup.kw.com/listings-search/?city=Jersey+City" class="quick-link" target="_blank"><strong>Jersey City</strong><span>Hudson County</span></a>
+        <a href="https://thejorgeramirezgroup.kw.com/listings-search/?city=Millburn" class="quick-link" target="_blank"><strong>Millburn</strong><span>Essex County</span></a>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+    <h2>Can't Find What You're Looking For?</h2>
+    <p>Tell me what you need — town, budget, bedrooms, commute time — and I'll send you matches before they hit the market.</p>
+    <a href="tel:9082307844">Call Jorge: 908-230-7844</a>
+</section>
+
+<!-- FOOTER (minimal, matching site) -->
+<footer style="background:#0A0A0A;color:white;padding:3rem 5%;text-align:center;">
+    <p style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.5rem;">Jorge Ramirez Group</p>
+    <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-bottom:1rem;">Keller Williams Premier Properties · Summit, NJ</p>
+    <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;">908-230-7844 · jorge.ramirez@kw.com · thejorgeramirezgroup.com</p>
+    <p style="color:rgba(255,255,255,0.25);font-size:0.75rem;margin-top:1.5rem;">&copy; 2026 The Jorge Ramirez Group. All rights reserved.</p>
+</footer>
+
+<script>
+// Check if iframe loads — if blocked by X-Frame-Options, show fallback
+setTimeout(function() {
+    try {
+        var iframe = document.getElementById('kwSearch');
+        // If we can't access iframe content, it might be blocked
+        // Show fallback after 5 seconds if iframe appears empty
+        if (iframe.contentDocument && iframe.contentDocument.body &&
+            iframe.contentDocument.body.innerHTML.length < 100) {
+            showFallback();
+        }
+    } catch(e) {
+        // Cross-origin — iframe loaded but we can't check content
+        // That's actually fine — means it's displaying
+    }
+}, 5000);
+
+function showFallback() {
+    document.getElementById('kwSearch').style.display = 'none';
+    document.getElementById('searchFallback').style.display = 'block';
+}
+
+function loadSearch(type) {
+    document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+
+    var urls = {
+        'buy': 'https://thejorgeramirezgroup.kw.com/listings-search/',
+        'sell': '/home-valuation.html',
+        'rent': 'https://thejorgeramirezgroup.kw.com/listings-search/?listingType=rent'
+    };
+
+    if (type === 'sell') {
+        window.location.href = urls[type];
+    } else {
+        document.getElementById('kwSearch').src = urls[type];
+    }
+}
+
+// Nav scroll
+window.addEventListener('scroll', function() {
+    var nav = document.getElementById('navbar');
+    if (window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+});
+</script>
+
+</body>
+</html>
