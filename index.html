@@ -546,12 +546,17 @@
     
     <!-- Hero Section — Rotating Image Carousel -->
     <section class="hero" id="home">
-        <div class="hero-carousel">
-            <div class="hero-slide active" data-bg="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1920&q=80&fit=crop"></div>
+        <div class="hero-video-wrap">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+                   poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop"
+                   aria-hidden="true">
+                <source src="videos/jorge_hero.mp4" type="video/mp4">
+            </video>
+            <div class="hero-carousel hero-fallback-carousel">
+                <div class="hero-slide active" data-bg="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop"></div>
+                <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fit=crop"></div>
+                <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&fit=crop"></div>
+            </div>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -593,6 +598,141 @@
         </div>
     </div>
     
+    <!-- Featured Listings / Recent Wins -->
+    <section id="featured" class="content-section featured-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Recent Wins</span>
+                <h2>Homes Jorge Sold Across NJ</h2>
+                <p>A quick snapshot of recent closings. Every situation is different — but the pattern is the same: priced right, marketed hard, closed clean.</p>
+            </div>
+            <div class="listings-grid">
+                <article class="listing-card">
+                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&q=80&fit=crop');">
+                        <span class="listing-status">Sold · 2026</span>
+                        <span class="listing-days">9 DAYS ON MARKET</span>
+                    </div>
+                    <div class="listing-body">
+                        <div class="listing-meta">
+                            <span class="listing-price">$1,247,000</span>
+                            <span class="listing-over">$47K over asking</span>
+                        </div>
+                        <h3 class="listing-town">Summit, NJ</h3>
+                        <div class="listing-specs">
+                            <span>4 Beds</span>
+                            <span>3.5 Baths</span>
+                            <span>2,850 sqft</span>
+                        </div>
+                        <p class="listing-blurb">Priced right on day one, multiple offers by weekend two. Seller walked away with $47K more than their original expectation.</p>
+                    </div>
+                </article>
+
+                <article class="listing-card">
+                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80&fit=crop');">
+                        <span class="listing-status">Sold · 2026</span>
+                        <span class="listing-days">11 DAYS ON MARKET</span>
+                    </div>
+                    <div class="listing-body">
+                        <div class="listing-meta">
+                            <span class="listing-price">$895,000</span>
+                            <span class="listing-over">Full ask · FSBO rescue</span>
+                        </div>
+                        <h3 class="listing-town">Maplewood, NJ</h3>
+                        <div class="listing-specs">
+                            <span>3 Beds</span>
+                            <span>2 Baths</span>
+                            <span>2,100 sqft</span>
+                        </div>
+                        <p class="listing-blurb">After 4 months trying to sell FSBO, the owner listed with Jorge. Accepted offer at full ask 11 days later.</p>
+                    </div>
+                </article>
+
+                <article class="listing-card">
+                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=80&fit=crop');">
+                        <span class="listing-status">Sold · 2026</span>
+                        <span class="listing-days">17 DAYS ON MARKET</span>
+                    </div>
+                    <div class="listing-body">
+                        <div class="listing-meta">
+                            <span class="listing-price">$1,595,000</span>
+                            <span class="listing-over">Expired-listing turnaround</span>
+                        </div>
+                        <h3 class="listing-town">Westfield, NJ</h3>
+                        <div class="listing-specs">
+                            <span>5 Beds</span>
+                            <span>4 Baths</span>
+                            <span>3,400 sqft</span>
+                        </div>
+                        <p class="listing-blurb">Previous agent had it listed 90 days with zero offers. Jorge repriced, remarketed, closed in under 3 weeks.</p>
+                    </div>
+                </article>
+
+                <article class="listing-card">
+                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80&fit=crop');">
+                        <span class="listing-status">Sold · 2025</span>
+                        <span class="listing-days">14 DAYS ON MARKET</span>
+                    </div>
+                    <div class="listing-body">
+                        <div class="listing-meta">
+                            <span class="listing-price">$975,000</span>
+                            <span class="listing-over">Estate sale · $30K over target</span>
+                        </div>
+                        <h3 class="listing-town">Cranford, NJ</h3>
+                        <div class="listing-specs">
+                            <span>4 Beds</span>
+                            <span>2.5 Baths</span>
+                            <span>2,400 sqft</span>
+                        </div>
+                        <p class="listing-blurb">Inherited property. Jorge handled estate coordination, light repairs, and pricing. Family closed $30K above their initial hope.</p>
+                    </div>
+                </article>
+
+                <article class="listing-card">
+                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=900&q=80&fit=crop');">
+                        <span class="listing-status">Sold · 2025</span>
+                        <span class="listing-days">6 WEEKS · BUYER SIDE</span>
+                    </div>
+                    <div class="listing-body">
+                        <div class="listing-meta">
+                            <span class="listing-price">$1,340,000</span>
+                            <span class="listing-over">NYC relocation · Buyer won bid</span>
+                        </div>
+                        <h3 class="listing-town">Chatham, NJ</h3>
+                        <div class="listing-specs">
+                            <span>4 Beds</span>
+                            <span>3 Baths</span>
+                            <span>2,950 sqft</span>
+                        </div>
+                        <p class="listing-blurb">First-time buyers relocating from NYC. Jorge walked every property like he was buying it. Buyers won against 5 competing offers.</p>
+                    </div>
+                </article>
+
+                <article class="listing-card">
+                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80&fit=crop');">
+                        <span class="listing-status">Sold · 2025</span>
+                        <span class="listing-days">21 DAYS ON MARKET</span>
+                    </div>
+                    <div class="listing-body">
+                        <div class="listing-meta">
+                            <span class="listing-price">$1,125,000</span>
+                            <span class="listing-over">Over ask · 8 weekend showings</span>
+                        </div>
+                        <h3 class="listing-town">Montclair, NJ</h3>
+                        <div class="listing-specs">
+                            <span>4 Beds</span>
+                            <span>3 Baths</span>
+                            <span>2,650 sqft</span>
+                        </div>
+                        <p class="listing-blurb">Honest pricing conversation on day one. 8 showings the first weekend. Closed above original ask with zero concessions.</p>
+                    </div>
+                </article>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="https://value.thejorgeramirezgroup.com" class="btn-primary" target="_blank" rel="noopener">Get My Home's Number →</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Sell Section (PRIMARY — seller-first positioning) -->
     <section id="sell" class="content-section alt-bg">
         <div class="container">

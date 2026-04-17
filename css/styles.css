@@ -1870,3 +1870,205 @@ main a:not(.btn-primary):not(.btn-outline):not(.nav-btn-consultation):not(.cta-b
 /* ─── SECTION PADDING NORMALIZE ──────────────────────────────── */
 section { scroll-margin-top: 90px; }
 
+
+/* ═══════════════════════════════════════════════════════════════════
+   v3 HERO VIDEO + FEATURED LISTINGS — 2026-04-17
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Video hero bg ─────────────────────────────────────────────── */
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+.hero-video {
+  position: absolute;
+  top: 50%; left: 50%;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(0.55) contrast(1.08) saturate(0.95);
+  z-index: 1;
+}
+.hero-fallback-carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+/* If video fails to load, fallback slides visible via z-index stacking */
+@supports (object-fit: cover) {
+  .hero-video:not([src]) ~ .hero-fallback-carousel .hero-slide.active,
+  .hero-video[poster]:not(:playing) ~ .hero-fallback-carousel .hero-slide.active {
+    opacity: 1;
+  }
+}
+
+/* ─── FEATURED LISTINGS ────────────────────────────────────────── */
+.featured-section {
+  background: linear-gradient(180deg, #FAFAF8 0%, #F5F2EC 100%);
+  padding: clamp(80px, 10vw, 120px) 0;
+  position: relative;
+}
+.featured-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(184,150,46,0.5) 50%,
+    transparent 100%);
+}
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.listing-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px -10px rgba(0,0,0,0.12);
+  transition: transform 0.5s cubic-bezier(.2,.9,.3,1),
+              box-shadow 0.5s cubic-bezier(.2,.9,.3,1);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+}
+.listing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 40px 80px -15px rgba(0,0,0,0.22);
+  border-color: rgba(184,150,46,0.4);
+}
+.listing-img {
+  position: relative;
+  aspect-ratio: 16/10;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.listing-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.55) 100%);
+  transition: opacity 0.4s;
+}
+.listing-card:hover .listing-img { transform: none; }
+.listing-card:hover .listing-img::after { opacity: 0.85; }
+.listing-status {
+  position: absolute;
+  top: 16px; left: 16px;
+  background: rgba(196, 18, 48, 0.95);
+  color: var(--white);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.listing-days {
+  position: absolute;
+  bottom: 16px; left: 16px;
+  color: var(--white);
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  z-index: 2;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+.listing-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.listing-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.listing-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--dark-bg);
+  letter-spacing: -0.5px;
+}
+.listing-over {
+  font-size: 0.78rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  text-align: right;
+}
+.listing-town {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-gray);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+.listing-specs {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.82rem;
+  color: var(--text-light);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+.listing-specs span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.listing-blurb {
+  font-size: 0.94rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── TESTIMONIAL AVATAR POLISH ────────────────────────────────── */
+.testimonial-avatar img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 14px rgba(184, 150, 46, 0.25);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.testimonial-card:hover .testimonial-avatar img {
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(184, 150, 46, 0.35);
+}
+.testimonial-stars {
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 0.95rem;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+@media (max-width: 680px) {
+  .listing-price { font-size: 1.8rem; }
+  .listing-meta { flex-direction: column; align-items: flex-start; }
+  .listing-over { text-align: left; }
+}
