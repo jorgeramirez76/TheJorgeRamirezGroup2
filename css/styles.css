@@ -1652,3 +1652,221 @@ footer {
         display: none;
     }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   v2 POLISH PASS — 2026-04-17
+   Fixes: nav overflow, CTA inconsistency, card flatness, stats weakness,
+   hover states, section transitions, micro-interactions.
+   All additive — no existing selectors modified.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── NAV: fix overflow + consistent sizing ──────────────────────── */
+nav { padding: 0.9rem 3%; }
+nav.scrolled { padding: 0.6rem 3%; }
+.nav-container { gap: 1.25rem; flex-wrap: nowrap; }
+.nav-links { gap: 1.1rem !important; flex-shrink: 0; white-space: nowrap; }
+.nav-links li { flex-shrink: 0; }
+.nav-links a {
+  white-space: nowrap;
+  font-size: 0.86rem !important;
+  letter-spacing: 0.3px !important;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--primary-red);
+  transition: width 0.3s cubic-bezier(.2,.9,.3,1);
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-btn-consultation {
+  padding: 0.65rem 1.1rem !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 14px rgba(196, 18, 48, 0.25);
+}
+nav .logo-img { max-height: 52px; }
+@media (max-width: 1280px) {
+  nav .logo-img { max-height: 44px; }
+  .nav-links { gap: 0.9rem !important; }
+  .nav-links a { font-size: 0.8rem !important; }
+  .nav-btn-consultation { padding: 0.55rem 0.9rem !important; font-size: 0.76rem !important; }
+}
+
+/* ─── STATS band: visual uplift ──────────────────────────────────── */
+.stats-section, .stats, .hero-stats {
+  position: relative;
+  background: linear-gradient(180deg, #0A0A0A 0%, #141414 100%);
+  padding: clamp(60px, 8vw, 100px) 2rem;
+  overflow: hidden;
+}
+.stats-section::before, .stats::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(184,150,46,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ─── CARDS: hover lift + gold accent reveal ─────────────────────── */
+.seller-card, .service-card, .situation-card, .feature-card, .why-card,
+.expertise-item, .buyer-card {
+  transition: transform 0.5s cubic-bezier(.2,.9,.3,1), box-shadow 0.5s, border-color 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+.seller-card::before, .service-card::before, .situation-card::before,
+.feature-card::before, .why-card::before, .expertise-item::before,
+.buyer-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.6s cubic-bezier(.2,.9,.3,1);
+}
+.seller-card:hover, .service-card:hover, .situation-card:hover,
+.feature-card:hover, .why-card:hover, .expertise-item:hover,
+.buyer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.25) !important;
+  border-color: rgba(184,150,46,0.35) !important;
+}
+.seller-card:hover::before, .service-card:hover::before,
+.situation-card:hover::before, .feature-card:hover::before,
+.why-card:hover::before, .expertise-item:hover::before,
+.buyer-card:hover::before { transform: scaleX(1); }
+
+/* ─── BUTTON SYSTEM: unified pill + shimmer on all CTAs ─────────── */
+.btn-primary, .btn-outline, .cta-button, .primary-btn {
+  border-radius: 999px !important;
+  letter-spacing: 0.3px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg,
+    transparent 30%, rgba(255,255,255,0.28) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.7s cubic-bezier(.2,.9,.3,1);
+  z-index: -1;
+}
+.btn-primary:hover::before { transform: translateX(100%); }
+
+/* Primary CTAs get red + micro-elevation */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%) !important;
+  border: none !important;
+  color: var(--white) !important;
+  box-shadow: 0 8px 24px -6px rgba(196,18,48,0.4);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px -8px rgba(196,18,48,0.5);
+}
+.btn-outline {
+  border: 1.5px solid var(--white) !important;
+  background: rgba(255,255,255,0.05) !important;
+  backdrop-filter: blur(6px);
+  color: var(--white) !important;
+  transition: all 0.4s;
+}
+.btn-outline:hover {
+  background: var(--white) !important;
+  color: var(--dark-bg) !important;
+  transform: translateY(-3px);
+}
+
+/* ─── HERO: enhance typography + scroll indicator glow ───────────── */
+.hero h1 { letter-spacing: -1px; }
+.hero-name { text-shadow: 0 4px 40px rgba(184,150,46,0.25), 0 2px 20px rgba(0,0,0,0.4); }
+.hero-overlay {
+  background: linear-gradient(135deg,
+    rgba(0,0,0,0.75) 0%,
+    rgba(10,10,10,0.5) 50%,
+    rgba(0,0,0,0.7) 100%) !important;
+}
+.hero-overlay::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 120% 60% at 50% 30%, transparent 0%, rgba(0,0,0,0.35) 100%);
+  pointer-events: none;
+}
+.hero-scroll-indicator { filter: drop-shadow(0 0 12px rgba(184,150,46,0.4)); }
+
+/* ─── SECTION TRANSITIONS: soft gradient blends ─────────────────── */
+section + section.light-bg,
+section.dark-bg + section.light-bg {
+  position: relative;
+}
+section + section.light-bg::before,
+section.dark-bg + section.light-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(184,150,46,0.4) 50%,
+    transparent 100%);
+}
+
+/* ─── TYPOGRAPHY TIGHTEN ──────────────────────────────────────── */
+h1, h2, h3, .section-title {
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+h2.section-title, .section-header h2 {
+  letter-spacing: -0.5px;
+}
+.section-eyebrow, .eyebrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-eyebrow::before, .eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 1px;
+  background: var(--gold);
+}
+
+/* ─── FOCUS STATES for accessibility ──────────────────────────── */
+a:focus-visible, button:focus-visible, .btn-primary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── IMAGE POLISH ────────────────────────────────────────────── */
+img { transition: transform 0.6s cubic-bezier(.2,.9,.3,1); }
+.photo-frame img, .image-wrap img, .card-image img {
+  border-radius: 12px;
+}
+.photo-frame:hover img, .image-wrap:hover img, .card-image:hover img {
+  transform: scale(1.04);
+}
+
+/* ─── LINK UNDERLINE ANIMATION (body links) ─────────────────── */
+main a:not(.btn-primary):not(.btn-outline):not(.nav-btn-consultation):not(.cta-button):not(.logo) {
+  position: relative;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.4s cubic-bezier(.2,.9,.3,1);
+}
+main a:not(.btn-primary):not(.btn-outline):not(.nav-btn-consultation):not(.cta-button):not(.logo):hover {
+  background-size: 100% 1px;
+}
+
+/* ─── SECTION PADDING NORMALIZE ──────────────────────────────── */
+section { scroll-margin-top: 90px; }
+
