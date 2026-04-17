@@ -359,3 +359,64 @@ if ('IntersectionObserver' in window) {
     const testimonialSection = document.getElementById('testimonials');
     if (testimonialSection) starObserver.observe(testimonialSection);
 })();
+
+// ═══════════════════════════════════════════════════════════════════
+// Testimonial ↔ Listing auto-link (2026-04-17)
+// Reads town from .testimonial-location text, matches to .listing-card[data-town],
+// wires bidirectional hover + click-to-scroll highlighting.
+// ═══════════════════════════════════════════════════════════════════
+(function () {
+  const slugify = s => s.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+  const testimonials = document.querySelectorAll('.testimonial-card');
+  const listings = document.querySelectorAll('.listing-card[data-town]');
+  const listingByTown = {};
+  listings.forEach(l => { listingByTown[l.dataset.town] = l; });
+
+  testimonials.forEach(t => {
+    const loc = t.querySelector('.testimonial-location');
+    if (!loc) return;
+    // Extract town name before any comma/bullet
+    const m = loc.textContent.match(/^([A-Za-z\s]+?)(?:,|\s*•)/);
+    if (!m) return;
+    const town = slugify(m[1].trim());
+    t.dataset.matchTown = town;
+    if (listingByTown[town]) {
+      t.classList.add('has-listing-match');
+      listingByTown[town].classList.add('has-testimonial-match');
+      listingByTown[town].dataset.matchedTestimonial = 'true';
+    }
+  });
+
+  function highlight(town) {
+    document.querySelectorAll('.testimonial-card, .listing-card').forEach(c => c.classList.remove('highlighted'));
+    if (!town) return;
+    const t = document.querySelector(`.testimonial-card[data-match-town="${town}"]`);
+    const l = document.querySelector(`.listing-card[data-town="${town}"]`);
+    if (t) t.classList.add('highlighted');
+    if (l) l.classList.add('highlighted');
+  }
+
+  testimonials.forEach(t => {
+    t.addEventListener('mouseenter', () => highlight(t.dataset.matchTown));
+    t.addEventListener('mouseleave', () => highlight(null));
+    t.addEventListener('click', e => {
+      const town = t.dataset.matchTown;
+      if (!town || !listingByTown[town] || e.target.closest('a')) return;
+      listingByTown[town].scrollIntoView({behavior:'smooth', block:'center'});
+      setTimeout(() => highlight(town), 400);
+      setTimeout(() => highlight(null), 2600);
+    });
+  });
+  listings.forEach(l => {
+    l.addEventListener('mouseenter', () => highlight(l.dataset.town));
+    l.addEventListener('mouseleave', () => highlight(null));
+    l.addEventListener('click', e => {
+      const town = l.dataset.town;
+      const t = document.querySelector(`.testimonial-card[data-match-town="${town}"]`);
+      if (!t || e.target.closest('a')) return;
+      t.scrollIntoView({behavior:'smooth', block:'center'});
+      setTimeout(() => highlight(town), 400);
+      setTimeout(() => highlight(null), 2600);
+    });
+  });
+})();

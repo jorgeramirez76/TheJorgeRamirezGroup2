@@ -2060,3 +2060,85 @@ section { scroll-margin-top: 90px; }
   .listing-meta { flex-direction: column; align-items: flex-start; }
   .listing-over { text-align: left; }
 }
+
+/* ─── Testimonial ↔ Listing link highlighting ─────────────────── */
+.testimonial-card, .listing-card {
+  cursor: pointer;
+}
+.testimonial-card.highlighted, .listing-card.highlighted {
+  box-shadow: 0 0 0 2px var(--gold), 0 40px 90px -15px rgba(184,150,46,0.35) !important;
+  border-color: var(--gold) !important;
+  transform: translateY(-10px) !important;
+}
+.testimonial-card.has-listing-match::after,
+.listing-card.has-testimonial-match::after {
+  content: '◆ linked';
+  position: absolute;
+  top: 12px; right: 12px;
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  background: rgba(10,10,10,0.7);
+  padding: 4px 8px;
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 3;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+.testimonial-card.has-listing-match:hover::after,
+.listing-card.has-testimonial-match:hover::after {
+  opacity: 1;
+}
+.testimonial-card { position: relative; }
+.listing-card { position: relative; }
+
+/* ─── Listings footer stat-strip ──────────────────────────────── */
+.listings-footer {
+  margin-top: 56px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 32px;
+  background: rgba(10,10,10,0.04);
+  border-radius: 16px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.listings-more-stat {
+  text-align: center;
+  padding: 0 16px;
+  border-right: 1px solid var(--border-light);
+}
+.listings-more-stat:last-of-type { border-right: none; }
+.lms-num {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  color: var(--gold);
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.lms-lbl {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 500;
+}
+.listings-footer .btn-primary {
+  margin-left: 12px;
+}
+@media (max-width: 680px) {
+  .listings-footer { gap: 20px; padding: 24px 16px; }
+  .listings-more-stat { border-right: none; border-bottom: 1px solid var(--border-light); padding-bottom: 14px; }
+  .listings-more-stat:last-of-type { border-bottom: none; }
+  .lms-num { font-size: 1.9rem; }
+}
