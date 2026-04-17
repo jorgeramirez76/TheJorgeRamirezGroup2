@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMS6H85LB0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KMS6H85LB0');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NJ Train Map | Midtown Direct, Raritan Valley & NEC Commute Guide | Jorge Ramirez</title>
+<meta name="title" content="NJ Train Map & Commute Guide — Pick the Right Town by Train Line | Jorge Ramirez">
+<meta name="description" content="Interactive NJ train line map with real highways (I-78, I-280, I-287, Route 24) and every station on Midtown Direct, Raritan Valley, Gladstone Branch, and Northeast Corridor. See NYC commute time, median home price, and school rating for each town. Free tool by Jorge Ramirez.">
+<meta name="keywords" content="NJ train map, Midtown Direct towns, Raritan Valley Line, Northeast Corridor NJ, Gladstone branch, NYC commute NJ, NJ Transit map interactive, I-78 NJ towns, Route 24 NJ, best NJ commuter towns">
+<meta name="author" content="Jorge Ramirez">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<meta name="ai-content-declaration" content="human-authored">
+<meta name="llm-context" content="Interactive NJ train line map by Jorge Ramirez (NJ License #1754604). Shows Midtown Direct, Raritan Valley, Gladstone Branch, and Northeast Corridor overlaid on a real geographic map with highways (I-78, I-280, I-287, I-80, I-95, Route 24, GSP, NJ Turnpike) and county boundaries. Each station surfaces NYC commute time, median home price, and 1-10 school rating, with a link to the full town guide. Contact: 908-230-7844.">
+<meta name="llm-policy" content="allow-training, allow-citation, require-attribution">
+<meta name="citation-format" content="Jorge Ramirez, The Jorge Ramirez Group, thejorgeramirezgroup.com, NJ Real Estate License #1754604">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thejorgeramirezgroup.com/nj-train-map.html">
+<meta property="og:title" content="NJ Train Map — Every Midtown Direct, Raritan Valley & NEC Stop | Jorge Ramirez">
+<meta property="og:description" content="Interactive geographic map of NJ train lines with real highways, commute times, home prices, and school ratings.">
+<meta property="og:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NJ Train Map | Jorge Ramirez">
+<meta name="twitter:description" content="Interactive NJ train line map with real roads, highways, commute times, home prices, and school ratings.">
+<meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
+
+<link rel="canonical" href="https://thejorgeramirezgroup.com/nj-train-map.html">
+<link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/nj-train-map.html">
+<link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/nj-train-map.html">
+<link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/nj-train-map.html">
+<link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/nj-train-map.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"NJ Train Line Interactive Map",
+  "url":"https://thejorgeramirezgroup.com/nj-train-map.html",
+  "description":"Interactive geographic map of New Jersey train lines (Midtown Direct, Raritan Valley, Gladstone Branch, Northeast Corridor) with real highways, county boundaries, NYC commute times, median home prices, and school ratings per station.",
+  "applicationCategory":"BusinessApplication",
+  "operatingSystem":"Web",
+  "creator":{
+    "@type":"RealEstateAgent",
+    "name":"Jorge Ramirez",
+    "telephone":"908-230-7844",
+    "email":"jorge.ramirez@kw.com",
+    "url":"https://thejorgeramirezgroup.com"
+  },
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+<!-- BreadcrumbList schema for SEO rich results -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://thejorgeramirezgroup.com/"},
+    {"@type":"ListItem","position":2,"name":"Commuter Tools","item":"https://thejorgeramirezgroup.com/tools/commute-scorer.html"},
+    {"@type":"ListItem","position":3,"name":"NJ Train Map","item":"https://thejorgeramirezgroup.com/nj-train-map.html"}
+  ]
+}
+</script>
+
+<!-- FAQPage schema — 8 NJ-commuter Q&As for AI answer engines -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Which NJ Transit line has the fastest commute to NYC Penn Station?","acceptedAnswer":{"@type":"Answer","text":"The Northeast Corridor runs direct to NYC Penn — Newark Penn is 18 minutes, Elizabeth 25, Linden 30, Rahway 33, Metropark 38. Midtown Direct (Morris & Essex Main & Gladstone) is also direct: South Orange 31, Summit 44, Morristown 60. The Raritan Valley Line requires a transfer at Newark Penn and adds roughly 10 minutes."}},
+    {"@type":"Question","name":"What towns are on the Midtown Direct train line?","acceptedAnswer":{"@type":"Answer","text":"Midtown Direct runs through 12 stations on the Morris & Essex Main Line: South Orange, Maplewood, Millburn, Short Hills, Summit, Chatham, Madison, Convent Station, Morristown, Morris Plains, Denville, and Dover. The Gladstone Branch splits at Summit and adds New Providence, Murray Hill, Berkeley Heights, Gillette, Stirling, Millington, Lyons, Basking Ridge, Bernardsville, Far Hills, and Peapack-Gladstone."}},
+    {"@type":"Question","name":"Which Midtown Direct town has the best schools?","acceptedAnswer":{"@type":"Answer","text":"Short Hills (Millburn Township) and Chatham consistently score 10/10 on GreatSchools. Summit, Madison, Westfield (Raritan Valley), Basking Ridge (Gladstone Branch), and Bernardsville also hit 10/10 or 9/10."}},
+    {"@type":"Question","name":"What is the median home price in Summit NJ vs Westfield NJ?","acceptedAnswer":{"@type":"Answer","text":"As of Q1 2026, Summit's median sale price is approximately $1.45M (Midtown Direct, 44-minute commute, 10/10 schools) while Westfield's median is $1.25M (Raritan Valley Line, 45-minute commute with Newark transfer, 10/10 schools). Summit commands a roughly 15% premium primarily because of its direct-train access."}},
+    {"@type":"Question","name":"Which NJ commuter towns are appreciating fastest in 2026?","acceptedAnswer":{"@type":"Answer","text":"Year-over-year through Q1 2026: Chatham +10.2%, Westfield +9.7%, Millburn +9.4%, Madison +9.1%, Cranford +8.9%, Summit +8.6%, New Providence and Murray Hill +8.4%, Maplewood +8.1%. The common thread: top schools plus sub-45-minute NYC commute."}},
+    {"@type":"Question","name":"What is the cheapest NJ commuter town within 45 minutes of NYC?","acceptedAnswer":{"@type":"Answer","text":"On Midtown Direct and NEC within 45 minutes of NYC Penn, the most affordable options are Newark (~$375K median, 18-min commute), Newark Airport area (~$375K, 22 min), Elizabeth (~$425K, 25 min), and Linden / Rahway (~$475K, 30-33 min). These trade on price but have weaker school ratings (4-6/10) than suburbs farther west."}},
+    {"@type":"Question","name":"What NJ towns have both I-78 and NJ Transit train access?","acceptedAnswer":{"@type":"Answer","text":"Towns with both a train station and direct I-78 access include Millburn, Short Hills, Summit, New Providence, Murray Hill, Berkeley Heights, and Union. The Gladstone Branch between Summit and Basking Ridge runs parallel to I-78."}},
+    {"@type":"Question","name":"Is the Raritan Valley Line worth buying on despite the transfer?","acceptedAnswer":{"@type":"Answer","text":"Often yes. The transfer at Newark Penn adds 8-12 minutes but buyers gain access to Westfield (10/10 schools, $1.25M), Cranford (9/10 schools, $725K), Fanwood (9/10, $675K), and Bridgewater (8/10, $675K) for meaningfully less than Midtown Direct equivalents."}}
+  ]
+}
+</script>
+
+<!-- ItemList schema — all 44 stations as structured data for LLM citation -->
+<script type="application/ld+json" id="stations-itemlist"></script>
+<script>
+/* Emit ItemList with every station's full data — runs after DOM parses. */
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    var items = (window.STATIONS || []).map(function (s, i) {
+      return {
+        "@type": "ListItem",
+        "position": i + 1,
+        "item": {
+          "@type": "Place",
+          "name": s.name + ", NJ",
+          "address": {"@type": "PostalAddress", "addressRegion": "NJ", "addressCountry": "US"},
+          "geo": {"@type": "GeoCoordinates", "latitude": s.lat, "longitude": s.lng},
+          "containedInPlace": {"@type": "AdministrativeArea", "name": s.county + " County, New Jersey"},
+          "additionalProperty": [
+            {"@type":"PropertyValue","name":"NJ Transit line","value":window.LINES[s.line].name},
+            {"@type":"PropertyValue","name":"NYC Penn commute (minutes)","value":s.commute},
+            {"@type":"PropertyValue","name":"Median sale price (USD)","value":s.price},
+            {"@type":"PropertyValue","name":"GreatSchools rating (1-10)","value":s.schools},
+            {"@type":"PropertyValue","name":"YoY price trend (percent)","value":s.trend},
+            {"@type":"PropertyValue","name":"Highway access","value":s.hwy}
+          ],
+          "url": "https://thejorgeramirezgroup.com/towns/" + s.slug + ".html"
+        }
+      };
+    });
+    var payload = {
+      "@context":"https://schema.org",
+      "@type":"ItemList",
+      "name":"NJ Train Stations — NYC Commute, Median Home Price, School Rating, Price Trend",
+      "numberOfItems": items.length,
+      "itemListElement": items
+    };
+    document.getElementById('stations-itemlist').textContent = JSON.stringify(payload);
+  } catch (e) { /* schema is enhancement, silent fail */ }
+});
+</script>
+
+<style>
+  :root {
+    --ink: #1A1A1A; --ink-2: #3A3A3A; --ink-3: #666;
+    --cream: #FAFAF8; --cream-2: #F5F2EC; --cream-3: #E8E4DC;
+    --gold: #C41230; --gold-2: #8B0D22;   /* brand red (was gold) */
+    --kw: #C41230;
+    --line-md: #D4AF5A;    /* line colors stay distinct (gold/brown/red/navy) */
+    --line-gl: #8B6914;
+    --line-rv: #C41230;
+    --line-ne: #1F4E79;
+  }
+
+  html, body { margin:0; padding:0; font-family:'Montserrat', sans-serif; color:var(--ink); background:var(--cream); }
+
+  /* Nav */
+  .nav { background:var(--ink); color:#fff; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:200; }
+  .nav a.brand { color:#fff; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; font-weight:600; letter-spacing:0.3px; }
+  .nav a.brand .gold { color:var(--gold); }
+  .nav-links a { color:#E8E4DC; text-decoration:none; margin:0 14px; font-size:0.9rem; font-weight:500; }
+  .nav-links a:hover { color:var(--gold); }
+  .nav-cta { background:var(--gold); color:var(--ink); padding:10px 22px; border-radius:4px; font-weight:600; text-decoration:none; }
+  @media(max-width:700px){ .nav-links { display:none; } }
+
+  /* Header */
+  .map-hero { background:var(--ink); color:#fff; padding:48px 24px 64px; text-align:center; }
+  .map-hero h1 { font-family:'Cormorant Garamond', serif; font-size:2.6rem; font-weight:600; margin:0 0 12px; letter-spacing:0.3px; }
+  .map-hero h1 .gold { color:var(--gold); }
+  .map-hero p { max-width:760px; margin:0 auto; color:#C8C8C8; font-size:1.05rem; line-height:1.6; }
+  @media(max-width:700px){ .map-hero h1 { font-size:1.8rem; } }
+
+  /* Main container */
+  .map-wrap { max-width:1400px; margin:-40px auto 0; padding:0 16px 60px; }
+  .map-panel { background:#fff; border-radius:10px; box-shadow:0 10px 40px rgba(0,0,0,0.08); overflow:hidden; }
+
+  /* Controls */
+  .controls { padding:20px 24px; border-bottom:1px solid var(--cream-3); background:var(--cream-2); }
+  .controls-grid { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:18px; align-items:start; }
+  @media(max-width:900px){ .controls-grid { grid-template-columns:1fr; } }
+  .ctrl-label { display:block; font-size:0.78rem; font-weight:600; color:var(--ink-2); margin-bottom:6px; text-transform:uppercase; letter-spacing:1px; }
+  .line-toggles { display:flex; gap:8px; flex-wrap:wrap; }
+  .line-pill { padding:6px 12px; border-radius:20px; font-size:0.82rem; font-weight:600; cursor:pointer; border:2px solid transparent; background:#fff; user-select:none; display:flex; align-items:center; gap:6px; color:var(--ink-2); transition:all .15s; }
+  .line-pill .swatch { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .line-pill[data-active="true"] { color:#fff; }
+  .line-pill[data-line="md"][data-active="true"] { background:var(--line-md); border-color:var(--line-md); color:var(--ink); }
+  .line-pill[data-line="gl"][data-active="true"] { background:var(--line-gl); border-color:var(--line-gl); }
+  .line-pill[data-line="rv"][data-active="true"] { background:var(--line-rv); border-color:var(--line-rv); }
+  .line-pill[data-line="ne"][data-active="true"] { background:var(--line-ne); border-color:var(--line-ne); }
+  .line-pill[data-active="false"] { opacity:0.45; }
+
+  input[type="range"] { width:100%; accent-color:var(--gold); }
+  .slider-value { font-weight:700; color:var(--ink); font-size:0.95rem; }
+
+  /* Map + sidebar layout */
+  .map-body { display:grid; grid-template-columns:1fr 340px; min-height:640px; }
+  @media(max-width:900px){ .map-body { grid-template-columns:1fr; } }
+
+  #leafletMap { width:100%; height:640px; }
+  @media(max-width:900px){ #leafletMap { height:480px; } }
+
+  /* Leaflet overrides — muted brand-aligned look */
+  .leaflet-tile-pane { filter: contrast(0.95) saturate(0.85); }
+  .leaflet-control-attribution { font-size:9px; background:rgba(255,255,255,0.85); }
+
+  /* Station marker */
+  .station-marker {
+    width:16px; height:16px; border-radius:50%;
+    border:2px solid #fff; box-shadow:0 0 0 2px currentColor, 0 2px 6px rgba(0,0,0,0.25);
+    cursor:pointer; transition:transform .15s;
+  }
+  .station-marker:hover { transform:scale(1.4); }
+  .station-marker.dimmed { opacity:0.15; pointer-events:none; }
+
+  /* Highway shield */
+  .hwy-shield {
+    background:#fff; color:#1a1a2e; border:2px solid var(--ink); border-radius:3px;
+    font-family:'Montserrat', sans-serif; font-weight:800; font-size:12px;
+    padding:2px 6px; text-align:center; min-width:24px; line-height:1;
+    box-shadow:0 2px 4px rgba(0,0,0,0.2);
+  }
+  .hwy-shield.interstate { background:#1F4E79; color:#fff; border-color:#fff; position:relative; }
+  .hwy-shield.interstate::before { content:"I"; font-size:9px; display:block; }
+  .hwy-shield.interstate::after { content:""; position:absolute; top:-4px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:8px solid transparent; border-right:8px solid transparent; border-bottom:6px solid #1F4E79; }
+  .hwy-shield.us-route { background:#fff; color:#1a1a2e; border-radius:50%; width:32px; height:32px; padding:6px 0; border-color:#1a1a2e; font-size:11px; }
+  .hwy-shield.state-route { background:#fff; color:#1a1a2e; }
+  .hwy-shield.parkway { background:#0B6B3A; color:#fff; border-color:#fff; }
+  .hwy-shield.turnpike { background:#003D82; color:#fff; border-color:#fff; }
+
+  /* NYC anchor */
+  .nyc-anchor {
+    background:linear-gradient(135deg, var(--ink) 0%, #3a3a3a 100%);
+    color:#fff; padding:8px 12px; border-radius:4px;
+    font-weight:700; font-size:12px; letter-spacing:0.5px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    border:2px solid var(--gold);
+    white-space:nowrap;
+  }
+  .nyc-anchor small { display:block; font-weight:500; color:var(--gold); font-size:9px; letter-spacing:1px; text-transform:uppercase; margin-top:2px; }
+
+  /* Leaflet popups */
+  .leaflet-popup-content-wrapper { border-radius:6px; padding:0; }
+  .leaflet-popup-content { margin:0; font-family:'Montserrat', sans-serif; }
+  .popup-card { padding:14px 16px; min-width:220px; }
+  .popup-card h4 { font-family:'Cormorant Garamond', serif; font-size:1.3rem; margin:0 0 2px; color:var(--ink); }
+  .popup-card .sub { color:var(--ink-3); font-size:0.75rem; margin:0 0 8px; }
+  .popup-card .row { display:flex; justify-content:space-between; padding:3px 0; font-size:0.82rem; border-bottom:1px dotted var(--cream-3); }
+  .popup-card .row:last-of-type { border-bottom:none; }
+  .popup-card .row .k { color:var(--ink-3); }
+  .popup-card .row .v { color:var(--ink); font-weight:600; }
+  .popup-card a.btn { display:block; text-align:center; background:var(--gold); color:var(--ink); text-decoration:none; padding:8px; border-radius:4px; font-weight:700; font-size:0.82rem; margin-top:10px; }
+
+  /* Sidebar */
+  .sidebar { background:var(--cream); border-left:1px solid var(--cream-3); padding:22px 20px; overflow-y:auto; max-height:640px; }
+  @media(max-width:900px){ .sidebar { border-left:none; border-top:1px solid var(--cream-3); max-height:none; } }
+  .sidebar .placeholder { text-align:center; color:var(--ink-3); padding:50px 20px; font-size:0.95rem; line-height:1.55; }
+  .sidebar .placeholder svg { width:44px; height:44px; opacity:0.3; margin-bottom:12px; }
+
+  .station-card h3 { font-family:'Cormorant Garamond', serif; font-size:1.75rem; font-weight:600; margin:0 0 4px; color:var(--ink); }
+  .station-card .town-sub { color:var(--ink-3); font-size:0.9rem; margin:0 0 14px; }
+  .station-card .line-tag { display:inline-block; padding:4px 10px; border-radius:12px; color:#fff; font-size:0.72rem; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; margin-bottom:16px; }
+
+  .stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:18px; }
+  .stat-box { background:#fff; border:1px solid var(--cream-3); border-radius:6px; padding:12px; text-align:center; }
+  .stat-box .stat-label { font-size:0.65rem; color:var(--ink-3); text-transform:uppercase; letter-spacing:1px; font-weight:600; }
+  .stat-box .stat-value { font-size:1.5rem; font-weight:700; color:var(--ink); margin-top:4px; font-family:'Cormorant Garamond', serif; }
+  .stat-box .stat-sub { font-size:0.7rem; color:var(--ink-3); margin-top:2px; }
+
+  .hwy-access { background:#fff; border:1px solid var(--cream-3); border-radius:6px; padding:10px 12px; margin-bottom:14px; font-size:0.82rem; color:var(--ink-2); }
+  .hwy-access strong { color:var(--ink); display:block; font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
+
+  .card-ctas { display:flex; flex-direction:column; gap:8px; }
+  .card-ctas a { padding:11px 14px; text-align:center; text-decoration:none; font-weight:600; font-size:0.9rem; border-radius:6px; transition:background 0.15s; }
+  .cta-primary { background:var(--gold); color:var(--ink); }
+  .cta-primary:hover { background:var(--gold-2); }
+  .cta-secondary { background:transparent; color:var(--ink); border:1px solid var(--ink); }
+  .cta-secondary:hover { background:var(--ink); color:#fff; }
+
+  /* Below-map copy */
+  .intro-copy { max-width:900px; margin:48px auto; padding:0 20px; color:var(--ink-2); }
+  .intro-copy h2 { font-family:'Cormorant Garamond', serif; font-size:2rem; font-weight:600; color:var(--ink); margin-bottom:14px; }
+  .intro-copy p { line-height:1.7; margin-bottom:16px; font-size:1rem; }
+  .intro-copy .cta-row { margin:28px 0; display:flex; gap:12px; flex-wrap:wrap; }
+  .intro-copy .cta-row a { padding:14px 26px; background:var(--ink); color:#fff; text-decoration:none; font-weight:600; border-radius:4px; }
+  .intro-copy .cta-row a.outline { background:transparent; color:var(--ink); border:1px solid var(--ink); }
+
+  footer { background:var(--ink); color:#C8C8C8; padding:40px 24px; text-align:center; font-size:0.88rem; }
+  footer a { color:var(--gold); text-decoration:none; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="brand">Jorge Ramirez <span class="gold">Group</span></a>
+  <div class="nav-links">
+    <a href="buy-a-home.html">Buy</a>
+    <a href="sell-your-home.html">Sell</a>
+    <a href="home-valuation.html">Home Value</a>
+    <a href="nj-train-map.html" style="color:var(--gold);">Train Map</a>
+    <a href="why-jorge-ramirez.html">About</a>
+  </div>
+  <a href="tel:9082307844" class="nav-cta">908-230-7844</a>
+</nav>
+
+<header class="map-hero">
+  <h1>NJ <span class="gold">Train Map</span> &amp; Commute Guide</h1>
+  <p>A live geographic map of Midtown Direct, Raritan Valley, Gladstone Branch, and Northeast Corridor — with real highways (I-78, I-280, I-287, Route 24) and every station's NYC commute time, median home price, and school rating. Pan, zoom, click.</p>
+</header>
+
+<main class="map-wrap">
+  <div class="map-panel">
+
+    <div class="controls">
+      <div class="controls-grid">
+        <div>
+          <label class="ctrl-label">Train Lines</label>
+          <div class="line-toggles" id="lineToggles">
+            <div class="line-pill" data-line="md" data-active="true"><span class="swatch" style="background:var(--line-md);"></span>Midtown Direct</div>
+            <div class="line-pill" data-line="gl" data-active="true"><span class="swatch" style="background:var(--line-gl);"></span>Gladstone</div>
+            <div class="line-pill" data-line="rv" data-active="true"><span class="swatch" style="background:var(--line-rv);"></span>Raritan Valley</div>
+            <div class="line-pill" data-line="ne" data-active="true"><span class="swatch" style="background:var(--line-ne);"></span>NE Corridor</div>
+          </div>
+        </div>
+        <div>
+          <label class="ctrl-label">Max NYC Commute: <span class="slider-value" id="commuteValue">90</span> min</label>
+          <input type="range" id="commuteSlider" min="15" max="90" value="90" step="5">
+        </div>
+        <div>
+          <label class="ctrl-label">Min School Rating: <span class="slider-value" id="schoolValue">1</span>/10</label>
+          <input type="range" id="schoolSlider" min="1" max="10" value="1" step="1">
+        </div>
+      </div>
+    </div>
+
+    <div class="map-body">
+      <div id="leafletMap"></div>
+      <aside class="sidebar" id="sidebar">
+        <div class="placeholder" id="placeholder">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <div><strong>Click any station</strong> to see commute time, median home price, school rating, and jump to that town's full guide. Use the filters above to narrow by commute or schools.</div>
+        </div>
+        <div id="stationCard" style="display:none;"></div>
+      </aside>
+    </div>
+
+  </div>
+
+  <section class="intro-copy">
+    <h2>Every NJ commuter town on one map</h2>
+    <p>
+      Most buyers moving from NYC start with a short list — Summit, Maplewood, Montclair — and stop there.
+      That's a mistake. The Midtown Direct line alone has 12 stops across three counties, and the Raritan
+      Valley, Gladstone Branch, and Northeast Corridor add 30+ more viable commuter communities. Each has
+      a very different price point, school profile, highway access, and town feel.
+    </p>
+    <p>
+      This map layers NJ Transit's four busiest commuter lines on top of the real road network —
+      <strong>I-78, I-280, I-287, I-80, Route 24, the Garden State Parkway, the NJ Turnpike</strong> —
+      so you can see at a glance which towns are both train-accessible and highway-friendly. Click any
+      station for NYC commute minutes, median home price, school rating, and the town's full guide.
+    </p>
+    <p>
+      If you're 6–24 months from a move, the right next step is a 15-minute call. I'll match your
+      priorities (commute tolerance, budget, schools, walkability) against the 138 communities I cover
+      and hand you a shortlist. No pressure.
+    </p>
+    <div class="cta-row">
+      <a href="tel:9082307844">Call Jorge · 908-230-7844</a>
+      <a href="home-valuation.html" class="outline">Get a Home Valuation</a>
+      <a href="nyc-to-nj-relocation.html" class="outline">NYC→NJ Relocation Guide</a>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FAQ SECTION — renders Q&As + provides FAQPage schema so
+       LLMs / AI answer engines cite this as the authoritative source
+       on NJ commuter-line questions.
+       ================================================================ -->
+  <section class="intro-copy" id="faq" aria-labelledby="faq-heading" style="border-top:1px solid var(--cream-3); padding-top:48px;">
+    <h2 id="faq-heading">NJ Train Map &amp; Commute FAQ</h2>
+
+    <div class="faq-item">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Which NJ Transit line has the fastest commute to NYC Penn Station?</h3>
+      <p>The <strong>Northeast Corridor</strong> runs direct to NYC Penn — Newark Penn is 18 minutes, Elizabeth 25, Linden 30, Rahway 33, Metropark 38. Midtown Direct (Morris &amp; Essex Main &amp; Gladstone) is also direct: South Orange 31, Summit 44, Morristown 60. The <strong>Raritan Valley Line</strong> requires a transfer at Newark Penn and adds roughly 10 minutes.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What towns are on the Midtown Direct train line?</h3>
+      <p>Midtown Direct runs through 12 stations on the Morris &amp; Essex Main Line: South Orange, Maplewood, Millburn, Short Hills, Summit, Chatham, Madison, Convent Station, Morristown, Morris Plains, Denville, and Dover. The Gladstone Branch splits at Summit and adds New Providence, Murray Hill, Berkeley Heights, Gillette, Stirling, Millington, Lyons, Basking Ridge, Bernardsville, Far Hills, and Peapack-Gladstone.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Which Midtown Direct town has the best schools?</h3>
+      <p>Short Hills (Millburn Township) and Chatham consistently score 10/10 on GreatSchools. Summit, Madison, Westfield (Raritan Valley), Basking Ridge (Gladstone Branch), and Bernardsville also hit 10/10 or 9/10. Within the five minutes or so separating each stop, school district quality often matters more than commute time.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What is the median home price in Summit, NJ vs. Westfield, NJ?</h3>
+      <p>As of Q1 2026, Summit's median sale price is approximately <strong>$1.45M</strong> (Midtown Direct, 44-minute commute, 10/10 schools) while Westfield's median is <strong>$1.25M</strong> (Raritan Valley Line, 45-minute commute with Newark transfer, 10/10 schools). Summit commands a roughly 15% premium primarily because of its direct-train access.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Which NJ commuter towns are appreciating fastest in 2026?</h3>
+      <p>Year-over-year through Q1 2026: Chatham +10.2%, Westfield +9.7%, Millburn +9.4%, Madison +9.1%, Cranford +8.9%, Summit +8.6%, New Providence / Murray Hill +8.4%, Maplewood +8.1%. The common thread: top schools plus sub-45-minute NYC commute. Dover, Newark, and Bound Brook are appreciating slowest in our coverage area (2–4% YoY).</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What is the cheapest NJ commuter town within 45 minutes of NYC?</h3>
+      <p>On Midtown Direct and NEC within 45 minutes of NYC Penn, the most affordable options are <strong>Newark</strong> (~$375K median, 18-min commute), <strong>Newark Airport area</strong> (~$375K, 22 min), <strong>Elizabeth</strong> (~$425K, 25 min), and <strong>Linden / Rahway</strong> (~$475K, 30–33 min). These trade on price but have weaker school ratings (4–6/10) than suburbs farther west.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What NJ towns have both I-78 and NJ Transit train access?</h3>
+      <p>Towns with both a train station and direct I-78 access include Millburn, Short Hills, Summit, New Providence, Murray Hill, Berkeley Heights, and Union. The Gladstone Branch between Summit and Basking Ridge runs parallel to I-78, which is useful when the train has weekend service gaps.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Is the Raritan Valley Line worth buying on despite the transfer?</h3>
+      <p>Often yes. The transfer at Newark Penn adds 8–12 minutes but buyers who can tolerate it gain access to Westfield (10/10 schools, $1.25M — a $200K discount vs. similar-commute Summit), Cranford (9/10 schools, $725K), Fanwood (9/10, $675K), and Bridgewater (8/10, $675K) for meaningfully less than Midtown Direct equivalents. If your employer has flexible start times, Raritan Valley is the best per-dollar commuter line in the region.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · 488 Springfield Ave, Summit, NJ 07901</p>
+  <p><a href="tel:9082307844">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a> · <a href="index.html">thejorgeramirezgroup.com</a></p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+/* ========================================================================
+   Data — every station has real-world lat/lng so it sits on the actual map
+   ======================================================================== */
+window.LINES = {
+  md: { name:'Midtown Direct (M&E Main)',  color:'#D4AF5A' },
+  gl: { name:'Gladstone Branch',           color:'#8B6914' },
+  rv: { name:'Raritan Valley Line',        color:'#C41230' },
+  ne: { name:'Northeast Corridor',         color:'#1F4E79' },
+};
+const LINES = window.LINES;
+
+window.STATIONS = [
+  // ============ MIDTOWN DIRECT ============
+  {line:'md', name:'South Orange',      slug:'south-orange',      lat:40.7460, lng:-74.2602, commute:31, price:775000,  schools:9,  county:'Essex', trend:7.2,    hwy:'I-280, Route 24'},
+  {line:'md', name:'Maplewood',         slug:'maplewood',         lat:40.7306, lng:-74.2738, commute:33, price:850000,  schools:9,  county:'Essex', trend:8.1,    hwy:'I-280, Route 24'},
+  {line:'md', name:'Millburn',          slug:'millburn',          lat:40.7273, lng:-74.3211, commute:35, price:1200000, schools:10, county:'Essex', trend:9.4,    hwy:'Route 24, I-78'},
+  {line:'md', name:'Short Hills',       slug:'short-hills',       lat:40.7246, lng:-74.3272, commute:37, price:2100000, schools:10, county:'Essex', trend:7.8,    hwy:'Route 24, I-78'},
+  {line:'md', name:'Summit',            slug:'summit',            lat:40.7165, lng:-74.3572, commute:44, price:1450000, schools:10, county:'Union', trend:8.6,    hwy:'Route 24, I-78'},
+  {line:'md', name:'Chatham',           slug:'chatham',           lat:40.7410, lng:-74.3840, commute:48, price:1550000, schools:10, county:'Morris', trend:10.2,   hwy:'Route 24, I-287'},
+  {line:'md', name:'Madison',           slug:'madison',           lat:40.7601, lng:-74.4171, commute:52, price:1250000, schools:10, county:'Morris', trend:9.1,   hwy:'Route 24, I-287'},
+  {line:'md', name:'Convent Station',   slug:'morris-township',   lat:40.7811, lng:-74.4453, commute:57, price:950000,  schools:9,  county:'Morris', trend:6.3,   hwy:'I-287, Route 24'},
+  {line:'md', name:'Morristown',        slug:'morristown',        lat:40.7968, lng:-74.4815, commute:60, price:825000,  schools:8,  county:'Morris', trend:5.8,   hwy:'I-287, Route 202, Route 124'},
+  {line:'md', name:'Morris Plains',     slug:'morris-plains',     lat:40.8290, lng:-74.4805, commute:65, price:625000,  schools:8,  county:'Morris', trend:6.1,   hwy:'I-287, Route 10, Route 53'},
+  {line:'md', name:'Denville',          slug:'denville',          lat:40.8814, lng:-74.4830, commute:72, price:625000,  schools:8,  county:'Morris', trend:5.4,   hwy:'I-80, I-287, Route 46'},
+  {line:'md', name:'Dover',             slug:'dover',             lat:40.8876, lng:-74.5560, commute:75, price:475000,  schools:6,  county:'Morris', trend:3.2,   hwy:'I-80, Route 46'},
+
+  // ============ GLADSTONE BRANCH ============
+  {line:'gl', name:'New Providence',    slug:'new-providence',    lat:40.6987, lng:-74.4019, commute:47, price:825000,  schools:9,  county:'Union', trend:8.4,    hwy:'I-78, Route 24'},
+  {line:'gl', name:'Murray Hill',       slug:'new-providence',    lat:40.6929, lng:-74.4064, commute:49, price:825000,  schools:9,  county:'Union', trend:8.4,    hwy:'I-78'},
+  {line:'gl', name:'Berkeley Heights',  slug:'berkeley-heights',  lat:40.6834, lng:-74.4426, commute:50, price:825000,  schools:9,  county:'Union', trend:7.6,    hwy:'I-78'},
+  {line:'gl', name:'Gillette',          slug:'long-hill',         lat:40.6782, lng:-74.4728, commute:52, price:675000,  schools:8,  county:'Morris', trend:6.2,   hwy:'I-78, Route 202'},
+  {line:'gl', name:'Stirling',          slug:'long-hill',         lat:40.6690, lng:-74.4935, commute:55, price:675000,  schools:8,  county:'Morris', trend:6.2,   hwy:'I-78, Route 202'},
+  {line:'gl', name:'Millington',        slug:'long-hill',         lat:40.6720, lng:-74.5276, commute:57, price:675000,  schools:8,  county:'Morris', trend:6.2,   hwy:'I-78, Route 202'},
+  {line:'gl', name:'Lyons',             slug:'bernards-township', lat:40.6796, lng:-74.5432, commute:60, price:1050000, schools:10, county:'Somerset', trend:7.5, hwy:'I-78, Route 202'},
+  {line:'gl', name:'Basking Ridge',     slug:'basking-ridge',     lat:40.7057, lng:-74.5450, commute:62, price:1050000, schools:10, county:'Somerset', trend:7.5, hwy:'I-78, I-287, Route 202'},
+  {line:'gl', name:'Bernardsville',     slug:'bernardsville',     lat:40.7187, lng:-74.5693, commute:65, price:1250000, schools:9,  county:'Somerset', trend:6.8, hwy:'I-287, Route 202'},
+  {line:'gl', name:'Far Hills',         slug:'far-hills',         lat:40.6827, lng:-74.6299, commute:70, price:1400000, schools:9,  county:'Somerset', trend:5.2, hwy:'I-287, Route 202'},
+  {line:'gl', name:'Peapack-Gladstone', slug:'peapack-gladstone', lat:40.7145, lng:-74.6546, commute:72, price:1050000, schools:9,  county:'Somerset', trend:5.9, hwy:'Route 206, Route 202'},
+
+  // ============ RARITAN VALLEY ============
+  {line:'rv', name:'Union',             slug:'union',             lat:40.6976, lng:-74.2632, commute:35, price:525000,  schools:7,  county:'Union', trend:5.1,    hwy:'GSP, Route 22, I-78'},
+  {line:'rv', name:'Roselle Park',      slug:'roselle-park',      lat:40.6648, lng:-74.2685, commute:37, price:475000,  schools:6,  county:'Union', trend:4.8,    hwy:'GSP, Route 28'},
+  {line:'rv', name:'Cranford',          slug:'cranford',          lat:40.6581, lng:-74.2995, commute:40, price:725000,  schools:9,  county:'Union', trend:8.9,    hwy:'GSP, Route 28, I-78'},
+  {line:'rv', name:'Garwood',           slug:'garwood',           lat:40.6514, lng:-74.3243, commute:43, price:525000,  schools:7,  county:'Union', trend:6.3,    hwy:'Route 28, GSP'},
+  {line:'rv', name:'Westfield',         slug:'westfield',         lat:40.6509, lng:-74.3482, commute:45, price:1250000, schools:10, county:'Union', trend:9.7,    hwy:'Route 28, GSP'},
+  {line:'rv', name:'Fanwood',           slug:'fanwood',           lat:40.6412, lng:-74.3866, commute:48, price:675000,  schools:9,  county:'Union', trend:7.4,    hwy:'Route 22, Route 28'},
+  {line:'rv', name:'Plainfield',        slug:'plainfield',        lat:40.6169, lng:-74.4146, commute:53, price:475000,  schools:6,  county:'Union', trend:4.2,    hwy:'Route 22, Route 28'},
+  {line:'rv', name:'Dunellen',          slug:'dunellen',          lat:40.5892, lng:-74.4718, commute:58, price:475000,  schools:7,  county:'Middlesex', trend:5.1,hwy:'I-287, Route 28'},
+  {line:'rv', name:'Bound Brook',       slug:'bound-brook',       lat:40.5698, lng:-74.5382, commute:62, price:450000,  schools:6,  county:'Somerset', trend:3.9, hwy:'I-287, Route 28, Route 22'},
+  {line:'rv', name:'Bridgewater',       slug:'bridgewater',       lat:40.5938, lng:-74.5990, commute:65, price:675000,  schools:8,  county:'Somerset', trend:6.2, hwy:'I-287, Route 202, Route 22'},
+  {line:'rv', name:'Somerville',        slug:'somerville',        lat:40.5742, lng:-74.6093, commute:68, price:485000,  schools:7,  county:'Somerset', trend:5.8, hwy:'Route 22, Route 202, Route 206'},
+  {line:'rv', name:'Raritan',           slug:'raritan',           lat:40.5692, lng:-74.6335, commute:70, price:475000,  schools:8,  county:'Somerset', trend:5.5, hwy:'Route 202, Route 28'},
+
+  // ============ NORTHEAST CORRIDOR ============
+  {line:'ne', name:'Newark Penn',       slug:'newark',            lat:40.7346, lng:-74.1645, commute:18, price:375000,  schools:4,  county:'Essex', trend:2.8,    hwy:'I-78, I-280, Route 21, NJ Tpk'},
+  {line:'ne', name:'Newark Airport',    slug:'newark',            lat:40.7020, lng:-74.1748, commute:22, price:375000,  schools:4,  county:'Essex', trend:2.8,    hwy:'I-78, NJ Tpk'},
+  {line:'ne', name:'Elizabeth',         slug:'elizabeth',         lat:40.6678, lng:-74.2047, commute:25, price:425000,  schools:5,  county:'Union', trend:3.4,    hwy:'NJ Tpk, Route 1/9'},
+  {line:'ne', name:'Linden',            slug:'linden',            lat:40.6378, lng:-74.2525, commute:30, price:475000,  schools:6,  county:'Union', trend:4.1,    hwy:'NJ Tpk, Route 1/9, GSP'},
+  {line:'ne', name:'Rahway',            slug:'rahway',            lat:40.6079, lng:-74.2825, commute:33, price:475000,  schools:6,  county:'Union', trend:5.2,    hwy:'GSP, Route 1/9, Route 27'},
+  {line:'ne', name:'Metropark',         slug:'woodbridge',        lat:40.5703, lng:-74.3279, commute:38, price:525000,  schools:7,  county:'Middlesex', trend:6.7,hwy:'GSP, NJ Tpk, Route 27'},
+  {line:'ne', name:'Metuchen',          slug:'metuchen',          lat:40.5411, lng:-74.3623, commute:42, price:625000,  schools:8,  county:'Middlesex', trend:7.9,hwy:'Route 27, Route 1, GSP'},
+  {line:'ne', name:'Edison',            slug:'edison',            lat:40.5380, lng:-74.3867, commute:45, price:575000,  schools:7,  county:'Middlesex', trend:5.9,hwy:'Route 27, Route 1, I-287'},
+  {line:'ne', name:'New Brunswick',     slug:'new-brunswick',     lat:40.4956, lng:-74.4436, commute:50, price:475000,  schools:6,  county:'Middlesex', trend:4.3,hwy:'Route 18, Route 1, Route 27'},
+];
+const STATIONS = window.STATIONS;
+
+// NYC anchor
+const NYC = { lat:40.7506, lng:-73.9936 };
+
+/* ========================================================================
+   Map init — CartoDB Positron for the muted greyscale "Sue Adler" look
+   ======================================================================== */
+const map = L.map('leafletMap', {
+  center: [40.70, -74.30],
+  zoom: 10,
+  minZoom: 9,
+  maxZoom: 14,
+  scrollWheelZoom: false,
+  zoomControl: true,
+});
+map.on('click', () => map.scrollWheelZoom.enable());
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a> · Train data by Jorge Ramirez',
+  subdomains: 'abcd',
+  maxZoom: 19,
+}).addTo(map);
+
+/* ========================================================================
+   Draw train lines as polylines (smooth curves connect consecutive stations)
+   ======================================================================== */
+const linePolylines = {};
+['ne','rv','gl','md'].forEach(lineId => {
+  const pts = STATIONS.filter(s => s.line === lineId).map(s => [s.lat, s.lng]);
+  // Append NYC anchor for each line so they visually connect to Manhattan
+  pts.push([NYC.lat, NYC.lng]);
+  const line = L.polyline(pts, {
+    color: LINES[lineId].color,
+    weight: 5,
+    opacity: 0.85,
+    lineCap: 'round',
+    lineJoin: 'round',
+    dashArray: lineId === 'rv' ? '10,6' : null,   // Raritan Valley = dashed (needs transfer)
+  }).addTo(map);
+  linePolylines[lineId] = line;
+});
+
+/* ========================================================================
+   NYC anchor marker
+   ======================================================================== */
+const nycIcon = L.divIcon({
+  className: '',
+  html: '<div class="nyc-anchor">NYC Penn Station<small>Manhattan</small></div>',
+  iconSize: [120, 36],
+  iconAnchor: [60, 18],
+});
+L.marker([NYC.lat, NYC.lng], {icon: nycIcon, zIndexOffset: 1000}).addTo(map);
+
+/* ========================================================================
+   Highway shields — Interstate / US Route / NJ Route at key interchanges
+   ======================================================================== */
+const SHIELDS = [
+  // Interstates
+  {lat:40.716, lng:-74.280, type:'interstate', num:'78',  name:'I-78'},
+  {lat:40.735, lng:-74.220, type:'interstate', num:'280', name:'I-280'},
+  {lat:40.750, lng:-74.420, type:'interstate', num:'287', name:'I-287'},
+  {lat:40.870, lng:-74.470, type:'interstate', num:'80',  name:'I-80'},
+  {lat:40.560, lng:-74.290, type:'interstate', num:'95',  name:'NJ Tpk'},
+  // US / State routes
+  {lat:40.720, lng:-74.345, type:'state-route', num:'24',  name:'Route 24'},
+  {lat:40.610, lng:-74.340, type:'state-route', num:'22',  name:'Route 22'},
+  {lat:40.660, lng:-74.260, type:'parkway',     num:'GSP', name:'Garden State Pkwy'},
+  {lat:40.780, lng:-74.460, type:'us-route',    num:'202', name:'US 202'},
+  {lat:40.830, lng:-74.460, type:'state-route', num:'10',  name:'Route 10'},
+  {lat:40.600, lng:-74.420, type:'state-route', num:'28',  name:'Route 28'},
+];
+SHIELDS.forEach(s => {
+  const html = `<div class="hwy-shield ${s.type}" title="${s.name}">${s.num}</div>`;
+  L.marker([s.lat, s.lng], {
+    icon: L.divIcon({className:'', html, iconSize:[32,32], iconAnchor:[16,16]}),
+    zIndexOffset: 200,
+  }).addTo(map);
+});
+
+/* ========================================================================
+   Station markers — custom colored dot per line
+   ======================================================================== */
+const stationMarkers = [];
+STATIONS.forEach((s, i) => {
+  const html = `<div class="station-marker" style="color:${LINES[s.line].color}; background:${LINES[s.line].color};" data-idx="${i}"></div>`;
+  const marker = L.marker([s.lat, s.lng], {
+    icon: L.divIcon({className:'', html, iconSize:[16,16], iconAnchor:[8,8]}),
+    zIndexOffset: 500,
+  }).addTo(map);
+
+  const priceStr = '$' + (s.price/1000).toFixed(0) + 'K';
+  marker.bindPopup(`
+    <div class="popup-card">
+      <h4>${s.name}</h4>
+      <p class="sub">${s.county} County · ${LINES[s.line].name}</p>
+      <div class="row"><span class="k">NYC commute</span><span class="v">${s.commute} min</span></div>
+      <div class="row"><span class="k">Median price</span><span class="v">${priceStr}</span></div>
+      <div class="row"><span class="k">Schools</span><span class="v">${s.schools}/10</span></div>
+      <div class="row"><span class="k">Price trend</span><span class="v" style="color:${s.trend>=0?'#0B6B3A':'#C41230'}">${s.trend>=0?'+':''}${s.trend.toFixed(1)}%</span></div>
+      <div class="row"><span class="k">Highway</span><span class="v">${s.hwy.split(',')[0]}</span></div>
+      <a class="btn" href="towns/${s.slug}.html">See ${s.name} full guide →</a>
+    </div>
+  `, {maxWidth: 260});
+
+  marker.on('click', () => selectStation(s, i));
+  stationMarkers.push({marker, station: s});
+});
+
+/* ========================================================================
+   Sidebar click handler
+   ======================================================================== */
+function selectStation(s, i) {
+  const ph = document.getElementById('placeholder');
+  const card = document.getElementById('stationCard');
+  ph.style.display = 'none';
+  card.style.display = 'block';
+  const priceStr = '$' + (s.price/1000).toFixed(0) + 'K';
+  const lineColor = LINES[s.line].color;
+  card.innerHTML = `
+    <div class="station-card">
+      <span class="line-tag" style="background:${lineColor}; color:${s.line==='md'?'var(--ink)':'#fff'};">${LINES[s.line].name}</span>
+      <h3>${s.name}</h3>
+      <p class="town-sub">${s.county} County, NJ</p>
+      <div class="stat-grid">
+        <div class="stat-box"><div class="stat-label">NYC Commute</div><div class="stat-value">${s.commute}</div><div class="stat-sub">min to Penn</div></div>
+        <div class="stat-box"><div class="stat-label">Median Price</div><div class="stat-value">${priceStr}</div><div class="stat-sub">Q1 2026</div></div>
+        <div class="stat-box"><div class="stat-label">Schools</div><div class="stat-value">${s.schools}/10</div><div class="stat-sub">GreatSchools avg</div></div>
+        <div class="stat-box"><div class="stat-label">Price Trend</div><div class="stat-value" style="color:${s.trend>=0?'#0B6B3A':'#C41230'}">${s.trend>=0?'+':''}${s.trend.toFixed(1)}%</div><div class="stat-sub">YoY 2025→Q1 2026</div></div>
+      </div>
+      <div class="hwy-access">
+        <strong>Highway access</strong>${s.hwy}
+      </div>
+      <div class="card-ctas">
+        <a href="towns/${s.slug}.html" class="cta-primary">See ${s.name} Full Guide</a>
+        <a href="tel:9082307844" class="cta-secondary">Ask Jorge About ${s.name}</a>
+      </div>
+    </div>
+  `;
+}
+
+/* ========================================================================
+   Filters — line toggles, commute slider, school slider
+   ======================================================================== */
+const state = { lines:new Set(['md','gl','rv','ne']), maxCommute:90, minSchool:1 };
+
+function applyFilters() {
+  stationMarkers.forEach(({marker, station}) => {
+    const visible = state.lines.has(station.line)
+                 && station.commute <= state.maxCommute
+                 && station.schools >= state.minSchool;
+    const el = marker.getElement();
+    if (el) el.style.display = visible ? '' : 'none';
+  });
+  Object.keys(linePolylines).forEach(lineId => {
+    const pl = linePolylines[lineId];
+    pl.setStyle({opacity: state.lines.has(lineId) ? 0.85 : 0.15});
+  });
+}
+
+document.querySelectorAll('.line-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    const line = pill.getAttribute('data-line');
+    const active = pill.getAttribute('data-active') === 'true';
+    pill.setAttribute('data-active', !active);
+    if (active) state.lines.delete(line); else state.lines.add(line);
+    applyFilters();
+  });
+});
+document.getElementById('commuteSlider').addEventListener('input', (e) => {
+  state.maxCommute = +e.target.value;
+  document.getElementById('commuteValue').textContent = state.maxCommute;
+  applyFilters();
+});
+document.getElementById('schoolSlider').addEventListener('input', (e) => {
+  state.minSchool = +e.target.value;
+  document.getElementById('schoolValue').textContent = state.minSchool;
+  applyFilters();
+});
+
+// Fit to bounds of all stations + NYC
+const allBounds = L.latLngBounds(STATIONS.map(s => [s.lat, s.lng]).concat([[NYC.lat, NYC.lng]]));
+map.fitBounds(allBounds, {padding: [30, 30]});
+</script>
+</body>
+</html>

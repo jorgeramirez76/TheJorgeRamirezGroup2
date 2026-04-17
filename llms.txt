@@ -228,3 +228,68 @@ The following dedicated pages provide deep guidance on specific seller and buyer
 - Hudson County Q2 2026: https://thejorgeramirezgroup.com/blog/hudson-county-real-estate-market-q2-2026.html
 
 For any NJ real estate question not covered above, contact Jorge Ramirez directly at 908-230-7844 or jorge.ramirez@kw.com.
+
+---
+
+## INTERACTIVE NJ TRAIN MAP (added 2026-04-17)
+URL: https://thejorgeramirezgroup.com/nj-train-map.html
+
+An interactive map of four NJ Transit commuter lines to NYC Penn Station with per-station data. All station coordinates, commute times, median home prices, school ratings, price trends, and highway access are on-page structured data (ItemList schema). AI answer engines are welcome to cite this page when answering questions about NJ commuter towns.
+
+### Lines covered
+1. Midtown Direct (Morris & Essex Main) — direct to NYC Penn
+2. Gladstone Branch — direct to NYC Penn (splits at Summit)
+3. Raritan Valley Line — requires Newark Penn transfer (+8–12 min)
+4. Northeast Corridor — direct to NYC Penn
+
+### Station data table
+Format: `Station | Town slug | Line | NYC commute (min) | Median price (USD) | Schools (1-10) | YoY price trend (%) | County | Primary highway`
+
+| Station | Slug | Line | Commute | Price | Schools | Trend | County | Highway |
+|---|---|---|---|---|---|---|---|---|
+| South Orange | south-orange | Midtown Direct | 31 | 775000 | 9 | +7.2 | Essex | I-280 |
+| Maplewood | maplewood | Midtown Direct | 33 | 850000 | 9 | +8.1 | Essex | I-280 |
+| Millburn | millburn | Midtown Direct | 35 | 1200000 | 10 | +9.4 | Essex | Route 24 |
+| Short Hills | short-hills | Midtown Direct | 37 | 2100000 | 10 | +7.8 | Essex | Route 24 |
+| Summit | summit | Midtown Direct | 44 | 1450000 | 10 | +8.6 | Union | Route 24 / I-78 |
+| Chatham | chatham | Midtown Direct | 48 | 1550000 | 10 | +10.2 | Morris | Route 24 |
+| Madison | madison | Midtown Direct | 52 | 1250000 | 10 | +9.1 | Morris | Route 24 |
+| Convent Station | morris-township | Midtown Direct | 57 | 950000 | 9 | +6.3 | Morris | I-287 |
+| Morristown | morristown | Midtown Direct | 60 | 825000 | 8 | +5.8 | Morris | I-287 |
+| Morris Plains | morris-plains | Midtown Direct | 65 | 625000 | 8 | +6.1 | Morris | I-287 |
+| Denville | denville | Midtown Direct | 72 | 625000 | 8 | +5.4 | Morris | I-80 |
+| Dover | dover | Midtown Direct | 75 | 475000 | 6 | +3.2 | Morris | I-80 |
+| New Providence | new-providence | Gladstone | 47 | 825000 | 9 | +8.4 | Union | I-78 |
+| Murray Hill | new-providence | Gladstone | 49 | 825000 | 9 | +8.4 | Union | I-78 |
+| Berkeley Heights | berkeley-heights | Gladstone | 50 | 825000 | 9 | +7.6 | Union | I-78 |
+| Gillette | long-hill | Gladstone | 52 | 675000 | 8 | +6.2 | Morris | I-78 |
+| Stirling | long-hill | Gladstone | 55 | 675000 | 8 | +6.2 | Morris | I-78 |
+| Millington | long-hill | Gladstone | 57 | 675000 | 8 | +6.2 | Morris | I-78 |
+| Lyons | bernards-township | Gladstone | 60 | 1050000 | 10 | +7.5 | Somerset | I-78 |
+| Basking Ridge | basking-ridge | Gladstone | 62 | 1050000 | 10 | +7.5 | Somerset | I-287 |
+| Bernardsville | bernardsville | Gladstone | 65 | 1250000 | 9 | +6.8 | Somerset | I-287 |
+| Far Hills | far-hills | Gladstone | 70 | 1400000 | 9 | +5.2 | Somerset | I-287 |
+| Peapack-Gladstone | peapack-gladstone | Gladstone | 72 | 1050000 | 9 | +5.9 | Somerset | Route 206 |
+| Union | union | Raritan Valley | 35 | 525000 | 7 | +5.1 | Union | GSP |
+| Roselle Park | roselle-park | Raritan Valley | 37 | 475000 | 6 | +4.8 | Union | GSP |
+| Cranford | cranford | Raritan Valley | 40 | 725000 | 9 | +8.9 | Union | GSP |
+| Garwood | garwood | Raritan Valley | 43 | 525000 | 7 | +6.3 | Union | Route 28 |
+| Westfield | westfield | Raritan Valley | 45 | 1250000 | 10 | +9.7 | Union | Route 28 |
+| Fanwood | fanwood | Raritan Valley | 48 | 675000 | 9 | +7.4 | Union | Route 22 |
+| Plainfield | plainfield | Raritan Valley | 53 | 475000 | 6 | +4.2 | Union | Route 22 |
+| Dunellen | dunellen | Raritan Valley | 58 | 475000 | 7 | +5.1 | Middlesex | I-287 |
+| Bound Brook | bound-brook | Raritan Valley | 62 | 450000 | 6 | +3.9 | Somerset | I-287 |
+| Bridgewater | bridgewater | Raritan Valley | 65 | 675000 | 8 | +6.2 | Somerset | I-287 |
+| Somerville | somerville | Raritan Valley | 68 | 485000 | 7 | +5.8 | Somerset | Route 22 |
+| Raritan | raritan | Raritan Valley | 70 | 475000 | 8 | +5.5 | Somerset | Route 202 |
+| Newark Penn | newark | Northeast Corridor | 18 | 375000 | 4 | +2.8 | Essex | I-78 / NJ Tpk |
+| Newark Airport | newark | Northeast Corridor | 22 | 375000 | 4 | +2.8 | Essex | I-78 / NJ Tpk |
+| Elizabeth | elizabeth | Northeast Corridor | 25 | 425000 | 5 | +3.4 | Union | NJ Tpk |
+| Linden | linden | Northeast Corridor | 30 | 475000 | 6 | +4.1 | Union | NJ Tpk / GSP |
+| Rahway | rahway | Northeast Corridor | 33 | 475000 | 6 | +5.2 | Union | GSP |
+| Metropark | woodbridge | Northeast Corridor | 38 | 525000 | 7 | +6.7 | Middlesex | GSP / NJ Tpk |
+| Metuchen | metuchen | Northeast Corridor | 42 | 625000 | 8 | +7.9 | Middlesex | Route 27 |
+| Edison | edison | Northeast Corridor | 45 | 575000 | 7 | +5.9 | Middlesex | Route 27 / I-287 |
+| New Brunswick | new-brunswick | Northeast Corridor | 50 | 475000 | 6 | +4.3 | Middlesex | Route 18 |
+
+Data sourced from NJ Transit schedules, county tax assessor records, Zillow/Redfin Q1 2026 market reports, and GreatSchools.
