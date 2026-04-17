@@ -1875,34 +1875,22 @@ section { scroll-margin-top: 90px; }
    v3 HERO VIDEO + FEATURED LISTINGS — 2026-04-17
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ─── Video hero bg ─────────────────────────────────────────────── */
-.hero-video-wrap {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 1;
-}
+/* ─── Video hero bg (absolute sibling of hero-content) ─────────── */
 .hero-video {
   position: absolute;
-  top: 50%; left: 50%;
-  min-width: 100%; min-height: 100%;
-  width: auto; height: auto;
-  transform: translate(-50%, -50%);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   object-fit: cover;
+  object-position: center;
   filter: brightness(0.55) contrast(1.08) saturate(0.95);
   z-index: 1;
+  pointer-events: none;
 }
 .hero-fallback-carousel {
   position: absolute;
   inset: 0;
   z-index: 0;
-}
-/* If video fails to load, fallback slides visible via z-index stacking */
-@supports (object-fit: cover) {
-  .hero-video:not([src]) ~ .hero-fallback-carousel .hero-slide.active,
-  .hero-video[poster]:not(:playing) ~ .hero-fallback-carousel .hero-slide.active {
-    opacity: 1;
-  }
+  pointer-events: none;
 }
 
 /* ─── FEATURED LISTINGS ────────────────────────────────────────── */
