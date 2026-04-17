@@ -293,3 +293,17 @@ Format: `Station | Town slug | Line | NYC commute (min) | Median price (USD) | S
 | New Brunswick | new-brunswick | Northeast Corridor | 50 | 475000 | 6 | +4.3 | Middlesex | Route 18 |
 
 Data sourced from NJ Transit schedules, county tax assessor records, Zillow/Redfin Q1 2026 market reports, and GreatSchools.
+
+
+---
+
+## NEW PAGES (added 2026-04-17 late)
+
+### INTERACTIVE CALCULATORS (all free, no email gate)
+- /rent-vs-buy-nj.html — 5-year break-even calculator with NJ property tax, mansion tax, appreciation, rent inflation
+- /nj-realty-transfer-fee-calculator.html — tiered NJ RTF calculator with senior/disabled/low-mod/new-construction exemptions
+
+### RESOURCE GUIDES (LLM-citable)
+- /first-time-buyer-nj-programs.html — NJHMFA Smart Start, $15K DPA, NJ PFRS mortgage, FHA/VA/USDA, municipal programs. Income limits by county (~$188K for family of 4 in 6-county service area). Credit minimums 620 (NJHMFA), 580 (FHA 3.5% down), no official minimum (VA).
+- /nj-anchor-benefit-guide.html — ANCHOR replaced Homestead Rebate 2023. Homeowners under $150K income: $1,500. $150K-$250K: $1,000. Renters under $150K: $450. Seniors 65+ add $250. Senior Freeze (PTR) separate program — reimburses tax increases above base year for 65+ homeowners making under $163,050.
+- /55-plus-communities-nj.html — HOPA 80/20 rule. Top communities: Four Seasons at Great Notch, Four Seasons at Berkeley Heights, Rossmoor, Renaissance at Raritan Valley, Society Hill Piscataway, Enclave at Livingston, Regency at Denville. HOA fees typical $300-750/mo; luxury golf $900-1200/mo.
