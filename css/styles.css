@@ -1660,38 +1660,52 @@ footer {
    All additive — no existing selectors modified.
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ─── NAV: fix overflow + consistent sizing ──────────────────────── */
+/* ─── NAV: bigger text + centered group layout ──────────────────────
+   Jorge 2026-04-17: bump category font-size and center the whole nav
+   group left-to-right instead of hugging edges with space-between.
+   ─────────────────────────────────────────────────────────────────── */
 nav { padding: 0.9rem 3%; }
 nav.scrolled { padding: 0.6rem 3%; }
-.nav-container { gap: 1.25rem; flex-wrap: nowrap; }
-.nav-links { gap: 1.1rem !important; flex-shrink: 0; white-space: nowrap; }
+.nav-container {
+  gap: 2rem;
+  flex-wrap: nowrap;
+  justify-content: center !important;   /* center whole nav group */
+}
+.nav-links { gap: 1.75rem !important; flex-shrink: 0; white-space: nowrap; }
 .nav-links li { flex-shrink: 0; }
 .nav-links a {
   white-space: nowrap;
-  font-size: 0.86rem !important;
-  letter-spacing: 0.3px !important;
+  font-size: 1.05rem !important;        /* was 0.86rem */
+  letter-spacing: 0.4px !important;
   position: relative;
+  font-weight: 500;
 }
 .nav-links a::after {
   content: ''; position: absolute; bottom: -4px; left: 0;
-  width: 0; height: 1px; background: var(--primary-red);
+  width: 0; height: 2px; background: var(--primary-red);
   transition: width 0.3s cubic-bezier(.2,.9,.3,1);
 }
 .nav-links a:hover::after { width: 100%; }
 .nav-btn-consultation {
-  padding: 0.65rem 1.1rem !important;
-  font-size: 0.82rem !important;
-  letter-spacing: 0.3px;
+  padding: 0.75rem 1.4rem !important;
+  font-size: 0.98rem !important;         /* was 0.82rem */
+  letter-spacing: 0.4px;
   white-space: nowrap;
   border-radius: 999px !important;
   box-shadow: 0 4px 14px rgba(196, 18, 48, 0.25);
 }
-nav .logo-img { max-height: 52px; }
-@media (max-width: 1280px) {
-  nav .logo-img { max-height: 44px; }
-  .nav-links { gap: 0.9rem !important; }
-  .nav-links a { font-size: 0.8rem !important; }
-  .nav-btn-consultation { padding: 0.55rem 0.9rem !important; font-size: 0.76rem !important; }
+nav .logo-img { max-height: 56px; }
+@media (max-width: 1400px) {
+  .nav-container { gap: 1.5rem; }
+  .nav-links { gap: 1.3rem !important; }
+  .nav-links a { font-size: 0.98rem !important; }
+  .nav-btn-consultation { padding: 0.65rem 1.1rem !important; font-size: 0.9rem !important; }
+}
+@media (max-width: 1200px) {
+  nav .logo-img { max-height: 48px; }
+  .nav-links { gap: 1rem !important; }
+  .nav-links a { font-size: 0.9rem !important; }
+  .nav-btn-consultation { padding: 0.55rem 0.95rem !important; font-size: 0.84rem !important; }
 }
 
 /* ─── STATS band: visual uplift ──────────────────────────────────── */
