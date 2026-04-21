@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0f3460">
     
     <!-- Primary Meta Tags -->
     <title>Jorge Ramirez — NJ Real Estate Agent | 60+ House Flips | Summit NJ</title>
@@ -515,6 +517,7 @@
     </script>
 </head>
 <body>
+<a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:0;padding:8px 16px;background:#000;color:#fff;z-index:9999;" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to main content</a>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -606,7 +609,7 @@
                 <p>These are real transactions pulled straight from his <a href="https://www.zillow.com/profile/TheJorgeRamirezGroup" target="_blank" rel="noopener">Zillow record</a> — 42 sold homes across Northern and Central NJ, nine years of full-time work, every town in the portfolio a public record. A sample is below.</p>
             </div>
             <div class="listings-grid">
-                <article class="listing-card" data-town="verona">
+                <article id="main" class="listing-card" data-town="verona">
                     <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80&fit=crop');">
                         <span class="listing-status">Sold · 2022</span>
                         <span class="listing-days">DUAL-SIDED SALE</span>
@@ -1309,7 +1312,7 @@
                         <input type="hidden" name="_subject" value="New Lead — The Jorge Ramirez Group Website">
                         <input type="hidden" name="_next" value="https://thejorgeramirezgroup.com/thank-you.html">
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="text" name="_honey" style="display:none">
+                        <input type="text" name="_honey" style="display:none" aria-hidden="true" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
