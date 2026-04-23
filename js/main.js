@@ -227,7 +227,7 @@ if ('IntersectionObserver' in window) {
     }
 
     let current = 0;
-    const INTERVAL = 5000;
+    const INTERVAL = 7000;
 
     setInterval(() => {
         slides[current].classList.remove('active');

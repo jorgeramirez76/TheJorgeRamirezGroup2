@@ -169,13 +169,30 @@ nav.scrolled {
     background-position: center;
     background-color: #1A1A1A;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 1.8s ease-in-out;
     filter: brightness(0.55) contrast(1.1) saturate(0.9);
-    will-change: opacity;
+    will-change: opacity, transform;
+    transform: scale(1.05);
+    animation: hero-ken-burns 16s ease-in-out infinite alternate;
 }
 
 .hero-slide.active {
     opacity: 1;
+}
+
+@keyframes hero-ken-burns {
+    0%   { transform: scale(1.05) translate(0%, 0%); }
+    100% { transform: scale(1.18) translate(-1.5%, -1%); }
+}
+
+/* Stagger so adjacent slides aren't perfectly in sync */
+.hero-slide:nth-child(2) { animation-delay: -4s; animation-direction: alternate-reverse; }
+.hero-slide:nth-child(3) { animation-delay: -8s; }
+.hero-slide:nth-child(4) { animation-delay: -2s; animation-direction: alternate-reverse; }
+.hero-slide:nth-child(5) { animation-delay: -10s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-slide { animation: none; transform: scale(1.05); }
 }
 
 .hero-overlay {
@@ -1874,7 +1891,7 @@ section { scroll-margin-top: 90px; }
    v3 HERO VIDEO + FEATURED LISTINGS — 2026-04-17
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ─── Video hero bg (absolute sibling of hero-content) ─────────── */
+/* ─── Video hero (Pais-style luxury home cinematic loop) ─────── */
 .hero-video {
   position: absolute;
   top: 0; left: 0;
@@ -1885,11 +1902,12 @@ section { scroll-margin-top: 90px; }
   z-index: 1;
   pointer-events: none;
 }
-.hero-fallback-carousel {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+/* Carousel sits below the video as graceful fallback if video fails to load */
+.hero-carousel {
   pointer-events: none;
+}
+.hero-fallback-carousel {
+  z-index: 0;
 }
 
 /* ─── FEATURED LISTINGS ────────────────────────────────────────── */
