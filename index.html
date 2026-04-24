@@ -81,7 +81,7 @@
     <!-- Preconnect to Unsplash (still used by testimonial avatars) -->
     <link rel="preconnect" href="https://images.unsplash.com">
 
-    <link rel="stylesheet" href="css/styles.css?v=20260424-v6-fx">
+    <link rel="stylesheet" href="css/styles.css?v=20260424-v7-review">
     <!-- AI Context File — helps ChatGPT, Perplexity, Claude, Gemini understand this site -->
     <link rel="llms" href="/llms.txt" type="text/plain" title="AI Context">
 
@@ -529,15 +529,15 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#buy">Buy</a></li>
-                <li><a href="sell-your-home.html" style="color: #667eea; font-weight: 600;">Sell</a></li>
-                <li><a href="how-we-sell-your-home.html">How We Sell</a></li>
+                <li><a href="sell-your-home.html">Sell</a></li>
                 <li><a href="#communities">Communities</a></li>
-                <li><a href="realtor/">Find an Agent</a></li>
-                <li><a href="blog/">Blog</a></li>
-                <li><a href="es/">En Español</a></li>
                 <li><a href="why-jorge-ramirez.html">Why Jorge</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="tel:+19082307844" style="color: #667eea; font-weight: 700; font-size: 1.05em;">📱 908-230-7844</a></li>
+                <li><a href="blog/">Blog</a></li>
+                <li><a href="es/" class="nav-lang" aria-label="En Español" title="En Español">ES</a></li>
+                <li><a href="tel:+19082307844" class="nav-phone" aria-label="Call Jorge at 908-230-7844">
+                    <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.3.5 3.6.5.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.5 3.5.1.4 0 .7-.3 1l-2.1 1.8Z"/></svg>
+                    <span>908-230-7844</span>
+                </a></li>
                 <li><a href="home-valuation.html" class="nav-btn-consultation btn-flip" data-flip="Get My Home's Value →"><span class="flip-front">Free Home Valuation</span><span class="flip-back">Get My Home's Value →</span></a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -600,13 +600,13 @@
                 <span class="stat-label">Years Full-Time</span>
             </div>
             <div class="stat-card">
-                <span class="stat-number" data-target="7" data-suffix="">7</span>
-                <span class="stat-label">Days a Week</span>
+                <span class="stat-number">$18.4M+</span>
+                <span class="stat-label">Closed Volume</span>
             </div>
         </div>
     </div>
 
-    <!-- Buy / Sell / Rent tile reveal — image fades in on hover -->
+    <!-- Buy / Sell / Value tile reveal — image fades in on hover -->
     <section class="tile-reveal-section" aria-label="Core services">
         <div class="tile-reveal-grid">
             <a href="buy-a-home.html" class="reveal-tile" style="--reveal-img: url('images/properties/05-kitchen.jpg');">
@@ -619,10 +619,10 @@
                 <h2 class="reveal-title">Sell</h2>
                 <span class="reveal-cta">List with Jorge <span aria-hidden="true">→</span></span>
             </a>
-            <a href="contact.html?topic=rent" class="reveal-tile" style="--reveal-img: url('images/properties/01-loft-living.jpg');">
-                <span class="reveal-eyebrow">03 · For Renters</span>
-                <h2 class="reveal-title">Rent</h2>
-                <span class="reveal-cta">Ask about rentals <span aria-hidden="true">→</span></span>
+            <a href="home-valuation.html" class="reveal-tile" style="--reveal-img: url('images/properties/01-loft-living.jpg');">
+                <span class="reveal-eyebrow">03 · Free · 60 Seconds</span>
+                <h2 class="reveal-title">Value</h2>
+                <span class="reveal-cta">What's my home worth <span aria-hidden="true">→</span></span>
             </a>
         </div>
     </section>
@@ -658,7 +658,8 @@
                 <p>These are real transactions pulled straight from his <a href="https://www.zillow.com/profile/TheJorgeRamirezGroup" target="_blank" rel="noopener">Zillow record</a> — 42 sold homes across Northern and Central NJ, nine years of full-time work, every town in the portfolio a public record. A sample is below.</p>
             </div>
             <div class="listings-grid">
-                <article id="main" class="listing-card" data-town="verona">
+                <article id="main" class="listing-card featured" data-town="verona">
+                    <span class="listing-featured-tag">Featured Closing</span>
                     <div class="listing-img" style="background-image: url('images/properties/04-brick-stone.jpg');">
                         <span class="listing-status">Sold · 2022</span>
                         <span class="listing-days">DUAL-SIDED SALE</span>
@@ -673,7 +674,7 @@
                             <span>Essex County</span>
                             <span>Closed 11/2022</span>
                         </div>
-                        <p class="listing-blurb">Full dual-agent transaction — Jorge represented both buyer and seller, keeping communication clean on both sides and closing without surprise.</p>
+                        <p class="listing-blurb">Full dual-agent transaction — Jorge represented both buyer and seller, keeping communication clean on both sides and closing without surprise. A rare move that happens only when the agent already has the trust of both parties.</p>
                     </div>
                 </article>
 
@@ -817,10 +818,10 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 50px;">
-                <a href="sell-your-home.html" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em; font-weight: 600; transition: all 0.3s ease; margin: 8px;">
+                <a href="sell-your-home.html" style="display: inline-block; padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em; font-weight: 600; transition: all 0.3s ease; margin: 8px;">
                     Sell Your Home With Jorge →
                 </a>
-                <a href="how-we-sell-your-home.html" style="display: inline-block; padding: 18px 40px; border: 2px solid #667eea; color: #667eea; text-decoration: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; transition: all 0.3s ease; margin: 8px;">
+                <a href="how-we-sell-your-home.html" style="display: inline-block; padding: 18px 40px; border: 2px solid #2C2C2C; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; transition: all 0.3s ease; margin: 8px;">
                     See Exactly How I'd Market Your Home
                 </a>
             </div>
@@ -839,7 +840,7 @@
                 <div class="feature-card">
                     <div class="feature-icon-line"></div>
                     <h3>Thinking About Selling</h3>
-                    <p>Not sure if now is the right time? Start with a <a href="home-valuation.html" style="color:#667eea;">free home valuation</a> to find out what your home is worth. No pressure, no commitment — just the number you need to plan your next move.</p>
+                    <p>Not sure if now is the right time? Start with a <a href="home-valuation.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">free home valuation</a> to find out what your home is worth. No pressure, no commitment — just the number you need to plan your next move.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon-line"></div>
@@ -868,7 +869,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="home-valuation.html" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em; font-weight: 600;">
+                <a href="home-valuation.html" style="display: inline-block; padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em; font-weight: 600;">
                     Get Your Free Home Valuation →
                 </a>
                 <p style="margin-top: 15px; color: #888; font-size: 0.95em;">Takes 60 seconds. No spam. No obligation.</p>
@@ -902,7 +903,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="buy-a-home.html" style="display: inline-block; padding: 16px 35px; border: 2px solid #667eea; color: #667eea; text-decoration: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; transition: all 0.3s ease;">
+                <a href="buy-a-home.html" style="display: inline-block; padding: 16px 35px; border: 2px solid #2C2C2C; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; transition: all 0.3s ease;">
                     Learn How Jorge Helps NJ Buyers →
                 </a>
             </div>
@@ -987,7 +988,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="https://www.zillow.com/profile/TheJorgeRamirezGroup" target="_blank" rel="noopener" style="display: inline-block; padding: 14px 32px; border: 2px solid #667eea; color: #667eea; text-decoration: none; border-radius: 8px; font-size: 1em; font-weight: 600;">
+                <a href="https://www.zillow.com/profile/TheJorgeRamirezGroup" target="_blank" rel="noopener" style="display: inline-block; padding: 14px 32px; border: 2px solid #2C2C2C; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-size: 1em; font-weight: 600;">
                     See All Reviews on Zillow &rarr;
                 </a>
             </div>
@@ -1080,7 +1081,7 @@
             </div>
             <div style="text-align: center; margin-top: 40px;">
                 <p style="color: #888; font-size: 0.95em; margin-bottom: 20px;">Want to know what homes like yours are selling for right now?</p>
-                <a href="home-valuation.html" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-size: 1.1em; font-weight: 600;">
+                <a href="home-valuation.html" style="display: inline-block; padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-size: 1.1em; font-weight: 600;">
                     Get Your Free Home Valuation &rarr;
                 </a>
             </div>
@@ -1182,12 +1183,12 @@
 
                 <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">How do I find out what my NJ home is actually worth?</h3>
-                    <p style="color: #666; line-height: 1.6;">Start with our <a href="home-valuation.html" style="color: #667eea;">free home valuation tool</a> for an instant estimate. But the real answer comes from a comparative market analysis (CMA) — where I look at what similar homes in your specific neighborhood have sold for in the last 60-90 days, what's currently under contract, and what's sitting unsold. Zillow estimates miss local nuance. A CMA from someone who has bought and sold 60+ homes in NJ gives you the number you can actually plan around. It's free, it takes 15 minutes, and there's zero obligation.</p>
+                    <p style="color: #666; line-height: 1.6;">Start with our <a href="home-valuation.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">free home valuation tool</a> for an instant estimate. But the real answer comes from a comparative market analysis (CMA) — where I look at what similar homes in your specific neighborhood have sold for in the last 60-90 days, what's currently under contract, and what's sitting unsold. Zillow estimates miss local nuance. A CMA from someone who has bought and sold 60+ homes in NJ gives you the number you can actually plan around. It's free, it takes 15 minutes, and there's zero obligation.</p>
                 </div>
 
                 <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">My home was listed before and didn't sell. Can you help?</h3>
-                    <p style="color: #666; line-height: 1.6;">Yes — and this is more common than you think. When a listing expires, it's almost always one of three things: pricing, marketing, or agent follow-up. I'll look at what happened with your previous listing, identify what went wrong, and show you a different approach. Many of my best results come from homes that "didn't sell" with another agent. The property was fine — the strategy wasn't. <a href="sell-your-home.html" style="color: #667eea;">Learn more about selling with Jorge</a>.</p>
+                    <p style="color: #666; line-height: 1.6;">Yes — and this is more common than you think. When a listing expires, it's almost always one of three things: pricing, marketing, or agent follow-up. I'll look at what happened with your previous listing, identify what went wrong, and show you a different approach. Many of my best results come from homes that "didn't sell" with another agent. The property was fine — the strategy wasn't. <a href="sell-your-home.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">Learn more about selling with Jorge</a>.</p>
                 <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     <h3 class="faq-question" style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">What is the best time to sell a home in New Jersey?</h3>
                     <p class="faq-answer" style="color: #444; line-height: 1.7;">The best time to sell a home in New Jersey is typically March through June, when buyer demand peaks as families want to close before the school year ends. The spring market in NJ historically produces the most showings, competing offers, and highest prices relative to list price. September through October is a strong secondary window before the holiday slowdown. Winter (November–January) is slower overall, but serious buyers remain active and you face less competition from other sellers. For most NJ homeowners, listing in late February or early March maximizes both exposure and negotiating leverage.</p>
@@ -1205,7 +1206,7 @@
 
                 <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     <h3 class="faq-question" style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">What is my home worth in Summit, Westfield, or Chatham NJ?</h3>
-                    <p class="faq-answer" style="color: #444; line-height: 1.7;">In Summit, NJ, the median home sale price is approximately $1,095,000 (2025–2026). In Westfield, NJ, the median is approximately $850,000–$900,000. In Chatham, NJ (Borough), the median is approximately $950,000–$1,050,000. These are medians — your home's specific value depends on size, condition, lot, neighborhood, and what comparable homes have actually sold for in the past 60–90 days. Online estimates from Zillow or Redfin can be off by 10–20% in NJ due to limited local data. A free comparative market analysis (CMA) from Jorge gives you the number you can actually plan around. Get yours at <a href="home-valuation.html" style="color: #667eea;">thejorgeramirezgroup.com/home-valuation.html</a>.</p>
+                    <p class="faq-answer" style="color: #444; line-height: 1.7;">In Summit, NJ, the median home sale price is approximately $1,095,000 (2025–2026). In Westfield, NJ, the median is approximately $850,000–$900,000. In Chatham, NJ (Borough), the median is approximately $950,000–$1,050,000. These are medians — your home's specific value depends on size, condition, lot, neighborhood, and what comparable homes have actually sold for in the past 60–90 days. Online estimates from Zillow or Redfin can be off by 10–20% in NJ due to limited local data. A free comparative market analysis (CMA) from Jorge gives you the number you can actually plan around. Get yours at <a href="home-valuation.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">thejorgeramirezgroup.com/home-valuation.html</a>.</p>
                 </div>
 
                 <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
@@ -1436,7 +1437,7 @@
                         <div class="info-icon">📍</div>
                         <div class="info-text">
                             <h3 style="font-size: 1.1rem; margin: 0;">Find Us on Google</h3>
-                            <p><a href="https://maps.google.com/?q=488+Springfield+Ave+Summit+NJ+07901" target="_blank" rel="noopener" style="color: #667eea;">View on Google Maps</a></p>
+                            <p><a href="https://maps.google.com/?q=488+Springfield+Ave+Summit+NJ+07901" target="_blank" rel="noopener" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">View on Google Maps</a></p>
                         </div>
                     </div>
                 </div>
