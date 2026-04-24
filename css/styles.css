@@ -2228,3 +2228,231 @@ a.hero-train-pill:focus-visible .htp-arrow {
     line-height: 1.3;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   v6 — 4 interaction upgrades (from findrealestate.com reference)
+   2026-04-24
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── 1. BUTTON TEXT FLIP ──────────────────────────────────────────
+   Any <a> / <button> with .btn-flip and two child spans
+   (.flip-front + .flip-back) will swap labels on hover via stacked
+   translateY. Works on nav, primary, secondary CTAs alike. */
+.btn-flip {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+.btn-flip .flip-front,
+.btn-flip .flip-back {
+  display: inline-block;
+  transition: transform 0.38s cubic-bezier(0.77, 0, 0.175, 1);
+  backface-visibility: hidden;
+  will-change: transform;
+  white-space: nowrap;
+}
+.btn-flip .flip-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(110%);
+  padding: inherit;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+.btn-flip:hover .flip-front,
+.btn-flip:focus-visible .flip-front {
+  transform: translateY(-110%);
+}
+.btn-flip:hover .flip-back,
+.btn-flip:focus-visible .flip-back {
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-flip .flip-front,
+  .btn-flip .flip-back {
+    transition: none;
+  }
+}
+
+/* ── 2. CARD HOVER SCALE — Featured Listings ──────────────────── */
+.listing-card {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease;
+  will-change: transform;
+}
+.listing-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 28px 60px -18px rgba(26, 26, 26, 0.28);
+}
+.listing-card .listing-img {
+  overflow: hidden;
+  transition: filter 0.35s ease;
+}
+.listing-card .listing-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.001);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.listing-card:hover .listing-img {
+  filter: saturate(1.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .listing-card,
+  .listing-card .listing-img {
+    transition: none;
+  }
+  .listing-card:hover {
+    transform: none;
+  }
+}
+
+/* ── 3. BUY / SELL / RENT TILE REVEAL ───────────────────────────
+   Each tile starts as a solid charcoal panel with text only. On hover,
+   the background image fades in + subtle zoom; the text stays anchored
+   and the dark scrim lightens for legibility. */
+.tile-reveal-section {
+  background: #1A1A1A;
+  padding: 0;
+}
+.tile-reveal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: #0F0F0F;
+}
+.reveal-tile,
+.reveal-tile:link,
+.reveal-tile:visited {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 18px;
+  min-height: 420px;
+  padding: clamp(36px, 5vw, 64px) clamp(28px, 4vw, 56px);
+  background: #1A1A1A;
+  color: #FAFAF8 !important;
+  text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+  transition: background 0.5s ease;
+}
+.reveal-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--reveal-img);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.08);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
+}
+.reveal-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.15) 0%, rgba(26, 26, 26, 0.75) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+.reveal-tile > * {
+  position: relative;
+  z-index: 2;
+}
+.reveal-tile:hover::before,
+.reveal-tile:focus-visible::before {
+  opacity: 1;
+  transform: scale(1.00);
+}
+.reveal-tile:hover::after,
+.reveal-tile:focus-visible::after {
+  opacity: 1;
+}
+.reveal-tile .reveal-eyebrow {
+  font: 500 13px/1 'Montserrat', sans-serif;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #B8962E;
+  opacity: 0.9;
+}
+.reveal-tile .reveal-title {
+  font: 700 clamp(56px, 7vw, 92px)/0.95 'Playfair Display', serif;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+.reveal-tile .reveal-cta {
+  font: 600 14px/1 'Montserrat', sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #FAFAF8;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+.reveal-tile:hover .reveal-cta,
+.reveal-tile:focus-visible .reveal-cta {
+  gap: 18px;
+  color: #FFFFFF;
+}
+@media (max-width: 900px) {
+  .tile-reveal-grid {
+    grid-template-columns: 1fr;
+  }
+  .reveal-tile {
+    min-height: 320px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-tile::before,
+  .reveal-tile::after,
+  .reveal-tile .reveal-cta {
+    transition: none;
+  }
+}
+
+/* ── 4. SCROLL-REVEAL HERO (sticky) ─────────────────────────────
+   The hero stays pinned at the top as you scroll; everything below
+   rises up over it like a card lifting off a photo. No scroll-jank,
+   no JS needed. The stats-bar + subsequent sections get an explicit
+   background so they don't read as transparent when overlapping. */
+.hero {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.stats-bar,
+.tile-reveal-section,
+.sizzle-section,
+#featured,
+.content-section,
+footer {
+  position: relative;
+  z-index: 2;
+  /* stats-bar is transparent-ish by default — give it its own surface */
+}
+.stats-bar {
+  background: linear-gradient(180deg, #FAFAF8 0%, #F5F2EC 100%);
+}
+@supports not (position: sticky) {
+  .hero {
+    position: relative;
+  }
+}

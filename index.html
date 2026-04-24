@@ -81,7 +81,7 @@
     <!-- Preconnect to Unsplash (still used by testimonial avatars) -->
     <link rel="preconnect" href="https://images.unsplash.com">
 
-    <link rel="stylesheet" href="css/styles.css?v=20260423-v5-pill">
+    <link rel="stylesheet" href="css/styles.css?v=20260424-v6-fx">
     <!-- AI Context File — helps ChatGPT, Perplexity, Claude, Gemini understand this site -->
     <link rel="llms" href="/llms.txt" type="text/plain" title="AI Context">
 
@@ -538,7 +538,7 @@
                 <li><a href="why-jorge-ramirez.html">Why Jorge</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="tel:+19082307844" style="color: #667eea; font-weight: 700; font-size: 1.05em;">📱 908-230-7844</a></li>
-                <li><a href="home-valuation.html" class="nav-btn-consultation">Free Home Valuation</a></li>
+                <li><a href="home-valuation.html" class="nav-btn-consultation btn-flip" data-flip="Get My Home's Value →"><span class="flip-front">Free Home Valuation</span><span class="flip-back">Get My Home's Value →</span></a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <span></span>
@@ -566,8 +566,8 @@
             </h1>
             <p class="hero-subtitle">Most homeowners are surprised — in a good way. Find out what your home could sell for right now, with zero pressure and no obligation.</p>
             <div class="hero-buttons">
-                <a href="https://value.thejorgeramirezgroup.com" class="btn-primary" target="_blank" rel="noopener">Find Out What My Home Is Worth</a>
-                <a href="#contact" class="btn-secondary">Talk to Jorge First</a>
+                <a href="https://value.thejorgeramirezgroup.com" class="btn-primary btn-flip" target="_blank" rel="noopener"><span class="flip-front">Find Out What My Home Is Worth</span><span class="flip-back">Start Now →</span></a>
+                <a href="#contact" class="btn-secondary btn-flip"><span class="flip-front">Talk to Jorge First</span><span class="flip-back">Start the Conversation →</span></a>
             </div>
             <div class="hero-train-wrap">
                 <a href="/nj-train-map.html" class="hero-train-pill" aria-label="See every NJ commuter town on one map">
@@ -605,6 +605,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Buy / Sell / Rent tile reveal — image fades in on hover -->
+    <section class="tile-reveal-section" aria-label="Core services">
+        <div class="tile-reveal-grid">
+            <a href="buy-a-home.html" class="reveal-tile" style="--reveal-img: url('images/properties/05-kitchen.jpg');">
+                <span class="reveal-eyebrow">01 · For Buyers</span>
+                <h2 class="reveal-title">Buy</h2>
+                <span class="reveal-cta">Find a home <span aria-hidden="true">→</span></span>
+            </a>
+            <a href="sell-your-home.html" class="reveal-tile" style="--reveal-img: url('images/properties/04-brick-stone.jpg');">
+                <span class="reveal-eyebrow">02 · For Sellers</span>
+                <h2 class="reveal-title">Sell</h2>
+                <span class="reveal-cta">List with Jorge <span aria-hidden="true">→</span></span>
+            </a>
+            <a href="contact.html?topic=rent" class="reveal-tile" style="--reveal-img: url('images/properties/01-loft-living.jpg');">
+                <span class="reveal-eyebrow">03 · For Renters</span>
+                <h2 class="reveal-title">Rent</h2>
+                <span class="reveal-cta">Ask about rentals <span aria-hidden="true">→</span></span>
+            </a>
+        </div>
+    </section>
 
     <!-- 15-second brand sizzle reel (portrait 1080×1920, silent, autoplay+loop) -->
     <section class="sizzle-section" aria-label="15-second brand reel">
