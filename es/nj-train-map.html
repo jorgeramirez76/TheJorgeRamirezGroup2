@@ -100,7 +100,7 @@
 </script>
 
 <!-- ItemList schema — all 44 stations as structured data for LLM citation -->
-<script type="application/ld+json" id="stations-itemlist"></script>
+<script type="application/ld+json" id="stations-itemlist">{"@context":"https://schema.org","@type":"ItemList","itemListElement":[]}</script>
 <script>
 /* Emit ItemList with every station's full data — runs after DOM parses. */
 document.addEventListener('DOMContentLoaded', function () {
