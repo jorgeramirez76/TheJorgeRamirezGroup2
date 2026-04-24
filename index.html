@@ -599,7 +599,29 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- 15-second brand sizzle reel (portrait 1080×1920, silent, autoplay+loop) -->
+    <section class="sizzle-section" aria-label="15-second brand reel">
+        <div class="sizzle-inner">
+            <span class="sizzle-eyebrow">THE PRACTICE IN 15 SECONDS</span>
+            <div class="sizzle-frame">
+                <video class="sizzle-video"
+                       src="videos/jrg-sizzle.mp4"
+                       poster="images/video-posters/jrg-sizzle-poster.jpg"
+                       autoplay muted loop playsinline preload="metadata"
+                       aria-label="A 15-second visual reel of The Jorge Ramirez Group — properties, proof points, and contact."></video>
+            </div>
+        </div>
+    </section>
+    <style>
+      .sizzle-section{background:#1A1A1A;padding:clamp(60px,7vw,90px) 20px;display:flex;justify-content:center}
+      .sizzle-inner{display:flex;flex-direction:column;align-items:center;gap:clamp(18px,2.2vw,28px);width:100%;max-width:480px}
+      .sizzle-eyebrow{color:#FAFAF8;opacity:.72;font:500 13px/1 'Montserrat',sans-serif;letter-spacing:.24em;text-transform:uppercase}
+      .sizzle-frame{width:100%;aspect-ratio:9/16;border:1px solid rgba(184,150,46,.45);background:#000;overflow:hidden;border-radius:2px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
+      .sizzle-video{width:100%;height:100%;display:block;object-fit:cover}
+      @media (prefers-reduced-motion:reduce){.sizzle-video{animation:none}}
+    </style>
+
     <!-- Featured Listings / Recent Closings (real data from Zillow) -->
     <section id="featured" class="content-section featured-section">
         <div class="container">
