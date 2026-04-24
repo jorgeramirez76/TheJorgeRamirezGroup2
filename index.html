@@ -81,7 +81,7 @@
     <!-- Preconnect to Unsplash (still used by testimonial avatars) -->
     <link rel="preconnect" href="https://images.unsplash.com">
 
-    <link rel="stylesheet" href="css/styles.css?v=20260424-v9-flip-all">
+    <link rel="stylesheet" href="css/styles.css?v=20260424-v10-audit">
     <!-- AI Context File — helps ChatGPT, Perplexity, Claude, Gemini understand this site -->
     <link rel="llms" href="/llms.txt" type="text/plain" title="AI Context">
 
@@ -533,7 +533,9 @@
                 <li><a href="#communities">Communities</a></li>
                 <li><a href="why-jorge-ramirez.html">Why Jorge</a></li>
                 <li><a href="blog/">Blog</a></li>
-                <li><a href="es/" class="nav-lang" aria-label="En Español" title="En Español">ES</a></li>
+                <li><a href="es/" class="nav-lang" aria-label="En Español" title="En Español">
+                    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm7.94 9H17a15.5 15.5 0 0 0-1.8-6.4A8 8 0 0 1 19.94 11ZM12 4c1 0 2.3 2.8 2.9 7H9.1C9.7 6.8 11 4 12 4Zm-3.2.6A15.5 15.5 0 0 0 7 11H4.06A8 8 0 0 1 8.8 4.6ZM4.06 13H7a15.5 15.5 0 0 0 1.8 6.4A8 8 0 0 1 4.06 13ZM12 20c-1 0-2.3-2.8-2.9-7h5.8c-.6 4.2-1.9 7-2.9 7Zm3.2-.6A15.5 15.5 0 0 0 17 13h2.94a8 8 0 0 1-4.74 6.4Z"/></svg>
+                </a></li>
                 <li><a href="tel:+19082307844" class="nav-phone" aria-label="Call Jorge at 908-230-7844">
                     <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.3.5 3.6.5.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.5 3.5.1.4 0 .7-.3 1l-2.1 1.8Z"/></svg>
                     <span>908-230-7844</span>
@@ -564,7 +566,7 @@
                 <span class="hero-name">Jorge Ramirez</span>
                 <span class="hero-tagline">Keller Williams Premier Properties &nbsp;·&nbsp; Summit, NJ</span>
             </h1>
-            <p class="hero-subtitle">Most homeowners are surprised — in a good way. Find out what your home could sell for right now, with zero pressure and no obligation.</p>
+            <p class="hero-subtitle">Honest conversation. Real numbers. No pressure.</p>
             <div class="hero-buttons">
                 <a href="https://value.thejorgeramirezgroup.com" class="btn-primary btn-flip" target="_blank" rel="noopener"><span class="flip-front">Find Out What My Home Is Worth</span><span class="flip-back">Start Now →</span></a>
                 <a href="#contact" class="btn-secondary btn-flip"><span class="flip-front">Talk to Jorge First</span><span class="flip-back">Start the Conversation →</span></a>
@@ -588,7 +590,7 @@
     <div class="stats-bar">
         <div class="stats-grid">
             <div class="stat-card">
-                <span class="stat-number" data-target="138" data-suffix="">103</span>
+                <span class="stat-number" data-target="138" data-suffix="">138</span>
                 <span class="stat-label">NJ Communities</span>
             </div>
             <div class="stat-card">
@@ -605,6 +607,20 @@
             </div>
         </div>
     </div>
+
+    <!-- Press / Trust strip — tasteful grayscale rule of sources -->
+    <section class="press-strip" aria-label="Where you'll find Jorge">
+        <div class="press-inner">
+            <span class="press-eyebrow">Verified on</span>
+            <ul class="press-list">
+                <li>Zillow</li>
+                <li>Realtor.com</li>
+                <li>Keller Williams</li>
+                <li>Google Business</li>
+                <li>Trulia</li>
+            </ul>
+        </div>
+    </section>
 
     <!-- Buy / Sell / Value tile reveal — image fades in on hover -->
     <section class="tile-reveal-section" aria-label="Core services">
@@ -641,7 +657,7 @@
         </div>
     </section>
     <style>
-      .sizzle-section{background:#1A1A1A;padding:clamp(60px,7vw,90px) 20px;display:flex;justify-content:center}
+      .sizzle-section{background:linear-gradient(180deg,#1A1A1A 0%,#2C2C2C 100%);padding:clamp(40px,5vw,70px) 20px clamp(70px,8vw,110px);display:flex;justify-content:center;border-top:1px solid rgba(184,150,46,0.28)}
       .sizzle-inner{display:flex;flex-direction:column;align-items:center;gap:clamp(18px,2.2vw,28px);width:100%;max-width:480px}
       .sizzle-eyebrow{color:#FAFAF8;opacity:.72;font:500 13px/1 'Montserrat',sans-serif;letter-spacing:.24em;text-transform:uppercase}
       .sizzle-frame{width:100%;aspect-ratio:9/16;border:1px solid rgba(184,150,46,.45);background:#000;overflow:hidden;border-radius:2px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
@@ -797,7 +813,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">For Sellers</span>
-                <h2>Most Sellers Leave Money on the Table. Here's Why — and How to Avoid It.</h2>
+                <h2>Most Sellers Leave Money on the Table — Here's Why</h2>
                 <p>The difference between a good sale and a great one usually comes down to three things: pricing strategy on day one, how many qualified buyers actually see your home, and what happens in the negotiation. Most agents get at least one of those wrong.</p>
             </div>
             <div class="features-grid">
@@ -865,7 +881,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="home-valuation.html" class="btn-flip" style="padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em; font-weight: 600;"><span class="flip-front">Get Your Free Home Valuation →</span><span class="flip-back">Start Now →</span></a>
+                <a href="home-valuation.html" class="btn-flip" style="padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em; font-weight: 600;"><span class="flip-front">Free Home Valuation →</span><span class="flip-back">Start Now →</span></a>
                 <p style="margin-top: 15px; color: #888; font-size: 0.95em;">Takes 60 seconds. No spam. No obligation.</p>
             </div>
         </div>
@@ -907,7 +923,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Local Expertise</span>
-                <h2>103 Communities Across New Jersey</h2>
+                <h2>138 Communities Across New Jersey</h2>
                 <p>Expert local knowledge of schools, transit, and neighborhoods. Search or filter by county to find your perfect community across 6 counties.</p>
             </div>
             
@@ -926,7 +942,7 @@
             <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
                 <div class="feature-card testimonial-card" data-match-town="summit">
                     <div class="testimonial-avatar">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Michael T." loading="lazy" width="56" height="56">
+                        <span class="testimonial-initials" aria-label="Michael and Lisa T.">ML</span>
                     </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;Jorge sold our Summit home in 9 days &mdash; $47,000 over asking. He priced it perfectly and the targeted marketing brought buyers we never would have reached through a traditional listing. He was straight with us from day one.&rdquo;</p>
@@ -935,7 +951,7 @@
                 </div>
                 <div class="feature-card testimonial-card">
                     <div class="testimonial-avatar">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop&crop=face" alt="Diane R." loading="lazy" width="56" height="56">
+                        <span class="testimonial-initials" aria-label="Diane R.">DR</span>
                     </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;We had an expired listing with another agent for 90 days. Jorge took over, changed the pricing strategy, and had a full-price offer in 3 weeks. Wish we had called him first.&rdquo;</p>
@@ -944,7 +960,7 @@
                 </div>
                 <div class="feature-card testimonial-card">
                     <div class="testimonial-avatar">
-                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&h=120&fit=crop&crop=face" alt="David K." loading="lazy" width="56" height="56">
+                        <span class="testimonial-initials" aria-label="David and Sarah K.">DK</span>
                     </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;As first-time buyers relocating from NYC, we were completely lost. Jorge walked every property with us like he was the one buying it. His investor background meant he caught things the inspector even missed. Closed on our Chatham home in 6 weeks.&rdquo;</p>
@@ -953,7 +969,7 @@
                 </div>
                 <div class="feature-card testimonial-card">
                     <div class="testimonial-avatar">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop&crop=face" alt="Patricia M." loading="lazy" width="56" height="56">
+                        <span class="testimonial-initials" aria-label="Patricia M.">PM</span>
                     </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;I inherited my mother&rsquo;s home and had no idea where to start. Jorge handled everything &mdash; estate coordination, light repairs, pricing, all of it. He never pushed me and got us $30K above what I thought was possible.&rdquo;</p>
@@ -962,7 +978,7 @@
                 </div>
                 <div class="feature-card testimonial-card">
                     <div class="testimonial-avatar">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face" alt="Robert H." loading="lazy" width="56" height="56">
+                        <span class="testimonial-initials" aria-label="Robert and Karen H.">RK</span>
                     </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;We tried to sell FSBO for 4 months. After we listed with Jorge, we had an accepted offer in 11 days. His buyer targeting system found people we never could have reached on our own. Should have called him first.&rdquo;</p>
@@ -971,7 +987,7 @@
                 </div>
                 <div class="feature-card testimonial-card">
                     <div class="testimonial-avatar">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&crop=face" alt="Tom F." loading="lazy" width="56" height="56">
+                        <span class="testimonial-initials" aria-label="Tom and Angela F.">TF</span>
                     </div>
                     <span class="testimonial-stars">★★★★★</span>
                     <p class="testimonial-quote">&ldquo;Jorge told us the truth about our home&rsquo;s value even though it wasn&rsquo;t what we wanted to hear. We priced it his way, had 8 showings the first weekend, and closed for more than our original ask. His honesty saved us months.&rdquo;</p>
@@ -991,7 +1007,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <span class="section-tag">About Jorge</span>
-                    <h2>I'm Not Going to Tell You I'm the Best Agent in NJ.</h2>
+                    <h2>I'm Not Going to Tell You I'm the Best Agent in NJ</h2>
                     <p>What I will tell you is this: I've personally bought, renovated, and sold over 60 homes in New Jersey. Not as a side project — as a real estate investor, before I ever had a license. I know what things cost. I know what buyers care about. I know what kills deals.</p>
                     <p>When you work with me, you're not getting someone who read about real estate. You're getting someone who has been on both sides of the table — as an investor, a buyer, a seller, and an agent — hundreds of times across 138 NJ communities.</p>
                     <p>I'm based in Summit. I work 7 days a week. I pick up the phone. And I'll tell you the truth about your situation even if it's not what you were hoping to hear — because that's what actually gets you to a good outcome.</p>
@@ -999,7 +1015,7 @@
                     <div class="credentials">
                         <div class="credential-item">✓ 60+ Homes Personally Flipped in NJ</div>
                         <div class="credential-item">✓ Full-Time Realtor at KW Since 2017</div>
-                        <div class="credential-item">✓ 103 Communities Across 5 Counties</div>
+                        <div class="credential-item">✓ 138 Communities Across 6 Counties</div>
                         <div class="credential-item">✓ NYC Commuter Market Specialist</div>
                         <div class="credential-item">✓ Available 7 Days a Week</div>
                     </div>
@@ -1017,114 +1033,41 @@
         </div>
     </section>
     
-    <!-- Recent Sales Section -->
-    <section id="recent-sales" class="content-section alt-bg">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Proven Results</span>
-                <h2>Recent NJ Home Sales</h2>
-                <p>Real transactions. Real outcomes. Here&rsquo;s what Jorge has helped clients achieve recently across Northern and Central NJ.</p>
-            </div>
-            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                <div class="feature-card">
-                    <span class="sale-price">$1,285,000</span>
-                    <span class="sale-town">Summit, NJ</span>
-                    <span class="sale-details">4 bed / 3 bath &middot; 2,800 sqft</span>
-                    <span class="sale-result">$47K over asking &middot; 9 days</span>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <span class="sale-price">$875,000</span>
-                    <span class="sale-town">Westfield, NJ</span>
-                    <span class="sale-details">3 bed / 2.5 bath &middot; 2,100 sqft</span>
-                    <span class="sale-result">Full price &middot; 21 days</span>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <span class="sale-price">$725,000</span>
-                    <span class="sale-town">Cranford, NJ</span>
-                    <span class="sale-details">4 bed / 2 bath &middot; 1,950 sqft</span>
-                    <span class="sale-result">$30K over asking &middot; 11 days</span>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <span class="sale-price">$1,050,000</span>
-                    <span class="sale-town">Chatham, NJ</span>
-                    <span class="sale-details">4 bed / 3 bath &middot; 2,600 sqft</span>
-                    <span class="sale-result">Multiple offers &middot; 7 days</span>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <span class="sale-price">$615,000</span>
-                    <span class="sale-town">Maplewood, NJ</span>
-                    <span class="sale-details">3 bed / 1.5 bath &middot; 1,700 sqft</span>
-                    <span class="sale-result">Expired relisting &middot; sold in 11 days</span>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <span class="sale-price">$940,000</span>
-                    <span class="sale-town">Montclair, NJ</span>
-                    <span class="sale-details">5 bed / 3 bath &middot; 3,100 sqft</span>
-                    <span class="sale-result">Above asking &middot; 14 days</span>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <p style="color: #888; font-size: 0.95em; margin-bottom: 20px;">Want to know what homes like yours are selling for right now?</p>
-                <a href="home-valuation.html" class="btn-flip" style="padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-size: 1.1em; font-weight: 600;"><span class="flip-front">Get Your Free Home Valuation →</span><span class="flip-back">Start Now →</span></a>
-            </div>
-        </div>
-    </section>
-
     <!-- Resources Section -->
     <section id="resources" class="content-section">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Helpful Resources</span>
-                <h2>Figure Out Your Next Move — No Pressure, No Commitment</h2>
+                <h2>Figure Out Your Next Move</h2>
                 <p>Whether you're just curious or actively ready, these tools help you get the information you actually need to make a smart decision.</p>
             </div>
             <div class="resources-grid">
                 <div class="resource-card">
-                    <h3>🏠 What's My Home Worth?</h3>
+                    <h3>What's My Home Worth</h3>
                     <p>Find out what your NJ home could realistically sell for in today's market — before you talk to anyone.</p>
-                    <a href="home-valuation.html" class="resource-link">Get My Home Value →</a>
+                    <a href="home-valuation.html" class="resource-link">Get My Home's Value →</a>
                 </div>
                 <div class="resource-card">
-                    <h3>📋 How Jorge Sells Homes</h3>
+                    <h3>How Jorge Sells Homes</h3>
                     <p>Data-driven pricing, AI-powered buyer targeting, and a process designed to get you more money with less stress.</p>
                     <a href="sell-your-home.html" class="resource-link">See the Seller Process →</a>
                 </div>
                 <div class="resource-card">
-                    <h3>💡 Why Choose Jorge?</h3>
-                    <p>60+ homes flipped personally. 138 communities. AI-powered marketing. See what makes this approach different.</p>
-                    <a href="why-jorge-ramirez.html" class="resource-link">Learn More →</a>
-                </div>
-                <div class="resource-card">
-                    <h3>📍 Explore 120 NJ Towns</h3>
+                    <h3>Explore 138 NJ Towns</h3>
                     <p>Schools, property taxes, commute times, median prices, and neighborhood feel — whether you're buying or selling.</p>
                     <a href="#communities" class="resource-link">Explore Towns →</a>
                 </div>
                 <div class="resource-card">
-                    <h3>🚆 Best NJ Commuter Towns</h3>
-                    <p>Moving from NYC? See which NJ towns give you the best commute, schools, and value for your budget.</p>
-                    <a href="blog/top-nyc-commuter-towns-nj-2026.html" class="resource-link">See the Guide →</a>
-                </div>
-                <div class="resource-card">
-                    <h3>💵 Mortgage Calculator</h3>
+                    <h3>Mortgage Calculator</h3>
                     <p>Run the real numbers — monthly payment, taxes, and what that means for your budget in different NJ towns.</p>
                     <a href="tools/mortgage-calculator.html" class="resource-link">Calculate Now →</a>
                 </div>
-                <div class="resource-card">
-                    <h3>👨‍👩‍👧‍👦 Best NJ Towns for Families</h3>
-                    <p>Top schools, safe neighborhoods, and great value. Find the right NJ town for your family's priorities.</p>
-                    <a href="blog/best-nj-towns-for-families.html" class="resource-link">See the Guide →</a>
-                </div>
-                <div class="resource-card">
-                    <h3>📊 Where NJ Homes Sell Fastest</h3>
-                    <p>Which NJ towns have the strongest seller demand right now? See where homes are selling quickest in 2026.</p>
-                    <a href="blog/best-nj-towns-to-sell-home.html" class="resource-link">Seller Market Guide →</a>
-                </div>
+            </div>
+            <div class="resources-more">
+                <a href="why-jorge-ramirez.html">Why Choose Jorge →</a>
+                <a href="blog/top-nyc-commuter-towns-nj-2026.html">Best NJ Commuter Towns →</a>
+                <a href="blog/best-nj-towns-for-families.html">Best NJ Towns for Families →</a>
+                <a href="blog/best-nj-towns-to-sell-home.html">Where NJ Homes Sell Fastest →</a>
             </div>
         </div>
     </section>
@@ -1139,67 +1082,67 @@
             </div>
             
             <div class="faq-container" style="max-width: 900px; margin: 0 auto;">
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">I'm not sure I'm ready to sell. Is it worth talking to you?</h3>
-                    <p style="color: #666; line-height: 1.6;">Honestly — yes, and here's why. The homeowners who end up with the best outcomes are the ones who had the conversation before they needed to. You'll know your number, what the market is doing, and what you'd actually net. No pressure, no commitment. Most people leave that call feeling better informed, not pushed into anything. If you're not ready, that's fine — at least you'll know where you stand.</p>
+                <div class="faq-item">
+                    <h3>I'm not sure I'm ready to sell. Is it worth talking to you?</h3>
+                    <p>Honestly — yes, and here's why. The homeowners who end up with the best outcomes are the ones who had the conversation before they needed to. You'll know your number, what the market is doing, and what you'd actually net. No pressure, no commitment. Most people leave that call feeling better informed, not pushed into anything. If you're not ready, that's fine — at least you'll know where you stand.</p>
                 </div>
                 
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">What makes you different from every other agent who says the same thing?</h3>
-                    <p style="color: #666; line-height: 1.6;">Fair question. I've personally flipped over 60 homes in New Jersey — not as an agent, as an investor putting my own money on the line. That means I know what buyers are actually looking for, what renovations are worth doing, how to price precisely, and when to walk away from a deal. Most agents have never owned a property they didn't live in. I have a very different perspective on what a home is actually worth and why.</p>
+                <div class="faq-item">
+                    <h3>What makes you different from every other agent who says the same thing?</h3>
+                    <p>Fair question. I've personally flipped over 60 homes in New Jersey — not as an agent, as an investor putting my own money on the line. That means I know what buyers are actually looking for, what renovations are worth doing, how to price precisely, and when to walk away from a deal. Most agents have never owned a property they didn't live in. I have a very different perspective on what a home is actually worth and why.</p>
                 </div>
                 
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">I've heard NJ isn't a great time to buy with rates this high. What do you actually think?</h3>
-                    <p style="color: #666; line-height: 1.6;">Here's what I see every day: rates are high, but inventory is still tight in the towns people actually want. That means prices aren't dropping. The buyers who waited two years ago for rates to fall are still waiting — and they're competing against the same buyers they were before. There's never a perfect time. What matters is whether the numbers work for your specific situation, your timeline, and the town you're targeting. That's a 15-minute conversation, not a generic answer.</p>
+                <div class="faq-item">
+                    <h3>I've heard NJ isn't a great time to buy with rates this high. What do you actually think?</h3>
+                    <p>Here's what I see every day: rates are high, but inventory is still tight in the towns people actually want. That means prices aren't dropping. The buyers who waited two years ago for rates to fall are still waiting — and they're competing against the same buyers they were before. There's never a perfect time. What matters is whether the numbers work for your specific situation, your timeline, and the town you're targeting. That's a 15-minute conversation, not a generic answer.</p>
                 </div>
                 
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">If I sell, where am I supposed to go? Everything is expensive.</h3>
-                    <p style="color: #666; line-height: 1.6;">This is the #1 reason sellers stay stuck longer than they need to. The answer depends on what you're trying to accomplish — downsize, upsize, relocate, cash out equity. Most of the time, when we map it out together, there's a path that works. But you won't know until you look at the actual numbers for your situation. I help sellers figure out their "what's next" before they ever put the home on the market.</p>
+                <div class="faq-item">
+                    <h3>If I sell, where am I supposed to go? Everything is expensive.</h3>
+                    <p>This is the #1 reason sellers stay stuck longer than they need to. The answer depends on what you're trying to accomplish — downsize, upsize, relocate, cash out equity. Most of the time, when we map it out together, there's a path that works. But you won't know until you look at the actual numbers for your situation. I help sellers figure out their "what's next" before they ever put the home on the market.</p>
                 </div>
                 
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">Which NJ towns do you work in?</h3>
-                    <p style="color: #666; line-height: 1.6;">138 communities across Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. I'm based in Summit and know the commuter towns along the Midtown Direct line especially well — Summit, Millburn, Chatham, Maplewood, South Orange, Madison, Westfield, Cranford, and more. Use the search above to explore any town.</p>
+                <div class="faq-item">
+                    <h3>Which NJ towns do you work in?</h3>
+                    <p>138 communities across Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. I'm based in Summit and know the commuter towns along the Midtown Direct line especially well — Summit, Millburn, Chatham, Maplewood, South Orange, Madison, Westfield, Cranford, and more. Use the search above to explore any town.</p>
                 </div>
                 
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">I'm a first-time buyer. Will I feel out of my depth?</h3>
-                    <p style="color: #666; line-height: 1.6;">Not with me. First-time buyers are some of my favorite clients — there's nothing more satisfying than walking someone through a process they were nervous about and watching it go smoothly. I'll explain everything, connect you with loan officers who are actually good at their jobs, walk every property with you like an investor would, and make sure you never feel rushed or pressured into anything. The whole team — inspectors, attorneys, contractors — is already in place. You just need to show up ready to learn.</p>
+                <div class="faq-item">
+                    <h3>I'm a first-time buyer. Will I feel out of my depth?</h3>
+                    <p>Not with me. First-time buyers are some of my favorite clients — there's nothing more satisfying than walking someone through a process they were nervous about and watching it go smoothly. I'll explain everything, connect you with loan officers who are actually good at their jobs, walk every property with you like an investor would, and make sure you never feel rushed or pressured into anything. The whole team — inspectors, attorneys, contractors — is already in place. You just need to show up ready to learn.</p>
                 </div>
 
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">How do I find out what my NJ home is actually worth?</h3>
-                    <p style="color: #666; line-height: 1.6;">Start with our <a href="home-valuation.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">free home valuation tool</a> for an instant estimate. But the real answer comes from a comparative market analysis (CMA) — where I look at what similar homes in your specific neighborhood have sold for in the last 60-90 days, what's currently under contract, and what's sitting unsold. Zillow estimates miss local nuance. A CMA from someone who has bought and sold 60+ homes in NJ gives you the number you can actually plan around. It's free, it takes 15 minutes, and there's zero obligation.</p>
+                <div class="faq-item">
+                    <h3>How do I find out what my NJ home is actually worth?</h3>
+                    <p>Start with our <a href="home-valuation.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">free home valuation tool</a> for an instant estimate. But the real answer comes from a comparative market analysis (CMA) — where I look at what similar homes in your specific neighborhood have sold for in the last 60-90 days, what's currently under contract, and what's sitting unsold. Zillow estimates miss local nuance. A CMA from someone who has bought and sold 60+ homes in NJ gives you the number you can actually plan around. It's free, it takes 15 minutes, and there's zero obligation.</p>
                 </div>
 
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">My home was listed before and didn't sell. Can you help?</h3>
-                    <p style="color: #666; line-height: 1.6;">Yes — and this is more common than you think. When a listing expires, it's almost always one of three things: pricing, marketing, or agent follow-up. I'll look at what happened with your previous listing, identify what went wrong, and show you a different approach. Many of my best results come from homes that "didn't sell" with another agent. The property was fine — the strategy wasn't. <a href="sell-your-home.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">Learn more about selling with Jorge</a>.</p>
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 class="faq-question" style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">What is the best time to sell a home in New Jersey?</h3>
-                    <p class="faq-answer" style="color: #444; line-height: 1.7;">The best time to sell a home in New Jersey is typically March through June, when buyer demand peaks as families want to close before the school year ends. The spring market in NJ historically produces the most showings, competing offers, and highest prices relative to list price. September through October is a strong secondary window before the holiday slowdown. Winter (November–January) is slower overall, but serious buyers remain active and you face less competition from other sellers. For most NJ homeowners, listing in late February or early March maximizes both exposure and negotiating leverage.</p>
+                <div class="faq-item">
+                    <h3>My home was listed before and didn't sell. Can you help?</h3>
+                    <p>Yes — and this is more common than you think. When a listing expires, it's almost always one of three things: pricing, marketing, or agent follow-up. I'll look at what happened with your previous listing, identify what went wrong, and show you a different approach. Many of my best results come from homes that "didn't sell" with another agent. The property was fine — the strategy wasn't. <a href="sell-your-home.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">Learn more about selling with Jorge</a>.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">What is the best time to sell a home in New Jersey?</h3>
+                    <p class="faq-answer">The best time to sell a home in New Jersey is typically March through June, when buyer demand peaks as families want to close before the school year ends. The spring market in NJ historically produces the most showings, competing offers, and highest prices relative to list price. September through October is a strong secondary window before the holiday slowdown. Winter (November–January) is slower overall, but serious buyers remain active and you face less competition from other sellers. For most NJ homeowners, listing in late February or early March maximizes both exposure and negotiating leverage.</p>
                 </div>
 
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 class="faq-question" style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">How much does it cost to sell a home in New Jersey?</h3>
-                    <p class="faq-answer" style="color: #444; line-height: 1.7;">The main costs to sell a home in NJ include: real estate commission (typically 4–5% of the sale price, split between buyer's and seller's agents), the NJ realty transfer tax (approximately $2–$6 per $500 of sale price, paid by the seller), and attorney fees ($1,500–$2,500). You may also face buyer repair credits after inspection, staging costs, and minor pre-listing repairs. On a $700,000 home, total seller costs typically run $35,000–$50,000, meaning most sellers net $650,000–$665,000. Jorge provides every seller with a full net proceeds estimate before listing so there are no surprises at the closing table.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">How much does it cost to sell a home in New Jersey?</h3>
+                    <p class="faq-answer">The main costs to sell a home in NJ include: real estate commission (typically 4–5% of the sale price, split between buyer's and seller's agents), the NJ realty transfer tax (approximately $2–$6 per $500 of sale price, paid by the seller), and attorney fees ($1,500–$2,500). You may also face buyer repair credits after inspection, staging costs, and minor pre-listing repairs. On a $700,000 home, total seller costs typically run $35,000–$50,000, meaning most sellers net $650,000–$665,000. Jorge provides every seller with a full net proceeds estimate before listing so there are no surprises at the closing table.</p>
                 </div>
 
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 class="faq-question" style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">How long does it take to sell a home in NJ?</h3>
-                    <p class="faq-answer" style="color: #444; line-height: 1.7;">From list date to closing, the average NJ home sale takes 60–90 days. After accepting an offer, NJ's mandatory 3-business-day attorney review period begins, followed by a mortgage and inspection contingency period (typically 30–45 days), and then closing. In high-demand commuter towns like Summit, Westfield, and Chatham, well-priced homes routinely go under contract within 7–21 days of listing — sometimes with multiple offers the first weekend. The biggest factor controlling speed is pricing: homes priced at market sell 2–3x faster than overpriced listings that sit and get stale.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">How long does it take to sell a home in NJ?</h3>
+                    <p class="faq-answer">From list date to closing, the average NJ home sale takes 60–90 days. After accepting an offer, NJ's mandatory 3-business-day attorney review period begins, followed by a mortgage and inspection contingency period (typically 30–45 days), and then closing. In high-demand commuter towns like Summit, Westfield, and Chatham, well-priced homes routinely go under contract within 7–21 days of listing — sometimes with multiple offers the first weekend. The biggest factor controlling speed is pricing: homes priced at market sell 2–3x faster than overpriced listings that sit and get stale.</p>
                 </div>
 
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 class="faq-question" style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">What is my home worth in Summit, Westfield, or Chatham NJ?</h3>
-                    <p class="faq-answer" style="color: #444; line-height: 1.7;">In Summit, NJ, the median home sale price is approximately $1,095,000 (2025–2026). In Westfield, NJ, the median is approximately $850,000–$900,000. In Chatham, NJ (Borough), the median is approximately $950,000–$1,050,000. These are medians — your home's specific value depends on size, condition, lot, neighborhood, and what comparable homes have actually sold for in the past 60–90 days. Online estimates from Zillow or Redfin can be off by 10–20% in NJ due to limited local data. A free comparative market analysis (CMA) from Jorge gives you the number you can actually plan around. Get yours at <a href="home-valuation.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">thejorgeramirezgroup.com/home-valuation.html</a>.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">What is my home worth in Summit, Westfield, or Chatham NJ?</h3>
+                    <p class="faq-answer">In Summit, NJ, the median home sale price is approximately $1,095,000 (2025–2026). In Westfield, NJ, the median is approximately $850,000–$900,000. In Chatham, NJ (Borough), the median is approximately $950,000–$1,050,000. These are medians — your home's specific value depends on size, condition, lot, neighborhood, and what comparable homes have actually sold for in the past 60–90 days. Online estimates from Zillow or Redfin can be off by 10–20% in NJ due to limited local data. A free comparative market analysis (CMA) from Jorge gives you the number you can actually plan around. Get yours at <a href="home-valuation.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">thejorgeramirezgroup.com/home-valuation.html</a>.</p>
                 </div>
 
-                <div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <h3 class="faq-question" style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem;">Should I use a realtor or sell my home myself in NJ?</h3>
-                    <p class="faq-answer" style="color: #444; line-height: 1.7;">Statistically, NJ homes sold with a licensed agent sell for 5–13% more than FSBO (For Sale By Owner) homes, according to NAR data. In New Jersey specifically, FSBO sellers face the added complexity of the attorney review process, mandatory Seller's Property Disclosure forms, lead paint disclosures (homes built before 1978), and limited MLS access which means fewer buyers seeing the home. The commission savings are frequently offset by a lower sale price, longer time on market, and negotiation disadvantages. Most NJ real estate attorneys recommend using a licensed agent, and Jorge is happy to share a no-pressure analysis of what you'd realistically net either way.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">Should I use a realtor or sell my home myself in NJ?</h3>
+                    <p class="faq-answer">Statistically, NJ homes sold with a licensed agent sell for 5–13% more than FSBO (For Sale By Owner) homes, according to NAR data. In New Jersey specifically, FSBO sellers face the added complexity of the attorney review process, mandatory Seller's Property Disclosure forms, lead paint disclosures (homes built before 1978), and limited MLS access which means fewer buyers seeing the home. The commission savings are frequently offset by a lower sale price, longer time on market, and negotiation disadvantages. Most NJ real estate attorneys recommend using a licensed agent, and Jorge is happy to share a no-pressure analysis of what you'd realistically net either way.</p>
                 </div>
             </div>
         </div>

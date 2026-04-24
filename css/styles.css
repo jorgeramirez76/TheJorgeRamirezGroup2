@@ -83,6 +83,12 @@ nav.scrolled {
     background: white;
     padding: 8px 15px;
     border-radius: 5px;
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+nav.scrolled .logo-img {
+    background: transparent;
+    padding: 4px 0;
+    filter: brightness(0) invert(1);
 }
 
 .nav-links {
@@ -2546,4 +2552,145 @@ a.hero-train-pill:focus-visible .htp-arrow {
   .listings-grid .listing-card.featured .listing-img {
     aspect-ratio: 16 / 10;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   v10 — full audit pass 2026-04-24
+   Press strip, initials avatars, resources-more, nav globe
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Press strip — "Verified on" quiet proof rule ────────────── */
+.press-strip {
+  background: #FAFAF8;
+  padding: clamp(28px, 3vw, 40px) 20px;
+  border-top: 1px solid rgba(44, 44, 44, 0.08);
+  border-bottom: 1px solid rgba(44, 44, 44, 0.08);
+}
+.press-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 36px);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.press-eyebrow {
+  font: 500 11px/1 'Montserrat', sans-serif;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(44, 44, 44, 0.55);
+}
+.press-list {
+  display: flex;
+  gap: clamp(20px, 3vw, 44px);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.press-list li {
+  font: 600 14px/1 'Montserrat', sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2C2C2C;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  position: relative;
+}
+.press-list li:hover {
+  opacity: 1;
+}
+.press-list li + li::before {
+  content: '·';
+  color: #B8962E;
+  position: absolute;
+  left: calc(-1 * clamp(20px, 3vw, 44px) / 2);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+}
+@media (max-width: 520px) {
+  .press-list li + li::before {
+    display: none;
+  }
+}
+
+/* ── Testimonial initials avatar ─────────────────────────────── */
+.testimonial-avatar .testimonial-initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #FAFAF8;
+  border: 1.5px solid #B8962E;
+  color: #2C2C2C;
+  font: 600 16px/1 'Montserrat', sans-serif;
+  letter-spacing: 0.06em;
+}
+
+/* ── Resources-more text-link row ────────────────────────────── */
+.resources-more {
+  margin-top: clamp(32px, 4vw, 48px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 28px) clamp(24px, 3vw, 40px);
+  padding-top: clamp(28px, 3vw, 40px);
+  border-top: 1px solid rgba(44, 44, 44, 0.08);
+}
+.resources-more a,
+.resources-more a:link,
+.resources-more a:visited {
+  color: #2C2C2C !important;
+  font: 500 14px/1 'Montserrat', sans-serif;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 3px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.resources-more a:hover,
+.resources-more a:focus-visible {
+  color: #B8962E !important;
+  border-bottom-color: #B8962E;
+}
+
+/* ── Nav globe (replaces ES text) — keep the pill geometry ──── */
+.nav-links a.nav-lang svg {
+  color: #FFFFFF;
+  transition: color 0.2s ease;
+}
+.nav-links a.nav-lang:hover svg {
+  color: #B8962E;
+}
+
+/* ── FAQ card system (migrated from 39 inline styles) ────────── */
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.faq-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.faq-item > h3,
+.faq-item h3.faq-question {
+  color: #1A1A1A;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.faq-item > p,
+.faq-item p.faq-answer {
+  color: #444444;
+  line-height: 1.65;
+  margin: 0;
 }
