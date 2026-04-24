@@ -76,9 +76,9 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Preload hero fallback for faster LCP -->
-    <link rel="preload" as="image" href="images/hero.webp" type="image/webp">
-    <!-- Preconnect to Unsplash for carousel images -->
+    <!-- Preload first hero slide for faster LCP -->
+    <link rel="preload" as="image" href="images/properties/04-brick-stone.jpg">
+    <!-- Preconnect to Unsplash (still used by testimonial avatars) -->
     <link rel="preconnect" href="https://images.unsplash.com">
 
     <link rel="stylesheet" href="css/styles.css?v=20260417-v4-1">
@@ -548,19 +548,14 @@
         </div>
     </nav>
     
-    <!-- Hero Section — Cinematic luxury home video, with Ken Burns image carousel as fallback -->
+    <!-- Hero Section — Ken Burns luxury property carousel -->
     <section class="hero" id="home">
-        <video class="hero-video" autoplay muted loop playsinline preload="auto"
-               poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop"
-               aria-hidden="true">
-            <source src="videos/jorge_hero.mp4" type="video/mp4">
-        </video>
-        <div class="hero-carousel hero-fallback-carousel" aria-hidden="true">
-            <div class="hero-slide active" data-bg="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80&fit=crop"></div>
+        <div class="hero-carousel" aria-hidden="true">
+            <div class="hero-slide active" data-bg="images/properties/04-brick-stone.jpg"></div>
+            <div class="hero-slide" data-bg="images/properties/03-shingle-porch.jpg"></div>
+            <div class="hero-slide" data-bg="images/properties/01-loft-living.jpg"></div>
+            <div class="hero-slide" data-bg="images/properties/08-exterior.jpg"></div>
+            <div class="hero-slide" data-bg="images/properties/05-kitchen.jpg"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -615,7 +610,7 @@
             </div>
             <div class="listings-grid">
                 <article id="main" class="listing-card" data-town="verona">
-                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80&fit=crop');">
+                    <div class="listing-img" style="background-image: url('images/properties/04-brick-stone.jpg');">
                         <span class="listing-status">Sold · 2022</span>
                         <span class="listing-days">DUAL-SIDED SALE</span>
                     </div>
@@ -634,7 +629,7 @@
                 </article>
 
                 <article class="listing-card" data-town="warren">
-                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80&fit=crop');">
+                    <div class="listing-img" style="background-image: url('images/properties/03-shingle-porch.jpg');">
                         <span class="listing-status">Sold · 2022</span>
                         <span class="listing-days">BUYER REPRESENTATION</span>
                     </div>
@@ -653,7 +648,7 @@
                 </article>
 
                 <article class="listing-card" data-town="south-orange">
-                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=80&fit=crop');">
+                    <div class="listing-img" style="background-image: url('images/properties/01-loft-living.jpg');">
                         <span class="listing-status">Sold · 2022</span>
                         <span class="listing-days">LISTING AGENT</span>
                     </div>
@@ -672,7 +667,7 @@
                 </article>
 
                 <article class="listing-card" data-town="roselle-park">
-                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&q=80&fit=crop');">
+                    <div class="listing-img" style="background-image: url('images/properties/08-exterior.jpg');">
                         <span class="listing-status">Sold · 2024</span>
                         <span class="listing-days">RECENT · BUYER REP</span>
                     </div>
@@ -691,7 +686,7 @@
                 </article>
 
                 <article class="listing-card" data-town="fanwood">
-                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=900&q=80&fit=crop');">
+                    <div class="listing-img" style="background-image: url('images/properties/05-kitchen.jpg');">
                         <span class="listing-status">Sold · 2022</span>
                         <span class="listing-days">BUYER REPRESENTATION</span>
                     </div>
@@ -710,7 +705,7 @@
                 </article>
 
                 <article class="listing-card" data-town="cranford">
-                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80&fit=crop');">
+                    <div class="listing-img" style="background-image: url('images/properties/07-dining.jpg');">
                         <span class="listing-status">Sold · 2019</span>
                         <span class="listing-days">BUYER REPRESENTATION</span>
                     </div>
