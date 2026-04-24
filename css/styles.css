@@ -2441,44 +2441,53 @@ a.hero-train-pill:focus-visible .htp-arrow {
    Nav collapse + Featured Verona card + ES/phone nav treatments
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ── Nav language badge (ES) ─────────────────────────────────── */
-.nav-links a.nav-lang {
+/* ── Nav language badge (ES) — white over dark nav ──────────── */
+.nav-links a.nav-lang,
+.nav-links a.nav-lang:link,
+.nav-links a.nav-lang:visited {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 28px;
   height: 28px;
   padding: 0 8px;
-  border: 1px solid rgba(184, 150, 46, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
   font: 600 11px/1 'Montserrat', sans-serif;
   letter-spacing: 0.08em;
-  color: #2C2C2C;
+  color: #FFFFFF !important;
+  background: transparent;
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 .nav-links a.nav-lang:hover,
 .nav-links a.nav-lang:focus-visible {
-  border-color: #B8962E;
-  color: #B8962E;
-  background: rgba(184, 150, 46, 0.08);
+  border-color: #FFFFFF;
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.12);
 }
 
-/* ── Nav phone with SVG icon ─────────────────────────────────── */
-.nav-links a.nav-phone {
+/* ── Nav phone with SVG icon — white over dark nav ──────────── */
+.nav-links a.nav-phone,
+.nav-links a.nav-phone:link,
+.nav-links a.nav-phone:visited {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: #2C2C2C !important;
+  color: #FFFFFF !important;
   font-weight: 600;
   transition: color 0.2s ease;
 }
 .nav-links a.nav-phone svg {
-  color: #B8962E;
+  color: #FFFFFF;
   flex: 0 0 auto;
+  transition: color 0.2s ease;
 }
 .nav-links a.nav-phone:hover,
 .nav-links a.nav-phone:focus-visible {
-  color: #C41230 !important;
+  color: #B8962E !important;
+}
+.nav-links a.nav-phone:hover svg {
+  color: #B8962E;
 }
 
 /* ── Featured listing card (Verona dual-sided) ───────────────── */
