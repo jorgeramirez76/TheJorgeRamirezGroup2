@@ -2690,3 +2690,73 @@ a.hero-train-pill:focus-visible .htp-arrow {
   line-height: 1.65;
   margin: 0;
 }
+
+/* ── A11y skip-to-content link (was inline on 635 pages) ────── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 8px 16px;
+  background: #000000;
+  color: #FFFFFF;
+  z-index: 9999;
+  text-decoration: none;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 0;
+}
+
+/* ── .related-pages widget (was inline across 520 town pages) ─ */
+.related-pages {
+  background: #F8F9FA;
+  padding: 40px 20px;
+  margin-top: 40px;
+  border-top: 2px solid #E9ECEF;
+}
+.related-pages.compact {
+  padding: 30px 20px;
+}
+.related-pages > .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.related-pages.compact > .container {
+  max-width: 900px;
+}
+.related-pages h2,
+.related-pages h3 {
+  font-size: 1.4em;
+  margin-bottom: 16px;
+  color: #333333;
+}
+.related-pages.compact h2,
+.related-pages.compact h3 {
+  font-size: 1.2em;
+  margin-bottom: 12px;
+}
+.related-pages ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.related-pages.compact ul {
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.related-pages p {
+  margin-top: 16px;
+}
+.related-pages p a,
+.related-pages p a:link,
+.related-pages p a:visited {
+  color: #2C2C2C;
+  font-weight: 600;
+  text-decoration: none;
+}
+.related-pages p a + a {
+  margin-left: 16px;
+}
