@@ -80,11 +80,17 @@ nav.scrolled {
 .logo-img {
     height: 60px;
     width: auto;
-    background: transparent;
-    padding: 4px 0;
-    border-radius: 0;
-    filter: brightness(0) invert(1);
-    transition: filter 0.3s ease;
+    background: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, padding 0.3s ease;
+    display: block;
+}
+nav.scrolled .logo-img {
+    padding: 4px 10px;
+}
+a.logo:hover .logo-img {
+    transform: translateY(-1px);
 }
 
 .nav-links {
