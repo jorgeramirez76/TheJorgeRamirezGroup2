@@ -2428,33 +2428,12 @@ a.hero-train-pill:focus-visible .htp-arrow {
   }
 }
 
-/* ── 4. SCROLL-REVEAL HERO (sticky) ─────────────────────────────
-   The hero stays pinned at the top as you scroll; everything below
-   rises up over it like a card lifting off a photo. No scroll-jank,
-   no JS needed. The stats-bar + subsequent sections get an explicit
-   background so they don't read as transparent when overlapping. */
-.hero {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-.stats-bar,
-.tile-reveal-section,
-.sizzle-section,
-#featured,
-.content-section,
-footer {
-  position: relative;
-  z-index: 2;
-  /* stats-bar is transparent-ish by default — give it its own surface */
-}
+/* ── 4. SCROLL-REVEAL HERO — REMOVED 2026-04-24
+   Sticky-hero caused hero text to overlap content sections as the
+   user scrolled. Hero now scrolls normally. Keep the stats-bar
+   surface gradient since the rest of the site relies on it. */
 .stats-bar {
   background: linear-gradient(180deg, #FAFAF8 0%, #F5F2EC 100%);
-}
-@supports not (position: sticky) {
-  .hero {
-    position: relative;
-  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
