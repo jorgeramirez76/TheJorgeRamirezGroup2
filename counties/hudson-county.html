@@ -66,35 +66,35 @@
 
     <style>
         .county-page { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .county-hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; margin-bottom: 60px; }
+        .county-hero { text-align: center; padding: 80px 20px 60px; background: #C41230; color: white; border-radius: 12px; margin-bottom: 60px; }
         .county-hero h1 { font-size: 2.6em; margin-bottom: 20px; line-height: 1.2; }
         .county-hero p { font-size: 1.3em; max-width: 800px; margin: 0 auto 30px; line-height: 1.6; opacity: 0.95; }
         .county-hero .hero-ctas { margin-top: 35px; }
         .county-hero .hero-ctas a { display: inline-block; padding: 18px 36px; border-radius: 8px; font-size: 1.15em; font-weight: 600; text-decoration: none; margin: 10px; transition: all 0.3s ease; }
-        .county-hero .btn-white { background: white; color: #667eea; }
+        .county-hero .btn-white { background: white; color: #2C2C2C; }
         .county-hero .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .county-hero .btn-outline { background: transparent; color: white; border: 2px solid white; }
-        .county-hero .btn-outline:hover { background: white; color: #667eea; }
+        .county-hero .btn-outline:hover { background: white; color: #2C2C2C; }
         .towns-section { margin: 60px 0; text-align: center; }
         .towns-section h2 { font-size: 2.2em; color: #1a1a1a; margin-bottom: 15px; }
         .towns-section > p { color: #666; font-size: 1.15em; max-width: 800px; margin: 0 auto 40px; line-height: 1.7; }
         .towns-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
-        .towns-grid a { padding: 16px 20px; background: white; color: #667eea; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; text-align: center; }
-        .towns-grid a:hover { border-color: #667eea; background: #667eea; color: white; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3); }
+        .towns-grid a { padding: 16px 20px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; text-align: center; }
+        .towns-grid a:hover { border-color: #2C2C2C; background: #2C2C2C; color: white; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(44, 44, 44, 0.3); }
         .selling-section { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin: 60px 0; padding: 50px 40px; background: #f8f9fa; border-radius: 12px; }
         .selling-section h2 { font-size: 2em; color: #1a1a1a; margin-bottom: 20px; }
         .selling-section p { color: #555; line-height: 1.7; font-size: 1.05em; margin-bottom: 15px; }
         .selling-section .credential-list { list-style: none; padding: 0; margin-top: 20px; }
         .selling-section .credential-list li { padding: 10px 0; padding-left: 30px; position: relative; color: #333; font-weight: 500; }
-        .selling-section .credential-list li:before { content: "\2713"; position: absolute; left: 0; color: #667eea; font-weight: bold; }
+        .selling-section .credential-list li:before { content: "\2713"; position: absolute; left: 0; color: #2C2C2C; font-weight: bold; }
         .selling-section .cta-buttons { margin-top: 25px; }
         .selling-section .cta-buttons a { display: inline-block; padding: 15px 30px; border-radius: 8px; font-weight: 600; text-decoration: none; margin-right: 10px; margin-bottom: 10px; transition: all 0.3s ease; }
-        .btn-purple { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
-        .btn-purple:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+        .btn-purple { background: #C41230; color: white; }
+        .btn-purple:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(44, 44, 44, 0.4); }
         .buying-section { margin: 60px 0; padding: 50px 40px; background: white; border-radius: 12px; border: 2px solid #e0e0e0; }
         .buying-section h2 { font-size: 2em; color: #1a1a1a; margin-bottom: 20px; }
         .buying-section p { color: #555; line-height: 1.7; font-size: 1.05em; margin-bottom: 15px; }
-        .why-jorge-section { margin: 60px 0; padding: 60px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white; }
+        .why-jorge-section { margin: 60px 0; padding: 60px 40px; background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%); border-radius: 12px; color: white; }
         .why-jorge-section h2 { text-align: center; font-size: 2.2em; margin-bottom: 15px; }
         .why-jorge-section > p { text-align: center; font-size: 1.15em; max-width: 800px; margin: 0 auto 40px; opacity: 0.95; line-height: 1.7; }
         .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
@@ -114,15 +114,15 @@
         .mid-cta h2 { font-size: 2em; margin-bottom: 15px; }
         .mid-cta p { font-size: 1.15em; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; line-height: 1.6; }
         .mid-cta a { display: inline-block; padding: 18px 36px; border-radius: 8px; font-size: 1.15em; font-weight: 600; text-decoration: none; margin: 10px; transition: all 0.3s ease; }
-        .mid-cta .btn-purple { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
-        .mid-cta .btn-purple:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+        .mid-cta .btn-purple { background: #C41230; color: white; }
+        .mid-cta .btn-purple:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(44, 44, 44, 0.4); }
         .mid-cta .btn-border { background: transparent; color: white; border: 2px solid white; }
         .mid-cta .btn-border:hover { background: white; color: #333; }
         .internal-links { margin: 60px 0; padding: 40px; background: #f8f9fa; border-radius: 12px; text-align: center; }
         .internal-links h3 { font-size: 1.5em; color: #333; margin-bottom: 25px; }
         .internal-links .link-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .internal-links .link-grid a { padding: 12px 25px; background: white; color: #667eea; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; }
-        .internal-links .link-grid a:hover { border-color: #667eea; background: #667eea; color: white; }
+        .internal-links .link-grid a { padding: 12px 25px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; }
+        .internal-links .link-grid a:hover { border-color: #2C2C2C; background: #2C2C2C; color: white; }
         @media (max-width: 768px) {
             .county-hero h1 { font-size: 1.8em; }
             .county-hero p { font-size: 1.1em; }
@@ -213,7 +213,7 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="../index.html#buy">Buy</a></li>
-                <li><a href="../sell-your-home.html" style="color: #667eea; font-weight: 600;">Sell</a></li>
+                <li><a href="../sell-your-home.html" style="color: #2C2C2C; font-weight: 600;">Sell</a></li>
                 <li><a href="../how-we-sell-your-home.html">How We Sell</a></li>
                 <li><a href="../index.html#communities">Communities</a></li>
                 <li><a href="../blog/">Blog</a></li>

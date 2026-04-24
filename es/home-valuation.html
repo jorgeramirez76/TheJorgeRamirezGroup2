@@ -68,21 +68,21 @@
 
     <style>
         .valuation-page { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .val-hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; margin-bottom: 60px; }
+        .val-hero { text-align: center; padding: 80px 20px 60px; background: #C41230; color: white; border-radius: 12px; margin-bottom: 60px; }
         .val-hero h1 { font-size: 2.6em; margin-bottom: 20px; line-height: 1.2; }
         .val-hero p { font-size: 1.3em; max-width: 800px; margin: 0 auto 30px; line-height: 1.6; opacity: 0.95; }
         .val-hero .hero-ctas { margin-top: 35px; }
         .val-hero .hero-ctas a { display: inline-block; padding: 18px 36px; border-radius: 8px; font-size: 1.15em; font-weight: 600; text-decoration: none; margin: 10px; transition: all 0.3s ease; }
-        .val-hero .btn-white { background: white; color: #667eea; }
+        .val-hero .btn-white { background: white; color: #2C2C2C; }
         .val-hero .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .val-hero .btn-outline { background: transparent; color: white; border: 2px solid white; }
-        .val-hero .btn-outline:hover { background: white; color: #667eea; }
+        .val-hero .btn-outline:hover { background: white; color: #2C2C2C; }
         .why-know { margin: 60px 0; }
         .why-know h2 { font-size: 2.2em; color: #1a1a1a; text-align: center; margin-bottom: 15px; }
         .why-know > p { color: #666; font-size: 1.15em; max-width: 800px; margin: 0 auto 40px; line-height: 1.7; text-align: center; }
         .reason-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .reason-card { background: white; border: 2px solid #e0e0e0; border-radius: 12px; padding: 35px; transition: all 0.3s ease; }
-        .reason-card:hover { border-color: #667eea; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15); }
+        .reason-card:hover { border-color: #2C2C2C; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(44, 44, 44, 0.15); }
         .reason-card h3 { color: #333; font-size: 1.25em; margin-bottom: 12px; }
         .reason-card p { color: #666; line-height: 1.7; }
         .cma-section { margin: 60px 0; padding: 50px 40px; background: #f8f9fa; border-radius: 12px; }
@@ -99,11 +99,11 @@
         .cma-card ul li { padding: 10px 0; padding-left: 30px; position: relative; color: #555; line-height: 1.6; }
         .cma-card.zillow ul li:before { content: "\2717"; position: absolute; left: 0; color: #e03131; font-weight: bold; }
         .cma-card.cma ul li:before { content: "\2713"; position: absolute; left: 0; color: #2f9e44; font-weight: bold; }
-        .tool-section { margin: 60px 0; padding: 60px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white; text-align: center; }
+        .tool-section { margin: 60px 0; padding: 60px 40px; background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%); border-radius: 12px; color: white; text-align: center; }
         .tool-section h2 { font-size: 2.2em; margin-bottom: 15px; }
         .tool-section p { font-size: 1.15em; max-width: 800px; margin: 0 auto 15px; line-height: 1.7; opacity: 0.95; }
         .tool-section .tool-cta { margin-top: 35px; }
-        .tool-section .tool-cta a { display: inline-block; padding: 20px 45px; background: white; color: #667eea; text-decoration: none; border-radius: 8px; font-size: 1.3em; font-weight: 700; transition: all 0.3s ease; }
+        .tool-section .tool-cta a { display: inline-block; padding: 20px 45px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-size: 1.3em; font-weight: 700; transition: all 0.3s ease; }
         .tool-section .tool-cta a:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .tool-section .subtext { margin-top: 20px; font-size: 0.95em; opacity: 0.8; }
         .how-it-works { margin: 60px 0; }
@@ -111,8 +111,8 @@
         .how-it-works > p { color: #666; font-size: 1.1em; max-width: 800px; margin: 0 auto 40px; line-height: 1.7; text-align: center; }
         .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .how-step { background: white; border: 2px solid #e0e0e0; border-radius: 12px; padding: 30px; text-align: center; transition: all 0.3s ease; }
-        .how-step:hover { border-color: #667eea; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15); }
-        .how-step .step-num { display: inline-block; width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; line-height: 50px; font-size: 1.4em; font-weight: bold; margin-bottom: 15px; }
+        .how-step:hover { border-color: #2C2C2C; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(44, 44, 44, 0.15); }
+        .how-step .step-num { display: inline-block; width: 50px; height: 50px; background: #C41230; color: white; border-radius: 50%; line-height: 50px; font-size: 1.4em; font-weight: bold; margin-bottom: 15px; }
         .how-step h3 { color: #333; font-size: 1.2em; margin-bottom: 10px; }
         .how-step p { color: #666; line-height: 1.6; }
         .faq-section { margin: 60px 0; }
@@ -124,15 +124,15 @@
         .mid-cta h2 { font-size: 2em; margin-bottom: 15px; }
         .mid-cta p { font-size: 1.15em; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; line-height: 1.6; }
         .mid-cta a { display: inline-block; padding: 18px 36px; border-radius: 8px; font-size: 1.15em; font-weight: 600; text-decoration: none; margin: 10px; transition: all 0.3s ease; }
-        .mid-cta .btn-purple { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
-        .mid-cta .btn-purple:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+        .mid-cta .btn-purple { background: #C41230; color: white; }
+        .mid-cta .btn-purple:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(44, 44, 44, 0.4); }
         .mid-cta .btn-border { background: transparent; color: white; border: 2px solid white; }
         .mid-cta .btn-border:hover { background: white; color: #333; }
         .internal-links { margin: 60px 0; padding: 40px; background: #f8f9fa; border-radius: 12px; text-align: center; }
         .internal-links h3 { font-size: 1.5em; color: #333; margin-bottom: 25px; }
         .internal-links .link-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .internal-links .link-grid a { padding: 12px 25px; background: white; color: #667eea; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; }
-        .internal-links .link-grid a:hover { border-color: #667eea; background: #667eea; color: white; }
+        .internal-links .link-grid a { padding: 12px 25px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; }
+        .internal-links .link-grid a:hover { border-color: #2C2C2C; background: #2C2C2C; color: white; }
         @media (max-width: 768px) {
             .val-hero h1 { font-size: 1.8em; }
             .val-hero p { font-size: 1.1em; }
@@ -244,7 +244,7 @@
                 <li><a href="blog/">Blog</a></li>
                 <li><a href="index.html#about">Acerca de</a></li>
                 <li><a href="index.html#faq">FAQ</a></li>
-                <li><a href="index.html#contact" class="nav-btn-consultation">Consultation</a></li>
+                <li><a href="home-valuation.html" class="nav-btn-consultation btn-flip" data-flip="Get My Home's Value &rarr;"><span class="flip-front">Free Home Valuation</span><span class="flip-back">Get My Home's Value &rarr;</span></a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenúBtn">
                 <span></span>
@@ -409,7 +409,7 @@
 
             <div class="faq-item">
                 <h3>How long does it take to get my home's value?</h3>
-                <p>The online tool at <a href="https://value.thejorgeramirezgroup.com" style="color: #667eea;" target="_blank" rel="noopener">value.thejorgeramirezgroup.com</a> delivers an instant estimate in under 60 seconds. For a full CMA with detailed comparable analysis and Jorge's investor-level insights, allow 24-48 hours after he has your property details.</p>
+                <p>The online tool at <a href="https://value.thejorgeramirezgroup.com" style="color: #2C2C2C;" target="_blank" rel="noopener">value.thejorgeramirezgroup.com</a> delivers an instant estimate in under 60 seconds. For a full CMA with detailed comparable analysis and Jorge's investor-level insights, allow 24-48 hours after he has your property details.</p>
             </div>
 
             <div class="faq-item">
@@ -419,7 +419,7 @@
 
             <div class="faq-item">
                 <h3>What NJ areas does the home valuation cover?</h3>
-                <p>Jorge provides home valuations across 138 communities in Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. He has deep expertise in NYC commuter towns on the Midtown Direct line — Summit, Millburn, Short Hills, Chatham, Madison, Maplewood, South Orange, Westfield, Cranford, and dozens more. <a href="index.html#communities" style="color: #667eea;">See all 138 communities.</a></p>
+                <p>Jorge provides home valuations across 138 communities in Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. He has deep expertise in NYC commuter towns on the Midtown Direct line — Summit, Millburn, Short Hills, Chatham, Madison, Maplewood, South Orange, Westfield, Cranford, and dozens more. <a href="index.html#communities" style="color: #2C2C2C;">See all 138 communities.</a></p>
             </div>
         </div>
 

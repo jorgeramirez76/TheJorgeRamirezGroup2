@@ -68,44 +68,44 @@
 
     <style>
         .seller-page { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .seller-hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; margin-bottom: 60px; }
+        .seller-hero { text-align: center; padding: 80px 20px 60px; background: #C41230; color: white; border-radius: 12px; margin-bottom: 60px; }
         .seller-hero h1 { font-size: 2.6em; margin-bottom: 20px; line-height: 1.2; }
         .seller-hero p { font-size: 1.3em; max-width: 800px; margin: 0 auto 30px; line-height: 1.6; opacity: 0.95; }
         .seller-hero .hero-ctas { margin-top: 35px; }
         .seller-hero .hero-ctas a { display: inline-block; padding: 18px 36px; border-radius: 8px; font-size: 1.15em; font-weight: 600; text-decoration: none; margin: 10px; transition: all 0.3s ease; }
-        .seller-hero .btn-white { background: white; color: #667eea; }
+        .seller-hero .btn-white { background: white; color: #2C2C2C; }
         .seller-hero .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .seller-hero .btn-outline { background: transparent; color: white; border: 2px solid white; }
-        .seller-hero .btn-outline:hover { background: white; color: #667eea; }
+        .seller-hero .btn-outline:hover { background: white; color: #2C2C2C; }
         .why-jorge-sells { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin: 60px 0; padding: 50px 40px; background: #f8f9fa; border-radius: 12px; }
         .why-jorge-sells h2 { font-size: 2em; color: #1a1a1a; margin-bottom: 20px; }
         .why-jorge-sells p { color: #555; line-height: 1.7; font-size: 1.05em; margin-bottom: 15px; }
         .why-jorge-sells .credential-list { list-style: none; padding: 0; margin-top: 20px; }
         .why-jorge-sells .credential-list li { padding: 10px 0; padding-left: 30px; position: relative; color: #333; font-weight: 500; }
-        .why-jorge-sells .credential-list li:before { content: "\2713"; position: absolute; left: 0; color: #667eea; font-weight: bold; }
+        .why-jorge-sells .credential-list li:before { content: "\2713"; position: absolute; left: 0; color: #2C2C2C; font-weight: bold; }
         .pricing-section { margin: 60px 0; text-align: center; }
         .pricing-section h2 { font-size: 2.2em; color: #1a1a1a; margin-bottom: 15px; }
         .pricing-section > p { color: #666; font-size: 1.15em; max-width: 800px; margin: 0 auto 40px; line-height: 1.7; }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .pricing-card { background: white; border: 2px solid #e0e0e0; border-radius: 12px; padding: 35px; text-align: left; transition: all 0.3s ease; }
-        .pricing-card:hover { border-color: #667eea; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15); }
+        .pricing-card:hover { border-color: #2C2C2C; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(44, 44, 44, 0.15); }
         .pricing-card h3 { color: #333; font-size: 1.3em; margin-bottom: 12px; }
         .pricing-card p { color: #666; line-height: 1.7; }
-        .process-section { margin: 60px 0; padding: 60px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white; }
+        .process-section { margin: 60px 0; padding: 60px 40px; background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%); border-radius: 12px; color: white; }
         .process-section h2 { text-align: center; font-size: 2.2em; margin-bottom: 15px; }
         .process-section > p { text-align: center; font-size: 1.15em; max-width: 800px; margin: 0 auto 50px; opacity: 0.95; line-height: 1.7; }
         .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .process-step { background: rgba(255,255,255,0.12); border-radius: 12px; padding: 30px; text-align: center; transition: all 0.3s ease; }
         .process-step:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
-        .process-step .step-num { display: inline-block; width: 45px; height: 45px; background: white; color: #667eea; border-radius: 50%; line-height: 45px; font-size: 1.3em; font-weight: bold; margin-bottom: 15px; }
+        .process-step .step-num { display: inline-block; width: 45px; height: 45px; background: white; color: #2C2C2C; border-radius: 50%; line-height: 45px; font-size: 1.3em; font-weight: bold; margin-bottom: 15px; }
         .process-step h3 { font-size: 1.2em; margin-bottom: 10px; }
         .process-step p { opacity: 0.9; line-height: 1.6; font-size: 0.95em; }
         .ai-section { margin: 60px 0; padding: 50px 40px; background: #f8f9fa; border-radius: 12px; }
         .ai-section h2 { font-size: 2em; color: #1a1a1a; margin-bottom: 15px; text-align: center; }
         .ai-section > p { color: #666; font-size: 1.1em; max-width: 800px; margin: 0 auto 30px; line-height: 1.7; text-align: center; }
         .ai-section .learn-more { text-align: center; margin-top: 30px; }
-        .ai-section .learn-more a { display: inline-block; padding: 15px 35px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.1em; transition: all 0.3s ease; }
-        .ai-section .learn-more a:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+        .ai-section .learn-more a { display: inline-block; padding: 15px 35px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.1em; transition: all 0.3s ease; }
+        .ai-section .learn-more a:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(44, 44, 44, 0.4); }
         .faq-section { margin: 60px 0; }
         .faq-section h2 { text-align: center; font-size: 2.2em; color: #1a1a1a; margin-bottom: 40px; }
         .faq-item { margin-bottom: 20px; padding: 25px 30px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
@@ -115,15 +115,15 @@
         .mid-cta h2 { font-size: 2em; margin-bottom: 15px; }
         .mid-cta p { font-size: 1.15em; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; line-height: 1.6; }
         .mid-cta a { display: inline-block; padding: 18px 36px; border-radius: 8px; font-size: 1.15em; font-weight: 600; text-decoration: none; margin: 10px; transition: all 0.3s ease; }
-        .mid-cta .btn-purple { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
-        .mid-cta .btn-purple:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+        .mid-cta .btn-purple { background: #C41230; color: white; }
+        .mid-cta .btn-purple:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(44, 44, 44, 0.4); }
         .mid-cta .btn-border { background: transparent; color: white; border: 2px solid white; }
         .mid-cta .btn-border:hover { background: white; color: #333; }
         .internal-links { margin: 60px 0; padding: 40px; background: #f8f9fa; border-radius: 12px; text-align: center; }
         .internal-links h3 { font-size: 1.5em; color: #333; margin-bottom: 25px; }
         .internal-links .link-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .internal-links .link-grid a { padding: 12px 25px; background: white; color: #667eea; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; }
-        .internal-links .link-grid a:hover { border-color: #667eea; background: #667eea; color: white; }
+        .internal-links .link-grid a { padding: 12px 25px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; }
+        .internal-links .link-grid a:hover { border-color: #2C2C2C; background: #2C2C2C; color: white; }
         @media (max-width: 768px) {
             .seller-hero h1 { font-size: 1.8em; }
             .seller-hero p { font-size: 1.1em; }
@@ -230,13 +230,13 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html#buy">Buy</a></li>
-                <li><a href="sell-your-home.html" style="color: #667eea; font-weight: 600;">Sell</a></li>
+                <li><a href="sell-your-home.html" style="color: #2C2C2C; font-weight: 600;">Sell</a></li>
                 <li><a href="how-we-sell-your-home.html">How We Sell</a></li>
                 <li><a href="index.html#communities">Communities</a></li>
                 <li><a href="blog/">Blog</a></li>
                 <li><a href="index.html#about">Acerca de</a></li>
                 <li><a href="index.html#faq">FAQ</a></li>
-                <li><a href="index.html#contact" class="nav-btn-consultation">Consultation</a></li>
+                <li><a href="home-valuation.html" class="nav-btn-consultation btn-flip" data-flip="Get My Home's Value &rarr;"><span class="flip-front">Free Home Valuation</span><span class="flip-back">Get My Home's Value &rarr;</span></a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenúBtn">
                 <span></span>
@@ -390,7 +390,7 @@
 
             <div class="faq-item">
                 <h3>What is AI-powered buyer targeting and how does it help sell my home?</h3>
-                <p>Instead of listing your home and hoping a buyer finds it, Jorge's system uses AI and machine learning to identify people actively searching for homes like yours — by location, price, and features. Your listing is then delivered to those buyers through targeted YouTube video ads, Facebook retargeting, and automated text and email follow-up. The result is more qualified showings, faster sales, and stronger offers. <a href="how-we-sell-your-home.html" style="color: #667eea;">See the full system here.</a></p>
+                <p>Instead of listing your home and hoping a buyer finds it, Jorge's system uses AI and machine learning to identify people actively searching for homes like yours — by location, price, and features. Your listing is then delivered to those buyers through targeted YouTube video ads, Facebook retargeting, and automated text and email follow-up. The result is more qualified showings, faster sales, and stronger offers. <a href="how-we-sell-your-home.html" style="color: #2C2C2C;">See the full system here.</a></p>
             </div>
 
             <div class="faq-item">
@@ -405,7 +405,7 @@
 
             <div class="faq-item">
                 <h3>Which NJ areas do you serve?</h3>
-                <p>Jorge serves 138 communities across Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. He specializes in NYC commuter towns on the Midtown Direct line — Summit, Millburn, Short Hills, Chatham, Madison, Maplewood, South Orange, Westfield, Cranford, and dozens more. <a href="index.html#communities" style="color: #667eea;">See all 138 communities here.</a></p>
+                <p>Jorge serves 138 communities across Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. He specializes in NYC commuter towns on the Midtown Direct line — Summit, Millburn, Short Hills, Chatham, Madison, Maplewood, South Orange, Westfield, Cranford, and dozens more. <a href="index.html#communities" style="color: #2C2C2C;">See all 138 communities here.</a></p>
             </div>
         </div>
 

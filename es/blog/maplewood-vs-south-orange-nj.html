@@ -68,17 +68,17 @@
 
     <style>
         .blog-article { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        .blog-hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; margin-bottom: 50px; }
+        .blog-hero { text-align: center; padding: 80px 20px 60px; background: #C41230; color: white; border-radius: 12px; margin-bottom: 50px; }
         .blog-hero h1 { font-size: 2.4em; margin-bottom: 20px; line-height: 1.2; }
         .blog-hero p { font-size: 1.2em; max-width: 750px; margin: 0 auto 25px; line-height: 1.6; opacity: 0.95; }
         .blog-hero .hero-ctas { margin-top: 30px; }
         .blog-hero .hero-ctas a { display: inline-block; padding: 16px 32px; border-radius: 8px; font-size: 1.1em; font-weight: 600; text-decoration: none; margin: 8px; transition: all 0.3s ease; }
-        .blog-hero .btn-white { background: white; color: #667eea; }
+        .blog-hero .btn-white { background: white; color: #2C2C2C; }
         .blog-hero .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .blog-hero .btn-outline { background: transparent; color: white; border: 2px solid white; }
-        .blog-hero .btn-outline:hover { background: white; color: #667eea; }
+        .blog-hero .btn-outline:hover { background: white; color: #2C2C2C; }
         .breadcrumb { padding: 15px 0; font-size: 0.9em; color: #666; max-width: 900px; margin: 0 auto; }
-        .breadcrumb a { color: #667eea; text-decoration: none; }
+        .breadcrumb a { color: #2C2C2C; text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
         .blog-content h2 { font-size: 1.9em; color: #1a1a1a; margin: 50px 0 20px; padding-top: 10px; border-top: 2px solid #f0f0f0; }
         .blog-content h2:first-of-type { border-top: none; }
@@ -86,29 +86,29 @@
         .blog-content p { color: #444; line-height: 1.8; margin-bottom: 18px; font-size: 1.05em; }
         .blog-content ul, .blog-content ol { color: #444; line-height: 1.8; margin-bottom: 20px; padding-left: 25px; }
         .blog-content li { margin-bottom: 8px; }
-        .blog-content a { color: #667eea; text-decoration: none; font-weight: 500; }
+        .blog-content a { color: #2C2C2C; text-decoration: none; font-weight: 500; }
         .blog-content a:hover { text-decoration: underline; }
         .blog-content strong { color: #1a1a1a; }
         .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; }
         .comparison-table th, .comparison-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        .comparison-table th { background: #667eea; color: white; font-weight: 600; }
+        .comparison-table th { background: #2C2C2C; color: white; font-weight: 600; }
         .comparison-table tr:nth-child(even) { background: #f8f9fa; }
         .comparison-table tr:hover { background: #eef0ff; }
         .vs-section { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 30px 0; }
         .vs-card { background: white; border: 2px solid #e0e0e0; border-radius: 12px; padding: 30px; transition: all 0.3s ease; }
-        .vs-card:hover { border-color: #667eea; box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1); }
-        .vs-card h4 { color: #667eea; font-size: 1.2em; margin-bottom: 15px; }
+        .vs-card:hover { border-color: #2C2C2C; box-shadow: 0 5px 20px rgba(44, 44, 44, 0.1); }
+        .vs-card h4 { color: #2C2C2C; font-size: 1.2em; margin-bottom: 15px; }
         .vs-card p { color: #555; line-height: 1.7; font-size: 0.98em; }
         .vs-card ul { padding-left: 20px; color: #555; }
-        .info-box { background: #f8f9fa; border-left: 4px solid #667eea; padding: 25px 30px; border-radius: 0 8px 8px 0; margin: 30px 0; }
+        .info-box { background: #f8f9fa; border-left: 4px solid #2C2C2C; padding: 25px 30px; border-radius: 0 8px 8px 0; margin: 30px 0; }
         .info-box h4 { color: #333; margin-bottom: 10px; font-size: 1.15em; }
         .info-box p { margin-bottom: 8px; }
         .mid-cta { background: #333; color: white; padding: 45px 35px; border-radius: 12px; text-align: center; margin: 50px 0; }
         .mid-cta h2 { font-size: 1.8em; margin-bottom: 15px; border: none; padding: 0; color: white; }
         .mid-cta p { font-size: 1.1em; max-width: 650px; margin: 0 auto 25px; opacity: 0.9; line-height: 1.6; color: white; }
         .mid-cta a { display: inline-block; padding: 16px 32px; border-radius: 8px; font-size: 1.1em; font-weight: 600; text-decoration: none; margin: 8px; transition: all 0.3s ease; }
-        .mid-cta .btn-purple { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
-        .mid-cta .btn-purple:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+        .mid-cta .btn-purple { background: #C41230; color: white; }
+        .mid-cta .btn-purple:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(44, 44, 44, 0.4); }
         .mid-cta .btn-border { background: transparent; color: white; border: 2px solid white; }
         .mid-cta .btn-border:hover { background: white; color: #333; }
         .faq-section { margin: 50px 0; }
@@ -119,8 +119,8 @@
         .internal-links { margin: 50px 0; padding: 35px; background: #f8f9fa; border-radius: 12px; text-align: center; }
         .internal-links h3 { font-size: 1.4em; color: #333; margin-bottom: 20px; }
         .internal-links .link-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-        .internal-links .link-grid a { padding: 10px 22px; background: white; color: #667eea; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; font-size: 0.95em; }
-        .internal-links .link-grid a:hover { border-color: #667eea; background: #667eea; color: white; }
+        .internal-links .link-grid a { padding: 10px 22px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; font-size: 0.95em; }
+        .internal-links .link-grid a:hover { border-color: #2C2C2C; background: #2C2C2C; color: white; }
         @media (max-width: 768px) {
             .blog-hero h1 { font-size: 1.7em; }
             .blog-hero p { font-size: 1.05em; }
@@ -256,7 +256,7 @@
                 <li><a href="../sell-your-home.html">Sell</a></li>
                 <li><a href="../how-we-sell-your-home.html">How We Sell</a></li>
                 <li><a href="../index.html#communities">Communities</a></li>
-                <li><a href="./" style="color: #667eea; font-weight: 600;">Blog</a></li>
+                <li><a href="./" style="color: #2C2C2C; font-weight: 600;">Blog</a></li>
                 <li><a href="../index.html#about">Acerca de</a></li>
                 <li><a href="../index.html#faq">FAQ</a></li>
                 <li><a href="../index.html#contact" class="nav-btn-consultation">Consultation</a></li>
@@ -521,7 +521,7 @@
             <div class="info-box">
                 <h4>Own a Inicio in Maplewood or South Orange?</h4>
                 <p>If you are thinking about selling, Jorge can prepare a detailed Comparative Market Analysis showing exactly what your home is worth in today's market. Whether you are <a href="downsizing-your-nj-home.html">downsizing</a>, relocating, or upgrading, Jorge's <a href="../how-we-sell-your-home.html">AI-powered marketing system</a> and data-driven pricing strategy are designed to get you top dollar.</p>
-                <p><a href="https://value.thejorgeramirezgroup.com" target="_blank" rel="noopener" style="color: #667eea; font-weight: 600;">Get your free home valuation here.</a></p>
+                <p><a href="https://value.thejorgeramirezgroup.com" target="_blank" rel="noopener" style="color: #2C2C2C; font-weight: 600;">Get your free home valuation here.</a></p>
             </div>
 
             <h2>For Buyers: Which Town Fits Which Lifestyle?</h2>
@@ -716,15 +716,15 @@
     <div style="max-width:900px; margin:0 auto;">
       <h3 style="font-size:1.2em; margin-bottom:12px;">Related Recursos</h3>
       <ul style="list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px;">
-        <li><a href="../towns/summit.html" style="color:#667eea;">Summit NJ Bienes Raíces</a></li>
-        <li><a href="../towns/westfield.html" style="color:#667eea;">Westfield NJ Bienes Raíces</a></li>
-        <li><a href="../towns/chatham.html" style="color:#667eea;">Chatham NJ Bienes Raíces</a></li>
-        <li><a href="../towns/montclair.html" style="color:#667eea;">Montclair NJ Bienes Raíces</a></li>
-        <li><a href="../towns/morristown.html" style="color:#667eea;">Morristown NJ Bienes Raíces</a></li>
+        <li><a href="../towns/summit.html" style="color:#2C2C2C;">Summit NJ Bienes Raíces</a></li>
+        <li><a href="../towns/westfield.html" style="color:#2C2C2C;">Westfield NJ Bienes Raíces</a></li>
+        <li><a href="../towns/chatham.html" style="color:#2C2C2C;">Chatham NJ Bienes Raíces</a></li>
+        <li><a href="../towns/montclair.html" style="color:#2C2C2C;">Montclair NJ Bienes Raíces</a></li>
+        <li><a href="../towns/morristown.html" style="color:#2C2C2C;">Morristown NJ Bienes Raíces</a></li>
       </ul>
       <p>
-        <a href="../sell-your-home.html" style="color:#667eea; font-weight:600; margin-right:16px;">→ Sell Your NJ Inicio</a>
-        <a href="../home-valuation.html" style="color:#667eea; font-weight:600;">→ Free Valoración de Casa</a>
+        <a href="../sell-your-home.html" style="color:#2C2C2C; font-weight:600; margin-right:16px;">→ Sell Your NJ Inicio</a>
+        <a href="../home-valuation.html" style="color:#2C2C2C; font-weight:600;">→ Free Valoración de Casa</a>
       </p>
     </div>
   </section>
