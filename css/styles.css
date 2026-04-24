@@ -2161,3 +2161,61 @@ section { scroll-margin-top: 90px; }
   .listings-more-stat:last-of-type { border-bottom: none; }
   .lms-num { font-size: 1.9rem; }
 }
+
+/* ─── Hero "NJ commuter map" pill ─────────────────────────── */
+.hero-train-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+.hero-train-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px 10px 16px;
+  color: #FAFAF8;
+  font: 500 13px/1 'Montserrat', sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgba(26, 26, 26, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(184, 150, 46, 0.55);
+  border-radius: 999px;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.hero-train-pill:hover,
+.hero-train-pill:focus-visible {
+  background: rgba(26, 26, 26, 0.55);
+  border-color: rgba(184, 150, 46, 0.95);
+  transform: translateY(-1px);
+}
+.htp-icon {
+  color: #B8962E;
+  flex: 0 0 auto;
+}
+.htp-text {
+  white-space: nowrap;
+}
+.htp-arrow {
+  color: #B8962E;
+  font-size: 15px;
+  transition: transform 0.25s ease;
+}
+.hero-train-pill:hover .htp-arrow,
+.hero-train-pill:focus-visible .htp-arrow {
+  transform: translateX(3px);
+}
+@media (max-width: 520px) {
+  .hero-train-pill {
+    padding: 10px 16px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+  .htp-text {
+    white-space: normal;
+    max-width: 220px;
+    line-height: 1.3;
+  }
+}
