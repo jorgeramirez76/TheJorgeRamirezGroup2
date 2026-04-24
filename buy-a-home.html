@@ -66,22 +66,22 @@
 
     <style>
         .buyer-page { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .buyer-hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #2d8f6f 0%, #1a5c45 100%); color: white; border-radius: 12px; margin-bottom: 60px; }
+        .buyer-hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #2C2C2C 0%, #1a5c45 100%); color: white; border-radius: 12px; margin-bottom: 60px; }
         .buyer-hero h1 { font-size: 2.6em; margin-bottom: 20px; line-height: 1.2; }
         .buyer-hero p { font-size: 1.3em; max-width: 800px; margin: 0 auto 30px; line-height: 1.6; opacity: 0.95; }
         .buyer-hero .hero-ctas { margin-top: 35px; }
         .buyer-hero .hero-ctas a { display: inline-block; padding: 18px 36px; border-radius: 8px; font-size: 1.15em; font-weight: 600; text-decoration: none; margin: 10px; transition: all 0.3s ease; }
-        .buyer-hero .btn-white { background: white; color: #2d8f6f; }
+        .buyer-hero .btn-white { background: white; color: #2C2C2C; }
         .buyer-hero .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .buyer-hero .btn-outline { background: transparent; color: white; border: 2px solid white; }
-        .buyer-hero .btn-outline:hover { background: white; color: #2d8f6f; }
+        .buyer-hero .btn-outline:hover { background: white; color: #2C2C2C; }
 
         .nj-different { margin: 60px 0; text-align: center; }
         .nj-different h2 { font-size: 2.2em; color: #1a1a1a; margin-bottom: 15px; }
         .nj-different > p { color: #666; font-size: 1.15em; max-width: 800px; margin: 0 auto 40px; line-height: 1.7; }
         .nj-different-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .nj-different-card { background: white; border: 2px solid #e0e0e0; border-radius: 12px; padding: 35px; text-align: left; transition: all 0.3s ease; }
-        .nj-different-card:hover { border-color: #2d8f6f; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(45, 143, 111, 0.15); }
+        .nj-different-card:hover { border-color: #2C2C2C; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(45, 143, 111, 0.15); }
         .nj-different-card h3 { color: #333; font-size: 1.3em; margin-bottom: 12px; }
         .nj-different-card p { color: #666; line-height: 1.7; }
 
@@ -90,7 +90,7 @@
         .who-jorge-helps > p { color: #666; font-size: 1.1em; max-width: 800px; margin: 0 auto 40px; line-height: 1.7; text-align: center; }
         .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .who-card { background: white; border-radius: 12px; padding: 30px; border: 2px solid #e0e0e0; transition: all 0.3s ease; }
-        .who-card:hover { border-color: #2d8f6f; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(45, 143, 111, 0.15); }
+        .who-card:hover { border-color: #2C2C2C; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(45, 143, 111, 0.15); }
         .who-card .who-icon { font-size: 2.2em; margin-bottom: 15px; }
         .who-card h3 { color: #333; font-size: 1.2em; margin-bottom: 10px; }
         .who-card p { color: #666; line-height: 1.7; font-size: 0.95em; }
@@ -100,24 +100,24 @@
         .flip-advantage p { color: #555; line-height: 1.7; font-size: 1.05em; margin-bottom: 15px; }
         .flip-advantage .advantage-list { list-style: none; padding: 0; margin-top: 20px; }
         .flip-advantage .advantage-list li { padding: 10px 0; padding-left: 30px; position: relative; color: #333; font-weight: 500; }
-        .flip-advantage .advantage-list li:before { content: "\2713"; position: absolute; left: 0; color: #2d8f6f; font-weight: bold; }
+        .flip-advantage .advantage-list li:before { content: "\2713"; position: absolute; left: 0; color: #2C2C2C; font-weight: bold; }
 
         .communities-overview { margin: 60px 0; text-align: center; }
         .communities-overview h2 { font-size: 2.2em; color: #1a1a1a; margin-bottom: 15px; }
         .communities-overview > p { color: #666; font-size: 1.15em; max-width: 800px; margin: 0 auto 40px; line-height: 1.7; }
         .county-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
         .county-card { background: white; border: 2px solid #e0e0e0; border-radius: 12px; padding: 25px; transition: all 0.3s ease; text-decoration: none; color: #333; }
-        .county-card:hover { border-color: #2d8f6f; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(45, 143, 111, 0.15); }
-        .county-card h3 { font-size: 1.15em; color: #2d8f6f; margin-bottom: 8px; }
+        .county-card:hover { border-color: #2C2C2C; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(45, 143, 111, 0.15); }
+        .county-card h3 { font-size: 1.15em; color: #2C2C2C; margin-bottom: 8px; }
         .county-card p { color: #666; font-size: 0.95em; line-height: 1.5; }
 
-        .buying-process { margin: 60px 0; padding: 60px 40px; background: linear-gradient(135deg, #2d8f6f 0%, #1a5c45 100%); border-radius: 12px; color: white; }
+        .buying-process { margin: 60px 0; padding: 60px 40px; background: linear-gradient(135deg, #2C2C2C 0%, #1a5c45 100%); border-radius: 12px; color: white; }
         .buying-process h2 { text-align: center; font-size: 2.2em; margin-bottom: 15px; }
         .buying-process > p { text-align: center; font-size: 1.15em; max-width: 800px; margin: 0 auto 50px; opacity: 0.95; line-height: 1.7; }
         .buying-process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .buying-step { background: rgba(255,255,255,0.12); border-radius: 12px; padding: 30px; text-align: center; transition: all 0.3s ease; }
         .buying-step:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
-        .buying-step .step-num { display: inline-block; width: 45px; height: 45px; background: white; color: #2d8f6f; border-radius: 50%; line-height: 45px; font-size: 1.3em; font-weight: bold; margin-bottom: 15px; }
+        .buying-step .step-num { display: inline-block; width: 45px; height: 45px; background: white; color: #2C2C2C; border-radius: 50%; line-height: 45px; font-size: 1.3em; font-weight: bold; margin-bottom: 15px; }
         .buying-step h3 { font-size: 1.2em; margin-bottom: 10px; }
         .buying-step p { opacity: 0.9; line-height: 1.6; font-size: 0.95em; }
 
@@ -137,7 +137,7 @@
         .mid-cta h2 { font-size: 2em; margin-bottom: 15px; }
         .mid-cta p { font-size: 1.15em; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; line-height: 1.6; }
         .mid-cta a { display: inline-block; padding: 18px 36px; border-radius: 8px; font-size: 1.15em; font-weight: 600; text-decoration: none; margin: 10px; transition: all 0.3s ease; }
-        .mid-cta .btn-green { background: linear-gradient(135deg, #2d8f6f 0%, #1a5c45 100%); color: white; }
+        .mid-cta .btn-green { background: linear-gradient(135deg, #2C2C2C 0%, #1a5c45 100%); color: white; }
         .mid-cta .btn-green:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(45, 143, 111, 0.4); }
         .mid-cta .btn-border { background: transparent; color: white; border: 2px solid white; }
         .mid-cta .btn-border:hover { background: white; color: #333; }
@@ -145,8 +145,8 @@
         .internal-links { margin: 60px 0; padding: 40px; background: #f8f9fa; border-radius: 12px; text-align: center; }
         .internal-links h3 { font-size: 1.5em; color: #333; margin-bottom: 25px; }
         .internal-links .link-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .internal-links .link-grid a { padding: 12px 25px; background: white; color: #2d8f6f; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; }
-        .internal-links .link-grid a:hover { border-color: #2d8f6f; background: #2d8f6f; color: white; }
+        .internal-links .link-grid a { padding: 12px 25px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; transition: all 0.3s ease; }
+        .internal-links .link-grid a:hover { border-color: #2C2C2C; background: #2C2C2C; color: white; }
 
         @media (max-width: 768px) {
             .buyer-hero h1 { font-size: 1.8em; }
@@ -253,14 +253,19 @@
                 <img src="images/jorge-logo.jpg" alt="The Jorge Ramirez Group" class="logo-img" width="250" height="100" loading="lazy">
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="buy-a-home.html" style="color: #2d8f6f; font-weight: 600;">Buy</a></li>
+                <li><a href="index.html#buy">Buy</a></li>
                 <li><a href="sell-your-home.html">Sell</a></li>
-                <li><a href="how-we-sell-your-home.html">How We Sell</a></li>
                 <li><a href="index.html#communities">Communities</a></li>
+                <li><a href="why-jorge-ramirez.html">Why Jorge</a></li>
                 <li><a href="blog/">Blog</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#faq">FAQ</a></li>
-                <li><a href="home-valuation.html" class="nav-btn-consultation btn-flip" data-flip="Get My Home's Value &rarr;"><span class="flip-front">Free Home Valuation</span><span class="flip-back">Get My Home's Value &rarr;</span></a></li>
+                <li><a href="es/" class="nav-lang" aria-label="En Español" title="En Español">
+                    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm7.94 9H17a15.5 15.5 0 0 0-1.8-6.4A8 8 0 0 1 19.94 11ZM12 4c1 0 2.3 2.8 2.9 7H9.1C9.7 6.8 11 4 12 4Zm-3.2.6A15.5 15.5 0 0 0 7 11H4.06A8 8 0 0 1 8.8 4.6ZM4.06 13H7a15.5 15.5 0 0 0 1.8 6.4A8 8 0 0 1 4.06 13ZM12 20c-1 0-2.3-2.8-2.9-7h5.8c-.6 4.2-1.9 7-2.9 7Zm3.2-.6A15.5 15.5 0 0 0 17 13h2.94a8 8 0 0 1-4.74 6.4Z"/></svg>
+                </a></li>
+                <li><a href="tel:+19082307844" class="nav-phone" aria-label="Call Jorge at 908-230-7844">
+                    <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.3.5 3.6.5.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.5 3.5.1.4 0 .7-.3 1l-2.1 1.8Z"/></svg>
+                    <span>908-230-7844</span>
+                </a></li>
+                <li><a href="home-valuation.html" class="nav-btn-consultation btn-flip" data-flip="Get My Home's Value →"><span class="flip-front">Free Home Valuation</span><span class="flip-back">Get My Home's Value →</span></a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <span></span>
@@ -383,7 +388,7 @@
                     <p>21 towns including Summit, Westfield, Cranford, Scotch Plains, Fanwood, Clark, New Providence</p>
                 </a>
             </div>
-            <p style="color: #666; font-size: 1em;"><a href="index.html#communities" style="color: #2d8f6f; font-weight: 600; text-decoration: none;">Browse all 138 communities</a> or tell Jorge what matters most to you — he will narrow the list down.</p>
+            <p style="color: #666; font-size: 1em;"><a href="index.html#communities" style="color: #2C2C2C; font-weight: 600; text-decoration: none;">Browse all 138 communities</a> or tell Jorge what matters most to you — he will narrow the list down.</p>
         </div>
 
         <!-- The Buying Process -->
@@ -455,7 +460,7 @@
 
             <div class="faq-item">
                 <h3>What towns and areas do you cover?</h3>
-                <p>Jorge serves 138 communities across six New Jersey counties: Essex (Millburn, Short Hills, Maplewood, South Orange, Montclair, Livingston), Hudson (Hoboken, Jersey City, Weehawken), Morris (Chatham, Madison, Morristown, Florham Park), Middlesex (Edison, Woodbridge, Metuchen), and Union (Summit, Westfield, Cranford, Scotch Plains). Whether you know exactly which town you want or need help narrowing it down, Jorge will match you with the right community. <a href="index.html#communities" style="color: #2d8f6f;">See all 138 communities here.</a></p>
+                <p>Jorge serves 138 communities across six New Jersey counties: Essex (Millburn, Short Hills, Maplewood, South Orange, Montclair, Livingston), Hudson (Hoboken, Jersey City, Weehawken), Morris (Chatham, Madison, Morristown, Florham Park), Middlesex (Edison, Woodbridge, Metuchen), and Union (Summit, Westfield, Cranford, Scotch Plains). Whether you know exactly which town you want or need help narrowing it down, Jorge will match you with the right community. <a href="index.html#communities" style="color: #2C2C2C;">See all 138 communities here.</a></p>
             </div>
         </div>
 
