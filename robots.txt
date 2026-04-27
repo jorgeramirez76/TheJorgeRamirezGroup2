@@ -17,8 +17,6 @@ Disallow: /*?utm_*
 Disallow: /*?ref=*
 Disallow: /*?source=*
 
-Sitemap: https://thejorgeramirezgroup.com/sitemap.xml
-Sitemap: https://thejorgeramirezgroup.com/sitemap-es.xml
 Sitemap: https://thejorgeramirezgroup.com/sitemap-index.xml
 
 User-agent: Googlebot
