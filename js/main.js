@@ -75,6 +75,12 @@ const countyInfo = {
         highlight: "Summit, Westfield, Cranford, Scotch Plains",
         description: "Jorge's home turf — top commuter towns with outstanding schools and strong resale values.",
         photo: "https://images.unsplash.com/photo-1598228723793-52759bba239c?w=600&q=80&fit=crop"
+    },
+    "Somerset": {
+        towns: 10,
+        highlight: "Warren, Watchung, Basking Ridge, Bridgewater",
+        description: "Room to breathe, strong schools, corporate access, and move-up neighborhoods with long-term appeal.",
+        photo: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&fit=crop"
     }
 };
 

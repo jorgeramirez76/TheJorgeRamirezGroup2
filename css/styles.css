@@ -2766,3 +2766,180 @@ a.hero-train-pill:focus-visible .htp-arrow {
 .related-pages p a + a {
   margin-left: 16px;
 }
+
+
+/* ── 2026 conversion polish: seller-first, tighter, premium ────────── */
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(0,0,0,.86) 0%, rgba(0,0,0,.68) 42%, rgba(0,0,0,.32) 100%),
+              linear-gradient(180deg, rgba(0,0,0,.32) 0%, rgba(0,0,0,.18) 46%, rgba(0,0,0,.72) 100%);
+}
+.hero-content {
+  text-align: left;
+  max-width: 1120px;
+  width: min(92vw, 1120px);
+  margin: 0 auto;
+  padding: 145px 2rem 95px;
+}
+.hero h1 {
+  max-width: 980px;
+  font-size: clamp(3.35rem, 7vw, 6.7rem);
+  line-height: .96;
+  letter-spacing: -1.6px;
+  margin-bottom: 1.15rem;
+}
+.hero-eyebrow {
+  color: var(--gold-light);
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(.72rem, 1vw, .92rem);
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+}
+.hero-name {
+  max-width: 920px;
+}
+.hero-tagline {
+  color: rgba(255,255,255,.76);
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(.72rem, 1vw, .9rem);
+  letter-spacing: 2.4px;
+  margin-top: 1.05rem;
+}
+.hero-subtitle {
+  max-width: 760px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1.3rem;
+  font-size: clamp(1.12rem, 1.75vw, 1.42rem);
+  line-height: 1.68;
+}
+.hero-proof-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: 0 0 2rem;
+  opacity: 0;
+  animation: fadeSlideUp .8s ease 1.1s forwards;
+}
+.hero-proof-pills span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: .62rem .95rem;
+  border: 1px solid rgba(212,175,90,.42);
+  border-radius: 999px;
+  background: rgba(10,10,10,.38);
+  color: rgba(255,255,255,.92);
+  font: 700 .78rem/1 'Montserrat', sans-serif;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+.hero-buttons {
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.content-section {
+  padding: clamp(3.75rem, 6vw, 5.25rem) 5%;
+}
+.section-header {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.stats-bar {
+  padding: clamp(2.4rem, 4vw, 3.4rem) 5%;
+}
+.stats-grid {
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+}
+.stat-number {
+  font-size: clamp(2.55rem, 5vw, 3.65rem);
+}
+#faq .faq-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 1120px !important;
+}
+#faq .faq-item {
+  margin-bottom: 0;
+  border: 1px solid rgba(184,150,46,.18);
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.45rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.045);
+}
+#faq .faq-item > h3,
+#faq .faq-item h3.faq-question {
+  font-size: 1.04rem;
+  line-height: 1.35;
+  margin-bottom: .65rem;
+}
+#faq .faq-item > p,
+#faq .faq-item p.faq-answer {
+  font-size: .94rem;
+  line-height: 1.65;
+}
+#contact .contact-content,
+.contact-content {
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .hero-content {
+    text-align: center;
+    padding: 130px 1.25rem 80px;
+  }
+  .hero h1,
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-buttons,
+  .hero-proof-pills {
+    justify-content: center;
+  }
+  #faq .faq-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .hero {
+    min-height: 92vh;
+  }
+  .hero-content {
+    padding-top: 118px;
+  }
+  .hero h1 {
+    font-size: clamp(2.65rem, 13vw, 4.2rem);
+  }
+  .hero-buttons a,
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .content-section {
+    padding: 3.25rem 5%;
+  }
+  .hero-proof-pills span {
+    font-size: .66rem;
+  }
+}
+
+/* Make the commuter-map link support the hero instead of competing with main CTAs. */
+.hero .hero-train-wrap {
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+.hero a.hero-train-pill,
+.hero a.hero-train-pill:link,
+.hero a.hero-train-pill:visited {
+  padding: .62rem .95rem;
+  border-color: rgba(212,175,90,.34);
+  background: rgba(10,10,10,.24);
+  box-shadow: none;
+  font-size: .74rem;
+  letter-spacing: .11em;
+}
+@media (max-width: 900px) {
+  .hero .hero-train-wrap { justify-content: center; }
+}

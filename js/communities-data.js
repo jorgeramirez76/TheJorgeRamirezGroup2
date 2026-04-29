@@ -899,5 +899,107 @@ const communitiesData = {
       "highways": "Garden State Parkway nearby.",
       "notes": "Very small community with modest homes; affordable living."
     }
+  ],
+  "Somerset": [
+    {
+      "town": "Warren Township",
+      "url_slug": "warren-township",
+      "description": "A sought-after Somerset County move-up market known for larger lots, privacy, and strong schools.",
+      "schools": "Warren Township Schools serve K–8, with students attending Watchung Hills Regional High School.",
+      "primary_transit": "Primarily a car-commute town; residents often use nearby train stations, Route 78, I-287, and corporate corridors.",
+      "commute_to_nyc": "Door-to-door NYC commutes vary widely, often 60–90 minutes depending on route and schedule.",
+      "highways": "Convenient access to I-78, Route 22, and I-287.",
+      "notes": "Popular with sellers and buyers who value space, schools, and a quieter luxury-suburban feel."
+    },
+    {
+      "town": "Watchung",
+      "url_slug": "watchung",
+      "description": "Hillside setting, larger homes, reservoir views, and a quiet residential feel close to major highways.",
+      "schools": "Watchung Borough Schools for K–8, with Watchung Hills Regional High School for grades 9–12.",
+      "primary_transit": "Mostly car dependent with nearby access to rail options in surrounding towns.",
+      "commute_to_nyc": "Many commuters combine driving with train or bus options; timing depends heavily on route.",
+      "highways": "I-78, Route 22, and I-287 are nearby.",
+      "notes": "A strong fit for move-up buyers seeking privacy without being far from shopping and employment centers."
+    },
+    {
+      "town": "Basking Ridge",
+      "url_slug": "basking-ridge",
+      "description": "Prestige, schools, historic village charm, and upscale neighborhoods within Bernards Township.",
+      "schools": "Bernards Township School District is consistently one of Somerset County's strongest school systems.",
+      "primary_transit": "NJ Transit Gladstone Branch service from Basking Ridge and Lyons stations, plus strong highway access.",
+      "commute_to_nyc": "Train trips generally require time and planning, often 70–90+ minutes depending on schedule.",
+      "highways": "I-287 and I-78 provide regional access.",
+      "notes": "One of Somerset County's best-known move-up and luxury markets."
+    },
+    {
+      "town": "Bridgewater",
+      "url_slug": "bridgewater",
+      "description": "Somerset County's largest population center with deep inventory, retail convenience, and corporate access.",
+      "schools": "Bridgewater-Raritan Regional School District serves the area with a broad K–12 system.",
+      "primary_transit": "NJ Transit Raritan Valley Line access plus major highway options.",
+      "commute_to_nyc": "Train commutes are often around 55–75+ minutes depending on station and transfer patterns.",
+      "highways": "I-287, Route 22, Route 202/206, and I-78 nearby.",
+      "notes": "Appeals to buyers wanting suburban amenities, shopping, and broad price-point variety."
+    },
+    {
+      "town": "Bernardsville",
+      "url_slug": "bernardsville",
+      "description": "Historic, affluent borough with estate properties, downtown charm, and train access.",
+      "schools": "Somerset Hills Regional School District serves Bernardsville and nearby communities.",
+      "primary_transit": "NJ Transit Gladstone Branch service from Bernardsville Station.",
+      "commute_to_nyc": "Train commutes often run 80–100+ minutes depending on schedule and destination.",
+      "highways": "Close to Route 202, I-287, and I-78 corridors.",
+      "notes": "Strong luxury and estate-market identity with long-term prestige."
+    },
+    {
+      "town": "Bedminster",
+      "url_slug": "bedminster",
+      "description": "Country feel, luxury enclaves, townhomes, open space, and excellent access to corporate corridors.",
+      "schools": "Bedminster Township School for K–8, with high school options through regional arrangements.",
+      "primary_transit": "Primarily car oriented with nearby rail access in Far Hills, Bernardsville, or Bridgewater.",
+      "commute_to_nyc": "NYC commutes are usually longer and route-dependent; many residents prioritize local corporate access.",
+      "highways": "I-287 and I-78 are major advantages.",
+      "notes": "Works well for buyers who want space, privacy, and highway convenience."
+    },
+    {
+      "town": "Somerville",
+      "url_slug": "somerville",
+      "description": "Walkable downtown, restaurants, train access, and a more urban-suburban Somerset County lifestyle.",
+      "schools": "Somerville Public Schools serve local students with nearby private and regional options.",
+      "primary_transit": "NJ Transit Raritan Valley Line service from Somerville Station.",
+      "commute_to_nyc": "Raritan Valley Line trips vary by transfer and schedule, often around 60–80+ minutes.",
+      "highways": "Route 22, Route 202/206, I-287, and I-78 nearby.",
+      "notes": "A strong option for buyers who want downtown energy without Hudson County prices."
+    },
+    {
+      "town": "Green Brook",
+      "url_slug": "green-brook",
+      "description": "Small-town Somerset County feel with hillside homes, highway access, and proximity to Watchung and Warren.",
+      "schools": "Green Brook Township Public Schools serve K–8, with high school students attending Watchung Hills Regional.",
+      "primary_transit": "Mostly car dependent; nearby train options exist in surrounding communities.",
+      "commute_to_nyc": "Many residents use park-and-ride or nearby rail options depending on destination.",
+      "highways": "Route 22 and I-287 are close by.",
+      "notes": "Often attractive to buyers looking near Warren/Watchung with a different price mix."
+    },
+    {
+      "town": "Hillsborough",
+      "url_slug": "hillsborough",
+      "description": "Large township with varied housing, parks, strong local amenities, and Central Jersey access.",
+      "schools": "Hillsborough Township Public Schools serve K–12 and are a major local draw.",
+      "primary_transit": "Car-oriented, with nearby Raritan Valley Line access in surrounding towns.",
+      "commute_to_nyc": "NYC commuting is longer; many buyers prioritize space and local employment access.",
+      "highways": "Route 206, Route 202, and access toward I-287/I-78 corridors.",
+      "notes": "Useful for sellers and buyers who want more space and inventory variety."
+    },
+    {
+      "town": "Franklin Township",
+      "url_slug": "franklin-township-somerset",
+      "description": "Diverse Somerset County township with broad price points, parks, and access to New Brunswick/Princeton corridors.",
+      "schools": "Franklin Township Public Schools serve the township with multiple elementary, middle, and high school options.",
+      "primary_transit": "Mostly car oriented, with access to nearby rail in New Brunswick, Bound Brook, and Somerville depending on location.",
+      "commute_to_nyc": "Commutes vary significantly by neighborhood and chosen transit route.",
+      "highways": "I-287, Route 27, Route 1, and New Brunswick/Princeton corridors are accessible.",
+      "notes": "A practical market for buyers who want Somerset County with a wider range of price points."
+    }
   ]
 };
