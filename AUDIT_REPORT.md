@@ -1,4 +1,4 @@
-# Site Audit Report — 924 pages
+# Site Audit Report — 927 pages
 
 ## Issue summary (issue → page count)
 
@@ -11,8 +11,18 @@
 |---|---|---|
 | `/towns/${s.slug}.html` | 4 | `es/nj-train-map.html` |
 
-## Sitemap gaps — 0 pages NOT in sitemap.xml
+## Sitemap gaps — 10 pages NOT in sitemap.xml
 
+- `/blog/best-nj-towns-for-families.html`
+- `/blog/essex-county-real-estate-market-q2-2026.html`
+- `/blog/first-time-home-buyer-guide-new-jersey.html`
+- `/blog/morris-county-real-estate-market-q2-2026.html`
+- `/blog/nj-property-tax-guide-homeowners.html`
+- `/blog/selling-your-home-summit-nj-guide.html`
+- `/chatham-vs-madison-nj.html`
+- `/communities/`
+- `/westfield-vs-summit-nj.html`
+- `/why-jorge-ramirez.html`
 
 ## Per-page detail (first 30 worst pages)
 
