@@ -588,7 +588,7 @@ STATIONS.forEach((s, i) => {
       <div class="row"><span class="k">Schools</span><span class="v">${s.schools}/10</span></div>
       <div class="row"><span class="k">Price trend</span><span class="v" style="color:${s.trend>=0?'#0B6B3A':'#C41230'}">${s.trend>=0?'+':''}${s.trend.toFixed(1)}%</span></div>
       <div class="row"><span class="k">Highway</span><span class="v">${s.hwy.split(',')[0]}</span></div>
-      <a class="btn" href="towns/${s.slug}.html">See ${s.name} full guide →</a>
+      <a class="btn" href="/towns/${s.slug}.html">See ${s.name} full guide →</a>
     </div>
   `, {maxWidth: 260});
 
@@ -621,7 +621,7 @@ function selectStation(s, i) {
         <strong>Highway access</strong>${s.hwy}
       </div>
       <div class="card-ctas">
-        <a href="towns/${s.slug}.html" class="cta-primary">See ${s.name} Full Guide</a>
+        <a href="/towns/${s.slug}.html" class="cta-primary">See ${s.name} Full Guide</a>
         <a href="tel:9082307844" class="cta-secondary">Ask Jorge About ${s.name}</a>
       </div>
     </div>
