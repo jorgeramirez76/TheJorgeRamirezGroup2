@@ -2853,6 +2853,15 @@ a.hero-train-pill:focus-visible .htp-arrow {
 .stat-number {
   font-size: clamp(2.55rem, 5vw, 3.65rem);
 }
+/* Stats bar sits on a light luxury surface, so labels must be dark enough to read. */
+.stats-bar .stat-card {
+  color: var(--text-gray);
+}
+.stats-bar .stat-label {
+  color: #5B554C;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
 #faq .faq-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
