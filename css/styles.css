@@ -3010,3 +3010,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     outline-offset: 2px;
 }
 input, select, textarea { border-radius: var(--radius); }
+
+/* article imagery (2026-06-11) */
+.article-figure { margin: 36px 0; }
+.article-figure img {
+    width: 100%; height: auto; display: block;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+}
+.article-figure figcaption {
+    margin-top: 10px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: var(--text-light);
+}
