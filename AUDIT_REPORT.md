@@ -1,10 +1,9 @@
-# Site Audit Report — 931 pages
+# Site Audit Report — 953 pages
 
 ## Issue summary (issue → page count)
 
 | Issue | Pages affected |
 |-------|----------------|
-| title-too | 1 |
 
 ## Broken internal links — top 30
 
@@ -41,12 +40,6 @@
 - images without alt: 0
 - broken links: /towns/${s.slug}.html, /towns/${s.slug}.html
 
-### `blog/best-nj-towns-for-families.html` (/blog/best-nj-towns-for-families.html)
-- title: "12 Best NJ Towns for Families 2026 (Ranked by Schools, Budget &amp; Commute)"
-- jsonld blocks: 3
-- images without alt: 0
-- issues: title-too-long-76
-
 ### `404.html` (/404.html)
 - title: "Page Not Found — The Jorge Ramirez Group"
 - jsonld blocks: 1
@@ -62,6 +55,21 @@
 - jsonld blocks: 2
 - images without alt: 0
 
+### `best-real-estate-agents-essex-county-nj-2026.html` (/best-real-estate-agents-essex-county-nj-2026.html)
+- title: "Best Real Estate Agents in Essex County NJ (2026 Guide)"
+- jsonld blocks: 1
+- images without alt: 0
+
+### `best-real-estate-agents-morris-county-nj-2026.html` (/best-real-estate-agents-morris-county-nj-2026.html)
+- title: "Best Real Estate Agents in Morris County NJ (2026 Guide)"
+- jsonld blocks: 1
+- images without alt: 0
+
+### `best-real-estate-agents-union-county-nj-2026.html` (/best-real-estate-agents-union-county-nj-2026.html)
+- title: "Best Real Estate Agents in Union County NJ (2026 Guide)"
+- jsonld blocks: 1
+- images without alt: 0
+
 ### `blog/absentee-owner-nj-sell-rental-property.html` (/blog/absentee-owner-nj-sell-rental-property.html)
 - title: "Selling Rental Property in NJ: Guide for Absentee Owners &"
 - jsonld blocks: 3
@@ -75,6 +83,11 @@
 ### `blog/best-nj-towns-for-families-2026.html` (/blog/best-nj-towns-for-families-2026.html)
 - title: "Best NJ Towns for Families in 2026"
 - jsonld blocks: 4
+- images without alt: 0
+
+### `blog/best-nj-towns-for-families.html` (/blog/best-nj-towns-for-families.html)
+- title: "12 Best NJ Towns for Families 2026 | Schools &amp; Commute"
+- jsonld blocks: 3
 - images without alt: 0
 
 ### `blog/best-nj-towns-to-sell-home.html` (/blog/best-nj-towns-to-sell-home.html)
@@ -164,20 +177,5 @@
 
 ### `blog/buying-home-hoboken-nj-2026.html` (/blog/buying-home-hoboken-nj-2026.html)
 - title: "Buying a Home in Hoboken NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-jersey-city-nj-2026.html` (/blog/buying-home-jersey-city-nj-2026.html)
-- title: "Buying a Home in Jersey City NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-kenilworth-nj-2026.html` (/blog/buying-home-kenilworth-nj-2026.html)
-- title: "Buying a Home in Kenilworth NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-linden-nj-2026.html` (/blog/buying-home-linden-nj-2026.html)
-- title: "Buying a Home in Linden NJ 2026 | Jorge Ramirez"
 - jsonld blocks: 2
 - images without alt: 0

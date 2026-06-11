@@ -139,6 +139,9 @@ SUBS = [
     (r'60\+ homes flipped', 'hands-on flip experience'),
     (r'60\+ flips', 'hands-on flip experience'),
     (r'60\+ casas', 'amplia experiencia en casas'),
+    (r'con más de 60 casas renovadas personalmente', 'con experiencia práctica en renovación e inversión inmobiliaria'),
+    (r'más de 60 casas renovadas', 'numerosas casas renovadas'),
+    (r'más de 60 (?:casas|propiedades|viviendas)', 'numerosas propiedades'),
     (r'as an investor in NJ as an investor', 'as an investor in NJ'),
     (r'as an investor as an investor', 'as an investor'),
     # capitalization repair for sentence-initial replacements
@@ -176,7 +179,7 @@ def main():
     print(f"scrubbed {len(changed)} of {len(targets)} files")
     # report leftovers
     leftover_pat = re.compile(
-        r'.{0,60}(?:60\+|sixty[ -]plus|60 plus|flipped (?:over )?60|sold (?:over )?60|over 60 (?:homes|houses|properties)|done it 60).{0,60}', re.I)
+        r'.{0,60}(?:(?<!\d)60\+|sixty[ -]plus|60 plus|flipped (?:over )?60|sold (?:over )?60|over 60 (?:homes|houses|properties)|más de 60|(?<!\d)60 (?:casas|propiedades|viviendas)|done it 60).{0,60}', re.I)
     ignore = re.compile(r'60\+ ?(minut|towns)|last 60|60-90|Age 60\+|60\+ (years|días|days)|walked 60\+ homes', re.I)
     n = 0
     for p in targets:
