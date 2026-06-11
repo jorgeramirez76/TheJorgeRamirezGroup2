@@ -1,8 +1,8 @@
 # Deep Audit Report
 
-## 1. Live URL status (529 URLs in sitemap)
+## 1. Live URL status (530 URLs in sitemap)
 
-- 200 OK: 529
+- 200 OK: 530
 - 301/302 redirect: 0
 - 404 not found: 0
 - 500+ server error: 0
@@ -18,7 +18,7 @@
 ## 4. H1 issues — 0
 
 
-## 5. Canonical drift — 13
+## 5. Canonical drift — 14
 
 - `blog/best-nj-towns-for-families.html`: canonical=https://thejorgeramirezgroup.com/blog/best-nj-towns-for-families-2026.html expected=https://thejorgeramirezgroup.com/blog/best-nj-towns-for-families.html
 - `blog/essex-county-real-estate-market-q2-2026.html`: canonical=https://thejorgeramirezgroup.com/blog/essex-county-nj-real-estate-market-2026.html expected=https://thejorgeramirezgroup.com/blog/essex-county-real-estate-market-q2-2026.html
@@ -26,6 +26,7 @@
 - `blog/morris-county-real-estate-market-q2-2026.html`: canonical=https://thejorgeramirezgroup.com/blog/morris-county-nj-real-estate-market-2026.html expected=https://thejorgeramirezgroup.com/blog/morris-county-real-estate-market-q2-2026.html
 - `blog/nj-property-tax-guide-homeowners.html`: canonical=https://thejorgeramirezgroup.com/blog/nj-property-tax-guide.html expected=https://thejorgeramirezgroup.com/blog/nj-property-tax-guide-homeowners.html
 - `blog/selling-your-home-summit-nj-guide.html`: canonical=https://thejorgeramirezgroup.com/blog/selling-home-summit-nj-2026.html expected=https://thejorgeramirezgroup.com/blog/selling-your-home-summit-nj-guide.html
+- `blog/top-nyc-commuter-towns-nj-2026.html`: canonical=https://thejorgeramirezgroup.com/blog/top-nyc-commuter-towns-nj-2026 expected=https://thejorgeramirezgroup.com/blog/top-nyc-commuter-towns-nj-2026.html
 - `chatham-vs-madison-nj.html`: canonical=https://thejorgeramirezgroup.com/blog/chatham-vs-madison-nj.html expected=https://thejorgeramirezgroup.com/chatham-vs-madison-nj.html
 - `communities/index.html`: canonical=https://thejorgeramirezgroup.com/communities.html expected=https://thejorgeramirezgroup.com/communities/
 - `es/blog/first-time-home-buyer-guide-new-jersey.html`: canonical=https://thejorgeramirezgroup.com/es/blog/first-time-home-buyer-nj-guide.html expected=https://thejorgeramirezgroup.com/es/blog/first-time-home-buyer-guide-new-jersey.html
