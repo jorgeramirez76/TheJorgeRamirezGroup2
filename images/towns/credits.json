@@ -321,7 +321,26 @@
    "wiki": "Madison, New Jersey"
   }
  ],
- "maplewood": [],
+ "maplewood": [
+  {
+   "file": "maplewood-1.webp",
+   "w": 1280,
+   "h": 852,
+   "license": "CC BY-SA 3.0",
+   "artist": "The original uploader was Leifern at English Wikipedia.",
+   "source": "File:Commuters in Maplewood NJ.jpg",
+   "wiki": "Maplewood, New Jersey"
+  },
+  {
+   "file": "maplewood-2.webp",
+   "w": 1280,
+   "h": 612,
+   "license": "CC0",
+   "artist": "Jim.henderson",
+   "source": "File:Maplewood Sta morning jeh.jpg",
+   "wiki": "Maplewood, New Jersey"
+  }
+ ],
  "metuchen": [
   {
    "file": "metuchen-1.webp",
@@ -2406,6 +2425,191 @@
    "artist": "Zeete",
    "source": "File:Raritan River Bridge, Highland Park, NJ.jpg",
    "wiki": "South Plainfield, New Jersey"
+  }
+ ],
+ "south-river": [
+  {
+   "file": "south-river-1.webp",
+   "w": 1280,
+   "h": 960,
+   "license": "CC BY-SA 4.0",
+   "artist": "Famartin",
+   "source": "File:2018-05-18 11 48 00 View south along Middlesex County Route 535 (Main Street) at Middlesex County Route 677 (Ferry Street) in South River, Middlesex County, New Jersey.jpg",
+   "wiki": "South River, New Jersey"
+  },
+  {
+   "file": "south-river-2.webp",
+   "w": 1280,
+   "h": 1025,
+   "license": "CC0",
+   "artist": "L'Mainerque",
+   "source": "File:Downtown South Bristol, Maine.jpg",
+   "wiki": "South River, New Jersey"
+  }
+ ],
+ "spotswood": [
+  {
+   "file": "spotswood-1.webp",
+   "w": 1280,
+   "h": 854,
+   "license": "CC BY-SA 4.0",
+   "artist": "Zeete",
+   "source": "File:Camden and Amboy Railroad Memorial, Spotswood, NJ.jpg",
+   "wiki": "Spotswood, New Jersey"
+  },
+  {
+   "file": "spotswood-2.webp",
+   "w": 1280,
+   "h": 960,
+   "license": "CC BY-SA 4.0",
+   "artist": "Famartin",
+   "source": "File:2018-09-08 15 37 26 View south along Middlesex County Route 615 (Main Street) at Summerhill Road (Middlesex County Route 613) in Spotswood, Middlesex County, New Jersey.jpg",
+   "wiki": "Spotswood, New Jersey"
+  }
+ ],
+ "union": [
+  {
+   "file": "union-1.webp",
+   "w": 1280,
+   "h": 855,
+   "license": "CC BY 2.0",
+   "artist": "PEO ACWA",
+   "source": "File:Pueblo Union Depot (40672253841).jpg",
+   "wiki": "Union Township, Union County, New Jersey"
+  },
+  {
+   "file": "union-2.webp",
+   "w": 1280,
+   "h": 720,
+   "license": "CC BY-SA 4.0",
+   "artist": "OlympiaBuebird",
+   "source": "File:Centralia Union Depot 10.jpg",
+   "wiki": "Union Township, Union County, New Jersey"
+  }
+ ],
+ "union-city": [],
+ "victory-gardens": [
+  {
+   "file": "victory-gardens-1.webp",
+   "w": 1280,
+   "h": 960,
+   "license": "CC BY-SA 4.0",
+   "artist": "Famartin",
+   "source": "File:2018-09-08 13 14 33 View south along Morris County Route 665 (South Salem Street) at Washington Avenue in Victory Gardens, Morris County, New Jersey.jpg",
+   "wiki": "Victory Gardens, New Jersey"
+  }
+ ],
+ "washington-township-morris": [
+  {
+   "file": "washington-township-morris-1.webp",
+   "w": 1280,
+   "h": 960,
+   "license": "CC BY-SA 4.0",
+   "artist": "Famartin",
+   "source": "File:2021-07-06 09 52 43 View south along Interstate 287 from the overpass for Morris County Route 650 (Hanover Avenue) in Morris Township, Morris County, New Jersey.jpg",
+   "wiki": "Morris Township, New Jersey"
+  },
+  {
+   "file": "washington-township-morris-2.webp",
+   "w": 1280,
+   "h": 854,
+   "license": "CC BY-SA 4.0",
+   "artist": "Zeete",
+   "source": "File:Washington Valley Schoolhouse, Washington Valley, NJ - looking north.jpg",
+   "wiki": "Morris Township, New Jersey"
+  }
+ ],
+ "watchung": [
+  {
+   "file": "watchung-1.webp",
+   "w": 1280,
+   "h": 960,
+   "license": "CC BY-SA 2.0",
+   "artist": "Adam Moss",
+   "source": "File:Watchung Avenue Station - depot.jpg",
+   "wiki": "Watchung, New Jersey"
+  }
+ ],
+ "weehawken": [
+  {
+   "file": "weehawken-1.webp",
+   "w": 1280,
+   "h": 1005,
+   "license": "Public domain",
+   "artist": "Public domainPublic domainfalsefalse\n\n\n\n\n\nThis image or medi",
+   "source": "File:Weehawken Tunnel western portal.jpg",
+   "wiki": "Weehawken, New Jersey"
+  }
+ ],
+ "west-caldwell": [
+  {
+   "file": "west-caldwell-1.webp",
+   "w": 1280,
+   "h": 960,
+   "license": "CC BY-SA 4.0",
+   "artist": "Famartin",
+   "source": "File:2018-07-18 11 41 34 View south along Essex County Route 527 (Mountain Avenue) between Arbor Road and Courter Lane on the border of West Caldwell Township and North Caldwell in Essex County, New Jersey.jpg",
+   "wiki": "West Caldwell, New Jersey"
+  },
+  {
+   "file": "west-caldwell-2.webp",
+   "w": 1280,
+   "h": 960,
+   "license": "CC BY-SA 4.0",
+   "artist": "Famartin",
+   "source": "File:2018-07-18 16 40 56 View east along Essex County Route 506 (Bloomfield Avenue) at Essex County Route 613 Spur (Kirkpatrick Lane) in West Caldwell Township, Essex County, New Jersey.jpg",
+   "wiki": "West Caldwell, New Jersey"
+  }
+ ],
+ "west-new-york": [
+  {
+   "file": "west-new-york-1.webp",
+   "w": 1280,
+   "h": 896,
+   "license": "CC BY 4.0",
+   "artist": "Luigi Novi",
+   "source": "File:12.9.22WestNewYorkCityHallByLuigiNovi.jpg",
+   "wiki": "West New York, New Jersey"
+  },
+  {
+   "file": "west-new-york-2.webp",
+   "w": 1280,
+   "h": 1037,
+   "license": "CC0",
+   "artist": "Jim.henderson",
+   "source": "File:Harry Bain School jeh.JPG",
+   "wiki": "West New York, New Jersey"
+  }
+ ],
+ "wharton": [
+  {
+   "file": "wharton-1.webp",
+   "w": 1280,
+   "h": 854,
+   "license": "CC BY-SA 4.0",
+   "artist": "Zeete",
+   "source": "File:Hugh Force Canal Park, Wharton, NJ - entrance.jpg",
+   "wiki": "Wharton, New Jersey"
+  },
+  {
+   "file": "wharton-2.webp",
+   "w": 1280,
+   "h": 854,
+   "license": "CC BY-SA 4.0",
+   "artist": "Zeete",
+   "source": "File:St. Mary's Church, Wharton, NJ.jpg - area view.jpg",
+   "wiki": "Wharton, New Jersey"
+  }
+ ],
+ "winfield": [
+  {
+   "file": "winfield-1.webp",
+   "w": 1280,
+   "h": 961,
+   "license": "CC BY-SA 4.0",
+   "artist": "Mr. Matt\u00e9 (if there is an issue with this image, contact me ",
+   "source": "File:Winfield Park, NJ entrance sign, April 2022.jpg",
+   "wiki": "Winfield Township, New Jersey"
   }
  ]
 }
