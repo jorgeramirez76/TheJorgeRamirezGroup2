@@ -32,6 +32,13 @@ def all_html_files() -> list[Path]:
         # skip node_modules, drafts, backups
         if any(x in s for x in ["node_modules", "/.git/", "_backup", "/staging/"]):
             continue
+        # skip redirect stubs (noindex meta-refresh forwarders)
+        try:
+            head = p.read_text(encoding="utf-8", errors="replace")[:1200]
+            if 'http-equiv="refresh"' in head:
+                continue
+        except OSError:
+            pass
         out.append(p)
     return sorted(out)
 

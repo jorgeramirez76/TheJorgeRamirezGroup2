@@ -1,17 +1,9 @@
-# Site Audit Report — 1091 pages
+# Site Audit Report — 951 pages
 
 ## Issue summary (issue → page count)
 
 | Issue | Pages affected |
 |-------|----------------|
-| missing-llm-context | 140 |
-| missing-meta-description | 138 |
-| missing-viewport | 138 |
-| missing-og:title | 138 |
-| missing-og:description | 138 |
-| missing-og:image | 138 |
-| missing-twitter:card | 138 |
-| missing-jsonld | 138 |
 
 ## Broken internal links — top 30
 
@@ -19,248 +11,170 @@
 |---|---|---|
 | `/towns/${s.slug}.html` | 4 | `es/nj-train-map.html` |
 
-## Sitemap gaps — 149 pages NOT in sitemap.xml
+## Sitemap gaps — 10 pages NOT in sitemap.xml
 
 - `/blog/best-nj-towns-for-families.html`
 - `/blog/essex-county-real-estate-market-q2-2026.html`
-- `/blog/first-time-home-buyer-guide-new-jersey.html`
 - `/blog/morris-county-real-estate-market-q2-2026.html`
 - `/blog/nj-property-tax-guide-homeowners.html`
 - `/blog/selling-your-home-summit-nj-guide.html`
 - `/blog/top-nyc-commuter-towns-nj-2026.html`
 - `/chatham-vs-madison-nj.html`
 - `/communities/`
-- `/communities/basking-ridge/`
-- `/communities/bayonne/`
-- `/communities/bedminster/`
-- `/communities/berkeley-heights/`
-- `/communities/bernards-township/`
-- `/communities/bernardsville/`
-- `/communities/bloomfield/`
-- `/communities/boonton-township/`
-- `/communities/boonton/`
-- `/communities/bound-brook/`
-- `/communities/branchburg/`
-- `/communities/bridgewater/`
-- `/communities/butler/`
-- `/communities/caldwell/`
-- `/communities/carteret/`
-- `/communities/chatham-borough/`
-- `/communities/chatham-township/`
-- `/communities/chatham/`
-- `/communities/chester-borough/`
-- `/communities/chester-township/`
-- `/communities/clark/`
-- `/communities/cranbury/`
-- `/communities/cranford/`
-- `/communities/denville/`
-- `/communities/dover/`
-- `/communities/dunellen/`
-- `/communities/east-brunswick/`
-- `/communities/east-hanover/`
-- `/communities/east-newark/`
-- `/communities/edison/`
-- `/communities/elizabeth/`
-- `/communities/fanwood/`
-- `/communities/far-hills/`
-- `/communities/florham-park/`
-- `/communities/franklin-township/`
-- `/communities/garwood/`
-- `/communities/glen-ridge/`
-- `/communities/green-brook/`
-- `/communities/guttenberg/`
-- `/communities/hanover/`
-- `/communities/harding/`
-- `/communities/harrison/`
-- `/communities/helmetta/`
-- `/communities/highland-park/`
-- `/communities/hillsborough/`
-- `/communities/hillside/`
-- `/communities/hoboken/`
-- `/communities/jamesburg/`
-- `/communities/jefferson/`
-- `/communities/jersey-city/`
-- `/communities/kearny/`
+- `/westfield-vs-summit-nj.html`
+- `/why-jorge-ramirez.html`
 
 ## Per-page detail (first 30 worst pages)
 
 
-### `communities/basking-ridge/index.html` (/communities/basking-ridge/)
-- title: "Redirecting to Basking Ridge, NJ"
-- jsonld blocks: 0
+### `es/nj-train-map.html` (/es/nj-train-map.html)
+- title: "Mapa de Trenes NJ | Midtown Direct, Raritan Valley & NEC Commute"
+- jsonld blocks: 4
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+- broken links: /towns/${s.slug}.html, /towns/${s.slug}.html
 
-### `communities/bayonne/index.html` (/communities/bayonne/)
-- title: "Redirecting to Bayonne, NJ"
-- jsonld blocks: 0
+### `nj-train-map.html` (/nj-train-map.html)
+- title: "NJ Train Map | Midtown Direct, Raritan Valley & NEC Commute Guide"
+- jsonld blocks: 4
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+- broken links: /towns/${s.slug}.html, /towns/${s.slug}.html
 
-### `communities/bedminster/index.html` (/communities/bedminster/)
-- title: "Redirecting to Bedminster, NJ"
-- jsonld blocks: 0
+### `404.html` (/404.html)
+- title: "Page Not Found — The Jorge Ramirez Group"
+- jsonld blocks: 1
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/berkeley-heights/index.html` (/communities/berkeley-heights/)
-- title: "Redirecting to Berkeley Heights, NJ"
-- jsonld blocks: 0
+### `55-plus-communities-nj.html` (/55-plus-communities-nj.html)
+- title: "55+ Communities in NJ 2026 | Active Adult Homes"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/bernards-township/index.html` (/communities/bernards-township/)
-- title: "Redirecting to Bernards Township, NJ"
-- jsonld blocks: 0
+### `ai-authority.html` (/ai-authority.html)
+- title: "Jorge Ramirez | New Jersey Real Estate Agent"
+- jsonld blocks: 2
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/bernardsville/index.html` (/communities/bernardsville/)
-- title: "Redirecting to Bernardsville, NJ"
-- jsonld blocks: 0
+### `best-real-estate-agents-essex-county-nj-2026.html` (/best-real-estate-agents-essex-county-nj-2026.html)
+- title: "Best Real Estate Agents in Essex County NJ (2026 Guide)"
+- jsonld blocks: 1
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/bloomfield/index.html` (/communities/bloomfield/)
-- title: "Redirecting to Bloomfield, NJ"
-- jsonld blocks: 0
+### `best-real-estate-agents-morris-county-nj-2026.html` (/best-real-estate-agents-morris-county-nj-2026.html)
+- title: "Best Real Estate Agents in Morris County NJ (2026 Guide)"
+- jsonld blocks: 1
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/boonton/index.html` (/communities/boonton/)
-- title: "Redirecting to Boonton, NJ"
-- jsonld blocks: 0
+### `best-real-estate-agents-union-county-nj-2026.html` (/best-real-estate-agents-union-county-nj-2026.html)
+- title: "Best Real Estate Agents in Union County NJ (2026 Guide)"
+- jsonld blocks: 1
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/boonton-township/index.html` (/communities/boonton-township/)
-- title: "Redirecting to Boonton Township, NJ"
-- jsonld blocks: 0
+### `blog/absentee-owner-nj-sell-rental-property.html` (/blog/absentee-owner-nj-sell-rental-property.html)
+- title: "Selling Rental Property in NJ: Guide for Absentee Owners &"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/bound-brook/index.html` (/communities/bound-brook/)
-- title: "Redirecting to Bound Brook, NJ"
-- jsonld blocks: 0
+### `blog/best-nj-suburbs-nyc-commuters.html` (/blog/best-nj-suburbs-nyc-commuters.html)
+- title: "22 Best NJ Commuter Towns by Budget ($750K to $1.3M+)"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/branchburg/index.html` (/communities/branchburg/)
-- title: "Redirecting to Branchburg, NJ"
-- jsonld blocks: 0
+### `blog/best-nj-towns-for-families-2026.html` (/blog/best-nj-towns-for-families-2026.html)
+- title: "Best NJ Towns for Families in 2026"
+- jsonld blocks: 4
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/bridgewater/index.html` (/communities/bridgewater/)
-- title: "Redirecting to Bridgewater, NJ"
-- jsonld blocks: 0
+### `blog/best-nj-towns-for-families.html` (/blog/best-nj-towns-for-families.html)
+- title: "12 Best NJ Towns for Families 2026 | Schools &amp; Commute"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/butler/index.html` (/communities/butler/)
-- title: "Redirecting to Butler, NJ"
-- jsonld blocks: 0
+### `blog/best-nj-towns-to-sell-home.html` (/blog/best-nj-towns-to-sell-home.html)
+- title: "Best NJ Towns to Sell a Home 2026 | Fastest Markets"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/caldwell/index.html` (/communities/caldwell/)
-- title: "Redirecting to Caldwell, NJ"
-- jsonld blocks: 0
+### `blog/best-school-districts-in-union-county-nj-for-families-buying-2026.html` (/blog/best-school-districts-in-union-county-nj-for-families-buying-2026.html)
+- title: "Best school districts in Union County NJ for families buying in"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/carteret/index.html` (/communities/carteret/)
-- title: "Redirecting to Carteret, NJ"
-- jsonld blocks: 0
+### `blog/best-time-to-sell-home-nj.html` (/blog/best-time-to-sell-home-nj.html)
+- title: "When Is the Best Time to Sell Your NJ Home?"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/chatham/index.html` (/communities/chatham/)
-- title: "Redirecting to Chatham, NJ"
-- jsonld blocks: 0
+### `blog/buying-a-home-in-new-jersey-2026.html` (/blog/buying-a-home-in-new-jersey-2026.html)
+- title: "Buying a Home in New Jersey in 2026 | Buyer Strategy Guide"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/chatham-borough/index.html` (/communities/chatham-borough/)
-- title: "Redirecting to Chatham Borough, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-basking-ridge-nj-2026.html` (/blog/buying-home-basking-ridge-nj-2026.html)
+- title: "Buying a Home in Basking Ridge NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 1
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/chatham-township/index.html` (/communities/chatham-township/)
-- title: "Redirecting to Chatham Township, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-berkeley-heights-nj-2026.html` (/blog/buying-home-berkeley-heights-nj-2026.html)
+- title: "Buying a Home in Berkeley Heights, NJ in 2026"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/chester-borough/index.html` (/communities/chester-borough/)
-- title: "Redirecting to Chester Borough, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-bloomfield-nj-2026.html` (/blog/buying-home-bloomfield-nj-2026.html)
+- title: "Buying a Home in Bloomfield NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 1
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/chester-township/index.html` (/communities/chester-township/)
-- title: "Redirecting to Chester Township, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-chatham-nj-2026.html` (/blog/buying-home-chatham-nj-2026.html)
+- title: "Buying a Home in Chatham NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 1
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/clark/index.html` (/communities/clark/)
-- title: "Redirecting to Clark, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-clark-nj-2026.html` (/blog/buying-home-clark-nj-2026.html)
+- title: "Buying a Home in Clark NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/cranbury/index.html` (/communities/cranbury/)
-- title: "Redirecting to Cranbury, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-cranford-nj-2026.html` (/blog/buying-home-cranford-nj-2026.html)
+- title: "Buying a Home in Cranford NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 1
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/cranford/index.html` (/communities/cranford/)
-- title: "Redirecting to Cranford, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-denville-nj-2026.html` (/blog/buying-home-denville-nj-2026.html)
+- title: "Buying a Home in Denville NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/denville/index.html` (/communities/denville/)
-- title: "Redirecting to Denville, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-east-brunswick-nj-2026.html` (/blog/buying-home-east-brunswick-nj-2026.html)
+- title: "Buying a Home in East Brunswick, NJ in 2026"
+- jsonld blocks: 3
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/dover/index.html` (/communities/dover/)
-- title: "Redirecting to Dover, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-edison-nj-2026.html` (/blog/buying-home-edison-nj-2026.html)
+- title: "Buying a Home in Edison NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 2
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/dunellen/index.html` (/communities/dunellen/)
-- title: "Redirecting to Dunellen, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-fanwood-nj-2026.html` (/blog/buying-home-fanwood-nj-2026.html)
+- title: "Buying a Home in Fanwood NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 2
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/east-brunswick/index.html` (/communities/east-brunswick/)
-- title: "Redirecting to East Brunswick, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-florham-park-nj-2026.html` (/blog/buying-home-florham-park-nj-2026.html)
+- title: "Buying a Home in Florham Park NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 1
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/east-hanover/index.html` (/communities/east-hanover/)
-- title: "Redirecting to East Hanover, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-glen-ridge-nj-2026.html` (/blog/buying-home-glen-ridge-nj-2026.html)
+- title: "Buying a Home in Glen Ridge NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 2
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/east-newark/index.html` (/communities/east-newark/)
-- title: "Redirecting to East Newark, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-highland-park-nj-2026.html` (/blog/buying-home-highland-park-nj-2026.html)
+- title: "Buying a Home in Highland Park NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 2
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
-### `communities/edison/index.html` (/communities/edison/)
-- title: "Redirecting to Edison, NJ"
-- jsonld blocks: 0
+### `blog/buying-home-hoboken-nj-2026.html` (/blog/buying-home-hoboken-nj-2026.html)
+- title: "Buying a Home in Hoboken NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 2
 - images without alt: 0
-- issues: missing-meta-description, missing-viewport, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
