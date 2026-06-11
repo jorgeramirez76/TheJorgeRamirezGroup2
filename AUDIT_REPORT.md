@@ -56,17 +56,17 @@
 
 ### `best-real-estate-agents-essex-county-nj-2026.html` (/best-real-estate-agents-essex-county-nj-2026.html)
 - title: "Best Real Estate Agents in Essex County NJ (2026 Guide)"
-- jsonld blocks: 1
+- jsonld blocks: 2
 - images without alt: 0
 
 ### `best-real-estate-agents-morris-county-nj-2026.html` (/best-real-estate-agents-morris-county-nj-2026.html)
 - title: "Best Real Estate Agents in Morris County NJ (2026 Guide)"
-- jsonld blocks: 1
+- jsonld blocks: 2
 - images without alt: 0
 
 ### `best-real-estate-agents-union-county-nj-2026.html` (/best-real-estate-agents-union-county-nj-2026.html)
 - title: "Best Real Estate Agents in Union County NJ (2026 Guide)"
-- jsonld blocks: 1
+- jsonld blocks: 2
 - images without alt: 0
 
 ### `blog/absentee-owner-nj-sell-rental-property.html` (/blog/absentee-owner-nj-sell-rental-property.html)
