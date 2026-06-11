@@ -1,9 +1,10 @@
-# Site Audit Report — 930 pages
+# Site Audit Report — 931 pages
 
 ## Issue summary (issue → page count)
 
 | Issue | Pages affected |
 |-------|----------------|
+| title-too | 1 |
 
 ## Broken internal links — top 30
 
@@ -11,7 +12,7 @@
 |---|---|---|
 | `/towns/${s.slug}.html` | 4 | `es/nj-train-map.html` |
 
-## Sitemap gaps — 10 pages NOT in sitemap.xml
+## Sitemap gaps — 11 pages NOT in sitemap.xml
 
 - `/blog/best-nj-towns-for-families.html`
 - `/blog/essex-county-real-estate-market-q2-2026.html`
@@ -19,6 +20,7 @@
 - `/blog/morris-county-real-estate-market-q2-2026.html`
 - `/blog/nj-property-tax-guide-homeowners.html`
 - `/blog/selling-your-home-summit-nj-guide.html`
+- `/blog/top-nyc-commuter-towns-nj-2026.html`
 - `/chatham-vs-madison-nj.html`
 - `/communities/`
 - `/westfield-vs-summit-nj.html`
@@ -38,6 +40,12 @@
 - jsonld blocks: 4
 - images without alt: 0
 - broken links: /towns/${s.slug}.html, /towns/${s.slug}.html
+
+### `blog/best-nj-towns-for-families.html` (/blog/best-nj-towns-for-families.html)
+- title: "12 Best NJ Towns for Families 2026 (Ranked by Schools, Budget &amp; Commute)"
+- jsonld blocks: 3
+- images without alt: 0
+- issues: title-too-long-76
 
 ### `404.html` (/404.html)
 - title: "Page Not Found — The Jorge Ramirez Group"
@@ -60,18 +68,13 @@
 - images without alt: 0
 
 ### `blog/best-nj-suburbs-nyc-commuters.html` (/blog/best-nj-suburbs-nyc-commuters.html)
-- title: "22 Best NJ Suburbs for NYC Commuters (2026)"
+- title: "22 Best NJ Commuter Towns by Budget: Maplewood ($750K), Summit ($1.3M)"
 - jsonld blocks: 3
 - images without alt: 0
 
 ### `blog/best-nj-towns-for-families-2026.html` (/blog/best-nj-towns-for-families-2026.html)
 - title: "Best NJ Towns for Families in 2026"
 - jsonld blocks: 4
-- images without alt: 0
-
-### `blog/best-nj-towns-for-families.html` (/blog/best-nj-towns-for-families.html)
-- title: "Best NJ Towns for Families 2026 | Schools, Safety &amp; Value"
-- jsonld blocks: 3
 - images without alt: 0
 
 ### `blog/best-nj-towns-to-sell-home.html` (/blog/best-nj-towns-to-sell-home.html)
