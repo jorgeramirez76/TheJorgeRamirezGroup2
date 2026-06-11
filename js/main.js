@@ -88,6 +88,7 @@ let activeCounty = null;
 
 function renderCountyCards() {
     const container = document.getElementById('communities-container');
+    if (!container) return; /* section only exists on homepage */
     container.classList.remove('county-open');
     container.innerHTML = Object.keys(countyInfo).map(county => {
         const info = countyInfo[county];

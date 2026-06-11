@@ -43,7 +43,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -151,11 +151,11 @@ document.addEventListener('DOMContentLoaded', function () {
     --line-ne: #1F4E79;
   }
 
-  html, body { margin:0; padding:0; font-family:'Montserrat', sans-serif; color:var(--ink); background:var(--cream); }
+  html, body { margin:0; padding:0; font-family:'Inter',sans-serif; color:var(--ink); background:var(--cream); }
 
   /* Nav */
   .nav { background:var(--ink); color:#fff; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:200; }
-  .nav a.brand { color:#fff; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; font-weight:600; letter-spacing:0.3px; }
+  .nav a.brand { color:#fff; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:600; letter-spacing:0.3px; }
   .nav a.brand .gold { color:var(--gold); }
   .nav-links a { color:#E8E4DC; text-decoration:none; margin:0 14px; font-size:0.9rem; font-weight:500; }
   .nav-links a:hover { color:var(--gold); }
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* Header */
   .map-hero { background:var(--ink); color:#fff; padding:48px 24px 64px; text-align:center; }
-  .map-hero h1 { font-family:'Cormorant Garamond', serif; font-size:2.6rem; font-weight:600; margin:0 0 12px; letter-spacing:0.3px; }
+  .map-hero h1 { font-family:'Playfair Display',serif; font-size:2.6rem; font-weight:600; margin:0 0 12px; letter-spacing:0.3px; }
   .map-hero h1 .gold { color:var(--gold); }
   .map-hero p { max-width:760px; margin:0 auto; color:#C8C8C8; font-size:1.05rem; line-height:1.6; }
   @media(max-width:700px){ .map-hero h1 { font-size:1.8rem; } }
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Highway shield */
   .hwy-shield {
     background:#fff; color:#1a1a2e; border:2px solid var(--ink); border-radius:3px;
-    font-family:'Montserrat', sans-serif; font-weight:800; font-size:12px;
+    font-family:'Inter',sans-serif; font-weight:800; font-size:12px;
     padding:2px 6px; text-align:center; min-width:24px; line-height:1;
     box-shadow:0 2px 4px rgba(0,0,0,0.2);
   }
@@ -239,9 +239,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* Leaflet popups */
   .leaflet-popup-content-wrapper { border-radius:6px; padding:0; }
-  .leaflet-popup-content { margin:0; font-family:'Montserrat', sans-serif; }
+  .leaflet-popup-content { margin:0; font-family:'Inter',sans-serif; }
   .popup-card { padding:14px 16px; min-width:220px; }
-  .popup-card h4 { font-family:'Cormorant Garamond', serif; font-size:1.3rem; margin:0 0 2px; color:var(--ink); }
+  .popup-card h4 { font-family:'Playfair Display',serif; font-size:1.3rem; margin:0 0 2px; color:var(--ink); }
   .popup-card .sub { color:var(--ink-3); font-size:0.75rem; margin:0 0 8px; }
   .popup-card .row { display:flex; justify-content:space-between; padding:3px 0; font-size:0.82rem; border-bottom:1px dotted var(--cream-3); }
   .popup-card .row:last-of-type { border-bottom:none; }
@@ -255,14 +255,14 @@ document.addEventListener('DOMContentLoaded', function () {
   .sidebar .placeholder { text-align:center; color:var(--ink-3); padding:50px 20px; font-size:0.95rem; line-height:1.55; }
   .sidebar .placeholder svg { width:44px; height:44px; opacity:0.3; margin-bottom:12px; }
 
-  .station-card h3 { font-family:'Cormorant Garamond', serif; font-size:1.75rem; font-weight:600; margin:0 0 4px; color:var(--ink); }
+  .station-card h3 { font-family:'Playfair Display',serif; font-size:1.75rem; font-weight:600; margin:0 0 4px; color:var(--ink); }
   .station-card .town-sub { color:var(--ink-3); font-size:0.9rem; margin:0 0 14px; }
   .station-card .line-tag { display:inline-block; padding:4px 10px; border-radius:12px; color:#fff; font-size:0.72rem; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; margin-bottom:16px; }
 
   .stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:18px; }
   .stat-box { background:#fff; border:1px solid var(--cream-3); border-radius:6px; padding:12px; text-align:center; }
   .stat-box .stat-label { font-size:0.65rem; color:var(--ink-3); text-transform:uppercase; letter-spacing:1px; font-weight:600; }
-  .stat-box .stat-value { font-size:1.5rem; font-weight:700; color:var(--ink); margin-top:4px; font-family:'Cormorant Garamond', serif; }
+  .stat-box .stat-value { font-size:1.5rem; font-weight:700; color:var(--ink); margin-top:4px; font-family:'Playfair Display',serif; }
   .stat-box .stat-sub { font-size:0.7rem; color:var(--ink-3); margin-top:2px; }
 
   .hwy-access { background:#fff; border:1px solid var(--cream-3); border-radius:6px; padding:10px 12px; margin-bottom:14px; font-size:0.82rem; color:var(--ink-2); }
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* Below-map copy */
   .intro-copy { max-width:900px; margin:48px auto; padding:0 20px; color:var(--ink-2); }
-  .intro-copy h2 { font-family:'Cormorant Garamond', serif; font-size:2rem; font-weight:600; color:var(--ink); margin-bottom:14px; }
+  .intro-copy h2 { font-family:'Playfair Display',serif; font-size:2rem; font-weight:600; color:var(--ink); margin-bottom:14px; }
   .intro-copy p { line-height:1.7; margin-bottom:16px; font-size:1rem; }
   .intro-copy .cta-row { margin:28px 0; display:flex; gap:12px; flex-wrap:wrap; }
   .intro-copy .cta-row a { padding:14px 26px; background:var(--ink); color:#fff; text-decoration:none; font-weight:600; border-radius:4px; }
@@ -380,42 +380,42 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="faq-heading">NJ Train Map &amp; Commute FAQ</h2>
 
     <div class="faq-item">
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Which NJ Transit line has the fastest commute to NYC Penn Station?</h3>
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Which NJ Transit line has the fastest commute to NYC Penn Station?</h3>
       <p>The <strong>Northeast Corridor</strong> runs direct to NYC Penn — Newark Penn is 18 minutes, Elizabeth 25, Linden 30, Rahway 33, Metropark 38. Midtown Direct (Morris &amp; Essex Main &amp; Gladstone) is also direct: South Orange 31, Summit 44, Morristown 60. The <strong>Raritan Valley Line</strong> requires a transfer at Newark Penn and adds roughly 10 minutes.</p>
     </div>
 
     <div class="faq-item">
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What towns are on the Midtown Direct train line?</h3>
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What towns are on the Midtown Direct train line?</h3>
       <p>Midtown Direct runs through 12 stations on the Morris &amp; Essex Main Line: South Orange, Maplewood, Millburn, Short Hills, Summit, Chatham, Madison, Convent Station, Morristown, Morris Plains, Denville, and Dover. The Gladstone Branch splits at Summit and adds New Providence, Murray Hill, Berkeley Heights, Gillette, Stirling, Millington, Lyons, Basking Ridge, Bernardsville, Far Hills, and Peapack-Gladstone.</p>
     </div>
 
     <div class="faq-item">
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Which Midtown Direct town has the best schools?</h3>
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Which Midtown Direct town has the best schools?</h3>
       <p>Short Hills (Millburn Township) and Chatham consistently score 10/10 on GreatSchools. Summit, Madison, Westfield (Raritan Valley), Basking Ridge (Gladstone Branch), and Bernardsville also hit 10/10 or 9/10. Within the five minutes or so separating each stop, school district quality often matters more than commute time.</p>
     </div>
 
     <div class="faq-item">
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What is the median home price in Summit, NJ vs. Westfield, NJ?</h3>
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What is the median home price in Summit, NJ vs. Westfield, NJ?</h3>
       <p>As of Q1 2026, Summit's median sale price is approximately <strong>$1.45M</strong> (Midtown Direct, 44-minute commute, 10/10 schools) while Westfield's median is <strong>$1.25M</strong> (Raritan Valley Line, 45-minute commute with Newark transfer, 10/10 schools). Summit commands a roughly 15% premium primarily because of its direct-train access.</p>
     </div>
 
     <div class="faq-item">
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Which NJ commuter towns are appreciating fastest in 2026?</h3>
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Which NJ commuter towns are appreciating fastest in 2026?</h3>
       <p>Year-over-year through Q1 2026: Chatham +10.2%, Westfield +9.7%, Millburn +9.4%, Madison +9.1%, Cranford +8.9%, Summit +8.6%, New Providence / Murray Hill +8.4%, Maplewood +8.1%. The common thread: top schools plus sub-45-minute NYC commute. Dover, Newark, and Bound Brook are appreciating slowest in our coverage area (2–4% YoY).</p>
     </div>
 
     <div class="faq-item">
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What is the cheapest NJ commuter town within 45 minutes of NYC?</h3>
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What is the cheapest NJ commuter town within 45 minutes of NYC?</h3>
       <p>On Midtown Direct and NEC within 45 minutes of NYC Penn, the most affordable options are <strong>Newark</strong> (~$375K median, 18-min commute), <strong>Newark Airport area</strong> (~$375K, 22 min), <strong>Elizabeth</strong> (~$425K, 25 min), and <strong>Linden / Rahway</strong> (~$475K, 30–33 min). These trade on price but have weaker school ratings (4–6/10) than suburbs farther west.</p>
     </div>
 
     <div class="faq-item">
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What NJ towns have both I-78 and NJ Transit train access?</h3>
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">What NJ towns have both I-78 and NJ Transit train access?</h3>
       <p>Towns with both a train station and direct I-78 access include Millburn, Short Hills, Summit, New Providence, Murray Hill, Berkeley Heights, and Union. The Gladstone Branch between Summit and Basking Ridge runs parallel to I-78, which is useful when the train has weekend service gaps.</p>
     </div>
 
     <div class="faq-item">
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Is the Raritan Valley Line worth buying on despite the transfer?</h3>
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--ink); margin:22px 0 6px;">Is the Raritan Valley Line worth buying on despite the transfer?</h3>
       <p>Often yes. The transfer at Newark Penn adds 8–12 minutes but buyers who can tolerate it gain access to Westfield (10/10 schools, $1.25M — a $200K discount vs. similar-commute Summit), Cranford (9/10 schools, $725K), Fanwood (9/10, $675K), and Bridgewater (8/10, $675K) for meaningfully less than Midtown Direct equivalents. If your employer has flexible start times, Raritan Valley is the best per-dollar commuter line in the region.</p>
     </div>
   </section>

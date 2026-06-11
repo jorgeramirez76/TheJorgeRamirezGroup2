@@ -18,6 +18,11 @@
     --shadow-md: 0 8px 32px rgba(0,0,0,0.10);
     --shadow-lg: 0 20px 60px rgba(0,0,0,0.14);
     --shadow-hover: 0 24px 64px rgba(0,0,0,0.18);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --radius: 8px;
+    --radius-pill: 999px;
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 * {
@@ -31,7 +36,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-body);
     color: var(--text-gray);
     line-height: 1.7;
     overflow-x: hidden;
@@ -67,7 +72,7 @@ nav.scrolled {
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--white);
@@ -117,7 +122,7 @@ a.logo:hover .logo-img {
     background: var(--primary-red);
     color: var(--white);
     padding: 0.75rem 1.5rem;
-    border-radius: 5px;
+    border-radius: var(--radius);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -229,7 +234,7 @@ a.logo:hover .logo-img {
 }
 
 .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -342,7 +347,7 @@ a.logo:hover .logo-img {
     background: var(--primary-red);
     color: var(--white);
     padding: 1.2rem 3rem;
-    border-radius: 5px;
+    border-radius: var(--radius);
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
@@ -362,7 +367,7 @@ a.logo:hover .logo-img {
     background: transparent;
     color: var(--white);
     padding: 1.2rem 3rem;
-    border-radius: 5px;
+    border-radius: var(--radius);
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
@@ -399,7 +404,7 @@ a.logo:hover .logo-img {
 }
 
 .stat-number {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 4rem;
     font-weight: 700;
     display: block;
@@ -450,7 +455,7 @@ a.logo:hover .logo-img {
 }
 
 .section-header h2 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 3.2rem;
     margin-bottom: 1.2rem;
     color: var(--black);
@@ -476,7 +481,7 @@ a.logo:hover .logo-img {
 .feature-card {
     background: var(--white);
     padding: 2.8rem 2.5rem;
-    border-radius: 2px;
+    border-radius: var(--radius);
     text-align: left;
     transition: all 0.4s ease;
     border: 1px solid var(--border-light);
@@ -511,7 +516,7 @@ a.logo:hover .logo-img {
 }
 
 .feature-card h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 1.6rem;
     margin-bottom: 1rem;
     color: var(--black);
@@ -538,7 +543,7 @@ a.logo:hover .logo-img {
     padding: 1.5rem 1.5rem 1.5rem 4rem;
     font-size: 1.1rem;
     border: 2px solid var(--medium-gray);
-    border-radius: 5px;
+    border-radius: var(--radius);
     font-family: 'Montserrat', sans-serif;
     transition: all 0.3s ease;
 }
@@ -569,7 +574,7 @@ a.logo:hover .logo-img {
 .county-tab {
     padding: 0.9rem 1.8rem;
     border: 2px solid var(--medium-gray);
-    border-radius: 5px;
+    border-radius: var(--radius);
     background: var(--white);
     cursor: pointer;
     font-weight: 600;
@@ -597,7 +602,7 @@ a.logo:hover .logo-img {
 
 .community-card {
     background: var(--white);
-    border-radius: 2px;
+    border-radius: var(--radius);
     padding: 2rem;
     box-shadow: var(--shadow-sm);
     transition: all 0.4s ease;
@@ -611,7 +616,7 @@ a.logo:hover .logo-img {
 }
 
 .community-card h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 1.9rem;
     color: var(--black);
     margin-bottom: 0.5rem;
@@ -685,7 +690,7 @@ a.logo:hover .logo-img {
 }
 
 .about-text h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     color: var(--black);
@@ -709,7 +714,7 @@ a.logo:hover .logo-img {
 .credential-item {
     background: var(--white);
     padding: 1rem 1.2rem;
-    border-radius: 2px;
+    border-radius: var(--radius);
     font-weight: 600;
     font-size: 0.9rem;
     color: var(--black);
@@ -720,7 +725,7 @@ a.logo:hover .logo-img {
 
 .about-image {
     position: relative;
-    border-radius: 10px;
+    border-radius: var(--radius);
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     background: var(--dark-gray);
@@ -752,7 +757,7 @@ a.logo:hover .logo-img {
 .resource-card {
     background: var(--white);
     padding: 2.5rem;
-    border-radius: 2px;
+    border-radius: var(--radius);
     text-align: left;
     transition: all 0.4s ease;
     border: 1px solid var(--border-light);
@@ -767,7 +772,7 @@ a.logo:hover .logo-img {
 }
 
 .resource-card h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 1.55rem;
     margin-bottom: 0.8rem;
     color: var(--black);
@@ -804,7 +809,7 @@ a.logo:hover .logo-img {
 .contact-form {
     background: var(--white);
     padding: 3rem;
-    border-radius: 10px;
+    border-radius: var(--radius);
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
 
@@ -825,7 +830,7 @@ a.logo:hover .logo-img {
     width: 100%;
     padding: 1rem;
     border: 2px solid var(--light-gray);
-    border-radius: 5px;
+    border-radius: var(--radius);
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     transition: border-color 0.3s ease;
@@ -848,7 +853,7 @@ a.logo:hover .logo-img {
     color: var(--white);
     padding: 1.2rem 3rem;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--radius);
     font-weight: 700;
     font-size: 1.1rem;
     cursor: pointer;
@@ -871,7 +876,7 @@ a.logo:hover .logo-img {
 .info-card {
     background: var(--white);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: var(--radius);
     box-shadow: 0 5px 30px rgba(0,0,0,0.08);
     display: flex;
     align-items: center;
@@ -888,7 +893,7 @@ a.logo:hover .logo-img {
 }
 
 .info-text h4 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 1.35rem;
     margin-bottom: 0.5rem;
     color: var(--black);
@@ -927,7 +932,7 @@ footer {
 }
 
 .footer-section h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     color: var(--primary-red);
@@ -1083,7 +1088,7 @@ footer {
     margin: 1.5rem 0;
     padding: 1rem;
     background: var(--light-gray);
-    border-radius: 10px;
+    border-radius: var(--radius);
 }
 
 .agent-card {
@@ -1093,7 +1098,7 @@ footer {
     margin: 2rem 0;
     padding: 2rem;
     background: var(--light-gray);
-    border-radius: 10px;
+    border-radius: var(--radius);
     border-left: 4px solid var(--primary-red);
 }
 
@@ -1151,7 +1156,7 @@ footer {
 }
 
 .testimonial-quote {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 1.2rem;
     font-style: italic;
     color: #3A3A3A;
@@ -1211,7 +1216,7 @@ footer {
 }
 
 .sale-price {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--white);
@@ -1283,7 +1288,7 @@ footer {
     border: 1px solid var(--border-light);
     border-top: 3px solid var(--gold);
     padding: 2.5rem 2rem 2rem;
-    border-radius: 2px;
+    border-radius: var(--radius);
     cursor: pointer;
     transition: all 0.35s ease;
     box-shadow: var(--shadow-sm);
@@ -1319,7 +1324,7 @@ footer {
 }
 
 .county-hero-name {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 1.9rem;
     font-weight: 600;
     color: var(--black);
@@ -1384,7 +1389,7 @@ footer {
 }
 
 .county-open-header h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 2.4rem;
     font-weight: 600;
     color: var(--black);
@@ -1408,7 +1413,7 @@ footer {
     padding: 1rem 1rem 1rem 3.5rem;
     font-size: 1rem;
     border: 2px solid var(--border-light);
-    border-radius: 2px;
+    border-radius: var(--radius);
     font-family: 'Montserrat', sans-serif;
     transition: border-color 0.3s;
 }
@@ -2015,7 +2020,7 @@ section { scroll-margin-top: 90px; }
   gap: 8px;
 }
 .listing-price {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display);
   font-size: 2.1rem;
   font-weight: 600;
   color: var(--dark-bg);
@@ -2030,7 +2035,7 @@ section { scroll-margin-top: 90px; }
   text-align: right;
 }
 .listing-town {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--text-gray);
@@ -2145,7 +2150,7 @@ section { scroll-margin-top: 90px; }
 .listings-more-stat:last-of-type { border-right: none; }
 .lms-num {
   display: block;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display);
   font-size: 2.4rem;
   color: var(--gold);
   font-weight: 600;
@@ -2542,7 +2547,7 @@ a.hero-train-pill:focus-visible .htp-arrow {
   font: 600 11px/1 'Montserrat', sans-serif;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  border-radius: 2px;
+  border-radius: var(--radius);
 }
 .listings-grid .listing-card.featured:hover {
   transform: translateY(-4px) scale(1.004);
@@ -2952,3 +2957,56 @@ a.hero-train-pill:focus-visible .htp-arrow {
 @media (max-width: 900px) {
   .hero .hero-train-wrap { justify-content: center; }
 }
+
+
+/* ===== Phase 1 design refinement (2026-06-11, rev B) =====
+   Research-backed type system: Playfair Display headlines
+   (serif = +13% perceived quality, Monotype/Neurons 2022; luxury RE standard),
+   Inter body (highest-rated screen font). Unified motion + tokens. */
+h1, h2, h3, h4 { letter-spacing: -0.01em; }
+
+.hero h1 {
+    font-size: clamp(2.9rem, 5vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+}
+.section-header h2 {
+    font-size: clamp(2.1rem, 3.2vw, 2.9rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+.stat-number {
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+.logo { font-weight: 700; }
+.about-text h2, .county-hero-name { font-weight: 700; }
+.feature-card h3, .community-card h3, .resource-card h3, .info-text h4 { font-weight: 600; }
+.footer-section h3 { font-family: var(--font-body); font-weight: 700; letter-spacing: 0.02em; }
+.testimonial-quote { font-weight: 500; font-style: italic; }
+.sale-price { font-weight: 700; }
+
+/* UI elements stay sans */
+nav, .nav-links, button, .btn, [class*="btn-"], input, select, textarea, label,
+.hero-eyebrow, .hero-badges, .stat-label, .listing-meta {
+    font-family: var(--font-body);
+}
+
+/* unified interaction language */
+a, button { transition: all 0.25s var(--ease); }
+.feature-card, .community-card, .resource-card, .stat-card, .listing-card, .cred-card {
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.feature-card:hover, .community-card:hover, .resource-card:hover, .listing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+[class*="btn"]:hover { transform: translateY(-2px); }
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+input, select, textarea { border-radius: var(--radius); }
