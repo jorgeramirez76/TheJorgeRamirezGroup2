@@ -12,7 +12,7 @@ tags: [sell my home Summit NJ, Summit NJ real estate, Union County homes, home e
 
 Most Summit homeowners thinking about selling in 2026 are focused on the wrong thing. They're watching interest rates, reading headlines about market slowdowns, and wondering whether to wait. But here's what the data actually shows: Summit's equity story is quietly building toward a strategic window — and most sellers will miss it.
 
-I've flipped 60+ homes before getting my license. I know what drives value in Summit specifically, not just "the NJ market." Here's the real picture for 2026.
+I've flipped homes before getting my license. I know what drives value in Summit specifically, not just "the NJ market." Here's the real picture for 2026.
 
 ## Summit's Market Reality: It's Not a Typical NJ Town
 

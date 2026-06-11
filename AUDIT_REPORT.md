@@ -1,4 +1,4 @@
-# Site Audit Report — 927 pages
+# Site Audit Report — 930 pages
 
 ## Issue summary (issue → page count)
 
@@ -89,6 +89,11 @@
 - jsonld blocks: 3
 - images without alt: 0
 
+### `blog/buying-a-home-in-new-jersey-2026.html` (/blog/buying-a-home-in-new-jersey-2026.html)
+- title: "Buying a Home in New Jersey in 2026 | Buyer Strategy Guide"
+- jsonld blocks: 3
+- images without alt: 0
+
 ### `blog/buying-home-basking-ridge-nj-2026.html` (/blog/buying-home-basking-ridge-nj-2026.html)
 - title: "Buying a Home in Basking Ridge NJ 2026 | Jorge Ramirez"
 - jsonld blocks: 1
@@ -172,9 +177,4 @@
 ### `blog/buying-home-linden-nj-2026.html` (/blog/buying-home-linden-nj-2026.html)
 - title: "Buying a Home in Linden NJ 2026 | Jorge Ramirez"
 - jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-livingston-nj-2026.html` (/blog/buying-home-livingston-nj-2026.html)
-- title: "Buying a Home in Livingston NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 1
 - images without alt: 0

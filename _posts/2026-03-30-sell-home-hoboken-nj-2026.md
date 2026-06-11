@@ -30,7 +30,7 @@ You bought in a market where Hoboken was "the next Jersey City." You paid $550k 
 3. **Skipping the "Pre-2018" Narrative**: You’re not selling a "condo." You’re selling a *Hoboken asset with 9 years of proven appreciation*. Most sellers don’t say that.  
 
 ### How I Approach It: Reverse Selling, Not Selling
-I don’t pitch. I *educate*. As a former flipper (60+ homes pre-licensing), I know what *actually* moves inventory. My AI-powered seller scoring tool analyzes *your specific unit* against 12,000+ Hoboken comps to pinpoint your exact equity. No guesswork.
+I don’t pitch. I *educate*. As a former flipper before getting licensed, I know what *actually* moves inventory. My AI-powered seller scoring tool analyzes *your specific unit* against 12,000+ Hoboken comps to pinpoint your exact equity. No guesswork.
 
 **My process for pre-2018 sellers:**  
 1. **Audit Your "Hidden Cost"**: Is your HVAC outdated? Is the balcony structurally sound? (Most pre-2018 units need *one* $5k fix to unlock value.)  

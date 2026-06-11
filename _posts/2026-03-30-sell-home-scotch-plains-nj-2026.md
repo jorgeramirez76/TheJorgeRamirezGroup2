@@ -12,7 +12,7 @@ tags: sell my home Scotch Plains NJ, Scotch Plains real estate, Westfield NJ mar
 
 Let’s cut to the chase: If you’ve lived in your Scotch Plains home since the Clinton administration, you’re not alone in quietly weighing your options. And no, it’s not because of the school district (though Scotch Plains-Fanwood is still top 10 in NJ). It’s because the *2026 market* is shaping up to be a different beast entirely.  
 
-I’ve flipped 60+ homes before getting my license. I’ve seen how Scotch Plains’ unique mix of 1950s ranches, 1970s split-levels, and newer estates reacts to market shifts. And here’s the hard truth: **2026 isn’t about selling *now*—it’s about selling *strategically* before the next wave hits.**  
+I’ve flipped homes before getting my license. I’ve seen how Scotch Plains’ unique mix of 1950s ranches, 1970s split-levels, and newer estates reacts to market shifts. And here’s the hard truth: **2026 isn’t about selling *now*—it’s about selling *strategically* before the next wave hits.**  
 
 ## The Scotch Plains Reality Check: 2025 Data You Can’t Ignore
 
@@ -45,7 +45,7 @@ Most homeowners think, “I’ll sell when rates drop.” Wrong. Here’s why 20
 I’ve seen it 50 times: Homeowners in Scotch Plains hold on until their kids graduate high school, then panic-sell at a 5% discount to meet a deadline. That’s not strategy—it’s desperation.  
 
 **The fix?**  
-Use my AI-powered seller scoring tool (built from 60+ flips). It analyzes *your specific home* against Scotch Plains comps, school district data, and Westfield’s new supply. For example:  
+Use my AI-powered seller scoring tool (built from hands-on flip experience). It analyzes *your specific home* against Scotch Plains comps, school district data, and Westfield’s new supply. For example:  
 - A 1970s split-level on Oak Street? *Score: 68/100* (needs kitchen/bathroom updates to compete with Westfield).  
 - A newer 3-bed on Maple Ave? *Score: 89/100* (ready to list now).  
 

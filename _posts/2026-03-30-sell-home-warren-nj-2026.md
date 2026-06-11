@@ -41,7 +41,7 @@ Warren isn’t a generic NJ suburb. It’s a **high-equity, high-competition mar
 
 ## How I Approach Selling Warren Homes (The "Reverse Selling" Way)
 
-I’ve flipped 60+ homes *before* getting my license. Why? Because I learned what *actually* moves homes in Warren, not what agents *say* moves homes. My process isn’t about pushing you to sell—it’s about **equipping you to sell smarter**.
+I’ve flipped homes *before* getting my license. Why? Because I learned what *actually* moves homes in Warren, not what agents *say* moves homes. My process isn’t about pushing you to sell—it’s about **equipping you to sell smarter**.
 
 1.  **AI-Powered Seller Scoring (No Guesswork):** I run your home through a proprietary tool that analyzes *your specific Warren property* against 100+ comps in your exact neighborhood (Maplewood, Oakwood, etc.), current inventory, and buyer demand. It tells you *exactly* what your home needs to sell in 2026—no vague "you need to update the kitchen" advice. It says: *"Your kitchen needs a new backsplash and updated lighting to compete with 3 homes listed this week in your zip code."*
 2.  **Warren-Specific Pricing Strategy:** We don’t just look at Warren’s average. We look at *your street*, *your block*, *your school district*. A home on a quiet street near Warren High School sells differently than one on a busier road near the Warren Municipal Complex. I price based on *what’s selling now*, not what sold 6 months ago.

@@ -216,7 +216,7 @@ Goal: Increase visibility on Google AND AI platforms (ChatGPT, Perplexity, Claud
 - High engagement from real estate community
 
 **What to post:**
-- Market insights (threads): "5 things I learned selling 60+ NJ homes [thread]"
+- Market insights (threads): "5 things I learned flipping NJ homes [thread]"
 - Quick tips: "Biggest mistake NJ sellers make: overpricing by 5%. Here's why..."
 - Polls: "NJ home buyers: what's your biggest challenge right now?"
 - Behind-the-scenes: "Just had 12 showings in one day for a Summit listing"

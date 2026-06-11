@@ -391,7 +391,7 @@ def build_faqs(d):
 
     faqs.append((
         f"Who is the best real estate agent in {display}, NJ?",
-        f"Jorge Ramirez is a licensed NJ real estate agent (License #1754604) at Keller Williams Premier Properties who serves {display} and the surrounding {county} County area. Jorge has personally bought, renovated, and sold 60+ investment properties across Northern NJ, giving him working knowledge of renovation costs, buyer behavior, and pricing strategy. Call 908-230-7844 for a free {display} consultation."
+        f"Jorge Ramirez is a licensed NJ real estate agent (License #1754604) at Keller Williams Premier Properties who serves {display} and the surrounding {county} County area. Jorge has personally bought, renovated, and sold investment properties across Northern NJ, giving him working knowledge of renovation costs, buyer behavior, and pricing strategy. Call 908-230-7844 for a free {display} consultation."
     ))
 
     if median:
@@ -452,7 +452,7 @@ def build_page(d):
     # ---- title + meta
     title = f"{display} NJ Real Estate Agent | Jorge Ramirez, Licensed Realtor"
     hook = f"{display} NJ real estate agent Jorge Ramirez."
-    cred = "Licensed NJ Realtor at Keller Williams, 60+ house flips."
+    cred = "Licensed NJ Realtor at Keller Williams."
     stat = f" Median {median}." if median else ""
     cta = " Call 908-230-7844."
     desc = (hook + " " + cred + stat + cta).strip()
@@ -460,7 +460,7 @@ def build_page(d):
         desc = (hook + " " + cred + cta).strip()
 
     og_title = f"Hire a Real Estate Agent in {display}, NJ — Jorge Ramirez"
-    og_desc = f"Licensed NJ Realtor since 2017. 60+ house flips. Buy or sell in {display} with an agent who knows the numbers. Free consultation."
+    og_desc = f"Licensed NJ Realtor since 2017. Personal house-flipping experience. Buy or sell in {display} with an agent who knows the numbers. Free consultation."
 
     # ---- stats tiles
     stat_tiles = []
@@ -548,7 +548,7 @@ def build_page(d):
     hero_h1 = f"{display}, NJ Real Estate Agent"
     hero_sub = (
         f"I'm Jorge Ramirez — a licensed NJ Realtor at Keller Williams Premier Properties who's "
-        f"personally flipped 60+ homes across Northern NJ. If you're buying or selling in {display}, "
+        f"personally flipped homes across Northern NJ. If you're buying or selling in {display}, "
         f"let's have one honest conversation and figure out if I'm the right fit."
     )
 
@@ -607,7 +607,7 @@ def build_page(d):
         <h2>Why homeowners in {display} hire Jorge</h2>
         <div class="proof">
           <ul>
-            <li><strong>60+ personal house flips.</strong> I've been the buyer, the renovator, and the seller. That means I can tell you inside a walk-through what a kitchen remodel will actually cost, what a pre-list punch list should look like, and which "cosmetic" issues will kill the appraisal.</li>
+            <li><strong>Hands-on investor experience.</strong> I've been the buyer, the renovator, and the seller. That means I can tell you inside a walk-through what a kitchen remodel will actually cost, what a pre-list punch list should look like, and which "cosmetic" issues will kill the appraisal.</li>
             <li><strong>Licensed full-time since 2017.</strong> NJ Real Estate License #1754604. Full-time agent — not a side hustle. Available nights and weekends during the core of your transaction.</li>
             <li><strong>Keller Williams Premier Properties.</strong> Offices in Summit, NJ. KW's technology platform (Command, Kelle, KW Labs) plus my personal AI-powered buyer-targeting system. Your listing gets more qualified eyeballs than a single-agent shop can put on it.</li>
             <li><strong>138 NJ towns covered.</strong> I work across Union, Essex, Morris, Middlesex, Hudson, and Somerset counties — so if your {display} sale is funding a move into a neighboring town, it's the same agent on both sides.</li>
@@ -798,7 +798,7 @@ def build_index(slugs):
 <meta name="description" content="Local real estate agent coverage across 138 NJ towns in Union, Essex, Morris, Middlesex, Hudson &amp; Somerset counties. Jorge Ramirez — licensed NJ Realtor at Keller Williams. Call 908-230-7844.">
 <link rel="canonical" href="https://thejorgeramirezgroup.com/realtor/">
 <meta property="og:title" content="NJ Real Estate Agent Directory — 138 Towns | Jorge Ramirez">
-<meta property="og:description" content="Find your town's dedicated agent page. 138 NJ towns covered. Jorge Ramirez — 60+ house flips, licensed NJ Realtor at Keller Williams.">
+<meta property="og:description" content="Find your town's dedicated agent page. 138 NJ towns covered. Jorge Ramirez — personal house-flipping experience, licensed NJ Realtor at Keller Williams.">
 <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
 <style>
 *{{box-sizing:border-box}}
@@ -820,7 +820,7 @@ footer a{{color:#f6a623;text-decoration:none}}
 </head><body>
 <div class="hero">
 <h1>Find a Real Estate Agent in Your NJ Town</h1>
-<p>Dedicated town pages covering 138 NJ communities across 6 counties. Jorge Ramirez — licensed NJ Realtor at Keller Williams, 60+ personal house flips. One honest conversation.</p>
+<p>Dedicated town pages covering 138 NJ communities across 6 counties. Jorge Ramirez — licensed NJ Realtor at Keller Williams, personal house-flipping experience. One honest conversation.</p>
 </div>
 <main class="container">
 {''.join(county_blocks)}

@@ -35,7 +35,7 @@ PAGES = {
         "why_jorge_h2": "Why Jorge Handles Divorce Sales Differently",
         "why_jorge_ps": [
             "Jorge has helped multiple divorcing couples in NJ sell their homes without the sale becoming another fight. The approach is simple: treat both spouses as clients, communicate with both equally, run data not opinions, and coordinate directly with both attorneys so nothing falls through the cracks.",
-            "Before becoming a full-time Realtor in 2017, Jorge personally bought, renovated, and sold over 60 homes as a real estate investor. He has seen every complication — and he has the pricing data to back up every recommendation. In a divorce sale, that data-driven approach removes the emotion from the pricing conversation.",
+            "Before becoming a full-time Realtor in 2017, Jorge personally bought, renovated, and sold homes as a real estate investor. He has seen every complication — and he has the pricing data to back up every recommendation. In a divorce sale, that data-driven approach removes the emotion from the pricing conversation.",
             "Jorge also understands discretion. Signs can be omitted. Showings can be restricted. Social media marketing can be dialed back. The sale can look and feel like any normal move — because how the neighborhood perceives the sale matters to both of you.",
         ],
         "why_jorge_credentials": [
@@ -107,7 +107,7 @@ PAGES = {
         "why_jorge_h2": "How Jorge Handles Inherited Home Sales",
         "why_jorge_ps": [
             "Jorge has helped many NJ families sell inherited homes — from pristine well-maintained properties to houses that had not been touched in 40 years. The first conversation is never about listing the house. It is about understanding the probate status, the tax situation, and what all the heirs actually want.",
-            "Before becoming a full-time Realtor in 2017, Jorge personally flipped 60+ houses. He has walked through dozens of dated, estate-sale homes and can tell you in 10 minutes whether it is worth spending $20K on paint and flooring to make $60K more on the sale — or whether it is smarter to sell as-is to one of his investor contacts next week.",
+            "Before becoming a full-time Realtor in 2017, Jorge personally flipped houses across NJ. He has walked through dozens of dated, estate-sale homes and can tell you in 10 minutes whether it is worth spending $20K on paint and flooring to make $60K more on the sale — or whether it is smarter to sell as-is to one of his investor contacts next week.",
             "Jorge works directly with your estate attorney, probate court timelines, and as many heirs as the estate has. Communication goes to everyone at the same time so no one ever feels left out or surprised.",
         ],
         "why_jorge_credentials": [
@@ -160,11 +160,11 @@ PAGES = {
         "breadcrumb_name": "Sell a Rental Property",
         "title_tag": "Selling a Rental Property in NJ | 1031 & Tenant Help | Jorge Ramirez",
         "meta_title": "Selling a Rental Property in NJ — 1031 Exchanges, Tenants, Taxes | Jorge Ramirez",
-        "meta_desc": "Selling a rental property in NJ? Jorge Ramirez coordinates tenants, 1031 exchanges, and investor marketing for landlords. Licensed agent, 60+ flips. Call 908-230-7844.",
+        "meta_desc": "Selling a rental property in NJ? Jorge Ramirez coordinates tenants, 1031 exchanges, and investor marketing for landlords. Licensed agent. Call 908-230-7844.",
         "keywords": "sell rental property NJ, landlord selling house NJ, 1031 exchange NJ, selling investment property New Jersey, tenant occupied sale NJ, absentee owner real estate NJ",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) helps NJ landlords sell rental properties — including 1031 exchange coordination, tenant-occupied sales, absentee owner representation, and investor buyer marketing. He has flipped 60+ homes personally and speaks the investor language. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) helps NJ landlords sell rental properties — including 1031 exchange coordination, tenant-occupied sales, absentee owner representation, and investor buyer marketing. He has flipped homes personally and speaks the investor language. Contact: 908-230-7844.",
         "hero_h1": "Selling a Rental Property in NJ? Here's How to Do It Without Leaving Money on the Table.",
-        "hero_p": "Selling a rental is a different animal. Tenants, 1031 exchanges, tax basis, depreciation recapture, cap rates, investor buyers — most agents do not speak the language. Jorge Ramirez does. He has flipped 60+ houses personally, built rental portfolios, and worked with dozens of NJ landlords on the exit. Call 908-230-7844.",
+        "hero_p": "Selling a rental is a different animal. Tenants, 1031 exchanges, tax basis, depreciation recapture, cap rates, investor buyers — most agents do not speak the language. Jorge Ramirez does. He has flipped houses personally, built rental portfolios, and worked with dozens of NJ landlords on the exit. Call 908-230-7844.",
         "pain_h2": "Where Landlords Lose Money on the Sale",
         "pain_intro": "A rental sale is not a primary-residence sale. The buyers are different, the tax stakes are bigger, and the tenants add complexity. Here is where landlords get squeezed when they hire an agent who has never handled an investment property.",
         "pain_cards": [
@@ -178,12 +178,12 @@ PAGES = {
         "mid_cta_p": "A free strategy call. Jorge runs the numbers on your property — rents, expenses, cap rate, likely sale price, and tax implications. Then you decide whether to sell now, sell later, or do a 1031 into something better.",
         "why_jorge_h2": "Why Landlords Trust Jorge With the Exit",
         "why_jorge_ps": [
-            "Jorge is not a retail-only agent trying to figure out investment properties in real time. He has flipped 60+ houses in NJ, built his own rental portfolio, and actively works with investor buyers every week. When a landlord calls Jorge, the first 10 minutes are a real conversation about cap rate, rent comps, and exit strategy — not sales pitches.",
+            "Jorge is not a retail-only agent trying to figure out investment properties in real time. He has flipped houses across NJ, built his own rental portfolio, and actively works with investor buyers every week. When a landlord calls Jorge, the first 10 minutes are a real conversation about cap rate, rent comps, and exit strategy — not sales pitches.",
             "That investor lens matters in three places. First, pricing: Jorge knows what investors will pay, so the listing lands in the right zone. Second, buyer marketing: Jorge has direct relationships with NJ investors doing 1031 exchanges and portfolio expansion. Third, transaction handling: tenant coordination, as-is inspections, and 1031 deadlines all get managed without drama.",
             "Jorge also works with absentee owners. If you live out of state and cannot drive to the property, everything can be handled remotely — e-signatures, virtual walkthroughs, attorney coordination, showing approvals by text. Selling a NJ rental from California or Florida is normal for Jorge.",
         ],
         "why_jorge_credentials": [
-            "60+ personal house flips — speaks the investor language fluently",
+            "Personal house-flipping experience — speaks the investor language fluently",
             "Network of NJ investor buyers for off-market and on-market deals",
             "1031 exchange coordination with qualified intermediaries",
             "Tenant negotiation, move-out incentives, cash-for-keys deals handled",
@@ -323,7 +323,7 @@ PAGES = {
         "why_jorge_h2": "Relocation Sales, Handled Fully Remote",
         "why_jorge_ps": [
             "Jorge has sold NJ homes for owners living in California, Florida, Texas, and overseas. Every document can be signed electronically. Every showing gets coordinated by text. Photographs, inspections, appraisals, attorney review, and closing all happen without you having to fly back.",
-            "Before becoming a full-time Realtor in 2017, Jorge personally flipped 60+ houses. He understands timelines under pressure and knows how to move fast without making costly mistakes. That experience applies directly to relocation sales — where speed and precision both matter.",
+            "Before becoming a full-time Realtor in 2017, Jorge personally flipped houses across NJ. He understands timelines under pressure and knows how to move fast without making costly mistakes. That experience applies directly to relocation sales — where speed and precision both matter.",
             "Jorge has also worked with corporate relocation packages from major employers. If your company is using a relocation management company (Cartus, Weichert, Aires, etc.), Jorge coordinates with their transferee specialist and follows their reporting protocols so your benefits are preserved.",
         ],
         "why_jorge_credentials": [
@@ -396,11 +396,11 @@ PAGES = {
         "why_jorge_ps": [
             "Jorge is a licensed NJ Realtor — not a cash-offer company. His cash-offer service pairs you with his network of local NJ investors who pay fair prices because they are buying to hold as rentals or flip modestly. The offers are real, the terms are transparent, and there is no long-term exclusivity.",
             "More importantly, Jorge shows you both options. Cash offer AND market listing, both numbers on the same page, both paths explained honestly. Some sellers genuinely need the speed and certainty of cash — Jorge delivers that. Others realize the $50K+ of extra equity from a market listing is worth the extra 45 days — Jorge delivers that too.",
-            "Before becoming a full-time Realtor in 2017, Jorge personally flipped 60+ houses. He knows exactly how investors price cash offers, because he used to write them. That insider perspective means his cash-offer clients get genuinely fair numbers — not the lowball specials iBuyers push.",
+            "Before becoming a full-time Realtor in 2017, Jorge personally flipped houses across NJ. He knows exactly how investors price cash offers, because he used to write them. That insider perspective means his cash-offer clients get genuinely fair numbers — not the lowball specials iBuyers push.",
         ],
         "why_jorge_credentials": [
             "Licensed NJ Realtor (#1754604) — not an iBuyer or wholesaler",
-            "60+ personal house flips — knows exactly how investors price cash offers",
+            "Personal house-flipping experience — knows exactly how investors price cash offers",
             "Network of local NJ investor buyers writing real cash offers in days",
             "Two-number consultation — cash offer AND market listing, both transparent",
             "No long exclusivity — you can always pivot to a market listing if cash is too low",
@@ -469,7 +469,7 @@ PAGES = {
         "why_jorge_ps": [
             "The NAR settlement is not scary — it actually makes buyer representation more transparent. Jorge has updated his buyer agreement to be short, plain-English, and property-specific so buyers understand exactly what they are signing before they sign.",
             "Jorge presents three compensation options upfront: seller-paid (most common, still), buyer-paid with offer credit (seller refunds at closing), or flat-fee representation. You pick what works. The final structure always gets locked into writing before any showing.",
-            "Before becoming a full-time Realtor in 2017, Jorge personally bought and sold 60+ houses. He has been on both sides of this exact conversation and can explain the commission mechanics, the offer structure, and the closing math in ways that make sense — not in agent-speak.",
+            "Before becoming a full-time Realtor in 2017, Jorge personally bought and sold houses as an investor. He has been on both sides of this exact conversation and can explain the commission mechanics, the offer structure, and the closing math in ways that make sense — not in agent-speak.",
         ],
         "why_jorge_credentials": [
             "Short-term, property-specific buyer agreements — no long lock-ins",
@@ -593,30 +593,30 @@ PAGES = {
         "breadcrumb_name": "Investment Property NJ",
         "title_tag": "Buying Investment Property NJ | Flip & Rental Agent | Jorge Ramirez",
         "meta_title": "Buying an Investment Property in NJ — Flip & Rental Realtor | Jorge Ramirez",
-        "meta_desc": "Looking for a flip or rental in NJ? Jorge Ramirez has 60+ personal flips and works with investor buyers every week. Deal flow, cap rate analysis, honest numbers. Call 908-230-7844.",
+        "meta_desc": "Looking for a flip or rental in NJ? Jorge Ramirez is a hands-on flip investor and works with investor buyers every week. Deal flow, cap rate analysis, honest numbers. Call 908-230-7844.",
         "keywords": "investment property NJ, flip NJ homes, rental property NJ, BRRRR NJ, buy and hold NJ, NJ investor realtor, house flipping NJ, cap rate New Jersey",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) is a New Jersey real estate agent and investor with 60+ personal house flips. He helps investor buyers — flippers, rental buyers, BRRRR strategies — source properties, analyze cap rates, and close cash deals in NJ. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) is a New Jersey real estate agent and investor with personal house-flipping experience. He helps investor buyers — flippers, rental buyers, BRRRR strategies — source properties, analyze cap rates, and close cash deals in NJ. Contact: 908-230-7844.",
         "hero_h1": "Buying an Investment Property in NJ? Work With an Agent Who Actually Invests.",
-        "hero_p": "Most agents do not know how to run a rental pro forma. Most agents have never walked a flip. Jorge Ramirez has flipped 60+ houses personally in NJ, built his own rental portfolio, and works with investor buyers every week. He sees deals before they hit MLS and can tell you in 10 minutes whether the numbers work. Call 908-230-7844.",
+        "hero_p": "Most agents do not know how to run a rental pro forma. Most agents have never walked a flip. Jorge Ramirez has flipped houses personally in NJ, built his own rental portfolio, and works with investor buyers every week. He sees deals before they hit MLS and can tell you in 10 minutes whether the numbers work. Call 908-230-7844.",
         "pain_h2": "Where Investor Buyers Get Burned",
         "pain_intro": "Buying investment real estate is not the same game as buying a primary residence. The metrics, the contingencies, the due diligence, and the negotiation all work differently. Here is where investor buyers lose money working with retail-only agents.",
         "pain_cards": [
             ("Agents Who Cannot Analyze a Deal", "You send a listing to your agent and ask 'does this work as a rental?' Three days later, they come back with a comparison of recent sales. You asked for cash-on-cash return — they sent you CMA data. Jorge speaks the metrics: cap rate, gross rent multiplier, DSCR, cash-on-cash, IRR. Conversations move fast."),
             ("No Off-Market Deal Flow", "The best flips and rentals are not on Zillow. They are at foreclosure auctions, through local wholesaler networks, from tired landlord tips, and from other investors trading portfolios. Retail-only agents do not have that pipeline. Jorge has a constant flow of off-market NJ opportunities — you get them before the general MLS sees them."),
             ("Missing Comp Adjustments for Investor Math", "Retail buyers pay on emotion. Investor buyers pay on math. The same house has two different valuations depending on who is buying. Jorge knows when to recommend an aggressive offer (because retail demand is high) vs. a disciplined one (because the flip margin is tight)."),
-            ("Blowing the ARV on a Flip", "After-repair value is where flippers make or lose money. Overestimating ARV by 5% can eat the entire profit. Jorge has personally flipped 60+ houses in NJ — he can walk a potential flip and tell you the realistic ARV, the construction budget, and the likely 90-day turn-around."),
+            ("Blowing the ARV on a Flip", "After-repair value is where flippers make or lose money. Overestimating ARV by 5% can eat the entire profit. Jorge has personally flipped houses in NJ — he can walk a potential flip and tell you the realistic ARV, the construction budget, and the likely 90-day turn-around."),
             ("Ignoring Local NJ Quirks", "NJ has specific rules that trip up out-of-state investors: high transfer taxes on luxury properties, attorney review requirements, flood zone issues in certain coastal and river areas, lead paint disclosures, and rent control in some municipalities. Jorge flags these on day one so you do not discover them at closing."),
         ],
         "mid_cta_h2": "Looking for Deal Flow? Let's Run Some Numbers.",
         "mid_cta_p": "A free call with Jorge. Share your buy box — target ARV, target cap rate, cash deployment, NJ regions of interest — and Jorge maps you into his existing deal pipeline. No commitments.",
         "why_jorge_h2": "Why Investors Choose Jorge",
         "why_jorge_ps": [
-            "Jorge is not a retail agent dabbling in investment real estate. Before becoming a full-time Realtor in 2017, he personally bought, renovated, and sold 60+ homes in NJ as an investor. He built his own rental portfolio. He has written cash offers, managed construction crews, and dealt with bad tenants. When an investor calls Jorge, the first conversation is a peer conversation.",
+            "Jorge is not a retail agent dabbling in investment real estate. Before becoming a full-time Realtor in 2017, he personally bought, renovated, and sold homes as an investor in NJ. He built his own rental portfolio. He has written cash offers, managed construction crews, and dealt with bad tenants. When an investor calls Jorge, the first conversation is a peer conversation.",
             "That operator experience matters in four places. First, deal sourcing — Jorge has the investor network that surfaces off-market deals. Second, underwriting — Jorge runs the real pro forma, including realistic maintenance reserves, vacancy, and management. Third, negotiation — Jorge knows which sellers will take cash discounts and which will not. Fourth, execution — Jorge has contractors, lenders, and property managers ready to recommend.",
             "Jorge is also comfortable with the common investor strategies: flipping, BRRRR, buy-and-hold, short-term rental (where allowed in NJ), and 1031 exchanges. He adapts his recommendations to your strategy — not a one-size-fits-all.",
         ],
         "why_jorge_credentials": [
-            "60+ personal house flips in NJ — real operator experience",
+            "personal house-flipping experience in NJ — real operator experience",
             "Own rental portfolio — speaks the buy-and-hold language fluently",
             "Off-market deal pipeline via investor network and wholesaler relationships",
             "Pro forma analysis: cap rate, cash-on-cash, IRR, ARV, BRRRR refinance math",
@@ -685,7 +685,7 @@ PAGES = {
         "why_jorge_ps": [
             "Jorge represents luxury clients in the $1M–$10M+ range across Summit, Westfield, Chatham, Millburn/Short Hills, Madison, Montclair, and premium pockets of Morris, Middlesex, and Hudson counties. Every engagement begins with understanding what the client needs beyond the sale price — privacy, speed, global reach, or quiet off-market execution.",
             "Jorge is with Keller Williams Premier Properties — which means access to the KW Luxury network, national luxury distribution, and international marketing channels. A $3M home listed with Jorge is not marketed like a $500K home. The photography, video, staging, copy, and distribution all match the price point.",
-            "Before becoming a full-time Realtor in 2017, Jorge personally flipped 60+ homes — including many in the premium NJ markets. He knows luxury construction standards, knows what the $1M–$5M buyer scrutinizes, and can coach sellers on the highest-ROI pre-listing investments. That operator perspective shows up in every luxury engagement.",
+            "Before becoming a full-time Realtor in 2017, Jorge personally flipped homes — including many in the premium NJ markets. He knows luxury construction standards, knows what the $1M–$5M buyer scrutinizes, and can coach sellers on the highest-ROI pre-listing investments. That operator perspective shows up in every luxury engagement.",
         ],
         "why_jorge_credentials": [
             "$1M–$10M+ NJ representation across Summit, Westfield, Chatham, Short Hills, Madison",

@@ -1,8 +1,8 @@
 # Deep Audit Report
 
-## 1. Live URL status (526 URLs in sitemap)
+## 1. Live URL status (529 URLs in sitemap)
 
-- 200 OK: 526
+- 200 OK: 529
 - 301/302 redirect: 0
 - 404 not found: 0
 - 500+ server error: 0
