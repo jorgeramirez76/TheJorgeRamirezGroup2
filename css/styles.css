@@ -3012,7 +3012,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 input, select, textarea { border-radius: var(--radius); }
 
 /* article imagery (2026-06-11) */
-.article-figure { margin: 36px 0; }
+.article-figure { margin: 36px auto; max-width: 620px; }
 .article-figure img {
     width: 100%; height: auto; display: block;
     border-radius: var(--radius);
