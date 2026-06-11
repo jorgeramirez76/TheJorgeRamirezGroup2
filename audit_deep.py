@@ -36,6 +36,12 @@ def all_html() -> list[Path]:
         s = str(p)
         if "/.git/" in s or "_backup" in s or "/staging/" in s:
             continue
+        # skip redirect stubs (noindex meta-refresh forwarders)
+        try:
+            if 'http-equiv="refresh"' in p.read_text(encoding="utf-8", errors="replace")[:1200]:
+                continue
+        except OSError:
+            pass
         out.append(p)
     return sorted(out)
 
