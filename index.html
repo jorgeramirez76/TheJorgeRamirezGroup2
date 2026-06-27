@@ -76,16 +76,9 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Scroll enhancement (Lenis + GSAP). Class added before paint to avoid FOUC;
-         safety timeout reveals all content if the libraries fail to load. -->
-    <script>
-      document.documentElement.classList.add('gsap-enhance');
-      setTimeout(function () {
-        if (!window.gsap) document.documentElement.classList.remove('gsap-enhance');
-      }, 2500);
-    </script>
+    <!-- Smooth-scroll enhancement (Lenis) -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="stylesheet" href="enhance.css?v=20260627">
+    <link rel="stylesheet" href="enhance.css?v=20260627b">
 
     <!-- Preload first hero slide for faster LCP -->
     <link rel="preload" as="image" href="images/properties/04-brick-stone.webp">
@@ -1505,11 +1498,9 @@
     <script src="js/communities-data.js"></script>
     <script src="js/main.js?v=20260417-v4"></script>
 
-    <!-- Scroll enhancement libraries (deferred — non-render-blocking, order preserved) -->
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <!-- Smooth scroll (Lenis) — deferred, non-render-blocking -->
     <script defer src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
-    <script defer src="enhance.js?v=20260627"></script>
+    <script defer src="enhance.js?v=20260627b"></script>
 
 </body>
 </html>

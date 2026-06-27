@@ -1,32 +1,9 @@
 /* ============================================================
-   Jorge Ramirez Group — scroll enhancement layer
-   Lenis smooth scroll + GSAP ScrollTrigger reveals.
-   Progressive enhancement: non-destructive, reduced-motion aware.
-   If JS/libs fail to load, a safety timeout reveals everything.
+   Jorge Ramirez Group — Lenis smooth-scroll baseline only.
+   No reveal/visibility rules here — the site's own animation
+   system (main.js) owns all element reveals.
    ============================================================ */
-
-/* Only pre-hide the hero bits when JS is confirmed (html.gsap-enhance)
-   AND the user has not asked to reduce motion. Hidden via opacity+visibility
-   so there is no flash; JS animates them back in. */
-@media (prefers-reduced-motion: no-preference) {
-  html.gsap-enhance .hero-content > * {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-/* GPU hints for the elements we animate (kept minimal to protect Core Web Vitals) */
-.hero-content > *,
-.section-header,
-.listing-card,
-.stat-card,
-.testimonial-card,
-.resource-card,
-.community-card {
-  will-change: transform, opacity;
-}
-
-/* Lenis recommended baseline */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
