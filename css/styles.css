@@ -2187,9 +2187,9 @@ a.hero-train-pill:visited {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 18px 38px 18px 32px;
+  padding: 22px 46px 22px 40px;
   color: #1A1A1A !important;
-  font: 700 15px/1 'Montserrat', sans-serif;
+  font: 700 16px/1 'Montserrat', sans-serif;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
@@ -2209,8 +2209,8 @@ a.hero-train-pill:focus-visible {
 }
 .hero-train-pill .htp-icon {
   color: #1A1A1A;
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   flex: 0 0 auto;
 }
 .hero-train-pill .htp-text {
@@ -2941,18 +2941,18 @@ a.hero-train-pill:focus-visible .htp-arrow {
 
 /* Make the commuter-map link support the hero instead of competing with main CTAs. */
 .hero .hero-train-wrap {
-  justify-content: flex-start;
-  margin-top: 1rem;
+  justify-content: center;
+  margin-top: 1.4rem;
 }
 .hero a.hero-train-pill,
 .hero a.hero-train-pill:link,
 .hero a.hero-train-pill:visited {
-  padding: 18px 38px 18px 32px;
+  padding: 22px 46px 22px 40px;
   border-color: #B8962E;
   background: #FFFFFF;
   color: #1A1A1A;
   box-shadow: 0 12px 34px rgba(0,0,0,.30);
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: .14em;
 }
 .hero a.hero-train-pill:hover,
