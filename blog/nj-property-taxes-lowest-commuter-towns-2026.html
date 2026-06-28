@@ -134,7 +134,19 @@
     .internal-links h3 { font-size: 1.4em; color: #333; margin-bottom: 20px; }
     .internal-links .link-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
     .internal-links .link-grid a { padding: 10px 20px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; font-size: 0.95em; }
+    .article-hero { margin: 0 auto 6px; max-width: 980px; }
+    .article-hero img { width:100%; height:auto; border-radius:12px; box-shadow:0 20px 50px -22px rgba(0,0,0,0.4); display:block; }
+    .article-hero figcaption { text-align:center; color:#999; font-size:0.88em; margin-top:10px; font-style:italic; }
+    .stat-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:38px 0; }
+    .stat-cards .sc { background:#fff; border:1px solid #ececec; border-top:4px solid #C41230; border-radius:10px; padding:24px 16px; text-align:center; box-shadow:0 8px 22px -12px rgba(0,0,0,0.15); }
+    .stat-cards .sc .num { font:700 2.2em/1 'Playfair Display',Georgia,serif; color:#C41230; }
+    .stat-cards .sc .lab { font-size:0.9em; color:#555; margin-top:8px; line-height:1.4; }
+    .inline-figure { margin:38px 0; }
+    .inline-figure img { width:100%; height:auto; border-radius:10px; display:block; box-shadow:0 14px 36px -18px rgba(0,0,0,0.3); }
+    .inline-figure figcaption { text-align:center; color:#999; font-size:0.88em; margin-top:8px; font-style:italic; }
+    .pull-quote { margin:42px auto; max-width:760px; padding:6px 0 6px 28px; border-left:5px solid #C9A75A; font:600 1.5em/1.45 'Playfair Display',Georgia,serif; color:#1a1a1a; }
     @media (max-width: 768px) { .article-header h1 { font-size: 1.7em; } }
+    @media (max-width: 680px) { .stat-cards { grid-template-columns:1fr; } }
   </style>
   <meta name="last-updated" content="2026-06-27">
 </head>
@@ -169,6 +181,17 @@
       </div>
     </header>
 
+    <figure class="article-hero">
+      <img src="/images/blog-hero/value-2026.jpg" width="1920" height="1280" alt="New Jersey home with the property-tax math that decides true monthly cost" loading="eager">
+      <figcaption>Two commuter towns 15 minutes apart can hand you tax bills that differ by thousands a year.</figcaption>
+    </figure>
+
+    <div class="stat-cards">
+      <div class="sc"><div class="num">2.23%</div><div class="lab">NJ average effective rate — highest in the U.S.</div></div>
+      <div class="sc"><div class="num">$3,000+</div><div class="lab">yearly swing between towns, same price range</div></div>
+      <div class="sc"><div class="num">~$34K</div><div class="lab">the gap over a 7-year ownership</div></div>
+    </div>
+
     <section>
       <h2>NJ has the highest property taxes in America — here's the real number</h2>
       <p><strong>New Jersey's average effective property tax rate is roughly 2.23%, the highest of any U.S. state.</strong> On a $700,000 home, that's about $15,600 a year — more than $1,300 a month before you've paid a dollar of mortgage. For a New Yorker used to property taxes baked invisibly into rent or a condo's common charges, it's the single biggest sticker shock of the move.</p>
@@ -191,6 +214,12 @@
         </tbody>
       </table>
       <p>That spread — roughly $4,900 a year between the low and high example, or about $34,000 over seven years — is real money most buyers never put on the whiteboard. It can also change how much house you qualify for, because lenders count taxes in your debt-to-income math.</p>
+
+      <p class="pull-quote">A $725K home in a higher-tax town can cost you more per month than a $760K home in a lower-tax one. The "cheaper" house isn't always cheaper.</p>
+      <figure class="inline-figure">
+        <img src="/images/towns/fanwood-1.webp" width="1280" height="960" alt="Fanwood NJ, a Union County commuter town with a historically lower effective property tax rate" loading="lazy">
+        <figcaption>Union County towns like Fanwood have historically paired NJ Transit access with lower effective rates than premium neighbors.</figcaption>
+      </figure>
 
       <h2>Lower-effective-rate commuter towns to look at</h2>
       <p>Across the six counties I work in — Union, Essex, Morris, Hudson, Middlesex, and Somerset — several towns combine NJ Transit access with effective rates below their premium neighbors. In Union County, <strong>Clark, Fanwood, and Scotch Plains</strong> have historically sat at the lower end of their county's effective-rate distribution while still offering train access and solid schools. The right pick depends on your exact price point, commute line, and school priorities — and on this year's certified rates.</p>

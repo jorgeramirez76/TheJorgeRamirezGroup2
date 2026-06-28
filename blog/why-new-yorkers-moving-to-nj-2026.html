@@ -134,7 +134,19 @@
     .internal-links h3 { font-size: 1.4em; color: #333; margin-bottom: 20px; }
     .internal-links .link-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
     .internal-links .link-grid a { padding: 10px 20px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; font-size: 0.95em; }
+    .article-hero { margin: 0 auto 6px; max-width: 980px; }
+    .article-hero img { width:100%; height:auto; border-radius:12px; box-shadow:0 20px 50px -22px rgba(0,0,0,0.4); display:block; }
+    .article-hero figcaption { text-align:center; color:#999; font-size:0.88em; margin-top:10px; font-style:italic; }
+    .stat-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:38px 0; }
+    .stat-cards .sc { background:#fff; border:1px solid #ececec; border-top:4px solid #C41230; border-radius:10px; padding:24px 16px; text-align:center; box-shadow:0 8px 22px -12px rgba(0,0,0,0.15); }
+    .stat-cards .sc .num { font:700 2.2em/1 'Playfair Display',Georgia,serif; color:#C41230; }
+    .stat-cards .sc .lab { font-size:0.9em; color:#555; margin-top:8px; line-height:1.4; }
+    .inline-figure { margin:38px 0; }
+    .inline-figure img { width:100%; height:auto; border-radius:10px; display:block; box-shadow:0 14px 36px -18px rgba(0,0,0,0.3); }
+    .inline-figure figcaption { text-align:center; color:#999; font-size:0.88em; margin-top:8px; font-style:italic; }
+    .pull-quote { margin:42px auto; max-width:760px; padding:6px 0 6px 28px; border-left:5px solid #C9A75A; font:600 1.5em/1.45 'Playfair Display',Georgia,serif; color:#1a1a1a; }
     @media (max-width: 768px) { .article-header h1 { font-size: 1.7em; } }
+    @media (max-width: 680px) { .stat-cards { grid-template-columns:1fr; } }
   </style>
   <meta name="last-updated" content="2026-06-27">
 </head>
@@ -168,6 +180,17 @@
         Keller Williams Premier Properties | <a href="tel:908-230-7844">908-230-7844</a> | <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a>
       </div>
     </header>
+
+    <figure class="article-hero">
+      <img src="/images/blog-hero/commute-2026.jpg" width="1920" height="1280" alt="New Jersey commuter town near an NJ Transit station with a direct train to New York City" loading="eager">
+      <figcaption>NYC money is concentrating in a narrow band of NJ towns near the train — and supply can't keep up.</figcaption>
+    </figure>
+
+    <div class="stat-cards">
+      <div class="sc"><div class="num">~6%</div><div class="lab">NJ home-price growth, early 2026</div></div>
+      <div class="sc"><div class="num">~0.5%</div><div class="lab">U.S. price growth, same period</div></div>
+      <div class="sc"><div class="num">7–21<span style="font-size:0.45em;"> days</span></div><div class="lab">to go under contract on a well-priced home</div></div>
+    </div>
 
     <section>
       <h2>The exodus, by the numbers</h2>
@@ -203,6 +226,12 @@
         <p style="font:600 11px/1 'Inter',sans-serif;letter-spacing:0.24em;text-transform:uppercase;color:#C9A75A;margin:0 0 10px;">Tool · Only on this site</p>
         <p style="margin:0;">Don't guess. <a href="/nj-train-map.html">Use the interactive NJ commuter-town map</a> to filter every town by your exact NYC commute time, median home price, and school rating across Midtown Direct, Raritan Valley, Gladstone, and the Northeast Corridor.</p>
       </div>
+
+      <figure class="inline-figure">
+        <img src="/images/towns/maplewood-1.webp" width="1280" height="960" alt="Maplewood NJ, a popular Midtown Direct commuter town for New Yorkers moving to New Jersey" loading="lazy">
+        <figcaption>Maplewood: ~30 minutes to Penn Station on Midtown Direct — a top landing spot for NYC transplants.</figcaption>
+      </figure>
+      <p class="pull-quote">A budget that buys a one-bedroom in Manhattan buys a whole house with a yard 35 minutes away on the train.</p>
 
       <h2>How to actually win a home in this market</h2>
       <p><strong>In a bidding-war market, you win on terms — not just the number.</strong> Transplants coming from the city are often surprised that the highest bid doesn't always take the house. Sellers want certainty. Here's what consistently wins in NJ commuter towns in 2026:</p>

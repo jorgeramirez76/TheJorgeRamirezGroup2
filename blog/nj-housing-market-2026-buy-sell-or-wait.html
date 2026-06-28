@@ -137,7 +137,19 @@
     .internal-links h3 { font-size: 1.4em; color: #333; margin-bottom: 20px; }
     .internal-links .link-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
     .internal-links .link-grid a { padding: 10px 20px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #e0e0e0; font-size: 0.95em; }
+    .article-hero { margin: 0 auto 6px; max-width: 980px; }
+    .article-hero img { width:100%; height:auto; border-radius:12px; box-shadow:0 20px 50px -22px rgba(0,0,0,0.4); display:block; }
+    .article-hero figcaption { text-align:center; color:#999; font-size:0.88em; margin-top:10px; font-style:italic; }
+    .stat-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:38px 0; }
+    .stat-cards .sc { background:#fff; border:1px solid #ececec; border-top:4px solid #C41230; border-radius:10px; padding:24px 16px; text-align:center; box-shadow:0 8px 22px -12px rgba(0,0,0,0.15); }
+    .stat-cards .sc .num { font:700 2.2em/1 'Playfair Display',Georgia,serif; color:#C41230; }
+    .stat-cards .sc .lab { font-size:0.9em; color:#555; margin-top:8px; line-height:1.4; }
+    .inline-figure { margin:38px 0; }
+    .inline-figure img { width:100%; height:auto; border-radius:10px; display:block; box-shadow:0 14px 36px -18px rgba(0,0,0,0.3); }
+    .inline-figure figcaption { text-align:center; color:#999; font-size:0.88em; margin-top:8px; font-style:italic; }
+    .pull-quote { margin:42px auto; max-width:760px; padding:6px 0 6px 28px; border-left:5px solid #C9A75A; font:600 1.5em/1.45 'Playfair Display',Georgia,serif; color:#1a1a1a; }
     @media (max-width: 768px) { .article-header h1 { font-size: 1.7em; } }
+    @media (max-width: 680px) { .stat-cards { grid-template-columns:1fr; } }
   </style>
   <meta name="last-updated" content="2026-06-27">
 </head>
@@ -172,6 +184,17 @@
       </div>
     </header>
 
+    <figure class="article-hero">
+      <img src="/images/blog-hero/value-2026.jpg" width="1920" height="1280" alt="New Jersey housing market 2026 — homes in a NYC commuter town" loading="eager">
+      <figcaption>The frantic 2021–22 pace is gone — but in the commuter belt, demand still keeps a floor under prices.</figcaption>
+    </figure>
+
+    <div class="stat-cards">
+      <div class="sc"><div class="num">+3–5%</div><div class="lab">forecast annual NJ price growth (no crash)</div></div>
+      <div class="sc"><div class="num">Mid-6%</div><div class="lab">30-year mortgage rates in 2026</div></div>
+      <div class="sc"><div class="num">7–21<span style="font-size:0.45em;"> days</span></div><div class="lab">for well-priced homes to go under contract</div></div>
+    </div>
+
     <section>
       <h2>The 2026 NJ market at a glance</h2>
       <table class="data-table">
@@ -194,6 +217,12 @@
         <div class="verdict-card"><h3>Move-up owners → SELL + BUY together</h3><p>You sell into strength and buy into the same strength, so the spread mostly washes. The real risk is timing the two transactions — that's where a coordinated plan matters most.</p></div>
         <div class="verdict-card"><h3>"Just waiting" → usually a mistake</h3><p>Waiting to "time the bottom" in a market with no forecast bottom typically costs you appreciation and a year of building equity. Wait only if your life situation — not the market — says wait.</p></div>
       </div>
+
+      <figure class="inline-figure">
+        <img src="/images/towns/summit-1.webp" width="1280" height="960" alt="Summit NJ, a premium NYC commuter town leading 2026 appreciation in the NJ market" loading="lazy">
+        <figcaption>Towns with a one-seat ride and top schools — like Summit — lead the 2026 gains.</figcaption>
+      </figure>
+      <p class="pull-quote">If rates fall later, you refinance. You can't go back and buy at today's price. Marry the house, date the rate.</p>
 
       <h2>For buyers: the "wait for a crash" math doesn't work</h2>
       <p><strong>The most expensive mistake NJ buyers make in 2026 is waiting for a crash that the data doesn't support.</strong> With prices forecast to rise 3–5% a year, every twelve months you wait, the same home gets more expensive — and you've paid a year of rent building someone else's equity instead of yours. If mortgage rates fall later, you refinance. You cannot go back and buy at today's price. That's the logic behind "marry the house, date the rate."</p>
