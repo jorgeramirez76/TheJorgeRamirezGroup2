@@ -148,7 +148,7 @@ Output ONLY the HTML content, no explanation."""
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Buying a Home in {town}, NJ in 2026 | The Jorge Ramirez Group</title>
 <meta name="description" content="Complete guide to buying a home in {town}, NJ. Local market insights, neighborhood info, and expert advice from Jorge Ramirez at Keller Williams.">
-<link rel="canonical" href="https://www.thejorgeramirezgroup.com/blog/{filename}">
+<link rel="canonical" href="https://thejorgeramirezgroup.com/blog/{filename.removesuffix('.html')}">
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -203,6 +203,7 @@ Output ONLY the HTML content, no explanation."""
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{topic} | The Jorge Ramirez Group</title>
 <meta name="description" content="{topic}. Expert NJ real estate advice from Jorge Ramirez at Keller Williams Premier Properties.">
+<link rel="canonical" href="https://thejorgeramirezgroup.com/blog/{filename.removesuffix('.html')}">
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>

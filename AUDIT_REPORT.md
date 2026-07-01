@@ -1,17 +1,19 @@
-# Site Audit Report — 951 pages
+# Site Audit Report — 957 pages
 
 ## Issue summary (issue → page count)
 
 | Issue | Pages affected |
 |-------|----------------|
+| title-too | 3 |
 
 ## Broken internal links — top 30
 
 | Broken href | Times referenced | Sample referrer |
 |---|---|---|
 | `/towns/${s.slug}.html` | 4 | `es/nj-train-map.html` |
+| `sms:+19082307844` | 1 | `contact.html` |
 
-## Sitemap gaps — 10 pages NOT in sitemap.xml
+## Sitemap gaps — 149 pages NOT in sitemap.xml
 
 - `/blog/best-nj-towns-for-families.html`
 - `/blog/essex-county-real-estate-market-q2-2026.html`
@@ -21,11 +23,68 @@
 - `/blog/top-nyc-commuter-towns-nj-2026.html`
 - `/chatham-vs-madison-nj.html`
 - `/communities/`
-- `/westfield-vs-summit-nj.html`
-- `/why-jorge-ramirez.html`
+- `/realtor/`
+- `/realtor/basking-ridge-nj.html`
+- `/realtor/bayonne-nj.html`
+- `/realtor/bedminster-nj.html`
+- `/realtor/berkeley-heights-nj.html`
+- `/realtor/bernards-township-nj.html`
+- `/realtor/bernardsville-nj.html`
+- `/realtor/bloomfield-nj.html`
+- `/realtor/boonton-nj.html`
+- `/realtor/boonton-township-nj.html`
+- `/realtor/bound-brook-nj.html`
+- `/realtor/branchburg-nj.html`
+- `/realtor/bridgewater-nj.html`
+- `/realtor/butler-nj.html`
+- `/realtor/caldwell-nj.html`
+- `/realtor/carteret-nj.html`
+- `/realtor/chatham-borough-nj.html`
+- `/realtor/chatham-nj.html`
+- `/realtor/chatham-township-nj.html`
+- `/realtor/chester-borough-nj.html`
+- `/realtor/chester-township-nj.html`
+- `/realtor/clark-nj.html`
+- `/realtor/cranbury-nj.html`
+- `/realtor/cranford-nj.html`
+- `/realtor/denville-nj.html`
+- `/realtor/dover-nj.html`
+- `/realtor/dunellen-nj.html`
+- `/realtor/east-brunswick-nj.html`
+- `/realtor/east-hanover-nj.html`
+- `/realtor/east-newark-nj.html`
+- `/realtor/edison-nj.html`
+- `/realtor/elizabeth-nj.html`
+- `/realtor/fanwood-nj.html`
+- `/realtor/far-hills-nj.html`
+- `/realtor/florham-park-nj.html`
+- `/realtor/franklin-township-nj.html`
+- `/realtor/garwood-nj.html`
+- `/realtor/glen-ridge-nj.html`
+- `/realtor/green-brook-nj.html`
+- `/realtor/guttenberg-nj.html`
+- `/realtor/hanover-nj.html`
+- `/realtor/harding-nj.html`
+- `/realtor/harrison-nj.html`
+- `/realtor/helmetta-nj.html`
+- `/realtor/highland-park-nj.html`
+- `/realtor/hillsborough-nj.html`
+- `/realtor/hillside-nj.html`
+- `/realtor/hoboken-nj.html`
+- `/realtor/jamesburg-nj.html`
+- `/realtor/jefferson-nj.html`
+- `/realtor/jersey-city-nj.html`
+- `/realtor/kearny-nj.html`
 
 ## Per-page detail (first 30 worst pages)
 
+
+### `nj-train-map.html` (/nj-train-map.html)
+- title: "NJ Commuter Town Map 2026: Filter Towns by NYC Commute, Price & Schools"
+- jsonld blocks: 4
+- images without alt: 0
+- issues: title-too-long-71
+- broken links: /towns/${s.slug}.html, /towns/${s.slug}.html
 
 ### `es/nj-train-map.html` (/es/nj-train-map.html)
 - title: "Mapa de Trenes NJ | Midtown Direct, Raritan Valley & NEC Commute"
@@ -33,11 +92,23 @@
 - images without alt: 0
 - broken links: /towns/${s.slug}.html, /towns/${s.slug}.html
 
-### `nj-train-map.html` (/nj-train-map.html)
-- title: "NJ Train Map | Midtown Direct, Raritan Valley & NEC Commute Guide"
-- jsonld blocks: 4
+### `contact.html` (/contact.html)
+- title: "Contact Jorge Ramirez — NJ Real Estate Agent | 908-230-7844"
+- jsonld blocks: 1
 - images without alt: 0
-- broken links: /towns/${s.slug}.html, /towns/${s.slug}.html
+- broken links: sms:+19082307844
+
+### `es/55-plus-communities-nj.html` (/es/55-plus-communities-nj.html)
+- title: "Comunidades 55+ en NJ 2026 | Casas para Adultos Activos y con Restricción de Edad"
+- jsonld blocks: 3
+- images without alt: 0
+- issues: title-too-long-81
+
+### `es/buyer-agency-agreement-nj.html` (/es/buyer-agency-agreement-nj.html)
+- title: "Acuerdo de Representación del Comprador en NJ 2026 | Quién Paga y Cómo Funciona"
+- jsonld blocks: 3
+- images without alt: 0
+- issues: title-too-long-79
 
 ### `404.html` (/404.html)
 - title: "Page Not Found — The Jorge Ramirez Group"
@@ -90,7 +161,7 @@
 - images without alt: 0
 
 ### `blog/best-nj-towns-to-sell-home.html` (/blog/best-nj-towns-to-sell-home.html)
-- title: "Best NJ Towns to Sell a Home 2026 | Fastest Markets"
+- title: "Best NJ Towns to Sell a Home Fast in 2026 (Ranked by Days on Market)"
 - jsonld blocks: 3
 - images without alt: 0
 
@@ -100,7 +171,7 @@
 - images without alt: 0
 
 ### `blog/best-time-to-sell-home-nj.html` (/blog/best-time-to-sell-home-nj.html)
-- title: "When Is the Best Time to Sell Your NJ Home?"
+- title: "Best Time to Sell a House in NJ (2026): Month-by-Month Data"
 - jsonld blocks: 3
 - images without alt: 0
 
@@ -162,19 +233,4 @@
 ### `blog/buying-home-florham-park-nj-2026.html` (/blog/buying-home-florham-park-nj-2026.html)
 - title: "Buying a Home in Florham Park NJ 2026 | Jorge Ramirez"
 - jsonld blocks: 1
-- images without alt: 0
-
-### `blog/buying-home-glen-ridge-nj-2026.html` (/blog/buying-home-glen-ridge-nj-2026.html)
-- title: "Buying a Home in Glen Ridge NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-highland-park-nj-2026.html` (/blog/buying-home-highland-park-nj-2026.html)
-- title: "Buying a Home in Highland Park NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-hoboken-nj-2026.html` (/blog/buying-home-hoboken-nj-2026.html)
-- title: "Buying a Home in Hoboken NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
 - images without alt: 0

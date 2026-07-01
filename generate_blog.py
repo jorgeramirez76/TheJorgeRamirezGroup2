@@ -680,7 +680,7 @@ redirect_html = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="refresh" content="0; url=https://thejorgeramirezgroup.com/blog/first-time-home-buyer-nj-guide.html">
-  <link rel="canonical" href="https://thejorgeramirezgroup.com/blog/first-time-home-buyer-nj-guide.html">
+  <link rel="canonical" href="https://thejorgeramirezgroup.com/blog/first-time-home-buyer-nj-guide">
   <title>First-Time Home Buyer Guide New Jersey | Jorge Ramirez</title>
   <meta name="robots" content="noindex, follow">
 </head>
