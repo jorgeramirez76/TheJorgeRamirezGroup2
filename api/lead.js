@@ -1,15 +1,17 @@
 // Serverless lead handler for The Jorge Ramirez Group.
-// Captures a website lead, then (best-effort, in parallel):
-//   1. Texts Jorge instantly via Twilio          (if TWILIO_* env vars set)
-//   2. Pushes the lead to the CRM webhook         (if CRM_WEBHOOK_URL set)
-//   3. Emails a durable copy via FormSubmit       (always — so a lead is never lost)
-// Then redirects the visitor to the thank-you page (or returns JSON for AJAX).
 //
-// Set these in Vercel → Project → Settings → Environment Variables to enable SMS + CRM:
-//   TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM  (a Twilio number, e.g. +1XXXXXXXXXX)
-//   LEAD_ALERT_TO   (Jorge's mobile to receive the text, e.g. +19082307844)
-//   CRM_WEBHOOK_URL (inbound webhook of the AI Sales Pipeline CRM)
-//   LEAD_EMAIL      (optional; defaults to jorgeramirez76@gmail.com)
+// STATUS: deployed but NOT yet wired to the forms. The website forms currently
+// POST directly to FormSubmit (which works from the browser). FormSubmit is behind
+// Cloudflare and 403s any *server-side* call, so this function delivers leads via
+// first-party channels instead. Flip the form actions to "/api/lead" ONLY AFTER at
+// least one channel below is configured in Vercel env vars.
+//
+// Delivery (best-effort, in parallel — a lead succeeds if ANY channel succeeds):
+//   1. Twilio SMS to Jorge   — TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM, LEAD_ALERT_TO
+//   2. CRM webhook           — CRM_WEBHOOK_URL
+//   3. Email via Resend      — RESEND_API_KEY, LEAD_EMAIL (to), RESEND_FROM (verified sender)
+//
+// Set these in Vercel → Project → Settings → Environment Variables, then redeploy.
 
 const ORIGIN = "https://thejorgeramirezgroup.com";
 
@@ -22,11 +24,8 @@ function safeNext(next) {
 }
 
 async function textJorge(lead) {
-  const sid = process.env.TWILIO_ACCOUNT_SID;
-  const token = process.env.TWILIO_AUTH_TOKEN;
-  const from = process.env.TWILIO_FROM;
-  const to = process.env.LEAD_ALERT_TO;
-  if (!sid || !token || !from || !to) return { skipped: "twilio env not set" };
+  const { TWILIO_ACCOUNT_SID: sid, TWILIO_AUTH_TOKEN: token, TWILIO_FROM: from, LEAD_ALERT_TO: to } = process.env;
+  if (!sid || !token || !from || !to) return { skipped: "twilio" };
   const body =
     `New web lead — ${lead.name || "?"}\n` +
     `${lead.phone || "no phone"} · ${lead.email || "no email"}\n` +
@@ -39,40 +38,40 @@ async function textJorge(lead) {
     headers: { Authorization: `Basic ${auth}`, "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({ To: to, From: from, Body: body }),
   });
-  if (!res.ok) throw new Error(`twilio ${res.status}`);
-  return { ok: true };
+  if (!res.ok) throw new Error(`twilio ${res.status}: ${(await res.text()).slice(0, 200)}`);
+  return { ok: "twilio" };
 }
 
 async function pushCRM(lead) {
   const url = process.env.CRM_WEBHOOK_URL;
-  if (!url) return { skipped: "no CRM_WEBHOOK_URL" };
+  if (!url) return { skipped: "crm" };
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(lead),
   });
   if (!res.ok) throw new Error(`crm ${res.status}`);
-  return { ok: true };
+  return { ok: "crm" };
 }
 
-async function emailLead(lead) {
-  const email = process.env.LEAD_EMAIL || "jorgeramirez76@gmail.com";
-  const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(email)}`, {
+async function emailViaResend(lead) {
+  const key = process.env.RESEND_API_KEY;
+  const to = process.env.LEAD_EMAIL;
+  const from = process.env.RESEND_FROM;
+  if (!key || !to || !from) return { skipped: "resend" };
+  const html =
+    `<h2>New website lead</h2>` +
+    `<p><b>Name:</b> ${lead.name}<br><b>Phone:</b> ${lead.phone}<br><b>Email:</b> ${lead.email}<br>` +
+    `<b>Town:</b> ${lead.town}<br><b>Looking to:</b> ${lead.intent}</p>` +
+    `<p><b>Message:</b><br>${(lead.message || "").replace(/\n/g, "<br>")}</p>` +
+    `<p style="color:#888">Page: ${lead.source} · ${lead.receivedAt}</p>`;
+  const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({
-      _subject: `New Lead — ${lead.name || "Website"} (${lead.source || "site"})`,
-      Name: lead.name,
-      Email: lead.email,
-      Phone: lead.phone,
-      Town: lead.town,
-      "Looking to": lead.intent,
-      Message: lead.message,
-      Page: lead.source,
-    }),
+    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ from, to, reply_to: lead.email || undefined, subject: `New Lead — ${lead.name || "Website"}`, html }),
   });
-  if (!res.ok) throw new Error(`email ${res.status}`);
-  return { ok: true };
+  if (!res.ok) throw new Error(`resend ${res.status}`);
+  return { ok: "resend" };
 }
 
 export default async function handler(req, res) {
@@ -85,10 +84,10 @@ export default async function handler(req, res) {
   const wantsJson =
     (req.headers.accept || "").includes("application/json") ||
     (req.headers["x-requested-with"] || "").toLowerCase() === "xmlhttprequest";
+  const next = safeNext(b._next);
 
-  // Honeypot: bots fill the hidden _honey field. Silently accept + drop.
   if (b._honey) {
-    return wantsJson ? res.status(200).json({ ok: true }) : res.redirect(303, safeNext(b._next));
+    return wantsJson ? res.status(200).json({ ok: true }) : res.redirect(303, next);
   }
 
   const lead = {
@@ -102,19 +101,17 @@ export default async function handler(req, res) {
     receivedAt: new Date().toISOString(),
   };
 
-  const results = await Promise.allSettled([textJorge(lead), pushCRM(lead), emailLead(lead)]);
-  const emailResult = results[2];
+  const results = await Promise.allSettled([textJorge(lead), pushCRM(lead), emailViaResend(lead)]);
+  const delivered = results.some((r) => r.status === "fulfilled" && r.value && r.value.ok);
   results.forEach((r, i) => {
-    const label = ["twilio", "crm", "email"][i];
+    const label = ["twilio", "crm", "resend"][i];
     if (r.status === "rejected") console.error(`lead delivery failed [${label}]:`, r.reason);
   });
+  if (!delivered) console.error("LEAD NOT DELIVERED — no channel configured/succeeded:", JSON.stringify(lead));
 
-  // If even the durable email copy failed, surface a soft error so the lead can retry.
-  if (emailResult.status === "rejected") {
-    return wantsJson
-      ? res.status(502).json({ ok: false, error: "delivery_failed" })
-      : res.redirect(303, safeNext(b._next) + (safeNext(b._next).includes("?") ? "&" : "?") + "err=1");
+  if (!delivered) {
+    const sep = next.includes("?") ? "&" : "?";
+    return wantsJson ? res.status(502).json({ ok: false }) : res.redirect(303, next + sep + "err=1");
   }
-
-  return wantsJson ? res.status(200).json({ ok: true }) : res.redirect(303, safeNext(b._next));
+  return wantsJson ? res.status(200).json({ ok: true }) : res.redirect(303, next);
 }
