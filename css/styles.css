@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
     --primary-red: #C41230;
     --dark-red: #8B0D22;
     --gold: #B8962E;
     --gold-light: #D4AF5A;
+    --gold-text: #8A6D14; /* AA-legible gold for text on light backgrounds */
     --black: #000000;
     --dark-bg: #0A0A0A;
     --dark-gray: #1A1A1A;
@@ -3044,4 +3045,32 @@ input, select, textarea { border-radius: var(--radius); }
     font-size: 0.82rem;
     letter-spacing: 0.04em;
     color: var(--text-light);
+}
+
+/* ============================================================
+   2026 polish (appended — overrides via source order)
+   ============================================================ */
+/* AA-legible gold for text on LIGHT backgrounds; bright --gold stays on dark surfaces */
+.section-tag,
+.testimonial-location,
+.county-hero-towns,
+.listing-over,
+.lms-num,
+.reveal-eyebrow { color: var(--gold-text); }
+
+/* Larger mobile-menu tap target (WCAG 44px). Do NOT set display here —
+   base rule keeps it display:none on desktop; the ≤768px media query flips it to flex. */
+.mobile-menu-btn {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+/* Respect prefers-reduced-motion: neutralize decorative loops + smooth-scroll */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
