@@ -18,6 +18,21 @@
       "source": "/nyc-to-nj-relocation",
       "destination": "/blog/moving-from-nyc-to-nj-guide",
       "permanent": true
+    },
+    {
+      "source": "/realtor/:town-nj.html",
+      "destination": "/towns/:town",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/:town-nj",
+      "destination": "/towns/:town",
+      "permanent": true
+    },
+    {
+      "source": "/realtor",
+      "destination": "/communities",
+      "permanent": true
     }
   ],
   "headers": [
