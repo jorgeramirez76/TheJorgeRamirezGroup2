@@ -5,7 +5,12 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.thejorgeramirezgroup.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.thejorgeramirezgroup.com"
+        }
+      ],
       "destination": "https://thejorgeramirezgroup.com/:path*",
       "permanent": true
     },
@@ -20,13 +25,693 @@
       "permanent": true
     },
     {
-      "source": "/realtor/:town-nj.html",
-      "destination": "/towns/:town",
+      "source": "/realtor/basking-ridge-nj",
+      "destination": "/towns/basking-ridge",
       "permanent": true
     },
     {
-      "source": "/realtor/:town-nj",
-      "destination": "/towns/:town",
+      "source": "/realtor/bayonne-nj",
+      "destination": "/towns/bayonne",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/bedminster-nj",
+      "destination": "/towns/bedminster",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/berkeley-heights-nj",
+      "destination": "/towns/berkeley-heights",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/bernards-township-nj",
+      "destination": "/towns/bernards-township",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/bernardsville-nj",
+      "destination": "/towns/bernardsville",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/bloomfield-nj",
+      "destination": "/towns/bloomfield",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/boonton-nj",
+      "destination": "/towns/boonton",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/boonton-township-nj",
+      "destination": "/towns/boonton-township",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/bound-brook-nj",
+      "destination": "/towns/bound-brook",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/branchburg-nj",
+      "destination": "/towns/branchburg",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/bridgewater-nj",
+      "destination": "/towns/bridgewater",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/butler-nj",
+      "destination": "/towns/butler",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/caldwell-nj",
+      "destination": "/towns/caldwell",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/carteret-nj",
+      "destination": "/towns/carteret",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/chatham-borough-nj",
+      "destination": "/towns/chatham-borough",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/chatham-nj",
+      "destination": "/towns/chatham",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/chatham-township-nj",
+      "destination": "/towns/chatham-township",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/chester-borough-nj",
+      "destination": "/towns/chester-borough",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/chester-township-nj",
+      "destination": "/towns/chester-township",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/clark-nj",
+      "destination": "/towns/clark",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/cranbury-nj",
+      "destination": "/towns/cranbury",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/cranford-nj",
+      "destination": "/towns/cranford",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/denville-nj",
+      "destination": "/towns/denville",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/dover-nj",
+      "destination": "/towns/dover",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/dunellen-nj",
+      "destination": "/towns/dunellen",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/east-brunswick-nj",
+      "destination": "/towns/east-brunswick",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/east-hanover-nj",
+      "destination": "/towns/east-hanover",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/east-newark-nj",
+      "destination": "/towns/east-newark",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/edison-nj",
+      "destination": "/towns/edison",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/elizabeth-nj",
+      "destination": "/towns/elizabeth",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/fanwood-nj",
+      "destination": "/towns/fanwood",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/far-hills-nj",
+      "destination": "/towns/far-hills",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/florham-park-nj",
+      "destination": "/towns/florham-park",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/franklin-township-nj",
+      "destination": "/towns/franklin-township",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/garwood-nj",
+      "destination": "/towns/garwood",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/glen-ridge-nj",
+      "destination": "/towns/glen-ridge",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/green-brook-nj",
+      "destination": "/towns/green-brook",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/guttenberg-nj",
+      "destination": "/towns/guttenberg",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/hanover-nj",
+      "destination": "/towns/hanover",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/harding-nj",
+      "destination": "/towns/harding",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/harrison-nj",
+      "destination": "/towns/harrison",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/helmetta-nj",
+      "destination": "/towns/helmetta",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/highland-park-nj",
+      "destination": "/towns/highland-park",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/hillsborough-nj",
+      "destination": "/towns/hillsborough",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/hillside-nj",
+      "destination": "/towns/hillside",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/hoboken-nj",
+      "destination": "/towns/hoboken",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/jamesburg-nj",
+      "destination": "/towns/jamesburg",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/jefferson-nj",
+      "destination": "/towns/jefferson",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/jersey-city-nj",
+      "destination": "/towns/jersey-city",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/kearny-nj",
+      "destination": "/towns/kearny",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/kenilworth-nj",
+      "destination": "/towns/kenilworth",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/kinnelon-nj",
+      "destination": "/towns/kinnelon",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/lincoln-park-nj",
+      "destination": "/towns/lincoln-park",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/linden-nj",
+      "destination": "/towns/linden",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/livingston-nj",
+      "destination": "/towns/livingston",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/long-hill-nj",
+      "destination": "/towns/long-hill",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/madison-nj",
+      "destination": "/towns/madison",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/manville-nj",
+      "destination": "/towns/manville",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/maplewood-nj",
+      "destination": "/towns/maplewood",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/mendham-borough-nj",
+      "destination": "/towns/mendham-borough",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/mendham-township-nj",
+      "destination": "/towns/mendham-township",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/metuchen-nj",
+      "destination": "/towns/metuchen",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/middlesex-borough-nj",
+      "destination": "/towns/middlesex-borough",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/middlesex-nj",
+      "destination": "/towns/middlesex",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/millburn-nj",
+      "destination": "/towns/millburn",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/millstone-nj",
+      "destination": "/towns/millstone",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/milltown-nj",
+      "destination": "/towns/milltown",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/mine-hill-nj",
+      "destination": "/towns/mine-hill",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/monroe-township-nj",
+      "destination": "/towns/monroe-township",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/montclair-nj",
+      "destination": "/towns/montclair",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/montgomery-nj",
+      "destination": "/towns/montgomery",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/montville-nj",
+      "destination": "/towns/montville",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/morris-plains-nj",
+      "destination": "/towns/morris-plains",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/morris-township-nj",
+      "destination": "/towns/morris-township",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/morristown-nj",
+      "destination": "/towns/morristown",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/mount-arlington-nj",
+      "destination": "/towns/mount-arlington",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/mount-olive-nj",
+      "destination": "/towns/mount-olive",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/mountain-lakes-nj",
+      "destination": "/towns/mountain-lakes",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/mountainside-nj",
+      "destination": "/towns/mountainside",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/netcong-nj",
+      "destination": "/towns/netcong",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/new-brunswick-nj",
+      "destination": "/towns/new-brunswick",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/new-providence-nj",
+      "destination": "/towns/new-providence",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/newark-nj",
+      "destination": "/towns/newark",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/north-bergen-nj",
+      "destination": "/towns/north-bergen",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/north-brunswick-nj",
+      "destination": "/towns/north-brunswick",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/north-caldwell-nj",
+      "destination": "/towns/north-caldwell",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/north-plainfield-nj",
+      "destination": "/towns/north-plainfield",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/nutley-nj",
+      "destination": "/towns/nutley",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/old-bridge-nj",
+      "destination": "/towns/old-bridge",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/orange-nj",
+      "destination": "/towns/orange",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/parsippany-troy-hills-nj",
+      "destination": "/towns/parsippany-troy-hills",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/peapack-gladstone-nj",
+      "destination": "/towns/peapack-gladstone",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/pequannock-township-nj",
+      "destination": "/towns/pequannock-township",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/perth-amboy-nj",
+      "destination": "/towns/perth-amboy",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/piscataway-nj",
+      "destination": "/towns/piscataway",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/plainfield-nj",
+      "destination": "/towns/plainfield",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/plainsboro-nj",
+      "destination": "/towns/plainsboro",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/rahway-nj",
+      "destination": "/towns/rahway",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/randolph-nj",
+      "destination": "/towns/randolph",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/raritan-nj",
+      "destination": "/towns/raritan",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/riverdale-nj",
+      "destination": "/towns/riverdale",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/rockaway-borough-nj",
+      "destination": "/towns/rockaway-borough",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/rockaway-township-nj",
+      "destination": "/towns/rockaway-township",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/rocky-hill-nj",
+      "destination": "/towns/rocky-hill",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/roseland-nj",
+      "destination": "/towns/roseland",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/roselle-nj",
+      "destination": "/towns/roselle",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/roselle-park-nj",
+      "destination": "/towns/roselle-park",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/roxbury-nj",
+      "destination": "/towns/roxbury",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/sayreville-nj",
+      "destination": "/towns/sayreville",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/scotch-plains-nj",
+      "destination": "/towns/scotch-plains",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/secaucus-nj",
+      "destination": "/towns/secaucus",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/short-hills-nj",
+      "destination": "/towns/short-hills",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/somerville-nj",
+      "destination": "/towns/somerville",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/south-amboy-nj",
+      "destination": "/towns/south-amboy",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/south-bound-brook-nj",
+      "destination": "/towns/south-bound-brook",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/south-brunswick-nj",
+      "destination": "/towns/south-brunswick",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/south-orange-nj",
+      "destination": "/towns/south-orange",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/south-plainfield-nj",
+      "destination": "/towns/south-plainfield",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/south-river-nj",
+      "destination": "/towns/south-river",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/spotswood-nj",
+      "destination": "/towns/spotswood",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/springfield-nj",
+      "destination": "/towns/springfield",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/summit-nj",
+      "destination": "/towns/summit",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/union-city-nj",
+      "destination": "/towns/union-city",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/union-nj",
+      "destination": "/towns/union",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/verona-nj",
+      "destination": "/towns/verona",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/victory-gardens-nj",
+      "destination": "/towns/victory-gardens",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/warren-township-nj",
+      "destination": "/towns/warren-township",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/washington-township-morris-nj",
+      "destination": "/towns/washington-township-morris",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/watchung-nj",
+      "destination": "/towns/watchung",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/weehawken-nj",
+      "destination": "/towns/weehawken",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/west-caldwell-nj",
+      "destination": "/towns/west-caldwell",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/west-new-york-nj",
+      "destination": "/towns/west-new-york",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/west-orange-nj",
+      "destination": "/towns/west-orange",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/westfield-nj",
+      "destination": "/towns/westfield",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/wharton-nj",
+      "destination": "/towns/wharton",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/winfield-nj",
+      "destination": "/towns/winfield",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/woodbridge-nj",
+      "destination": "/towns/woodbridge",
       "permanent": true
     },
     {
@@ -39,23 +724,44 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Strict-Transport-Security", "value": "max-age=31536000" },
-        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=()"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(webp|jpg|jpeg|png|gif|svg|ico|woff2|woff|ttf|mp4)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(css|js)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, must-revalidate"
+        }
       ]
     }
   ]
