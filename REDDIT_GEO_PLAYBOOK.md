@@ -8,6 +8,7 @@
 
 ## Rule #1: Don't get banned (read before posting)
 Reddit nukes self-promoters. Follow these or it backfires:
+
 - **~9:1 rule** — for every 1 post that mentions your site/services, make ~9 purely helpful comments with no link.
 - **Age + karma** — use an established account (30+ days, real comment karma). A brand-new account dropping links = instant spam filter.
 - **Disclose** — "I'm a licensed NJ agent (KW), so grain of salt —" builds trust and satisfies rules. Hiding it and getting caught = ban + reputation hit.
@@ -31,6 +32,7 @@ Any public post steering business must be honest and identify you as a licensed 
 
 ## Map posts to your ranked queries (double win: Reddit + your own pages rank these)
 These are pulled from your Search Console — you already rank pos 5–15 for them, so a matching Reddit thread compounds:
+
 1. **"moving from NYC to NJ"** (600+ impressions) → detailed comment: commuter towns by budget, tax math, Midtown Direct. Your strongest angle.
 2. **"cranford vs westfield"** / "westfield cranford" → side-by-side price/commute/schools comment.
 3. **"average time to sell a house in NJ"** → days-on-market by county.
@@ -49,6 +51,7 @@ These are pulled from your Search Console — you already rank pos 5–15 for th
 
 ## On-page GEO (pairs with Reddit — already partly done)
 LLMs cross-check claims against your site. To be the trusted source:
+
 - ✅ **AI crawlers allowed** — robots.txt already permits GPTBot, PerplexityBot, ClaudeBot, Google-Extended.
 - ✅ **Query-matched titles** — done (2026, numbers, direct questions).
 - **Add a 40–60 word answer box** at the top of each money page (direct answer to the page's question) — optimal for snippet/AI extraction.
