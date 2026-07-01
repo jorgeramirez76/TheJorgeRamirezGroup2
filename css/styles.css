@@ -1002,7 +1002,10 @@ footer {
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(0, 0, 0, 0.98);
+        background: #1A1A1A;
+        z-index: 1200;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+        border-top: 1px solid rgba(184, 150, 46, 0.25);
         flex-direction: column;
         padding: 2rem;
         gap: 1rem;
