@@ -1,0 +1,13 @@
+# Keep internal source / build / report files OFF the public web.
+# (These are currently publicly downloadable on GitHub Pages — this fixes that.)
+.git
+.claude
+__pycache__
+*.py
+*.pyc
+_posts
+*.md
+.design-screens
+*.pdf
+*.db
+*.backup
