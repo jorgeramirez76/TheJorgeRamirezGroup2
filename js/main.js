@@ -210,31 +210,22 @@ if ('IntersectionObserver' in window) {
     if (slides.length === 0) return;
 
     // Load background images from data-bg attribute
-    let loadedCount = 0;
     slides.forEach(slide => {
+        // Skip any slide already painted inline (the LCP hero) — avoids a wasteful re-fetch/re-paint.
+        if (slide.style.backgroundImage) return;
         const url = slide.getAttribute('data-bg');
         if (url) {
             const img = new Image();
-            img.onload = () => {
-                slide.style.backgroundImage = `url('${url}')`;
-                loadedCount++;
-            };
-            img.onerror = () => {
-                // Fallback to local hero image
-                slide.style.backgroundImage = "url('images/hero.jpg')";
-                loadedCount++;
-            };
+            img.onload = () => { slide.style.backgroundImage = `url('${url}')`; };
             img.src = url;
         }
     });
 
-    // Set first slide background immediately as well (inline fallback)
-    if (slides[0] && !slides[0].style.backgroundImage) {
-        slides[0].style.backgroundImage = "url('images/hero.jpg')";
-    }
-
     let current = 0;
     const INTERVAL = 12000;
+
+    // Don't auto-rotate for users who prefer reduced motion (images already loaded above).
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     setInterval(() => {
         slides[current].classList.remove('active');
