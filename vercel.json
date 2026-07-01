@@ -8,6 +8,16 @@
       "has": [{ "type": "host", "value": "www.thejorgeramirezgroup.com" }],
       "destination": "https://thejorgeramirezgroup.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/nyc-to-nj-relocation.html",
+      "destination": "/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/nyc-to-nj-relocation",
+      "destination": "/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
     }
   ],
   "headers": [
