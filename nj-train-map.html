@@ -681,5 +681,6 @@ document.getElementById('schoolSlider').addEventListener('input', (e) => {
 const allBounds = L.latLngBounds(STATIONS.map(s => [s.lat, s.lng]).concat([[NYC.lat, NYC.lng]]));
 map.fitBounds(allBounds, {padding: [30, 30]});
 </script>
+<script defer src="/js/site-cta.js"></script>
 </body>
 </html>
