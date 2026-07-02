@@ -187,6 +187,9 @@ def main():
     sitemap_text = (ROOT / "sitemap.xml").read_text() if (ROOT / "sitemap.xml").exists() else ""
     sitemap_urls = set(re.findall(r"<loc>([^<]+)</loc>", sitemap_text))
     pages_in_sitemap = {u.replace(SITE_ORIGIN, "") for u in sitemap_urls}
+    # cleanUrls (Vercel): sitemap holds extensionless URLs; map them back to .html files
+    pages_in_sitemap |= {u + ".html" for u in pages_in_sitemap if not u.endswith((".html", "/"))}
+    pages_in_sitemap |= {u + "index.html" for u in pages_in_sitemap if u.endswith("/")}
     pages_in_repo = {r["url"] for r in reports if not r["url"].startswith("/es/")}
     missing_from_sitemap = pages_in_repo - pages_in_sitemap - {"/404.html"}
 
