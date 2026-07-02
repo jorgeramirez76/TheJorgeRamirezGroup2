@@ -292,6 +292,12 @@ TOWNS = {
 }
 
 def head(title, description, keywords, canonical, og_title, og_url, geo_region, geo_place, schema_json):
+    # NOTE (brand type system): generated posts must NOT carry a per-file <style>
+    # block. All post typography comes from css/styles.css via the `.blog-content`
+    # scope (Playfair Display h2/h3 in rem/clamp sizes, light-gray info-box with a
+    # 3px gold left border, dark-ink table th). Never reintroduce em-based h2/h3
+    # scales, the blue #f0f3ff .info-box, or red #C41230 table headers here — keep
+    # the body wrapped in <main class="blog-content"> and rely on the shared sheet.
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
