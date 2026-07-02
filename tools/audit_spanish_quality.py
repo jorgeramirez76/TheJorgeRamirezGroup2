@@ -30,8 +30,15 @@ PATTERNS: dict[str, str] = {
 SKIP_LINE = re.compile(r"(<script\b|</script>|href=|src=|canonical|@id|\"url\"|https?://)", re.I)
 KEEP_EVEN_IF_SKIP = re.compile(r"(<title\b|<meta\b|\"description\"|\"jobTitle\"|\"knowsAbout\")", re.I)
 
+# Match <style>...</style> blocks (any depth) — CSS is code, not prose.
+# Class selectors like ".neighborhood-card", ".schools-highlight", ".commute"
+# would otherwise trigger english_context_words false positives.
+STYLE_BLOCK = re.compile(r"<style\b[^>]*>.*?</style>", re.I | re.S)
+
 
 def visibleish_text(raw: str) -> str:
+    # Strip <style> blocks entirely — CSS class names are code, not visible content.
+    raw = STYLE_BLOCK.sub("", raw)
     lines: list[str] = []
     for line in raw.splitlines():
         if SKIP_LINE.search(line) and not KEEP_EVEN_IF_SKIP.search(line):
