@@ -3074,3 +3074,17 @@ input, select, textarea { border-radius: var(--radius); }
         scroll-behavior: auto !important;
     }
 }
+
+/* ─── HERO BACKGROUND VIDEO (lazy, progressive enhancement) ───── */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  pointer-events: none;
+}
+.hero.video-on .hero-video { opacity: 1; }

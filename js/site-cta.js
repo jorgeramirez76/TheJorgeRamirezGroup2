@@ -39,3 +39,49 @@
   if (document.body) document.body.appendChild(bar);
   else document.addEventListener('DOMContentLoaded', function () { document.body.appendChild(bar); });
 })();
+
+/* ============================================================
+   Scroll-reveal micro-animations. Progressive enhancement only:
+   content stays fully visible without JS, with reduced motion,
+   or in browsers lacking IntersectionObserver.
+   ============================================================ */
+(function () {
+  'use strict';
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function init() {
+    var els = document.querySelectorAll('.section-header, .resource-card, .service-card');
+    if (!els.length) return;
+
+    var st = document.createElement('style');
+    st.textContent =
+      '.jrg-rv{opacity:0;transform:translateY(22px);' +
+      'transition:opacity .65s ease,transform .65s cubic-bezier(.16,1,.3,1)}' +
+      '.jrg-rv-in{opacity:1;transform:none}';
+    document.head.appendChild(st);
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('jrg-rv-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    var vh = window.innerHeight;
+    var n = 0;
+    els.forEach(function (el) {
+      /* only elements below the first viewport ever get hidden */
+      if (el.getBoundingClientRect().top > vh * 0.85) {
+        el.classList.add('jrg-rv');
+        el.style.transitionDelay = (n++ % 6) * 55 + 'ms';
+        io.observe(el);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();

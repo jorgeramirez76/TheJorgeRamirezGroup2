@@ -418,3 +418,38 @@ if ('IntersectionObserver' in window) {
     });
   });
 })();
+
+// ============================
+// CINEMATIC HERO VIDEO (lazy)
+// Loads after window load; carousel remains the fallback for
+// reduced-motion, save-data, and any playback failure.
+// ============================
+(function initHeroVideo() {
+    const hero = document.querySelector('.hero');
+    const carousel = document.querySelector('.hero-carousel');
+    if (!hero || !carousel) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const conn = navigator.connection;
+    if (conn && (conn.saveData || /(^|-)2g/.test(conn.effectiveType || ''))) return;
+
+    function load() {
+        const v = document.createElement('video');
+        v.className = 'hero-video';
+        v.muted = true;
+        v.loop = true;
+        v.playsInline = true;
+        v.setAttribute('muted', '');
+        v.setAttribute('playsinline', '');
+        v.setAttribute('aria-hidden', 'true');
+        v.preload = 'auto';
+        v.src = '/videos/hero-loop.mp4';
+        v.addEventListener('canplaythrough', () => {
+            v.play().then(() => hero.classList.add('video-on')).catch(() => v.remove());
+        }, { once: true });
+        v.addEventListener('error', () => v.remove(), { once: true });
+        carousel.insertAdjacentElement('afterend', v);
+    }
+
+    if (document.readyState === 'complete') setTimeout(load, 400);
+    else window.addEventListener('load', () => setTimeout(load, 400));
+})();
