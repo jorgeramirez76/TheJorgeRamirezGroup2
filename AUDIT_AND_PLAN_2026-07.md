@@ -55,3 +55,23 @@ Every `rel=canonical`/`og:url`/hreflang/JSON-LD url currently uses `.html`, whic
 - **Generators** (repo root): `town_data.py` (COUNTY + commute; no medians by design), `bulk_update_towns.py`, `generate_new_landing_pages.py`, `generate_missing_towns.py`, `generate_blog.py`, `daily-blog.py`, `gen_realtor_pages.py` (⚠️ regenerating towns/realtor could UNDO S-1 — avoid, or update generators first).
 - **macOS gotchas:** `grep --include` fails under zsh; `sed` needs `-i ''`; use a non-`#` delimiter when replacement contains `#hex`; BSD sed alternation needs `-E`.
 - **Deploy verify:** after `git push`, poll ~60–90s (git deploy), then curl the live clean URL. Local preview: `preview_start jrg-site` (python http.server 8911).
+
+---
+
+## ✅ SESSION 2 (2026-07-01 PM) — executed & live
+
+- **S-2 canonical cleanup DONE:** 13,477 absolute `.html` URLs stripped across 1,096 files (canonical/og:url/hreflang/JSON-LD + both sitemaps regenerated to clean URLs). daily-blog.py + generate_blog.py emit clean canonicals now. audit_site.py patched to map clean sitemap URLs back to files.
+- **www→apex 308 DONE** via Vercel API (`PATCH /v9/projects/<id>/domains/www...` with `{"redirect":...,"redirectStatusCode":308}` — dashboard NOT needed; CLI token at `~/Library/Application Support/com.vercel.cli/auth.json` + teamId).
+- **Comparison pages:** Quick Verdict blocks on 11 pages (all *-vs-* now covered). **47 buying-home posts:** answer blocks + BreadcrumbList (17 added). **3 thin tools:** +1,100 words + FAQPage. `#1a1a2e`→`var(--dark-gray)` sitewide.
+- **Blog typography DONE:** shared `.blog-content` scope in styles.css; per-file em scales/blue info-box/red th stripped from 39 posts.
+- **⚠️ TOWN ANSWER BLOCKS WERE CORRUPTED (P4 injection bug):** 114/138 town pages had the answer template's three {TOWN} slots each filled with a ~21KB blob of swallowed page markup (recursive). Repaired deterministically (real median/DOM/county/schools data recovered from between blobs). Detector: `</h1>` inside `.town-answer` div. 15 thin blocks de-typo'd.
+- **Visual layer:** scroll-reveal micro-animations site-wide via js/site-cta.js (progressive enhancement, reduced-motion safe); cinematic golden-hour hero loop `/videos/hero-loop.mp4` (Seedance 2.0, 2.8MB 1440p) lazy-loaded above the carousel fallback; NYC→NJ guide freshness + answer block + homepage link.
+- **Compliance:** jrg-sizzle.mp4 re-cut 15s→10.7s to remove "60+ PERSONAL HOUSE FLIPS / 42 HOMES SOLD" stats card (hard rule). ⚠️ OPEN: index.html still shows "42 Homes sold on record / See all 42 on Zillow" (listings-footer) — conflicts with no-sale-count rule but is Zillow-verifiable; Jorge to decide.
+- **⚠️ Subagent incident:** an agent confabulated an "urgent CMA request" and wrote an unrequested `cma/` page — deleted before deploy. Always audit `git status ??` after agent waves.
+
+## REMAINING after session 2
+1. Bulk ES translation (~330 pages) — unchanged, next big item.
+2. es/towns answer blocks (EN-only feature so far); es/ typography pass.
+3. `best-nj-towns-for-families-2026.html` kept its own premium type scale (deliberate).
+4. Homepage hero landscape re-export (04-brick-stone.webp) — moot-ish now that video covers it.
+5. Resubmit sitemaps in GSC (readonly token can't; Jorge or re-consent `webmasters` scope).
