@@ -13,14 +13,13 @@
 | `/towns/${s.slug}.html` | 4 | `es/nj-train-map.html` |
 | `sms:+19082307844` | 1 | `contact.html` |
 
-## Sitemap gaps — 149 pages NOT in sitemap.xml
+## Sitemap gaps — 148 pages NOT in sitemap.xml
 
 - `/blog/best-nj-towns-for-families.html`
 - `/blog/essex-county-real-estate-market-q2-2026.html`
 - `/blog/morris-county-real-estate-market-q2-2026.html`
 - `/blog/nj-property-tax-guide-homeowners.html`
 - `/blog/selling-your-home-summit-nj-guide.html`
-- `/blog/top-nyc-commuter-towns-nj-2026.html`
 - `/chatham-vs-madison-nj.html`
 - `/communities/`
 - `/realtor/`
@@ -75,6 +74,7 @@
 - `/realtor/jefferson-nj.html`
 - `/realtor/jersey-city-nj.html`
 - `/realtor/kearny-nj.html`
+- `/realtor/kenilworth-nj.html`
 
 ## Per-page detail (first 30 worst pages)
 
@@ -182,7 +182,7 @@
 
 ### `blog/buying-home-basking-ridge-nj-2026.html` (/blog/buying-home-basking-ridge-nj-2026.html)
 - title: "Buying a Home in Basking Ridge NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 1
+- jsonld blocks: 2
 - images without alt: 0
 
 ### `blog/buying-home-berkeley-heights-nj-2026.html` (/blog/buying-home-berkeley-heights-nj-2026.html)
@@ -192,12 +192,12 @@
 
 ### `blog/buying-home-bloomfield-nj-2026.html` (/blog/buying-home-bloomfield-nj-2026.html)
 - title: "Buying a Home in Bloomfield NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 1
+- jsonld blocks: 2
 - images without alt: 0
 
 ### `blog/buying-home-chatham-nj-2026.html` (/blog/buying-home-chatham-nj-2026.html)
 - title: "Buying a Home in Chatham NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 1
+- jsonld blocks: 2
 - images without alt: 0
 
 ### `blog/buying-home-clark-nj-2026.html` (/blog/buying-home-clark-nj-2026.html)
@@ -207,7 +207,7 @@
 
 ### `blog/buying-home-cranford-nj-2026.html` (/blog/buying-home-cranford-nj-2026.html)
 - title: "Buying a Home in Cranford NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 1
+- jsonld blocks: 2
 - images without alt: 0
 
 ### `blog/buying-home-denville-nj-2026.html` (/blog/buying-home-denville-nj-2026.html)
@@ -232,5 +232,5 @@
 
 ### `blog/buying-home-florham-park-nj-2026.html` (/blog/buying-home-florham-park-nj-2026.html)
 - title: "Buying a Home in Florham Park NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 1
+- jsonld blocks: 2
 - images without alt: 0
