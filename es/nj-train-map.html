@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* Highway shield */
   .hwy-shield {
-    background:#fff; color:#1a1a2e; border:2px solid var(--ink); border-radius:3px;
+    background:#fff; color:var(--dark-gray, #1A1A1A); border:2px solid var(--ink); border-radius:3px;
     font-family:'Inter',sans-serif; font-weight:800; font-size:12px;
     padding:2px 6px; text-align:center; min-width:24px; line-height:1;
     box-shadow:0 2px 4px rgba(0,0,0,0.2);
@@ -221,8 +221,8 @@ document.addEventListener('DOMContentLoaded', function () {
   .hwy-shield.interstate { background:#1F4E79; color:#fff; border-color:#fff; position:relative; }
   .hwy-shield.interstate::before { content:"I"; font-size:9px; display:block; }
   .hwy-shield.interstate::after { content:""; position:absolute; top:-4px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:8px solid transparent; border-right:8px solid transparent; border-bottom:6px solid #1F4E79; }
-  .hwy-shield.us-route { background:#fff; color:#1a1a2e; border-radius:50%; width:32px; height:32px; padding:6px 0; border-color:#1a1a2e; font-size:11px; }
-  .hwy-shield.state-route { background:#fff; color:#1a1a2e; }
+  .hwy-shield.us-route { background:#fff; color:var(--dark-gray, #1A1A1A); border-radius:50%; width:32px; height:32px; padding:6px 0; border-color:var(--dark-gray, #1A1A1A); font-size:11px; }
+  .hwy-shield.state-route { background:#fff; color:var(--dark-gray, #1A1A1A); }
   .hwy-shield.parkway { background:#0B6B3A; color:#fff; border-color:#fff; }
   .hwy-shield.turnpike { background:#003D82; color:#fff; border-color:#fff; }
 

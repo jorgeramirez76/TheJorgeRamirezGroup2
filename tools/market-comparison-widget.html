@@ -31,6 +31,9 @@
         .tool-cta { display: inline-block; padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1em; }
         .compare-links { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
         .compare-links a { padding: 10px 20px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; border: 1px solid #e0e0e0; }
+        .tool-info { max-width: 720px; margin: 60px auto 40px; padding: 0 20px; text-align: left; }
+        .tool-info h2 { font-size: 1.5em; margin: 35px 0 12px; color: #2C2C2C; }
+        .tool-info p { color: #444; line-height: 1.7; margin-bottom: 15px; }
     </style>
 
     <!-- Twitter Cards -->
@@ -74,6 +77,54 @@
     <meta property="og:url" content="https://thejorgeramirezgroup.com/tools/market-comparison-widget">
     <meta property="og:type" content="website">
     <meta name="ai-content-declaration" content="human-authored">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is median price or price per square foot better for comparing NJ towns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use both. Median price is skewed by the mix of homes that happened to sell — a quarter heavy on large colonials inflates it. Price per square foot corrects for size, which helps when two towns have different housing stock, but it ignores lot size, condition, and renovations. Frame the comparison with price per square foot, then check actual sold listings before drawing conclusions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does days on market mean when comparing NJ towns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Days on market measures how fast homes go under contract. Short times — a week or two for well-priced homes — signal a seller's market where buyers need to move quickly. Longer times mean more room to negotiate. Compare by price band, not just by town, because starter homes and luxury listings in the same ZIP code often behave like two different markets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the property-tax rate matter more than the tax bill in NJ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A tax bill reflects both the local rate and the home's value, so a big bill may just mean a big house. The effective rate — taxes as a percentage of market value — lets you compare towns fairly. Two NJ towns can have similar average bills but different rates, and at the same purchase price, the lower-rate town leaves more room in your monthly budget."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do school ratings affect NJ home prices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Typically, yes — strong school districts are capitalized into home prices, meaning buyers pay a premium to live there whether or not they use the schools. That premium also tends to support resale value, which is why families and investors both watch district quality. When comparing towns, weigh the school premium against tax rates and commute to see the full cost picture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best season to judge an NJ town's housing market?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No single season tells the whole story. Spring typically brings the most listings and the most competition in New Jersey, while late fall and winter run slower with softer numbers. Month-to-month comparisons mostly measure the calendar, so compare the same period year over year, and pull identical date ranges when weighing two towns against each other."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <div class="tool-page">
@@ -90,6 +141,17 @@
             <a href="../blog/best-nj-suburbs-nyc-commuters.html">NJ Suburbs by Budget</a>
         </div>
         <p style="margin-top: 30px;"><strong>Need help choosing? Call Jorge: <a href="tel:+19082307844" style="color:#2C2C2C;">908-230-7844</a></strong></p>
+    </div>
+
+    <div class="tool-info">
+        <h2>Should you compare towns by median price or price per square foot?</h2>
+        <p>Both — because each one lies a little on its own. A town's median sale price is skewed by what happened to sell that quarter: a run of large colonials pushes the median up even if nothing about the market changed. Price per square foot corrects for home size, so it's the better yardstick when two towns have very different housing stock — say, Cape Cods in one and center-hall colonials in the other. But price per square foot ignores lot size, condition, and renovation level, so use it to frame the comparison, then look at actual sold listings to see what the numbers are hiding.</p>
+        <h2>What does days on market actually tell you?</h2>
+        <p>Days on market is a speed gauge. When well-priced homes in a town typically go under contract in a week or two, sellers have the leverage and buyers need to come prepared. When listings sit for a month or more, there's room to negotiate. Compare the figure by price band, not just by town — a starter home and a two-million-dollar listing in the same ZIP code often live in completely different markets.</p>
+        <h2>Why compare property-tax rates instead of tax bills?</h2>
+        <p>New Jersey tax bills reflect both the local rate and the home's assessed value, so a big bill sometimes just means a big house. The effective tax rate — what you pay as a percentage of market value — is what lets you compare towns fairly. Two NJ towns can have similar average bills but meaningfully different rates, and at any given purchase price the lower-rate town leaves more room in your monthly payment. School quality works the same way: strong districts are typically capitalized into home prices, so you're paying for them either way — the question is whether you'll use them.</p>
+        <h2>Do the seasons change what the numbers say?</h2>
+        <p>Absolutely. The NJ spring market typically brings the most inventory and the most competition; late fall and winter run slower, with fewer listings and softer stats. That means comparing this month's numbers to last month's mostly measures the calendar. Compare year over year instead, and if you're weighing two towns, pull the same period for both. When you want a second set of eyes on the data, Jorge walks through this with buyers every week.</p>
     </div>
 <script defer src="/js/site-cta.js"></script>
 </body>
