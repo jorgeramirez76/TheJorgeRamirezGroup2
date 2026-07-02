@@ -17,7 +17,7 @@ ES_DIR = ROOT / "es"
 
 # High-signal fragments observed during live/source inspection.
 PATTERNS: dict[str, str] = {
-    "bad_homepage_counts": r"\b(?:103\s+Comunidades|120\s+Pueblos|109\s+Pueblos)\b",
+    "bad_homepage_counts": r"\b(?:10[0-9]|11[0-9]|12[0-9])\s+(?:Comunidades|Pueblos|comunidades|pueblos|Communities|Towns|communities|towns)\b",
     "broken_titles": r"\b(?:Your\s+Listado|First-Time\s+Comprador|Free\s+NJ|What\s+Is\s+Mi\s+Casa|Sell\s+Mi\s+Casa\s+Fast|Buyer\s+Costs|Why\s+Choose\s+Jorge|Two\s+Small\s+Ciudad|Commuterss)\b",
     "english_cta": r"\b(?:Get\s+Home\s+Value|Know\s+My\s+Number|Start\s+the\s+Conversation|Find\s+a\s+Home|List\s+With\s+Jorge|Learn\s+More|Get\s+Started)\b",
     "english_real_estate": r"\b(?:Looking\s+to|Expert\s+guidance|Expert\s+bienes|buyer\s+and\s+seller|buyer\s+representation|seller\s+representation|Licensed\s+Agente|top[- ]rated|full[- ]time|since\s+2017)\b",
