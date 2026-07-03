@@ -56,7 +56,10 @@ def resolve_link(src_path: Path, href: str) -> Path | None:
     """Resolve a relative href against the source file's directory.
     Returns None if href is external or fragment-only.
     """
-    if href.startswith(("http://", "https://", "//", "mailto:", "tel:", "javascript:")):
+    if href.startswith(("http://", "https://", "//", "mailto:", "tel:", "sms:", "javascript:")):
+        return None
+    # Skip JS template literals (found when HREF_RE grabs backtick-string hrefs from <script> blocks).
+    if "${" in href:
         return None
     if href.startswith("#"):
         return src_path  # anchor on same page
