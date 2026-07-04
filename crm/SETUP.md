@@ -33,14 +33,25 @@ Without this step, green-bubble (SMS) replies from non-iPhone leads will never r
    - Set a **server password** — put the same value in `crm/.env` as `BLUEBUBBLES_PASSWORD`.
    - Confirm the server's local port (default `1234`) matches `BLUEBUBBLES_BASE_URL` in
      `crm/.env` (default `http://localhost:1234`).
-   - Under **Webhooks**, add a new webhook:
-     - URL: `http://localhost:4820/webhooks/bluebubbles`
-     - Events: **New Message** and **Updated Message** (delivery/read receipts).
    - Leave the webhook secret field blank — BlueBubbles does not sign outgoing webhook
      requests, and the endpoint is `127.0.0.1`-only by design (see `crm/DECISIONS.md`).
-4. Send yourself a test text from another phone and confirm it shows up in
-   `crm/crm.db` (`npm run seed` already ran, so query the `messages` table, or just watch
-   the server log — `npm run dev` prints an inbound row insert).
+4. **Register the webhook — a fresh install has none, this is not optional.** Go to
+   **API & Webhooks → Manage → Add Webhook** and enter:
+   - URL: **`http://127.0.0.1:4820/webhooks/bluebubbles`** — use the literal IP, not
+     `localhost`. On macOS `localhost` can resolve to `::1` (IPv6) first; the CRM server
+     only listens on IPv4, so BlueBubbles' webhook dispatcher fails silently against
+     `localhost` (logs `Status Text: undefined`) instead of falling back like `curl` does.
+   - Events: **New Message** and **Updated Message** (or "All Events").
+   - Confirm it saved: `curl -s "http://localhost:1234/api/v1/webhook?password=<BLUEBUBBLES_PASSWORD>"`
+     should return your webhook in `data`, not `[]`.
+5. Send yourself a test text from another phone **after** finishing this whole section
+   (BlueBubbles' new-message detection appears to key off "since this server session
+   started" — a message sent before you last opened/restarted BlueBubbles Server won't
+   retroactively fire the webhook even though it's visible in Messages.app). Confirm it
+   shows up in `crm/crm.db` (`sqlite3 crm/crm.db "select * from messages order by id desc
+   limit 5;"`, or watch `crm/logs/server.out.log` for an incoming `POST /webhooks/bluebubbles`).
+   Detection is not instant without the Private API (see the note at the end of this file) —
+   give it a minute or two before assuming it's broken.
 
 ## 4. Disable Mac sleep (the server must run 24/7)
 
@@ -87,3 +98,14 @@ it with `launchctl`. It restarts automatically on crash and on every login/reboo
    `audit_log` alert row appears.
 
 If all four check out, Phase 2 is live end-to-end on real hardware.
+
+## Note: instant detection needs the Private API (optional, real trade-off)
+
+Without BlueBubbles' **Private API** enabled (Settings → Private API — requires SIP disabled
+via Recovery Mode), new-message detection runs on an internal polling cadence rather than
+instant FSEvents-driven push, so the "<2 second" target in §6.1 of the master plan won't be
+met — expect anywhere from several seconds to a couple minutes. It still works correctly
+(verified end-to-end: a message sent, detected, webhook-dispatched, and landed in `crm.db`
+with a correctly-flagged `needs-review` shell contact), just not at target latency. Disabling
+SIP is a real macOS security trade-off — don't do this without deciding it's worth it
+first; it's not required for Phase 2 to function.
