@@ -23,3 +23,32 @@ export type InboundMessage = {
   body: string;
   receivedAt: string;
 };
+
+export type OutboundEmail = {
+  contactId: number;
+  to: string;
+  subject: string;
+  body: string;
+  /** Gmail threadId to reply within. Omit to start a new thread. */
+  threadId?: string | null;
+  /** RFC 2822 Message-ID header of the message being replied to. */
+  inReplyTo?: string | null;
+  references?: string[] | null;
+  /** Set by campaign sends (§12) — the body must already include the CAN-SPAM footer. */
+  listUnsubscribe?: string | null;
+};
+
+export type EmailSendResult = { externalId: string; threadId: string };
+
+export interface EmailChannel {
+  send(msg: OutboundEmail): Promise<EmailSendResult>;
+}
+
+export type InboundEmail = {
+  externalId: string;
+  threadId: string;
+  from: string;
+  subject: string | null;
+  body: string;
+  receivedAt: string;
+};

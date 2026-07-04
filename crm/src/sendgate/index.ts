@@ -10,12 +10,15 @@ export type SendGateParams = {
   contactId: number;
   channel: SendGateChannel;
   isReply?: boolean;
+  /** Non-1:1 bulk/nurture email send (§6.2/§12) — gets its own pacing + daily cap on top of the usual checks. */
+  isCampaign?: boolean;
   now?: Date;
 };
 
 export type SendGateDenialReason =
   | 'global_pause' | 'suppressed' | 'no_consent' | 'quiet_hours'
-  | 'per_lead_cap' | 'global_cap' | 'channel_unhealthy' | 'imessage_pacing';
+  | 'per_lead_cap' | 'global_cap' | 'channel_unhealthy' | 'imessage_pacing'
+  | 'email_campaign_pacing' | 'email_campaign_daily_cap';
 
 export type SendGateResult =
   | { allowed: true }
@@ -95,6 +98,24 @@ export function evaluateSendGate(db: CrmDb, params: SendGateParams): SendGateRes
       const elapsedMs = now.getTime() - lastSentAt.getTime();
       if (elapsedMs < minSeconds * 1000) {
         return { allowed: false, reason: 'imessage_pacing', retryAt: new Date(lastSentAt.getTime() + minSeconds * 1000).toISOString() };
+      }
+    }
+  }
+
+  if (params.channel === 'email' && params.isCampaign) {
+    const campaignState = settings.email_campaign_state as { lastSentAt: string | null; countByDate: Record<string, number> };
+    const todayKey = now.toISOString().slice(0, 10);
+    const sentToday = campaignState.countByDate[todayKey] ?? 0;
+    const dailyCap = settings.email_campaign_daily_cap as number;
+    if (sentToday >= dailyCap) {
+      return { allowed: false, reason: 'email_campaign_daily_cap', retryAt: nextQuietHoursStart(quietHours, now).toISOString() };
+    }
+
+    if (campaignState.lastSentAt) {
+      const minSeconds = settings.email_campaign_min_seconds_between_sends as number;
+      const elapsedMs = now.getTime() - new Date(campaignState.lastSentAt).getTime();
+      if (elapsedMs < minSeconds * 1000) {
+        return { allowed: false, reason: 'email_campaign_pacing', retryAt: new Date(new Date(campaignState.lastSentAt).getTime() + minSeconds * 1000).toISOString() };
       }
     }
   }

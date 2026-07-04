@@ -11,6 +11,7 @@ import {
 } from './validation.js';
 import { parseSettings } from './serializers.js';
 import { handleBlueBubblesWebhook, type BlueBubblesWebhookPayload } from './channels/webhook.js';
+import { recordEmailOpen, TRANSPARENT_GIF } from './channels/tracking.js';
 
 export type BuildAppOptions = { db: CrmDb; logger?: boolean | object };
 
@@ -55,6 +56,15 @@ export function buildApp({ db, logger = { level: process.env.CRM_LOG_LEVEL ?? 'i
   app.post('/webhooks/bluebubbles', async (request, reply) => {
     const outcome = handleBlueBubblesWebhook(db, request.body as BlueBubblesWebhookPayload);
     return reply.code(200).send(outcome);
+  });
+
+  // §6.2 open-tracking pixel — a soft signal only. Always returns the gif, even for an
+  // unknown/missing `m`, so a broken image never surfaces to the reader either way.
+  app.get<{ Querystring: { m?: string } }>('/t.gif', async (request, reply) => {
+    recordEmailOpen(db, request.query.m);
+    reply.header('content-type', 'image/gif');
+    reply.header('cache-control', 'no-store, no-cache, must-revalidate');
+    return reply.send(TRANSPARENT_GIF);
   });
 
   app.post('/api/seed', async (_request, reply) => {

@@ -99,6 +99,64 @@ it with `launchctl`. It restarts automatically on crash and on every login/reboo
 
 If all four check out, Phase 2 is live end-to-end on real hardware.
 
+## 7. Gmail (Phase 3) — Google Cloud Console + OAuth
+
+Do this once, before `npm run setup:gmail`. It creates the OAuth client the CRM uses to send
+and read Jorge's real Gmail as himself (not a service account, not "less secure apps").
+
+1. **Create/select a Google Cloud project.** Go to
+   https://console.cloud.google.com/projectcreate, sign in as **jorgeramirez76@gmail.com**
+   (the account the CRM sends from), and create a project (e.g. "jrg-crm"). Any existing
+   project Jorge already owns works too.
+2. **Enable the Gmail API.** In that project: **APIs & Services → Library** → search
+   "Gmail API" → **Enable**.
+3. **Configure the OAuth consent screen.** **APIs & Services → OAuth consent screen**:
+   - User type: **External** (Jorge's Gmail is a personal @gmail.com account, not Workspace).
+   - App name: anything internal, e.g. "JRG CRM". Support email: jorgeramirez76@gmail.com.
+   - Scopes: add `.../auth/gmail.modify` and `.../auth/gmail.send`.
+   - **Test users:** add **jorgeramirez76@gmail.com**. While the app is in "Testing"
+     publishing status (the default, and fine for this single-user CRM), only accounts
+     listed here can complete the consent screen — refresh tokens for test users also don't
+     expire after 7 days the way they otherwise would for unpublished apps.
+4. **Create OAuth client credentials.** **APIs & Services → Credentials → Create Credentials
+   → OAuth client ID**:
+   - Application type: **Desktop app** (not "Web application" — this is a local CLI flow,
+     no public redirect endpoint).
+   - Name: anything, e.g. "jrg-crm-desktop".
+   - After creation, copy the **Client ID** and **Client secret**.
+5. **Fill in `crm/.env`:**
+   ```
+   GOOGLE_CLIENT_ID=<the client ID>.apps.googleusercontent.com
+   GOOGLE_CLIENT_SECRET=<the client secret>
+   GOOGLE_REDIRECT_URI=http://localhost:4820/oauth/google/callback
+   ```
+   `GOOGLE_REDIRECT_URI` must stay a `localhost`/`127.0.0.1` address — `npm run setup:gmail`
+   starts its own temporary local listener on this exact port+path to catch the redirect; it
+   does not need to be reachable from anywhere but this Mac, and does **not** need to be
+   registered in Cloud Console (Desktop-app OAuth clients accept any loopback redirect).
+6. **Run the interactive setup:**
+   ```bash
+   cd crm
+   npm run setup:gmail
+   ```
+   It prints a Google consent URL — open it in a browser signed into
+   **jorgeramirez76@gmail.com**, approve the two Gmail scopes, and the CLI catches the
+   redirect automatically and prints "Gmail connected as jorgeramirez76@gmail.com." It writes
+   `GMAIL_REFRESH_TOKEN` and `GMAIL_FROM` into `crm/.env` for you — nothing to copy by hand.
+7. **Restart the CRM server** (`launchctl kickstart -k gui/$(id -u)/com.jrgcrm.server`, or
+   `npm run dev` in a foreground session) so it picks up the new `.env` values. Logs should
+   stop warning about missing `GOOGLE_CLIENT_ID`/`GMAIL_REFRESH_TOKEN`, and the poller starts
+   checking `users.history.list` every 30 seconds.
+8. **Verify:**
+   - Send yourself a test email addressed to a seeded/known contact's email address (or reply
+     to one the CRM sent) and confirm it lands in `messages` within ~30s
+     (`sqlite3 crm/crm.db "select * from messages where channel='email' order by id desc limit 5;"`).
+   - Confirm `settings.gmail_history_id` is set and changes over time:
+     `sqlite3 crm/crm.db "select value from settings where key='gmail_history_id';"`.
+   - If you ever need to re-authorize (e.g. rotated credentials), first revoke prior access at
+     https://myaccount.google.com/permissions, then re-run `npm run setup:gmail` — Google only
+     issues a fresh `refresh_token` when consent is granted anew.
+
 ## Note: instant detection needs the Private API (optional, real trade-off)
 
 Without BlueBubbles' **Private API** enabled (Settings → Private API — requires SIP disabled

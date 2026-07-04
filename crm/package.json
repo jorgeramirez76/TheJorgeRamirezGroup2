@@ -14,6 +14,7 @@
     "migrate": "tsx src/db/migrate.ts",
     "seed": "tsx src/db/seed.ts",
     "pause": "tsx src/scripts/pause.ts",
+    "setup:gmail": "tsx src/scripts/setup-gmail.ts",
     "launchd:install": "bash scripts/install-launchd.sh"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "dotenv": "latest",
     "drizzle-orm": "latest",
     "fastify": "latest",
+    "googleapis": "latest",
     "node-cron": "latest",
     "pino": "latest",
     "pino-pretty": "latest",
