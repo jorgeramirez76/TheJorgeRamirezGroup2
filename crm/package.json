@@ -13,7 +13,8 @@
     "test": "vitest run",
     "migrate": "tsx src/db/migrate.ts",
     "seed": "tsx src/db/seed.ts",
-    "pause": "tsx src/scripts/pause.ts"
+    "pause": "tsx src/scripts/pause.ts",
+    "launchd:install": "bash scripts/install-launchd.sh"
   },
   "dependencies": {
     "@fastify/cors": "latest",

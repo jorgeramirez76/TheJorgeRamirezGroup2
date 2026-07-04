@@ -10,6 +10,7 @@ import {
   MessageInput, MessagePatchInput, PipelineInput, SettingInput, StageInput, TagInput
 } from './validation.js';
 import { parseSettings } from './serializers.js';
+import { handleBlueBubblesWebhook, type BlueBubblesWebhookPayload } from './channels/webhook.js';
 
 export type BuildAppOptions = { db: CrmDb; logger?: boolean | object };
 
@@ -46,6 +47,15 @@ export function buildApp({ db, logger = { level: process.env.CRM_LOG_LEVEL ?? 'i
   app.register(cors, { origin: false });
 
   app.get('/healthz', async () => ({ ok: true, service: 'jrg-crm' }));
+
+  // BlueBubbles posts here on every inbound message and every delivery/read status change.
+  // Local-only endpoint (bound to 127.0.0.1 per architecture) — BlueBubbles has no native
+  // request-signing mechanism for outgoing webhooks, so BLUEBUBBLES_WEBHOOK_SECRET is reserved
+  // for a future reverse-proxy check rather than enforced here (see DECISIONS.md).
+  app.post('/webhooks/bluebubbles', async (request, reply) => {
+    const outcome = handleBlueBubblesWebhook(db, request.body as BlueBubblesWebhookPayload);
+    return reply.code(200).send(outcome);
+  });
 
   app.post('/api/seed', async (_request, reply) => {
     seedCoreData(db);
