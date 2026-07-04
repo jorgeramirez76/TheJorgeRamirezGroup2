@@ -3,3 +3,14 @@ __pycache__/
 .design-screens/
 .vercel
 .env*
+# JRG-CRM local runtime/secrets
+crm/.env
+crm/.env.*
+!crm/.env.example
+crm/node_modules/
+crm/dist/
+crm/*.db
+crm/*.db-*
+crm/backups/
+crm/logs/
+crm/videos/leads/*.mp4
