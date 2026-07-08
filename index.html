@@ -651,13 +651,39 @@
             <span class="sizzle-eyebrow">THE PRACTICE IN 10 SECONDS</span>
             <div class="sizzle-frame">
                 <video class="sizzle-video"
-                       src="videos/jrg-sizzle.mp4"
+                       data-src="videos/jrg-sizzle.mp4"
                        poster="images/video-posters/jrg-sizzle-poster.jpg"
-                       autoplay muted loop playsinline preload="metadata"
+                       muted loop playsinline preload="none"
                        aria-label="A 15-second visual reel of The Jorge Ramirez Group — properties, proof points, and contact."></video>
             </div>
         </div>
     </section>
+    <script>
+      if ('IntersectionObserver' in window) {
+        const sizzleVideo = document.querySelector('.sizzle-video');
+        if (sizzleVideo) {
+          const sizzleObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const v = entry.target;
+                v.src = v.dataset.src;
+                v.load();
+                v.play().catch(() => {});
+                observer.unobserve(v);
+              }
+            });
+          }, { rootMargin: '200px' });
+          sizzleObserver.observe(sizzleVideo);
+        }
+      } else {
+        // Fallback for browsers without IntersectionObserver support
+        const sizzleVideo = document.querySelector('.sizzle-video');
+        if (sizzleVideo) {
+          sizzleVideo.src = sizzleVideo.dataset.src;
+          sizzleVideo.play().catch(() => {});
+        }
+      }
+    </script>
     <style>
       .sizzle-section{background:linear-gradient(180deg,#1A1A1A 0%,#2C2C2C 100%);padding:clamp(40px,5vw,70px) 20px clamp(70px,8vw,110px);display:flex;justify-content:center;border-top:1px solid rgba(184,150,46,0.28)}
       .sizzle-inner{display:flex;flex-direction:column;align-items:center;gap:clamp(18px,2.2vw,28px);width:100%;max-width:480px}
