@@ -94,10 +94,15 @@
       "@context": "https://schema.org",
       "@type": "RealEstateAgent",
       "@id": "https://thejorgeramirezgroup.com/#agent",
-      "name": "Jorge Ramirez - The Jorge Ramirez Group",
+      "name": "Jorge Ramirez",
+      "alternateName": "The Jorge Ramirez Group",
       "image": "https://thejorgeramirezgroup.com/images/jorge-logo.jpg",
+      "logo": "https://thejorgeramirezgroup.com/images/jorge-logo.jpg",
       "url": "https://thejorgeramirezgroup.com",
+      "description": "Top-rated real estate agent serving 138 communities across Union, Essex, Morris, Middlesex, Hudson, and Somerset County in Northern New Jersey. Specializing in FSBO and expired-listing sellers, luxury homes, NYC commuter properties, and first-time home buyers since 2017.",
       "telephone": "+1-908-230-7844",
+      "email": "jorge.ramirez@kw.com",
+      "priceRange": "$$-$$$",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "488 Springfield Avenue",
@@ -111,7 +116,6 @@
         "latitude": "40.7195",
         "longitude": "-74.3648"
       },
-      "priceRange": "$$",
       "areaServed": [
         {"@type": "AdministrativeArea", "name": "Essex County, New Jersey"},
         {"@type": "AdministrativeArea", "name": "Hudson County, New Jersey"},
@@ -123,7 +127,7 @@
       "sameAs": [
         "https://www.instagram.com/jorgesellsnjhomes",
         "https://www.linkedin.com/in/jorge-ramirez-realtor",
-        "https://www.facebook.com/jorgeramirezrealtor"
+        "https://www.facebook.com/thejorgeramirezgroup"
       ],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -131,15 +135,33 @@
         "opens": "08:00",
         "closes": "20:00"
       },
-    "makesOffer": {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Intelligent Lead Targeting",
-        "description": "AI-powered sales pipeline that automatically connects properties with qualified buyers through email, text, and phone outreach with automated follow-up"
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Home Buying Services",
+          "description": "Exclusive access to off-market listings, targeted property search, and expert negotiation for home buyers across Northern NJ"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Home Selling Services",
+          "description": "Data-driven pricing, professional marketing, AI-powered buyer targeting, and intelligent lead generation for home sellers"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "FSBO and Expired Listing Help",
+          "description": "A second opinion on price and strategy for homeowners selling on their own or relisting after an expired contract"
+        }
       }
-    },
-    "parentOrganization": {
+    ],
+    "memberOf": {
       "@type": "Organization",
       "name": "Keller Williams Realty Premier Properties",
       "url": "https://www.kw.com"
@@ -149,17 +171,17 @@
       "Home Selling Strategy",
       "Home Pricing and Market Analysis",
       "Listing Agent Services",
-      "AI-Powered Real Estate Marketing",
       "NYC Commuter Properties",
       "First-Time Home Buyers",
       "Investment Properties",
       "FSBO and Expired Listing Help",
-      "New Jersey Home Valuations"
+      "New Jersey Home Valuations",
+      "Downsizing and Relocation"
       ],
     "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "6",
+        "reviewCount": "12",
         "bestRating": "5",
         "worstRating": "1"
     }
@@ -293,66 +315,6 @@
     }
     </script>
     
-    <!-- Schema.org - Real Estate Agent -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "RealEstateAgent",
-      "name": "Jorge Ramirez",
-      "alternateName": "The Jorge Ramirez Group",
-      "url": "https://thejorgeramirezgroup.com",
-      "logo": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
-      "image": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
-      "description": "Top-rated real estate agent serving 138 communities across Union, Essex, Morris, Middlesex, Hudson, and Somerset County in Northern New Jersey. Specializing in luxury homes, NYC commuter properties, and first-time home buyers since 2017.",
-      "priceRange": "$$-$$$",
-      "telephone": "+19082307844",
-      "email": "info@thejorgeramirezgroup.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "488 Springfield Avenue",
-        "addressLocality": "Summit",
-        "addressRegion": "NJ",
-        "postalCode": "07901",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "40.7158",
-        "longitude": "-74.3643"
-      },
-      "areaServed": [
-        {"@type": "AdministrativeArea", "name": "Union County, New Jersey"},
-        {"@type": "AdministrativeArea", "name": "Essex County, New Jersey"},
-        {"@type": "AdministrativeArea", "name": "Morris County, New Jersey"},
-        {"@type": "AdministrativeArea", "name": "Middlesex County, New Jersey"},
-        {"@type": "AdministrativeArea", "name": "Hudson County, New Jersey"}
-      ],
-      "makesOffer": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Home Buying Services",
-            "description": "Exclusive access to off-market listings, targeted property search, and expert negotiation for home buyers across Northern NJ"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Home Selling Services",
-            "description": "Data-driven pricing, professional marketing, AI-powered buyer targeting, and intelligent lead generation for home sellers"
-          }
-        }
-      ],
-      "knowsAbout": ["Home Selling Strategy", "Home Pricing and CMA", "Listing Agent Services", "Real Estate Sales", "Home Buying", "NYC Commuter Properties", "First-Time Home Buyers", "Investment Properties", "FSBO Help", "Expired Listing Help", "New Jersey Home Valuations", "Downsizing and Relocation"],
-      "memberOf": {
-        "@type": "Organization",
-        "name": "Keller Williams Realty Premier Properties"
-      }
-    }
-    </script>
-
     <!-- Speakable Schema — tells Bing Copilot and AI which text to cite -->
     <script type="application/ld+json">
     {
@@ -413,12 +375,12 @@
       "sameAs": [
         "https://www.instagram.com/jorgesellsnjhomes",
         "https://www.linkedin.com/in/jorge-ramirez-realtor",
-        "https://www.facebook.com/jorgeramirezrealtor"
+        "https://www.facebook.com/thejorgeramirezgroup"
       ]
     }
     </script>
 
-    <!-- JSON-LD Structured Data: Client Reviews -->
+    <!-- JSON-LD Structured Data: Client Reviews (verbatim from Google Business Profile, verified 2026-07-07) -->
     <script type="application/ld+json">
     {
   "@context": "https://schema.org",
@@ -430,7 +392,7 @@
       "@type": "Review",
       "author": {
         "@type": "Person",
-        "name": "Michael T."
+        "name": "Bassir Arefian"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -438,14 +400,59 @@
         "bestRating": "5",
         "worstRating": "1"
       },
-      "reviewBody": "Jorge sold our Summit home in 9 days — $47,000 over asking. He priced it perfectly and the targeted marketing brought buyers we never would have reached through a traditional listing. He was straight with us from day one.",
+      "reviewBody": "Jorege is excellent! It was our pleasure to work with him as our real estate agent. He is extremely knowledgeable in his field. During the entire process he was there to help and guide us. He made sure to sell our house for best price. He never rushed us to make a decision. He made us feel comfortable throughout the entire process and he was always available. Jorge negotiated the best deal on our behalf. We highly recommend Jorge to anyone who wants to sell or buy their house.",
+      "datePublished": "2022"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Olga Goldie Sherman"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Jorge was extremely helpful and attentive through the entire process of me purchasing my house. I never for once felt the pressure from him to settle on any matters when I or him don't think it's the right thing to do. To me, because my lack of experience on real estate matters, it is very critical to me to have a realtor looking for my best interest, and he is just what I am looking for. He constantly provided professional opinions on different matters so I always feel at ease to reach out for questions or concerns. I highly recommend Jorge to anyone",
+      "datePublished": "2023"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Matt Eisenberg"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Jorge is the best of the best! Everything you want in a realtor Jorge has to offer- honesty, patience, integrity, and knowledge. I sold my house with Jorge and i am in a process of buying next one with him. Jorge was always available to answer any questions I had, he made me feel comfortable throughout the whole process and never rushed me to make a decision. Jorge did what it took to negotiate the best deal on my behalf in both transactions. No words can describe how great he is, highly recommend!",
+      "datePublished": "2019"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "K Slo"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Jorge went a above and beyond with helping us find our dream home. He was available at all times of the day to help us with any questions we had. He made it a very smooth process. I would definitely recommend him to help you find a home.",
       "datePublished": "2025"
     },
     {
       "@type": "Review",
       "author": {
         "@type": "Person",
-        "name": "Diane R."
+        "name": "Dave Marino"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -453,68 +460,8 @@
         "bestRating": "5",
         "worstRating": "1"
       },
-      "reviewBody": "We had an expired listing with another agent for 90 days. Jorge took over, changed the pricing strategy, and had a full-price offer in 3 weeks. Wish we had called him first.",
-      "datePublished": "2025"
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "David K."
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "reviewBody": "As first-time buyers relocating from NYC, we were completely lost. Jorge walked every property with us like he was the one buying it. His investor background meant he caught things the inspector even missed. Closed on our Chatham home in 6 weeks.",
-      "datePublished": "2025"
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Patricia M."
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "reviewBody": "I inherited my mother’s home and had no idea where to start. Jorge handled everything — estate coordination, light repairs, pricing, all of it. He never pushed me and got us $30K above what I thought was possible.",
-      "datePublished": "2026"
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Robert H."
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "reviewBody": "We tried to sell FSBO for 4 months. After we listed with Jorge, we had an accepted offer in 11 days. His buyer targeting system found people we never could have reached on our own. Should have called him first.",
-      "datePublished": "2026"
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Tom F."
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "reviewBody": "Jorge told us the truth about our home’s value even though it wasn’t what we wanted to hear. We priced it his way, had 8 showings the first weekend, and closed for more than our original ask. His honesty saved us months.",
-      "datePublished": "2025"
+      "reviewBody": "Jorge was wonderful to work with. He listened to our needs and challenges, then worked with us to find the perfect home at a great price.. During the entire process Jorge was there to help guide and educate us. We highly recommend Jorge!",
+      "datePublished": "2019"
     }
   ]
 }
@@ -995,59 +942,50 @@
                 <p>Real results from real clients across Essex, Union, Morris, and Hudson counties.</p>
             </div>
             <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                <div class="feature-card testimonial-card" data-match-town="summit">
+                <div class="feature-card testimonial-card">
                     <div class="testimonial-avatar">
-                        <span class="testimonial-initials" aria-label="Michael and Lisa T.">ML</span>
+                        <span class="testimonial-initials" aria-label="Bassir Arefian">BA</span>
                     </div>
                     <span class="testimonial-stars">★★★★★</span>
-                    <p class="testimonial-quote">&ldquo;Jorge sold our Summit home in 9 days &mdash; $47,000 over asking. He priced it perfectly and the targeted marketing brought buyers we never would have reached through a traditional listing. He was straight with us from day one.&rdquo;</p>
-                    <div class="testimonial-author">&mdash; Michael &amp; Lisa T.</div>
-                    <div class="testimonial-location">Summit, NJ &bull; Sold 2025</div>
+                    <p class="testimonial-quote">&ldquo;It was our pleasure to work with him as our real estate agent. He is extremely knowledgeable in his field. During the entire process he was there to help and guide us. He made sure to sell our house for best price. He never rushed us to make a decision.&rdquo;</p>
+                    <div class="testimonial-author">&mdash; Bassir Arefian</div>
+                    <div class="testimonial-location">Verified Google Review</div>
                 </div>
                 <div class="feature-card testimonial-card">
                     <div class="testimonial-avatar">
-                        <span class="testimonial-initials" aria-label="Diane R.">DR</span>
+                        <span class="testimonial-initials" aria-label="Olga Goldie Sherman">OS</span>
                     </div>
                     <span class="testimonial-stars">★★★★★</span>
-                    <p class="testimonial-quote">&ldquo;We had an expired listing with another agent for 90 days. Jorge took over, changed the pricing strategy, and had a full-price offer in 3 weeks. Wish we had called him first.&rdquo;</p>
-                    <div class="testimonial-author">&mdash; Diane R.</div>
-                    <div class="testimonial-location">Westfield, NJ &bull; Sold 2025</div>
+                    <p class="testimonial-quote">&ldquo;Jorge was extremely helpful and attentive through the entire process of me purchasing my house. I never for once felt the pressure from him to settle on any matters when I or him don't think it's the right thing to do.&rdquo;</p>
+                    <div class="testimonial-author">&mdash; Olga Goldie Sherman</div>
+                    <div class="testimonial-location">Verified Google Review</div>
                 </div>
                 <div class="feature-card testimonial-card">
                     <div class="testimonial-avatar">
-                        <span class="testimonial-initials" aria-label="David and Sarah K.">DK</span>
+                        <span class="testimonial-initials" aria-label="Matt Eisenberg">ME</span>
                     </div>
                     <span class="testimonial-stars">★★★★★</span>
-                    <p class="testimonial-quote">&ldquo;As first-time buyers relocating from NYC, we were completely lost. Jorge walked every property with us like he was the one buying it. His investor background meant he caught things the inspector even missed. Closed on our Chatham home in 6 weeks.&rdquo;</p>
-                    <div class="testimonial-author">&mdash; David &amp; Sarah K.</div>
-                    <div class="testimonial-location">Chatham, NJ &bull; Purchased 2025</div>
+                    <p class="testimonial-quote">&ldquo;Jorge is the best of the best! Everything you want in a realtor Jorge has to offer &mdash; honesty, patience, integrity, and knowledge. Jorge did what it took to negotiate the best deal on my behalf in both transactions.&rdquo;</p>
+                    <div class="testimonial-author">&mdash; Matt Eisenberg</div>
+                    <div class="testimonial-location">Verified Google Review</div>
                 </div>
                 <div class="feature-card testimonial-card">
                     <div class="testimonial-avatar">
-                        <span class="testimonial-initials" aria-label="Patricia M.">PM</span>
+                        <span class="testimonial-initials" aria-label="K Slo">KS</span>
                     </div>
                     <span class="testimonial-stars">★★★★★</span>
-                    <p class="testimonial-quote">&ldquo;I inherited my mother&rsquo;s home and had no idea where to start. Jorge handled everything &mdash; estate coordination, light repairs, pricing, all of it. He never pushed me and got us $30K above what I thought was possible.&rdquo;</p>
-                    <div class="testimonial-author">&mdash; Patricia M.</div>
-                    <div class="testimonial-location">Cranford, NJ &bull; Sold 2026</div>
+                    <p class="testimonial-quote">&ldquo;Jorge went above and beyond with helping us find our dream home. He was available at all times of the day to help us with any questions we had. He made it a very smooth process.&rdquo;</p>
+                    <div class="testimonial-author">&mdash; K Slo</div>
+                    <div class="testimonial-location">Verified Google Review</div>
                 </div>
                 <div class="feature-card testimonial-card">
                     <div class="testimonial-avatar">
-                        <span class="testimonial-initials" aria-label="Robert and Karen H.">RK</span>
+                        <span class="testimonial-initials" aria-label="Dave Marino">DM</span>
                     </div>
                     <span class="testimonial-stars">★★★★★</span>
-                    <p class="testimonial-quote">&ldquo;We tried to sell FSBO for 4 months. After we listed with Jorge, we had an accepted offer in 11 days. His buyer targeting system found people we never could have reached on our own. Should have called him first.&rdquo;</p>
-                    <div class="testimonial-author">&mdash; Robert &amp; Karen H.</div>
-                    <div class="testimonial-location">Maplewood, NJ &bull; Sold 2026</div>
-                </div>
-                <div class="feature-card testimonial-card">
-                    <div class="testimonial-avatar">
-                        <span class="testimonial-initials" aria-label="Tom and Angela F.">TF</span>
-                    </div>
-                    <span class="testimonial-stars">★★★★★</span>
-                    <p class="testimonial-quote">&ldquo;Jorge told us the truth about our home&rsquo;s value even though it wasn&rsquo;t what we wanted to hear. We priced it his way, had 8 showings the first weekend, and closed for more than our original ask. His honesty saved us months.&rdquo;</p>
-                    <div class="testimonial-author">&mdash; Tom &amp; Angela F.</div>
-                    <div class="testimonial-location">Montclair, NJ &bull; Sold 2025</div>
+                    <p class="testimonial-quote">&ldquo;Jorge was wonderful to work with. He listened to our needs and challenges, then worked with us to find the perfect home at a great price. During the entire process Jorge was there to help guide and educate us.&rdquo;</p>
+                    <div class="testimonial-author">&mdash; Dave Marino</div>
+                    <div class="testimonial-location">Verified Google Review</div>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
@@ -1466,7 +1404,7 @@
                     <a href="https://www.linkedin.com/in/jorge-ramirez-realtor" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     </a>
-                    <a href="https://www.facebook.com/jorgeramirezrealtor" target="_blank" rel="noopener" aria-label="Facebook">
+                    <a href="https://www.facebook.com/thejorgeramirezgroup" target="_blank" rel="noopener" aria-label="Facebook">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
                     </a>
                 </div>
