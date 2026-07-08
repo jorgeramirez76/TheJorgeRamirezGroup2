@@ -302,7 +302,7 @@ def build_schema(d):
                 "sameAs": [
                     "https://www.instagram.com/thejorgeramirezgroup/",
                     "https://www.facebook.com/thejorgeramirezgroup/",
-                    "https://www.linkedin.com/in/jorge-ramirez-realtor-nj/",
+                    "https://www.linkedin.com/in/jorge-ramirez-37034025/",
                     "https://www.kw.com/agent/jorge-ramirez-nj"
                 ],
                 "founder": {"@id": "https://thejorgeramirezgroup.com/#person"},
@@ -339,7 +339,7 @@ def build_schema(d):
                 "sameAs": [
                     "https://www.instagram.com/thejorgeramirezgroup/",
                     "https://www.facebook.com/thejorgeramirezgroup/",
-                    "https://www.linkedin.com/in/jorge-ramirez-realtor-nj/",
+                    "https://www.linkedin.com/in/jorge-ramirez-37034025/",
                     "https://www.kw.com/agent/jorge-ramirez-nj"
                 ]
             },
