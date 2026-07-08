@@ -1,9 +1,0 @@
-/* ============================================================
-   Jorge Ramirez Group — Lenis smooth-scroll baseline only.
-   No reveal/visibility rules here — the site's own animation
-   system (main.js) owns all element reveals.
-   ============================================================ */
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-.lenis.lenis-stopped { overflow: hidden; }
