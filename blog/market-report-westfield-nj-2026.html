@@ -34,7 +34,7 @@
     <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
   <meta name="geo.region" content="US-NJ">
   <meta name="geo.placename" content="Westfield, New Jersey">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -101,7 +101,154 @@
     <meta name="ai-content-declaration" content="human-authored">
     <meta name="llm-context" content="Westfield NJ Real Estate Market Report 2026 | Jorge Ramirez — page on thejorgeramirezgroup.com, the site of Jorge Ramirez, licensed NJ real estate agent (License #1754604) at Keller Williams Premier Properties in Summit, NJ. Full-time agent since 2017 with hands-on renovation and investment experience. Serves 138 communities across Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. Specialises in NYC-commuter towns along the Midtown Direct line (Summit, Millburn, Chatham, Maplewood, South Orange, Madison, Westfield, Cranford). Provides free home valuations at thejorgeramirezgroup.com/home-valuation.html. Voice: honest, no-pressure, investor-first. Contact: 908-230-7844.">
     <meta name="last-updated" content="2026-06-11">
-</head>
+<style>.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+}.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}.nav-links a:hover {
+    color: var(--primary-red);
+}.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}@media (max-width: 768px){.nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1A1A1A;
+        z-index: 1200;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+        border-top: 1px solid rgba(184, 150, 46, 0.25);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1rem;
+    }.nav-links.active {
+        display: flex;
+    }}.nav-container {
+  gap: 2rem;
+  flex-wrap: nowrap;
+  justify-content: center !important;   
+}.nav-links { gap: 1.75rem !important; flex-shrink: 0; white-space: nowrap; }.nav-links li { flex-shrink: 0; }.nav-links a {
+  white-space: nowrap;
+  font-size: 1.05rem !important;        
+  letter-spacing: 0.4px !important;
+  position: relative;
+  font-weight: 500;
+}.nav-links a::after {
+  content: ""; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px; background: var(--primary-red);
+  transition: width 0.3s cubic-bezier(.2,.9,.3,1);
+}.nav-links a:hover::after { width: 100%; }@media (max-width: 1400px){.nav-container { gap: 1.5rem; }.nav-links { gap: 1.3rem !important; }.nav-links a { font-size: 0.98rem !important; }}@media (max-width: 1200px){.nav-links { gap: 1rem !important; }.nav-links a { font-size: 0.9rem !important; }}.nav-links a.nav-lang,
+.nav-links a.nav-lang:link,
+.nav-links a.nav-lang:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  font: 600 11px/1 "Montserrat", sans-serif;
+  letter-spacing: 0.08em;
+  color: #FFFFFF !important;
+  background: transparent;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}.nav-links a.nav-lang:hover,
+.nav-links a.nav-lang:focus-visible {
+  border-color: #FFFFFF;
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.12);
+}.nav-links a.nav-phone,
+.nav-links a.nav-phone:link,
+.nav-links a.nav-phone:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}.nav-links a.nav-phone svg {
+  color: #FFFFFF;
+  flex: 0 0 auto;
+  transition: color 0.2s ease;
+}.nav-links a.nav-phone:hover,
+.nav-links a.nav-phone:focus-visible {
+  color: #B8962E !important;
+}.nav-links a.nav-phone:hover svg {
+  color: #B8962E;
+}.nav-links a.nav-lang svg {
+  color: #FFFFFF;
+  transition: color 0.2s ease;
+}.nav-links a.nav-lang:hover svg {
+  color: #B8962E;
+}.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 8px 16px;
+  background: #000000;
+  color: #FFFFFF;
+  z-index: 9999;
+  text-decoration: none;
+}.skip-link:focus,
+.skip-link:focus-visible {
+  left: 0;
+}.related-pages > .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}.related-pages.compact > .container {
+  max-width: 900px;
+}nav, .nav-links, button, .btn, [class*="btn-"], input, select, textarea, label,
+.hero-eyebrow, .hero-badges, .stat-label, .listing-meta {
+    font-family: var(--font-body);
+}.article-figure { margin: 36px auto; max-width: 620px; }.article-figure img {
+    width: 100%; height: auto; display: block;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+}.article-figure figcaption {
+    margin-top: 10px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: var(--text-light);
+}.blog-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2rem);
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 2.5rem 0 1rem;
+}.blog-content h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.375rem);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 1.75rem 0 0.75rem;
+}.blog-content .info-box {
+    background: var(--light-gray);
+    border-left: 3px solid var(--gold);
+    padding: 20px 25px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 25px 0;
+}.blog-content table th {
+    background: var(--dark-gray);
+    color: var(--white);
+}</style></head>
 <body>
 <a href="#main" class="skip-link" class="skip-link" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to main content</a>
   <nav class="site-nav"><div class="nav-container">
