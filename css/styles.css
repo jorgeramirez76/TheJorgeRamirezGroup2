@@ -70,6 +70,13 @@ nav.scrolled {
     align-items: center;
 }
 
+.nav-logo {
+    color: var(--white);
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-decoration: none;
+}
+
 .logo {
     font-family: var(--font-display);
     font-size: 1.5rem;
