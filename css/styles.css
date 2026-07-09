@@ -1074,6 +1074,10 @@ footer {
     object-fit: cover;
 }
 
+.about-contact {
+    color: rgba(255, 255, 255, 0.85);
+}
+
 /* Blog Author Photo Styles */
 .author-photo-sm {
     max-width: 150px;
@@ -2588,7 +2592,7 @@ a.hero-train-pill:focus-visible .htp-arrow {
   font: 500 11px/1 'Montserrat', sans-serif;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(44, 44, 44, 0.55);
+  color: rgba(44, 44, 44, 0.85);
 }
 .press-list {
   display: flex;
