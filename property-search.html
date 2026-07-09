@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="css/styles.css"></noscript>
     <style>
         .search-page {
             padding-top: 80px;
@@ -128,7 +128,38 @@
         @media (max-width: 768px) {
             .search-hero h1 { font-size: 1.8rem; }
         }
-    </style>
+    .logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}.logo-img {
+    height: 60px;
+    width: auto;
+    background: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, padding 0.3s ease;
+    display: block;
+}nav.scrolled .logo-img {
+    padding: 4px 10px;
+}a.logo:hover .logo-img {
+    transform: translateY(-1px);
+}nav .logo-img { max-height: 56px; }@media (max-width: 1200px){nav .logo-img { max-height: 48px; }}main a:not(.btn-primary):not(.btn-outline):not(.nav-btn-consultation):not(.cta-button):not(.logo) {
+  position: relative;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.4s cubic-bezier(.2,.9,.3,1);
+}main a:not(.btn-primary):not(.btn-outline):not(.nav-btn-consultation):not(.cta-button):not(.logo):hover {
+  background-size: 100% 1px;
+}.logo { font-weight: 700; }</style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",

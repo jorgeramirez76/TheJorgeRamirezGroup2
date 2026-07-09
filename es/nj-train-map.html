@@ -43,7 +43,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
@@ -284,7 +284,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   footer { background:var(--ink); color:#C8C8C8; padding:40px 24px; text-align:center; font-size:0.88rem; }
   footer a { color:var(--gold); text-decoration:none; }
-</style>
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 8px 16px;
+  background: #000000;
+  color: #FFFFFF;
+  z-index: 9999;
+  text-decoration: none;
+}.skip-link:focus,
+.skip-link:focus-visible {
+  left: 0;
+}</style>
 </head>
 <body>
 <a href="#main" class="skip-link" class="skip-link" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Saltar al contenido principal</a>

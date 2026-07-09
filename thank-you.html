@@ -22,7 +22,7 @@
   <meta name="robots" content="noindex">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="css/styles.css"></noscript>
   <style>
     .thank-you-wrapper { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; }
     .thank-you-box { max-width: 560px; }
@@ -33,7 +33,17 @@
     .thank-you-box a.btn { padding: 12px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; }
     .btn-primary { background: linear-gradient(135deg,#2C2C2C,#1A1A1A); color: white; }
     .btn-secondary { border: 2px solid #2C2C2C; color: #2C2C2C; }
-  </style>
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}.nav-container {
+  gap: 2rem;
+  flex-wrap: nowrap;
+  justify-content: center !important;   
+}@media (max-width: 1400px){.nav-container { gap: 1.5rem; }}</style>
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">

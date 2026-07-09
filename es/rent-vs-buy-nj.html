@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora Rentar vs Comprar en NJ","url":"https://thejorgeramirezgroup.com/rent-vs-buy-nj","description":"Calculadora gratuita de punto de equilibrio a 5 años que compara rentar vs comprar en Nueva Jersey, con impuesto a la propiedad de NJ + impuesto de mansión + apreciación + costos de cierre + mantenimiento.","applicationCategory":"FinanceApplication","operatingSystem":"Web","creator":{"@type":"RealEstateAgent","name":"Jorge Ramirez","telephone":"908-230-7844","email":"jorge.ramirez@kw.com","url":"https://thejorgeramirezgroup.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
@@ -89,7 +89,48 @@
   .faq-item p { color:#3a3a3a; line-height:1.6; margin:0; }
   footer { background:#1a1a1a; color:#ccc; padding:30px; text-align:center; font-size:0.88rem; margin-top:40px; }
   footer a { color:#D4AF5A; }
-</style>
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}.logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}.logo-img {
+    height: 60px;
+    width: auto;
+    background: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, padding 0.3s ease;
+    display: block;
+}nav.scrolled .logo-img {
+    padding: 4px 10px;
+}a.logo:hover .logo-img {
+    transform: translateY(-1px);
+}.nav-container {
+  gap: 2rem;
+  flex-wrap: nowrap;
+  justify-content: center !important;   
+}nav .logo-img { max-height: 56px; }@media (max-width: 1400px){.nav-container { gap: 1.5rem; }}@media (max-width: 1200px){nav .logo-img { max-height: 48px; }}main a:not(.btn-primary):not(.btn-outline):not(.nav-btn-consultation):not(.cta-button):not(.logo) {
+  position: relative;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.4s cubic-bezier(.2,.9,.3,1);
+}main a:not(.btn-primary):not(.btn-outline):not(.nav-btn-consultation):not(.cta-button):not(.logo):hover {
+  background-size: 100% 1px;
+}.logo { font-weight: 700; }</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://thejorgeramirezgroup.com/"},{"@type":"ListItem","position":2,"name":"Comprar una Casa","item":"https://thejorgeramirezgroup.com/buy-a-home"},{"@type":"ListItem","position":3,"name":"Calculadora Rentar vs Comprar","item":"https://thejorgeramirezgroup.com/rent-vs-buy-nj"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Cómo usar la Calculadora Rentar vs Comprar en NJ","step":[{"@type":"HowToStep","position":1,"text":"Ingresa el precio de compra de la casa que estás considerando"},{"@type":"HowToStep","position":2,"text":"Ingresa la renta mensual actual para una casa comparable en el mismo pueblo"},{"@type":"HowToStep","position":3,"text":"Establece tu porcentaje de pago inicial y tasa de hipoteca"},{"@type":"HowToStep","position":4,"text":"Ingresa la tasa de impuesto a la propiedad de NJ para el pueblo (usa 2.5% como predeterminado)"},{"@type":"HowToStep","position":5,"text":"Establece la apreciación anual esperada y la inflación de la renta"},{"@type":"HowToStep","position":6,"text":"Elige tu período de tenencia planeado en años"},{"@type":"HowToStep","position":7,"text":"Haz clic en Calcular para ver el punto de equilibrio a 5 años y el veredicto"}]}</script>
 </head>

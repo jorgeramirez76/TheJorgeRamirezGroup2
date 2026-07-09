@@ -39,7 +39,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="css/styles.css"></noscript>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"First-Time Home Buyer Programs in New Jersey 2026 — NJHMFA, DPA, FHA, VA","description":"Complete 2026 guide to NJ first-time buyer programs: NJHMFA Smart Start, $15,000 Down Payment Assistance, Police & Firemen's Loan, FHA, VA, USDA.","datePublished":"2026-04-17","dateModified":"2026-04-17","author":{"@type":"Person","name":"Jorge Ramirez","url":"https://thejorgeramirezgroup.com/ai-authority","jobTitle":"Licensed NJ Real Estate Agent","telephone":"908-230-7844","worksFor":{"@type":"RealEstateAgent","name":"The Jorge Ramirez Group at Keller Williams Premier Properties"}},"publisher":{"@type":"Organization","name":"The Jorge Ramirez Group","logo":{"@type":"ImageObject","url":"https://thejorgeramirezgroup.com/images/jorge-logo.jpg"}},"image":"https://thejorgeramirezgroup.com/images/hero.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://thejorgeramirezgroup.com/first-time-buyer-nj-programs"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","h2",".faq-item h3"]}}
@@ -92,7 +92,60 @@
   .faq-item p { color:#3A3A3A; line-height:1.65; }
   footer { background:#1A1A1A; color:#ccc; padding:40px; text-align:center; font-size:0.88rem; margin-top:40px; }
   footer a { color:#D4AF5A; }
-</style>
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}.logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}.logo-img {
+    height: 60px;
+    width: auto;
+    background: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, padding 0.3s ease;
+    display: block;
+}nav.scrolled .logo-img {
+    padding: 4px 10px;
+}a.logo:hover .logo-img {
+    transform: translateY(-1px);
+}.nav-container {
+  gap: 2rem;
+  flex-wrap: nowrap;
+  justify-content: center !important;   
+}nav .logo-img { max-height: 56px; }@media (max-width: 1400px){.nav-container { gap: 1.5rem; }}@media (max-width: 1200px){nav .logo-img { max-height: 48px; }}main a:not(.btn-primary):not(.btn-outline):not(.nav-btn-consultation):not(.cta-button):not(.logo) {
+  position: relative;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.4s cubic-bezier(.2,.9,.3,1);
+}main a:not(.btn-primary):not(.btn-outline):not(.nav-btn-consultation):not(.cta-button):not(.logo):hover {
+  background-size: 100% 1px;
+}.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 8px 16px;
+  background: #000000;
+  color: #FFFFFF;
+  z-index: 9999;
+  text-decoration: none;
+}.skip-link:focus,
+.skip-link:focus-visible {
+  left: 0;
+}.logo { font-weight: 700; }</style>
 </head>
 <body>
 <a href="#main" class="skip-link" class="skip-link" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to main content</a>
