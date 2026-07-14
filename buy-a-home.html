@@ -65,6 +65,7 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
 
     <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="css/styles.css"></noscript>
+    <link rel="stylesheet" href="css/lead-magnet.css">
 
     <style>
         .buyer-page { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
@@ -499,6 +500,54 @@
             </div>
         </div>
 
+        <!-- Free buyer's guide lead magnet -->
+        <section class="lm-wrap" id="getguide">
+            <div>
+                <p class="lm-eyebrow">Free NJ Buyer's Guide</p>
+                <h2 class="lm-heading">Get <em>The NJ Home Buyer's Guide</em> — free</h2>
+                <p class="lm-subcopy">From pre-approval to keys: NJ programs, what it really costs to close, the step-by-step process, and a buyer-readiness checklist. The PDF downloads instantly.</p>
+                <div class="lm-form" id="lmCard" data-guide="buyer" data-pdf="/guides/nj-home-buyer-guide.pdf" data-source="buy-a-home">
+                    <h2>Get the free guide instantly</h2>
+                    <p class="small">Enter your info and the PDF downloads right away.</p>
+                    <form id="lmForm" novalidate>
+                        <div class="lm-hp"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+                        <label for="lmName">First name</label>
+                        <input id="lmName" name="name" type="text" autocomplete="given-name" required placeholder="Your first name">
+                        <label for="lmEmail">Email</label>
+                        <input id="lmEmail" name="email" type="email" autocomplete="email" required placeholder="you@email.com">
+                        <label for="lmPhone">Phone <span style="text-transform:none;font-weight:400;color:#999;">(optional)</span></label>
+                        <input id="lmPhone" name="phone" type="tel" autocomplete="tel" placeholder="(908) 555-0123">
+                        <button type="submit" class="lm-btn">Send Me the Free Guide →</button>
+                        <p class="lm-trust">No spam. Your info stays private and is never sold.</p>
+                    </form>
+                </div>
+                <div class="lm-success" id="lmSuccess">
+                    <h2>Your guide is on the way! 📗</h2>
+                    <p>The download should have started. If not, grab it here:</p>
+                    <a class="lm-dl" id="lmDownload" href="/guides/nj-home-buyer-guide.pdf" download>Download the Buyer's Guide (PDF)</a>
+                    <p style="margin-top:16px;font-size:.92rem;color:#555;">I'll follow up personally with a couple of pointers for your search — no pressure.</p>
+                </div>
+            </div>
+            <div class="lm-bookwrap">
+                <div class="lm-book">
+                    <div class="lm-book__shadow"></div>
+                    <div class="lm-book__spine"></div>
+                    <div class="lm-book__pages"></div>
+                    <div class="lm-book__cover">
+                        <img src="images/site/buyer-guide-cover.jpg" alt="The NJ Home Buyer's Guide e-book cover" width="300" height="430" loading="lazy">
+                        <div class="lm-book__overlay"></div>
+                        <div class="lm-book__text">
+                            <p class="lm-book__kicker">The Jorge Ramirez Group</p>
+                            <h3 class="lm-book__title">The NJ Home Buyer's Guide</h3>
+                            <div class="lm-book__rule"></div>
+                            <p class="lm-book__sub">From Pre-Approval to Keys — What NJ Buyers Need to Know</p>
+                            <p class="lm-book__author">Jorge Ramirez<span>Keller Williams Premier Properties</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- What Makes Buying in NJ Different -->
         <div class="nj-different">
             <h2>What Makes Buying in NJ Different</h2>
@@ -808,6 +857,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+<script src="js/lead-magnet.js" defer></script>
 <script defer src="/js/site-cta.js"></script>
 </body>
 </html>

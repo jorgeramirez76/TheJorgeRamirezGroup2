@@ -54,6 +54,35 @@ async function pushCRM(lead) {
   return { ok: "crm" };
 }
 
+// Guide (lead magnet) catalog — maps the form's `guide` field to a title + hosted PDF.
+const GUIDES = {
+  seller: { name: "The NJ Home Seller's Playbook", url: ORIGIN + "/guides/nj-home-seller-guide.pdf" },
+  buyer: { name: "The NJ Home Buyer's Guide", url: ORIGIN + "/guides/nj-home-buyer-guide.pdf" },
+};
+
+// Emails the requested e-book to the LEAD (not Jorge). Instant download already delivers
+// the PDF client-side; this is the email copy + follow-up, active once Resend is configured.
+async function emailGuideToLead(lead) {
+  const key = process.env.RESEND_API_KEY;
+  const from = process.env.RESEND_FROM;
+  const guide = GUIDES[lead.guide];
+  if (!key || !from || !lead.email || !guide) return { skipped: "guide-email" };
+  const first = (lead.name || "there").split(" ")[0];
+  const html =
+    `<p>Hi ${first},</p>` +
+    `<p>Thanks for grabbing <b>${guide.name}</b> — here's your copy:</p>` +
+    `<p><a href="${guide.url}" style="display:inline-block;padding:12px 22px;background:#1A1A1A;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Download the guide (PDF)</a></p>` +
+    `<p>If any question comes up about your ${lead.guide === "buyer" ? "home search" : "home sale"}, just reply to this email or text me at 908-230-7844 — no pressure.</p>` +
+    `<p>&mdash; Jorge Ramirez<br>The Jorge Ramirez Group · Keller Williams Premier Properties<br>908-230-7844 · jorge.ramirez@kw.com</p>`;
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ from, to: lead.email, subject: `${guide.name} — your copy`, html }),
+  });
+  if (!res.ok) throw new Error(`guide-email ${res.status}`);
+  return { ok: "guide-email" };
+}
+
 async function emailViaResend(lead) {
   const key = process.env.RESEND_API_KEY;
   const to = process.env.LEAD_EMAIL;
@@ -96,15 +125,16 @@ export default async function handler(req, res) {
     phone: (b.phone || b.Phone || "").toString().slice(0, 60),
     town: (b.town || b.Town || "").toString().slice(0, 120),
     intent: (b.intent || b.interest || b.looking_to || "").toString().slice(0, 120),
+    guide: (b.guide || "").toString().slice(0, 40),
     message: (b.message || b.Message || "").toString().slice(0, 2000),
     source: (b._source || req.headers.referer || "").toString().slice(0, 300),
     receivedAt: new Date().toISOString(),
   };
 
-  const results = await Promise.allSettled([textJorge(lead), pushCRM(lead), emailViaResend(lead)]);
+  const results = await Promise.allSettled([textJorge(lead), pushCRM(lead), emailViaResend(lead), emailGuideToLead(lead)]);
   const delivered = results.some((r) => r.status === "fulfilled" && r.value && r.value.ok);
   results.forEach((r, i) => {
-    const label = ["twilio", "crm", "resend"][i];
+    const label = ["twilio", "crm", "resend", "guide-email"][i];
     if (r.status === "rejected") console.error(`lead delivery failed [${label}]:`, r.reason);
   });
   if (!delivered) console.error("LEAD NOT DELIVERED — no channel configured/succeeded:", JSON.stringify(lead));
