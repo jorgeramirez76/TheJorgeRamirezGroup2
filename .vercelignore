@@ -9,5 +9,6 @@ _posts
 *.md
 .design-screens
 *.pdf
+!guides/*.pdf
 *.db
 *.backup
