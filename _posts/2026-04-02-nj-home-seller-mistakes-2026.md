@@ -49,7 +49,7 @@ As a seasoned realtor with years of experience in the NJ market, I'm here to hel
 
 **Get in Touch**
 
-If you're looking to sell your NJ home or just want some advice on how to increase its value, give me a call at (908) 230-7844. With my extensive knowledge of the NJ market and years of experience as a realtor, I'm confident that I can help you achieve your goals.
+If you're looking to sell your NJ home or just want some advice on how to increase its value, give me a call at (908) 317-3227. With my extensive knowledge of the NJ market and years of experience as a realtor, I'm confident that I can help you achieve your goals.
 
 ---
 

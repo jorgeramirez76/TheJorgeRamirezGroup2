@@ -220,7 +220,7 @@ Content: 800-1200 words about Summit
 Jorge Ramirez - The Jorge Ramirez Group
 488 Springfield Avenue
 Summit, NJ 07901
-(908) 230-7844
+(908) 317-3227
 ```
 
 **Action items:**
@@ -506,12 +506,12 @@ Generic or missing
 
 **Better** (155 chars max):
 ```
-Find homes for sale in Summit, NJ. Expert local realtor Jorge Ramirez helps buyers & sellers in Union County. Free home value estimates. Call 908-230-7844.
+Find homes for sale in Summit, NJ. Expert local realtor Jorge Ramirez helps buyers & sellers in Union County. Free home value estimates. Call 908-317-3227.
 ```
 
 **Formula:**
 ```
-Find homes for sale in [Town], [County]. Expert local realtor Jorge Ramirez helps buyers & sellers. Free home value. Call 908-230-7844.
+Find homes for sale in [Town], [County]. Expert local realtor Jorge Ramirez helps buyers & sellers. Free home value. Call 908-317-3227.
 ```
 
 **Apply to all 102 town pages** (unique for each town)

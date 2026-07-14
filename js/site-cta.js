@@ -7,7 +7,7 @@
   'use strict';
   if (document.getElementById('jrg-cta-bar')) return;
 
-  var PHONE = '+19082307844';
+  var PHONE = '+19083173227';
   var isES = (document.documentElement.lang || '').toLowerCase().indexOf('es') === 0;
   var callLabel = isES ? 'Llamar' : 'Call';
   var textLabel = isES ? 'Texto' : 'Text';

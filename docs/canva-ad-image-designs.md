@@ -55,7 +55,7 @@ Create 3 versions of each design:
 │   section changed everything    │
 │     (White, smaller text)       │
 │                                 │
-│    📞 Text: 908-230-7844        │
+│    📞 Text: 908-317-3227        │
 │     (White, bottom)             │
 │                                 │
 └─────────────────────────────────┘
@@ -199,7 +199,7 @@ Create 3 versions of each design:
 │   (White bullets, left-aligned) │
 │                                 │
 │   Let's talk through it         │
-│   📞 908-230-7844               │
+│   📞 908-317-3227               │
 │   (White, bottom)               │
 └─────────────────────────────────┘
 ```
@@ -292,7 +292,7 @@ Create 3 versions of each design:
 │  │  📅 Book Showing →      │   │
 │  │  (Button, gold)         │   │
 │  │                         │   │
-│  │  908-230-7844           │   │
+│  │  908-317-3227           │   │
 │  └─────────────────────────┘   │
 │                                 │
 └─────────────────────────────────┘
@@ -342,7 +342,7 @@ Create 3 versions of each design:
 │                                 │
 ├─────────────────────────────────┤
 │  Want analysis for your town?   │
-│  Text: 908-230-7844             │
+│  Text: 908-317-3227             │
 │  (Bottom, centered)             │
 └─────────────────────────────────┘
 ```
@@ -537,7 +537,7 @@ For higher engagement, add simple animations:
 - [ ] Get 3-5 sold home photos
 - [ ] Get best listing photos (interior + exterior)
 - [ ] Confirm brand colors match website
-- [ ] Have phone number ready (908-230-7844)
+- [ ] Have phone number ready (908-317-3227)
 - [ ] Have website URLs ready
 
 **In Canva**:

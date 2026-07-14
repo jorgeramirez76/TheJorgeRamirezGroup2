@@ -24,7 +24,7 @@ Most people who download our seller's guide tell me one section changed how they
 
 Was it the pricing strategy? The marketing timeline? Something else?
 
-Curious what stood out to you. Reply or shoot me a text: 908-230-7844
+Curious what stood out to you. Reply or shoot me a text: 908-317-3227
 
 — Jorge Ramirez
 ```
@@ -71,7 +71,7 @@ That's it. No pressure.
 
 Still thinking about whether to sell? That's fine too. The data will be here when you're ready.
 
-— Jorge Ramirez | 908-230-7844
+— Jorge Ramirez | 908-317-3227
 ```
 **CTA Button**: Get My Home Value  
 **Image**: Screenshot of home value tool or calculator graphic
@@ -95,7 +95,7 @@ If you wait until summer/fall to list, what happens in the meantime?
 • Do interest rates change?
 • Does the market shift?
 
-Not trying to pressure you—just wondering what you're weighing right now. If you want to talk through it, text me: 908-230-7844
+Not trying to pressure you—just wondering what you're weighing right now. If you want to talk through it, text me: 908-317-3227
 
 — Jorge
 ```
@@ -118,7 +118,7 @@ Why? Title insurance, attorney fees, prorated taxes, HOA payoffs, repairs from i
 
 Want to know your actual number before you list?
 
-I'll send you a personalized net proceeds estimate—free, no strings. Just text me your address: 908-230-7844
+I'll send you a personalized net proceeds estimate—free, no strings. Just text me your address: 908-317-3227
 
 — Jorge Ramirez
 ```
@@ -141,7 +141,7 @@ This month so far: 3 sold, 2 under contract.
 The difference? We don't wait for buyers to stumble across your listing. We hunt them down.
 
 Curious how that would work for your neighborhood?  
-👉 Book a 15-min call: 908-230-7844
+👉 Book a 15-min call: 908-317-3227
 
 — Jorge
 ```
@@ -168,7 +168,7 @@ But if you have questions—about pricing, timing, what to fix before listing, w
 
 No pitch. Just honest answers.
 
-Text me: 908-230-7844
+Text me: 908-317-3227
 
 — Jorge Ramirez
 ```
@@ -192,7 +192,7 @@ What does this mean for you?
 
 If you're thinking about listing in the next 3-6 months, now's the time to start planning. Spring market is heating up fast.
 
-Want a custom analysis for YOUR town? Text me: 908-230-7844
+Want a custom analysis for YOUR town? Text me: 908-317-3227
 
 — Jorge
 ```
@@ -219,7 +219,7 @@ Not every home will beat estimates by that much. But most sellers leave money on
 Curious what your home is really worth?  
 👉 value.thejorgeramirezgroup.com
 
-— Jorge Ramirez | 908-230-7844
+— Jorge Ramirez | 908-317-3227
 ```
 **CTA Button**: Get My Home Value  
 **Image**: Before/after comparison or "SOLD ABOVE ASKING" graphic
@@ -247,7 +247,7 @@ Still available. But we've had 8 showings this week and one offer came in this m
 If you're interested, don't wait.
 
 📅 Book a private showing → [GHL booking link]  
-📞 Quick questions? Text me: 908-230-7844
+📞 Quick questions? Text me: 908-317-3227
 
 — Jorge
 ```
@@ -271,7 +271,7 @@ We just added:
 See it all → [listing link]
 
 Want to see it in person? I can get you in this weekend.  
-Text me: 908-230-7844
+Text me: 908-317-3227
 
 — Jorge Ramirez
 ```
@@ -294,7 +294,7 @@ That one might not be the perfect fit, but I have 3 other homes in Summit you mi
 
 See all listings → thejorgeramirezgroup.com/towns/summit
 
-Or tell me what you're looking for and I'll send you matches: 908-230-7844
+Or tell me what you're looking for and I'll send you matches: 908-317-3227
 
 — Jorge
 ```
@@ -323,7 +323,7 @@ Was it:
 
 I'm not going to try to change your mind—but if it's something fixable (like needing better photos or a price adjustment), I want to know.
 
-Text me: 908-230-7844
+Text me: 908-317-3227
 
 — Jorge
 ```
@@ -343,7 +343,7 @@ New price: $XXX,XXX (was $XXX,XXX)
 Seller is motivated. This won't last.
 
 📅 See it this weekend → [booking link]  
-📞 Questions? Call/text: 908-230-7844
+📞 Questions? Call/text: 908-317-3227
 
 — Jorge Ramirez
 ```
@@ -369,7 +369,7 @@ Still available (for now).
 
 Book a showing before it's gone → [link]
 
-— Jorge | 908-230-7844
+— Jorge | 908-317-3227
 ```
 **CTA Button**: Book Now  
 **Image**: Kitchen or best feature photo
@@ -392,7 +392,7 @@ If it's not the one, that's totally fine—but I want to make sure I'm showing y
 
 What would make your next showing a better fit?
 
-Text me: 908-230-7844
+Text me: 908-317-3227
 
 — Jorge
 ```
@@ -416,7 +416,7 @@ Based on what you saw, here are 3 similar homes that just came on the market:
 See full details → [link]
 
 Want to tour all 3 this weekend? I can make it happen.  
-Text me: 908-230-7844
+Text me: 908-317-3227
 
 — Jorge Ramirez
 ```
@@ -435,7 +435,7 @@ Update: Seller just replaced the roof and dropped the price $10K.
 
 Still interested? This changes things.
 
-📞 Let's talk: 908-230-7844
+📞 Let's talk: 908-317-3227
 
 — Jorge
 ```
@@ -518,7 +518,7 @@ Still interested? This changes things.
 - [ ] Custom audiences created in Ads Manager
 - [ ] GHL tracking "Seller Guide Download" event
 - [ ] All ad images/videos created (use Canva)
-- [ ] Phone number confirmed (908-230-7844)
+- [ ] Phone number confirmed (908-317-3227)
 - [ ] Budget allocated ($200-300/month minimum)
 - [ ] Ad copy personalized with real data
 
@@ -543,6 +543,6 @@ Still interested? This changes things.
 
 ---
 
-**Questions? Text Jorge: 908-230-7844**
+**Questions? Text Jorge: 908-317-3227**
 
 *Last updated: February 3, 2026*

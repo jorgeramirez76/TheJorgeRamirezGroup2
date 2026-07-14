@@ -58,4 +58,4 @@ Warren’s market rewards preparation. It rewards homes that are *ready* for the
 I don’t sell homes. I help Warren homeowners *understand* their market and make the right move. No pressure. No sales pitch. Just the facts you need to decide.
 
 **Thinking about your options? No pressure — let's talk.**  
-**(908) 230-7844 | jorge.ramirez@kw.com | thejorgeramirezgroup.com | License #1754604**
+**(908) 317-3227 | jorge.ramirez@kw.com | thejorgeramirezgroup.com | License #1754604**

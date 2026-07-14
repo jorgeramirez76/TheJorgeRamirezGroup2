@@ -67,4 +67,4 @@ I’ve helped 12 luxury sellers in Livingston sell above asking in 2025, using d
 ---
 
 **Thinking about your options? No pressure — let's talk.**  
-(908) 230-7844 | jorge.ramirez@kw.com | thejorgeramirezgroup.com
+(908) 317-3227 | jorge.ramirez@kw.com | thejorgeramirezgroup.com

@@ -54,7 +54,7 @@ Thanks for downloading the guide! It should be in your inbox right now (check sp
 
 Quick question: what made you request it today? Genuinely curious what you're working through right now.
 
-If you want to talk through anything in the guide—pricing, timing, what to fix before listing, whatever—text me anytime: 908-230-7844
+If you want to talk through anything in the guide—pricing, timing, what to fix before listing, whatever—text me anytime: 908-317-3227
 
 No sales pitch. Just helpful answers.
 
@@ -79,7 +79,7 @@ Was it the pricing strategy? The marketing timeline? Something else?
 
 Curious what stood out to you.
 
-If you want to dig deeper into anything, let's talk: 908-230-7844
+If you want to dig deeper into anything, let's talk: 908-317-3227
 
 — Jorge
 ```
@@ -102,7 +102,7 @@ That's totally fine.
 
 But if you have questions—about pricing, timing, what to fix before listing, whatever—I'm here. No pitch. Just honest answers.
 
-Text me: 908-230-7844
+Text me: 908-317-3227
 
 — Jorge
 
@@ -337,7 +337,7 @@ Due: In 5 minutes
 
 **4. If Jorge Hasn't Replied, Send Auto-Response**
 ```
-"Hey [First Name], Jorge here. For [Property Address], current price is $XXX,XXX. Want to know more about it? Text me back or call: 908-230-7844"
+"Hey [First Name], Jorge here. For [Property Address], current price is $XXX,XXX. Want to know more about it? Text me back or call: 908-317-3227"
 ```
 
 ---

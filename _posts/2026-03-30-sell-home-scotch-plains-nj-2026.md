@@ -83,4 +83,4 @@ Thinking about your options? No pressure — let's talk.
 ---  
 *Jorge Ramirez | The Jorge Ramirez Group | Keller Williams Summit*  
 *Scotch Plains, Westfield, and Summit Real Estate | Bilingual (English/Spanish)*  
-*thejorgeramirezgroup.com | (908) 230-7844*
+*thejorgeramirezgroup.com | (908) 317-3227*
