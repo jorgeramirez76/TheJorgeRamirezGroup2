@@ -25,6 +25,16 @@
       "permanent": true
     },
     {
+      "source": "/es/nyc-to-nj-relocation.html",
+      "destination": "/es/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/nyc-to-nj-relocation",
+      "destination": "/es/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
       "source": "/realtor/basking-ridge-nj",
       "destination": "/towns/basking-ridge",
       "permanent": true

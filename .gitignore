@@ -1,5 +1,6 @@
 data/higgsfield-key.txt
 __pycache__/
+.venv/
 .design-screens/
 .vercel
 .env*
