@@ -67,17 +67,35 @@ async function emailGuideToLead(lead) {
   const from = process.env.RESEND_FROM;
   const guide = GUIDES[lead.guide];
   if (!key || !from || !lead.email || !guide) return { skipped: "guide-email" };
-  const first = (lead.name || "there").split(" ")[0];
+  const first = ((lead.name || "there").split(" ")[0] || "there").replace(/[<>]/g, "");
+  const topic = lead.guide === "buyer" ? "home search" : "home sale";
+  const unsub = "mailto:jorge@thejorgeramirezgroup.com?subject=unsubscribe";
+  const addr = "The Jorge Ramirez Group · 488 Springfield Avenue, Summit, NJ 07901";
   const html =
+    `<div style="font-family:-apple-system,Segoe UI,Arial,sans-serif;font-size:15px;line-height:1.6;color:#222;max-width:560px">` +
     `<p>Hi ${first},</p>` +
-    `<p>Thanks for grabbing <b>${guide.name}</b> — here's your copy:</p>` +
+    `<p>Thanks for requesting <b>${guide.name}</b> — here's your copy to download:</p>` +
     `<p><a href="${guide.url}" style="display:inline-block;padding:12px 22px;background:#1A1A1A;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Download the guide (PDF)</a></p>` +
-    `<p>If any question comes up about your ${lead.guide === "buyer" ? "home search" : "home sale"}, just reply to this email or text me at 908-230-7844 — no pressure.</p>` +
-    `<p>&mdash; Jorge Ramirez<br>The Jorge Ramirez Group · Keller Williams Premier Properties<br>908-230-7844 · jorge.ramirez@kw.com</p>`;
+    `<p>If the button doesn't work, use this link:<br><a href="${guide.url}">${guide.url}</a></p>` +
+    `<p>I put this together from years of helping New Jersey families with the same ${topic}. If a question comes up, just reply to this email or text me at 908-230-7844 — no pressure at all.</p>` +
+    `<p>Talk soon,<br>Jorge Ramirez<br>The Jorge Ramirez Group &middot; Keller Williams Premier Properties<br>908-230-7844 &middot; jorge.ramirez@kw.com</p>` +
+    `<hr style="border:none;border-top:1px solid #eee;margin:24px 0 12px">` +
+    `<p style="font-size:12px;color:#999">You're receiving this because you requested a free guide at thejorgeramirezgroup.com.<br>${addr}<br><a href="${unsub}" style="color:#999">Unsubscribe</a></p>` +
+    `</div>`;
+  const text =
+    `Hi ${first},\n\nThanks for requesting ${guide.name}. Download your copy here:\n${guide.url}\n\n` +
+    `I put this together from years of helping NJ families with the same ${topic}. If a question comes up, ` +
+    `reply to this email or text me at 908-230-7844 — no pressure.\n\nTalk soon,\nJorge Ramirez\n` +
+    `The Jorge Ramirez Group · Keller Williams Premier Properties\n908-230-7844 · jorge.ramirez@kw.com\n\n` +
+    `You're receiving this because you requested a free guide at thejorgeramirezgroup.com.\n${addr}\nUnsubscribe: ${unsub}`;
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from, to: lead.email, subject: `${guide.name} — your copy`, html }),
+    body: JSON.stringify({
+      from, to: lead.email, reply_to: "jorge@thejorgeramirezgroup.com",
+      subject: `Your copy of ${guide.name}`, html, text,
+      headers: { "List-Unsubscribe": `<${unsub}>`, "List-Unsubscribe-Post": "List-Unsubscribe=One-Click" },
+    }),
   });
   if (!res.ok) throw new Error(`guide-email ${res.status}`);
   return { ok: "guide-email" };
