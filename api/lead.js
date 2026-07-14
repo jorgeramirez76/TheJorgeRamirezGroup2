@@ -45,9 +45,11 @@ async function textJorge(lead) {
 async function pushCRM(lead) {
   const url = process.env.CRM_WEBHOOK_URL;
   if (!url) return { skipped: "crm" };
+  const headers = { "Content-Type": "application/json" };
+  if (process.env.SITE_LEAD_WEBHOOK_SECRET) headers["x-webhook-secret"] = process.env.SITE_LEAD_WEBHOOK_SECRET;
   const res = await fetch(url, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers,
     body: JSON.stringify(lead),
   });
   if (!res.ok) throw new Error(`crm ${res.status}`);
