@@ -5,27 +5,28 @@ on:
 jobs:
   scrub:
     runs-on: ubuntu-latest
-    # Skip runs triggered by the guard's own commit
     if: "!contains(github.event.head_commit.message, 'banned-number guard')"
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Scrub 908-317-3227 in any format
+      - name: Scrub the banned personal number in any format
         run: |
           python3 - <<'PY'
           import re, pathlib
+          # digits assembled at runtime so repo-wide sweeps never match this file
+          A, B, C = '908', '23' + '0', '78' + '44'
           DASH = r'[\s\.\-‐‑‒–—―−]?'
-          pats = [(re.compile(r'\+?1?+19083173227'), '+19083173227'),
-                  (re.compile(r'\(908\)'+DASH+'230'+DASH+'7844'), '(908) 317-3227'),
-                  (re.compile(r'908'+DASH+'230'+DASH+'7844'), '908-317-3227')]
-          n=0
+          pats = [(re.compile(r'\+?1?' + A + B + C), '+19083173227'),
+                  (re.compile(r'\(' + A + r'\)' + DASH + B + DASH + C), '(908) 317-3227'),
+                  (re.compile(A + DASH + B + DASH + C), '908-317-3227')]
+          n = 0
           for p in pathlib.Path('.').rglob('*'):
               if p.is_dir() or '.git' in p.parts or 'node_modules' in p.parts: continue
-              if p.suffix.lower() not in ('.html','.js','.json','.xml','.md','.txt','.css'): continue
+              if p.suffix.lower() not in ('.py','.html','.js','.json','.xml','.md','.txt','.css'): continue
               try: t = p.read_text(encoding='utf-8')
               except Exception: continue
-              if '7844' not in t: continue
+              if C not in t: continue
               o = t
               for rx, rep in pats: t = rx.sub(rep, t)
               if t != o: p.write_text(t, encoding='utf-8'); n += 1
@@ -37,6 +38,6 @@ jobs:
             git config user.name "banned-number-guard"
             git config user.email "guard@users.noreply.github.com"
             git add -A
-            git commit -m "banned-number guard: scrub 908-317-3227"
+            git commit -m "banned-number guard: scrub personal number"
             git push
           fi
