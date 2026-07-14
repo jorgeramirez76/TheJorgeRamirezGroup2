@@ -88,8 +88,8 @@ print("\n=== 4. Adding og/jsonld/llm-context to 404 / counties index / towns ind
 def fix_404(text: str) -> str:
     return add_seo_meta(text,
         og_title="Page Not Found | The Jorge Ramirez Group",
-        og_desc="The page you're looking for doesn't exist. Browse our 138 NJ communities or contact Jorge directly at 908-230-7844.",
-        llm_ctx="404 page for thejorgeramirezgroup.com — the requested URL was not found. Jorge Ramirez is a NJ real estate agent (License #1754604) at Keller Williams Premier Properties. Phone: 908-230-7844. Browse 138 NJ communities at /communities.html.",
+        og_desc="The page you're looking for doesn't exist. Browse our 138 NJ communities or contact Jorge directly at 908-317-3227.",
+        llm_ctx="404 page for thejorgeramirezgroup.com — the requested URL was not found. Jorge Ramirez is a NJ real estate agent (License #1754604) at Keller Williams Premier Properties. Phone: 908-317-3227. Browse 138 NJ communities at /communities.html.",
         jsonld='''{
   "@context": "https://schema.org",
   "@type": "WebPage",

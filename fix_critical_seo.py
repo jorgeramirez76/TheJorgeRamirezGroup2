@@ -306,8 +306,8 @@ def fix_c4_spanish_meta_desc():
     count = 0
 
     # Fix the meta description - currently English, replace with Spanish
-    old_english = 'Licensed NJ Realtor Jorge Ramirez helps homeowners in Summit, Westfield, Chatham + 100 NJ towns sell for top dollar. Free home valuation. Call 908-230-7844.'
-    spanish_desc = 'Jorge Ramirez es un agente de bienes ra\u00edces en Nueva Jersey. Ayuda a propietarios en Summit, Westfield, Chatham y m\u00e1s de 100 comunidades a vender su casa al mejor precio. Valuaci\u00f3n gratis. Llame al 908-230-7844.'
+    old_english = 'Licensed NJ Realtor Jorge Ramirez helps homeowners in Summit, Westfield, Chatham + 100 NJ towns sell for top dollar. Free home valuation. Call 908-317-3227.'
+    spanish_desc = 'Jorge Ramirez es un agente de bienes ra\u00edces en Nueva Jersey. Ayuda a propietarios en Summit, Westfield, Chatham y m\u00e1s de 100 comunidades a vender su casa al mejor precio. Valuaci\u00f3n gratis. Llame al 908-317-3227.'
 
     if old_english in content:
         content = content.replace(old_english, spanish_desc)

@@ -16,9 +16,9 @@ PAGES = {
         "breadcrumb_name": "Divorce Home Sale",
         "title_tag": "Selling a House During Divorce in NJ | Discreet Help | Jorge Ramirez",
         "meta_title": "Selling a House During Divorce in NJ — Discreet, Fair, Fast | Jorge Ramirez",
-        "meta_desc": "Selling a home during divorce in NJ? Jorge Ramirez handles the sale discreetly, coordinates with both attorneys, and ensures a fair split. Call 908-230-7844 — no judgment.",
+        "meta_desc": "Selling a home during divorce in NJ? Jorge Ramirez handles the sale discreetly, coordinates with both attorneys, and ensures a fair split. Call 908-317-3227 — no judgment.",
         "keywords": "divorce home sale NJ, sell house during divorce New Jersey, divorce realtor NJ, selling home after divorce NJ, divorce real estate agent NJ, equitable distribution home NJ",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) is a New Jersey real estate agent who specializes in discreet, empathetic home sales during divorce. He coordinates with both spouses' attorneys, ensures neutral communication, and delivers fair-market pricing so neither party feels shortchanged. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) is a New Jersey real estate agent who specializes in discreet, empathetic home sales during divorce. He coordinates with both spouses' attorneys, ensures neutral communication, and delivers fair-market pricing so neither party feels shortchanged. Contact: 908-317-3227.",
         "hero_h1": "Selling Your Home During a Divorce in NJ? Let's Handle This the Right Way.",
         "hero_p": "A divorce is hard enough without a real estate agent making it harder. Jorge Ramirez works as a neutral third party, coordinates with both attorneys, and focuses on one goal: getting your home sold at a fair price so both of you can move forward. No drama. No judgment. Just professional, discreet execution.",
         "pain_h2": "What Makes a Divorce Home Sale Different",
@@ -88,9 +88,9 @@ PAGES = {
         "breadcrumb_name": "Sell an Inherited Home",
         "title_tag": "Selling an Inherited House in NJ | Probate Help | Jorge Ramirez",
         "meta_title": "Selling an Inherited House in NJ — Probate, Taxes & Multiple Heirs Handled | Jorge Ramirez",
-        "meta_desc": "Inherited a house in New Jersey? Jorge Ramirez walks you through probate, tax basis, and multi-heir coordination. Sell smoothly — even if the house needs work. Call 908-230-7844.",
+        "meta_desc": "Inherited a house in New Jersey? Jorge Ramirez walks you through probate, tax basis, and multi-heir coordination. Sell smoothly — even if the house needs work. Call 908-317-3227.",
         "keywords": "selling inherited house NJ, inherited home New Jersey, probate real estate NJ, sell inherited property NJ, inherited home tax basis NJ, multiple heirs home sale NJ, executor selling house NJ",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) is a New Jersey real estate agent who specializes in inherited home sales and probate real estate. He coordinates with estate attorneys, handles multi-heir communication, advises on stepped-up tax basis timing, and manages as-is sales for homes that need work. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) is a New Jersey real estate agent who specializes in inherited home sales and probate real estate. He coordinates with estate attorneys, handles multi-heir communication, advises on stepped-up tax basis timing, and manages as-is sales for homes that need work. Contact: 908-317-3227.",
         "hero_h1": "Inherited a House in New Jersey? Here's What You Actually Need to Know.",
         "hero_p": "Losing a loved one is hard. Dealing with their house while you grieve is harder. Jorge Ramirez walks heirs and executors through the entire process — probate timing, tax basis, multi-heir coordination, and whether to sell as-is or fix it up first. No pressure, no upsell. Just clear guidance from someone who has helped dozens of NJ families navigate this.",
         "pain_h2": "Why Inherited Home Sales Go Sideways",
@@ -160,11 +160,11 @@ PAGES = {
         "breadcrumb_name": "Sell a Rental Property",
         "title_tag": "Selling a Rental Property in NJ | 1031 & Tenant Help | Jorge Ramirez",
         "meta_title": "Selling a Rental Property in NJ — 1031 Exchanges, Tenants, Taxes | Jorge Ramirez",
-        "meta_desc": "Selling a rental property in NJ? Jorge Ramirez coordinates tenants, 1031 exchanges, and investor marketing for landlords. Licensed agent. Call 908-230-7844.",
+        "meta_desc": "Selling a rental property in NJ? Jorge Ramirez coordinates tenants, 1031 exchanges, and investor marketing for landlords. Licensed agent. Call 908-317-3227.",
         "keywords": "sell rental property NJ, landlord selling house NJ, 1031 exchange NJ, selling investment property New Jersey, tenant occupied sale NJ, absentee owner real estate NJ",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) helps NJ landlords sell rental properties — including 1031 exchange coordination, tenant-occupied sales, absentee owner representation, and investor buyer marketing. He has flipped homes personally and speaks the investor language. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) helps NJ landlords sell rental properties — including 1031 exchange coordination, tenant-occupied sales, absentee owner representation, and investor buyer marketing. He has flipped homes personally and speaks the investor language. Contact: 908-317-3227.",
         "hero_h1": "Selling a Rental Property in NJ? Here's How to Do It Without Leaving Money on the Table.",
-        "hero_p": "Selling a rental is a different animal. Tenants, 1031 exchanges, tax basis, depreciation recapture, cap rates, investor buyers — most agents do not speak the language. Jorge Ramirez does. He has flipped houses personally, built rental portfolios, and worked with dozens of NJ landlords on the exit. Call 908-230-7844.",
+        "hero_p": "Selling a rental is a different animal. Tenants, 1031 exchanges, tax basis, depreciation recapture, cap rates, investor buyers — most agents do not speak the language. Jorge Ramirez does. He has flipped houses personally, built rental portfolios, and worked with dozens of NJ landlords on the exit. Call 908-317-3227.",
         "pain_h2": "Where Landlords Lose Money on the Sale",
         "pain_intro": "A rental sale is not a primary-residence sale. The buyers are different, the tax stakes are bigger, and the tenants add complexity. Here is where landlords get squeezed when they hire an agent who has never handled an investment property.",
         "pain_cards": [
@@ -232,9 +232,9 @@ PAGES = {
         "breadcrumb_name": "Downsizing",
         "title_tag": "Downsizing Your NJ Home | Empty Nester Realtor | Jorge Ramirez",
         "meta_title": "Downsizing in NJ — Empty Nester Home Sale & Move | Jorge Ramirez",
-        "meta_desc": "Ready to downsize in NJ? Jorge Ramirez coordinates the sale of your family home and the purchase of your next one — so you only move once. Call 908-230-7844.",
+        "meta_desc": "Ready to downsize in NJ? Jorge Ramirez coordinates the sale of your family home and the purchase of your next one — so you only move once. Call 908-317-3227.",
         "keywords": "downsizing NJ, empty nester realtor NJ, downsize home New Jersey, selling family home NJ, 55 plus community NJ, retire in New Jersey, downsize and move NJ",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) helps NJ empty nesters and retirees downsize from large family homes to right-sized next homes. He coordinates the sale and the purchase in parallel so clients only move once, and handles estate-sale coordination for decades of accumulated belongings. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) helps NJ empty nesters and retirees downsize from large family homes to right-sized next homes. He coordinates the sale and the purchase in parallel so clients only move once, and handles estate-sale coordination for decades of accumulated belongings. Contact: 908-317-3227.",
         "hero_h1": "Downsizing in New Jersey? Let's Get You Into the Next Chapter — Without Moving Twice.",
         "hero_p": "The kids moved out. The big house is too much to maintain. You want something smaller, easier, maybe closer to the grandkids. Jorge Ramirez helps NJ empty nesters sell the family home and move into the right-sized next home on a timeline that actually works. Coordinated, not chaotic.",
         "pain_h2": "Why Downsizing Goes Wrong",
@@ -304,11 +304,11 @@ PAGES = {
         "breadcrumb_name": "Relocating From NJ",
         "title_tag": "Relocating From NJ | Fast Home Sale & Remote Support | Jorge Ramirez",
         "meta_title": "Relocating From New Jersey — Fast Home Sale, Remote Handling | Jorge Ramirez",
-        "meta_desc": "Moving out of NJ? Jorge Ramirez handles your NJ home sale remotely — fast timeline, relocation packages, corporate-friendly. Call 908-230-7844.",
+        "meta_desc": "Moving out of NJ? Jorge Ramirez handles your NJ home sale remotely — fast timeline, relocation packages, corporate-friendly. Call 908-317-3227.",
         "keywords": "relocating from NJ, selling NJ home to move, job relocation NJ, moving out of New Jersey, relocation realtor NJ, corporate relocation NJ, fast home sale NJ",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) helps NJ homeowners selling to relocate out of state — typically job transfers or retirement moves. He handles the sale remotely, works with corporate relocation packages, and coordinates tight timelines. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) helps NJ homeowners selling to relocate out of state — typically job transfers or retirement moves. He handles the sale remotely, works with corporate relocation packages, and coordinates tight timelines. Contact: 908-317-3227.",
         "hero_h1": "Moving Out of NJ? Let's Sell Your Home Fast — and Cleanly.",
-        "hero_p": "New job in another state. Kids settled at their new school. Closing date on the new house already locked. Now you need the NJ home sold — fast, for a fair price, and without you having to fly back constantly. Jorge Ramirez handles relocation sales remotely every month. Call 908-230-7844.",
+        "hero_p": "New job in another state. Kids settled at their new school. Closing date on the new house already locked. Now you need the NJ home sold — fast, for a fair price, and without you having to fly back constantly. Jorge Ramirez handles relocation sales remotely every month. Call 908-317-3227.",
         "pain_h2": "What Makes Relocation Sales Stressful",
         "pain_intro": "Relocation sales have their own special flavor of chaos. You are moving out of state, starting a new job, settling kids into a new school, and trying to sell a house you are no longer living in. Here is where most relocations get ugly.",
         "pain_cards": [
@@ -376,9 +376,9 @@ PAGES = {
         "breadcrumb_name": "Cash Offer",
         "title_tag": "Cash Offer on Your NJ Home | Honest Alternative to iBuyers | Jorge Ramirez",
         "meta_title": "Cash Offer on Your NJ Home — Honest Comparison to Opendoor & iBuyers | Jorge Ramirez",
-        "meta_desc": "Want a cash offer on your NJ home? Jorge Ramirez gives you an honest cash offer + a market listing comparison so you can see both numbers. Call 908-230-7844.",
+        "meta_desc": "Want a cash offer on your NJ home? Jorge Ramirez gives you an honest cash offer + a market listing comparison so you can see both numbers. Call 908-317-3227.",
         "keywords": "cash offer NJ home, sell house for cash NJ, we buy houses NJ, Opendoor NJ alternative, iBuyer NJ, fast cash sale NJ, cash home buyers New Jersey",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) offers NJ homeowners an honest cash-offer service — including a direct cash offer from his investor network AND a realistic market-listing valuation so the seller can see both numbers and choose. Transparent alternative to Opendoor, Offerpad, and 'we buy houses' ads. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) offers NJ homeowners an honest cash-offer service — including a direct cash offer from his investor network AND a realistic market-listing valuation so the seller can see both numbers and choose. Transparent alternative to Opendoor, Offerpad, and 'we buy houses' ads. Contact: 908-317-3227.",
         "hero_h1": "Thinking About a Cash Offer on Your NJ Home? Let's See the Real Numbers First.",
         "hero_p": "Cash-offer companies promise speed. What they do not mention: typical cash offers come in 10–20% below market. Jorge Ramirez shows you BOTH numbers — a real cash offer from his investor network AND what your home would sell for on the open market. Then you decide. No pressure, no contract traps.",
         "pain_h2": "The Truth About Cash-Offer Companies",
@@ -449,9 +449,9 @@ PAGES = {
         "breadcrumb_name": "Buyer Agency Agreement NJ",
         "title_tag": "Buyer Agency Agreement NJ 2026 | Who Pays & How It Works | Jorge Ramirez",
         "meta_title": "Buyer Agency Agreement NJ 2026 — Who Pays After the NAR Settlement | Jorge Ramirez",
-        "meta_desc": "Confused about buyer agent fees in NJ after the 2024 NAR settlement? Jorge Ramirez explains exactly how buyer agency works in 2026, who pays, and what to expect. Call 908-230-7844.",
+        "meta_desc": "Confused about buyer agent fees in NJ after the 2024 NAR settlement? Jorge Ramirez explains exactly how buyer agency works in 2026, who pays, and what to expect. Call 908-317-3227.",
         "keywords": "buyer agency agreement NJ, who pays buyer agent NJ 2026, NAR settlement NJ, buyer agent commission NJ, exclusive buyer agent NJ, buyer broker agreement New Jersey",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) is a licensed New Jersey real estate agent who represents home buyers. Since the August 2024 NAR settlement, all NJ buyers must sign a written buyer agency agreement before touring homes, and buyer agent compensation is negotiated between buyer and agent. Jorge explains the agreement, compensation options, and buyer representation transparently. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) is a licensed New Jersey real estate agent who represents home buyers. Since the August 2024 NAR settlement, all NJ buyers must sign a written buyer agency agreement before touring homes, and buyer agent compensation is negotiated between buyer and agent. Jorge explains the agreement, compensation options, and buyer representation transparently. Contact: 908-317-3227.",
         "hero_h1": "Buyer Agency Agreements in NJ: How It Actually Works in 2026.",
         "hero_p": "In August 2024, the NAR settlement changed how buyer agents get paid. In 2026, every NJ buyer has to sign a written buyer agency agreement before touring a home — and buyer agent commission is no longer automatically baked into the seller's side. Jorge Ramirez explains exactly how this works, who pays, and what you are signing, in plain English.",
         "pain_h2": "What Changed and What Buyers Need to Know",
@@ -521,11 +521,11 @@ PAGES = {
         "breadcrumb_name": "Moving From NYC to NJ",
         "title_tag": "Moving From NYC to NJ in 2026 | Commuter & Buyer Guide | Jorge Ramirez",
         "meta_title": "Moving From NYC to NJ 2026 — Commuter Towns, Taxes, Homes | Jorge Ramirez",
-        "meta_desc": "Moving from NYC to NJ? Jorge Ramirez maps out commuter towns, property tax math, school districts, and buyer representation for NYC transplants. Call 908-230-7844.",
+        "meta_desc": "Moving from NYC to NJ? Jorge Ramirez maps out commuter towns, property tax math, school districts, and buyer representation for NYC transplants. Call 908-317-3227.",
         "keywords": "moving from NYC to NJ, NYC to New Jersey relocation, best NJ commuter towns from NYC, buying first house NJ from NYC, Manhattan to NJ move, NYC transplant NJ homes",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) specializes in helping NYC residents relocate to New Jersey suburbs. He advises on commuter towns (Summit, Westfield, Chatham, Montclair, Maplewood, Hoboken, Jersey City), commute math (NJ Transit Midtown Direct, PATH, ferry), property tax reality, and the apartment-to-house transition. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) specializes in helping NYC residents relocate to New Jersey suburbs. He advises on commuter towns (Summit, Westfield, Chatham, Montclair, Maplewood, Hoboken, Jersey City), commute math (NJ Transit Midtown Direct, PATH, ferry), property tax reality, and the apartment-to-house transition. Contact: 908-317-3227.",
         "hero_h1": "Moving From NYC to New Jersey? Here's How to Pick the Right Town — Without Regrets.",
-        "hero_p": "The apartment feels small. The kid is on the way (or already here). You love NYC but you need yard, space, and a school district. Jorge Ramirez has helped hundreds of NYC residents make the jump — picking the right commuter town, decoding NJ property taxes, and finding the house that actually fits. Call 908-230-7844.",
+        "hero_p": "The apartment feels small. The kid is on the way (or already here). You love NYC but you need yard, space, and a school district. Jorge Ramirez has helped hundreds of NYC residents make the jump — picking the right commuter town, decoding NJ property taxes, and finding the house that actually fits. Call 908-317-3227.",
         "pain_h2": "Where NYC Transplants Make Expensive Mistakes",
         "pain_intro": "Moving from NYC to NJ is not the same as moving between NJ towns. The commute calculus, school search, tax math, and neighborhood culture all look different from what you are used to. Here is where NYC buyers most commonly get burned.",
         "pain_cards": [
@@ -593,11 +593,11 @@ PAGES = {
         "breadcrumb_name": "Investment Property NJ",
         "title_tag": "Buying Investment Property NJ | Flip & Rental Agent | Jorge Ramirez",
         "meta_title": "Buying an Investment Property in NJ — Flip & Rental Realtor | Jorge Ramirez",
-        "meta_desc": "Looking for a flip or rental in NJ? Jorge Ramirez is a hands-on flip investor and works with investor buyers every week. Deal flow, cap rate analysis, honest numbers. Call 908-230-7844.",
+        "meta_desc": "Looking for a flip or rental in NJ? Jorge Ramirez is a hands-on flip investor and works with investor buyers every week. Deal flow, cap rate analysis, honest numbers. Call 908-317-3227.",
         "keywords": "investment property NJ, flip NJ homes, rental property NJ, BRRRR NJ, buy and hold NJ, NJ investor realtor, house flipping NJ, cap rate New Jersey",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) is a New Jersey real estate agent and investor with personal house-flipping experience. He helps investor buyers — flippers, rental buyers, BRRRR strategies — source properties, analyze cap rates, and close cash deals in NJ. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) is a New Jersey real estate agent and investor with personal house-flipping experience. He helps investor buyers — flippers, rental buyers, BRRRR strategies — source properties, analyze cap rates, and close cash deals in NJ. Contact: 908-317-3227.",
         "hero_h1": "Buying an Investment Property in NJ? Work With an Agent Who Actually Invests.",
-        "hero_p": "Most agents do not know how to run a rental pro forma. Most agents have never walked a flip. Jorge Ramirez has flipped houses personally in NJ, built his own rental portfolio, and works with investor buyers every week. He sees deals before they hit MLS and can tell you in 10 minutes whether the numbers work. Call 908-230-7844.",
+        "hero_p": "Most agents do not know how to run a rental pro forma. Most agents have never walked a flip. Jorge Ramirez has flipped houses personally in NJ, built his own rental portfolio, and works with investor buyers every week. He sees deals before they hit MLS and can tell you in 10 minutes whether the numbers work. Call 908-317-3227.",
         "pain_h2": "Where Investor Buyers Get Burned",
         "pain_intro": "Buying investment real estate is not the same game as buying a primary residence. The metrics, the contingencies, the due diligence, and the negotiation all work differently. Here is where investor buyers lose money working with retail-only agents.",
         "pain_cards": [
@@ -665,11 +665,11 @@ PAGES = {
         "breadcrumb_name": "Luxury Homes NJ",
         "title_tag": "Luxury Homes in NJ $1M+ | Discreet Buyer & Seller Service | Jorge Ramirez",
         "meta_title": "Luxury Homes in NJ $1M+ — Discreet Representation | Jorge Ramirez",
-        "meta_desc": "Buying or selling a luxury home in NJ $1M+? Jorge Ramirez delivers discreet representation, off-market access, and global buyer reach. Call 908-230-7844.",
+        "meta_desc": "Buying or selling a luxury home in NJ $1M+? Jorge Ramirez delivers discreet representation, off-market access, and global buyer reach. Call 908-317-3227.",
         "keywords": "luxury homes NJ, $1M homes NJ, luxury realtor NJ, high end homes New Jersey, Short Hills luxury, Summit luxury, Chatham luxury homes, NJ luxury real estate agent",
-        "llm_context": "Jorge Ramirez (NJ License #1754604) represents luxury home buyers and sellers in New Jersey — primarily $1M-$5M+ homes in Summit, Westfield, Chatham, Millburn/Short Hills, Montclair, and surrounding premium towns. Focus on discretion, off-market access, global buyer reach via Keller Williams Premier Properties network. Contact: 908-230-7844.",
+        "llm_context": "Jorge Ramirez (NJ License #1754604) represents luxury home buyers and sellers in New Jersey — primarily $1M-$5M+ homes in Summit, Westfield, Chatham, Millburn/Short Hills, Montclair, and surrounding premium towns. Focus on discretion, off-market access, global buyer reach via Keller Williams Premier Properties network. Contact: 908-317-3227.",
         "hero_h1": "Luxury Homes in New Jersey: Discreet Representation From $1M to $10M+.",
-        "hero_p": "Buying or selling a luxury home is not the same transaction as a median-price home. The buyer pool is smaller, the marketing is more discreet, the negotiations are more nuanced, and the stakes are higher. Jorge Ramirez handles luxury representation with the privacy, global reach, and professional polish the space requires. Call 908-230-7844.",
+        "hero_p": "Buying or selling a luxury home is not the same transaction as a median-price home. The buyer pool is smaller, the marketing is more discreet, the negotiations are more nuanced, and the stakes are higher. Jorge Ramirez handles luxury representation with the privacy, global reach, and professional polish the space requires. Call 908-317-3227.",
         "pain_h2": "What Luxury Buyers and Sellers Actually Need",
         "pain_intro": "Agents who sell median-price homes can be excellent at what they do — and still be wrong for a $2M luxury transaction. The needs are different. Here is what luxury clients consistently flag as the gaps they have experienced with previous agents.",
         "pain_cards": [
@@ -893,7 +893,7 @@ TEMPLATE = r"""<!DOCTYPE html>
       "@context": "https://schema.org",
       "@type": "RealEstateAgent",
       "name": "Jorge Ramirez",
-      "telephone": "+1-908-230-7844",
+      "telephone": "+1-908-317-3227",
       "email": "jorge.ramirez@kw.com",
       "url": "https://thejorgeramirezgroup.com/{slug}.html",
       "image": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
@@ -947,7 +947,7 @@ TEMPLATE = r"""<!DOCTYPE html>
             <p>{hero_p}</p>
             <div class="hero-ctas">
                 <a href="https://value.thejorgeramirezgroup.com" class="btn-white" target="_blank" rel="noopener">Get Your Free Home Valuation</a>
-                <a href="tel:+19082307844" class="btn-outline">Call Jorge: 908-230-7844</a>
+                <a href="tel:+19083173227" class="btn-outline">Call Jorge: 908-317-3227</a>
             </div>
         </div>
 
@@ -965,7 +965,7 @@ TEMPLATE = r"""<!DOCTYPE html>
             <h2>{mid_cta_h2}</h2>
             <p>{mid_cta_p}</p>
             <div>
-                <a href="tel:+19082307844" class="btn-purple">Call Jorge: 908-230-7844</a>
+                <a href="tel:+19083173227" class="btn-purple">Call Jorge: 908-317-3227</a>
                 <a href="index.html#contact" class="btn-border">Request a Consultation</a>
             </div>
         </div>
@@ -1023,7 +1023,7 @@ TEMPLATE = r"""<!DOCTYPE html>
             <p>{final_cta_p}</p>
             <div>
                 <a href="https://value.thejorgeramirezgroup.com" class="btn-purple" target="_blank" rel="noopener">Get My Free Home Valuation</a>
-                <a href="tel:+19082307844" class="btn-border">Call Jorge: 908-230-7844</a>
+                <a href="tel:+19083173227" class="btn-border">Call Jorge: 908-317-3227</a>
             </div>
             <p style="margin-top: 20px; font-size: 0.95em; opacity: 0.7;">Jorge Ramirez | Keller Williams Premier Properties | 488 Springfield Avenue, Summit, NJ 07901 | NJ License #1754604</p>
         </div>
@@ -1039,7 +1039,7 @@ TEMPLATE = r"""<!DOCTYPE html>
                 <p style="margin-top: 1rem;">
                     488 Springfield Avenue<br>
                     Summit, NJ 07901<br>
-                    908-230-7844<br>
+                    908-317-3227<br>
                     <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a>
                 </p>
                 <img src="images/kw-logo.png" alt="Keller Williams Premier Properties Logo" style="max-width: 180px; margin-top: 1.5rem;" loading="lazy" width="180" height="60">
@@ -1078,7 +1078,7 @@ TEMPLATE = r"""<!DOCTYPE html>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Jorge Ramirez - Keller Williams Premier Properties. All rights reserved.</p>
-            <p>488 Springfield Avenue, Summit, NJ 07901 | 908-230-7844 | jorge.ramirez@kw.com</p>
+            <p>488 Springfield Avenue, Summit, NJ 07901 | 908-317-3227 | jorge.ramirez@kw.com</p>
         </div>
     </footer>
 

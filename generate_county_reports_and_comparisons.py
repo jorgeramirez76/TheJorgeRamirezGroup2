@@ -88,7 +88,7 @@ COMPARISONS = {
         "town_a": "Westfield",
         "town_b": "Summit",
         "title": "Westfield vs Summit NJ — Which Commuter Town Is Right for You?",
-        "meta_desc": "Choosing between Westfield and Summit NJ? Compare commute, schools, prices, and lifestyle for 2026. Jorge Ramirez breaks down both towns honestly. Call 908-230-7844.",
+        "meta_desc": "Choosing between Westfield and Summit NJ? Compare commute, schools, prices, and lifestyle for 2026. Jorge Ramirez breaks down both towns honestly. Call 908-317-3227.",
         "intro": "Westfield and Summit are two of New Jersey's premier NYC commuter towns — both on the Raritan Valley / Midtown Direct line, both with strong school districts, both with walkable downtowns. But they are genuinely different towns with different personalities. Here's how to pick.",
         "verdict": "Summit is tighter, faster-paced, and more corporate. Westfield is larger, more family-oriented, and slightly more affordable. Choose Summit if you want a shorter commute and walk-to-train living. Choose Westfield if you want more space for the money and a bigger community feel.",
         "rows": [
@@ -110,7 +110,7 @@ COMPARISONS = {
         "town_a": "Chatham",
         "town_b": "Madison",
         "title": "Chatham vs Madison NJ — Two Small Commuter Towns, Compared",
-        "meta_desc": "Chatham vs Madison NJ — both small Morris County commuter towns with top schools. Jorge Ramirez breaks down prices, commute, and lifestyle. Call 908-230-7844.",
+        "meta_desc": "Chatham vs Madison NJ — both small Morris County commuter towns with top schools. Jorge Ramirez breaks down prices, commute, and lifestyle. Call 908-317-3227.",
         "intro": "Chatham and Madison are the quintessential 'small NJ commuter town' choice — both on the Morristown Line (Midtown Direct), both with top-tier schools, both with intimate walkable downtowns. They're more alike than different, but the nuances matter for the right buyer.",
         "verdict": "Madison has a slightly more energetic downtown and better restaurant scene. Chatham is quieter, more family-traditional, and has newer housing stock. Both deliver excellent schools and similar commute times. For many buyers the choice comes down to specific neighborhoods and what's on market.",
         "rows": [
@@ -132,7 +132,7 @@ COMPARISONS = {
         "town_a": "Montclair",
         "town_b": "Maplewood",
         "title": "Montclair vs Maplewood NJ — Which Is the Better Move From NYC?",
-        "meta_desc": "Montclair vs Maplewood NJ comparison. Both are top NYC transplant towns in Essex County — here's how they differ on price, commute, and culture. Call Jorge at 908-230-7844.",
+        "meta_desc": "Montclair vs Maplewood NJ comparison. Both are top NYC transplant towns in Essex County — here's how they differ on price, commute, and culture. Call Jorge at 908-317-3227.",
         "intro": "Montclair and Maplewood are the two most common destinations for NYC transplants leaving Brooklyn for NJ. Both are Essex County suburbs with diverse populations, strong arts scenes, and Midtown Direct-adjacent trains. They're frequently compared because they share a similar spirit — but the practical differences matter.",
         "verdict": "Montclair is bigger, more urban, and more expensive — think 'small city' with museums, restaurants, and dense downtowns. Maplewood is smaller, cozier, with a more intimate village feel and slightly better affordability. Both attract the 'NYC creative-professional' demographic and both have strong progressive public schools.",
         "rows": [
@@ -154,7 +154,7 @@ COMPARISONS = {
         "town_a": "Short Hills (Millburn Township)",
         "town_b": "Westfield",
         "title": "Short Hills vs Westfield NJ — Which Luxury Commuter Town Wins?",
-        "meta_desc": "Short Hills (Millburn) vs Westfield NJ — two of NJ's top-tier luxury commuter markets, compared on price, commute, schools, and lifestyle. Jorge Ramirez, 908-230-7844.",
+        "meta_desc": "Short Hills (Millburn) vs Westfield NJ — two of NJ's top-tier luxury commuter markets, compared on price, commute, schools, and lifestyle. Jorge Ramirez, 908-317-3227.",
         "intro": "Short Hills and Westfield are both premier NJ luxury commuter towns, but they attract different buyer profiles. Short Hills is the pricier, more corporate, more nationally-known option. Westfield is the larger, slightly more affordable, family-heavy option. Both are on Midtown Direct — with meaningfully different commute times.",
         "verdict": "Short Hills for buyers who want the ultimate luxury name + shortest commute, willing to pay $200K-$500K+ more for the address. Westfield for buyers who want the premium commuter lifestyle at a relative discount with more house for the money.",
         "rows": [
@@ -176,7 +176,7 @@ COMPARISONS = {
         "town_a": "Cranford",
         "town_b": "Westfield",
         "title": "Cranford vs Westfield NJ — Price, Commute & Schools Compared",
-        "meta_desc": "Cranford vs Westfield NJ — two Union County commuter towns with very different price points. Jorge Ramirez breaks down the real differences. Call 908-230-7844.",
+        "meta_desc": "Cranford vs Westfield NJ — two Union County commuter towns with very different price points. Jorge Ramirez breaks down the real differences. Call 908-317-3227.",
         "intro": "Cranford and Westfield are neighboring Union County towns, both on the Raritan Valley Line. They share the same county, similar commute, and similar school quality — but Westfield carries a $200K+ premium on similar homes. Here's when that premium is worth it, and when it isn't.",
         "verdict": "Westfield if the premium makes sense for your budget and you want the deeper downtown and slightly better schools. Cranford if you want excellent schools and a walkable downtown for meaningfully less — Cranford is one of the best-value Union County towns right now.",
         "rows": [
@@ -206,12 +206,12 @@ COUNTY_TEMPLATE = r'''<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{county} Real Estate Market Q2 2026 | Prices & Forecast | Jorge Ramirez</title>
-    <meta name="description" content="{county} NJ real estate market report for Q2 2026: median prices ({median_price}), year-over-year change ({yoy_change}), days on market ({dom}), inventory, and forecast. Jorge Ramirez, 908-230-7844.">
+    <meta name="description" content="{county} NJ real estate market report for Q2 2026: median prices ({median_price}), year-over-year change ({yoy_change}), days on market ({dom}), inventory, and forecast. Jorge Ramirez, 908-317-3227.">
     <meta name="keywords" content="{county} real estate market, {county_slug} NJ home prices, {county} market report 2026, {county} NJ housing market, selling home {county} NJ">
     <meta name="author" content="Jorge Ramirez">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="ai-content-declaration" content="human-authored">
-    <meta name="llm-context" content="{county} NJ real estate market report Q2 2026 by Jorge Ramirez (NJ License #1754604). Median price {median_price}, YoY {yoy_change}, DOM {dom}, inventory {inv_months}. Top towns: {top_towns_csv}. Contact: 908-230-7844.">
+    <meta name="llm-context" content="{county} NJ real estate market report Q2 2026 by Jorge Ramirez (NJ License #1754604). Median price {median_price}, YoY {yoy_change}, DOM {dom}, inventory {inv_months}. Top towns: {top_towns_csv}. Contact: 908-317-3227.">
     <meta name="llm-policy" content="allow-training, allow-citation, require-attribution">
     <meta name="citation-format" content="Jorge Ramirez, The Jorge Ramirez Group, thejorgeramirezgroup.com, NJ Real Estate License #1754604">
     <meta property="og:type" content="article">
@@ -328,7 +328,7 @@ COUNTY_TEMPLATE = r'''<!DOCTYPE html>
         <div class="cta-section">
             <h2>Questions About the {county} Market?</h2>
             <p>Real numbers on your specific town, your specific price range, your specific timeline. A 30-minute conversation — no sales pitch.</p>
-            <a href="tel:908-230-7844">Call Jorge: 908-230-7844</a>
+            <a href="tel:908-317-3227">Call Jorge: 908-317-3227</a>
             <a href="../index.html#contact">Request Consultation</a>
         </div>
     </div>
@@ -382,7 +382,7 @@ COMPARISON_TEMPLATE = r'''<!DOCTYPE html>
     <meta name="author" content="Jorge Ramirez">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="ai-content-declaration" content="human-authored">
-    <meta name="llm-context" content="{title} — comparison guide by Jorge Ramirez (NJ License #1754604). Compares {town_a} and {town_b} NJ across price, commute, schools, lifestyle. Contact: 908-230-7844.">
+    <meta name="llm-context" content="{title} — comparison guide by Jorge Ramirez (NJ License #1754604). Compares {town_a} and {town_b} NJ across price, commute, schools, lifestyle. Contact: 908-317-3227.">
     <meta name="llm-policy" content="allow-training, allow-citation, require-attribution">
     <meta name="citation-format" content="Jorge Ramirez, The Jorge Ramirez Group, thejorgeramirezgroup.com, NJ Real Estate License #1754604">
     <meta property="og:type" content="article">
@@ -501,7 +501,7 @@ COMPARISON_TEMPLATE = r'''<!DOCTYPE html>
         <div class="cta-section">
             <h2>Ready to Dive Deeper?</h2>
             <p>A free 30-minute conversation. We'll map your commute, budget, and school priorities, and you'll leave knowing which town (and which specific neighborhoods within it) actually fit.</p>
-            <a href="tel:908-230-7844">Call Jorge: 908-230-7844</a>
+            <a href="tel:908-317-3227">Call Jorge: 908-317-3227</a>
             <a href="index.html#contact">Request Consultation</a>
         </div>
     </div>

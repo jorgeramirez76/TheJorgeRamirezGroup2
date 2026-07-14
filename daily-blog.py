@@ -129,7 +129,7 @@ REQUIREMENTS:
 - Length: 800-1000 words
 - Tone: Expert local advisor, Brandon Mulrenin Reverse Selling style — never pushy, pull them in with value
 - Include: neighborhood overview, commute to NYC, school district info, typical price range, what to expect in the market, tips for buyers
-- End with a soft CTA to contact Jorge Ramirez at The Jorge Ramirez Group, Keller Williams Premier Properties (908-230-7844)
+- End with a soft CTA to contact Jorge Ramirez at The Jorge Ramirez Group, Keller Williams Premier Properties (908-317-3227)
 - Format: HTML body content only (no <html>/<head> tags), use <h1>, <h2>, <p> tags
 - Include 2-3 NEPQ-style questions naturally in the content (e.g. "What's been the biggest challenge in your home search so far?")
 - Do NOT use fake statistics — use general language like "typically" and "in most cases"
@@ -160,7 +160,7 @@ Output ONLY the HTML content, no explanation."""
 {content}
 </main>
 <footer class="site-footer"><div class="container">
-  <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · 908-230-7844</p>
+  <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · 908-317-3227</p>
 </div></footer>
 </body>
 </html>"""
@@ -185,7 +185,7 @@ REQUIREMENTS:
 - Length: 800-1000 words  
 - Tone: Expert local NJ advisor, Brandon Mulrenin Reverse Selling style — never pushy, pull them in with value
 - Focus on Union, Essex, Morris, Hudson, Middlesex Counties NJ where relevant
-- End with a soft CTA to contact Jorge Ramirez at The Jorge Ramirez Group, Keller Williams Premier Properties (908-230-7844)
+- End with a soft CTA to contact Jorge Ramirez at The Jorge Ramirez Group, Keller Williams Premier Properties (908-317-3227)
 - Format: HTML body content only (no <html>/<head> tags), use <h1>, <h2>, <p> tags
 - Include 2-3 NEPQ-style questions naturally (e.g. "What's been holding you back from making a move?")
 - Do NOT use fake statistics — use general language like "typically" and "in most cases"
@@ -215,7 +215,7 @@ Output ONLY the HTML content, no explanation."""
 {content}
 </main>
 <footer class="site-footer"><div class="container">
-  <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · 908-230-7844</p>
+  <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · 908-317-3227</p>
 </div></footer>
 </body>
 </html>"""

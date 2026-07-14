@@ -11,12 +11,12 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Scrub 908-230-7844 in any format
+      - name: Scrub 908-317-3227 in any format
         run: |
           python3 - <<'PY'
           import re, pathlib
           DASH = r'[\s\.\-‐‑‒–—―−]?'
-          pats = [(re.compile(r'\+?1?9082307844'), '+19083173227'),
+          pats = [(re.compile(r'\+?1?+19083173227'), '+19083173227'),
                   (re.compile(r'\(908\)'+DASH+'230'+DASH+'7844'), '(908) 317-3227'),
                   (re.compile(r'908'+DASH+'230'+DASH+'7844'), '908-317-3227')]
           n=0
@@ -37,6 +37,6 @@ jobs:
             git config user.name "banned-number-guard"
             git config user.email "guard@users.noreply.github.com"
             git add -A
-            git commit -m "banned-number guard: scrub 908-230-7844"
+            git commit -m "banned-number guard: scrub 908-317-3227"
             git push
           fi

@@ -279,7 +279,7 @@ def build_schema(d):
                 "@id": url + "#service",
                 "name": f"Jorge Ramirez — {display}, NJ Real Estate Agent",
                 "url": url,
-                "telephone": "+1-908-230-7844",
+                "telephone": "+1-908-317-3227",
                 "email": "jorge.ramirez@kw.com",
                 "image": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
                 "priceRange": "$$-$$$$",
@@ -316,7 +316,7 @@ def build_schema(d):
                 "@id": "https://thejorgeramirezgroup.com/#person",
                 "name": "Jorge Ramirez",
                 "jobTitle": "Licensed Real Estate Agent",
-                "telephone": "+1-908-230-7844",
+                "telephone": "+1-908-317-3227",
                 "email": "jorge.ramirez@kw.com",
                 "url": "https://thejorgeramirezgroup.com/",
                 "image": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
@@ -391,13 +391,13 @@ def build_faqs(d):
 
     faqs.append((
         f"Who is the best real estate agent in {display}, NJ?",
-        f"Jorge Ramirez is a licensed NJ real estate agent (License #1754604) at Keller Williams Premier Properties who serves {display} and the surrounding {county} County area. Jorge has personally bought, renovated, and sold investment properties across Northern NJ, giving him working knowledge of renovation costs, buyer behavior, and pricing strategy. Call 908-230-7844 for a free {display} consultation."
+        f"Jorge Ramirez is a licensed NJ real estate agent (License #1754604) at Keller Williams Premier Properties who serves {display} and the surrounding {county} County area. Jorge has personally bought, renovated, and sold investment properties across Northern NJ, giving him working knowledge of renovation costs, buyer behavior, and pricing strategy. Call 908-317-3227 for a free {display} consultation."
     ))
 
     if median:
         faqs.append((
             f"What is the average home price in {display}, NJ?",
-            f"The median home sale price in {display}, NJ is approximately {median}. Prices vary significantly by neighborhood, lot size, school district zoning, and proximity to the train station. For a current comparative market analysis on a specific address, contact Jorge Ramirez at 908-230-7844."
+            f"The median home sale price in {display}, NJ is approximately {median}. Prices vary significantly by neighborhood, lot size, school district zoning, and proximity to the train station. For a current comparative market analysis on a specific address, contact Jorge Ramirez at 908-317-3227."
         ))
 
     if dom:
@@ -408,7 +408,7 @@ def build_faqs(d):
 
     faqs.append((
         f"What commission do {display} real estate agents charge?",
-        f"Real estate commission in NJ is negotiable and typically falls between 4% and 6% of the sale price, usually split between the listing agent and buyer's agent. Since the 2024 NAR settlement, buyer-agent compensation is separately negotiated. Jorge Ramirez offers transparent pricing and will walk you through exactly what you'll pay — call 908-230-7844 to discuss."
+        f"Real estate commission in NJ is negotiable and typically falls between 4% and 6% of the sale price, usually split between the listing agent and buyer's agent. Since the 2024 NAR settlement, buyer-agent compensation is separately negotiated. Jorge Ramirez offers transparent pricing and will walk you through exactly what you'll pay — call 908-317-3227 to discuss."
     ))
 
     if commute:
@@ -425,7 +425,7 @@ def build_faqs(d):
 
     faqs.append((
         f"Is {display}, NJ a good place to buy a house in 2026?",
-        f"{display} remains a sought-after {county} County market with consistent buyer demand, strong schools, and proximity to NYC employment. Whether it's a good buy depends on your budget, timeline, and which neighborhood fits your situation. Jorge gives direct, unfiltered answers — not sales pitches. Call 908-230-7844."
+        f"{display} remains a sought-after {county} County market with consistent buyer demand, strong schools, and proximity to NYC employment. Whether it's a good buy depends on your budget, timeline, and which neighborhood fits your situation. Jorge gives direct, unfiltered answers — not sales pitches. Call 908-317-3227."
     ))
 
     faqs.append((
@@ -454,7 +454,7 @@ def build_page(d):
     hook = f"{display} NJ real estate agent Jorge Ramirez."
     cred = "Licensed NJ Realtor at Keller Williams."
     stat = f" Median {median}." if median else ""
-    cta = " Call 908-230-7844."
+    cta = " Call 908-317-3227."
     desc = (hook + " " + cred + stat + cta).strip()
     if len(desc) > 158:
         desc = (hook + " " + cred + cta).strip()
@@ -570,7 +570,7 @@ def build_page(d):
         <a href="/buy-a-home.html">Buy</a>
         <a href="/how-we-sell-your-home.html">Sell</a>
         <a href="/home-valuation.html">Free Valuation</a>
-        <a href="tel:908-230-7844" class="nav-phone">908-230-7844</a>
+        <a href="tel:908-317-3227" class="nav-phone">908-317-3227</a>
       </div>
     </nav>
 
@@ -578,7 +578,7 @@ def build_page(d):
       <h1>{hero_h1}</h1>
       <p class="sub">{hero_sub}</p>
       <div class="cta-row">
-        <a href="tel:908-230-7844" class="btn btn-primary">Call 908-230-7844</a>
+        <a href="tel:908-317-3227" class="btn btn-primary">Call 908-317-3227</a>
         <a href="mailto:jorge.ramirez@kw.com?subject={display}%20NJ%20real%20estate%20inquiry" class="btn btn-ghost">Email Jorge</a>
       </div>
     </div>
@@ -627,7 +627,7 @@ def build_page(d):
         <h2>Ready to talk {display} real estate?</h2>
         <p>One honest conversation. No pressure. That's it.</p>
         <div class="cta-row">
-          <a href="tel:908-230-7844" class="btn btn-primary">Call 908-230-7844</a>
+          <a href="tel:908-317-3227" class="btn btn-primary">Call 908-317-3227</a>
           <a href="mailto:jorge.ramirez@kw.com?subject={display}%20NJ%20real%20estate%20inquiry" class="btn btn-ghost">Email Jorge</a>
         </div>
       </div>
@@ -652,13 +652,13 @@ def build_page(d):
           <strong>Jorge Ramirez</strong> — Licensed NJ Real Estate Agent (#1754604)<br>
           The Jorge Ramirez Group at Keller Williams Premier Properties<br>
           488 Springfield Ave, Summit, NJ 07901<br>
-          <a href="tel:908-230-7844">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a>
+          <a href="tel:908-317-3227">908-317-3227</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a>
         </div>
       </aside>
     </main>
 
     <footer>
-      <p><strong>Jorge Ramirez</strong> · Licensed NJ Real Estate Agent #1754604 · <a href="tel:908-230-7844">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a></p>
+      <p><strong>Jorge Ramirez</strong> · Licensed NJ Real Estate Agent #1754604 · <a href="tel:908-317-3227">908-317-3227</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a></p>
       <p>The Jorge Ramirez Group at Keller Williams Premier Properties · 488 Springfield Ave, Summit, NJ 07901</p>
       <p>
         <a href="/">Home</a> ·
@@ -795,7 +795,7 @@ def build_index(slugs):
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Real Estate Agent Directory — 138 NJ Towns | Jorge Ramirez</title>
-<meta name="description" content="Local real estate agent coverage across 138 NJ towns in Union, Essex, Morris, Middlesex, Hudson &amp; Somerset counties. Jorge Ramirez — licensed NJ Realtor at Keller Williams. Call 908-230-7844.">
+<meta name="description" content="Local real estate agent coverage across 138 NJ towns in Union, Essex, Morris, Middlesex, Hudson &amp; Somerset counties. Jorge Ramirez — licensed NJ Realtor at Keller Williams. Call 908-317-3227.">
 <link rel="canonical" href="https://thejorgeramirezgroup.com/realtor/">
 <meta property="og:title" content="NJ Real Estate Agent Directory — 138 Towns | Jorge Ramirez">
 <meta property="og:description" content="Find your town's dedicated agent page. 138 NJ towns covered. Jorge Ramirez — personal house-flipping experience, licensed NJ Realtor at Keller Williams.">
@@ -826,7 +826,7 @@ footer a{{color:#f6a623;text-decoration:none}}
 {''.join(county_blocks)}
 </main>
 <footer>
-<p><a href="/">← Back to home</a> · <a href="tel:908-230-7844">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a></p>
+<p><a href="/">← Back to home</a> · <a href="tel:908-317-3227">908-317-3227</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a></p>
 </footer>
 </body></html>
 """
