@@ -50,6 +50,11 @@
     if (!name) { alert("Please enter your first name."); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert("Please enter a valid email so we can follow up."); return; }
 
+    // Optional SMS opt-in — a lead is only textable if they ticked the box AND gave a phone.
+    var smsBox = form.querySelector('[name="smsConsent"]');
+    var smsConsent = !!(smsBox && smsBox.checked) && !!phone;
+    var consentLanguage = card.getAttribute("data-consent") || "";
+
     var btn = form.querySelector('button[type="submit"]');
     if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
 
@@ -57,6 +62,9 @@
       name: name,
       email: email,
       phone: phone,
+      smsConsent: smsConsent,
+      emailConsent: true,
+      consentLanguage: consentLanguage,
       intent: guide === "buyer" ? "Buyer guide download" : "Seller guide download",
       guide: guide,
       _source: source,

@@ -77,16 +77,16 @@ async function emailGuideToLead(lead) {
     `<p>Thanks for requesting <b>${guide.name}</b> — here's your copy to download:</p>` +
     `<p><a href="${guide.url}" style="display:inline-block;padding:12px 22px;background:#1A1A1A;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Download the guide (PDF)</a></p>` +
     `<p>If the button doesn't work, use this link:<br><a href="${guide.url}">${guide.url}</a></p>` +
-    `<p>I put this together from years of helping New Jersey families with the same ${topic}. If a question comes up, just reply to this email or text me at 908-230-7844 — no pressure at all.</p>` +
-    `<p>Talk soon,<br>Jorge Ramirez<br>The Jorge Ramirez Group &middot; Keller Williams Premier Properties<br>908-230-7844 &middot; jorge.ramirez@kw.com</p>` +
+    `<p>I put this together from years of helping New Jersey families with the same ${topic}. If a question comes up, just reply to this email or text me at 908-317-3227 — no pressure at all.</p>` +
+    `<p>Talk soon,<br>Jorge Ramirez<br>The Jorge Ramirez Group &middot; Keller Williams Premier Properties<br>908-317-3227 &middot; jorge.ramirez@kw.com</p>` +
     `<hr style="border:none;border-top:1px solid #eee;margin:24px 0 12px">` +
     `<p style="font-size:12px;color:#999">You're receiving this because you requested a free guide at thejorgeramirezgroup.com.<br>${addr}<br><a href="${unsub}" style="color:#999">Unsubscribe</a></p>` +
     `</div>`;
   const text =
     `Hi ${first},\n\nThanks for requesting ${guide.name}. Download your copy here:\n${guide.url}\n\n` +
     `I put this together from years of helping NJ families with the same ${topic}. If a question comes up, ` +
-    `reply to this email or text me at 908-230-7844 — no pressure.\n\nTalk soon,\nJorge Ramirez\n` +
-    `The Jorge Ramirez Group · Keller Williams Premier Properties\n908-230-7844 · jorge.ramirez@kw.com\n\n` +
+    `reply to this email or text me at 908-317-3227 — no pressure.\n\nTalk soon,\nJorge Ramirez\n` +
+    `The Jorge Ramirez Group · Keller Williams Premier Properties\n908-317-3227 · jorge.ramirez@kw.com\n\n` +
     `You're receiving this because you requested a free guide at thejorgeramirezgroup.com.\n${addr}\nUnsubscribe: ${unsub}`;
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -146,6 +146,9 @@ export default async function handler(req, res) {
     guide: (b.guide || "").toString().slice(0, 40),
     message: (b.message || b.Message || "").toString().slice(0, 2000),
     source: (b._source || req.headers.referer || "").toString().slice(0, 300),
+    // SMS opt-in (forwarded to the CRM so ConsentRecord captures the exact language + IP)
+    smsConsent: b.smsConsent === true || b.smsConsent === "true" || b.smsConsent === "on",
+    consentLanguage: (b.consentLanguage || "").toString().slice(0, 2048),
     receivedAt: new Date().toISOString(),
   };
 
