@@ -397,6 +397,10 @@ def deploy(slug, push=True):
     if push:
         r = git("push", "origin", "main")
         if r.returncode != 0:
+            # someone else advanced main (other daily job / banned-number guard)
+            git("pull", "--rebase", "--autostash", "origin", "main")
+            r = git("push", "origin", "main")
+        if r.returncode != 0:
             log(f"PUSH FAILED: {r.stderr.strip()}")
             return False
         log("pushed to origin/main (Vercel will auto-deploy)")

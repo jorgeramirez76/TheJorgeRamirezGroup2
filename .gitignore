@@ -19,3 +19,9 @@ crm/videos/leads/*.mp4
 # Blog automation — never commit the OAuth token or run logs
 tools/blog-automation/config.json
 tools/blog-automation/logs/
+
+# SEO optimizer — runtime data & logs (not code)
+tools/seo-optimizer/state/
+tools/seo-optimizer/logs/
+tools/seo-optimizer/reports/
+tools/seo-optimizer/mail.env
