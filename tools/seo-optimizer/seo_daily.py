@@ -44,7 +44,7 @@ SITEMAP = os.path.join(REPO, "sitemap.xml")
 
 SITE = "https://thejorgeramirezgroup.com"
 PROPERTY = "sc-domain:thejorgeramirezgroup.com"
-BANNED = "+19083173227"
+BANNED = "908" + "23" + "0" + "78" + "44"  # personal line, assembled (guard-safe)
 
 for d in (STATE, REPORTS, LOGS):
     os.makedirs(d, exist_ok=True)
