@@ -278,6 +278,27 @@ def build_article_html(post, month_year):
         f'          <h3>{esc(f["q"])}</h3>\n'
         f'          <p>{f["a"]}</p>\n'
         f'        </div>' for f in post["faqs"])
+    cat = (post.get("category") or "").lower()
+    if "sell" in cat:
+        pillars = [("/home-valuation", "what your NJ home is worth (free valuation)"),
+                   ("/sell-your-home", "how to sell your home in NJ"),
+                   ("/blog/nj-property-tax-guide", "the NJ property tax guide")]
+    elif "buy" in cat:
+        pillars = [("/blog/first-time-home-buyer-nj-guide", "the first-time home buyer guide for NJ"),
+                   ("/buy-a-home", "how to buy a home in New Jersey"),
+                   ("/blog/nj-property-tax-guide", "NJ property taxes by county")]
+    else:
+        pillars = [("/blog/nj-property-tax-guide", "the NJ property tax guide"),
+                   ("/blog/first-time-home-buyer-nj-guide", "the first-time home buyer guide for NJ"),
+                   ("/home-valuation", "a free NJ home valuation")]
+    related = ('\n<section class="related-guides-auto" style="margin:44px 0 8px;padding:26px 30px;'
+               'background:#FAFAF8;border:1px solid #E8E4DC;border-radius:10px;">\n'
+               '  <h2 style="margin:0 0 14px;font-size:1.25em;border:none;">Related New Jersey Guides</h2>\n'
+               '  <ul style="margin:0;padding-left:1.2em;line-height:1.7;">\n'
+               + "\n".join(f'    <li style="margin-bottom:8px;"><a href="{u}" '
+                           f'style="color:#8A6D14;font-weight:600;text-decoration:none;">{a}</a></li>'
+                           for u, a in pillars)
+               + '\n  </ul>\n</section>\n')
     return f"""<h1>{esc(post['h1'])}</h1>
 <p class="updated-pill" style="display:inline-block;margin:8px 0 24px;padding:6px 14px;background:#FAFAF8;border:1px solid rgba(184,150,46,0.45);border-radius:999px;font:500 11px/1 'Inter',sans-serif;letter-spacing:0.22em;text-transform:uppercase;color:#2C2C2C;">
     <span style="color:#8A6D14;">Last updated</span> &nbsp;·&nbsp; {month_year}
@@ -292,7 +313,7 @@ def build_article_html(post, month_year):
 <div class="faq-section">
 {faq_html}
 </div>
-
+{related}
 <h2>Let's Talk — No Pressure</h2>
 <p>If any of this raised a question about your own move, I'd rather have an honest conversation than push you toward a decision. Reach out whenever it's useful — I'll give you a straight answer either way.</p>
 <p><strong>Jorge Ramirez | Keller Williams Premier Properties</strong><br>
