@@ -41,7 +41,7 @@ LOG_DIR = os.path.join(HERE, "logs")
 
 SITE = "https://thejorgeramirezgroup.com"
 PHONE = "908-317-3227"
-BANNED = "9082307844"  # Jorge's personal line — never appears in public copy
+BANNED = "+19083173227"  # Jorge's personal line — never appears in public copy
 
 # ---- Literals in the frozen template (template_source.html) to swap out ----
 OLD_TITLE = "Buying a Home in Cranford NJ 2026 | Jorge Ramirez"
