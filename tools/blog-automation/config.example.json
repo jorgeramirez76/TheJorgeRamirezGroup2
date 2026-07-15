@@ -1,0 +1,9 @@
+{
+  "engine": "auto",
+  "_engine_help": "auto = try claude CLI, fall back to local ollama. 'claude' = force best quality (needs claude_oauth_token for unattended runs). 'ollama' = free/offline.",
+  "claude_oauth_token": "",
+  "_token_help": "Run `claude setup-token` once, paste the token (sk-ant-oat...) into config.json (NOT this example file). config.json is gitignored so the token never leaves your Mac.",
+  "ollama_model": "qwen3.6:35b",
+  "quality_threshold": 80,
+  "max_attempts": 2
+}

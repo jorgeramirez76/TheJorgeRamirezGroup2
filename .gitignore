@@ -15,3 +15,7 @@ crm/*.db-*
 crm/backups/
 crm/logs/
 crm/videos/leads/*.mp4
+
+# Blog automation — never commit the OAuth token or run logs
+tools/blog-automation/config.json
+tools/blog-automation/logs/
