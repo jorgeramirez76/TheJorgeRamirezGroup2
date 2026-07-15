@@ -150,8 +150,9 @@ def gen_claude(prompt, cfg):
 
 
 def gen_ollama(prompt, cfg):
-    out, code = _run(["ollama", "run", cfg.get("ollama_model", "qwen3.6:35b"), prompt],
-                     timeout=900)
+    # /no_think disables qwen3's reasoning block so it returns clean JSON.
+    out, code = _run(["ollama", "run", cfg.get("ollama_model", "qwen3.6:35b"),
+                      "/no_think\n\n" + prompt], timeout=900)
     return out or None
 
 
@@ -168,31 +169,45 @@ def generate(prompt, cfg):
 
 
 def extract_json(text):
-    """Pull the first well-formed JSON object out of an LLM reply."""
+    """Pull the intended JSON object out of an LLM reply, robust to reasoning
+    models: strip <think> blocks + code fences, scan ALL top-level balanced
+    objects, and prefer the LAST valid one (reasoning comes first, answer last).
+    Prefer objects that look like a post (have body_html)."""
     if not text:
         return None
-    text = re.sub(r"^```(?:json)?|```$", "", text.strip(), flags=re.M).strip()
-    start = text.find("{")
-    if start < 0:
+    text = re.sub(r"(?is)<think>.*?</think>", " ", text)
+    text = re.sub(r"```(?:json)?|```", "", text)
+    objs, i, n = [], 0, len(text)
+    while i < n:
+        if text[i] != "{":
+            i += 1
+            continue
+        depth, in_str, esc, j = 0, False, False, i
+        while j < n:
+            c = text[j]
+            if in_str:
+                if esc: esc = False
+                elif c == "\\": esc = True
+                elif c == '"': in_str = False
+            else:
+                if c == '"': in_str = True
+                elif c == "{": depth += 1
+                elif c == "}":
+                    depth -= 1
+                    if depth == 0:
+                        try:
+                            objs.append(json.loads(text[i:j + 1]))
+                        except json.JSONDecodeError:
+                            pass
+                        break
+            j += 1
+        i = j + 1
+    if not objs:
         return None
-    depth, in_str, esc = 0, False, False
-    for i in range(start, len(text)):
-        c = text[i]
-        if in_str:
-            if esc: esc = False
-            elif c == "\\": esc = True
-            elif c == '"': in_str = False
-        else:
-            if c == '"': in_str = True
-            elif c == "{": depth += 1
-            elif c == "}":
-                depth -= 1
-                if depth == 0:
-                    try:
-                        return json.loads(text[start:i + 1])
-                    except json.JSONDecodeError:
-                        return None
-    return None
+    for o in reversed(objs):          # prefer a real post object, latest first
+        if isinstance(o, dict) and o.get("body_html"):
+            return o
+    return objs[-1]
 
 
 # --------------------------------------------------------------------------- #
