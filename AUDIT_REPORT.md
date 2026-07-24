@@ -1,20 +1,168 @@
-# Site Audit Report — 979 pages
+# Site Audit Report — 1010 pages
 
 ## Issue summary (issue → page count)
 
 | Issue | Pages affected |
 |-------|----------------|
+| missing-og:image | 10 |
+| missing-llm-context | 10 |
+| missing-jsonld | 10 |
+| missing-title | 9 |
+| missing-meta-description | 9 |
+| missing-canonical | 9 |
+| missing-og:title | 9 |
+| missing-og:description | 9 |
+| missing-twitter:card | 9 |
+| title-too | 5 |
 
 ## Broken internal links — top 30
 
 | Broken href | Times referenced | Sample referrer |
 |---|---|---|
+| `../css/styles.css` | 6 | `tools/blog-automation/logs/DRYRUN-buying-home-roselle-nj-2026.html` |
+| `../index.html#contact` | 3 | `tools/blog-automation/logs/DRYRUN-buying-home-roselle-nj-2026.html` |
 
-## Sitemap gaps — 0 pages NOT in sitemap.xml
+## Sitemap gaps — 28 pages NOT in sitemap.xml
 
+- `/blog/affordable-upgrades-nj-home-sellers-2026.html`
+- `/blog/appliances-never-leave-plugged-in-nj-2026.html`
+- `/blog/design-mistakes-nj-home-looks-cheap-2026.html`
+- `/blog/dusty-home-hvac-nj-sellers-2026.html`
+- `/blog/home-odors-kill-nj-home-sales-2026.html`
+- `/blog/house-sounds-nj-home-inspection-2026.html`
+- `/blog/kitchen-updates-nj-home-value-2026.html`
+- `/blog/lower-utility-bills-nj-home-value-2026.html`
+- `/blog/nj-home-feels-cold-drafts-insulation-2026.html`
+- `/blog/outdated-laundry-habits-nj-home-damage-2026.html`
+- `/blog/pest-warning-signs-nj-home-sellers-2026.html`
+- `/blog/pest-warning-signs-nj-homes-2026.html`
+- `/blog/sell-nj-home-fall-2026-vs-spring-2027.html`
+- `/blog/things-nj-homeowners-overspend-on-2026.html`
+- `/blog/water-damage-signs-nj-homes-2026.html`
+- `/sms-terms.html`
+- `/tools/blog-automation/logs/DRYRUN-buying-home-roselle-nj-2026.html`
+- `/tools/blog-automation/logs/DRYRUN-test-related.html`
+- `/tools/blog-automation/template_source.html`
+- `/tools/seo-optimizer/reports/report-2026-07-15.html`
+- `/tools/seo-optimizer/reports/report-2026-07-16.html`
+- `/tools/seo-optimizer/reports/report-2026-07-17.html`
+- `/tools/seo-optimizer/reports/report-2026-07-18.html`
+- `/tools/seo-optimizer/reports/report-2026-07-19.html`
+- `/tools/seo-optimizer/reports/report-2026-07-20.html`
+- `/tools/seo-optimizer/reports/report-2026-07-21.html`
+- `/tools/seo-optimizer/reports/report-2026-07-22.html`
+- `/tools/seo-optimizer/reports/report-2026-07-23.html`
 
 ## Per-page detail (first 30 worst pages)
 
+
+### `tools/seo-optimizer/reports/report-2026-07-15.html` (/tools/seo-optimizer/reports/report-2026-07-15.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-07-16.html` (/tools/seo-optimizer/reports/report-2026-07-16.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-07-17.html` (/tools/seo-optimizer/reports/report-2026-07-17.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-07-18.html` (/tools/seo-optimizer/reports/report-2026-07-18.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-07-19.html` (/tools/seo-optimizer/reports/report-2026-07-19.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-07-20.html` (/tools/seo-optimizer/reports/report-2026-07-20.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-07-21.html` (/tools/seo-optimizer/reports/report-2026-07-21.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-07-22.html` (/tools/seo-optimizer/reports/report-2026-07-22.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-07-23.html` (/tools/seo-optimizer/reports/report-2026-07-23.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `sms-terms.html` (/sms-terms.html)
+- title: "SMS Terms &amp; Conditions | The Jorge Ramirez Group"
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-og:image, missing-llm-context, missing-jsonld
+
+### `tools/blog-automation/logs/DRYRUN-buying-home-roselle-nj-2026.html` (/tools/blog-automation/logs/DRYRUN-buying-home-roselle-nj-2026.html)
+- title: "Buying a Home in Roselle, NJ (2026 Guide) | Jorge Ramirez"
+- jsonld blocks: 2
+- images without alt: 0
+- broken links: ../css/styles.css, ../css/styles.css, ../index.html#contact
+
+### `tools/blog-automation/logs/DRYRUN-test-related.html` (/tools/blog-automation/logs/DRYRUN-test-related.html)
+- title: "Buying a Home in Roselle, NJ (2026 Guide) | Jorge Ramirez"
+- jsonld blocks: 2
+- images without alt: 0
+- broken links: ../css/styles.css, ../css/styles.css, ../index.html#contact
+
+### `tools/blog-automation/template_source.html` (/tools/blog-automation/template_source.html)
+- title: "Buying a Home in Cranford NJ 2026 | Jorge Ramirez"
+- jsonld blocks: 2
+- images without alt: 0
+- broken links: ../css/styles.css, ../css/styles.css, ../index.html#contact
+
+### `blog/affordable-upgrades-nj-home-sellers-2026.html` (/blog/affordable-upgrades-nj-home-sellers-2026.html)
+- title: "10 Affordable Home Upgrades Under $500 That Pay Off When You Sell Your NJ Home"
+- jsonld blocks: 3
+- images without alt: 0
+- issues: title-too-long-78
+
+### `blog/lower-utility-bills-nj-home-value-2026.html` (/blog/lower-utility-bills-nj-home-value-2026.html)
+- title: "How to Lower Utility Bills in Your NJ Home — And What It Does to Your Sale Price"
+- jsonld blocks: 3
+- images without alt: 0
+- issues: title-too-long-80
+
+### `blog/nj-home-feels-cold-drafts-insulation-2026.html` (/blog/nj-home-feels-cold-drafts-insulation-2026.html)
+- title: "Why Your NJ Home Feels Colder Than It Should — Drafts, Insulation, and What It Costs at Resale"
+- jsonld blocks: 3
+- images without alt: 0
+- issues: title-too-long-94
+
+### `blog/outdated-laundry-habits-nj-home-damage-2026.html` (/blog/outdated-laundry-habits-nj-home-damage-2026.html)
+- title: "6 Outdated Laundry Habits That Quietly Damage NJ Homes (And Cost Sellers at Closing)"
+- jsonld blocks: 3
+- images without alt: 0
+- issues: title-too-long-84
+
+### `blog/pest-warning-signs-nj-home-sellers-2026.html` (/blog/pest-warning-signs-nj-home-sellers-2026.html)
+- title: "6 Early Warning Signs of a Pest Problem NJ Homeowners Should Know (2026)"
+- jsonld blocks: 3
+- images without alt: 0
+- issues: title-too-long-72
 
 ### `404.html` (/404.html)
 - title: "Page Not Found — The Jorge Ramirez Group"
@@ -51,6 +199,11 @@
 - jsonld blocks: 3
 - images without alt: 0
 
+### `blog/appliances-never-leave-plugged-in-nj-2026.html` (/blog/appliances-never-leave-plugged-in-nj-2026.html)
+- title: "Appliances NJ Homeowners Should Never Leave Plugged In (2026)"
+- jsonld blocks: 3
+- images without alt: 0
+
 ### `blog/bedroom-setup-sleep-home-value-nj-2026.html` (/blog/bedroom-setup-sleep-home-value-nj-2026.html)
 - title: "10 Bedroom Items That Hurt Sleep — and NJ Home Value at Resale"
 - jsonld blocks: 3
@@ -67,101 +220,6 @@
 - images without alt: 0
 
 ### `blog/best-nj-towns-for-families-2026.html` (/blog/best-nj-towns-for-families-2026.html)
-- title: "Best NJ Towns for Families in 2026"
+- title: "Best NJ Towns for Families in 2026: Schools, Commute & Prices"
 - jsonld blocks: 4
-- images without alt: 0
-
-### `blog/best-nj-towns-for-families.html` (/blog/best-nj-towns-for-families.html)
-- title: "12 Best NJ Towns for Families 2026 | Schools &amp; Commute"
-- jsonld blocks: 3
-- images without alt: 0
-
-### `blog/best-nj-towns-to-sell-home.html` (/blog/best-nj-towns-to-sell-home.html)
-- title: "Best NJ Towns to Sell a Home Fast in 2026 (Ranked by Days on Market)"
-- jsonld blocks: 3
-- images without alt: 0
-
-### `blog/best-school-districts-in-union-county-nj-for-families-buying-2026.html` (/blog/best-school-districts-in-union-county-nj-for-families-buying-2026.html)
-- title: "Best school districts in Union County NJ for families buying in"
-- jsonld blocks: 3
-- images without alt: 0
-
-### `blog/best-time-to-sell-home-nj.html` (/blog/best-time-to-sell-home-nj.html)
-- title: "Best Time to Sell a House in NJ (2026): Month-by-Month Data"
-- jsonld blocks: 3
-- images without alt: 0
-
-### `blog/buying-a-home-in-new-jersey-2026.html` (/blog/buying-a-home-in-new-jersey-2026.html)
-- title: "Buying a Home in New Jersey in 2026 | Buyer Strategy Guide"
-- jsonld blocks: 3
-- images without alt: 0
-
-### `blog/buying-home-basking-ridge-nj-2026.html` (/blog/buying-home-basking-ridge-nj-2026.html)
-- title: "Buying a Home in Basking Ridge NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-berkeley-heights-nj-2026.html` (/blog/buying-home-berkeley-heights-nj-2026.html)
-- title: "Buying a Home in Berkeley Heights, NJ in 2026"
-- jsonld blocks: 3
-- images without alt: 0
-
-### `blog/buying-home-bloomfield-nj-2026.html` (/blog/buying-home-bloomfield-nj-2026.html)
-- title: "Buying a Home in Bloomfield NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-chatham-nj-2026.html` (/blog/buying-home-chatham-nj-2026.html)
-- title: "Buying a Home in Chatham NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-clark-nj-2026.html` (/blog/buying-home-clark-nj-2026.html)
-- title: "Buying a Home in Clark NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 3
-- images without alt: 0
-
-### `blog/buying-home-cranford-nj-2026.html` (/blog/buying-home-cranford-nj-2026.html)
-- title: "Buying a Home in Cranford NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-denville-nj-2026.html` (/blog/buying-home-denville-nj-2026.html)
-- title: "Buying a Home in Denville NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 3
-- images without alt: 0
-
-### `blog/buying-home-east-brunswick-nj-2026.html` (/blog/buying-home-east-brunswick-nj-2026.html)
-- title: "Buying a Home in East Brunswick, NJ in 2026"
-- jsonld blocks: 3
-- images without alt: 0
-
-### `blog/buying-home-edison-nj-2026.html` (/blog/buying-home-edison-nj-2026.html)
-- title: "Buying a Home in Edison NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-fanwood-nj-2026.html` (/blog/buying-home-fanwood-nj-2026.html)
-- title: "Buying a Home in Fanwood NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-florham-park-nj-2026.html` (/blog/buying-home-florham-park-nj-2026.html)
-- title: "Buying a Home in Florham Park NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-glen-ridge-nj-2026.html` (/blog/buying-home-glen-ridge-nj-2026.html)
-- title: "Buying a Home in Glen Ridge NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-highland-park-nj-2026.html` (/blog/buying-home-highland-park-nj-2026.html)
-- title: "Buying a Home in Highland Park NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-
-### `blog/buying-home-hoboken-nj-2026.html` (/blog/buying-home-hoboken-nj-2026.html)
-- title: "Buying a Home in Hoboken NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
 - images without alt: 0
