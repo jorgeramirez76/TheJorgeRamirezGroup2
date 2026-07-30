@@ -7,7 +7,9 @@
   'use strict';
   if (document.getElementById('jrg-cta-bar')) return;
 
-  var PHONE = '+19083173227';
+  var PHONE = '+19082307844';
+  // SMS stays on the A2P-registered CRM line that runs text-back
+  var SMS_PHONE = '+19083173227';
   var isES = (document.documentElement.lang || '').toLowerCase().indexOf('es') === 0;
   var callLabel = isES ? 'Llamar' : 'Call';
   var textLabel = isES ? 'Texto' : 'Text';
@@ -34,7 +36,7 @@
   bar.setAttribute('aria-label', isES ? 'Llamar o enviar texto a Jorge' : 'Call or text Jorge');
   bar.innerHTML =
     '<a class="jrg-call" href="tel:' + PHONE + '">' + phoneSvg + '<span>' + callLabel + '</span></a>' +
-    '<a class="jrg-text" href="sms:' + PHONE + '">' + textSvg + '<span>' + textLabel + '</span></a>';
+    '<a class="jrg-text" href="sms:' + SMS_PHONE + '">' + textSvg + '<span>' + textLabel + '</span></a>';
 
   if (document.body) document.body.appendChild(bar);
   else document.addEventListener('DOMContentLoaded', function () { document.body.appendChild(bar); });

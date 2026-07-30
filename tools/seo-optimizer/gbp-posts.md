@@ -2,7 +2,7 @@
 
 Post one per week at business.google.com → Posts. Reverse-selling voice: helpful,
 no pressure. After these four, reuse your daily blog posts as GBP updates.
-Contact on all: **(908) 317-3227 · jorge.ramirez@kw.com**. Add a photo to each.
+Contact on all: **(908) 230-7844 · jorge.ramirez@kw.com**. Add a photo to each.
 
 ---
 
@@ -11,7 +11,7 @@ Contact on all: **(908) 317-3227 · jorge.ramirez@kw.com**. Add a photo to each.
 > time? That's the most honest question you can ask — and the answer depends on
 > your situation, not a headline. I'm happy to walk through your numbers with no
 > pressure and no obligation. Sometimes the right move is to wait, and I'll tell
-> you that too. Reach out whenever it's useful: (908) 317-3227.
+> you that too. Reach out whenever it's useful: (908) 230-7844.
 > *[Button: Call now]*
 
 ---

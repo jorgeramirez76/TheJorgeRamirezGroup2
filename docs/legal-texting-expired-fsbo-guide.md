@@ -71,7 +71,7 @@
 
 **Consent language (include in mailer):**
 ```
-Text "YES" to (908) 317-3227 to receive text messages about your home's market value and selling strategies. Message and data rates may apply. Reply STOP to opt out anytime.
+Text "YES" to (908) 230-7844 to receive text messages about your home's market value and selling strategies. Message and data rates may apply. Reply STOP to opt out anytime.
 
 By texting YES, you agree to receive automated text messages from The Jorge Ramirez Group.
 ```
@@ -167,7 +167,7 @@ Hey [Name], saw your home at [Address] was listed with [Agent] last year. Still 
 1. Pull expired/FSBO list from Espresso Agent
 2. Send **physical mailer** (postcard or letter):
    - "Your home didn't sell. Here's why + what to do next"
-   - Include: "Text INFO to (908) 317-3227 for a free market analysis"
+   - Include: "Text INFO to (908) 230-7844 for a free market analysis"
    - Include consent language (see above)
 
 3. When they text "INFO":
@@ -312,7 +312,7 @@ Hey [First Name], just wanted to follow up. I've helped 5 sellers in [Town] this
 
 **Month 1: Build Consented List**
 1. Send physical mailers to 100 expired/FSBOs
-2. Include text opt-in: "Text INFO to (908) 317-3227"
+2. Include text opt-in: "Text INFO to (908) 230-7844"
 3. Expect 5-15% opt-in rate (5-15 people)
 4. Manually call the rest (check DNC first)
 5. During calls, ask: "Can I text you market data?"

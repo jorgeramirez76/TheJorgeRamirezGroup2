@@ -14,7 +14,7 @@ genuine — these earn links because they're real, not because they're clever.
 > I'd love to add you to my preferred-partners list on my site
 > (thejorgeramirezgroup.com). If it makes sense, a link back to my site from your
 > partners/resources page would help both of us. Either way, happy to send
-> business your way. — Jorge, (908) 317-3227
+> business your way. — Jorge, (908) 230-7844
 
 ---
 
@@ -25,7 +25,7 @@ genuine — these earn links because they're real, not because they're clever.
 > Hi [Editor], I'm Jorge Ramirez — a full-time NJ real estate agent and a
 > [Roselle Park council member]. If you ever need a local voice on the NJ housing
 > market, property taxes, or first-time buyers, I'm glad to provide quick,
-> quotable context. Happy to be on your source list. — Jorge, (908) 317-3227,
+> quotable context. Happy to be on your source list. — Jorge, (908) 230-7844,
 > thejorgeramirezgroup.com
 
 ---
@@ -37,7 +37,7 @@ genuine — these earn links because they're real, not because they're clever.
 > Hi [Name], I'd like to sponsor [the 5K / youth team / local event] this year.
 > Could you send sponsorship levels? If sponsors are listed on your site, please
 > use "The Jorge Ramirez Group — thejorgeramirezgroup.com." Thanks for all you do
-> for [town]. — Jorge Ramirez, (908) 317-3227
+> for [town]. — Jorge Ramirez, (908) 230-7844
 
 ---
 

@@ -54,5 +54,5 @@ If you bought your Hoboken condo before 2018, you’re sitting on equity most se
 
 **Thinking about your options? No pressure — let's talk.**
 
-**[(908) 317-3227](tel:+19083173227) | jorge.ramirez@kw.com | thejorgeramirezgroup.com**
+**[(908) 230-7844](tel:+19082307844) | jorge.ramirez@kw.com | thejorgeramirezgroup.com**
 *Jorge Ramirez | The Jorge Ramirez Group | Keller Williams Premier Properties | NJ License #1754604*

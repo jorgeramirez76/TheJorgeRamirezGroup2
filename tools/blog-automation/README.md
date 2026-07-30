@@ -11,7 +11,7 @@ copy never goes live.
    Anything already on the site is skipped automatically.
 2. **Writes a ~1,000-word post** in Jorge's reverse-selling (Mulrenin) voice —
    honest, no-pressure, genuinely useful. No fabricated statistics. Only the
-   public phone number `908-317-3227`.
+   public phone number `908-230-7844`.
 3. **Runs an AI quality gate** — a second pass scores the draft 0–100. If it
    can't clear the bar (`quality_threshold`, default 80), the post is
    **skipped, not published**, and retried next run. This is what protects your
