@@ -17,6 +17,17 @@
 Outputs DEEP_AUDIT_REPORT.md with an issue-prioritized list.
 """
 from __future__ import annotations
+
+# Directories that are build artifacts or internal tooling, not published content. Without
+# this the thin-content and duplicate-title checks are dominated by node_modules, generator
+# templates and seo-optimizer report dumps, which drowns out real findings.
+SKIP_DIRS = ("/node_modules/", "/crm/", "/tools/blog-automation/", "/tools/seo-optimizer/",
+             "/lead-research/", "/property-leads-system/", "/.git/")
+
+
+def _is_content(path_str: str) -> bool:
+    p = "/" + str(path_str).replace("\\", "/").lstrip("/")
+    return not any(d in p for d in SKIP_DIRS)
 import json
 import re
 import urllib.request
@@ -43,7 +54,7 @@ def all_html() -> list[Path]:
         except OSError:
             pass
         out.append(p)
-    return sorted(out)
+    return [p for p in sorted(out) if _is_content(p.relative_to(ROOT).as_posix())]
 
 
 def head_status(url: str) -> int:
@@ -135,6 +146,23 @@ def check_h1() -> list[tuple[str, str]]:
     return issues
 
 
+_SITEMAP_CACHE = None
+
+
+def _sitemap_urls() -> set[str]:
+    """URLs the site actually nominates for indexing, normalised without trailing slash."""
+    global _SITEMAP_CACHE
+    if _SITEMAP_CACHE is None:
+        urls = set()
+        for name in ("sitemap.xml", "sitemap-es.xml"):
+            fp = ROOT / name
+            if fp.exists():
+                for loc in re.findall(r"<loc>(.*?)</loc>", fp.read_text(errors="ignore"), re.S):
+                    urls.add(loc.strip().rstrip("/"))
+        _SITEMAP_CACHE = urls
+    return _SITEMAP_CACHE
+
+
 # 5. Canonical drift
 def check_canonical() -> list[tuple[str, str]]:
     print("[canon] checking canonical URLs...")
@@ -146,14 +174,28 @@ def check_canonical() -> list[tuple[str, str]]:
             continue
         canonical_url = m.group(1)
         rel = p.relative_to(ROOT).as_posix()
+        # The site is served by Vercel with cleanUrls:true and trailingSlash:false, so the
+        # canonical form of every page is EXTENSIONLESS and a .html URL 308-redirects to it.
+        # This check previously expected ".html" (correct under the old GitHub Pages setup)
+        # and therefore reported every correctly-canonicalised page as drift — 1,069 false
+        # positives, which made the canonical check useless after the migration.
         if rel == "index.html":
             expected = ORIGIN + "/"
         elif rel.endswith("/index.html"):
-            expected = ORIGIN + "/" + rel[:-len("index.html")]
+            expected = ORIGIN + "/" + rel[:-len("/index.html")]
         else:
-            expected = ORIGIN + "/" + rel
-        # Compare loosely (trailing slash differences are OK)
+            expected = ORIGIN + "/" + rel[:-len(".html")] if rel.endswith(".html") else ORIGIN + "/" + rel
+        # A canonical pointing at a DIFFERENT page is intentional consolidation, not drift,
+        # when the page is also noindex or absent from the sitemap. Only flag genuine
+        # self-reference mismatches.
         if canonical_url.rstrip("/") != expected.rstrip("/"):
+            # A canonical pointing at a different page is deliberate consolidation, not
+            # drift, when the page is either noindex or not nominated in the sitemap.
+            # Flagging those buried the real defects under ~19 intentional entries.
+            if re.search(r'name=["\']robots["\'][^>]*noindex', text, re.I):
+                continue
+            if expected.rstrip("/") not in _sitemap_urls():
+                continue
             issues.append((str(rel), f"canonical={canonical_url} expected={expected}"))
     return issues
 
