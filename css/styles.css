@@ -12,6 +12,7 @@
     --white: #FFFFFF;
     --text-gray: #2C2C2C;
     --text-light: #666666;
+    --text-muted: #6E6E6E; /* AA-legible muted grey for captions/fine print on light backgrounds — 5.10:1 on #FFFFFF; replaces #999 (2.85:1) */
     --border-light: #E8E4DC;
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
     --shadow-md: 0 8px 32px rgba(0,0,0,0.10);
