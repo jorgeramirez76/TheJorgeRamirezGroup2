@@ -261,8 +261,11 @@ function calcRentVsBuy(){
   const mRate=rate/12;
   const n=360;
   const mortgage=loan*(mRate*Math.pow(1+mRate,n))/(Math.pow(1+mRate,n)-1);
-  const mansion=price>=1000000?price*0.01:0;
-  const closingBuy=price*0.03+mansion;
+  // El "mansion tax" del 1% que pagaba el COMPRADOR fue ELIMINADO por P.L.2025 c.69, que
+  // cambio "grantee" por "grantor" en N.J.S.A. 46:15-7.2, para escrituras presentadas para
+  // registro a partir del 2025-07-10. El comprador no debe nada; el vendedor paga el
+  // Graduated Percent Fee. Los costos de cierre del comprador ya no incluyen mansion tax.
+  const closingBuy=price*0.03;
 
   // Buy side totals
   const totalHipoteca=mortgage*12*years;
@@ -296,7 +299,7 @@ function calcRentVsBuy(){
 
   document.getElementById('buyCol').innerHTML=
     '<div class="line"><span>Pago inicial</span><span>'+money(down)+'</span></div>'+
-    '<div class="line"><span>Costos de cierre'+(mansion?' (incl. impuesto de mansión)':'')+'</span><span>'+money(closingBuy)+'</span></div>'+
+    '<div class="line"><span>Costos de cierre'+'</span><span>'+money(closingBuy)+'</span></div>'+
     '<div class="line"><span>'+years+' años de pagos de hipoteca</span><span>'+money(totalHipoteca)+'</span></div>'+
     '<div class="line"><span>'+years+' años de impuesto a la propiedad NJ</span><span>'+money(totalTax)+'</span></div>'+
     '<div class="line"><span>'+years+' años de mantenimiento + seguro</span><span>'+money(totalMaint+totalIns)+'</span></div>'+
