@@ -12,7 +12,7 @@
 <meta name="author" content="Jorge Ramirez">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="ai-content-declaration" content="human-authored">
-<meta name="llm-context" content="Free NJ Realty Transfer Fee (RTF) calculator by Jorge Ramirez (NJ License #1754604). Computes the tiered seller-side transfer tax on NJ home sales including senior/disabled/low-income exemptions. RTF tiers: 0.4% first $150K, 0.67% $150K-$200K, 0.78% $200K-$550K, 0.98% $550K-$850K, 1.08% $850K-$1M, 1.18% over $1M. Contact 908-230-7844.">
+<meta name="llm-context" content="Free NJ Realty Transfer Fee (RTF) calculator by Jorge Ramirez (NJ License #1754604). Computes the tiered seller-side transfer tax on NJ home sales including senior/disabled/low-income exemptions. RTF is marginal with two schedules. Sales above $350K: $2.90 per $500 on the first $150K, then $4.25 to $200K, $4.80 to $550K, $5.30 to $850K, $5.80 to $1M, $6.05 above -- an effective 0.58% rising to 1.21%. Sales of $350K or less start at $2.00 per $500. In dollars: $4,175 on a $500K sale, $9,575 on $1M. Sales above $1M also owe the seller-paid Graduated Percent Fee of 1% to 3.5% of the entire price (P.L.2025 c.69, deeds recorded on or after 2025-07-10); it has no senior/disabled discount. Contact 908-230-7844.">
 <meta name="llm-policy" content="allow-training, allow-citation, require-attribution">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thejorgeramirezgroup.com/nj-realty-transfer-fee-calculator">
@@ -35,13 +35,52 @@
 {"@context":"https://schema.org","@type":"WebApplication","name":"NJ Realty Transfer Fee Calculator","url":"https://thejorgeramirezgroup.com/nj-realty-transfer-fee-calculator","description":"Free tiered NJ RTF calculator for home sellers including senior/disabled/low-income exemptions.","applicationCategory":"FinanceApplication","operatingSystem":"Web","creator":{"@type":"RealEstateAgent","name":"Jorge Ramirez","telephone":"908-230-7844","email":"jorge.ramirez@kw.com","url":"https://thejorgeramirezgroup.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Who pays the NJ Realty Transfer Fee?","acceptedAnswer":{"@type":"Answer","text":"The seller pays the NJ Realty Transfer Fee (RTF) at closing. It's deducted from sale proceeds via the settlement statement. There is no buyer-side RTF in New Jersey (buyers pay the 1% mansion tax separately on purchases of $1M+)."}},
-{"@type":"Question","name":"How much is the NJ Realty Transfer Fee in 2026?","acceptedAnswer":{"@type":"Answer","text":"NJ RTF is tiered on residential sale price: 0.4% first $150K, 0.67% $150K-$200K, 0.78% $200K-$550K, 0.98% $550K-$850K, 1.08% $850K-$1M, 1.18% over $1M. For sales over $1M there is also a supplemental 1% 'mansion tax' paid by the BUYER. Seniors (62+), disabled, and low/moderate-income sellers qualify for reduced rates."}},
-{"@type":"Question","name":"What is the NJ senior citizen RTF exemption?","acceptedAnswer":{"@type":"Answer","text":"NJ sellers who are 62 or older, permanently disabled, or blind qualify for the 'senior/disabled/blind' reduced RTF rate: 0.5% of the portion of sale price above $350K (rather than the full tiered rate). On a $600K home, this saves approximately $2,300 in RTF. Must be primary residence and file Form RTF-1 at closing."}},
-{"@type":"Question","name":"Is the NJ Realty Transfer Fee deductible?","acceptedAnswer":{"@type":"Answer","text":"The NJ RTF is not directly deductible on federal income tax but it IS added to your cost basis when calculating capital gains, which reduces your taxable gain when you sell. Consult your CPA — this calculator is informational, not tax advice."}},
-{"@type":"Question","name":"Can I negotiate the NJ Realty Transfer Fee?","acceptedAnswer":{"@type":"Answer","text":"The RTF rate is set by NJ statute and is not negotiable. What IS negotiable in some buyer-favoring markets is requesting the buyer pay RTF as a concession — rare but has happened. This calculator shows the statutory RTF; any buyer concession is a separate line item."}}
-]}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who pays the NJ Realty Transfer Fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The seller — and since 2025 that includes the fee on $1M+ sales. The RTF is deducted from your proceeds on the settlement statement; there is no buyer-side RTF in New Jersey. The Graduated Percent Fee on sales above $1,000,000, formerly the buyer's 1% \"mansion tax,\" also became the seller's obligation for deeds submitted for recording on or after July 10, 2025 under P.L. 2025, c. 69."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much is the NJ Realty Transfer Fee in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two marginal schedules. On sales above $350,000 the fee runs $2.90 per $500 on the first $150,000, then $4.25, $4.80, $5.30, $5.80 and $6.05 per $500 through the higher bands — an effective rate of 0.58% rising to 1.21%. Sales of $350,000 or less use a lower schedule starting at $2.00 per $500. In dollars: $4,175 on a $500,000 sale and $9,575 on $1,000,000. Above $1,000,000, add the seller-paid Graduated Percent Fee of 1% to 3.5% of the entire price. Seniors 62+, blind, disabled and low-and-moderate-income sellers qualify for a reduced RTF, but there is no discount on the Graduated Percent Fee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the NJ senior citizen RTF exemption?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NJ sellers who are 62 or older, permanently disabled, or blind qualify for the 'senior/disabled/blind' reduced RTF rate: 0.5% of the portion of sale price above $350K (rather than the full tiered rate). On a $600K home, this saves approximately $2,300 in RTF. Must be primary residence and file Form RTF-1 at closing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the NJ Realty Transfer Fee deductible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The NJ RTF is not directly deductible on federal income tax but it IS added to your cost basis when calculating capital gains, which reduces your taxable gain when you sell. Consult your CPA — this calculator is informational, not tax advice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I negotiate the NJ Realty Transfer Fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The RTF rate is set by NJ statute and is not negotiable. What IS negotiable in some buyer-favoring markets is requesting the buyer pay RTF as a concession — rare but has happened. This calculator shows the statutory RTF; any buyer concession is a separate line item."
+      }
+    }
+  ]
+}
 </script>
 <style>
   body { font-family:'Inter',sans-serif; background:#f8f9fa; margin:0; color:#1a1a1a; }
@@ -192,19 +231,27 @@
     <h3>Who qualifies for the reduced rate?</h3>
     <p><strong>Senior citizens (62+)</strong>, <strong>permanently disabled individuals</strong>, and <strong>blind sellers</strong> qualify if the home is their primary residence and they're selling directly to a third party (not to family or through a trust transfer). Must file Form RTF-1 at closing.</p>
     <p><strong>Low- or moderate-income homeowners</strong> qualify if they meet the state's income thresholds AND the home was their primary residence AND they're not using the proceeds to buy another home worth more than the one being sold.</p>
-    <h3>Separate: the NJ "Mansion Tax"</h3>
-    <p>Sales of $1,000,000+ also trigger a 1% Mansion Tax — but that's paid by the <strong>BUYER</strong>, not the seller. It's a separate line item on the buyer's closing disclosure. As a seller, you don't owe or see that.</p>
+    <h3>Separate: the Graduated Percent Fee (the old &ldquo;Mansion Tax&rdquo;) &mdash; now YOURS</h3>
+    <p><strong>This reversed in 2025.</strong> The 1% &ldquo;mansion tax&rdquo; on sales of $1,000,000 or more used to be paid by the buyer. P.L.&nbsp;2025, c.&nbsp;69 struck &ldquo;grantee&rdquo; and inserted &ldquo;grantor&rdquo; in N.J.S.A.&nbsp;46:15-7.2, moving the fee to the <strong>seller</strong> and making it graduated. It applies to deeds submitted for recording on or after <strong>July&nbsp;10,&nbsp;2025</strong>. New Jersey REALTORS&reg; put it plainly: the Graduated Percent Fee &ldquo;will now be entirely paid for by the seller.&rdquo;</p>
+    <p>It is a <strong>cliff, not a bracket</strong> &mdash; each rate applies to the entire sale price, not just the portion above the threshold: 1% over $1M through $2M, 2% to $2.5M, 2.5% to $3M, 3% to $3.5M, and 3.5% above that. A $2,000,000 sale owes $20,000; one dollar more owes just over $40,000. Because the statute reaches consideration <em>in excess of</em> $1,000,000, a sale at exactly $1,000,000 owes nothing.</p>
+    <p><strong>The reduced rate above does not help here.</strong> Per New Jersey REALTORS&reg;, &ldquo;unlike the Realty Transfer Fee, the Graduated Percent Fee does not have a provision for discounts.&rdquo; A qualifying senior gets a reduced RTF and still owes the Graduated Percent Fee in full.</p>
+    <p>The calculator above includes both fees. See the <a href="/net-proceeds-calculator">net proceeds calculator</a> for the full seller picture. Above $1,000,000, confirm the figure with your closing attorney or title company before you budget from it.</p>
+
+    <h3>Transfers that are exempt, and the affidavit you must file</h3>
+    <p>Some transfers fall outside the fee entirely. The Realty Transfer Fee does not apply to consideration of less than $100, or to transfers between spouses or between parent and child. Certain transactions may be exempt from both the RTF and the Graduated Percent Fee.</p>
+    <p>Exemptions are not automatic. <strong>An Affidavit of Consideration (Form RTF-1) must be filed with any deed claiming a full or partial exemption</strong> &mdash; including the senior, blind, disabled and low-and-moderate-income partial exemptions described above. Miss the affidavit and you pay the full fee even though you qualified.</p>
+    <p>Where the money goes: the RTF is split between the state and the counties, with the state&rsquo;s share directed to neighborhood revitalization, shore protection and the general fund. The Graduated Percent Fee goes to the General Fund. The Division of Taxation answers RTF questions at (609)&nbsp;292-7974.</p>
   </div>
 
   <div class="faq-block" id="faq">
     <h2>NJ Realty Transfer Fee — FAQs</h2>
     <div class="faq-item">
       <h3>Who pays the NJ Realty Transfer Fee?</h3>
-      <p>The seller pays at closing. It's deducted from sale proceeds on the settlement statement. There is no buyer-side RTF in NJ (buyers pay the 1% mansion tax separately on purchases of $1M+).</p>
+      <p>The seller &mdash; and since 2025 that includes the fee on $1M+ sales. The RTF is deducted from your proceeds on the settlement statement; there is no buyer-side RTF in New Jersey. The Graduated Percent Fee on sales above $1,000,000, formerly the buyer&rsquo;s 1% &ldquo;mansion tax,&rdquo; also became the seller&rsquo;s obligation for deeds submitted for recording on or after July 10, 2025 under P.L. 2025, c. 69.</p>
     </div>
     <div class="faq-item">
       <h3>How much is the NJ Realty Transfer Fee in 2026?</h3>
-      <p>Tiered: 0.4% on the first $150K, scaling up to 1.18% on the portion above $1M. See the rate table above for the full schedule.</p>
+      <p>Two marginal schedules. On sales above $350,000 the fee runs $2.90 per $500 on the first $150,000, then $4.25, $4.80, $5.30, $5.80 and $6.05 per $500 through the higher bands &mdash; an effective rate of 0.58% rising to 1.21%. Sales of $350,000 or less use a lower schedule starting at $2.00 per $500. In dollars: $4,175 on a $500,000 sale and $9,575 on $1,000,000. Above $1,000,000, add the seller-paid Graduated Percent Fee of 1% to 3.5% of the entire price. Seniors 62+, blind, disabled and low-and-moderate-income sellers qualify for a reduced RTF, but there is no discount on the Graduated Percent Fee.</p>
     </div>
     <div class="faq-item">
       <h3>What is the NJ senior citizen RTF exemption?</h3>
