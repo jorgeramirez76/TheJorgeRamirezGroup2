@@ -238,23 +238,54 @@
 <script>
 function money(n){return'$'+Math.round(n).toLocaleString();}
 // 2026 NJ RTF tiers — standard + senior/disabled reduced
-const TIERS_STD = [
-  {upTo:150000,    rate:0.004,  label:"$0 – $150K @ 0.40%"},
-  {upTo:200000,    rate:0.0067, label:"$150K – $200K @ 0.67%"},
-  {upTo:550000,    rate:0.0078, label:"$200K – $550K @ 0.78%"},
-  {upTo:850000,    rate:0.0098, label:"$550K – $850K @ 0.98%"},
-  {upTo:1000000,   rate:0.0108, label:"$850K – $1M @ 1.08%"},
-  {upTo:Infinity,  rate:0.0118, label:"Sobre $1M @ 1.18%"},
+const TIERS_STD_OVER350 = [
+  {upTo:150000,    rate:0.0058, label:"$0 – $150K @ $2.90/$500 (0.58%)"},
+  {upTo:200000,    rate:0.0085, label:"$150K – $200K @ $4.25/$500 (0.85%)"},
+  {upTo:550000,    rate:0.0096, label:"$200K – $550K @ $4.80/$500 (0.96%)"},
+  {upTo:850000,    rate:0.0106, label:"$550K – $850K @ $5.30/$500 (1.06%)"},
+  {upTo:1000000,   rate:0.0116, label:"$850K – $1M @ $5.80/$500 (1.16%)"},
+  {upTo:Infinity,  rate:0.0121, label:"Sobre $1M @ $6.05/$500 (1.21%)"},
 ];
-// Senior/disabled/low-mod reduced: 0% under $350K, 0.5% above
-const TIERS_REDUCED = [
-  {upTo:350000,   rate:0.0,    label:"$0 – $350K @ 0.00% (exento)"},
-  {upTo:Infinity, rate:0.005,  label:"Sobre $350K @ 0.50%"},
+const TIERS_STD_UNDER350 = [
+  {upTo:150000,    rate:0.004,  label:"$0 – $150K @ $2.00/$500 (0.40%)"},
+  {upTo:200000,    rate:0.0067, label:"$150K – $200K @ $3.35/$500 (0.67%)"},
+  {upTo:Infinity,  rate:0.0078, label:"$200K – $350K @ $3.90/$500 (0.78%)"},
 ];
+// Tarifa reducida (mayores de 62, ciegos, discapacitados, vivienda de ingresos bajos/moderados).
+// OJO: los tramos son DISTINTOS de los estándar — $2.15/$500 llega hasta $550,000.
+const TIERS_RED_OVER350 = [
+  {upTo:150000,    rate:0.0028, label:"$0 – $150K @ $1.40/$500 (reducida)"},
+  {upTo:550000,    rate:0.0043, label:"$150K – $550K @ $2.15/$500 (reducida)"},
+  {upTo:850000,    rate:0.0053, label:"$550K – $850K @ $2.65/$500 (reducida)"},
+  {upTo:1000000,   rate:0.0063, label:"$850K – $1M @ $3.15/$500 (reducida)"},
+  {upTo:Infinity,  rate:0.0068, label:"Sobre $1M @ $3.40/$500 (reducida)"},
+];
+const TIERS_RED_UNDER350 = [
+  {upTo:150000,    rate:0.001,  label:"$0 – $150K @ $0.50/$500 (reducida)"},
+  {upTo:Infinity,  rate:0.0025, label:"$150K – $350K @ $1.25/$500 (reducida)"},
+];
+// Graduated Percent Fee — P.L.2025 c.69 modificó N.J.S.A. 46:15-7.2: para escrituras presentadas
+// para registro a partir del 2025-07-10 la paga el VENDEDOR. Cada tasa se aplica al precio COMPLETO
+// (es un acantilado, no un tramo) y solo sobre consideración EN EXCESO de $1,000,000.
+function calcGPF(price){
+  if(price <= 1000000) return {rate:0, fee:0};
+  let r;
+  if(price <= 2000000)      r = 0.01;
+  else if(price <= 2500000) r = 0.02;
+  else if(price <= 3000000) r = 0.025;
+  else if(price <= 3500000) r = 0.03;
+  else                      r = 0.035;
+  return {rate:r, fee:price*r};
+}
 function calcRTF(){
   const price=+document.getElementById('price').value;
   const ex=document.getElementById('exemption').value;
-  const tiers = (ex==='senior'||ex==='lowmod') ? TIERS_REDUCED : TIERS_STD;
+  const reduced = (ex==='senior'||ex==='lowmod');
+  // El esquema depende del precio TOTAL: una venta de $600,000 usa el de arriba de $350K
+  // para TODOS sus tramos, no solo para la parte por encima de $350,000.
+  const over350 = price > 350000;
+  const tiers = reduced ? (over350 ? TIERS_RED_OVER350 : TIERS_RED_UNDER350)
+                        : (over350 ? TIERS_STD_OVER350 : TIERS_STD_UNDER350);
   // New construction: first sale after CO — exempt from RTF
   if(ex==='newconstruction'){
     document.getElementById('amt').textContent='$0';
@@ -276,11 +307,19 @@ function calcRTF(){
     prev=bandTop;
     if(t.upTo>=price) break;
   }
-  document.getElementById('amt').textContent=money(total);
-  document.getElementById('pct').textContent=(total/price*100).toFixed(3)+'% del precio de venta · pagado por el vendedor al cierre';
+  // El Graduated Percent Fee no tiene tarifa reducida: se aplica completo aunque el
+  // vendedor califique para la reducción del RTF base.
+  const gpf = calcGPF(price);
+  const granTotal = total + gpf.fee;
+  document.getElementById('amt').textContent=money(granTotal);
+  document.getElementById('pct').textContent=(granTotal/price*100).toFixed(3)+'% del precio de venta · lo paga el vendedor al cierre';
   document.getElementById('tiers').innerHTML=
     rows.map(r=>`<div class="tier-row"><span>${r.label} sobre ${money(r.amt)}</span><span>${money(r.fee)}</span></div>`).join('')+
-    `<div class="tier-row"><span>RTF TOTAL</span><span>${money(total)}</span></div>`;
+    `<div class="tier-row"><span>RTF base</span><span>${money(total)}</span></div>`+
+    (gpf.fee>0
+      ? `<div class="tier-row"><span>Graduated Percent Fee — ${(gpf.rate*100).toFixed(1)}% del precio COMPLETO (sin descuento para mayores)</span><span>${money(gpf.fee)}</span></div>`
+      : '')+
+    `<div class="tier-row"><span>TOTAL</span><span>${money(granTotal)}</span></div>`;
   document.getElementById('results').classList.add('show');
   document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
