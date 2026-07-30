@@ -312,7 +312,7 @@
                 `<div class="line-item ${cls}"><span class="label">${label}</span><span class="amount">${fmt(amt)}</span></div>`
             ).join('') +
             `<div class="line-item total"><span class="label">Estimated Net to You</span><span class="amount">${fmt(net)}</span></div>` +
-            `<div style="margin-top:8px; color:#666; font-size:0.85rem; text-align:center;">That's ${(net/salePrice*100).toFixed(1)}% of your sale price walking out the door. Typical NJ net range: 78-92% depending on mortgage and price tier.</div>`;
+            `<div style="margin-top:8px; color:#666; font-size:0.85rem; text-align:center;">That's ${(net/salePrice*100).toFixed(1)}% of your sale price that you keep. Typical NJ net range: 78-92% depending on mortgage and price tier.</div>`;
 
             document.getElementById('lineItems').innerHTML = html;
             document.getElementById('results').style.display = 'block';
