@@ -2731,6 +2731,39 @@ a.hero-train-pill:focus-visible .htp-arrow {
   left: 0;
 }
 
+/* ── .related inline block — used by 101 pages, previously unstyled ─────────── */
+.related {
+  max-width: 880px;
+  margin: 28px auto;
+  padding: 18px 22px;
+  background: #F8F9FA;
+  border-left: 4px solid #E9ECEF;
+  border-radius: 8px;
+  font-family: var(--font-body, inherit);
+  line-height: 1.7;
+}
+.related > strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #333333;
+  font-size: 1.02em;
+}
+.related p {
+  margin: 0;
+}
+.related a {
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .related {
+    margin: 22px 0;
+    padding: 14px 16px;
+  }
+  .related a {
+    white-space: normal;
+  }
+}
+
 /* ── .related-pages widget (was inline across 520 town pages) ─ */
 .related-pages {
   background: #F8F9FA;
