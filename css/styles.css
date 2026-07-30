@@ -2731,6 +2731,43 @@ a.hero-train-pill:focus-visible .htp-arrow {
   left: 0;
 }
 
+/* ── .related-links — used by 292 pages, previously unstyled ───────────────── */
+.related-links {
+  max-width: 880px;
+  margin: 28px auto;
+  padding: 18px 22px;
+  background: #F8F9FA;
+  border-left: 4px solid #E9ECEF;
+  border-radius: 8px;
+  font-family: var(--font-body, inherit);
+  line-height: 1.7;
+}
+.related-links h2,
+.related-links h3,
+.related-links > strong {
+  display: block;
+  margin: 0 0 10px;
+  color: #333333;
+  font-size: 1.05em;
+}
+.related-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.related-links li {
+  margin: 0 0 6px;
+}
+.related-links p {
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .related-links {
+    margin: 22px 0;
+    padding: 14px 16px;
+  }
+}
+
 /* ── .related inline block — used by 101 pages, previously unstyled ─────────── */
 .related {
   max-width: 880px;
