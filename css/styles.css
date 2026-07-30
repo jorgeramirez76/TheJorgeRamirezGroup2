@@ -263,6 +263,14 @@ a.logo:hover .logo-img {
     animation: fadeSlideDown 0.8s ease 0.2s forwards;
 }
 
+/* Town-page hero button row. The 202 reconstructed town pages kept only the
+   mobile override, so without this the buttons render inline above 768px. */
+.hero-ctas {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
 /* Town-page hero eyebrow (county line above the H1) */
 .hero-county {
     color: var(--gold);
@@ -270,7 +278,6 @@ a.logo:hover .logo-img {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     font-weight: 600;
-    margin-bottom: 12px;
 }
 
 .hero-name {
