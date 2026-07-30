@@ -227,25 +227,33 @@
         // NJ Realty Transfer Fee — tiered rate table (2026 rates for non-senior sellers)
         function calcRTF(price) {
             if (price <= 0) return 0;
-            let fee = 0;
-            const tiers = [
-                [150000, 0.004],    // $0 - $150K @ 0.4%
-                [200000, 0.0067],   // $150K - $200K
-                [350000, 0.0078],   // $200K - $350K
-                [550000, 0.0096],   // $350K - $550K (above $350K includes supplemental)
-                [850000, 0.0106],   // $550K - $850K
-                [1000000, 0.0116],  // $850K - $1M
-                [Infinity, 0.0121]  // $1M+
-            ];
-            let remaining = price;
-            let prevCap = 0;
-            for (const [cap, rate] of tiers) {
-                const tierAmount = Math.min(remaining, cap - prevCap);
-                fee += tierAmount * rate;
-                remaining -= tierAmount;
-                prevCap = cap;
-                if (remaining <= 0) break;
+            // Esquema marginal por cada $500. El esquema depende del precio TOTAL:
+            // una venta de $600,000 usa el de arriba de $350,000 para TODOS sus tramos.
+            const OVER350 = [[150000,2.90],[200000,4.25],[550000,4.80],[850000,5.30],[1000000,5.80],[Infinity,6.05]];
+            const UNDER350 = [[150000,2.00],[200000,3.35],[Infinity,3.90]];
+            const tiers = price > 350000 ? OVER350 : UNDER350;
+            let fee = 0, prev = 0;
+            for (const [cap, per500] of tiers) {
+                if (price <= prev) break;
+                fee += (Math.min(price, cap) - prev) / 500 * per500;
+                prev = cap;
             }
+            return fee;
+        }
+        // Graduated Percent Fee — P.L.2025 c.69 (N.J.S.A. 46:15-7.2). Lo paga el VENDEDOR para
+        // escrituras presentadas para registro desde el 2025-07-10. Es un acantilado: cada tasa
+        // se aplica al precio COMPLETO, y solo sobre consideración EN EXCESO de $1,000,000.
+        // No tiene descuento para mayores/discapacitados.
+        function calcGPF(price) {
+            if (price <= 1000000) return 0;
+            let r;
+            if (price <= 2000000)      r = 0.01;
+            else if (price <= 2500000) r = 0.02;
+            else if (price <= 3000000) r = 0.025;
+            else if (price <= 3500000) r = 0.03;
+            else                       r = 0.035;
+            return price * r;
+        }
             return fee;
         }
 
@@ -259,10 +267,11 @@
 
             const commission = salePrice * (commPct / 100);
             const rtf = calcRTF(salePrice);
+            const gpf = calcGPF(salePrice);
             const propTaxProrate = annualTax * (3 / 12); // assume 3 months prorated
             const closingMisc = 800;
 
-            const totalDeductions = payoff + commission + rtf + attorney + propTaxProrate + closingMisc + concessions;
+            const totalDeductions = payoff + commission + rtf + attorney + propTaxProrate + closingMisc + concessions + gpf;
             const net = salePrice - totalDeductions;
 
             const lineItems = [
