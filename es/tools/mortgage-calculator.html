@@ -16,8 +16,8 @@
     <meta name="theme-color" content="#1A1A1A">
   <title>Calculadora de Hipoteca en NJ 2026 | ¿Cuánto Puedo Pagar?</title>
     <meta name="robots" content="index, follow">
-  <meta name="description" content="Usa esta calculadora gratuita de hipoteca en NJ para averiguar cuánta casa puedes pagar. Incluye impuestos a la propiedad, PMI y cuotas de Asociación de Propietarios.">
-  <meta name="llm-context" content="Herramienta gratuita de calculadora de hipoteca en NJ por Jorge Ramirez, agente de bienes raíces licenciado. Calcula pagos mensuales con impuestos a la propiedad, PMI y cuotas de Asociación de Propietarios. Contacto: 908-230-7844.">
+  <meta name="description" content="Usa esta calculadora gratuita de hipoteca en NJ para averiguar cuánta casa puedes pagar. Incluye impuestos a la propiedad, seguro de casa, PMI y cuotas de Asociación de Propietarios.">
+  <meta name="llm-context" content="Herramienta gratuita de calculadora de hipoteca en NJ por Jorge Ramirez, agente de bienes raíces licenciado. Calcula pagos mensuales con seguro de casa, impuestos a la propiedad, PMI y cuotas de Asociación de Propietarios. Contacto: 908-230-7844.">
   <link rel="canonical" href="https://thejorgeramirezgroup.com/es/tools/mortgage-calculator">
     <link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/tools/mortgage-calculator">
     <link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/tools/mortgage-calculator">
@@ -75,10 +75,10 @@
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Calculadora de Hipoteca en NJ 2026 | ¿Cuánto Puedo Pagar? | Jorge Ramirez">
-    <meta name="twitter:description" content="Usa esta calculadora gratuita de hipoteca en NJ para averiguar cuánta casa puedes pagar. Incluye impuestos a la propiedad, PMI y cuotas de Asociación de.">
+    <meta name="twitter:description" content="Usa esta calculadora gratuita de hipoteca en NJ para averiguar cuánta casa puedes pagar. Incluye impuestos a la propiedad, seguro de casa, PMI y cuotas de Asociación de Propietarios.">
     <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
     <meta property="og:title" content="Calculadora de Hipoteca en NJ 2026 | ¿Cuánto Puedo Pagar? | Jorge Ramirez">
-    <meta property="og:description" content="Usa esta calculadora gratuita de hipoteca en NJ para averiguar cuánta casa puedes pagar. Incluye impuestos a la propiedad, PMI y cuotas de Asociación de Propietarios.">
+    <meta property="og:description" content="Usa esta calculadora gratuita de hipoteca en NJ para averiguar cuánta casa puedes pagar. Incluye impuestos a la propiedad, seguro de casa, PMI y cuotas de Asociación de Propietarios.">
     <meta property="og:image" content="https://thejorgeramirezgroup.com/images/hero.webp">
     <meta property="og:url" content="https://thejorgeramirezgroup.com/es/tools/mortgage-calculator">
     <meta property="og:type" content="website">
@@ -89,7 +89,7 @@
       "@type": "WebPage",
       "url": "https://thejorgeramirezgroup.com/es/tools/mortgage-calculator",
       "name": "Calculadora de Hipoteca en NJ 2026 | ¿Cuánto Puedo Pagar? | Jorge Ramirez",
-      "description": "Usa esta calculadora gratuita de hipoteca en NJ para averiguar cuánta casa puedes pagar. Incluye impuestos a la propiedad, PMI y cuotas de Asociación de Propietarios.",
+      "description": "Usa esta calculadora gratuita de hipoteca en NJ para averiguar cuánta casa puedes pagar. Incluye impuestos a la propiedad, seguro de casa, PMI y cuotas de Asociación de Propietarios.",
       "inLanguage": "es-US",
       "isPartOf": {
         "@type": "WebSite",
@@ -200,6 +200,10 @@
           <input type="number" id="propertyTax" value="12000" min="0" step="500">
         </div>
         <div class="input-group">
+          <label>Seguro de Casa Anual ($)</label>
+          <input type="number" id="insurance" value="1800" min="0" step="100">
+        </div>
+        <div class="input-group">
           <label>Asociación de Propietarios / Mensual ($)</label>
           <input type="number" id="hoa" value="0" min="0" step="50">
         </div>
@@ -219,10 +223,14 @@
             <div class="label">Impuesto a la Propiedad (mensual)</div>
           </div>
           <div class="result-item">
+            <div class="amount" id="res-insurance">$0</div>
+            <div class="label">Seguro de Casa (mensual)</div>
+          </div>
+          <div class="result-item">
             <div class="amount" id="res-pmi">$0</div>
             <div class="label">PMI (si el pago inicial es &lt;20%)</div>
           </div>
-          <div class="result-item">
+          <div class="result-item" style="grid-column: span 2">
             <div class="amount" id="res-hoa">$0</div>
             <div class="label">Asociación de Propietarios</div>
           </div>
@@ -306,7 +314,12 @@
       const annualTax    = parseFloat(document.getElementById('propertyTax').value) || 0;
       const monthlyHoa   = parseFloat(document.getElementById('hoa').value) || 0;
 
-      const loanAmount   = homePrice - downPayment;
+      if (homePrice <= 0) {
+        document.getElementById('results').style.display = 'none';
+        return;
+      }
+
+      const loanAmount   = Math.max(0, homePrice - downPayment);
       const monthlyRate  = (annualRate / 100) / 12;
       const numPayments  = termYears * 12;
 
@@ -325,16 +338,20 @@
       const downPct = homePrice > 0 ? (downPayment / homePrice) : 0;
       const pmi = downPct < 0.20 ? (loanAmount * 0.005) / 12 : 0;
 
-      const total = pi + taxMonthly + pmi + monthlyHoa;
+      // Homeowners insurance monthly
+      const insMonthly = (parseFloat(document.getElementById('insurance').value) || 0) / 12;
+
+      const total = pi + taxMonthly + insMonthly + pmi + monthlyHoa;
 
       document.getElementById('res-principal').textContent = fmt(pi);
       document.getElementById('res-tax').textContent       = fmt(taxMonthly);
+      document.getElementById('res-insurance').textContent  = fmt(insMonthly);
       document.getElementById('res-pmi').textContent       = fmt(pmi);
       document.getElementById('res-hoa').textContent       = fmt(monthlyHoa);
       document.getElementById('res-total').textContent     = fmt(total);
 
       // Store for lead submission
-      window._calcResults = { homePrice, downPayment, loanAmount, annualRate, termYears, pi, taxMonthly, pmi, monthlyHoa, total };
+      window._calcResults = { homePrice, downPayment, loanAmount, annualRate, termYears, pi, taxMonthly, insMonthly, pmi, monthlyHoa, total };
 
       document.getElementById('results').style.display = 'block';
       document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });

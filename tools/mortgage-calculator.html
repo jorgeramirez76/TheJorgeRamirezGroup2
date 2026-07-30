@@ -15,8 +15,8 @@
     <meta name="theme-color" content="#1A1A1A">
   <title>NJ Mortgage Calculator 2026 | How Much Can I Afford?</title>
     <meta name="robots" content="index, follow">
-  <meta name="description" content="Use this free NJ mortgage calculator to find out how much home you can afford. Includes property taxes, PMI, and HOA. Call Jorge Ramirez at 908-230-7844.">
-  <meta name="llm-context" content="Free NJ mortgage calculator tool by Jorge Ramirez, licensed real estate agent. Calculate monthly payments with property taxes, PMI, and HOA. Contact: 908-230-7844.">
+  <meta name="description" content="Use this free NJ mortgage calculator to find out how much home you can afford. Includes property taxes, homeowners insurance, PMI, and HOA. Call Jorge Ramirez at 908-230-7844.">
+  <meta name="llm-context" content="Free NJ mortgage calculator tool by Jorge Ramirez, licensed real estate agent. Calculate monthly payments with property taxes, homeowners insurance, PMI, and HOA. Contact: 908-230-7844.">
   <link rel="canonical" href="https://thejorgeramirezgroup.com/tools/mortgage-calculator">
     <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
 
@@ -75,7 +75,7 @@
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="NJ Mortgage Calculator 2026 | How Much Can I Afford? | Jorge Ramirez">
-    <meta name="twitter:description" content="Use this free NJ mortgage calculator to find out how much home you can afford. Includes property taxes, PMI, and HOA. Call Jorge Ramirez at 908-230-7844.">
+    <meta name="twitter:description" content="Use this free NJ mortgage calculator to find out how much home you can afford. Includes property taxes, homeowners insurance, PMI, and HOA. Call Jorge Ramirez at 908-230-7844.">
     <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
     <script type="application/ld+json">
     {
@@ -109,7 +109,7 @@
     }
     </script>
     <meta property="og:title" content="NJ Mortgage Calculator 2026 | How Much Can I Afford? | Jorge Ramirez">
-    <meta property="og:description" content="Use this free NJ mortgage calculator to find out how much home you can afford. Includes property taxes, PMI, and HOA. Call Jorge Ramirez at 908-230-7844.">
+    <meta property="og:description" content="Use this free NJ mortgage calculator to find out how much home you can afford. Includes property taxes, homeowners insurance, PMI, and HOA. Call Jorge Ramirez at 908-230-7844.">
     <meta property="og:url" content="https://thejorgeramirezgroup.com/tools/mortgage-calculator">
     <meta property="og:type" content="website">
     <meta name="ai-content-declaration" content="human-authored">
@@ -201,6 +201,10 @@
           <input type="number" id="propertyTax" value="12000" min="0" step="500">
         </div>
         <div class="input-group">
+          <label>Annual Homeowners Insurance ($)</label>
+          <input type="number" id="insurance" value="1800" min="0" step="100">
+        </div>
+        <div class="input-group">
           <label>HOA / Monthly ($)</label>
           <input type="number" id="hoa" value="0" min="0" step="50">
         </div>
@@ -220,10 +224,14 @@
             <div class="label">Property Tax (monthly)</div>
           </div>
           <div class="result-item">
+            <div class="amount" id="res-insurance">$0</div>
+            <div class="label">Homeowners Insurance (monthly)</div>
+          </div>
+          <div class="result-item">
             <div class="amount" id="res-pmi">$0</div>
             <div class="label">PMI (if &lt;20% down)</div>
           </div>
-          <div class="result-item">
+          <div class="result-item" style="grid-column: span 2">
             <div class="amount" id="res-hoa">$0</div>
             <div class="label">HOA</div>
           </div>
@@ -311,7 +319,12 @@
       const annualTax    = parseFloat(document.getElementById('propertyTax').value) || 0;
       const monthlyHOA   = parseFloat(document.getElementById('hoa').value) || 0;
 
-      const loanAmount   = homePrice - downPayment;
+      if (homePrice <= 0) {
+        document.getElementById('results').style.display = 'none';
+        return;
+      }
+
+      const loanAmount   = Math.max(0, homePrice - downPayment);
       const monthlyRate  = (annualRate / 100) / 12;
       const numPayments  = termYears * 12;
 
@@ -330,16 +343,20 @@
       const downPct = homePrice > 0 ? (downPayment / homePrice) : 0;
       const pmi = downPct < 0.20 ? (loanAmount * 0.005) / 12 : 0;
 
-      const total = pi + taxMonthly + pmi + monthlyHOA;
+      // Homeowners insurance monthly
+      const insMonthly = (parseFloat(document.getElementById('insurance').value) || 0) / 12;
+
+      const total = pi + taxMonthly + insMonthly + pmi + monthlyHOA;
 
       document.getElementById('res-principal').textContent = fmt(pi);
       document.getElementById('res-tax').textContent       = fmt(taxMonthly);
+      document.getElementById('res-insurance').textContent  = fmt(insMonthly);
       document.getElementById('res-pmi').textContent       = fmt(pmi);
       document.getElementById('res-hoa').textContent       = fmt(monthlyHOA);
       document.getElementById('res-total').textContent     = fmt(total);
 
       // Store for lead submission
-      window._calcResults = { homePrice, downPayment, loanAmount, annualRate, termYears, pi, taxMonthly, pmi, monthlyHOA, total };
+      window._calcResults = { homePrice, downPayment, loanAmount, annualRate, termYears, pi, taxMonthly, insMonthly, pmi, monthlyHOA, total };
 
       document.getElementById('results').style.display = 'block';
       document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
