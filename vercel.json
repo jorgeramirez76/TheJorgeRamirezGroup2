@@ -4,11 +4,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/blog/best-nj-towns-for-families.html",
-      "destination": "/blog/best-nj-towns-for-families-2026",
-      "permanent": true
-    },
-    {
       "source": "/blog/best-nj-towns-for-families",
       "destination": "/blog/best-nj-towns-for-families-2026",
       "permanent": true
