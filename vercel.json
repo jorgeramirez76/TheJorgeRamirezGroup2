@@ -1468,6 +1468,15 @@
           "value": "public, max-age=86400, must-revalidate"
         }
       ]
+    },
+    {
+      "source": "/tools/(blog-automation|seo-optimizer)/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }
