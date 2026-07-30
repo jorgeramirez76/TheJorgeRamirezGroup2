@@ -1423,6 +1423,11 @@
       "source": "/communities/woodbridge",
       "destination": "/towns/woodbridge",
       "permanent": true
+    },
+    {
+      "source": "/es/ai-autoridad",
+      "destination": "/es/ai-authority",
+      "permanent": true
     }
   ],
   "headers": [
