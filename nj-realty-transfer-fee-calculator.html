@@ -397,7 +397,7 @@ function calcRTF(){
   if(gpf.fee>0){ rows.push({label:'Graduated Percent Fee \u2014 '+gpf.label+' (seller, P.L.2025 c.69)', amt:price, fee:gpf.fee}); }
   document.getElementById('tiers').innerHTML=
     rows.map(r=>`<div class="tier-row"><span>${r.label} on ${money(r.amt)}</span><span>${money(r.fee)}</span></div>`).join('')+
-    `<div class="tier-row"><span>TOTAL RTF</span><span>${money(total)}</span></div>`;
+    `<div class="tier-row"><span>TOTAL</span><span>${money(grand)}</span></div>`;
   document.getElementById('results').classList.add('show');
   document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
 }

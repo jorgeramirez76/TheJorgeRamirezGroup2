@@ -267,6 +267,10 @@
 
         function calcNet() {
             const salePrice = parseFloat(document.getElementById('salePrice').value) || 0;
+            if (salePrice <= 0) {
+                document.getElementById('results').style.display = 'none';
+                return;
+            }
             const payoff = parseFloat(document.getElementById('payoff').value) || 0;
             const commPct = parseFloat(document.getElementById('commission').value) || 0;
             const attorney = parseFloat(document.getElementById('attorney').value) || 0;
