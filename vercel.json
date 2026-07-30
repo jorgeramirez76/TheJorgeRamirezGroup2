@@ -733,6 +733,696 @@
       "source": "/realtor",
       "destination": "/communities",
       "permanent": true
+    },
+    {
+      "source": "/communities/basking-ridge",
+      "destination": "/towns/basking-ridge",
+      "permanent": true
+    },
+    {
+      "source": "/communities/bayonne",
+      "destination": "/towns/bayonne",
+      "permanent": true
+    },
+    {
+      "source": "/communities/bedminster",
+      "destination": "/towns/bedminster",
+      "permanent": true
+    },
+    {
+      "source": "/communities/berkeley-heights",
+      "destination": "/towns/berkeley-heights",
+      "permanent": true
+    },
+    {
+      "source": "/communities/bernards-township",
+      "destination": "/towns/bernards-township",
+      "permanent": true
+    },
+    {
+      "source": "/communities/bernardsville",
+      "destination": "/towns/bernardsville",
+      "permanent": true
+    },
+    {
+      "source": "/communities/bloomfield",
+      "destination": "/towns/bloomfield",
+      "permanent": true
+    },
+    {
+      "source": "/communities/boonton-township",
+      "destination": "/towns/boonton-township",
+      "permanent": true
+    },
+    {
+      "source": "/communities/boonton",
+      "destination": "/towns/boonton",
+      "permanent": true
+    },
+    {
+      "source": "/communities/bound-brook",
+      "destination": "/towns/bound-brook",
+      "permanent": true
+    },
+    {
+      "source": "/communities/branchburg",
+      "destination": "/towns/branchburg",
+      "permanent": true
+    },
+    {
+      "source": "/communities/bridgewater",
+      "destination": "/towns/bridgewater",
+      "permanent": true
+    },
+    {
+      "source": "/communities/butler",
+      "destination": "/towns/butler",
+      "permanent": true
+    },
+    {
+      "source": "/communities/caldwell",
+      "destination": "/towns/caldwell",
+      "permanent": true
+    },
+    {
+      "source": "/communities/carteret",
+      "destination": "/towns/carteret",
+      "permanent": true
+    },
+    {
+      "source": "/communities/chatham-borough",
+      "destination": "/towns/chatham-borough",
+      "permanent": true
+    },
+    {
+      "source": "/communities/chatham-township",
+      "destination": "/towns/chatham-township",
+      "permanent": true
+    },
+    {
+      "source": "/communities/chatham",
+      "destination": "/towns/chatham",
+      "permanent": true
+    },
+    {
+      "source": "/communities/chester-borough",
+      "destination": "/towns/chester-borough",
+      "permanent": true
+    },
+    {
+      "source": "/communities/chester-township",
+      "destination": "/towns/chester-township",
+      "permanent": true
+    },
+    {
+      "source": "/communities/clark",
+      "destination": "/towns/clark",
+      "permanent": true
+    },
+    {
+      "source": "/communities/cranbury",
+      "destination": "/towns/cranbury",
+      "permanent": true
+    },
+    {
+      "source": "/communities/cranford",
+      "destination": "/towns/cranford",
+      "permanent": true
+    },
+    {
+      "source": "/communities/denville",
+      "destination": "/towns/denville",
+      "permanent": true
+    },
+    {
+      "source": "/communities/dover",
+      "destination": "/towns/dover",
+      "permanent": true
+    },
+    {
+      "source": "/communities/dunellen",
+      "destination": "/towns/dunellen",
+      "permanent": true
+    },
+    {
+      "source": "/communities/east-brunswick",
+      "destination": "/towns/east-brunswick",
+      "permanent": true
+    },
+    {
+      "source": "/communities/east-hanover",
+      "destination": "/towns/east-hanover",
+      "permanent": true
+    },
+    {
+      "source": "/communities/east-newark",
+      "destination": "/towns/east-newark",
+      "permanent": true
+    },
+    {
+      "source": "/communities/edison",
+      "destination": "/towns/edison",
+      "permanent": true
+    },
+    {
+      "source": "/communities/elizabeth",
+      "destination": "/towns/elizabeth",
+      "permanent": true
+    },
+    {
+      "source": "/communities/fanwood",
+      "destination": "/towns/fanwood",
+      "permanent": true
+    },
+    {
+      "source": "/communities/far-hills",
+      "destination": "/towns/far-hills",
+      "permanent": true
+    },
+    {
+      "source": "/communities/florham-park",
+      "destination": "/towns/florham-park",
+      "permanent": true
+    },
+    {
+      "source": "/communities/franklin-township",
+      "destination": "/towns/franklin-township",
+      "permanent": true
+    },
+    {
+      "source": "/communities/garwood",
+      "destination": "/towns/garwood",
+      "permanent": true
+    },
+    {
+      "source": "/communities/glen-ridge",
+      "destination": "/towns/glen-ridge",
+      "permanent": true
+    },
+    {
+      "source": "/communities/green-brook",
+      "destination": "/towns/green-brook",
+      "permanent": true
+    },
+    {
+      "source": "/communities/guttenberg",
+      "destination": "/towns/guttenberg",
+      "permanent": true
+    },
+    {
+      "source": "/communities/hanover",
+      "destination": "/towns/hanover",
+      "permanent": true
+    },
+    {
+      "source": "/communities/harding",
+      "destination": "/towns/harding",
+      "permanent": true
+    },
+    {
+      "source": "/communities/harrison",
+      "destination": "/towns/harrison",
+      "permanent": true
+    },
+    {
+      "source": "/communities/helmetta",
+      "destination": "/towns/helmetta",
+      "permanent": true
+    },
+    {
+      "source": "/communities/highland-park",
+      "destination": "/towns/highland-park",
+      "permanent": true
+    },
+    {
+      "source": "/communities/hillsborough",
+      "destination": "/towns/hillsborough",
+      "permanent": true
+    },
+    {
+      "source": "/communities/hillside",
+      "destination": "/towns/hillside",
+      "permanent": true
+    },
+    {
+      "source": "/communities/hoboken",
+      "destination": "/towns/hoboken",
+      "permanent": true
+    },
+    {
+      "source": "/communities/jamesburg",
+      "destination": "/towns/jamesburg",
+      "permanent": true
+    },
+    {
+      "source": "/communities/jefferson",
+      "destination": "/towns/jefferson",
+      "permanent": true
+    },
+    {
+      "source": "/communities/jersey-city",
+      "destination": "/towns/jersey-city",
+      "permanent": true
+    },
+    {
+      "source": "/communities/kearny",
+      "destination": "/towns/kearny",
+      "permanent": true
+    },
+    {
+      "source": "/communities/kenilworth",
+      "destination": "/towns/kenilworth",
+      "permanent": true
+    },
+    {
+      "source": "/communities/kinnelon",
+      "destination": "/towns/kinnelon",
+      "permanent": true
+    },
+    {
+      "source": "/communities/lincoln-park",
+      "destination": "/towns/lincoln-park",
+      "permanent": true
+    },
+    {
+      "source": "/communities/linden",
+      "destination": "/towns/linden",
+      "permanent": true
+    },
+    {
+      "source": "/communities/livingston",
+      "destination": "/towns/livingston",
+      "permanent": true
+    },
+    {
+      "source": "/communities/long-hill",
+      "destination": "/towns/long-hill",
+      "permanent": true
+    },
+    {
+      "source": "/communities/madison",
+      "destination": "/towns/madison",
+      "permanent": true
+    },
+    {
+      "source": "/communities/manville",
+      "destination": "/towns/manville",
+      "permanent": true
+    },
+    {
+      "source": "/communities/maplewood",
+      "destination": "/towns/maplewood",
+      "permanent": true
+    },
+    {
+      "source": "/communities/mendham-borough",
+      "destination": "/towns/mendham-borough",
+      "permanent": true
+    },
+    {
+      "source": "/communities/mendham-township",
+      "destination": "/towns/mendham-township",
+      "permanent": true
+    },
+    {
+      "source": "/communities/metuchen",
+      "destination": "/towns/metuchen",
+      "permanent": true
+    },
+    {
+      "source": "/communities/middlesex-borough",
+      "destination": "/towns/middlesex-borough",
+      "permanent": true
+    },
+    {
+      "source": "/communities/middlesex",
+      "destination": "/towns/middlesex",
+      "permanent": true
+    },
+    {
+      "source": "/communities/millburn",
+      "destination": "/towns/millburn",
+      "permanent": true
+    },
+    {
+      "source": "/communities/millstone",
+      "destination": "/towns/millstone",
+      "permanent": true
+    },
+    {
+      "source": "/communities/milltown",
+      "destination": "/towns/milltown",
+      "permanent": true
+    },
+    {
+      "source": "/communities/mine-hill",
+      "destination": "/towns/mine-hill",
+      "permanent": true
+    },
+    {
+      "source": "/communities/monroe-township",
+      "destination": "/towns/monroe-township",
+      "permanent": true
+    },
+    {
+      "source": "/communities/montclair",
+      "destination": "/towns/montclair",
+      "permanent": true
+    },
+    {
+      "source": "/communities/montgomery",
+      "destination": "/towns/montgomery",
+      "permanent": true
+    },
+    {
+      "source": "/communities/montville",
+      "destination": "/towns/montville",
+      "permanent": true
+    },
+    {
+      "source": "/communities/morris-plains",
+      "destination": "/towns/morris-plains",
+      "permanent": true
+    },
+    {
+      "source": "/communities/morris-township",
+      "destination": "/towns/morris-township",
+      "permanent": true
+    },
+    {
+      "source": "/communities/morristown",
+      "destination": "/towns/morristown",
+      "permanent": true
+    },
+    {
+      "source": "/communities/mount-arlington",
+      "destination": "/towns/mount-arlington",
+      "permanent": true
+    },
+    {
+      "source": "/communities/mount-olive",
+      "destination": "/towns/mount-olive",
+      "permanent": true
+    },
+    {
+      "source": "/communities/mountain-lakes",
+      "destination": "/towns/mountain-lakes",
+      "permanent": true
+    },
+    {
+      "source": "/communities/mountainside",
+      "destination": "/towns/mountainside",
+      "permanent": true
+    },
+    {
+      "source": "/communities/netcong",
+      "destination": "/towns/netcong",
+      "permanent": true
+    },
+    {
+      "source": "/communities/new-brunswick",
+      "destination": "/towns/new-brunswick",
+      "permanent": true
+    },
+    {
+      "source": "/communities/new-providence",
+      "destination": "/towns/new-providence",
+      "permanent": true
+    },
+    {
+      "source": "/communities/newark",
+      "destination": "/towns/newark",
+      "permanent": true
+    },
+    {
+      "source": "/communities/north-bergen",
+      "destination": "/towns/north-bergen",
+      "permanent": true
+    },
+    {
+      "source": "/communities/north-brunswick",
+      "destination": "/towns/north-brunswick",
+      "permanent": true
+    },
+    {
+      "source": "/communities/north-caldwell",
+      "destination": "/towns/north-caldwell",
+      "permanent": true
+    },
+    {
+      "source": "/communities/north-plainfield",
+      "destination": "/towns/north-plainfield",
+      "permanent": true
+    },
+    {
+      "source": "/communities/nutley",
+      "destination": "/towns/nutley",
+      "permanent": true
+    },
+    {
+      "source": "/communities/old-bridge",
+      "destination": "/towns/old-bridge",
+      "permanent": true
+    },
+    {
+      "source": "/communities/orange",
+      "destination": "/towns/orange",
+      "permanent": true
+    },
+    {
+      "source": "/communities/parsippany-troy-hills",
+      "destination": "/towns/parsippany-troy-hills",
+      "permanent": true
+    },
+    {
+      "source": "/communities/peapack-gladstone",
+      "destination": "/towns/peapack-gladstone",
+      "permanent": true
+    },
+    {
+      "source": "/communities/pequannock-township",
+      "destination": "/towns/pequannock-township",
+      "permanent": true
+    },
+    {
+      "source": "/communities/perth-amboy",
+      "destination": "/towns/perth-amboy",
+      "permanent": true
+    },
+    {
+      "source": "/communities/piscataway",
+      "destination": "/towns/piscataway",
+      "permanent": true
+    },
+    {
+      "source": "/communities/plainfield",
+      "destination": "/towns/plainfield",
+      "permanent": true
+    },
+    {
+      "source": "/communities/plainsboro",
+      "destination": "/towns/plainsboro",
+      "permanent": true
+    },
+    {
+      "source": "/communities/rahway",
+      "destination": "/towns/rahway",
+      "permanent": true
+    },
+    {
+      "source": "/communities/randolph",
+      "destination": "/towns/randolph",
+      "permanent": true
+    },
+    {
+      "source": "/communities/raritan",
+      "destination": "/towns/raritan",
+      "permanent": true
+    },
+    {
+      "source": "/communities/riverdale",
+      "destination": "/towns/riverdale",
+      "permanent": true
+    },
+    {
+      "source": "/communities/rockaway-borough",
+      "destination": "/towns/rockaway-borough",
+      "permanent": true
+    },
+    {
+      "source": "/communities/rockaway-township",
+      "destination": "/towns/rockaway-township",
+      "permanent": true
+    },
+    {
+      "source": "/communities/rocky-hill",
+      "destination": "/towns/rocky-hill",
+      "permanent": true
+    },
+    {
+      "source": "/communities/roseland",
+      "destination": "/towns/roseland",
+      "permanent": true
+    },
+    {
+      "source": "/communities/roselle-park",
+      "destination": "/towns/roselle-park",
+      "permanent": true
+    },
+    {
+      "source": "/communities/roselle",
+      "destination": "/towns/roselle",
+      "permanent": true
+    },
+    {
+      "source": "/communities/roxbury",
+      "destination": "/towns/roxbury",
+      "permanent": true
+    },
+    {
+      "source": "/communities/sayreville",
+      "destination": "/towns/sayreville",
+      "permanent": true
+    },
+    {
+      "source": "/communities/scotch-plains",
+      "destination": "/towns/scotch-plains",
+      "permanent": true
+    },
+    {
+      "source": "/communities/secaucus",
+      "destination": "/towns/secaucus",
+      "permanent": true
+    },
+    {
+      "source": "/communities/short-hills",
+      "destination": "/towns/short-hills",
+      "permanent": true
+    },
+    {
+      "source": "/communities/somerville",
+      "destination": "/towns/somerville",
+      "permanent": true
+    },
+    {
+      "source": "/communities/south-amboy",
+      "destination": "/towns/south-amboy",
+      "permanent": true
+    },
+    {
+      "source": "/communities/south-bound-brook",
+      "destination": "/towns/south-bound-brook",
+      "permanent": true
+    },
+    {
+      "source": "/communities/south-brunswick",
+      "destination": "/towns/south-brunswick",
+      "permanent": true
+    },
+    {
+      "source": "/communities/south-orange",
+      "destination": "/towns/south-orange",
+      "permanent": true
+    },
+    {
+      "source": "/communities/south-plainfield",
+      "destination": "/towns/south-plainfield",
+      "permanent": true
+    },
+    {
+      "source": "/communities/south-river",
+      "destination": "/towns/south-river",
+      "permanent": true
+    },
+    {
+      "source": "/communities/spotswood",
+      "destination": "/towns/spotswood",
+      "permanent": true
+    },
+    {
+      "source": "/communities/springfield",
+      "destination": "/towns/springfield",
+      "permanent": true
+    },
+    {
+      "source": "/communities/summit",
+      "destination": "/towns/summit",
+      "permanent": true
+    },
+    {
+      "source": "/communities/union-city",
+      "destination": "/towns/union-city",
+      "permanent": true
+    },
+    {
+      "source": "/communities/union",
+      "destination": "/towns/union",
+      "permanent": true
+    },
+    {
+      "source": "/communities/verona",
+      "destination": "/towns/verona",
+      "permanent": true
+    },
+    {
+      "source": "/communities/victory-gardens",
+      "destination": "/towns/victory-gardens",
+      "permanent": true
+    },
+    {
+      "source": "/communities/warren-township",
+      "destination": "/towns/warren-township",
+      "permanent": true
+    },
+    {
+      "source": "/communities/washington-township-morris",
+      "destination": "/towns/washington-township-morris",
+      "permanent": true
+    },
+    {
+      "source": "/communities/watchung",
+      "destination": "/towns/watchung",
+      "permanent": true
+    },
+    {
+      "source": "/communities/weehawken",
+      "destination": "/towns/weehawken",
+      "permanent": true
+    },
+    {
+      "source": "/communities/west-caldwell",
+      "destination": "/towns/west-caldwell",
+      "permanent": true
+    },
+    {
+      "source": "/communities/west-new-york",
+      "destination": "/towns/west-new-york",
+      "permanent": true
+    },
+    {
+      "source": "/communities/west-orange",
+      "destination": "/towns/west-orange",
+      "permanent": true
+    },
+    {
+      "source": "/communities/westfield",
+      "destination": "/towns/westfield",
+      "permanent": true
+    },
+    {
+      "source": "/communities/wharton",
+      "destination": "/towns/wharton",
+      "permanent": true
+    },
+    {
+      "source": "/communities/winfield",
+      "destination": "/towns/winfield",
+      "permanent": true
+    },
+    {
+      "source": "/communities/woodbridge",
+      "destination": "/towns/woodbridge",
+      "permanent": true
     }
   ],
   "headers": [
