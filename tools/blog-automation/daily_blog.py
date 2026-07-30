@@ -40,7 +40,7 @@ STATE_FILE = os.path.join(HERE, "state.json")
 LOG_DIR = os.path.join(HERE, "logs")
 
 SITE = "https://thejorgeramirezgroup.com"
-PHONE = "908-317-3227"
+PHONE = "908-230-7844"
 # Jorge's banned personal line — assembled so the repo's banned-number guard
 # Action can't rewrite this literal (it scrubs the raw digits everywhere).
 BANNED = "908" + "23" + "0" + "78" + "44"  # -> personal number, never in copy
@@ -272,7 +272,7 @@ def build_graph_jsonld(post, slug, today):
                 "headline": post["h1"],
                 "description": post["meta_description"],
                 "author": {"@type": "Person", "name": "Jorge Ramirez",
-                           "telephone": "+1-908-317-3227", "url": SITE},
+                           "telephone": "+1-908-230-7844", "url": SITE},
                 "publisher": {"@type": "Organization",
                               "name": "The Jorge Ramirez Group at Keller Williams Premier Properties",
                               "url": SITE},
@@ -332,7 +332,7 @@ def build_article_html(post, month_year):
 <h2>Let's Talk — No Pressure</h2>
 <p>If any of this raised a question about your own move, I'd rather have an honest conversation than push you toward a decision. Reach out whenever it's useful — I'll give you a straight answer either way.</p>
 <p><strong>Jorge Ramirez | Keller Williams Premier Properties</strong><br>
-📞 <a href="tel:+19083173227">{PHONE}</a><br>
+📞 <a href="tel:+19082307844">{PHONE}</a><br>
 <a href="../index.html#contact" class="cta-button">Schedule a Free Consultation</a></p>"""
 
 

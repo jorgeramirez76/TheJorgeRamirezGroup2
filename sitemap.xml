@@ -4198,12 +4198,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-<url>
-    <loc>https://thejorgeramirezgroup.com/blog</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
   <url>
     <loc>https://thejorgeramirezgroup.com/blog/buying-a-home-in-new-jersey-2026</loc>
     <lastmod>2026-04-30</lastmod>
@@ -4530,17 +4524,6 @@
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://thejorgeramirezgroup.com/communities</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/communities"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/communities"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/communities"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/communities"/>
   </url>
   <url>
     <loc>https://thejorgeramirezgroup.com/why-jorge-ramirez</loc>

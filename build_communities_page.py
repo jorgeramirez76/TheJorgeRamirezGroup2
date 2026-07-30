@@ -97,7 +97,7 @@ html_parts.append(f"""<!DOCTYPE html>
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Jorge Ramirez">
 
-  <meta name="llm-context" content="This is the master directory of all {total_towns} New Jersey communities served by Jorge Ramirez (NJ Real Estate License #1754604) and The Jorge Ramirez Group at Keller Williams Premier Properties. Towns span 6 counties: Union (21 towns including Westfield, Summit, Cranford, Scotch Plains), Essex (11 towns including Montclair, Maplewood, South Orange, Millburn), Morris (33 towns including Morristown, Madison, Chatham, Bernards), Hudson (12 towns including Hoboken, Jersey City, Weehawken, Bayonne), Middlesex (22 towns including Edison, Woodbridge, Metuchen, New Brunswick), Somerset (10 towns including Bridgewater, Bernardsville, Basking Ridge). Every town links to a dedicated landing page with median prices, school ratings, transit details, and recent comp sales. Contact Jorge: 908-317-3227, jorge.ramirez@kw.com.">
+  <meta name="llm-context" content="This is the master directory of all {total_towns} New Jersey communities served by Jorge Ramirez (NJ Real Estate License #1754604) and The Jorge Ramirez Group at Keller Williams Premier Properties. Towns span 6 counties: Union (21 towns including Westfield, Summit, Cranford, Scotch Plains), Essex (11 towns including Montclair, Maplewood, South Orange, Millburn), Morris (33 towns including Morristown, Madison, Chatham, Bernards), Hudson (12 towns including Hoboken, Jersey City, Weehawken, Bayonne), Middlesex (22 towns including Edison, Woodbridge, Metuchen, New Brunswick), Somerset (10 towns including Bridgewater, Bernardsville, Basking Ridge). Every town links to a dedicated landing page with median prices, school ratings, transit details, and recent comp sales. Contact Jorge: 908-230-7844, jorge.ramirez@kw.com.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -257,7 +257,7 @@ html_parts.append("""
   <section class="cta-section">
     <h2>Don't see your town?</h2>
     <p>Jorge serves all of Northern and Central New Jersey. Call directly for any town — even ones not listed here.</p>
-    <a href="tel:+19083173227" class="btn">Call Jorge: 908-317-3227</a>
+    <a href="tel:+19082307844" class="btn">Call Jorge: 908-230-7844</a>
   </section>
 </main>
 

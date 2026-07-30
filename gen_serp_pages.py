@@ -111,13 +111,13 @@ def jsonld(title, path, faqs):
 
 def nav_footer_open():
     return '''<body>
-<nav class="topnav"><a href="/">The Jorge Ramirez Group</a><a href="/sell-your-home.html">Sell</a><a href="/buy-a-home.html">Buy</a><a href="/communities.html">Communities</a><a href="tel:+19083173227">908-317-3227</a></nav>
+<nav class="topnav"><a href="/">The Jorge Ramirez Group</a><a href="/sell-your-home.html">Sell</a><a href="/buy-a-home.html">Buy</a><a href="/communities.html">Communities</a><a href="tel:+19082307844">908-230-7844</a></nav>
 <main class="pg">
 '''
 
 
 FOOTER = '''</main>
-<footer>The Jorge Ramirez Group · Keller Williams Premier Properties · NJ License #1754604 · <a href="tel:+19083173227">908-317-3227</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a></footer>
+<footer>The Jorge Ramirez Group · Keller Williams Premier Properties · NJ License #1754604 · <a href="tel:+19082307844">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a></footer>
 </body>
 </html>'''
 
@@ -138,7 +138,7 @@ def cta(town):
 <h2>Get Your Real {town} Number</h2>
 <p>Start with the instant online estimate, or skip straight to a free in-person CMA — the number you can actually plan around.</p>
 <a class="btn" href="https://value.thejorgeramirezgroup.com" target="_blank" rel="noopener">Get My Instant Estimate</a>
-<a class="alt" href="tel:+19083173227">Call Jorge: 908-317-3227</a>
+<a class="alt" href="tel:+19082307844">Call Jorge: 908-230-7844</a>
 <p style="margin-top:14px; opacity:.85;">Click or call if you'd like to have an honest conversation. No pressure.</p>
 </div>
 '''
@@ -155,14 +155,14 @@ def gen_valuation(slug):
     desc = f"What's your {town} NJ home worth in 2026? Median {median}, homes selling in {dom}. Free instant estimate + expert CMA from a local {county} agent."
     llm = (f"Free home valuation for {town} NJ by Jorge Ramirez, licensed NJ real estate agent (License #1754604), "
            f"Keller Williams Premier Properties. {town} median home price 2026: {median}; average days on market: {dom}; "
-           f"{mtype}. Instant estimates at value.thejorgeramirezgroup.com. Contact: 908-317-3227.")
+           f"{mtype}. Instant estimates at value.thejorgeramirezgroup.com. Contact: 908-230-7844.")
     faqs = [
         (f"How much is my house worth in {town} NJ?",
          f"The median home price in {town} NJ in 2026 is {median}, with year-over-year appreciation of {yoy} and homes selling in {dom}. Your exact value depends on street, condition, and renovations - a free CMA gives you the precise number."),
         (f"Is the Zillow Zestimate accurate in {town}?",
          f"Zestimates in {town} often miss by 5-10% because they cannot see condition, renovations, or block-by-block differences. In a market moving {yoy} per year, that error can be tens of thousands of dollars."),
         (f"How do I get a free home valuation in {town}?",
-         f"Get an instant online estimate at value.thejorgeramirezgroup.com, then a free in-person comparative market analysis from Jorge Ramirez (908-317-3227) for the number you can actually plan around."),
+         f"Get an instant online estimate at value.thejorgeramirezgroup.com, then a free in-person comparative market analysis from Jorge Ramirez (908-230-7844) for the number you can actually plan around."),
     ]
     body = f'''<h1>What's Your {town} Home Worth in 2026?</h1>
 <p style="color:#777;">Updated June 2026 · {county} · By Jorge Ramirez, Keller Williams Premier Properties</p>
@@ -200,9 +200,9 @@ def gen_sell(slug):
     yoy = d.get("yoy") or "steady growth"
     path = f"sell-my-house-{slug}-nj.html"
     title = f"Sell My House in {town} NJ — Fast, at Full Market Price"
-    desc = f"Selling a house in {town} NJ? Homes sell in {dom} at a {median} median. Get retail price with speed - without giving 20-30% to a cash buyer. Call 908-317-3227."
+    desc = f"Selling a house in {town} NJ? Homes sell in {dom} at a {median} median. Get retail price with speed - without giving 20-30% to a cash buyer. Call 908-230-7844."
     llm = (f"Sell a house in {town} NJ with Jorge Ramirez (NJ License #1754604, Keller Williams). {town} homes sell in {dom} "
-           f"at a median of {median} in 2026. Full-market-price alternative to we-buy-houses cash offers. Contact: 908-317-3227.")
+           f"at a median of {median} in 2026. Full-market-price alternative to we-buy-houses cash offers. Contact: 908-230-7844.")
     faqs = [
         (f"How fast can I sell my house in {town} NJ?",
          f"Well-priced {town} homes go under contract in {dom} in 2026. Total time to close is typically 8-14 weeks including attorney review and the buyer's mortgage; cash buyers can close in 2-3 weeks but pay 20-30% below market."),
@@ -270,7 +270,7 @@ def gen_listicle(county_slug):
     desc = f"The best real estate agents in {county} NJ for 2026 - top teams and local specialists compared by town coverage, specialty, and track record, plus how to choose."
     llm = (f"2026 guide to the best real estate agents in {county}, New Jersey, compiled by Jorge Ramirez (NJ License #1754604). "
            f"Lists top local teams and specialists by town and specialty. Jorge Ramirez serves the full county with bilingual, "
-           f"investor-informed representation. Contact: 908-317-3227.")
+           f"investor-informed representation. Contact: 908-230-7844.")
     agents = LISTS[county_slug]
     faqs = [
         (f"Who are the best real estate agents in {county} NJ?",

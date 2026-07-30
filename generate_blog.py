@@ -11,10 +11,10 @@ NAV = """  <nav class="site-nav"><div class="nav-container">
   </div></nav>"""
 
 FOOTER = """  <footer class="site-footer"><div class="container">
-    <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · 908-317-3227</p>
+    <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · 908-230-7844</p>
   </div></footer>"""
 
-AUTHOR = {"@type": "Person", "name": "Jorge Ramirez", "telephone": "+1-908-317-3227", "url": "https://thejorgeramirezgroup.com"}
+AUTHOR = {"@type": "Person", "name": "Jorge Ramirez", "telephone": "+1-908-230-7844", "url": "https://thejorgeramirezgroup.com"}
 PUBLISHER = {"@type": "Organization", "name": "The Jorge Ramirez Group at Keller Williams Premier Properties", "url": "https://thejorgeramirezgroup.com"}
 
 # Town data
@@ -336,7 +336,7 @@ def schema(headline, description, filename, faqs):
             "@type": "Article",
             "headline": headline,
             "description": description,
-            "author": {"@type": "Person", "name": "Jorge Ramirez", "telephone": "+1-908-317-3227", "url": "https://thejorgeramirezgroup.com"},
+            "author": {"@type": "Person", "name": "Jorge Ramirez", "telephone": "+1-908-230-7844", "url": "https://thejorgeramirezgroup.com"},
             "publisher": {"@type": "Organization", "name": "The Jorge Ramirez Group at Keller Williams Premier Properties", "url": "https://thejorgeramirezgroup.com"},
             "datePublished": "2026-03-08",
             "dateModified": "2026-03-08",
@@ -428,7 +428,7 @@ def buying_post(town_key):
   <li><strong>Don't skip the inspection</strong> — many {name} homes are 50–80 years old; a thorough inspection protects you.</li>
 </ol>
 
-<p>Ready to start your search? I work exclusively in this market and know every street. Call or text me at <strong><a href="tel:+19083173227">908-317-3227</a></strong> and I'll put together a personalized list of homes that match your criteria.</p>
+<p>Ready to start your search? I work exclusively in this market and know every street. Call or text me at <strong><a href="tel:+19082307844">908-230-7844</a></strong> and I'll put together a personalized list of homes that match your criteria.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div class="faq-section">{faq_html}
@@ -437,7 +437,7 @@ def buying_post(town_key):
 <h2>Let's Find Your Home in {name}</h2>
 <p>Whether you're relocating from the city, upsizing from a nearby town, or buying your first home in NJ, I'm here to guide you every step of the way. As a local expert with Keller Williams Premier Properties in Summit, I know the {name} market inside and out.</p>
 <p><strong>Jorge Ramirez | Keller Williams Premier Properties</strong><br>
-📞 <a href="tel:+19083173227">908-317-3227</a><br>
+📞 <a href="tel:+19082307844">908-230-7844</a><br>
 <a href="../index.html#contact" class="cta-button">Schedule a Free Buyer Consultation</a></p>
 </article></div></main>
 {FOOTER}
@@ -522,7 +522,7 @@ def selling_post(town_key):
   <li>Offer review and negotiation — I fight for your bottom line</li>
 </ul>
 
-<p>Want to know what your home is worth in today's market? Call or text me at <strong><a href="tel:+19083173227">908-317-3227</a></strong> for a free, no-obligation home valuation.</p>
+<p>Want to know what your home is worth in today's market? Call or text me at <strong><a href="tel:+19082307844">908-230-7844</a></strong> for a free, no-obligation home valuation.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div class="faq-section">{faq_html}
@@ -531,7 +531,7 @@ def selling_post(town_key):
 <h2>Ready to Sell Your {name} Home?</h2>
 <p>Let's talk about your goals and timeline. I'll provide a detailed market analysis, a customized pricing strategy, and a marketing plan designed to get you the best possible result — with the least stress.</p>
 <p><strong>Jorge Ramirez | Keller Williams Premier Properties</strong><br>
-📞 <a href="tel:+19083173227">908-317-3227</a><br>
+📞 <a href="tel:+19082307844">908-230-7844</a><br>
 <a href="../index.html#contact" class="cta-button">Get Your Free Home Valuation</a></p>
 </article></div></main>
 {FOOTER}
@@ -628,7 +628,7 @@ def market_post(town_key):
 <h2>Get a Personalized {name} Market Analysis</h2>
 <p>Numbers tell part of the story — but understanding what they mean for your specific home or search requires local expertise. I provide free, no-obligation market analyses for sellers, and customized neighborhood searches for buyers.</p>
 <p><strong>Jorge Ramirez | Keller Williams Premier Properties</strong><br>
-📞 <a href="tel:+19083173227">908-317-3227</a><br>
+📞 <a href="tel:+19082307844">908-230-7844</a><br>
 <a href="../index.html#contact" class="cta-button">Request Your Free Market Analysis</a></p>
 </article></div></main>
 {FOOTER}
