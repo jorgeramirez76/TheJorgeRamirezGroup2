@@ -133,8 +133,18 @@
       pointer-events: none;
     }
     .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-    .hero-county { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.15em; text-transform: }
-    </style>
+    .hero-county { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 12px; }
+    .hero h1 {
+      font-family:'Playfair Display',serif;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.12;
+      margin-bottom: 18px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-tagline { font-size: 1.12rem; color: rgba(255,255,255,0.8); max-width: 640px; margin-bottom: 30px; }
+  </style>
   </head>
 
   <body>

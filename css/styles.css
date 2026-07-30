@@ -3,7 +3,7 @@
     --dark-red: #8B0D22;
     --gold: #B8962E;
     --gold-light: #D4AF5A;
-    --gold-text: #8A6D14; /* AA-legible gold for text on light backgrounds */
+    --gold-text: #8A6D14; /* AA-legible gold for text on light backgrounds — 4.91:1 on #FFFFFF */
     --black: #000000;
     --dark-bg: #0A0A0A;
     --dark-gray: #1A1A1A;
@@ -260,6 +260,16 @@ a.logo:hover .logo-img {
     margin-bottom: 0.4em;
     opacity: 0;
     animation: fadeSlideDown 0.8s ease 0.2s forwards;
+}
+
+/* Town-page hero eyebrow (county line above the H1) */
+.hero-county {
+    color: var(--gold);
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 12px;
 }
 
 .hero-name {
