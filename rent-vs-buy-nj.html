@@ -270,7 +270,7 @@ function calcRentVsBuy(){
   const loan=price-down;
   const mRate=rate/12;
   const n=360;
-  const mortgage=loan*(mRate*Math.pow(1+mRate,n))/(Math.pow(1+mRate,n)-1);
+  const mortgage = mRate===0 ? loan/n : loan*(mRate*Math.pow(1+mRate,n))/(Math.pow(1+mRate,n)-1);
   // The buyer-paid 1% "mansion tax" was ELIMINATED by P.L.2025 c.69, which struck "grantee"
   // and inserted "grantor" in N.J.S.A. 46:15-7.2, for deeds submitted for recording on or
   // after 2025-07-10. A buyer above $1,000,000 now owes nothing; the seller pays a
@@ -313,7 +313,7 @@ function calcRentVsBuy(){
     '<div class="line"><span>'+years+'y mortgage payments</span><span>'+money(totalMortgage)+'</span></div>'+
     '<div class="line"><span>'+years+'y NJ property tax</span><span>'+money(totalTax)+'</span></div>'+
     '<div class="line"><span>'+years+'y maintenance + ins.</span><span>'+money(totalMaint+totalIns)+'</span></div>'+
-    '<div class="line"><span>Net sale proceeds</span><span style="color:#0B6B3A">-'+money(netProceeds)+'</span></div>'+
+    '<div class="line"><span>Net sale proceeds</span><span style="color:#0B6B3A">'+(netProceeds>=0?'-'+money(netProceeds):money(-netProceeds))+'</span></div>'+
     '<div class="line"><span>NET COST</span><span>'+money(buyNetCost)+'</span></div>';
   document.getElementById('rentCol').innerHTML=
     '<div class="line"><span>'+years+'y rent ('+(+document.getElementById('rentInflation').value)+'%/yr)</span><span>'+money(totalRent)+'</span></div>'+
