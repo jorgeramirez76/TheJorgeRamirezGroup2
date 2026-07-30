@@ -228,6 +228,9 @@
         function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
 
         function calcCierre() {
+            const _p = parseFloat(document.getElementById('price').value) || 0;
+            if (_p <= 0) { document.getElementById('results').style.display='none'; return; }
+
             const price = parseFloat(document.getElementById('price').value) || 0;
             const downPct = parseFloat(document.getElementById('downPct').value) || 0;
             const loanType = document.getElementById('loanType').value;

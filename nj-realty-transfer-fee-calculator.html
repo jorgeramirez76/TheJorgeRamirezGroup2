@@ -360,6 +360,7 @@ function graduatedPercentFee(price){
 }
 function calcRTF(){
   const price=+document.getElementById('price').value;
+  if(!(price>0)){ document.getElementById('results').classList.remove('show'); return; }
   const ex=document.getElementById('exemption').value;
   const reduced = (ex==='senior'||ex==='lowmod');
   const over350 = price > 350000;
@@ -367,9 +368,18 @@ function calcRTF(){
                         : (over350 ? RTF_STD_OVER350 : RTF_STD_UNDER350);
   // New construction: first sale after CO — exempt from RTF
   if(ex==='newconstruction'){
-    document.getElementById('amt').textContent='$0';
-    document.getElementById('pct').textContent='New construction first sale — fully exempt';
-    document.getElementById('tiers').innerHTML='<div class="tier-row"><span>First sale after Certificate of Occupancy</span><span>Exempt</span></div>';
+    const ncGpf = graduatedPercentFee(price);
+    document.getElementById('amt').textContent=money(ncGpf.fee);
+    document.getElementById('pct').textContent = ncGpf.fee>0
+      ? 'Realty Transfer Fee exempt \u2014 but this sale is above $1,000,000, so the seller-paid Graduated Percent Fee is shown below'
+      : 'New construction first sale \u2014 Realty Transfer Fee exempt';
+    let ncRows='<div class="tier-row"><span>Realty Transfer Fee \u2014 first sale after Certificate of Occupancy</span><span>Exempt</span></div>';
+    if(ncGpf.fee>0){
+      ncRows+='<div class="tier-row"><span>Graduated Percent Fee \u2014 '+ncGpf.label+' (seller, P.L.2025 c.69)</span><span>'+money(ncGpf.fee)+'</span></div>'
+            +'<div class="tier-row"><span>TOTAL</span><span>'+money(ncGpf.fee)+'</span></div>'
+            +'<div class="tier-row" style="border:0;font-size:.85rem;opacity:.85"><span>The new-construction exemption is written into the Realty Transfer Fee statute; the Graduated Percent Fee sits in a separate section. Confirm its treatment with your closing attorney.</span><span></span></div>';
+    }
+    document.getElementById('tiers').innerHTML=ncRows;
     document.getElementById('results').classList.add('show');
     document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
     return;

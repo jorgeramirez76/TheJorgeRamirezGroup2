@@ -52,7 +52,7 @@
   "@context":"https://schema.org",
   "@type":"WebApplication",
   "name":"Mapa Interactivo de Líneas de Tren de NJ",
-  "url":"https://thejorgeramirezgroup.com/nj-train-map",
+  "url":"https://thejorgeramirezgroup.com/es/nj-train-map",
   "description":"Mapa geográfico interactivo de las líneas de tren de Nueva Jersey (Midtown Direct, Raritan Valley, Gladstone Branch, Northeast Corridor) con carreteras reales, límites de condado, tiempos de traslado a NYC, precios medios de casa y calificaciones escolares por estación.",
   "applicationCategory":"BusinessApplication",
   "operatingSystem":"Web",
@@ -75,7 +75,7 @@
   "itemListElement":[
     {"@type":"ListItem","position":1,"name":"Inicio","item":"https://thejorgeramirezgroup.com/"},
     {"@type":"ListItem","position":2,"name":"Herramientas para Viajeros","item":"https://thejorgeramirezgroup.com/tools/commute-scorer"},
-    {"@type":"ListItem","position":3,"name":"Mapa de Trenes NJ","item":"https://thejorgeramirezgroup.com/nj-train-map"}
+    {"@type":"ListItem","position":3,"name":"Mapa de Trenes NJ","item":"https://thejorgeramirezgroup.com/es/nj-train-map"}
   ]
 }
 </script>
@@ -309,8 +309,8 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="controls">
       <div class="controls-grid">
         <div>
-          <label class="ctrl-label">Líneas de Tren</label>
-          <div class="line-toggles" id="lineToggles">
+          <span class="ctrl-label" id="lineTogglesLabel">Líneas de Tren</span>
+          <div class="line-toggles" id="lineToggles" role="group" aria-labelledby="lineTogglesLabel">
             <div class="line-pill" data-line="md" data-active="true"><span class="swatch" style="background:var(--line-md);"></span>Midtown Direct</div>
             <div class="line-pill" data-line="gl" data-active="true"><span class="swatch" style="background:var(--line-gl);"></span>Gladstone</div>
             <div class="line-pill" data-line="rv" data-active="true"><span class="swatch" style="background:var(--line-rv);"></span>Raritan Valley</div>
@@ -318,11 +318,11 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
         </div>
         <div>
-          <label class="ctrl-label">Traslado Máximo a NYC: <span class="slider-value" id="commuteValue">90</span> min</label>
+          <label class="ctrl-label" for="commuteSlider">Traslado Máximo a NYC: <span class="slider-value" id="commuteValue">90</span> min</label>
           <input type="range" id="commuteSlider" min="15" max="90" value="90" step="5">
         </div>
         <div>
-          <label class="ctrl-label">Calificación Escolar Mínima: <span class="slider-value" id="schoolValue">1</span>/10</label>
+          <label class="ctrl-label" for="schoolSlider">Calificación Escolar Mínima: <span class="slider-value" id="schoolValue">1</span>/10</label>
           <input type="range" id="schoolSlider" min="1" max="10" value="1" step="1">
         </div>
       </div>

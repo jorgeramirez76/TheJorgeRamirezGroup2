@@ -305,8 +305,8 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="controls">
       <div class="controls-grid">
         <div>
-          <label class="ctrl-label">Train Lines</label>
-          <div class="line-toggles" id="lineToggles">
+          <span class="ctrl-label" id="lineTogglesLabel">Train Lines</span>
+          <div class="line-toggles" id="lineToggles" role="group" aria-labelledby="lineTogglesLabel">
             <div class="line-pill" data-line="md" data-active="true"><span class="swatch" style="background:var(--line-md);"></span>Midtown Direct</div>
             <div class="line-pill" data-line="gl" data-active="true"><span class="swatch" style="background:var(--line-gl);"></span>Gladstone</div>
             <div class="line-pill" data-line="rv" data-active="true"><span class="swatch" style="background:var(--line-rv);"></span>Raritan Valley</div>
@@ -314,11 +314,11 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
         </div>
         <div>
-          <label class="ctrl-label">Max NYC Commute: <span class="slider-value" id="commuteValue">90</span> min</label>
+          <label class="ctrl-label" for="commuteSlider">Max NYC Commute: <span class="slider-value" id="commuteValue">90</span> min</label>
           <input type="range" id="commuteSlider" min="15" max="90" value="90" step="5">
         </div>
         <div>
-          <label class="ctrl-label">Min School Rating: <span class="slider-value" id="schoolValue">1</span>/10</label>
+          <label class="ctrl-label" for="schoolSlider">Min School Rating: <span class="slider-value" id="schoolValue">1</span>/10</label>
           <input type="range" id="schoolSlider" min="1" max="10" value="1" step="1">
         </div>
       </div>

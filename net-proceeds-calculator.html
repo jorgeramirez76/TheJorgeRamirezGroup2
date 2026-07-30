@@ -155,7 +155,8 @@
                 </div>
             </div>
 
-            <button class="calc-btn" onclick="calcNet()">Calculate My Net Proceeds</button>
+            <label style="display:flex;align-items:center;gap:10px;font-weight:500;color:#333;margin:0 0 20px;font-size:0.94rem;"><input type="checkbox" id="reducedRate" style="width:auto;margin:0;">Seller is 62 or older, blind, disabled, or low-and-moderate income (reduced transfer fee)</label>
+                        <button class="calc-btn" onclick="calcNet()">Calculate My Net Proceeds</button>
 
             <div class="results" id="results">
                 <h2>Estimated Net Proceeds Breakdown</h2>
@@ -236,9 +237,14 @@
         function calcRTF(price) {
             if (price <= 0) return 0;
             const over350 = price > 350000;
-            const tiers = over350
-                ? [[150000,2.90],[200000,4.25],[550000,4.80],[850000,5.30],[1000000,5.80],[Infinity,6.05]]
-                : [[150000,2.00],[200000,3.35],[Infinity,3.90]];
+            const reduced = !!(document.getElementById('reducedRate') || {}).checked;
+            const tiers = reduced
+                ? (over350
+                    ? [[150000,1.40],[550000,2.15],[850000,2.65],[1000000,3.15],[Infinity,3.40]]
+                    : [[150000,0.50],[Infinity,1.25]])
+                : (over350
+                    ? [[150000,2.90],[200000,4.25],[550000,4.80],[850000,5.30],[1000000,5.80],[Infinity,6.05]]
+                    : [[150000,2.00],[200000,3.35],[Infinity,3.90]]);
             let fee = 0, prev = 0;
             for (const [cap, per500] of tiers) {
                 const top = Math.min(cap, price);

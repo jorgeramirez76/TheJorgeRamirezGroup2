@@ -173,7 +173,8 @@
                 </div>
             </div>
 
-            <button class="calc-btn" onclick="calcNet()">Calcular Mi Ganancia Neta</button>
+            <label style="display:flex;align-items:center;gap:10px;font-weight:500;color:#333;margin:0 0 20px;font-size:0.94rem;"><input type="checkbox" id="reducedRate" style="width:auto;margin:0;">El vendedor tiene 62 años o más, es ciego, tiene discapacidad o ingresos bajos/moderados (tarifa reducida)</label>
+                        <button class="calc-btn" onclick="calcNet()">Calcular Mi Ganancia Neta</button>
 
             <div class="results" id="results">
                 <h2>Desglose Estimado de Ganancia Neta</h2>
@@ -231,7 +232,14 @@
             // una venta de $600,000 usa el de arriba de $350,000 para TODOS sus tramos.
             const OVER350 = [[150000,2.90],[200000,4.25],[550000,4.80],[850000,5.30],[1000000,5.80],[Infinity,6.05]];
             const UNDER350 = [[150000,2.00],[200000,3.35],[Infinity,3.90]];
-            const tiers = price > 350000 ? OVER350 : UNDER350;
+            // Esquema reducido (62+, ciego, discapacitado, ingresos bajos/moderados).
+            // Ojo: sus puntos de corte NO son los del esquema estándar.
+            const RED_OVER350 = [[150000,1.40],[550000,2.15],[850000,2.65],[1000000,3.15],[Infinity,3.40]];
+            const RED_UNDER350 = [[150000,0.50],[Infinity,1.25]];
+            const reduced = !!(document.getElementById('reducedRate') || {}).checked;
+            const tiers = reduced
+                ? (price > 350000 ? RED_OVER350 : RED_UNDER350)
+                : (price > 350000 ? OVER350 : UNDER350);
             let fee = 0, prev = 0;
             for (const [cap, per500] of tiers) {
                 if (price <= prev) break;
