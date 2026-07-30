@@ -254,11 +254,13 @@
             else                       r = 0.035;
             return price * r;
         }
-            return fee;
-        }
 
         function calcNet() {
             const salePrice = parseFloat(document.getElementById('salePrice').value) || 0;
+            if (salePrice <= 0) {
+                document.getElementById('results').style.display = 'none';
+                return;
+            }
             const payoff = parseFloat(document.getElementById('payoff').value) || 0;
             const commPct = parseFloat(document.getElementById('commission').value) || 0;
             const attorney = parseFloat(document.getElementById('attorney').value) || 0;
@@ -283,6 +285,11 @@
                 ['Impuesto a la Propiedad Prorrateado (~3 meses)', -propTaxProrate, 'negative'],
                 ['Costos de Cierre Varios', -closingMisc, 'negative'],
             ];
+            if (gpf > 0) {
+                const gpfPct = (gpf / salePrice * 100).toFixed(1).replace(/\.0$/, '');
+                lineItems.splice(4, 0,
+                    [`Tarifa Porcentual Escalonada de NJ (${gpfPct}% del precio completo, $1M+)`, -gpf, 'negative']);
+            }
             if (concessions > 0) lineItems.push(['Concesiones del Vendedor', -concessions, 'negative']);
 
             const html = lineItems.map(([label, amt, cls]) =>
