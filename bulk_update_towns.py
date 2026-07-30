@@ -22,6 +22,8 @@ SAME_AS = [
     "https://thejorgeramirezgroup.kw.com/agent/Jorge-Ramirez/520237",
 ]
 
+# Disabled 2026-07-30: injected an unsupported reviewCount into town schema.
+
 AGGREGATE_RATING = {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
@@ -136,7 +138,7 @@ def ensure_agent_updates(agent: Dict[str, Any], town_name: str) -> bool:
         agent["sameAs"] = SAME_AS
         changed = True
     if "aggregateRating" not in agent:
-        agent["aggregateRating"] = AGGREGATE_RATING
+        # agent["aggregateRating"] = AGGREGATE_RATING
         changed = True
     if "hasCredential" not in agent:
         agent["hasCredential"] = HAS_CREDENTIAL

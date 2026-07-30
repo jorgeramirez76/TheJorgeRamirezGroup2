@@ -95,121 +95,152 @@
 
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@graph": [{
-        "@type": "RealEstateAgent",
-        "@id": "https://thejorgeramirezgroup.com/#agent",
-        "name": "Jorge Ramirez - The Jorge Ramirez Group",
-        "url": "https://thejorgeramirezgroup.com/",
-        "image": "https://thejorgeramirezgroup.com/images/jorge-logo.jpg",
-        "telephone": "+1-908-230-7844",
-        "email": "jorge.ramirez@kw.com",
-        "address": {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://thejorgeramirezgroup.com/#agent",
+      "name": "Jorge Ramirez - The Jorge Ramirez Group",
+      "url": "https://thejorgeramirezgroup.com/",
+      "image": "https://thejorgeramirezgroup.com/images/jorge-logo.jpg",
+      "telephone": "+1-908-230-7844",
+      "email": "jorge.ramirez@kw.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "488 Springfield Avenue",
+        "addressLocality": "Summit",
+        "addressRegion": "NJ",
+        "postalCode": "07901",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "West Caldwell",
+          "address": {
             "@type": "PostalAddress",
-            "streetAddress": "488 Springfield Avenue",
-            "addressLocality": "Summit",
             "addressRegion": "NJ",
-            "postalCode": "07901",
             "addressCountry": "US"
+          }
         },
-        "areaServed": [{
-            "@type": "City",
-            "name": "West Caldwell",
-            "address": {
-                "@type": "PostalAddress",
-                "addressRegion": "NJ",
-                "addressCountry": "US"
-            }
-        }, {
-            "@type": "State",
-            "name": "Nueva Jersey"
-        }],
-        "knowsAbout": ["Listado agent", "representación de vendedores", "representación de compradores", "Inicio valuation", "Pricing strategy", "Real estate marketing", "Negotiation", "NJ bienes raíces"],
-        "description": "Jorge Ramirez is a mejor calificado agente de bienes raíces sirviendo West Caldwell, NJ (License #1754604). Especializado en luxury homes, first-time buyers, and investment properties with an AI-powered marketing system.",
-        "brand": {
-            "@type": "Brand",
-            "name": "The Jorge Ramirez Group"
-        },
-        "sameAs": [
-            "https://www.zillow.com/profile/TheJorgeRamirezGroup",
-            "https://www.linkedin.com/in/jorgeramirez1213",
-            "https://www.facebook.com/thejorgeramirezgroup",
-            "https://www.instagram.com/jorgesellsnjhomes",
-            "https://www.google.com/maps/place/Jorge+Ramirez+Realtor+-+Keller+Williams+Premier+Properties/@40.7176144,-74.3613942,16z",
-            "https://thejorgeramirezgroup.kw.com/agent/Jorge-Ramirez/520237"
-        ],
-        "hasCredential": {
-            "@type": "EducationalOccupationalCredential",
-            "credentialCategory": "Bienes Raíces License",
-            "recognizedBy": {
-                "@type": "Organization",
-                "name": "Comisión de Bienes Raíces de Nueva Jersey"
-            },
-            "identifier": "1754604"
+        {
+          "@type": "State",
+          "name": "Nueva Jersey"
         }
-    }, {
-        "@type": "WebSite",
-        "@id": "https://thejorgeramirezgroup.com/#website",
-        "url": "https://thejorgeramirezgroup.com/",
+      ],
+      "knowsAbout": [
+        "Listado agent",
+        "representación de vendedores",
+        "representación de compradores",
+        "Inicio valuation",
+        "Pricing strategy",
+        "Real estate marketing",
+        "Negotiation",
+        "NJ bienes raíces"
+      ],
+      "description": "Jorge Ramirez is a mejor calificado agente de bienes raíces sirviendo West Caldwell, NJ (License #1754604). Especializado en luxury homes, first-time buyers, and investment properties with an AI-powered marketing system.",
+      "brand": {
+        "@type": "Brand",
         "name": "The Jorge Ramirez Group"
-    }, {
-        "@type": "WebPage",
-        "@id": "https://thejorgeramirezgroup.com/es/towns/west-caldwell#webpage",
-        "url": "https://thejorgeramirezgroup.com/es/towns/west-caldwell",
-        "name": "Sell Your West Caldwell Inicio for Top Dollar | West Caldwell NJ Bienes Raíces",
-        "description": "Selling in West Caldwell, NJ? Learn why sellers struggle and how our proven process helps you maximize exposure and get top dollar.",
-        "about": {
-            "@id": "https://thejorgeramirezgroup.com/#agent"
+      },
+      "sameAs": [
+        "https://www.zillow.com/profile/TheJorgeRamirezGroup",
+        "https://www.linkedin.com/in/jorgeramirez1213",
+        "https://www.facebook.com/thejorgeramirezgroup",
+        "https://www.instagram.com/jorgesellsnjhomes",
+        "https://www.google.com/maps/place/Jorge+Ramirez+Realtor+-+Keller+Williams+Premier+Properties/@40.7176144,-74.3613942,16z",
+        "https://thejorgeramirezgroup.kw.com/agent/Jorge-Ramirez/520237"
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Bienes Raíces License",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Comisión de Bienes Raíces de Nueva Jersey"
         },
-        "primaryImageOfPage": {
-            "@type": "ImageObject",
-            "url": "https://thejorgeramirezgroup.com/images/hero.jpg"
-        },
-        "isPartOf": {
-            "@id": "https://thejorgeramirezgroup.com/#website"
-        },
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [".hero-content", ".town-seo"]
+        "identifier": "1754604"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://thejorgeramirezgroup.com/#website",
+      "url": "https://thejorgeramirezgroup.com/",
+      "name": "The Jorge Ramirez Group"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://thejorgeramirezgroup.com/es/towns/west-caldwell#webpage",
+      "url": "https://thejorgeramirezgroup.com/es/towns/west-caldwell",
+      "name": "Sell Your West Caldwell Inicio for Top Dollar | West Caldwell NJ Bienes Raíces",
+      "description": "Selling in West Caldwell, NJ? Learn why sellers struggle and how our proven process helps you maximize exposure and get top dollar.",
+      "about": {
+        "@id": "https://thejorgeramirezgroup.com/#agent"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://thejorgeramirezgroup.com/images/hero.jpg"
+      },
+      "isPartOf": {
+        "@id": "https://thejorgeramirezgroup.com/#website"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".hero-content",
+          ".town-seo"
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://thejorgeramirezgroup.com/towns/west-caldwell#service",
+      "name": "Bienes Raíces Servicios in West Caldwell, NJ",
+      "provider": {
+        "@id": "https://thejorgeramirezgroup.com/#agent"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "West Caldwell",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "NJ",
+          "addressCountry": "US"
         }
-    }, {
-        "@type": "Service",
-        "@id": "https://thejorgeramirezgroup.com/towns/west-caldwell#service",
-        "name": "Bienes Raíces Servicios in West Caldwell, NJ",
-        "provider": {
-            "@id": "https://thejorgeramirezgroup.com/#agent"
+      },
+      "serviceType": [
+        "Listado agent",
+        "Seller agent",
+        "Buyer agent",
+        "Inicio selling strategy",
+        "Inicio buying guidance"
+      ],
+      "description": "Seller and representación de compradores in West Caldwell, NJ with high-exposure marketing and expert negotiation."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thejorgeramirezgroup.com/es/towns/west-caldwell#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://thejorgeramirezgroup.com/es/"
         },
-        "areaServed": {
-            "@type": "City",
-            "name": "West Caldwell",
-            "address": {
-                "@type": "PostalAddress",
-                "addressRegion": "NJ",
-                "addressCountry": "US"
-            }
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Towns",
+          "item": "https://thejorgeramirezgroup.com/#communities"
         },
-        "serviceType": ["Listado agent", "Seller agent", "Buyer agent", "Inicio selling strategy", "Inicio buying guidance"],
-        "description": "Seller and representación de compradores in West Caldwell, NJ with high-exposure marketing and expert negotiation."
-    }, {
-        "@type": "BreadcrumbList",
-        "@id": "https://thejorgeramirezgroup.com/es/towns/west-caldwell#breadcrumbs",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Inicio",
-            "item": "https://thejorgeramirezgroup.com/"
-        }, {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Towns",
-            "item": "https://thejorgeramirezgroup.com/#communities"
-        }, {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "West Caldwell",
-            "item": "https://thejorgeramirezgroup.com/es/towns/west-caldwell"
-        }]
-    }]
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "West Caldwell",
+          "item": "https://thejorgeramirezgroup.com/es/towns/west-caldwell"
+        }
+      ]
+    }
+  ]
 }
 </script>
 
