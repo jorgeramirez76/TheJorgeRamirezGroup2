@@ -150,7 +150,7 @@
     <div class="calc-wrapper">
         <div class="calc-header">
             <h1>NJ Buyer Closing Costs Calculator</h1>
-            <p>New Jersey buyers typically pay 2-5% of the purchase price in closing costs. Enter your numbers below for a realistic estimate — attorney, title, lender, mansion tax, and prepaids included.</p>
+            <p>New Jersey buyers typically pay 2-5% of the purchase price in closing costs. Enter your numbers below for a realistic estimate — attorney, title, lender and prepaids included. The 1% mansion tax no longer applies to buyers.</p>
         </div>
 
         <div class="calc-card">
@@ -202,7 +202,7 @@
 
         <div class="explainer">
             <h2>Understanding NJ Closing Costs (In Plain English)</h2>
-            <p>New Jersey has higher closing costs than most states — largely because it's an attorney state, property taxes are high (and prepaid at closing), and the mansion tax kicks in at $1M. Here's what each line item actually means.</p>
+            <p>New Jersey has higher closing costs than most states — largely because it's an attorney state, property taxes are high (and prepaid at closing), and prepaid taxes land at closing. The 1% mansion tax that used to hit buyers at $1M was moved to the seller in 2025. Here's what each line item actually means.</p>
 
             <h3>Attorney Fees ($1,500 – $3,500)</h3>
             <p>NJ requires an attorney to review the contract, negotiate during attorney review, handle title, and represent you at closing. Flat fees are typical.</p>
@@ -213,8 +213,8 @@
             <h3>Lender Fees (0.5% – 1.5% of loan)</h3>
             <p>Origination, underwriting, and application fees. Negotiable — always get a Loan Estimate from 2+ lenders and compare.</p>
 
-            <h3>NJ Mansion Tax (1% of price, only on $1M+)</h3>
-            <p>New Jersey charges buyers 1% of the purchase price on homes sold for $1,000,000 or more. Paid at closing, not negotiable.</p>
+            <h3>The 1% &ldquo;Mansion Tax&rdquo; No Longer Applies to You</h3>
+<p>Buyers used to pay 1% of the price on purchases of $1,000,000 or more. That fee was <strong>eliminated</strong> by P.L.&nbsp;2025, c.&nbsp;69, effective for deeds recorded on or after July&nbsp;10,&nbsp;2025 &mdash; the statute was amended to strike &ldquo;grantee&rdquo; and insert &ldquo;grantor.&rdquo; It was replaced by a seller-paid Graduated Percent Fee of 1% to 3.5%. If you are buying above $1M, you owe none of it; if you are also selling above $1M, see the <a href="/net-proceeds-calculator">seller net proceeds calculator</a>. Legal responsibility sits with the seller, though the Division of Taxation notes the parties may apportion the burden by contract.</p>
 
             <h3>Recording & Transfer Fees</h3>
             <p>County recording fees and, in some cases, a small buyer portion of transfer tax. Usually $300-$800 combined.</p>
@@ -231,7 +231,6 @@
 <div style="max-width:880px;margin:0 auto 34px;padding:20px 24px;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08);font-family:var(--font-body,inherit);line-height:1.7;"><strong>Other NJ calculators:</strong><br><a href="/net-proceeds-calculator">NJ Seller Net Proceeds Calculator</a> · <a href="/nj-realty-transfer-fee-calculator">NJ Realty Transfer Fee Calculator</a> · <a href="/tools/mortgage-calculator">NJ Mortgage Affordability Calculator</a> · <a href="/tools/home-value-estimator">NJ Home Value Estimator</a></div>
 
 <div class="related"><strong>Related:</strong> <a href="/blog/how-much-money-to-buy-a-house-nj">How much cash you actually need to buy in NJ</a></div>
-<div style="max-width:880px;margin:0 auto 26px;padding:16px 20px;background:#FFF8E1;border-left:4px solid #C41230;border-radius:8px;font-family:var(--font-body,inherit);line-height:1.65;font-size:.95rem;color:#3A3A3A;"><strong>Verify before you rely on the $1M+ figure.</strong> New Jersey&rsquo;s 2025 budget legislation changed how transfers above $1,000,000 are treated, including which side of the table pays. Reporting on the change and the Division of Taxation&rsquo;s own published FAQ do not currently agree, so this calculator&rsquo;s treatment of the 1% fee on $1M+ sales may be out of date. If your sale is at or above $1,000,000, confirm the current rate and who owes it with your closing attorney or title company before budgeting from this number.</div>
 <footer style="background: var(--dark-gray, #1A1A1A); color: #ccc; padding: 30px 20px; text-align: center; font-size: 0.9rem;">
         <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · 488 Springfield Ave, Summit NJ 07901 · Website by <a href="https://clickmingo.com" target="_blank" rel="noopener" style="color:inherit !important;text-decoration:inherit !important;">ClickMingo</a></p>
         <p><a href="tel:908-230-7844" style="color: #a0b8ff;">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com" style="color: #a0b8ff;">jorge.ramirez@kw.com</a></p>
@@ -262,9 +261,11 @@
             items.push(['Home Inspection', 700]);
             items.push(['Recording Fees', 300]);
             items.push(['Survey (if required)', 500]);
-            if (price >= 1000000) {
-                items.push(['NJ Mansion Tax (1%)', price * 0.01]);
-            }
+            // The buyer-paid 1% "mansion tax" was ELIMINATED by P.L.2025 c.69, which struck
+            // "grantee" and inserted "grantor" in N.J.S.A. 46:15-7.2, effective for deeds
+            // recorded on or after 2025-07-10. A buyer owes $0 of it. The replacement
+            // Graduated Percent Fee (1%-3.5% of the entire price above $1M) is the SELLER's,
+            // and is computed in /net-proceeds-calculator instead.
             if (loanType === 'fha') {
                 items.push(['FHA Upfront MIP (1.75%)', loanAmount * 0.0175]);
             }
