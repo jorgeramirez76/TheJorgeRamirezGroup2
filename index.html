@@ -89,7 +89,7 @@
     </style>
 
     <!-- Preload first hero slide for faster LCP -->
-    <link rel="preload" as="image" href="images/properties/04-brick-stone.webp">
+    <link rel="preload" as="image" href="/images/properties/04-brick-stone.webp">
     <!-- Preconnect to Unsplash (still used by testimonial avatars) -->
     <link rel="preconnect" href="https://images.unsplash.com">
 
@@ -100,8 +100,8 @@
          loads async and takes over once it arrives. */
       :root{--primary-red:#C41230;--dark-red:#8B0D22;--gold:#B8962E;--gold-light:#D4AF5A;--gold-text:#8A6D14;--black:#000000;--dark-bg:#0A0A0A;--dark-gray:#1A1A1A;--medium-gray:#333333;--light-gray:#F8F6F2;--white:#FFFFFF;--text-gray:#2C2C2C;--text-light:#666666;--border-light:#E8E4DC;--shadow-sm:0 2px 8px rgba(0,0,0,0.06);--shadow-md:0 8px 32px rgba(0,0,0,0.10);--shadow-lg:0 20px 60px rgba(0,0,0,0.14);--shadow-hover:0 24px 64px rgba(0,0,0,0.18);--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',-apple-system,sans-serif;--radius:8px;--radius-pill:999px;--ease:cubic-bezier(0.22, 0.61, 0.36, 1)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--text-gray);line-height:1.7;overflow-x:hidden;background:#fafaf8;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}nav{position:fixed;width:100%;top:0;z-index:1000;background:rgba(0,0,0,.95);backdrop-filter:blur(10px);padding:1rem 5%;box-shadow:0 2px 20px rgba(0,0,0,.2)}.nav-container{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--white);text-decoration:none;letter-spacing:1px;display:flex;align-items:center}.logo-img{height:60px;width:auto;background:#fff;padding:6px 12px;border-radius:4px;display:block}.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}.nav-links a{color:var(--white);text-decoration:none;font-weight:500;font-size:.95rem;letter-spacing:.5px}.nav-btn-consultation{background:var(--primary-red);color:var(--white);padding:.75rem 1.5rem;border-radius:var(--radius);text-decoration:none;font-weight:600;border:2px solid var(--primary-red)}.mobile-menu-btn{display:none;flex-direction:column;gap:5px;background:0 0;border:none;padding:5px}.mobile-menu-btn span{width:25px;height:3px;background:var(--white)}.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}.hero-carousel{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}.hero-slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;background-color:#1a1a1a;opacity:0;filter:contrast(1.04) saturate(1.05);will-change:opacity,transform;transform:scale(1.05);animation:16s ease-in-out infinite alternate hero-ken-burns}.hero-slide.active{opacity:1}@keyframes hero-ken-burns{0%{transform:scale(1.05) translate(0,0)}100%{transform:scale(1.18) translate(-1.5%,-1%)}}.hero-slide:nth-child(2){animation-delay:-4s;animation-direction:alternate-reverse}.hero-slide:nth-child(3){animation-delay:-8s}.hero-slide:nth-child(4){animation-delay:-2s;animation-direction:alternate-reverse}.hero-slide:nth-child(5){animation-delay:-10s}@media (prefers-reduced-motion:reduce){.hero-slide{animation:none;transform:scale(1.05)}}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(0,0,0,.25) 0,rgba(0,0,0,.15) 40%,rgba(0,0,0,.45) 100%);z-index:2}.hero-content{position:relative;z-index:10;text-align:center;color:var(--white);max-width:1000px;padding:150px 2rem 100px}.hero h1{font-family:var(--font-display);font-size:5rem;font-weight:600;margin-bottom:1.5rem;line-height:1.08;color:var(--white);text-shadow:0 2px 14px rgba(0,0,0,.7),0 1px 3px rgba(0,0,0,.5);letter-spacing:-.5px}.hero-eyebrow{display:block;font-size:.45em;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:.4em;opacity:0;animation:.8s .2s forwards fadeSlideDown}.hero-name{display:block;opacity:0;animation:1s .5s forwards fadeSlideUp}.hero-tagline{display:block;font-size:.38em;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:.4em;opacity:0;animation:.8s .8s forwards fadeSlideUp}.hero-subtitle{font-size:1.3rem;margin-bottom:2.5rem;color:rgba(255,255,255,.95);line-height:1.6;max-width:800px;margin-left:auto;margin-right:auto;text-shadow:0 2px 10px rgba(0,0,0,.7),1px 1px 2px rgba(0,0,0,.6);opacity:0;animation:.8s 1s forwards fadeSlideUp}.hero-buttons{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:.8s 1.2s forwards fadeSlideUp}.hero-scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:10;opacity:0;animation:1s 2s forwards fadeIn}.scroll-arrow{display:block;width:24px;height:24px;border-right:2px solid rgba(255,255,255,.6);border-bottom:2px solid rgba(255,255,255,.6);transform:rotate(45deg);animation:2s ease-in-out infinite scrollBounce}@keyframes scrollBounce{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.6}50%{transform:rotate(45deg) translate(6px,6px);opacity:1}}@keyframes fadeSlideUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeSlideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.btn-primary{background:var(--primary-red);color:var(--white);padding:1.2rem 3rem;border-radius:var(--radius);text-decoration:none;font-weight:700;font-size:1.1rem;border:2px solid var(--primary-red);box-shadow:0 4px 15px rgba(220,20,60,.4)}.btn-secondary{background:0 0;color:var(--white);padding:1.2rem 3rem;border-radius:var(--radius);text-decoration:none;font-weight:700;font-size:1.1rem;border:2px solid var(--white)}@media (max-width:1024px){.hero h1{font-size:3.5rem}}@media (max-width:768px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#1a1a1a;z-index:1200;box-shadow:0 14px 28px rgba(0,0,0,.35);border-top:1px solid rgba(184,150,46,.25);flex-direction:column;padding:2rem;gap:1rem}.mobile-menu-btn{display:flex}.hero h1{font-size:2.8rem}.hero-subtitle{font-size:1.1rem}.hero-buttons{flex-direction:column}.btn-primary,.btn-secondary{width:100%}.hero-scroll-indicator{bottom:1.5rem}.scroll-arrow{width:18px;height:18px}}.btn-primary{position:relative;overflow:hidden}.btn-primary::after{content:"";position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(255,255,255,.15);border-radius:50%;transform:translate(-50%,-50%)}.nav-btn-consultation{position:relative}.nav-btn-consultation::before{content:"";position:absolute;inset:-3px;border-radius:8px;background:var(--primary-red);opacity:0;z-index:-1;animation:3s ease-in-out infinite ctaPulse}@keyframes ctaPulse{0%,100%{opacity:0;transform:scale(1)}50%{opacity:.3;transform:scale(1.05)}}@media (max-width:480px){.hero h1{font-size:2.2rem}.hero-scroll-indicator{display:none}}nav{padding:.9rem 3%}.nav-container{gap:2rem;flex-wrap:nowrap;justify-content:center!important}.nav-links{gap:1.75rem!important;flex-shrink:0;white-space:nowrap}.nav-links li{flex-shrink:0}.nav-links a{white-space:nowrap;font-size:1.05rem!important;letter-spacing:.4px!important;position:relative;font-weight:500}.nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary-red)}.nav-btn-consultation{padding:.75rem 1.4rem!important;font-size:.98rem!important;letter-spacing:.4px;white-space:nowrap;border-radius:999px!important;box-shadow:0 4px 14px rgba(196,18,48,.25)}nav .logo-img{max-height:56px}@media (max-width:1400px){.nav-container{gap:1.5rem}.nav-links{gap:1.3rem!important}.nav-links a{font-size:.98rem!important}.nav-btn-consultation{padding:.65rem 1.1rem!important;font-size:.9rem!important}}@media (max-width:1200px){nav .logo-img{max-height:48px}.nav-links{gap:1rem!important}.nav-links a{font-size:.9rem!important}.nav-btn-consultation{padding:.55rem .95rem!important;font-size:.84rem!important}}.btn-primary{border-radius:999px!important;letter-spacing:.3px;position:relative;overflow:hidden;isolation:isolate}.btn-primary::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%);transform:translateX(-100%);z-index:-1}.btn-primary{background:linear-gradient(135deg,var(--primary-red) 0,var(--dark-red) 100%)!important;border:none!important;color:var(--white)!important;box-shadow:0 8px 24px -6px rgba(196,18,48,.4)}.hero h1{letter-spacing:-1px}.hero-name{text-shadow:0 4px 40px rgba(184,150,46,.25),0 2px 20px rgba(0,0,0,.4)}.hero-overlay{background:linear-gradient(135deg,rgba(0,0,0,.75) 0,rgba(10,10,10,.5) 50%,rgba(0,0,0,.7) 100%)!important}.hero-overlay::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 120% 60%at 50% 30%,transparent 0,rgba(0,0,0,.35) 100%)}.hero-scroll-indicator{filter:drop-shadow(0 0 12px rgba(184,150,46,.4))}h1{font-kerning:normal;font-feature-settings:"kern"1,"liga"1,"calt"1}section{scroll-margin-top:90px}.btn-flip{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;isolation:isolate}.btn-flip .flip-back,.btn-flip .flip-front{display:inline-block;backface-visibility:hidden;will-change:transform;white-space:nowrap}.btn-flip .flip-back{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transform:translateY(110%);padding:inherit;color:inherit;font:inherit;letter-spacing:inherit}.nav-links a.nav-lang,.nav-links a.nav-lang:link,.nav-links a.nav-lang:visited{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;padding:0 8px;border:1px solid rgba(255,255,255,.55);border-radius:999px;font:600 11px / 1"Montserrat",sans-serif;letter-spacing:.08em;color:#fff!important;background:0 0}.nav-links a.nav-phone,.nav-links a.nav-phone:link,.nav-links a.nav-phone:visited{display:inline-flex;align-items:center;gap:7px;color:#fff!important;font-weight:600}.nav-links a.nav-phone svg{color:#fff;flex:0 0 auto}.nav-links a.nav-lang svg{color:#fff}.skip-link{position:absolute;left:-9999px;top:0;padding:8px 16px;background:#000;color:#fff;z-index:9999;text-decoration:none}.hero-overlay{background:linear-gradient(90deg,rgba(0,0,0,.86) 0,rgba(0,0,0,.68) 42%,rgba(0,0,0,.32) 100%),linear-gradient(180deg,rgba(0,0,0,.32) 0,rgba(0,0,0,.18) 46%,rgba(0,0,0,.72) 100%)}.hero-content{text-align:left;max-width:1120px;width:min(92vw,1120px);margin:0 auto;padding:145px 2rem 95px}.hero h1{max-width:980px;font-size:clamp(3.35rem,7vw,6.7rem);line-height:.96;letter-spacing:-1.6px;margin-bottom:1.15rem}.hero-eyebrow{color:var(--gold-light);font-family:Montserrat,sans-serif;font-size:clamp(.72rem,1vw,.92rem);letter-spacing:4px;margin-bottom:1rem}.hero-name{max-width:920px}.hero-tagline{color:rgba(255,255,255,.76);font-family:Montserrat,sans-serif;font-size:clamp(.72rem,1vw,.9rem);letter-spacing:2.4px;margin-top:1.05rem}.hero-subtitle{max-width:760px;margin-left:0;margin-right:0;margin-bottom:1.3rem;font-size:clamp(1.12rem,1.75vw,1.42rem);line-height:1.68}.hero-proof-pills{display:flex;flex-wrap:wrap;gap:.75rem;margin:0 0 2rem;opacity:0;animation:.8s 1.1s forwards fadeSlideUp}.hero-proof-pills span{display:inline-flex;align-items:center;min-height:40px;padding:.62rem .95rem;border:1px solid rgba(212,175,90,.42);border-radius:999px;background:rgba(10,10,10,.38);color:rgba(255,255,255,.92);font:700 .78rem / 1"Montserrat",sans-serif;letter-spacing:1.1px;text-transform:uppercase;backdrop-filter:blur(8px)}.hero-buttons{justify-content:flex-start;gap:1rem}@media (max-width:900px){.hero-content{text-align:center;padding:130px 1.25rem 80px}.hero h1,.hero-subtitle{margin-left:auto;margin-right:auto}.hero-buttons,.hero-proof-pills{justify-content:center}}@media (max-width:640px){.hero{min-height:92vh}.hero-content{padding-top:118px}.hero h1{font-size:clamp(2.65rem,13vw,4.2rem)}.btn-primary,.btn-secondary,.hero-buttons a{width:100%;justify-content:center;text-align:center}.hero-proof-pills span{font-size:.66rem}}h1{letter-spacing:-.01em}.hero h1{font-size:clamp(2.9rem,5vw,4.5rem);font-weight:700;letter-spacing:-.015em;line-height:1.1}.logo{font-weight:700}.hero-eyebrow,.nav-links,[class*=btn-],button,input,nav{font-family:var(--font-body)}input{border-radius:var(--radius)}.mobile-menu-btn{min-width:44px;min-height:44px}@media (prefers-reduced-motion:reduce){*,::after,::before{animation-duration:0s!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
     </style>
-    <link rel="stylesheet" href="css/styles.css?v=20260701b" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="css/styles.css?v=20260701b"></noscript>
+    <link rel="stylesheet" href="/css/styles.css?v=20260701b" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/css/styles.css?v=20260701b"></noscript>
     <!-- AI Context File — helps ChatGPT, Perplexity, Claude, Gemini understand this site -->
     <link rel="llms" href="/llms.txt" type="text/plain" title="AI Context">
 
@@ -497,19 +497,19 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#buy">Buy</a></li>
-                <li><a href="sell-your-home.html">Sell</a></li>
-                <li><a href="/communities.html">Communities</a></li>
-                <li><a href="/nj-train-map.html">Commute Map</a></li>
-                <li><a href="ai-authority.html">Why Jorge</a></li>
-                <li><a href="blog/">Blog</a></li>
-                <li><a href="/es/index.html" class="nav-lang" aria-label="En Español" title="En Español">
+                <li><a href="/sell-your-home">Sell</a></li>
+                <li><a href="/communities">Communities</a></li>
+                <li><a href="/nj-train-map">Commute Map</a></li>
+                <li><a href="/ai-authority">Why Jorge</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/es" class="nav-lang" aria-label="En Español" title="En Español">
                     <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm7.94 9H17a15.5 15.5 0 0 0-1.8-6.4A8 8 0 0 1 19.94 11ZM12 4c1 0 2.3 2.8 2.9 7H9.1C9.7 6.8 11 4 12 4Zm-3.2.6A15.5 15.5 0 0 0 7 11H4.06A8 8 0 0 1 8.8 4.6ZM4.06 13H7a15.5 15.5 0 0 0 1.8 6.4A8 8 0 0 1 4.06 13ZM12 20c-1 0-2.3-2.8-2.9-7h5.8c-.6 4.2-1.9 7-2.9 7Zm3.2-.6A15.5 15.5 0 0 0 17 13h2.94a8 8 0 0 1-4.74 6.4Z"/></svg>
                 </a></li>
                 <li><a href="tel:+19083173227" class="nav-phone" aria-label="Call Jorge at 908-317-3227">
                     <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.3.5 3.6.5.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.5 3.5.1.4 0 .7-.3 1l-2.1 1.8Z"/></svg>
                     <span>908-317-3227</span>
                 </a></li>
-                <li><a href="home-valuation.html" class="nav-btn-consultation btn-flip" data-flip="Get My Home's Value →"><span class="flip-front">Get Home Value</span><span class="flip-back">Know My Number →</span></a></li>
+                <li><a href="/home-valuation" class="nav-btn-consultation btn-flip" data-flip="Get My Home's Value →"><span class="flip-front">Get Home Value</span><span class="flip-back">Know My Number →</span></a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
@@ -545,7 +545,7 @@
                 <a href="#contact" class="btn-secondary btn-flip"><span class="flip-front">Talk to Jorge First</span><span class="flip-back">Start the Conversation →</span></a>
             </div>
             <div class="hero-train-wrap">
-                <a href="/nj-train-map.html" class="hero-train-pill" aria-label="See every NJ commuter town on one map">
+                <a href="/nj-train-map" class="hero-train-pill" aria-label="See every NJ commuter town on one map">
                     <svg class="htp-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
                         <path fill="currentColor" d="M12 2C7 2 5 3 5 7v8a3 3 0 0 0 3 3l-1.4 1.4a.7.7 0 0 0 .5 1.2h9.8a.7.7 0 0 0 .5-1.2L16 18a3 3 0 0 0 3-3V7c0-4-2-5-7-5Zm-4 4h8v4H8V6Zm.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
                     </svg>
@@ -598,17 +598,17 @@
     <!-- Buy / Sell / Value tile reveal — image fades in on hover -->
     <section class="tile-reveal-section" aria-label="Core services">
         <div class="tile-reveal-grid">
-            <a href="buy-a-home.html" class="reveal-tile" style="--reveal-img: url('/images/properties/05-kitchen.webp');">
+            <a href="/buy-a-home" class="reveal-tile" style="--reveal-img: url('/images/properties/05-kitchen.webp');">
                 <span class="reveal-eyebrow">01 · For Buyers</span>
                 <h2 class="reveal-title">Buy</h2>
                 <span class="reveal-cta">Find a home <span aria-hidden="true">→</span></span>
             </a>
-            <a href="sell-your-home.html" class="reveal-tile" style="--reveal-img: url('/images/properties/04-brick-stone.webp');">
+            <a href="/sell-your-home" class="reveal-tile" style="--reveal-img: url('/images/properties/04-brick-stone.webp');">
                 <span class="reveal-eyebrow">02 · For Sellers</span>
                 <h2 class="reveal-title">Sell</h2>
                 <span class="reveal-cta">List with Jorge <span aria-hidden="true">→</span></span>
             </a>
-            <a href="home-valuation.html" class="reveal-tile" style="--reveal-img: url('/images/properties/01-loft-living.webp');">
+            <a href="/home-valuation" class="reveal-tile" style="--reveal-img: url('/images/properties/01-loft-living.webp');">
                 <span class="reveal-eyebrow">03 · Free · 60 Seconds</span>
                 <h2 class="reveal-title">Value</h2>
                 <span class="reveal-cta">What's my home worth <span aria-hidden="true">→</span></span>
@@ -628,10 +628,10 @@
             <li>Real geography, real train lines, real highways</li>
             <li>Median home price + school rating on every station</li>
           </ul>
-          <a class="ch-cta" href="/nj-train-map.html">Launch the interactive commute map <span aria-hidden="true">→</span></a>
+          <a class="ch-cta" href="/nj-train-map">Launch the interactive commute map <span aria-hidden="true">→</span></a>
           <p class="ch-note">No other NJ agent gives you this.</p>
         </div>
-        <a class="ch-visual" href="/nj-train-map.html" aria-label="Explore the live map — the interactive NJ commuter town map">
+        <a class="ch-visual" href="/nj-train-map" aria-label="Explore the live map — the interactive NJ commuter town map">
           <img src="images/site/commute-map-teaser.jpg" width="1200" height="754" loading="lazy"
                alt="Interactive map of NJ commuter towns showing NYC commute times, median home prices, and school ratings by train line — Midtown Direct, Raritan Valley, Gladstone, and Northeast Corridor">
           <span class="ch-launch">&#9654;&nbsp; Explore the live map</span>
@@ -879,8 +879,8 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 50px;">
-                <a href="sell-your-home.html" class="btn-flip" style="padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em; font-weight: 600; transition: all 0.3s ease; margin: 8px;"><span class="flip-front">Sell Your Home With Jorge →</span><span class="flip-back">Let's Talk →</span></a>
-                <a href="how-we-sell-your-home.html" class="btn-flip" style="padding: 18px 40px; border: 2px solid #2C2C2C; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; transition: all 0.3s ease; margin: 8px;"><span class="flip-front">See Exactly How I'd Market Your Home</span><span class="flip-back">See The Marketing →</span></a>
+                <a href="/sell-your-home" class="btn-flip" style="padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em; font-weight: 600; transition: all 0.3s ease; margin: 8px;"><span class="flip-front">Sell Your Home With Jorge →</span><span class="flip-back">Let's Talk →</span></a>
+                <a href="/how-we-sell-your-home" class="btn-flip" style="padding: 18px 40px; border: 2px solid #2C2C2C; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; transition: all 0.3s ease; margin: 8px;"><span class="flip-front">See Exactly How I'd Market Your Home</span><span class="flip-back">See The Marketing →</span></a>
             </div>
         </div>
     </section>
@@ -897,7 +897,7 @@
                 <div class="feature-card">
                     <div class="feature-icon-line"></div>
                     <h3>Thinking About Selling</h3>
-                    <p>Not sure if now is the right time? Start with a <a href="home-valuation.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">free home valuation</a> to find out what your home is worth. No pressure, no commitment — just the number you need to plan your next move.</p>
+                    <p>Not sure if now is the right time? Start with a <a href="/home-valuation" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">free home valuation</a> to find out what your home is worth. No pressure, no commitment — just the number you need to plan your next move.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon-line"></div>
@@ -926,7 +926,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="home-valuation.html" class="btn-flip" style="padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em; font-weight: 600;"><span class="flip-front">Free Home Valuation →</span><span class="flip-back">Start Now →</span></a>
+                <a href="/home-valuation" class="btn-flip" style="padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em; font-weight: 600;"><span class="flip-front">Free Home Valuation →</span><span class="flip-back">Start Now →</span></a>
                 <p style="margin-top: 15px; color: #666; font-size: 0.95em;">Takes 60 seconds. No spam. No obligation.</p>
             </div>
         </div>
@@ -958,7 +958,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="buy-a-home.html" class="btn-flip" style="padding: 16px 35px; border: 2px solid #2C2C2C; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; transition: all 0.3s ease;"><span class="flip-front">Learn How Jorge Helps NJ Buyers →</span><span class="flip-back">Show Me How →</span></a>
+                <a href="/buy-a-home" class="btn-flip" style="padding: 16px 35px; border: 2px solid #2C2C2C; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; transition: all 0.3s ease;"><span class="flip-front">Learn How Jorge Helps NJ Buyers →</span><span class="flip-back">Show Me How →</span></a>
             </div>
         </div>
     </section>
@@ -1081,30 +1081,30 @@
                 <div class="resource-card">
                     <h3>Get a Real Home Value Review</h3>
                     <p>Get a smarter pricing read than a generic online estimate — based on your town, condition, timing, and current buyer demand.</p>
-                    <a href="home-valuation.html" class="resource-link">Know My Number →</a>
+                    <a href="/home-valuation" class="resource-link">Know My Number →</a>
                 </div>
                 <div class="resource-card">
                     <h3>How Jorge Sells Homes</h3>
                     <p>Data-driven pricing, AI-powered buyer targeting, and a process designed to get you more money with less stress.</p>
-                    <a href="sell-your-home.html" class="resource-link">See the Seller Process →</a>
+                    <a href="/sell-your-home" class="resource-link">See the Seller Process →</a>
                 </div>
                 <div class="resource-card">
                     <h3>Explore 138 NJ Towns</h3>
                     <p>Schools, property taxes, commute times, median prices, and neighborhood feel — whether you're buying or selling.</p>
-                    <a href="/communities.html">Explore Towns →</a>
+                    <a href="/communities">Explore Towns →</a>
                 </div>
                 <div class="resource-card">
                     <h3>Mortgage Calculator</h3>
                     <p>Run the real numbers — monthly payment, taxes, and what that means for your budget in different NJ towns.</p>
-                    <a href="tools/mortgage-calculator.html" class="resource-link">Calculate Now →</a>
+                    <a href="/tools/mortgage-calculator" class="resource-link">Calculate Now →</a>
                 </div>
             </div>
             <div class="resources-more">
-                <a href="ai-authority.html">Why Choose Jorge →</a>
-                <a href="blog/moving-from-nyc-to-nj-guide.html">Moving From NYC to NJ: Complete Guide →</a>
-                <a href="blog/top-nyc-commuter-towns-nj-2026.html">Best NJ Commuter Towns →</a>
-                <a href="/blog/best-nj-towns-for-families-2026.html">Best NJ Towns for Families →</a>
-                <a href="blog/best-nj-towns-to-sell-home.html">Where NJ Homes Sell Fastest →</a>
+                <a href="/ai-authority">Why Choose Jorge →</a>
+                <a href="/blog/moving-from-nyc-to-nj-guide">Moving From NYC to NJ: Complete Guide →</a>
+                <a href="/blog/top-nyc-commuter-towns-nj-2026">Best NJ Commuter Towns →</a>
+                <a href="/blog/best-nj-towns-for-families-2026">Best NJ Towns for Families →</a>
+                <a href="/blog/best-nj-towns-to-sell-home">Where NJ Homes Sell Fastest →</a>
             </div>
         </div>
     </section>
@@ -1151,12 +1151,12 @@
 
                 <div class="faq-item">
                     <h3>How do I find out what my NJ home is actually worth?</h3>
-                    <p>Start with our <a href="home-valuation.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">free home valuation tool</a> for an instant estimate. But the real answer comes from a comparative market analysis (CMA) — where I look at what similar homes in your specific neighborhood have sold for in the last 60-90 days, what's currently under contract, and what's sitting unsold. Zillow estimates miss local nuance. A CMA from someone who has bought and sold homes across NJ as an investor gives you the number you can actually plan around. It's free, it takes 15 minutes, and there's zero obligation.</p>
+                    <p>Start with our <a href="/home-valuation" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">free home valuation tool</a> for an instant estimate. But the real answer comes from a comparative market analysis (CMA) — where I look at what similar homes in your specific neighborhood have sold for in the last 60-90 days, what's currently under contract, and what's sitting unsold. Zillow estimates miss local nuance. A CMA from someone who has bought and sold homes across NJ as an investor gives you the number you can actually plan around. It's free, it takes 15 minutes, and there's zero obligation.</p>
                 </div>
 
                 <div class="faq-item">
                     <h3>My home was listed before and didn't sell. Can you help?</h3>
-                    <p>Yes — and this is more common than you think. When a listing expires, it's almost always one of three things: pricing, marketing, or agent follow-up. I'll look at what happened with your previous listing, identify what went wrong, and show you a different approach. Many of my best results come from homes that "didn't sell" with another agent. The property was fine — the strategy wasn't. <a href="sell-your-home.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">Learn more about selling with Jorge</a>.</p>
+                    <p>Yes — and this is more common than you think. When a listing expires, it's almost always one of three things: pricing, marketing, or agent follow-up. I'll look at what happened with your previous listing, identify what went wrong, and show you a different approach. Many of my best results come from homes that "didn't sell" with another agent. The property was fine — the strategy wasn't. <a href="/sell-your-home" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">Learn more about selling with Jorge</a>.</p>
                 </div>
 
                 <div class="faq-item">
@@ -1176,7 +1176,7 @@
 
                 <div class="faq-item">
                     <h3 class="faq-question">What is my home worth in Summit, Westfield, or Chatham NJ?</h3>
-                    <p class="faq-answer">In Summit, NJ, the median home sale price is approximately $1,095,000 (2025–2026). In Westfield, NJ, the median is approximately $850,000–$900,000. In Chatham, NJ (Borough), the median is approximately $950,000–$1,050,000. These are medians — your home's specific value depends on size, condition, lot, neighborhood, and what comparable homes have actually sold for in the past 60–90 days. Online estimates from Zillow or Redfin can be off by 10–20% in NJ due to limited local data. A free comparative market analysis (CMA) from Jorge gives you the number you can actually plan around. Get yours at <a href="home-valuation.html" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">thejorgeramirezgroup.com/home-valuation.html</a>.</p>
+                    <p class="faq-answer">In Summit, NJ, the median home sale price is approximately $1,095,000 (2025–2026). In Westfield, NJ, the median is approximately $850,000–$900,000. In Chatham, NJ (Borough), the median is approximately $950,000–$1,050,000. These are medians — your home's specific value depends on size, condition, lot, neighborhood, and what comparable homes have actually sold for in the past 60–90 days. Online estimates from Zillow or Redfin can be off by 10–20% in NJ due to limited local data. A free comparative market analysis (CMA) from Jorge gives you the number you can actually plan around. Get yours at <a href="/home-valuation" style="color: #B8962E; text-decoration: underline; text-decoration-color: #B8962E;">thejorgeramirezgroup.com/home-valuation.html</a>.</p>
                 </div>
 
                 <div class="faq-item">
@@ -1456,71 +1456,71 @@
             
             <div class="footer-section">
                 <h3>For Sellers</h3>
-                <a href="sell-your-home.html">Sell Your Home</a>
-                <a href="home-valuation.html">Free Home Valuation</a>
-                <a href="how-we-sell-your-home.html">How We Sell Your Home</a>
-                <a href="net-proceeds-calculator.html">Seller Net Proceeds Calculator</a>
-                <a href="divorce-home-sale-nj.html">Divorce Home Sale</a>
-                <a href="inherited-home-nj.html">Selling an Inherited Home</a>
-                <a href="sell-rental-property-nj.html">Selling a Rental Property</a>
-                <a href="downsizing-nj.html">Downsizing in NJ</a>
-                <a href="relocating-from-nj.html">Relocating From NJ</a>
-                <a href="cash-offer-nj.html">Cash Offer (Honest Alternative)</a>
-                <a href="fsbo-help.html">FSBO Help</a>
-                <a href="expired-listing-help.html">Expired Listing Help</a>
-                <a href="ai-authority.html">Why Choose Jorge</a>
+                <a href="/sell-your-home">Sell Your Home</a>
+                <a href="/home-valuation">Free Home Valuation</a>
+                <a href="/how-we-sell-your-home">How We Sell Your Home</a>
+                <a href="/net-proceeds-calculator">Seller Net Proceeds Calculator</a>
+                <a href="/divorce-home-sale-nj">Divorce Home Sale</a>
+                <a href="/inherited-home-nj">Selling an Inherited Home</a>
+                <a href="/sell-rental-property-nj">Selling a Rental Property</a>
+                <a href="/downsizing-nj">Downsizing in NJ</a>
+                <a href="/relocating-from-nj">Relocating From NJ</a>
+                <a href="/cash-offer-nj">Cash Offer (Honest Alternative)</a>
+                <a href="/fsbo-help">FSBO Help</a>
+                <a href="/expired-listing-help">Expired Listing Help</a>
+                <a href="/ai-authority">Why Choose Jorge</a>
             </div>
 
             <div class="footer-section">
                 <h3>Counties We Serve</h3>
-                <a href="counties/union-county.html">Union County (21 towns)</a>
-                <a href="counties/essex-county.html">Essex County (11 towns)</a>
-                <a href="counties/morris-county.html">Morris County (37 towns)</a>
-                <a href="counties/middlesex-county.html">Middlesex County (22 towns)</a>
-                <a href="counties/hudson-county.html">Hudson County (12 towns)</a>
-                <a href="counties/somerset-county.html">Somerset County (21 towns)</a>
+                <a href="/counties/union-county">Union County (21 towns)</a>
+                <a href="/counties/essex-county">Essex County (11 towns)</a>
+                <a href="/counties/morris-county">Morris County (37 towns)</a>
+                <a href="/counties/middlesex-county">Middlesex County (22 towns)</a>
+                <a href="/counties/hudson-county">Hudson County (12 towns)</a>
+                <a href="/counties/somerset-county">Somerset County (21 towns)</a>
                 <h3 style="margin-top:1.5rem;">Popular Towns</h3>
-                <a href="towns/summit.html">Summit</a>
-                <a href="towns/westfield.html">Westfield</a>
-                <a href="towns/cranford.html">Cranford</a>
-                <a href="towns/chatham.html">Chatham</a>
-                <a href="towns/millburn.html">Millburn / Short Hills</a>
-                <a href="towns/montclair.html">Montclair</a>
-                <a href="towns/maplewood.html">Maplewood</a>
-                <a href="towns/hoboken.html">Hoboken</a>
-                <a href="towns/jersey-city.html">Jersey City</a>
-                <a href="towns/caldwell.html">Caldwell</a>
+                <a href="/towns/summit">Summit</a>
+                <a href="/towns/westfield">Westfield</a>
+                <a href="/towns/cranford">Cranford</a>
+                <a href="/towns/chatham">Chatham</a>
+                <a href="/towns/millburn">Millburn / Short Hills</a>
+                <a href="/towns/montclair">Montclair</a>
+                <a href="/towns/maplewood">Maplewood</a>
+                <a href="/towns/hoboken">Hoboken</a>
+                <a href="/towns/jersey-city">Jersey City</a>
+                <a href="/towns/caldwell">Caldwell</a>
                 <h3 style="margin-top:1.5rem;">Commute Tools</h3>
-                <a href="nj-train-map.html">NJ Train Map (Interactive)</a>
-                <a href="rent-vs-buy-nj.html">Rent vs Buy NJ Calculator</a>
-                <a href="nj-realty-transfer-fee-calculator.html">NJ Realty Transfer Fee Calc</a>
+                <a href="/nj-train-map">NJ Train Map (Interactive)</a>
+                <a href="/rent-vs-buy-nj">Rent vs Buy NJ Calculator</a>
+                <a href="/nj-realty-transfer-fee-calculator">NJ Realty Transfer Fee Calc</a>
                 <h3 style="margin-top:1.5rem;">Resources</h3>
-                <a href="first-time-buyer-nj-programs.html">First-Time Buyer NJ Programs</a>
-                <a href="nj-anchor-benefit-guide.html">NJ ANCHOR &amp; Senior Freeze</a>
-                <a href="55-plus-communities-nj.html">55+ Communities NJ</a>
+                <a href="/first-time-buyer-nj-programs">First-Time Buyer NJ Programs</a>
+                <a href="/nj-anchor-benefit-guide">NJ ANCHOR &amp; Senior Freeze</a>
+                <a href="/55-plus-communities-nj">55+ Communities NJ</a>
             </div>
 
             <div class="footer-section">
                 <h3>For Buyers</h3>
-                <a href="buy-a-home.html">Buy a Home in NJ</a>
+                <a href="/buy-a-home">Buy a Home in NJ</a>
                 <a href="/blog/moving-from-nyc-to-nj-guide">Moving From NYC to NJ</a>
-                <a href="buyer-agency-agreement-nj.html">Buyer Agency NJ (2026)</a>
-                <a href="investment-property-nj.html">Investment Property NJ</a>
-                <a href="luxury-homes-nj.html">Luxury Homes $1M+</a>
-                <a href="tools/mortgage-calculator.html">Mortgage Calculator</a>
-                <a href="closing-costs-calculator.html">Closing Costs Calculator</a>
-                <a href="blog/first-time-home-buyer-nj-guide.html">First-Time Buyer Guide</a>
-                <a href="blog/top-nyc-commuter-towns-nj-2026.html">Best NJ Commuter Towns</a>
-                <a href="blog/nj-property-tax-guide.html">NJ Property Tax Guide</a>
-                <a href="/blog/summit-vs-westfield-nj.html">Westfield vs Summit</a>
-                <a href="/communities.html">Explore All 138 Communities</a>
+                <a href="/buyer-agency-agreement-nj">Buyer Agency NJ (2026)</a>
+                <a href="/investment-property-nj">Investment Property NJ</a>
+                <a href="/luxury-homes-nj">Luxury Homes $1M+</a>
+                <a href="/tools/mortgage-calculator">Mortgage Calculator</a>
+                <a href="/closing-costs-calculator">Closing Costs Calculator</a>
+                <a href="/blog/first-time-home-buyer-nj-guide">First-Time Buyer Guide</a>
+                <a href="/blog/top-nyc-commuter-towns-nj-2026">Best NJ Commuter Towns</a>
+                <a href="/blog/nj-property-tax-guide">NJ Property Tax Guide</a>
+                <a href="/blog/summit-vs-westfield-nj">Westfield vs Summit</a>
+                <a href="/communities">Explore All 138 Communities</a>
             </div>
         </div>
         
         <div class="footer-bottom">
             <p>&copy; 2026 Jorge Ramirez - Keller Williams Premier Properties. All rights reserved. Website by <a href="https://clickmingo.com" target="_blank" rel="noopener" style="color:inherit !important;text-decoration:inherit !important;">ClickMingo</a>.</p>
             <p>488 Springfield Avenue, Summit, NJ 07901 | 908-317-3227 | jorge.ramirez@kw.com</p>
-            <p style="margin-top: 0.5rem;"><a href="privacy-policy.html" style="color: rgba(255,255,255,0.6);">Privacy Policy</a> &nbsp;|&nbsp; <a href="ai-authority.html" style="color: rgba(255,255,255,0.6);">About Jorge</a> &nbsp;|&nbsp; <a href="#contact" style="color: rgba(255,255,255,0.6);">Contact</a></p>
+            <p style="margin-top: 0.5rem;"><a href="/privacy-policy" style="color: rgba(255,255,255,0.6);">Privacy Policy</a> &nbsp;|&nbsp; <a href="/ai-authority" style="color: rgba(255,255,255,0.6);">About Jorge</a> &nbsp;|&nbsp; <a href="#contact" style="color: rgba(255,255,255,0.6);">Contact</a></p>
             <p style="margin-top: 0.75rem; color: rgba(255,255,255,0.72);">In the community: <a href="https://bongholeo.com" target="_blank" rel="noopener" style="color: #D4AF5A; text-decoration: underline; text-underline-offset: 3px;">Bongholeo — a New Jersey civic-satire project</a>.</p>
         </div>
     </footer>
