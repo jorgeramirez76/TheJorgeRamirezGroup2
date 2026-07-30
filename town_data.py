@@ -77,8 +77,8 @@ TRAIN = {
     "west-orange":    {"line": "Midtown Direct",      "station": "Highland Ave / Mountain Station", "mins_penn": 45},
     "orange":         {"line": "Midtown Direct",      "station": "Orange",             "mins_penn": 25},
     "east-orange":    {"line": "Midtown Direct",      "station": "East Orange",        "mins_penn": 22},
-    "berkeley-heights": {"line": "Raritan Valley",    "station": "Berkeley Heights",   "mins_penn": 65},
-    "new-providence": {"line": "Raritan Valley",      "station": "New Providence",     "mins_penn": 62},
+    "berkeley-heights": {"line": "Gladstone Branch",  "station": "Berkeley Heights",   "mins_penn": 65},
+    "new-providence": {"line": "Gladstone Branch",    "station": "New Providence",     "mins_penn": 62},
     "florham-park":   {"line": "Midtown Direct",      "station": "Convent Station (via Madison)", "mins_penn": 55},
     # Raritan Valley (transfer at Newark)
     "westfield":      {"line": "Raritan Valley",      "station": "Westfield",          "mins_penn": 55},
