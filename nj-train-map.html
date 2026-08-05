@@ -91,7 +91,14 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which NJ Transit line has the fastest commute to NYC Penn Station?", "acceptedAnswer": {"@type": "Answer", "text": "The Northeast Corridor runs direct to NYC Penn — Newark Penn is 18 minutes, Elizabeth 25, Linden 30, Rahway 33, Metropark 38. Midtown Direct (Morris & Essex Main & Gladstone) is also direct: South Orange 31, Summit 44, Morristown 60. The Raritan Valley Line requires a transfer at Newark Penn and adds roughly 10 minutes."}}, {"@type": "Question", "name": "What towns are on the Midtown Direct train line?", "acceptedAnswer": {"@type": "Answer", "text": "Midtown Direct runs through 12 stations on the Morris & Essex Main Line: South Orange, Maplewood, Millburn, Short Hills, Summit, Chatham, Madison, Convent Station, Morristown, Morris Plains, Denville, and Dover. The Gladstone Branch splits at Summit and adds New Providence, Murray Hill, Berkeley Heights, Gillette, Stirling, Millington, Lyons, Basking Ridge, Bernardsville, Far Hills, and Peapack-Gladstone."}}, {"@type": "Question", "name": "Which Midtown Direct town has the best schools?", "acceptedAnswer": {"@type": "Answer", "text": "Short Hills (Millburn Township) and Chatham consistently score 10/10 on GreatSchools. Summit, Madison, Westfield (Raritan Valley), Basking Ridge (Gladstone Branch), and Bernardsville also hit 10/10 or 9/10."}}, {"@type": "Question", "name": "Which NJ commuter towns are appreciating fastest in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Year-over-year through Q1 2026: Chatham +10.2%, Westfield +9.7%, Millburn +9.4%, Madison +9.1%, Cranford +8.9%, Summit +8.6%, New Providence and Murray Hill +8.4%, Maplewood +8.1%. The common thread: top schools plus sub-45-minute NYC commute."}}, {"@type": "Question", "name": "What is the cheapest NJ commuter town within 45 minutes of NYC?", "acceptedAnswer": {"@type": "Answer", "text": "On Midtown Direct and NEC within 45 minutes of NYC Penn, the most affordable options are Newark (~$375K median, 18-min commute), Newark Airport area (~$375K, 22 min), Elizabeth (~$425K, 25 min), and Linden / Rahway (~$475K, 30-33 min). These trade on price but have weaker school ratings (4-6/10) than suburbs farther west."}}, {"@type": "Question", "name": "What NJ towns have both I-78 and NJ Transit train access?", "acceptedAnswer": {"@type": "Answer", "text": "Towns with both a train station and direct I-78 access include Millburn, Short Hills, Summit, New Providence, Murray Hill, Berkeley Heights, and Union. The Gladstone Branch between Summit and Basking Ridge runs parallel to I-78."}}, {"@type": "Question", "name": "Is the Raritan Valley Line worth buying on despite the transfer?", "acceptedAnswer": {"@type": "Answer", "text": "Often yes. The transfer at Newark Penn adds 8-12 minutes but buyers gain access to Westfield (10/10 schools, $1.25M), Cranford (9/10 schools, $725K), Fanwood (9/10, $675K), and Bridgewater (8/10, $675K) for meaningfully less than Midtown Direct equivalents."}}]}</script>
 
 <!-- ItemList schema — all 44 stations as structured data for LLM citation -->
-<script type="application/ld+json" id="stations-itemlist">{"@context":"https://schema.org","@type":"ItemList","itemListElement":[]}</script>
+<script type="application/ld+json" id="stations-itemlist">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [],
+  "dateModified": "2026-08-04"
+}
+</script>
 <script>
 /* Emit ItemList with every station's full data — runs after DOM parses. */
 document.addEventListener('DOMContentLoaded', function () {
@@ -433,6 +440,74 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="related"><strong>More on the NYC commute:</strong>
 <p><a href="/blog/nyc-to-nj-commute-guide-2026">NYC to NJ Commute Guide</a> &middot; <a href="/blog/nj-commute-cost-nyc-2026">What the NJ-to-NYC Commute Actually Costs</a> &middot; <a href="/blog/midtown-direct-towns-nj">Midtown Direct Towns</a></p></div>
+  <section class="container" style="max-width:1000px;margin:40px auto;padding:0 20px;">
+    <h2>The real cost of commuting, by station</h2>
+    <p>Commute time is only one third of the number that matters. Here is the same station list with the
+    two costs nobody puts beside it: the NJ Transit monthly rail pass to New York Penn Station, and the
+    average residential property tax bill in that town. Sorted by commute time.</p>
+    <div style="overflow-x:auto;max-height:600px;overflow-y:auto;border:1px solid #e0e0e0;border-radius:8px;">
+    <table class="tax-table">
+      <thead>
+        <tr><th>Station</th><th>Line</th><th>To NY Penn</th><th>Monthly rail pass</th>
+            <th>Avg property tax bill</th><th>Typical home price</th></tr>
+      </thead>
+      <tbody>
+                    <tr><td><strong>Newark Penn</strong></td><td>ne</td><td>18 min</td><td>&mdash;</td><td>$7,640</td><td>$375,000</td></tr>
+                    <tr><td><strong>Newark Airport</strong></td><td>ne</td><td>22 min</td><td>&mdash;</td><td>$7,640</td><td>$375,000</td></tr>
+                    <tr><td><strong>Elizabeth</strong></td><td>ne</td><td>25 min</td><td>&mdash;</td><td>$9,726</td><td>$425,000</td></tr>
+                    <tr><td><strong>Linden</strong></td><td>ne</td><td>30 min</td><td>&mdash;</td><td>$9,831</td><td>$475,000</td></tr>
+                    <tr><td><strong>South Orange</strong></td><td>Midtown Direct</td><td>31 min</td><td>$255/mo</td><td>$22,717</td><td>$775,000</td></tr>
+                    <tr><td><strong>Maplewood</strong></td><td>Midtown Direct</td><td>33 min</td><td>$276/mo</td><td>$19,378</td><td>$850,000</td></tr>
+                    <tr><td><strong>Rahway</strong></td><td>ne</td><td>33 min</td><td>$328/mo</td><td>$10,435</td><td>$475,000</td></tr>
+                    <tr><td><strong>Millburn</strong></td><td>Midtown Direct</td><td>35 min</td><td>$309/mo</td><td>$26,292</td><td>$1,200,000</td></tr>
+                    <tr><td><strong>Union</strong></td><td>Raritan Valley</td><td>35 min</td><td>&mdash;</td><td>$10,849</td><td>$525,000</td></tr>
+                    <tr><td><strong>Short Hills</strong></td><td>Midtown Direct</td><td>37 min</td><td>$309/mo</td><td>&mdash;</td><td>$2,100,000</td></tr>
+                    <tr><td><strong>Roselle Park</strong></td><td>Raritan Valley</td><td>37 min</td><td>&mdash;</td><td>$11,415</td><td>$475,000</td></tr>
+                    <tr><td><strong>Metropark</strong></td><td>ne</td><td>38 min</td><td>&mdash;</td><td>&mdash;</td><td>$525,000</td></tr>
+                    <tr><td><strong>Cranford</strong></td><td>Raritan Valley</td><td>40 min</td><td>$309/mo</td><td>$13,728</td><td>$725,000</td></tr>
+                    <tr><td><strong>Metuchen</strong></td><td>ne</td><td>42 min</td><td>$408/mo</td><td>$13,818</td><td>$625,000</td></tr>
+                    <tr><td><strong>Garwood</strong></td><td>Raritan Valley</td><td>43 min</td><td>&mdash;</td><td>$11,724</td><td>$525,000</td></tr>
+                    <tr><td><strong>Summit</strong></td><td>Midtown Direct</td><td>44 min</td><td>$362/mo</td><td>$19,697</td><td>$1,450,000</td></tr>
+                    <tr><td><strong>Westfield</strong></td><td>Raritan Valley</td><td>45 min</td><td>$328/mo</td><td>$18,940</td><td>$1,250,000</td></tr>
+                    <tr><td><strong>Edison</strong></td><td>ne</td><td>45 min</td><td>&mdash;</td><td>$10,584</td><td>$575,000</td></tr>
+                    <tr><td><strong>New Providence</strong></td><td>gl</td><td>47 min</td><td>$362/mo</td><td>$16,228</td><td>$825,000</td></tr>
+                    <tr><td><strong>Chatham</strong></td><td>Midtown Direct</td><td>48 min</td><td>$376/mo</td><td>$18,371</td><td>$1,550,000</td></tr>
+                    <tr><td><strong>Fanwood</strong></td><td>Raritan Valley</td><td>48 min</td><td>&mdash;</td><td>$14,756</td><td>$675,000</td></tr>
+                    <tr><td><strong>Murray Hill</strong></td><td>gl</td><td>49 min</td><td>&mdash;</td><td>&mdash;</td><td>$825,000</td></tr>
+                    <tr><td><strong>Berkeley Heights</strong></td><td>gl</td><td>50 min</td><td>&mdash;</td><td>$14,152</td><td>$825,000</td></tr>
+                    <tr><td><strong>New Brunswick</strong></td><td>ne</td><td>50 min</td><td>&mdash;</td><td>$7,101</td><td>$475,000</td></tr>
+                    <tr><td><strong>Madison</strong></td><td>Midtown Direct</td><td>52 min</td><td>$408/mo</td><td>$15,897</td><td>$1,250,000</td></tr>
+                    <tr><td><strong>Gillette</strong></td><td>gl</td><td>52 min</td><td>&mdash;</td><td>&mdash;</td><td>$675,000</td></tr>
+                    <tr><td><strong>Plainfield</strong></td><td>Raritan Valley</td><td>53 min</td><td>&mdash;</td><td>$9,755</td><td>$475,000</td></tr>
+                    <tr><td><strong>Stirling</strong></td><td>gl</td><td>55 min</td><td>&mdash;</td><td>&mdash;</td><td>$675,000</td></tr>
+                    <tr><td><strong>Convent Station</strong></td><td>Midtown Direct</td><td>57 min</td><td>&mdash;</td><td>&mdash;</td><td>$950,000</td></tr>
+                    <tr><td><strong>Millington</strong></td><td>gl</td><td>57 min</td><td>&mdash;</td><td>&mdash;</td><td>$675,000</td></tr>
+                    <tr><td><strong>Dunellen</strong></td><td>Raritan Valley</td><td>58 min</td><td>&mdash;</td><td>$11,299</td><td>$475,000</td></tr>
+                    <tr><td><strong>Morristown</strong></td><td>Midtown Direct</td><td>60 min</td><td>$477/mo</td><td>$11,175</td><td>$825,000</td></tr>
+                    <tr><td><strong>Lyons</strong></td><td>gl</td><td>60 min</td><td>&mdash;</td><td>&mdash;</td><td>$1,050,000</td></tr>
+                    <tr><td><strong>Basking Ridge</strong></td><td>gl</td><td>62 min</td><td>$531/mo</td><td>&mdash;</td><td>$1,050,000</td></tr>
+                    <tr><td><strong>Bound Brook</strong></td><td>Raritan Valley</td><td>62 min</td><td>&mdash;</td><td>$9,877</td><td>$450,000</td></tr>
+                    <tr><td><strong>Morris Plains</strong></td><td>Midtown Direct</td><td>65 min</td><td>&mdash;</td><td>$11,737</td><td>$625,000</td></tr>
+                    <tr><td><strong>Bernardsville</strong></td><td>gl</td><td>65 min</td><td>&mdash;</td><td>$18,511</td><td>$1,250,000</td></tr>
+                    <tr><td><strong>Bridgewater</strong></td><td>Raritan Valley</td><td>65 min</td><td>&mdash;</td><td>$10,962</td><td>$675,000</td></tr>
+                    <tr><td><strong>Somerville</strong></td><td>Raritan Valley</td><td>68 min</td><td>&mdash;</td><td>$11,264</td><td>$485,000</td></tr>
+                    <tr><td><strong>Far Hills</strong></td><td>gl</td><td>70 min</td><td>&mdash;</td><td>$15,004</td><td>$1,400,000</td></tr>
+                    <tr><td><strong>Raritan</strong></td><td>Raritan Valley</td><td>70 min</td><td>&mdash;</td><td>$9,820</td><td>$475,000</td></tr>
+                    <tr><td><strong>Denville</strong></td><td>Midtown Direct</td><td>72 min</td><td>&mdash;</td><td>$11,462</td><td>$625,000</td></tr>
+                    <tr><td><strong>Peapack-Gladstone</strong></td><td>gl</td><td>72 min</td><td>&mdash;</td><td>$15,081</td><td>$1,050,000</td></tr>
+                    <tr><td><strong>Dover</strong></td><td>Midtown Direct</td><td>75 min</td><td>&mdash;</td><td>$8,409</td><td>$475,000</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:0.9rem;color:#6E6E6E;margin-top:12px;">
+      Monthly rail pass from NJ Transit's published
+      <a href="https://content.njtransit.com/sites/default/files/marketing/website/pdf/Fares/New%20York%20Penn%20Station.pdf" rel="nofollow">New York Penn Station fare chart</a>;
+      fares are zone-based, so stations in the same zone share a price, and a dash means that station is not
+      listed on that chart. Average residential property tax bill is the 2025 figure from the
+      <a href="/blog/nj-property-tax-guide">NJ Department of Community Affairs Citizens Tax Summary</a>.
+      Home prices are typical local ranges, not an official statistic.
+    </p>
+  </section>
+
 </main>
 
 <footer>
