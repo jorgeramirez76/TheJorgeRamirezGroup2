@@ -394,16 +394,28 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "@id": "https://thejorgeramirezgroup.com/blog/nj-property-tax-guide#dataset",
-  "name": "Average residential property tax bill by New Jersey municipality, 2024–2025",
-  "description": "Average residential property tax bill for all 564 reporting New Jersey municipalities for 2025 with the 2024 comparison, plus the school, municipal and county components and average assessed value. Compiled from the NJ Department of Community Affairs, Division of Local Government Services, Property Tax Information, Citizens Tax Summary.",
+  "name": "Average residential property tax bill by New Jersey municipality, 2012–2025",
+  "description": "Average residential property tax bill for every reporting New Jersey municipality: a detailed 2025 file with the 2024 comparison, school, municipal and county components and average assessed value, plus a 14-year trend file with the average bill for each year 2012 through 2025 and the total change in dollars and percent. Compiled from the NJ Department of Community Affairs, Division of Local Government Services, annual Property Tax Information files (Citizens Tax Summary).",
   "creator": {
     "@id": "https://thejorgeramirezgroup.com/#agent"
   },
   "isBasedOn": [
     "https://www.nj.gov/dca/dlgs/resources/Property_Tax/25_data/25taxes.xls",
-    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/24_data/24taxes.xls"
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/24_data/24taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/23_data/23taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/22_data/22taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/21_data/21taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/20_data/20taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/19_data/19taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/18_data/18taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/17_data/17taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/16_data/16taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/15_data/15taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/14_data/14taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/13_data/13taxes.xls",
+    "https://www.nj.gov/dca/dlgs/resources/Property_Tax/12_data/12taxes.xls"
   ],
-  "temporalCoverage": "2024/2025",
+  "temporalCoverage": "2012/2025",
   "spatialCoverage": {
     "@type": "Place",
     "name": "New Jersey, USA"
@@ -416,13 +428,20 @@
     "Average school tax",
     "Average municipal tax",
     "Average county tax",
-    "Average residential assessed value"
+    "Average residential assessed value",
+    "Average total residential property tax bill for each year 2012 through 2025",
+    "Change in average bill 2012 to 2025, dollars and percent"
   ],
   "distribution": [
     {
       "@type": "DataDownload",
       "encodingFormat": "text/csv",
       "contentUrl": "https://thejorgeramirezgroup.com/data/nj-property-tax-by-town-2025.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://thejorgeramirezgroup.com/data/nj-property-tax-trends-2012-2025.csv"
     }
   ]
 }
@@ -1323,6 +1342,85 @@
             <p>High-tax towns often deliver value through excellent schools, low crime, and strong community services. Homes in these towns tend to appreciate more consistently and sell faster when it is time to move. The taxes are a cost, but the return on that investment is real.</p>
 
             <p>Jorge helps buyers across all six counties understand the full financial picture so they can make confident decisions. <a href="/#contact">Contact Jorge for a buyer consultation.</a></p>
+
+            <h2>How NJ property taxes moved over 14 years</h2>
+
+            <p>One year of increases tells you the direction. Fourteen years tell you the slope. Lining up the state&rsquo;s 2012 through 2025 property tax files town by town produces a picture most buyers never see: the statewide average residential bill rose from <strong>$7,857 in 2012 to $10,597 in 2025</strong> &mdash; up <strong>$2,740, or 34.9%</strong>. Of the 563 municipalities that appear in both years, <strong>559 pay more than they did in 2012 and only 4 pay less</strong> (Loch Arbour, Rockleigh, Atlantic City and Teterboro). The median town&rsquo;s bill grew 34.8% over the period. <a href="/data/nj-property-tax-trends-2012-2025.csv" download>Download the full 14-year dataset for every municipality (CSV)</a>.</p>
+
+            <div style="overflow-x:auto;border:1px solid #e0e0e0;border-radius:8px;">
+            <table class="tax-table">
+                <thead>
+                    <tr><th>Year</th><th>Statewide average bill</th><th>Change from prior year</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>2012</strong></td><td>$7,857</td><td>&mdash;</td></tr>
+                    <tr><td><strong>2013</strong></td><td>$7,964</td><td>+107</td></tr>
+                    <tr><td><strong>2014</strong></td><td>$8,120</td><td>+156</td></tr>
+                    <tr><td><strong>2015</strong></td><td>$8,329</td><td>+209</td></tr>
+                    <tr><td><strong>2016</strong></td><td>$8,510</td><td>+181</td></tr>
+                    <tr><td><strong>2017</strong></td><td>$8,657</td><td>+147</td></tr>
+                    <tr><td><strong>2018</strong></td><td>$8,810</td><td>+154</td></tr>
+                    <tr><td><strong>2019</strong></td><td>$8,981</td><td>+171</td></tr>
+                    <tr><td><strong>2020</strong></td><td>$9,155</td><td>+174</td></tr>
+                    <tr><td><strong>2021</strong></td><td>$9,315</td><td>+160</td></tr>
+                    <tr><td><strong>2022</strong></td><td>$9,482</td><td>+167</td></tr>
+                    <tr><td><strong>2023</strong></td><td>$9,808</td><td>+326</td></tr>
+                    <tr><td><strong>2024</strong></td><td>$10,158</td><td>+350</td></tr>
+                    <tr><td><strong>2025</strong></td><td>$10,597</td><td>+439</td></tr>
+                </tbody>
+            </table></div>
+
+            <p><strong>The slope is not constant.</strong> From 2013 through 2022 the statewide average climbed by about $163 a year. Over the last three years the pace more than doubled: <strong>+$326 in 2023, +$350 in 2024, +$439 in 2025</strong>. If you are underwriting a home you plan to hold, the recent pace is the honest baseline &mdash; not the long-run average.</p>
+
+            <h3>The 10 towns where the average bill grew the most, 2012 to 2025</h3>
+
+            <p>Measured in dollars, the biggest increases cluster in Bergen County and the Monmouth and Ocean shore towns. Asbury Park is the outlier on this list: it is the only one that started below the 2012 statewide average, and its bill has since risen 151% &mdash; the fastest percentage growth of any of the ten.</p>
+
+            <div style="overflow-x:auto;border:1px solid #e0e0e0;border-radius:8px;">
+            <table class="tax-table">
+                <thead>
+                    <tr><th>Town</th><th>County</th><th>2012 average</th><th>2025 average</th><th>Change</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Tavistock</strong></td><td>Camden</td><td>$23,863</td><td>$38,387</td><td>+14,524 (+60.9%)</td></tr>
+                    <tr><td><strong>Mantoloking</strong></td><td>Ocean</td><td>$16,140</td><td>$25,985</td><td>+9,845 (+61.0%)</td></tr>
+                    <tr><td><strong>Deal</strong></td><td>Monmouth</td><td>$15,802</td><td>$25,563</td><td>+9,761 (+61.8%)</td></tr>
+                    <tr><td><strong>Demarest</strong></td><td>Bergen</td><td>$16,569</td><td>$26,108</td><td>+9,539 (+57.6%)</td></tr>
+                    <tr><td><strong>Allenhurst</strong></td><td>Monmouth</td><td>$12,366</td><td>$19,640</td><td>+7,274 (+58.8%)</td></tr>
+                    <tr><td><strong>Tenafly</strong></td><td>Bergen</td><td>$18,036</td><td>$25,123</td><td>+7,087 (+39.3%)</td></tr>
+                    <tr><td><strong>South Orange</strong></td><td>Essex</td><td>$15,951</td><td>$22,717</td><td>+6,766 (+42.4%)</td></tr>
+                    <tr><td><strong>Asbury Park</strong></td><td>Monmouth</td><td>$4,451</td><td>$11,176</td><td>+6,725 (+151.1%)</td></tr>
+                    <tr><td><strong>Bay Head</strong></td><td>Ocean</td><td>$11,344</td><td>$18,045</td><td>+6,701 (+59.1%)</td></tr>
+                    <tr><td><strong>Woodcliff Lake</strong></td><td>Bergen</td><td>$14,203</td><td>$20,627</td><td>+6,424 (+45.2%)</td></tr>
+                </tbody>
+            </table></div>
+
+            <h3>The 10 slowest-growing tax bills since 2012</h3>
+
+            <p>This list is filtered to towns with a 2025 average bill above $5,000, because in the smallest boroughs a single revaluation or one large property can swing the average and make the trend meaningless. Even with that filter, two towns on the list pay less today than they did in 2012 &mdash; Loch Arbour&rsquo;s average dropped from $22,323 in 2016 to $12,299 in 2018 and never returned, and Rockleigh&rsquo;s 2025 bill is still $1,225 below its 2012 figure. Cranbury is the quiet standout: a full-sized township that held its average bill within 1.9% over thirteen years.</p>
+
+            <div style="overflow-x:auto;border:1px solid #e0e0e0;border-radius:8px;">
+            <table class="tax-table">
+                <thead>
+                    <tr><th>Town</th><th>County</th><th>2012 average</th><th>2025 average</th><th>Change</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Loch Arbour</strong></td><td>Monmouth</td><td>$23,328</td><td>$13,783</td><td>-9,545 (-40.9%)</td></tr>
+                    <tr><td><strong>Rockleigh</strong></td><td>Bergen</td><td>$14,828</td><td>$13,603</td><td>-1,225 (-8.3%)</td></tr>
+                    <tr><td><strong>Cranbury</strong></td><td>Middlesex</td><td>$11,099</td><td>$11,305</td><td>+206 (+1.9%)</td></tr>
+                    <tr><td><strong>Shrewsbury Township</strong></td><td>Monmouth</td><td>$4,792</td><td>$5,127</td><td>+335 (+7.0%)</td></tr>
+                    <tr><td><strong>Lafayette</strong></td><td>Sussex</td><td>$8,546</td><td>$9,270</td><td>+724 (+8.5%)</td></tr>
+                    <tr><td><strong>Branchville</strong></td><td>Sussex</td><td>$5,993</td><td>$6,514</td><td>+521 (+8.7%)</td></tr>
+                    <tr><td><strong>Far Hills</strong></td><td>Somerset</td><td>$13,803</td><td>$15,004</td><td>+1,201 (+8.7%)</td></tr>
+                    <tr><td><strong>Union City</strong></td><td>Hudson</td><td>$7,437</td><td>$8,111</td><td>+674 (+9.1%)</td></tr>
+                    <tr><td><strong>New Brunswick</strong></td><td>Middlesex</td><td>$6,474</td><td>$7,101</td><td>+627 (+9.7%)</td></tr>
+                    <tr><td><strong>Franklin</strong></td><td>Warren</td><td>$8,689</td><td>$9,600</td><td>+911 (+10.5%)</td></tr>
+                </tbody>
+            </table></div>
+
+            <p>The practical read for buyers: a town&rsquo;s current bill matters, but its trajectory matters just as much over a ten-year hold. Two towns with identical $12,000 bills today can be $4,000 apart a decade from now if one has been compounding at the statewide pace and the other has been flat. The 14-year CSV above lets you check any town&rsquo;s track record before you commit to it. If you want help reading a specific town&rsquo;s trend against what you can afford, call Jorge at <a href="tel:+19082307844">908-230-7844</a> for an honest conversation. No pressure.</p>
+
+            <p style="font-size:.92rem;opacity:.85;"><strong>Source:</strong> New Jersey Department of Community Affairs, Division of Local Government Services, Property Tax Information files for 2012 through 2025. Figures for 2015&ndash;2025 are each year&rsquo;s Citizens Tax Summary average residential bill; the 2012&ndash;2014 workbooks use an older single-sheet layout whose &ldquo;Average Total Property Taxes&rdquo; column follows the same definition (average residential value &times; general tax rate), which we verified against the published rates for every municipality. Statewide figures are the simple average of all reporting municipalities&rsquo; average bills, the same basis as the 2024&ndash;2025 figures elsewhere on this page. Princeton Borough and Princeton Township are reported separately only in 2012 (a single Princeton appears from 2013 on), and Pine Valley stops being reported after 2021, so those rows have no 2012&ndash;2025 change figure in the CSV.</p>
 
             <!-- CTA -->
             <div class="cta-box">
