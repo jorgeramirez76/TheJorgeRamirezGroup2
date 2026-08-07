@@ -1,19 +1,19 @@
-# Site Audit Report — 1056 pages
+# Site Audit Report — 1121 pages
 
 ## Issue summary (issue → page count)
 
 | Issue | Pages affected |
 |-------|----------------|
-| title-too | 25 |
-| missing-twitter:card | 25 |
-| missing-og:image | 16 |
-| missing-llm-context | 16 |
-| missing-jsonld | 16 |
-| missing-title | 15 |
-| missing-meta-description | 15 |
-| missing-canonical | 15 |
-| missing-og:title | 15 |
-| missing-og:description | 15 |
+| missing-twitter:card | 35 |
+| title-too | 33 |
+| missing-og:image | 24 |
+| missing-llm-context | 24 |
+| missing-jsonld | 24 |
+| missing-title | 23 |
+| missing-meta-description | 23 |
+| missing-canonical | 23 |
+| missing-og:title | 23 |
+| missing-og:description | 23 |
 
 ## Broken internal links — top 30
 
@@ -21,68 +21,68 @@
 |---|---|---|
 | `../css/styles.css` | 6 | `tools/blog-automation/logs/DRYRUN-buying-home-roselle-nj-2026.html` |
 
-## Sitemap gaps — 74 pages NOT in sitemap.xml
+## Sitemap gaps — 211 pages NOT in sitemap.xml
 
-- `/blog/affordable-upgrades-nj-home-sellers-2026.html`
-- `/blog/appliances-never-leave-plugged-in-nj-2026.html`
-- `/blog/bathroom-decor-germ-magnets-nj-sellers-2026.html`
-- `/blog/cleaning-house-order-nj-sellers-2026.html`
-- `/blog/cleaning-mistakes-damage-surfaces-nj-sellers-2026.html`
-- `/blog/close-bedroom-door-fire-safety-nj-2026.html`
-- `/blog/closing-shift-routine-nj-home-sellers-2026.html`
-- `/blog/cozy-home-staging-nj-sellers-2026.html`
-- `/blog/declutter-closet-nj-home-sellers-2026.html`
-- `/blog/design-mistakes-nj-home-looks-cheap-2026.html`
-- `/blog/design-trends-homeowners-regret-nj-sellers-2026.html`
-- `/blog/dollar-bill-test-oven-nj-home-sellers-2026.html`
-- `/blog/dusty-home-hvac-nj-sellers-2026.html`
-- `/blog/fresher-smelling-trash-can-nj-sellers-2026.html`
-- `/blog/gutter-damage-signs-nj-home-sellers-2026.html`
-- `/blog/heat-blocking-windows-nj-home-cooling-2026.html`
-- `/blog/hidden-clutter-hot-spots-nj-sellers-2026.html`
-- `/blog/hidden-water-leaks-nj-home-sellers-2026.html`
-- `/blog/home-basket-system-nj-sellers-2026.html`
-- `/blog/home-odors-kill-nj-home-sales-2026.html`
-- `/blog/home-office-staging-nj-remote-buyers-2026.html`
-- `/blog/home-safety-checks-nj-buyers-inspection-2026.html`
-- `/blog/home-setup-backward-furniture-layout-nj-sellers-2026.html`
-- `/blog/house-sounds-nj-home-inspection-2026.html`
-- `/blog/household-items-worth-money-nj-sellers-2026.html`
-- `/blog/hydrogen-peroxide-stain-remover-nj-home-sellers-2026.html`
-- `/blog/ikea-pieces-nj-home-staging-sellers-2026.html`
-- `/blog/interior-design-trends-2026-nj-home-value.html`
-- `/blog/interior-design-trends-nj-home-value-2026.html`
-- `/blog/kitchen-details-nj-buyers-notice-2026.html`
-- `/blog/kitchen-plastic-storage-nj-home-sellers-2026.html`
-- `/blog/kitchen-updates-nj-home-value-2026.html`
-- `/blog/lifesaving-home-safety-tips-nj-2026.html`
-- `/blog/living-room-conversation-layout-nj-sellers-2026.html`
-- `/blog/lower-utility-bills-nj-home-value-2026.html`
-- `/blog/nj-fall-real-estate-market-2026.html`
-- `/blog/nj-home-buyer-house-tour-mistakes-2026.html`
-- `/blog/nj-home-feels-cold-drafts-insulation-2026.html`
-- `/blog/nj-housing-market-july-2026-sellers.html`
-- `/blog/outdated-laundry-habits-nj-home-damage-2026.html`
-- `/blog/outdated-laundry-habits-nj-home-sellers-2026.html`
-- `/blog/oven-rack-position-nj-home-sellers-2026.html`
-- `/blog/overlooked-spaces-declutter-nj-sellers-2026.html`
-- `/blog/pantone-cloud-dancer-2026-nj-home-sellers.html`
-- `/blog/pantone-color-year-2026-nj-home-staging.html`
-- `/blog/pest-warning-signs-nj-home-sellers-2026.html`
-- `/blog/pest-warning-signs-nj-homes-2026.html`
-- `/blog/save-home-from-rot-nj-sellers-2026.html`
-- `/blog/sell-nj-home-fall-2026-vs-spring-2027.html`
-- `/blog/stop-clothes-slipping-off-hangers-closet-nj-2026.html`
-- `/blog/things-nj-homeowners-overspend-on-2026.html`
-- `/blog/thrift-store-donations-declutter-nj-home-sellers-2026.html`
-- `/blog/walkable-neighborhoods-nj-buyers-2026.html`
-- `/blog/water-damage-signs-nj-homes-2026.html`
-- `/blog/what-to-donate-declutter-nj-home-sellers-2026.html`
-- `/sms-terms.html`
-- `/tools/blog-automation/logs/DRYRUN-buying-home-roselle-nj-2026.html`
-- `/tools/blog-automation/logs/DRYRUN-test-related.html`
-- `/tools/blog-automation/template_source.html`
-- `/tools/seo-optimizer/reports/report-2026-07-15.html`
+- `/blog/`
+- `/blog/backyard-mistakes-nj-home-value-2026.html`
+- `/blog/best-nj-towns-for-families.html`
+- `/blog/daily-cleaning-nj-home-listed-2026.html`
+- `/blog/essex-county-real-estate-market-q2-2026.html`
+- `/blog/evening-reset-nj-home-show-ready-2026.html`
+- `/blog/home-setup-backward-nj-sellers-buyers-2026.html`
+- `/blog/home-systems-age-nj-sellers-2026.html`
+- `/blog/interior-design-trends-nj-buyers-pay-more-2026.html`
+- `/blog/kitchen-declutter-nj-home-sellers-2026.html`
+- `/blog/morris-county-real-estate-market-q2-2026.html`
+- `/blog/nj-property-tax-guide-homeowners.html`
+- `/blog/selling-your-home-summit-nj-guide.html`
+- `/blog/smartest-spot-declutter-first-nj-home-sellers-2026.html`
+- `/blog/staging-nj-home-wrong-order-2026.html`
+- `/blog/thrift-store-declutter-nj-home-sellers-2026.html`
+- `/blog/unsafe-storage-spots-nj-home-inspection-2026.html`
+- `/blog/what-nj-buyers-want-august-2026.html`
+- `/chatham-vs-madison-nj.html`
+- `/communities/`
+- `/counties/`
+- `/first-time-buyer-nj-programs.html`
+- `/inherited-home-nj.html`
+- `/nyc-to-nj-relocation.html`
+- `/realtor/`
+- `/realtor/basking-ridge-nj.html`
+- `/realtor/bayonne-nj.html`
+- `/realtor/bedminster-nj.html`
+- `/realtor/berkeley-heights-nj.html`
+- `/realtor/bernards-township-nj.html`
+- `/realtor/bernardsville-nj.html`
+- `/realtor/bloomfield-nj.html`
+- `/realtor/boonton-nj.html`
+- `/realtor/boonton-township-nj.html`
+- `/realtor/bound-brook-nj.html`
+- `/realtor/branchburg-nj.html`
+- `/realtor/bridgewater-nj.html`
+- `/realtor/butler-nj.html`
+- `/realtor/caldwell-nj.html`
+- `/realtor/carteret-nj.html`
+- `/realtor/chatham-borough-nj.html`
+- `/realtor/chatham-nj.html`
+- `/realtor/chatham-township-nj.html`
+- `/realtor/chester-borough-nj.html`
+- `/realtor/chester-township-nj.html`
+- `/realtor/clark-nj.html`
+- `/realtor/cranbury-nj.html`
+- `/realtor/cranford-nj.html`
+- `/realtor/denville-nj.html`
+- `/realtor/dover-nj.html`
+- `/realtor/dunellen-nj.html`
+- `/realtor/east-brunswick-nj.html`
+- `/realtor/east-hanover-nj.html`
+- `/realtor/east-newark-nj.html`
+- `/realtor/edison-nj.html`
+- `/realtor/elizabeth-nj.html`
+- `/realtor/fanwood-nj.html`
+- `/realtor/far-hills-nj.html`
+- `/realtor/florham-park-nj.html`
+- `/realtor/franklin-township-nj.html`
 
 ## Per-page detail (first 30 worst pages)
 
@@ -177,6 +177,54 @@
 - images without alt: 0
 - issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
 
+### `tools/seo-optimizer/reports/report-2026-07-30.html` (/tools/seo-optimizer/reports/report-2026-07-30.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-07-31.html` (/tools/seo-optimizer/reports/report-2026-07-31.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-08-01.html` (/tools/seo-optimizer/reports/report-2026-08-01.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-08-02.html` (/tools/seo-optimizer/reports/report-2026-08-02.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-08-03.html` (/tools/seo-optimizer/reports/report-2026-08-03.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-08-04.html` (/tools/seo-optimizer/reports/report-2026-08-04.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-08-05.html` (/tools/seo-optimizer/reports/report-2026-08-05.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
+### `tools/seo-optimizer/reports/report-2026-08-06.html` (/tools/seo-optimizer/reports/report-2026-08-06.html)
+- title: ""
+- jsonld blocks: 0
+- images without alt: 0
+- issues: missing-title, missing-meta-description, missing-canonical, missing-og:title, missing-og:description, missing-og:image, missing-twitter:card, missing-llm-context, missing-jsonld
+
 ### `sms-terms.html` (/sms-terms.html)
 - title: "SMS Terms &amp; Conditions | The Jorge Ramirez Group"
 - jsonld blocks: 0
@@ -195,6 +243,12 @@
 - images without alt: 0
 - issues: title-too-long-76, missing-twitter:card
 
+### `blog/early-warning-signs-pest-problem-nj-sellers-2026.html` (/blog/early-warning-signs-pest-problem-nj-sellers-2026.html)
+- title: "6 Early Warning Signs of a Pest Problem NJ Home Sellers Can't Ignore (2026)"
+- jsonld blocks: 3
+- images without alt: 0
+- issues: title-too-long-75, missing-twitter:card
+
 ### `blog/home-setup-backward-furniture-layout-nj-sellers-2026.html` (/blog/home-setup-backward-furniture-layout-nj-sellers-2026.html)
 - title: "Most NJ Homeowners Set Up Their Homes Backward — And It's Hurting Their Sale Price"
 - jsonld blocks: 3
@@ -208,61 +262,7 @@
 - issues: title-too-long-80, missing-twitter:card
 
 ### `blog/outdated-laundry-habits-nj-home-sellers-2026.html` (/blog/outdated-laundry-habits-nj-home-sellers-2026.html)
-- title: "6 Outdated Laundry Habits Damaging Your Washer (And Your NJ Home's Value)"
+- title: "6 Laundry Habits That Signal Deferred Maintenance to NJ Home Buyers (2026)"
 - jsonld blocks: 3
 - images without alt: 0
-- issues: title-too-long-73, missing-twitter:card
-
-### `blog/pantone-cloud-dancer-2026-nj-home-sellers.html` (/blog/pantone-cloud-dancer-2026-nj-home-sellers.html)
-- title: "Pantone's 2026 Color of the Year Is Cloud Dancer — What NJ Home Sellers Need to Know"
-- jsonld blocks: 3
-- images without alt: 0
-- issues: title-too-long-84, missing-twitter:card
-
-### `tools/blog-automation/logs/DRYRUN-buying-home-roselle-nj-2026.html` (/tools/blog-automation/logs/DRYRUN-buying-home-roselle-nj-2026.html)
-- title: "Buying a Home in Roselle, NJ (2026 Guide) | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-- broken links: ../css/styles.css, ../css/styles.css
-
-### `tools/blog-automation/logs/DRYRUN-test-related.html` (/tools/blog-automation/logs/DRYRUN-test-related.html)
-- title: "Buying a Home in Roselle, NJ (2026 Guide) | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-- broken links: ../css/styles.css, ../css/styles.css
-
-### `tools/blog-automation/template_source.html` (/tools/blog-automation/template_source.html)
-- title: "Buying a Home in Cranford NJ 2026 | Jorge Ramirez"
-- jsonld blocks: 2
-- images without alt: 0
-- broken links: ../css/styles.css, ../css/styles.css
-
-### `blog/affordable-upgrades-nj-home-sellers-2026.html` (/blog/affordable-upgrades-nj-home-sellers-2026.html)
-- title: "10 Affordable Home Upgrades Under $500 That Pay Off When You Sell Your NJ Home"
-- jsonld blocks: 3
-- images without alt: 0
-- issues: title-too-long-78
-
-### `blog/closing-shift-routine-nj-home-sellers-2026.html` (/blog/closing-shift-routine-nj-home-sellers-2026.html)
-- title: "The NJ Seller's Closing-Shift Routine: 15 Minutes a Night That Pay Off at Closing"
-- jsonld blocks: 3
-- images without alt: 0
-- issues: title-too-long-81
-
-### `blog/cozy-home-staging-nj-sellers-2026.html` (/blog/cozy-home-staging-nj-sellers-2026.html)
-- title: "How to Make Your NJ Home Feel Cozy at Showings Without the Clutter"
-- jsonld blocks: 3
-- images without alt: 0
-- issues: missing-twitter:card
-
-### `blog/declutter-closet-nj-home-sellers-2026.html` (/blog/declutter-closet-nj-home-sellers-2026.html)
-- title: "How to Declutter Your Closets Before Listing Your NJ Home (And Keep Them That Way)"
-- jsonld blocks: 3
-- images without alt: 0
-- issues: title-too-long-82
-
-### `blog/design-trends-homeowners-regret-nj-sellers-2026.html` (/blog/design-trends-homeowners-regret-nj-sellers-2026.html)
-- title: "Design Trends NJ Homeowners Regret — And What They Cost at Resale"
-- jsonld blocks: 3
-- images without alt: 0
-- issues: missing-twitter:card
+- issues: title-too-long-74, missing-twitter:card

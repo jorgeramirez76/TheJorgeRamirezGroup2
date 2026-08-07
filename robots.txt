@@ -5,9 +5,7 @@ Allow: /es/
 # Preferred domain (no www)
 Host: thejorgeramirezgroup.com
 
-# Block removed duplicate-translation paths (410/404 on request)
-Disallow: /blog/es/
-Disallow: /towns/es/
+# Legacy duplicate-translation paths now 301 to /es/ equivalents (vercel.json)
 Disallow: /staging/
 
 # Block dynamic/parameter URLs

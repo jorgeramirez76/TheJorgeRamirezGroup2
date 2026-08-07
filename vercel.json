@@ -1428,6 +1428,337 @@
       "source": "/es/ai-autoridad",
       "destination": "/es/ai-authority",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://thejorgeramirezgroup.com/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "thejorgeramirezgroup.vercel.app"
+        }
+      ]
+    },
+    {
+      "source": "/blog/es/vender-propiedad-alquiler-nj.html",
+      "destination": "/es/sell-rental-property-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/vender-propiedad-alquiler-nj",
+      "destination": "/es/sell-rental-property-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/vender-propiedad-alquiler-nj.html",
+      "destination": "/es/sell-rental-property-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/vender-propiedad-alquiler-nj",
+      "destination": "/es/sell-rental-property-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/guia-vender-casa-nj-2025.html",
+      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/guia-vender-casa-nj-2025",
+      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/guia-vender-casa-nj-2025.html",
+      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/guia-vender-casa-nj-2025",
+      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/summit-nj-comunidad-guia.html",
+      "destination": "/es/blog/neighborhoods-summit-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/summit-nj-comunidad-guia",
+      "destination": "/es/blog/neighborhoods-summit-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/summit-nj-comunidad-guia.html",
+      "destination": "/es/blog/neighborhoods-summit-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/summit-nj-comunidad-guia",
+      "destination": "/es/blog/neighborhoods-summit-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/mercado-inmobiliario-nj-2025.html",
+      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/mercado-inmobiliario-nj-2025",
+      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/mercado-inmobiliario-nj-2025.html",
+      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/mercado-inmobiliario-nj-2025",
+      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/impuestos-propiedad-nueva-jersey.html",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/impuestos-propiedad-nueva-jersey",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/impuestos-propiedad-nueva-jersey.html",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/impuestos-propiedad-nueva-jersey",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/guia-compradores-primerizos-nj.html",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/guia-compradores-primerizos-nj",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/guia-compradores-primerizos-nj.html",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/guia-compradores-primerizos-nj",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/primer-comprador-casa-nj.html",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/primer-comprador-casa-nj",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/primer-comprador-casa-nj.html",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/primer-comprador-casa-nj",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/proceso-cierre-casa-nj.html",
+      "destination": "/es/blog/how-much-are-closing-costs-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/proceso-cierre-casa-nj",
+      "destination": "/es/blog/how-much-are-closing-costs-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/proceso-cierre-casa-nj.html",
+      "destination": "/es/blog/how-much-are-closing-costs-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/proceso-cierre-casa-nj",
+      "destination": "/es/blog/how-much-are-closing-costs-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/cuando-es-buen-momento-vender-casa-nj.html",
+      "destination": "/es/blog/best-time-to-sell-home-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/cuando-es-buen-momento-vender-casa-nj",
+      "destination": "/es/blog/best-time-to-sell-home-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/cuando-es-buen-momento-vender-casa-nj.html",
+      "destination": "/es/blog/best-time-to-sell-home-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/cuando-es-buen-momento-vender-casa-nj",
+      "destination": "/es/blog/best-time-to-sell-home-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/mejores-ciudades-viajeros-nyc-nj.html",
+      "destination": "/es/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/mejores-ciudades-viajeros-nyc-nj",
+      "destination": "/es/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/mejores-ciudades-viajeros-nyc-nj.html",
+      "destination": "/es/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/mejores-ciudades-viajeros-nyc-nj",
+      "destination": "/es/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/guia-vender-casa-summit-nj.html",
+      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/guia-vender-casa-summit-nj",
+      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/guia-vender-casa-summit-nj.html",
+      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/guia-vender-casa-summit-nj",
+      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/es/:path*",
+      "destination": "/es/blog",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/es/:town-nj.html",
+      "destination": "/es/towns/:town",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/es/:town-nj",
+      "destination": "/es/towns/:town",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/es/:town.html",
+      "destination": "/es/towns/:town",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/es/:town",
+      "destination": "/es/towns/:town",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/:town-nj.html",
+      "destination": "/es/towns/:town",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/:town-nj",
+      "destination": "/es/towns/:town",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/:town.html",
+      "destination": "/es/towns/:town",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/:town",
+      "destination": "/es/towns/:town",
+      "permanent": true
+    },
+    {
+      "source": "/es/downsizing-your-nj-home.html",
+      "destination": "/es/blog/downsizing-your-nj-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/downsizing-your-nj-home",
+      "destination": "/es/blog/downsizing-your-nj-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/buying-home-montclair-nj-2026.html",
+      "destination": "/es/blog/buying-home-montclair-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/buying-home-montclair-nj-2026",
+      "destination": "/es/blog/buying-home-montclair-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/selling-home-roseland-nj-2026.html",
+      "destination": "/es/blog/selling-home-roseland-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/selling-home-roseland-nj-2026",
+      "destination": "/es/blog/selling-home-roseland-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/hanover-township.html",
+      "destination": "/es/towns/hanover",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/hanover-township",
+      "destination": "/es/towns/hanover",
+      "permanent": true
+    },
+    {
+      "source": "/neighborhoods-:slug.html",
+      "destination": "/blog/neighborhoods-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/neighborhoods-:slug",
+      "destination": "/blog/neighborhoods-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/:path*",
+      "destination": "/es/blog",
+      "permanent": true
     }
   ],
   "headers": [
