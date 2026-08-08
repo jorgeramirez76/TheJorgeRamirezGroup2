@@ -1759,6 +1759,26 @@
       "source": "/blog/es/:path*",
       "destination": "/es/blog",
       "permanent": true
+    },
+    {
+      "source": "/nyc-to-nj-commute-guide-2026.html",
+      "destination": "/blog/nyc-to-nj-commute-guide-2026",
+      "permanent": true
+    },
+    {
+      "source": "/nyc-to-nj-commute-guide-2026",
+      "destination": "/blog/nyc-to-nj-commute-guide-2026",
+      "permanent": true
+    },
+    {
+      "source": "/viral-grout-cleaning-hack-tile-damage-nj-2026.html",
+      "destination": "/blog/viral-grout-cleaning-hack-tile-damage-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/viral-grout-cleaning-hack-tile-damage-nj-2026",
+      "destination": "/blog/viral-grout-cleaning-hack-tile-damage-nj-2026",
+      "permanent": true
     }
   ],
   "headers": [
