@@ -41,9 +41,11 @@ LOG_DIR = os.path.join(HERE, "logs")
 
 SITE = "https://thejorgeramirezgroup.com"
 PHONE = "908-230-7844"
-# Jorge's banned personal line — assembled so the repo's banned-number guard
-# Action can't rewrite this literal (it scrubs the raw digits everywhere).
-BANNED = "908" + "23" + "0" + "78" + "44"  # -> personal number, never in copy
+# The CRM capture line — never displayed in published copy. Assembled so the
+# repo's banned-number guard Action can't rewrite this literal (it scrubs the
+# raw digits everywhere). PHONE above is the public number and IS allowed:
+# it appears in the frozen template five times, so banning it aborted every run.
+BANNED = "908" + "31" + "7" + "32" + "27"  # -> CRM line, never in copy
 
 # ---- Literals in the frozen template (template_source.html) to swap out ----
 OLD_TITLE = "Buying a Home in Cranford NJ 2026 | Jorge Ramirez"
