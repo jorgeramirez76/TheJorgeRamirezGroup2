@@ -346,6 +346,13 @@ def assemble(post, slug, geo, today, month_year):
     if "jorge ramirez" not in title.lower():
         title = f"{title} | Jorge Ramirez"
 
+    # Google truncates past ~160; trim at a sentence boundary rather than mid-word.
+    desc = " ".join(post["meta_description"].split())
+    if len(desc) > 160:
+        cut = max(desc.rfind(". ", 0, 158), desc.rfind("? ", 0, 158), desc.rfind("! ", 0, 158))
+        desc = desc[:cut + 1] if cut > 80 else desc[:157].rsplit(" ", 1)[0] + "..."
+    post["meta_description"] = desc
+
     # 1) Replace the Article+FAQ @graph JSON-LD wholesale (first ld+json block).
     t = re.sub(r'<script type="application/ld\+json">\s*\{\s*"@context": "https://schema\.org",\s*"@graph".*?</script>',
                lambda m: build_graph_jsonld(post, slug, today),
