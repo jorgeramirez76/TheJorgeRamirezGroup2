@@ -5184,4 +5184,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://thejorgeramirezgroup.com/blog/stay-nj-senior-property-tax-relief</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/blog/stay-nj-senior-property-tax-relief"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/blog/stay-nj-senior-property-tax-relief"/>
+  </url>
 </urlset>
