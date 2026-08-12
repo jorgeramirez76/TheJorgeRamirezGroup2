@@ -460,7 +460,7 @@ def build_page(d):
         desc = (hook + " " + cred + cta).strip()
 
     og_title = f"Hire a Real Estate Agent in {display}, NJ — Jorge Ramirez"
-    og_desc = f"Licensed NJ Realtor since 2017. Personal house-flipping experience. Buy or sell in {display} with an agent who knows the numbers. Free consultation."
+    og_desc = f"Licensed NJ Realtor since 2017. Buy or sell in {display} with an agent who knows the numbers. Free consultation."
 
     # ---- stats tiles
     stat_tiles = []
@@ -548,7 +548,7 @@ def build_page(d):
     hero_h1 = f"{display}, NJ Real Estate Agent"
     hero_sub = (
         f"I'm Jorge Ramirez — a licensed NJ Realtor at Keller Williams Premier Properties who's "
-        f"personally flipped homes across Northern NJ. If you're buying or selling in {display}, "
+        f"works these markets full-time. If you're buying or selling in {display}, "
         f"let's have one honest conversation and figure out if I'm the right fit."
     )
 
@@ -798,7 +798,7 @@ def build_index(slugs):
 <meta name="description" content="Local real estate agent coverage across 138 NJ towns in Union, Essex, Morris, Middlesex, Hudson &amp; Somerset counties. Jorge Ramirez — licensed NJ Realtor at Keller Williams. Call 908-230-7844.">
 <link rel="canonical" href="https://thejorgeramirezgroup.com/realtor/">
 <meta property="og:title" content="NJ Real Estate Agent Directory — 138 Towns | Jorge Ramirez">
-<meta property="og:description" content="Find your town's dedicated agent page. 138 NJ towns covered. Jorge Ramirez — personal house-flipping experience, licensed NJ Realtor at Keller Williams.">
+<meta property="og:description" content="Find your town's dedicated agent page. 138 NJ towns covered. Jorge Ramirez — licensed NJ Realtor at Keller Williams.">
 <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
 <style>
 *{{box-sizing:border-box}}
@@ -820,7 +820,7 @@ footer a{{color:#f6a623;text-decoration:none}}
 </head><body>
 <div class="hero">
 <h1>Find a Real Estate Agent in Your NJ Town</h1>
-<p>Dedicated town pages covering 138 NJ communities across 6 counties. Jorge Ramirez — licensed NJ Realtor at Keller Williams, personal house-flipping experience. One honest conversation.</p>
+<p>Dedicated town pages covering 138 NJ communities across 6 counties. Jorge Ramirez — licensed NJ Realtor at Keller Williams. One honest conversation.</p>
 </div>
 <main class="container">
 {''.join(county_blocks)}
