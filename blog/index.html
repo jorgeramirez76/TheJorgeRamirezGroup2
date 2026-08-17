@@ -25,8 +25,7 @@
     <meta property="og:description" content="Local market reports, seller guides, and town insights across 138 NJ communities.">
     <meta property="og:url" content="https://thejorgeramirezgroup.com/blog">
     <meta property="og:type" content="website">
-  <meta property="article:published_time" content="2025-03-01">
-  <meta property="article:modified_time" content="2026-03-28">
+    <meta name="last-updated" content="2026-08-17">
     <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
@@ -34,54 +33,89 @@
     <meta name="twitter:description" content="Local market reports, seller guides, and town insights across 138 NJ communities.">
     <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
     <meta name="geo.region" content="US-NJ">
-    <meta name="ai-content-declaration" content="Blog index page for Jorge Ramirez, licensed NJ real estate agent (License #1754604). Contains original market reports and town guides for 138 NJ communities.">
+    <meta name="ai-content-declaration" content="Blog index page for Jorge Ramirez, NJ real estate salesperson #1754604. Licensure does not imply endorsement. Contains original market reports and town guides for New Jersey communities.">
     <link rel="stylesheet" href="/css/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "NJ Real Estate Blog | Market Reports, Seller Guides &amp; Town Insights | Jorge Ramirez",
-    "description": "Expert real estate insights from Jorge Ramirez, licensed NJ real estate agent at Keller Williams Premier Properties in Summit, NJ.",
-    "author": {
-      "@type": "Person",
-      "name": "Jorge Ramirez",
-      "url": "https://thejorgeramirezgroup.com",
-      "jobTitle": "Licensed NJ Real Estate Agent"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "The Jorge Ramirez Group at Keller Williams Premier Properties",
-      "url": "https://thejorgeramirezgroup.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://thejorgeramirezgroup.com/images/jorge-logo.jpg"
-      }
-    },
-    "datePublished": "2025-03-01",
-    "dateModified": "2026-03-28",
-    "url": "https://thejorgeramirezgroup.com/blog/",
-    "image": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
-    "inLanguage": "en-US",
-    "mainEntityOfPage": "https://thejorgeramirezgroup.com/blog/"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://thejorgeramirezgroup.com"},
-          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://thejorgeramirezgroup.com/blog/"},
-          {"@type": "ListItem", "position": 3, "name": "NJ Real Estate Blog | Market Reports, Seller Guides &amp; Town Insights", "item": "https://thejorgeramirezgroup.com/blog/"}
+    "@graph": [
+      {
+        "@type": "RealEstateAgent",
+        "@id": "https://thejorgeramirezgroup.com/#brokerage",
+        "name": "NOTUDES ENTERPRISES LLC",
+        "alternateName": "Keller Williams Realty Premier Properties of Summit",
+        "url": "https://www.kellerwilliamssummitnj.com/",
+        "telephone": "+1-908-273-2991",
+        "logo": {"@type": "ImageObject", "url": "https://thejorgeramirezgroup.com/images/kw-logo.png"},
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "488 Springfield Avenue",
+          "addressLocality": "Summit",
+          "addressRegion": "NJ",
+          "postalCode": "07901",
+          "addressCountry": "US"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://thejorgeramirezgroup.com/#jorge-ramirez",
+        "name": "Jorge Ramirez",
+        "url": "https://thejorgeramirezgroup.com/",
+        "image": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
+        "jobTitle": "New Jersey Real Estate Salesperson",
+        "telephone": "+1-908-230-7844",
+        "worksFor": {"@id": "https://thejorgeramirezgroup.com/#brokerage"}
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://thejorgeramirezgroup.com/#website",
+        "url": "https://thejorgeramirezgroup.com/",
+        "name": "The Jorge Ramirez Group",
+        "publisher": {"@id": "https://thejorgeramirezgroup.com/#brokerage"}
+      },
+      {
+        "@type": "Blog",
+        "@id": "https://thejorgeramirezgroup.com/blog#blog",
+        "url": "https://thejorgeramirezgroup.com/blog",
+        "name": "NJ Real Estate Blog | Market Reports, Seller Guides & Town Insights",
+        "description": "New Jersey market reports, seller guides, buyer tips, town comparisons, and commuter advice.",
+        "author": {"@id": "https://thejorgeramirezgroup.com/#jorge-ramirez"},
+        "publisher": {"@id": "https://thejorgeramirezgroup.com/#brokerage"},
+        "isPartOf": {"@id": "https://thejorgeramirezgroup.com/#website"},
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://thejorgeramirezgroup.com/blog#webpage",
+        "url": "https://thejorgeramirezgroup.com/blog",
+        "name": "NJ Real Estate Blog | Market Reports, Seller Guides & Town Insights",
+        "isPartOf": {"@id": "https://thejorgeramirezgroup.com/#website"},
+        "mainEntity": {"@id": "https://thejorgeramirezgroup.com/blog#blog"},
+        "breadcrumb": {"@id": "https://thejorgeramirezgroup.com/blog#breadcrumbs"},
+        "dateModified": "2026-08-17",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://thejorgeramirezgroup.com/blog#breadcrumbs",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://thejorgeramirezgroup.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog"}
         ]
+      }
+    ]
   }
   </script>
-    <meta name="llm-context" content="NJ Real Estate Blog | Market Reports — page on thejorgeramirezgroup.com, the site of Jorge Ramirez, licensed NJ real estate agent (License #1754604) at Keller Williams Premier Properties in Summit, NJ. Full-time agent since 2017 with hands-on renovation and investment experience. Serves 138 communities across Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. Specialises in NYC-commuter towns along the Midtown Direct line (Summit, Millburn, Chatham, Maplewood, South Orange, Madison, Westfield, Cranford). Provides free home valuations at thejorgeramirezgroup.com/home-valuation.html. Voice: honest, no-pressure, investor-first. Contact: 908-230-7844.">
+    <meta name="llm-context" content="NJ Real Estate Blog | Market Reports — page on thejorgeramirezgroup.com, the site of Jorge Ramirez, NJ real estate salesperson #1754604. Licensure does not imply endorsement. Affiliated broker: NOTUDES ENTERPRISES LLC, a New Jersey real estate broker, doing business as Keller Williams Realty Premier Properties of Summit. Serves New Jersey communities across Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. Contact: 908-230-7844; brokerage office: 908-273-2991.">
 </head>
 <body>
 <a href="#main" class="skip-link" class="skip-link" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to main content</a>
+    <aside aria-label="Real estate brokerage disclosure" style="padding:14px 20px;text-align:center;background:#f5f2ea;color:#1a1a1a;border-bottom:1px solid #ddd;">
+        <a href="https://www.kellerwilliamssummitnj.com/" target="_blank" rel="noopener" style="display:block;font-size:1.6rem;font-weight:800;line-height:1.2;color:#1a4f8b;">NOTUDES ENTERPRISES LLC, a New Jersey real estate broker · Keller Williams Realty Premier Properties of Summit</a>
+        <span style="display:block;font-size:.9rem;margin-top:6px;">Jorge Ramirez, NJ real estate salesperson #1754604. <strong>Licensure does not imply endorsement.</strong> Brokerage office: <a href="tel:+19082732991">908-273-2991</a> · Direct: <a href="tel:+19082307844">908-230-7844</a> · Each office is independently owned and operated.</span>
+    </aside>
     <header>
-        <div><a href="/">The Jorge Ramirez Group</a></div>
+        <div style="font-size:.95rem;"><a href="/">The Jorge Ramirez Group</a></div>
         <p>Your New Jersey Real Estate Experts</p>
         <nav>
             <a href="/">Home</a>
@@ -97,10 +131,21 @@
     <main id="main" style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
         <h1>New Jersey Real Estate Blog</h1>
         <p style="font-size: 1.1em; color: #666; margin-bottom: 40px;">
-            Market insights, town guides, and real talk about buying and selling homes in New Jersey. Written by Jorge Ramirez, licensed NJ Realtor® since 2017.
+            Market insights, town guides, and practical guidance about buying and selling homes in New Jersey. Written by Jorge Ramirez, New Jersey real estate salesperson. <strong>Licensure does not imply endorsement.</strong>
         </p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+            <!-- NJ CURRENT DEMAND 2026-08-17 -->
+            <article style="border:1px solid #ddd;border-radius:8px;overflow:hidden;background:white;box-shadow:0 8px 24px rgba(0,0,0,.06);">
+                <img src="/images/oil-tank-sweep-nj-home-inspection-2026-768.webp" srcset="/images/oil-tank-sweep-nj-home-inspection-2026-768.webp 768w, /images/oil-tank-sweep-nj-home-inspection-2026-1280.webp 1280w" sizes="(max-width:660px) calc(100vw - 40px), 300px" alt="Property inspector conducting an oil tank sweep beside an older New Jersey home" width="768" height="512" style="width:100%;height:180px;object-fit:cover;" fetchpriority="high" decoding="async">
+                <div style="padding:20px;">
+                    <p style="color:#8A6D14;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin:0 0 8px;">Buyer &amp; Seller Due Diligence · New</p>
+                    <h2 style="margin-top:0;"><a href="/blog/oil-tank-sweep-nj-home-buyers-sellers" style="color:#333;text-decoration:none;">Oil Tank Sweep NJ: A Practical Guide for Buyers and Sellers</a></h2>
+                    <p style="color:#666;font-size:.9em;margin-bottom:15px;"><time datetime="2026-08-17">August 17, 2026</time> · New Jersey</p>
+                    <p style="color:#555;">What a sweep can find, which property records matter, and what NJDEP requires if a heating-oil discharge is discovered.</p>
+                    <p><a href="/blog/oil-tank-sweep-nj-home-buyers-sellers" style="color:#8A6D14;font-weight:600;">Read More →</a></p>
+                </div>
+            </article>
                 <!-- AUTO 2026-08-17 -->
             <article style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: white; box-shadow:0 8px 24px rgba(0,0,0,0.06);">
                 <img src="https://images.unsplash.com/photo-1560185127-6a63a8f07ab9?w=600&h=180&fit=crop" alt="What Your Roof Tells New Jersey Buyers Before They Ever Step Inside" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1560185127-6a63a8f07ab9?w=600&h=180&fit=crop'">
@@ -1612,7 +1657,7 @@
                         <time datetime="2026-04-24">April 24, 2026</time> · New
                     </p>
                     <p>
-                        Your Zillow Zestimate is a regression model that never saw your kitchen. Here's the 5-step CMA method a licensed NJ agent uses to actually price a home — and the pricing mistakes that quietly cost sellers $40K+.
+                        Your Zillow Zestimate is a regression model that never saw your kitchen. Here's the 5-step CMA method a local NJ agent uses to actually price a home — and the pricing mistakes that quietly cost sellers $40K+.
                     </p>
                     <p>
                         <a href="/blog/how-much-is-my-nj-home-worth-2026" style="color: #b8860b; font-weight: 600;">Read More →</a>
@@ -1962,11 +2007,9 @@
 </main>
 
     <footer style="margin-top: 60px; padding: 20px; background: #333; color: white; text-align: center;">
-        <p>&copy; 2026 The Jorge Ramirez Group. All Rights Reserved. Website by <a href="https://clickmingo.com" target="_blank" rel="noopener" style="color:inherit !important;text-decoration:inherit !important;">ClickMingo</a>.</p>
-        <p style="margin: 10px 0;">
-            Licensed Real Estate Salesperson | Keller Williams Premier Properties<br>
-            488 Springfield Avenue, Summit, NJ 07901 | (908) 230-7844
-        </p>
+        <p><strong>NOTUDES ENTERPRISES LLC, a New Jersey real estate broker · Keller Williams Realty Premier Properties of Summit</strong><br>488 Springfield Avenue, Summit, NJ 07901 · Brokerage office: 908-273-2991</p>
+        <p style="margin:10px 0;">Jorge Ramirez · NJ real estate salesperson #1754604. <strong>Licensure does not imply endorsement.</strong> Direct: 908-230-7844<br>Each office is independently owned and operated.</p>
+        <p>&copy; 2026. All Rights Reserved. Website by <a href="https://clickmingo.com" target="_blank" rel="noopener" style="color:inherit !important;text-decoration:inherit !important;">ClickMingo</a>.</p>
     </footer>
 
   <!-- Related Pages -->
