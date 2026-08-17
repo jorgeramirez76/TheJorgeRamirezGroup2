@@ -26,7 +26,8 @@ Usage:
                                         # (skips generation + gate; for seeding)
 """
 
-import os, re, sys, json, html, argparse, subprocess, datetime
+import os, re, sys, json, html, argparse, subprocess, datetime, tempfile
+from html.parser import HTMLParser
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
@@ -380,7 +381,7 @@ def assemble(post, slug, geo, today, month_year):
 # --------------------------------------------------------------------------- #
 #  Wiring: index + sitemap                                                     #
 # --------------------------------------------------------------------------- #
-def add_to_index(post, slug):
+def prepare_index(post, slug):
     with open(INDEX, encoding="utf-8") as f:
         idx = f.read()
     card = f'''
@@ -389,33 +390,31 @@ def add_to_index(post, slug):
                 <img src="{HERO_IMG}" alt="{esc(post['h1'])}" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='{HERO_IMG}'">
                 <div style="padding: 20px;">
                     <p style="color:#b8962e;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin:0 0 8px;">{esc(post['category'])} · New</p>
-                    <h2 style="margin-top: 0;"><a href="{slug}" style="color: #333; text-decoration: none;">{esc(post['h1'])}</a></h2>
+                    <h2 style="margin-top: 0;"><a href="/blog/{slug}" style="color: #333; text-decoration: none;">{esc(post['h1'])}</a></h2>
                     <p style="color:#555;">{esc(post['meta_description'])}</p>
-                    <p><a href="{slug}" style="color: #b8860b; font-weight: 600;">Read More →</a></p>
+                    <p><a href="/blog/{slug}" style="color: #b8860b; font-weight: 600;">Read More →</a></p>
                 </div>
             </article>'''
     anchor = '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">'
     if anchor not in idx:
         raise RuntimeError("blog/index.html grid anchor not found")
-    idx = idx.replace(anchor, anchor + card, 1)
-    with open(INDEX, "w", encoding="utf-8") as f:
-        f.write(idx)
+    return idx.replace(anchor, anchor + card, 1)
 
 
-def add_to_sitemap(slug, today):
+def prepare_sitemap(slug, today):
     with open(SITEMAP, encoding="utf-8") as f:
         sm = f.read()
     loc = f"{SITE}/blog/{slug}"
-    if loc in sm:
-        return
+    if "</urlset>" not in sm:
+        raise RuntimeError("sitemap.xml closing urlset tag not found")
+    if re.search(rf"<loc>\s*{re.escape(loc)}\s*</loc>", sm):
+        return sm
     entry = (f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{today}</lastmod>\n"
              f"    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n")
-    sm = sm.replace("</urlset>", entry + "</urlset>", 1)
-    with open(SITEMAP, "w", encoding="utf-8") as f:
-        f.write(sm)
+    return sm.replace("</urlset>", entry + "</urlset>", 1)
 
 
-def update_sitemap_index(today):
+def prepare_sitemap_index(today):
     """Keep the parent sitemap timestamp aligned with sitemap.xml changes."""
     with open(SITEMAP_INDEX, encoding="utf-8") as f:
         index = f.read()
@@ -424,8 +423,70 @@ def update_sitemap_index(today):
     updated, count = re.subn(pattern, rf'\g<1>{today}', index, count=1)
     if count != 1:
         raise RuntimeError("sitemap-index.xml sitemap.xml entry not found")
-    with open(SITEMAP_INDEX, "w", encoding="utf-8") as f:
-        f.write(updated)
+    return updated
+
+
+def atomic_write(path, content):
+    """Replace one UTF-8 file without exposing a partially written file."""
+    directory = os.path.dirname(path)
+    fd, tmp_path = tempfile.mkstemp(prefix=".daily-blog-", dir=directory, text=True)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write(content)
+        os.replace(tmp_path, path)
+    finally:
+        if os.path.exists(tmp_path):
+            os.unlink(tmp_path)
+
+
+def write_batch(contents):
+    """Write a prepared file set and restore the originals if any write fails."""
+    originals = {}
+    for path in contents:
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                originals[path] = f.read()
+        else:
+            originals[path] = None
+
+    written = []
+    try:
+        for path, content in contents.items():
+            atomic_write(path, content)
+            written.append(path)
+    except Exception:
+        restore_batch({path: originals[path] for path in written})
+        raise
+    return originals
+
+
+def restore_batch(originals):
+    """Restore a file set captured by write_batch()."""
+    for path, original in reversed(list(originals.items())):
+        if original is None:
+            if os.path.exists(path):
+                os.unlink(path)
+        else:
+            atomic_write(path, original)
+
+
+class _HrefCollector(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.hrefs = []
+
+    def handle_starttag(self, tag, attrs):
+        for name, value in attrs:
+            if name.lower() == "href" and value is not None:
+                self.hrefs.append(value.strip())
+
+
+def contains_html_href(html_text):
+    """Detect quoted or unquoted .html hrefs using the HTML parser's grammar."""
+    parser = _HrefCollector()
+    parser.feed(html_text)
+    parser.close()
+    return any(re.search(r"\.html(?:$|[?#])", href, re.I) for href in parser.hrefs)
 
 
 # --------------------------------------------------------------------------- #
@@ -446,15 +507,28 @@ def validate(post):
     return None
 
 
+DEPLOY_PUSHED = "pushed"
+DEPLOY_COMMITTED = "committed"
+DEPLOY_PRECOMMIT_FAILED = "precommit_failed"
+DEPLOY_PUSH_FAILED = "push_failed"
+
+
 def deploy(slug, push=True):
     def git(*a):
         return subprocess.run(["git", *a], cwd=REPO, capture_output=True, text=True)
-    git("add", f"blog/{slug}.html", "blog/index.html", "sitemap.xml",
-        "sitemap-index.xml", "tools/blog-automation/state.json")
+    paths = (f"blog/{slug}.html", "blog/index.html", "sitemap.xml",
+             "sitemap-index.xml", "tools/blog-automation/state.json")
+    r = git("add", *paths)
+    if r.returncode != 0:
+        log(f"STAGING FAILED: {r.stderr.strip()}")
+        git("reset", "HEAD", "--", *paths)
+        return DEPLOY_PRECOMMIT_FAILED
     msg = f"blog: add daily SEO post {slug}"
     r = git("commit", "-m", msg)
-    if r.returncode != 0 and "nothing to commit" not in (r.stdout + r.stderr):
-        log(f"commit warning: {r.stdout} {r.stderr}")
+    if r.returncode != 0:
+        log(f"COMMIT FAILED: {(r.stdout + r.stderr).strip()}")
+        git("reset", "HEAD", "--", *paths)
+        return DEPLOY_PRECOMMIT_FAILED
     if push:
         r = git("push", "origin", "main")
         if r.returncode != 0:
@@ -463,9 +537,10 @@ def deploy(slug, push=True):
             r = git("push", "origin", "main")
         if r.returncode != 0:
             log(f"PUSH FAILED: {r.stderr.strip()}")
-            return False
+            return DEPLOY_PUSH_FAILED
         log("pushed to origin/main (Vercel will auto-deploy)")
-    return True
+        return DEPLOY_PUSHED
+    return DEPLOY_COMMITTED
 
 
 # --------------------------------------------------------------------------- #
@@ -485,7 +560,7 @@ def publish(post, topic, cfg, args):
     if BANNED in re.sub(r"\D", "", html_out):
         log("ABORT: banned number in assembled HTML")
         return False
-    if re.search(r'href=["\'][^"\']*\.html(?:[?#][^"\']*)?["\']', html_out, re.I):
+    if contains_html_href(html_out):
         log("ABORT: assembled HTML contains a non-canonical .html link")
         return False
 
@@ -496,20 +571,35 @@ def publish(post, topic, cfg, args):
         log(f"DRY RUN ok -> {out} ({len(html_out)} bytes)")
         return True
 
-    with open(os.path.join(BLOG_DIR, f"{slug}.html"), "w", encoding="utf-8") as f:
-        f.write(html_out)
-    add_to_index(post, slug)
-    add_to_sitemap(slug, today)
-    update_sitemap_index(today)
-
+    # Prepare and validate the complete output set before the first write.
+    article_path = os.path.join(BLOG_DIR, f"{slug}.html")
+    index_out = prepare_index(post, slug)
+    sitemap_out = prepare_sitemap(slug, today)
+    sitemap_index_out = prepare_sitemap_index(today)
     state = load_json(STATE_FILE, {"used": [], "last_run": None})
     state.setdefault("used", []).append(slug)
     state["last_run"] = today
     state["last_slug"] = slug
-    save_json(STATE_FILE, state)
+    state_out = json.dumps(state, indent=2, ensure_ascii=False)
 
-    ok = deploy(slug, push=not args.no_push)
-    log(f"PUBLISHED {slug} (pushed={ok and not args.no_push})")
+    originals = write_batch({
+        article_path: html_out,
+        INDEX: index_out,
+        SITEMAP: sitemap_out,
+        SITEMAP_INDEX: sitemap_index_out,
+        STATE_FILE: state_out,
+    })
+
+    deploy_status = deploy(slug, push=not args.no_push)
+    if deploy_status == DEPLOY_PRECOMMIT_FAILED:
+        restore_batch(originals)
+        log(f"ABORTED {slug}: local files restored after pre-commit failure")
+        return False
+    if deploy_status == DEPLOY_PUSH_FAILED:
+        log(f"COMMITTED {slug}, BUT NOT PUSHED: retry git push before the next run")
+        return DEPLOY_PUSH_FAILED
+
+    log(f"PUBLISHED {slug} (pushed={deploy_status == DEPLOY_PUSHED})")
     return True
 
 
@@ -534,8 +624,8 @@ def main():
             log("need --slug or slug in content file"); sys.exit(1)
         topic = {"slug": slug, "geo": post.get("geo", "New Jersey"),
                  "category": post.get("category", "Guide")}
-        ok = publish(post, topic, cfg, args)
-        sys.exit(0 if ok else 1)
+        result = publish(post, topic, cfg, args)
+        sys.exit(0 if result is True else 1)
 
     # Guard: one successful post per day.
     state = load_json(STATE_FILE, {"used": [], "last_run": None})
@@ -564,7 +654,11 @@ def main():
         log(f"attempt {attempt} [{eng}]: quality score {score} "
             f"(threshold {threshold}) issues={verdict.get('issues')}")
         if score >= threshold and verdict.get("pass", score >= threshold):
-            if publish(post, topic, cfg, args):
+            result = publish(post, topic, cfg, args)
+            if result is True:
+                return
+            if result == DEPLOY_PUSH_FAILED:
+                log("stopping generation retries until the committed post is pushed")
                 return
     log(f"SKIPPED {topic['slug']} — could not clear quality bar in "
         f"{cfg.get('max_attempts', 2)} attempts. Will retry next run.")
