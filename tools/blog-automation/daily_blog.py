@@ -33,6 +33,7 @@ REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 BLOG_DIR = os.path.join(REPO, "blog")
 INDEX = os.path.join(BLOG_DIR, "index.html")
 SITEMAP = os.path.join(REPO, "sitemap.xml")
+SITEMAP_INDEX = os.path.join(REPO, "sitemap-index.xml")
 TEMPLATE = os.path.join(HERE, "template_source.html")
 CONFIG_FILE = os.path.join(HERE, "config.json")
 TOPICS_FILE = os.path.join(HERE, "topics.json")
@@ -335,7 +336,7 @@ def build_article_html(post, month_year):
 <p>If any of this raised a question about your own move, I'd rather have an honest conversation than push you toward a decision. Reach out whenever it's useful — I'll give you a straight answer either way.</p>
 <p><strong>Jorge Ramirez | Keller Williams Premier Properties</strong><br>
 📞 <a href="tel:+19082307844">{PHONE}</a><br>
-<a href="../index.html#contact" class="cta-button">Schedule a Free Consultation</a></p>"""
+<a href="/#contact" class="cta-button">Schedule a Free Consultation</a></p>"""
 
 
 def assemble(post, slug, geo, today, month_year):
@@ -388,9 +389,9 @@ def add_to_index(post, slug):
                 <img src="{HERO_IMG}" alt="{esc(post['h1'])}" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='{HERO_IMG}'">
                 <div style="padding: 20px;">
                     <p style="color:#b8962e;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin:0 0 8px;">{esc(post['category'])} · New</p>
-                    <h2 style="margin-top: 0;"><a href="{slug}.html" style="color: #333; text-decoration: none;">{esc(post['h1'])}</a></h2>
+                    <h2 style="margin-top: 0;"><a href="{slug}" style="color: #333; text-decoration: none;">{esc(post['h1'])}</a></h2>
                     <p style="color:#555;">{esc(post['meta_description'])}</p>
-                    <p><a href="{slug}.html" style="color: #b8860b; font-weight: 600;">Read More →</a></p>
+                    <p><a href="{slug}" style="color: #b8860b; font-weight: 600;">Read More →</a></p>
                 </div>
             </article>'''
     anchor = '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">'
@@ -412,6 +413,19 @@ def add_to_sitemap(slug, today):
     sm = sm.replace("</urlset>", entry + "</urlset>", 1)
     with open(SITEMAP, "w", encoding="utf-8") as f:
         f.write(sm)
+
+
+def update_sitemap_index(today):
+    """Keep the parent sitemap timestamp aligned with sitemap.xml changes."""
+    with open(SITEMAP_INDEX, encoding="utf-8") as f:
+        index = f.read()
+    pattern = (rf'(<loc>{re.escape(SITE)}/sitemap\.xml</loc>\s*'
+               rf'<lastmod>)[^<]+')
+    updated, count = re.subn(pattern, rf'\g<1>{today}', index, count=1)
+    if count != 1:
+        raise RuntimeError("sitemap-index.xml sitemap.xml entry not found")
+    with open(SITEMAP_INDEX, "w", encoding="utf-8") as f:
+        f.write(updated)
 
 
 # --------------------------------------------------------------------------- #
@@ -436,7 +450,7 @@ def deploy(slug, push=True):
     def git(*a):
         return subprocess.run(["git", *a], cwd=REPO, capture_output=True, text=True)
     git("add", f"blog/{slug}.html", "blog/index.html", "sitemap.xml",
-        "tools/blog-automation/state.json")
+        "sitemap-index.xml", "tools/blog-automation/state.json")
     msg = f"blog: add daily SEO post {slug}"
     r = git("commit", "-m", msg)
     if r.returncode != 0 and "nothing to commit" not in (r.stdout + r.stderr):
@@ -471,6 +485,9 @@ def publish(post, topic, cfg, args):
     if BANNED in re.sub(r"\D", "", html_out):
         log("ABORT: banned number in assembled HTML")
         return False
+    if re.search(r'href=["\'][^"\']*\.html(?:[?#][^"\']*)?["\']', html_out, re.I):
+        log("ABORT: assembled HTML contains a non-canonical .html link")
+        return False
 
     if args.dry_run:
         out = os.path.join(LOG_DIR, f"DRYRUN-{slug}.html")
@@ -483,6 +500,7 @@ def publish(post, topic, cfg, args):
         f.write(html_out)
     add_to_index(post, slug)
     add_to_sitemap(slug, today)
+    update_sitemap_index(today)
 
     state = load_json(STATE_FILE, {"used": [], "last_run": None})
     state.setdefault("used", []).append(slug)
