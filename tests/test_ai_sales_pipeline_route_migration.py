@@ -65,6 +65,17 @@ class AiSalesPipelineRouteMigrationTests(unittest.TestCase):
         self.assertEqual(36, len(self.routes))
         self.assertEqual(72, len(self.legacy_addresses))
         self.assertEqual(10, len(set(self.routes.values())))
+        evidence = self.manifest["gscEvidence"]
+        self.assertEqual(
+            {"last16Months", "last3Months", "googleGenerativeAiLast3Months"},
+            set(evidence),
+        )
+        for window, snapshot in evidence.items():
+            with self.subTest(gsc_window=window):
+                self.assertNotIn("export", snapshot)
+                self.assertIn("Google Search Console", snapshot["provenance"])
+                self.assertIn("outside this release repository", snapshot["provenance"])
+                self.assertIn("not committed", snapshot["provenance"])
         semantics = self.manifest["vercelRoutingSemantics"]
         self.assertIs(True, semantics["cleanUrls"])
         self.assertEqual(36, semantics["cleanRouteRedirects"])

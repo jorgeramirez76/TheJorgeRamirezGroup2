@@ -20,19 +20,19 @@
   },
   "gscEvidence": {
     "last16Months": {
-      "export": "work/gsc16/Pages.csv",
+      "provenance": "Read-only Google Search Console Pages export reviewed outside this release repository on 2026-08-26; raw export not committed.",
       "observedUrlVariants": 15,
       "clicks": 1,
       "impressions": 48
     },
     "last3Months": {
-      "export": "work/gsc_compare/Pages.csv",
+      "provenance": "Read-only Google Search Console comparison Pages export reviewed outside this release repository on 2026-08-26; raw export not committed.",
       "observedUrlVariants": 17,
       "clicks": 1,
       "impressions": 47
     },
     "googleGenerativeAiLast3Months": {
-      "export": "work/gsc_ai_3m/Pages.csv",
+      "provenance": "Read-only Google Search Console Google-generative-AI Pages export reviewed outside this release repository on 2026-08-26; raw export not committed.",
       "observedUrlVariants": 3,
       "impressions": 3
     }
@@ -52,7 +52,8 @@
       "spanishExactPagesTested": 9,
       "spanishExactHttpStatus": 404,
       "spanishFallback": "https://aisalespipeline.com/es/",
-      "spanishFallbackHttpStatus": 200
+      "spanishFallbackHttpStatus": 200,
+      "spanishConsolidationTradeoff": "The Spanish product homepage preserves language and product relevance, but it is broader than the retired feature pages. Keep this temporary consolidation under review and replace each fallback only when a verified Spanish feature equivalent exists."
     },
     "independentBacklink": "The public aisalespipeline.com homepage contains two contextual HTML links to https://www.thejorgeramirezgroup.com; this migration does not modify them."
   },
