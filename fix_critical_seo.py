@@ -19,11 +19,13 @@ import html
 from pathlib import Path
 
 from scripts.remediate_indexable_towns import managed_slugs
+from scripts.remediate_spanish_towns import spanish_managed_slugs
 
 BASE_DIR = Path("/Users/teddy/TheJorgeRamirezGroup2")
 SITE_URL = "https://thejorgeramirezgroup.com"
 DEFAULT_IMAGE = f"{SITE_URL}/images/hero.jpg"
 MANAGED_TOWN_RISK_SLUGS = managed_slugs()
+MANAGED_SPANISH_TOWN_SLUGS = spanish_managed_slugs()
 
 
 def is_managed_town_artifact(filepath):
@@ -33,7 +35,10 @@ def is_managed_town_artifact(filepath):
         relative = filepath.relative_to(BASE_DIR).as_posix()
     except ValueError:
         return False
-    match = re.fullmatch(r"(?:es/)?towns/([a-z0-9-]+)\.html", relative)
+    match = re.fullmatch(r"es/towns/([a-z0-9-]+)\.html", relative)
+    if match:
+        return match.group(1) in MANAGED_SPANISH_TOWN_SLUGS
+    match = re.fullmatch(r"towns/([a-z0-9-]+)\.html", relative)
     if match:
         return match.group(1) in MANAGED_TOWN_RISK_SLUGS
     match = re.fullmatch(r"realtor/([a-z0-9-]+)-nj\.html", relative)

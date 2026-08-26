@@ -10,9 +10,11 @@ import os
 import re
 
 from scripts.remediate_indexable_towns import managed_slugs
+from scripts.remediate_spanish_towns import spanish_managed_slugs
 
 CREDITS = json.load(open("images/towns/credits.json"))
 MANAGED_TOWN_RISK_SLUGS = managed_slugs()
+MANAGED_SPANISH_TOWN_SLUGS = spanish_managed_slugs()
 
 PATS = [
     re.compile(r"^market-report-(.+?)-nj-2026\.html$"),
@@ -93,6 +95,8 @@ def apply_town_pages():
         if fn.endswith("-nj.html"):
             jobs.append((f"realtor/{fn}", fn[:-8], False, "<h2>", None))
     for path, slug, spanish, anchor1, anchor2 in jobs:
+        if spanish and slug in MANAGED_SPANISH_TOWN_SLUGS:
+            continue
         if slug in MANAGED_TOWN_RISK_SLUGS:
             continue
         photos = CREDITS.get(slug)

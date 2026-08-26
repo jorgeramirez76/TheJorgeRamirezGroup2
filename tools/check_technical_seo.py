@@ -129,7 +129,7 @@ def requires_town_local_business(source: str) -> bool:
 
     managed_fallback = bool(
         re.search(
-            r'<body\b[^>]*\bdata-noindex-town-fallback=["\']v1["\']',
+            r'<body\b[^>]*\bdata-(?:noindex-town-fallback|spanish-town-fallback)=["\']v1["\']',
             source,
             re.IGNORECASE,
         )

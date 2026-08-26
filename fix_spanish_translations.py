@@ -13,7 +13,21 @@ Safe to run repeatedly (idempotent — fixes only catch English text).
 import re
 from pathlib import Path
 
+from scripts.remediate_spanish_towns import spanish_managed_slugs
+
 ROOT = Path('/Users/teddy/TheJorgeRamirezGroup2')
+MANAGED_SPANISH_TOWN_SLUGS = spanish_managed_slugs()
+
+
+def is_managed_spanish_town(path: Path) -> bool:
+    """Keep the evidence-led Spanish town renderer authoritative."""
+
+    try:
+        relative = path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return False
+    match = re.fullmatch(r"es/towns/([a-z0-9-]+)\.html", relative)
+    return bool(match and match.group(1) in MANAGED_SPANISH_TOWN_SLUGS)
 
 # Patterns where we should NOT do replacements (URL contexts)
 URL_GUARD = re.compile(r'(https?://|\.html|@id|@type|"url"|"@id"|href=|src=|"item"|"name":\s*"[A-Z])')
@@ -157,6 +171,8 @@ def fix_line(line: str) -> str:
 
 def fix_file(path: Path) -> int:
     """Apply fixes to a single file. Returns number of changes."""
+    if is_managed_spanish_town(path):
+        return 0
     try:
         original = path.read_text(encoding='utf-8')
     except (UnicodeDecodeError, OSError):

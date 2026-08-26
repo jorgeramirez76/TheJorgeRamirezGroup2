@@ -20,9 +20,12 @@ import re
 import shutil
 from pathlib import Path
 
+from scripts.remediate_spanish_towns import spanish_managed_slugs
+
 ROOT = Path('/Users/teddy/TheJorgeRamirezGroup2')
 ES = ROOT / 'es'
 BASE_URL = 'https://thejorgeramirezgroup.com'
+MANAGED_SPANISH_TOWN_SLUGS = spanish_managed_slugs()
 
 # ===== TRANSLATION DICTIONARY =====
 # Order matters — longer phrases first to prevent partial matches
@@ -308,6 +311,10 @@ def translate_page(en_path: Path) -> bool:
     """Translate one English page to its Spanish equivalent."""
     relative = en_path.relative_to(ROOT)
     relative_str = str(relative)
+
+    town_match = re.fullmatch(r'towns/([a-z0-9-]+)\.html', relative_str)
+    if town_match and town_match.group(1) in MANAGED_SPANISH_TOWN_SLUGS:
+        return False
 
     # Skip already-Spanish files and special files
     if relative_str.startswith('es/') or 'staging/' in relative_str or '.git/' in relative_str:

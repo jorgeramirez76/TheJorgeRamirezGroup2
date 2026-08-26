@@ -7,12 +7,21 @@ import argparse
 import html
 import json
 import re
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.remediate_spanish_towns import spanish_managed_slugs  # noqa: E402
+
 MAPPING = ROOT / "data" / "spanish-snippet-backlog.json"
 META_TAG = re.compile(r"<meta\b[^>]*>", re.IGNORECASE | re.DOTALL)
+MANAGED_SPANISH_TOWN_PATHS = {
+    f"es/towns/{slug}.html" for slug in spanish_managed_slugs()
+}
 
 
 def attribute_value(tag: str, attribute: str) -> str | None:
@@ -138,6 +147,8 @@ def main() -> int:
     changed: list[str] = []
 
     for relative, metadata in pages.items():
+        if relative in MANAGED_SPANISH_TOWN_PATHS:
+            continue
         path = ROOT / relative
         before = path.read_text(encoding="utf-8")
         try:

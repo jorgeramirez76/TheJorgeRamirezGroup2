@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MAPPING = ROOT / "data" / "spanish-snippet-backlog.json"
 SCRIPT = ROOT / "scripts" / "apply_spanish_snippets.py"
+SPANISH_TOWN_MANIFEST = ROOT / "data" / "spanish-town-risk-decisions.json"
 SKIP_DIRS = {".git", "crm", "node_modules", "property-leads-system"}
 
 ENGLISH_BOILERPLATE = re.compile(
@@ -85,6 +86,10 @@ class SpanishSnippetBacklogTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.mapping = json.loads(MAPPING.read_text(encoding="utf-8"))
         cls.pages: dict[str, dict[str, str]] = cls.mapping["pages"]
+        town_manifest = json.loads(SPANISH_TOWN_MANIFEST.read_text(encoding="utf-8"))
+        cls.managed_town_paths = {
+            f"es/towns/{slug}.html" for slug in town_manifest["decisions"]
+        }
 
     def test_mapping_has_exact_original_backlog_scope(self) -> None:
         self.assertEqual(self.mapping["expected_pages"], len(self.pages))
@@ -103,6 +108,14 @@ class SpanishSnippetBacklogTests(unittest.TestCase):
 
     def test_exact_values_lengths_and_existing_social_tags_are_synced(self) -> None:
         for relative, expected in self.pages.items():
+            if relative in self.managed_town_paths:
+                source = (ROOT / relative).read_text(encoding="utf-8")
+                self.assertRegex(
+                    source,
+                    r'data-spanish-town-(?:guide|fallback|redirect)="v1"',
+                    relative,
+                )
+                continue
             parser = parse(ROOT / relative)
 
             if "title" in expected:
@@ -158,6 +171,8 @@ class SpanishSnippetBacklogTests(unittest.TestCase):
             )
 
         for relative in self.pages:
+            if relative in self.managed_town_paths:
+                continue
             parser = parse(ROOT / relative)
             self.assertEqual(
                 [relative],
