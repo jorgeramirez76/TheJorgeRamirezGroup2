@@ -211,8 +211,8 @@
         "description": "The best time to sell a house in NJ in 2026 — which months bring the highest prices and fastest sales, backed by New Jersey market data. Spring vs. fall, explained."
       },
       "after": {
-        "title": "Best Time to Sell a House in NJ: 2025–26 Monthly Data",
-        "description": "Review New Jersey median sale prices and days on market from July 2025 through June 2026, then compare the spring, fall and winter trade-offs."
+        "title": "When to Sell a Home in NJ: Timing Guide",
+        "description": "Plan when to sell an NJ home using current county reports, property readiness, competing listings, disclosure tasks, closing needs and seller-entered costs."
       },
       "sync_fields": []
     },
@@ -238,8 +238,8 @@
         "description": "Summit and Chatham go pending in 12–20 days. See where NJ sellers have the most leverage in 2026, ranked by days on market, inventory and buyer demand."
       },
       "after": {
-        "title": "NJ Towns Where Homes Sell Fastest: 2026 Market Guide",
-        "description": "Compare selected New Jersey towns by days on market, inventory and buyer demand, with 2026 context for sellers weighing price, timing and competition."
+        "title": "NJ Seller Market Comparison: Town & County Research",
+        "description": "Compare New Jersey seller markets with current county reports, municipal records, property-specific comps, disclosure steps and a net-planning worksheet."
       },
       "sync_fields": [
         "property:og:description"

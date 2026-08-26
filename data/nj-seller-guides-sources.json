@@ -1,0 +1,74 @@
+{
+  "accessed": "2026-08-26",
+  "scope": "Primary and official sources used to rebuild the bilingual New Jersey seller-market comparison and sale-timing guides. The sources support a research process, current legal or administrative requirements, and source limitations; they do not support town rankings, guaranteed outcomes, municipal price claims, ideal listing dates, commissions, return-on-investment promises, or forecasts.",
+  "guides": {
+    "town-comparison": {
+      "english": "https://thejorgeramirezgroup.com/blog/best-nj-towns-to-sell-home",
+      "spanish": "https://thejorgeramirezgroup.com/es/blog/best-nj-towns-to-sell-home",
+      "method": "Compare the same property type and reporting period in public state and county reports, then use current municipal data and property-specific comparable sales before making a listing decision."
+    },
+    "sale-timing": {
+      "english": "https://thejorgeramirezgroup.com/blog/best-time-to-sell-home-nj",
+      "spanish": "https://thejorgeramirezgroup.com/es/blog/best-time-to-sell-home-nj",
+      "method": "Evaluate timing against the seller's property condition, preparation work, occupancy, target closing, current competing listings, recent comparable sales, reporting lag, and professional tax or legal guidance."
+    }
+  },
+  "sources": [
+    {
+      "category": "market-data",
+      "publisher": "New Jersey REALTORS®",
+      "url": "https://www.njrealtor.com/research/10k/",
+      "fact_supported": "The association publishes public monthly state and county housing reports; municipality reports are available through REALTOR® member access and should be read with their period and property-type definitions.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "category": "property-tax",
+      "publisher": "New Jersey Division of Taxation",
+      "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+      "fact_supported": "The state publishes year-specific property assessment files, tax-rate tables, equalization data, sales files, and explanatory notes; a townwide rate or average is not a parcel's current bill.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "category": "transfer-fee",
+      "publisher": "New Jersey Division of Taxation",
+      "url": "https://www.nj.gov/treasury/taxation/realty.shtml",
+      "fact_supported": "New Jersey explains the Realty Transfer Fee, current graduated fee rules, seller responsibility, forms, and exemptions; the applicable amount depends on the transaction and current law.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "category": "brokerage-law",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "url": "https://www.nj.gov/dobi/bulletins/blt24_11.pdf",
+      "fact_supported": "Bulletin 24-11 explains written brokerage services agreements, property condition disclosure requirements, and that broker compensation is fully negotiable and not set by law.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "category": "property-disclosure",
+      "publisher": "New Jersey Division of Consumer Affairs",
+      "url": "https://www.njconsumeraffairs.gov/Documents/Sellers-Property-Condition-Disclosure-Statement.pdf",
+      "fact_supported": "The official seller property condition disclosure statement organizes property, system, environmental, flood, and known-condition disclosures for a residential sale.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "category": "flood-disclosure",
+      "publisher": "New Jersey Department of Environmental Protection",
+      "url": "https://dep.nj.gov/flooddisclosure/",
+      "fact_supported": "The state flood-disclosure page explains seller notification duties, the timing of disclosure, the flood-risk lookup tool, and address-specific questions included in the property disclosure process.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "category": "smoke-certification",
+      "publisher": "New Jersey Department of Community Affairs, Division of Fire Safety",
+      "url": "https://firesolutions.dca.nj.gov/ultra-fire-home/first-time-user-guide/",
+      "fact_supported": "The DCA service-portal guide explains how to apply for the smoke alarm, carbon-monoxide alarm, and portable fire-extinguisher compliance certificate when that process applies.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "category": "census-housing",
+      "publisher": "U.S. Census Bureau, American Community Survey",
+      "url": "https://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/2024/",
+      "fact_supported": "The Census Bureau provides housing data profiles for consistent state, county, municipal, and other geographies; estimates describe a reporting period and are not current comparable sales or an appraisal.",
+      "accessed": "2026-08-26"
+    }
+  ]
+}
