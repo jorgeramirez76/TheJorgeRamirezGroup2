@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "calculatedOn": "2026-08-25",
+  "sourceExport": "/Users/teddy/Documents/Codex/2026-08-25/t/work/gsc_compare/Pages.csv",
+  "sourceExportModified": "2026-08-25T18:48:32-04:00",
+  "sourceExportSha256": "5e66478db75f8693ea762cbeba2fd8d58d63eecbe3d50e71981fcd1f1c80c6f9",
+  "metricColumns": {
+    "clicks": "Last 3 months Clicks",
+    "impressions": "Last 3 months Impressions",
+    "position": "Last 3 months Position"
+  },
+  "snapshotCaveat": "Historical snapshot calculated from the supplied Search Console export; metrics are not live or current beyond that export.",
+  "quarantinedSlugs": [
+    "bayonne",
+    "boonton",
+    "butler",
+    "carteret",
+    "chester-borough",
+    "chester-township",
+    "clark",
+    "dover",
+    "east-newark",
+    "garwood",
+    "hanover",
+    "harding",
+    "harrison",
+    "highland-park",
+    "hillside",
+    "jamesburg",
+    "kearny",
+    "kenilworth",
+    "kinnelon",
+    "lincoln-park",
+    "linden",
+    "mendham-borough",
+    "mendham-township",
+    "milltown",
+    "mine-hill",
+    "monroe-township",
+    "mount-arlington",
+    "mount-olive",
+    "mountain-lakes",
+    "netcong",
+    "north-bergen",
+    "north-brunswick",
+    "old-bridge",
+    "piscataway",
+    "rahway",
+    "randolph",
+    "riverdale",
+    "rockaway-borough",
+    "rockaway-township",
+    "roxbury",
+    "sayreville",
+    "secaucus",
+    "south-amboy",
+    "south-plainfield",
+    "spotswood",
+    "union-city",
+    "verona",
+    "victory-gardens"
+  ],
+  "potentialCanonicalFamilies": 96,
+  "canonicalFamiliesWithoutRows": 36,
+  "totals": {
+    "canonicalFamiliesWithRows": 60,
+    "variantRows": 74,
+    "clicks": 0,
+    "impressions": 135
+  },
+  "byCanonicalFamily": {
+    "/es/towns/carteret": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 4,
+      "position": 63.0
+    },
+    "/es/towns/chester-township": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 96.0
+    },
+    "/es/towns/clark": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7.0
+    },
+    "/es/towns/dover": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 0,
+      "position": 0.0
+    },
+    "/es/towns/east-newark": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 3,
+      "position": 35.0
+    },
+    "/es/towns/garwood": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 31.0
+    },
+    "/es/towns/harrison": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 3,
+      "position": 10.0
+    },
+    "/es/towns/jamesburg": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 3,
+      "position": 1.67
+    },
+    "/es/towns/kearny": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 5,
+      "position": 11.6
+    },
+    "/es/towns/kenilworth": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 32.0
+    },
+    "/es/towns/kinnelon": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 2,
+      "position": 29.5
+    },
+    "/es/towns/lincoln-park": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 75.0
+    },
+    "/es/towns/mendham-borough": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 4,
+      "position": 83.75
+    },
+    "/es/towns/mendham-township": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 2,
+      "position": 65.0
+    },
+    "/es/towns/milltown": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 46.0
+    },
+    "/es/towns/mount-olive": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 2,
+      "position": 80.0
+    },
+    "/es/towns/netcong": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 4,
+      "position": 20.7475
+    },
+    "/es/towns/north-bergen": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1.0
+    },
+    "/es/towns/north-brunswick": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 68.0
+    },
+    "/es/towns/piscataway": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 33.0
+    },
+    "/es/towns/randolph": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 5,
+      "position": 56.8
+    },
+    "/es/towns/riverdale": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 2,
+      "position": 13.0
+    },
+    "/es/towns/rockaway-borough": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 90.0
+    },
+    "/es/towns/rockaway-township": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6.0
+    },
+    "/es/towns/roxbury": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1.0
+    },
+    "/es/towns/sayreville": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 52.0
+    },
+    "/es/towns/secaucus": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 2,
+      "position": 19.5
+    },
+    "/es/towns/union-city": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 4,
+      "position": 50.0
+    },
+    "/es/towns/victory-gardens": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 2,
+      "position": 37.0
+    },
+    "/towns/bayonne": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 2,
+      "position": 22.0
+    },
+    "/towns/boonton": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 78.0
+    },
+    "/towns/carteret": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6.0
+    },
+    "/towns/chester-borough": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 3,
+      "position": 61.669999999999995
+    },
+    "/towns/east-newark": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 11,
+      "position": 44.55
+    },
+    "/towns/garwood": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 3,
+      "position": 13.33
+    },
+    "/towns/hanover": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 0,
+      "position": 0.0
+    },
+    "/towns/harrison": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1.0
+    },
+    "/towns/jamesburg": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9.0
+    },
+    "/towns/kearny": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 3,
+      "position": 16.333333333333332
+    },
+    "/towns/kinnelon": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 6,
+      "position": 41.67
+    },
+    "/towns/lincoln-park": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 0,
+      "position": 0.0
+    },
+    "/towns/linden": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7.0
+    },
+    "/towns/milltown": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 0,
+      "position": 0.0
+    },
+    "/towns/mine-hill": {
+      "rows": 3,
+      "clicks": 0,
+      "impressions": 3,
+      "position": 29.666666666666668
+    },
+    "/towns/monroe-township": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 15.0
+    },
+    "/towns/mount-olive": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 2,
+      "position": 3.5
+    },
+    "/towns/mountain-lakes": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 4,
+      "position": 41.5
+    },
+    "/towns/netcong": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 54.0
+    },
+    "/towns/north-brunswick": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 3,
+      "position": 2.0
+    },
+    "/towns/randolph": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6.0
+    },
+    "/towns/riverdale": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11.0
+    },
+    "/towns/rockaway-township": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9.0
+    },
+    "/towns/sayreville": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 2,
+      "position": 5.0
+    },
+    "/towns/secaucus": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 26.0
+    },
+    "/towns/south-amboy": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 2,
+      "position": 72.5
+    },
+    "/towns/south-plainfield": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 2,
+      "position": 5.0
+    },
+    "/towns/spotswood": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 20.0
+    },
+    "/towns/union-city": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 1,
+      "position": 2.0
+    },
+    "/towns/verona": {
+      "rows": 1,
+      "clicks": 0,
+      "impressions": 3,
+      "position": 38.33
+    },
+    "/towns/victory-gardens": {
+      "rows": 2,
+      "clicks": 0,
+      "impressions": 13,
+      "position": 31.153846153846153
+    }
+  }
+}
