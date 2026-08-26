@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-26",
+  "renderer": "tools/generate_county_guides.py",
+  "sharedSources": [
+    {
+      "id": "njr-county-reports",
+      "publisher": "New Jersey Realtors / ShowingTime Plus",
+      "title": "Public state and county market reports",
+      "url": "https://njar-public.stats.10kresearch.com/reports",
+      "use": "Select a county, reporting period, and available property category at the source.",
+      "limit": "County reports do not establish a municipality-level result or a value for a particular property."
+    },
+    {
+      "id": "nj-tax-statistics",
+      "publisher": "New Jersey Department of the Treasury, Division of Taxation",
+      "title": "Property Tax Statistics",
+      "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+      "use": "Review the state's annual property-tax tables and their labels.",
+      "limit": "Averages, assessments, and equalization data are not a listing price, appraisal, or future sale result."
+    },
+    {
+      "id": "nj-school-reports",
+      "publisher": "New Jersey Department of Education",
+      "title": "School Performance Reports",
+      "url": "https://www.nj.gov/education/spr/",
+      "use": "Search current state-published reports by school, district, county, or ZIP code.",
+      "limit": "Confirm the district and attendance assignment for the specific address; a county page cannot make that determination."
+    },
+    {
+      "id": "nj-transit-planner",
+      "publisher": "NJ TRANSIT",
+      "title": "Trip Planner and Service Near a Location",
+      "url": "https://www.njtransit.com/trip-planner-service-near-to",
+      "use": "Check the current route, transfer, stop, schedule, and service notices for an actual trip.",
+      "limit": "Travel time varies by origin, destination, departure, transfers, and service conditions."
+    },
+    {
+      "id": "nj-locality-search",
+      "publisher": "State of New Jersey",
+      "title": "Locality Search",
+      "url": "https://www.nj.gov/cgi-bin/infobank/localsearch.pl",
+      "use": "Confirm whether a place name is a legal municipality or a locality within another municipality.",
+      "limit": "Postal and neighborhood names do not always match legal municipal boundaries."
+    }
+  ],
+  "counties": [
+    {
+      "name": "Union",
+      "slug": "union",
+      "directoryTitle": "Union County Municipalities",
+      "directoryUrl": "https://ucnj.org/municipalities/",
+      "marketReportSlug": "union-county-nj-real-estate-market-report-2026",
+      "officeCounty": true
+    },
+    {
+      "name": "Essex",
+      "slug": "essex",
+      "directoryTitle": "Essex County official website",
+      "directoryUrl": "https://essexcountynj.org/",
+      "marketReportSlug": "essex-county-nj-real-estate-market-2026",
+      "officeCounty": false
+    },
+    {
+      "name": "Morris",
+      "slug": "morris",
+      "directoryTitle": "Morris County Cities and Towns",
+      "directoryUrl": "https://www.morriscountynj.gov/Residents/Community-Information/Cities-and-Towns",
+      "marketReportSlug": "morris-county-nj-real-estate-market-2026",
+      "officeCounty": false
+    },
+    {
+      "name": "Hudson",
+      "slug": "hudson",
+      "directoryTitle": "Hudson County official website",
+      "directoryUrl": "https://www.hudsoncountynj.org/",
+      "marketReportSlug": "hudson-county-real-estate-market-q2-2026",
+      "officeCounty": false
+    },
+    {
+      "name": "Middlesex",
+      "slug": "middlesex",
+      "directoryTitle": "Middlesex County Municipalities",
+      "directoryUrl": "https://www.middlesexcountynj.gov/government/municipalities",
+      "marketReportSlug": "middlesex-county-real-estate-market-q2-2026",
+      "officeCounty": false
+    },
+    {
+      "name": "Somerset",
+      "slug": "somerset",
+      "directoryTitle": "Somerset County Official Directory of County and Municipal Offices",
+      "directoryUrl": "https://www.somersetcountynj.gov/about/county-directory",
+      "marketReportSlug": null,
+      "officeCounty": false
+    }
+  ]
+}
