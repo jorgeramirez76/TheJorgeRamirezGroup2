@@ -1,0 +1,364 @@
+{
+  "workflow_id": "unsupported-programmatic-doorway-retirement",
+  "inventory_base_commit": "5abf49e7ee2d35311504e740a2c1bc428736120c",
+  "retired_on": "2026-08-26",
+  "reason": "Unsupported scaled locality pages repeated seller and valuation intent while publishing unverified market, timing, discount, outcome, school, and resident-profile claims. The routes are consolidated into maintained intent-level destinations and retained only as noindex user fallbacks.",
+  "search_handling": "Permanent one-hop redirects for clean and .html variants; compact noindex, follow HTML fallbacks; excluded from search sitemaps.",
+  "gsc_recent_3_months": {
+    "source": "Google Search Console Pages comparison export",
+    "exported_on": "2026-08-25",
+    "clicks": 0,
+    "sell_my_house": {
+      "observed_url_variants": 1,
+      "impressions": 3
+    },
+    "home_valuation": {
+      "observed_url_variants": 21,
+      "impressions": 43
+    }
+  },
+  "internal_link_exceptions": [
+    {
+      "file": "blog/market-report-livingston-nj-2026.html",
+      "reason": "Active town-market report; explicitly outside this remediation batch."
+    },
+    {
+      "file": "blog/market-report-maplewood-nj-2026.html",
+      "reason": "Active town-market report; explicitly outside this remediation batch."
+    },
+    {
+      "file": "blog/market-report-montclair-nj-2026.html",
+      "reason": "Active town-market report; explicitly outside this remediation batch."
+    },
+    {
+      "file": "blog/market-report-short-hills-nj-2026.html",
+      "reason": "Active town-market report; explicitly outside this remediation batch."
+    },
+    {
+      "file": "blog/market-report-south-orange-nj-2026.html",
+      "reason": "Active town-market report; explicitly outside this remediation batch."
+    },
+    {
+      "file": "blog/market-report-west-orange-nj-2026.html",
+      "reason": "Active town-market report; explicitly outside this remediation batch."
+    },
+    {
+      "file": "towns/woodbridge.html",
+      "reason": "Protected town file; explicitly excluded from edits in this remediation batch."
+    }
+  ],
+  "pages": [
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-chatham-nj.html",
+      "path": "/home-valuation-chatham-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-cranford-nj.html",
+      "path": "/home-valuation-cranford-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-livingston-nj.html",
+      "path": "/home-valuation-livingston-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-madison-nj.html",
+      "path": "/home-valuation-madison-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-maplewood-nj.html",
+      "path": "/home-valuation-maplewood-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-millburn-nj.html",
+      "path": "/home-valuation-millburn-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-montclair-nj.html",
+      "path": "/home-valuation-montclair-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-new-providence-nj.html",
+      "path": "/home-valuation-new-providence-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-scotch-plains-nj.html",
+      "path": "/home-valuation-scotch-plains-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-short-hills-nj.html",
+      "path": "/home-valuation-short-hills-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-south-orange-nj.html",
+      "path": "/home-valuation-south-orange-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-springfield-nj.html",
+      "path": "/home-valuation-springfield-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-summit-nj.html",
+      "path": "/home-valuation-summit-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-west-orange-nj.html",
+      "path": "/home-valuation-west-orange-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "home_valuation",
+      "file": "home-valuation-westfield-nj.html",
+      "path": "/home-valuation-westfield-nj",
+      "destination": "/home-valuation"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-basking-ridge-nj.html",
+      "path": "/sell-my-house-basking-ridge-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-bloomfield-nj.html",
+      "path": "/sell-my-house-bloomfield-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-chatham-nj.html",
+      "path": "/sell-my-house-chatham-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-clark-nj.html",
+      "path": "/sell-my-house-clark-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-cranford-nj.html",
+      "path": "/sell-my-house-cranford-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-edison-nj.html",
+      "path": "/sell-my-house-edison-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-fanwood-nj.html",
+      "path": "/sell-my-house-fanwood-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-florham-park-nj.html",
+      "path": "/sell-my-house-florham-park-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-glen-ridge-nj.html",
+      "path": "/sell-my-house-glen-ridge-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-highland-park-nj.html",
+      "path": "/sell-my-house-highland-park-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-linden-nj.html",
+      "path": "/sell-my-house-linden-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-livingston-nj.html",
+      "path": "/sell-my-house-livingston-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-madison-nj.html",
+      "path": "/sell-my-house-madison-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-maplewood-nj.html",
+      "path": "/sell-my-house-maplewood-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-metuchen-nj.html",
+      "path": "/sell-my-house-metuchen-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-millburn-nj.html",
+      "path": "/sell-my-house-millburn-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-montclair-nj.html",
+      "path": "/sell-my-house-montclair-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-morristown-nj.html",
+      "path": "/sell-my-house-morristown-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-mountain-lakes-nj.html",
+      "path": "/sell-my-house-mountain-lakes-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-mountainside-nj.html",
+      "path": "/sell-my-house-mountainside-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-new-providence-nj.html",
+      "path": "/sell-my-house-new-providence-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-north-caldwell-nj.html",
+      "path": "/sell-my-house-north-caldwell-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-nutley-nj.html",
+      "path": "/sell-my-house-nutley-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-old-bridge-nj.html",
+      "path": "/sell-my-house-old-bridge-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-parsippany-nj.html",
+      "path": "/sell-my-house-parsippany-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-rahway-nj.html",
+      "path": "/sell-my-house-rahway-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-roseland-nj.html",
+      "path": "/sell-my-house-roseland-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-scotch-plains-nj.html",
+      "path": "/sell-my-house-scotch-plains-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-short-hills-nj.html",
+      "path": "/sell-my-house-short-hills-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-south-orange-nj.html",
+      "path": "/sell-my-house-south-orange-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-springfield-nj.html",
+      "path": "/sell-my-house-springfield-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-summit-nj.html",
+      "path": "/sell-my-house-summit-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-verona-nj.html",
+      "path": "/sell-my-house-verona-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-warren-township-nj.html",
+      "path": "/sell-my-house-warren-township-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-west-orange-nj.html",
+      "path": "/sell-my-house-west-orange-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-westfield-nj.html",
+      "path": "/sell-my-house-westfield-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "family": "sell_my_house",
+      "file": "sell-my-house-woodbridge-nj.html",
+      "path": "/sell-my-house-woodbridge-nj",
+      "destination": "/sell-your-home"
+    }
+  ]
+}

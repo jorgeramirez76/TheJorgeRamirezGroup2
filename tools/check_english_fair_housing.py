@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 INVENTORY_PATH = ROOT / "data" / "english-fair-housing-inventory.json"
 QUARANTINE_PATH = ROOT / "data" / "english-fair-housing-quarantine.json"
+PROGRAMMATIC_DOORWAY_PATH = ROOT / "data" / "programmatic-doorway-retirement.json"
 SKIP_PARTS = {".git", "crm", "es", "node_modules", "property-leads-system", "realtor", "towns"}
 MARKET_REPORT = re.compile(r"(?:market-report|real-estate-market|county-market)", re.I)
 REDIRECT_STUB = re.compile(r'<meta\b[^>]*http-equiv=["\']refresh["\']', re.I)
@@ -205,10 +206,25 @@ def quarantined_files() -> set[str]:
     return {item["file"] for item in payload["pages"]}
 
 
+def retired_programmatic_doorway_files() -> set[str]:
+    if not PROGRAMMATIC_DOORWAY_PATH.exists():
+        return set()
+    payload = json.loads(PROGRAMMATIC_DOORWAY_PATH.read_text(encoding="utf-8"))
+    return {item["file"] for item in payload["pages"]}
+
+
 def discover_inventory() -> dict[str, list[str]]:
-    excluded = {"rebuilt": [], "retired": [], "market_reports": [], "redirects": [], "directories": []}
+    excluded = {
+        "rebuilt": [],
+        "retired": [],
+        "retired_programmatic_doorways": [],
+        "market_reports": [],
+        "redirects": [],
+        "directories": [],
+    }
     owned: list[str] = []
     retired = retired_files()
+    retired_programmatic = retired_programmatic_doorway_files()
     quarantined = quarantined_files()
     for path in sorted(ROOT.rglob("*.html")):
         relative = path.relative_to(ROOT).as_posix()
@@ -219,6 +235,8 @@ def discover_inventory() -> dict[str, list[str]]:
             excluded["rebuilt"].append(relative)
         elif relative in retired:
             excluded["retired"].append(relative)
+        elif relative in retired_programmatic:
+            excluded["retired_programmatic_doorways"].append(relative)
         elif MARKET_REPORT.search(path.name):
             excluded["market_reports"].append(relative)
         elif relative in quarantined:

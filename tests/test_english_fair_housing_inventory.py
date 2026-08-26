@@ -40,6 +40,11 @@ class EnglishFairHousingInventoryTests(unittest.TestCase):
                 encoding="utf-8"
             )
         )
+        cls.doorway_manifest = json.loads(
+            (ROOT / "data" / "programmatic-doorway-retirement.json").read_text(
+                encoding="utf-8"
+            )
+        )
         cls.mapping = quarantine_mapping()
 
     def test_inventory_is_exact_and_named_exclusions_are_preserved(self) -> None:
@@ -49,6 +54,13 @@ class EnglishFairHousingInventoryTests(unittest.TestCase):
         self.assertEqual(self.inventory["excluded"], discovered)
         self.assertEqual(139, len(self.inventory["excluded"]["retired"]))
         self.assertEqual(139, len(self.inventory["excluded"]["redirects"]))
+        self.assertEqual(
+            {item["file"] for item in self.doorway_manifest["pages"]},
+            set(self.inventory["excluded"]["retired_programmatic_doorways"]),
+        )
+        self.assertEqual(
+            52, len(self.inventory["excluded"]["retired_programmatic_doorways"])
+        )
 
     def test_reviewed_pages_and_emitters_have_no_risk_patterns(self) -> None:
         self.assertEqual([], blocking_issues())

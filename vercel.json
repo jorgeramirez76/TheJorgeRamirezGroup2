@@ -129,6 +129,526 @@
       "permanent": true
     },
     {
+      "source": "/home-valuation-chatham-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-chatham-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-cranford-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-cranford-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-livingston-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-livingston-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-madison-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-madison-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-maplewood-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-maplewood-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-millburn-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-millburn-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-montclair-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-montclair-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-new-providence-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-new-providence-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-scotch-plains-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-scotch-plains-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-short-hills-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-short-hills-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-south-orange-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-south-orange-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-springfield-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-springfield-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-summit-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-summit-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-west-orange-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-west-orange-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-westfield-nj",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/home-valuation-westfield-nj.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-basking-ridge-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-basking-ridge-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-bloomfield-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-bloomfield-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-chatham-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-chatham-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-clark-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-clark-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-cranford-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-cranford-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-edison-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-edison-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-fanwood-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-fanwood-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-florham-park-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-florham-park-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-glen-ridge-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-glen-ridge-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-highland-park-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-highland-park-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-linden-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-linden-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-livingston-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-livingston-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-madison-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-madison-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-maplewood-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-maplewood-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-metuchen-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-metuchen-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-millburn-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-millburn-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-montclair-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-montclair-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-morristown-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-morristown-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-mountain-lakes-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-mountain-lakes-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-mountainside-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-mountainside-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-new-providence-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-new-providence-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-north-caldwell-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-north-caldwell-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-nutley-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-nutley-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-old-bridge-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-old-bridge-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-parsippany-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-parsippany-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-rahway-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-rahway-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-roseland-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-roseland-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-scotch-plains-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-scotch-plains-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-short-hills-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-short-hills-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-south-orange-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-south-orange-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-springfield-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-springfield-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-summit-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-summit-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-verona-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-verona-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-warren-township-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-warren-township-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-west-orange-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-west-orange-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-westfield-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-westfield-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-woodbridge-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-house-woodbridge-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
