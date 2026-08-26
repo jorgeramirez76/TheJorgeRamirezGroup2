@@ -430,6 +430,9 @@ if ('IntersectionObserver' in window) {
     const hero = document.querySelector('.hero');
     const carousel = document.querySelector('.hero-carousel');
     if (!hero || !carousel) return;
+    // The carousel is the mobile hero. Do not download or autoplay the 2.95 MB
+    // enhancement on small screens where it adds cost without improving the layout.
+    if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) return;
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const conn = navigator.connection;
     if (conn && (conn.saveData || /(^|-)2g/.test(conn.effectiveType || ''))) return;
@@ -443,13 +446,16 @@ if ('IntersectionObserver' in window) {
         v.setAttribute('muted', '');
         v.setAttribute('playsinline', '');
         v.setAttribute('aria-hidden', 'true');
-        v.preload = 'auto';
+        v.preload = 'metadata';
         v.src = '/videos/hero-loop.mp4';
-        v.addEventListener('canplaythrough', () => {
-            v.play().then(() => hero.classList.add('video-on')).catch(() => v.remove());
-        }, { once: true });
         v.addEventListener('error', () => v.remove(), { once: true });
         carousel.insertAdjacentElement('afterend', v);
+        const playback = v.play();
+        if (playback && typeof playback.then === 'function') {
+            playback.then(() => hero.classList.add('video-on')).catch(() => v.remove());
+        } else {
+            hero.classList.add('video-on');
+        }
     }
 
     if (document.readyState === 'complete') setTimeout(load, 400);

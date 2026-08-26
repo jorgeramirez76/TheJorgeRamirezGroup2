@@ -1,10 +1,8 @@
 // Serverless lead handler for The Jorge Ramirez Group.
 //
-// STATUS: deployed but NOT yet wired to the forms. The website forms currently
-// POST directly to FormSubmit (which works from the browser). FormSubmit is behind
-// Cloudflare and 403s any *server-side* call, so this function delivers leads via
-// first-party channels instead. Flip the form actions to "/api/lead" ONLY AFTER at
-// least one channel below is configured in Vercel env vars.
+// This first-party endpoint powers the valuation intake and lead-magnet forms.
+// It deliberately reports success only after at least one configured delivery
+// channel confirms receipt.
 //
 // Delivery (best-effort, in parallel — a lead succeeds if ANY channel succeeds):
 //   1. Twilio SMS to Jorge   — TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM, LEAD_ALERT_TO
@@ -14,13 +12,128 @@
 // Set these in Vercel → Project → Settings → Environment Variables, then redeploy.
 
 const ORIGIN = "https://thejorgeramirezgroup.com";
+const SMS_CONSENT_LANGUAGE =
+  "I agree to receive text messages from The Jorge Ramirez Group about this home valuation request. Message and data rates may apply. Reply STOP to opt out. Consent is optional and is not a condition of service.";
+const GUIDE_CONSENT_LANGUAGE =
+  "I agree that Jorge Ramirez, licensed NJ real estate agent (The Jorge Ramirez Group at Keller Williams, brokerage of record), may call and text me, including by automated technology, about my real estate request and to send related updates such as appointment and showing reminders, new-listing and price alerts, home-value follow-ups, and transaction updates. Consent is not a condition of getting the guide or of any purchase. Message frequency varies, typically a few per month. Message and data rates may apply. Reply STOP to opt out, HELP for help.";
+const VALUATION_RATE_WINDOW_MS = 10 * 60 * 1000;
+const VALUATION_RATE_MAX = 5;
+const valuationAttempts = new Map();
 
 function safeNext(next) {
   if (typeof next === "string") {
-    if (next.startsWith("/")) return next;
-    if (next.startsWith(ORIGIN)) return next.slice(ORIGIN.length) || "/";
+    if (/^\/(?![\\/])[^\r\n]*$/.test(next)) return next;
+    if (next === ORIGIN) return "/";
+    if (next.startsWith(`${ORIGIN}/`)) {
+      const path = next.slice(ORIGIN.length);
+      if (/^\/(?![\\/])[^\r\n]*$/.test(path)) return path;
+    }
   }
   return "/thank-you";
+}
+
+function clean(value, maxLength) {
+  if (typeof value !== "string" && typeof value !== "number" && typeof value !== "boolean") {
+    return "";
+  }
+  return String(value).trim().slice(0, maxLength);
+}
+
+function hasStructuredValues(body) {
+  return Object.values(body).some((value) => value !== null && typeof value === "object");
+}
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>'"]/g, (character) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "'": "&#39;",
+    '"': "&quot;",
+  })[character]);
+}
+
+function isLikelySpam(body, requireValuationTiming = false) {
+  if (body._honey) return true;
+  if (clean(body.leadType, 40) !== "home-valuation") return false;
+  const timingMarker = clean(body._startedAt, 40);
+  if (!timingMarker) return requireValuationTiming;
+  const startedAt = Number(timingMarker);
+  const elapsed = Date.now() - startedAt;
+  return !Number.isFinite(startedAt) || elapsed < 1_500 || elapsed > 86_400_000;
+}
+
+function clientIp(headers) {
+  const forwarded = clean(headers["x-forwarded-for"], 300).split(",")[0].trim();
+  return forwarded || clean(headers["x-real-ip"], 100);
+}
+
+function isValuationRateLimited(ip) {
+  if (!ip) return false;
+  const now = Date.now();
+  const cutoff = now - VALUATION_RATE_WINDOW_MS;
+
+  for (const [key, timestamps] of valuationAttempts) {
+    const recent = timestamps.filter((timestamp) => timestamp > cutoff);
+    if (recent.length) valuationAttempts.set(key, recent);
+    else valuationAttempts.delete(key);
+  }
+
+  const attempts = valuationAttempts.get(ip) || [];
+  if (attempts.length >= VALUATION_RATE_MAX) return true;
+  attempts.push(now);
+  valuationAttempts.set(ip, attempts);
+  return false;
+}
+
+function withState(next, state) {
+  return `${next}${next.includes("?") ? "&" : "?"}${state}`;
+}
+
+function valuationState(next, state, fragment) {
+  return `${withState(next, state)}#${fragment}`;
+}
+
+function deliveryTimeoutMs() {
+  const configured = Number(process.env.LEAD_DELIVERY_TIMEOUT_MS);
+  if (!Number.isFinite(configured) || configured <= 0) return 8_000;
+  return Math.max(25, Math.min(configured, 12_000));
+}
+
+function consentLanguageFor(leadType, guide) {
+  if (leadType === "home-valuation") return SMS_CONSENT_LANGUAGE;
+  if (guide === "buyer" || guide === "seller") return GUIDE_CONSENT_LANGUAGE;
+  return "";
+}
+
+async function fetchWithTimeout(url, options = {}) {
+  const controller = new AbortController();
+  let timeoutId;
+  const timeout = new Promise((_, reject) => {
+    timeoutId = setTimeout(() => {
+      controller.abort();
+      reject(new Error("delivery provider timed out"));
+    }, deliveryTimeoutMs());
+  });
+
+  try {
+    return await Promise.race([
+      fetch(url, { ...options, signal: controller.signal }),
+      timeout,
+    ]);
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+function validateLead(lead) {
+  const errors = [];
+  if (lead.name.length < 2) errors.push("name");
+  if (!lead.email && !lead.phone) errors.push("contact");
+  if (lead.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)) errors.push("email");
+  if (lead.phone && lead.phone.replace(/\D/g, "").length < 7) errors.push("phone");
+  if (lead.leadType === "home-valuation" && lead.address.length < 5) errors.push("address");
+  return errors;
 }
 
 async function textJorge(lead) {
@@ -30,15 +143,17 @@ async function textJorge(lead) {
     `New web lead — ${lead.name || "?"}\n` +
     `${lead.phone || "no phone"} · ${lead.email || "no email"}\n` +
     (lead.intent ? `Wants: ${lead.intent}\n` : "") +
+    (lead.address ? `Address: ${lead.address}\n` : "") +
     (lead.town ? `Town: ${lead.town}\n` : "") +
+    (lead.timeframe ? `Timing: ${lead.timeframe}\n` : "") +
     (lead.message ? `"${lead.message.slice(0, 200)}"` : "");
   const auth = Buffer.from(`${sid}:${token}`).toString("base64");
-  const res = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${sid}/Messages.json`, {
+  const res = await fetchWithTimeout(`https://api.twilio.com/2010-04-01/Accounts/${sid}/Messages.json`, {
     method: "POST",
     headers: { Authorization: `Basic ${auth}`, "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({ To: to, From: from, Body: body }),
   });
-  if (!res.ok) throw new Error(`twilio ${res.status}: ${(await res.text()).slice(0, 200)}`);
+  if (!res.ok) throw new Error(`twilio ${res.status}`);
   return { ok: "twilio" };
 }
 
@@ -47,7 +162,7 @@ async function pushCRM(lead) {
   if (!url) return { skipped: "crm" };
   const headers = { "Content-Type": "application/json" };
   if (process.env.SITE_LEAD_WEBHOOK_SECRET) headers["x-webhook-secret"] = process.env.SITE_LEAD_WEBHOOK_SECRET;
-  const res = await fetch(url, {
+  const res = await fetchWithTimeout(url, {
     method: "POST",
     headers,
     body: JSON.stringify(lead),
@@ -90,7 +205,7 @@ async function emailGuideToLead(lead) {
     `reply to this email or text me at 908-230-7844 — no pressure.\n\nTalk soon,\nJorge Ramirez\n` +
     `The Jorge Ramirez Group · Keller Williams Premier Properties\n908-230-7844 · jorge.ramirez@kw.com\n\n` +
     `You're receiving this because you requested a free guide at thejorgeramirezgroup.com.\n${addr}\nUnsubscribe: ${unsub}`;
-  const res = await fetch("https://api.resend.com/emails", {
+  const res = await fetchWithTimeout("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -108,13 +223,17 @@ async function emailViaResend(lead) {
   const to = process.env.LEAD_EMAIL;
   const from = process.env.RESEND_FROM;
   if (!key || !to || !from) return { skipped: "resend" };
+  const safe = Object.fromEntries(
+    Object.entries(lead).map(([keyName, value]) => [keyName, escapeHtml(value)]),
+  );
   const html =
     `<h2>New website lead</h2>` +
-    `<p><b>Name:</b> ${lead.name}<br><b>Phone:</b> ${lead.phone}<br><b>Email:</b> ${lead.email}<br>` +
-    `<b>Town:</b> ${lead.town}<br><b>Looking to:</b> ${lead.intent}</p>` +
-    `<p><b>Message:</b><br>${(lead.message || "").replace(/\n/g, "<br>")}</p>` +
-    `<p style="color:#888">Page: ${lead.source} · ${lead.receivedAt}</p>`;
-  const res = await fetch("https://api.resend.com/emails", {
+    `<p><b>Name:</b> ${safe.name}<br><b>Phone:</b> ${safe.phone}<br><b>Email:</b> ${safe.email}<br>` +
+    `<b>Address:</b> ${safe.address}<br><b>Town:</b> ${safe.town}<br>` +
+    `<b>Timing:</b> ${safe.timeframe}<br><b>Looking to:</b> ${safe.intent}</p>` +
+    `<p><b>Message:</b><br>${safe.message.replace(/\n/g, "<br>")}</p>` +
+    `<p style="color:#888">Page: ${safe.source} · ${safe.receivedAt}</p>`;
+  const res = await fetchWithTimeout("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({ from, to, reply_to: lead.email || undefined, subject: `New Lead — ${lead.name || "Website"}`, html }),
@@ -129,30 +248,69 @@ export default async function handler(req, res) {
     return res.status(405).send("Method Not Allowed");
   }
 
-  const b = (req.body && typeof req.body === "object") ? req.body : {};
+  const b = (req.body && typeof req.body === "object" && !Array.isArray(req.body)) ? req.body : {};
+  const headers = req.headers || {};
   const wantsJson =
-    (req.headers.accept || "").includes("application/json") ||
-    (req.headers["x-requested-with"] || "").toLowerCase() === "xmlhttprequest";
-  const next = safeNext(b._next);
+    (headers.accept || "").includes("application/json") ||
+    (headers["x-requested-with"] || "").toLowerCase() === "xmlhttprequest";
+  if (hasStructuredValues(b)) {
+    return wantsJson
+      ? res.status(400).json({ ok: false, code: "invalid_payload" })
+      : res.redirect(303, "/thank-you?err=invalid");
+  }
+  const leadType = clean(b.leadType, 40);
+  const isValuation = leadType === "home-valuation";
+  const next = isValuation ? "/home-valuation" : safeNext(b._next);
 
-  if (b._honey) {
-    return wantsJson ? res.status(200).json({ ok: true }) : res.redirect(303, next);
+  if (isLikelySpam(b, wantsJson)) {
+    return wantsJson
+      ? res.status(200).json({ ok: true, accepted: false })
+      : res.redirect(303, next);
   }
 
+  const phone = clean(b.phone || b.Phone, 60);
+  const guide = clean(b.guide, 40);
+  const receivedAt = new Date().toISOString();
+  const requestedSmsConsent =
+    b.smsConsent === true || b.smsConsent === "true" || b.smsConsent === "on";
+  const canonicalConsentLanguage = consentLanguageFor(leadType, guide);
+  const smsConsent = Boolean(requestedSmsConsent && phone && canonicalConsentLanguage);
   const lead = {
-    name: (b.name || b.Name || "").toString().slice(0, 200),
-    email: (b.email || b.Email || "").toString().slice(0, 200),
-    phone: (b.phone || b.Phone || "").toString().slice(0, 60),
-    town: (b.town || b.Town || "").toString().slice(0, 120),
-    intent: (b.intent || b.interest || b.looking_to || "").toString().slice(0, 120),
-    guide: (b.guide || "").toString().slice(0, 40),
-    message: (b.message || b.Message || "").toString().slice(0, 2000),
-    source: (b._source || req.headers.referer || "").toString().slice(0, 300),
-    // SMS opt-in (forwarded to the CRM so ConsentRecord captures the exact language + IP)
-    smsConsent: b.smsConsent === true || b.smsConsent === "true" || b.smsConsent === "on",
-    consentLanguage: (b.consentLanguage || "").toString().slice(0, 2048),
-    receivedAt: new Date().toISOString(),
+    leadType,
+    name: clean(b.name || b.Name, 200),
+    email: clean(b.email || b.Email, 200).toLowerCase(),
+    phone,
+    address: clean(b.address || b.Address, 300),
+    town: clean(b.town || b.Town, 120),
+    timeframe: clean(b.timeframe, 120),
+    intent: clean(b.intent || b.interest || b.looking_to, 120),
+    guide,
+    message: clean(b.message || b.Message, 2000),
+    source: clean(b._source || headers.referer, 300),
+    // Canonicalize consent server-side so the CRM receives an auditable record
+    // rather than disclosure language supplied by the browser.
+    smsConsent,
+    consentLanguage: smsConsent ? canonicalConsentLanguage : "",
+    consentAt: smsConsent ? receivedAt : "",
+    consentIp: smsConsent ? clientIp(headers) : "",
+    receivedAt,
   };
+
+  const validationErrors = validateLead(lead);
+  if (validationErrors.length) {
+    return wantsJson
+      ? res.status(400).json({ ok: false, code: "invalid_lead", fields: validationErrors })
+      : res.redirect(303, isValuation
+        ? valuationState(next, "err=invalid", "valuation-invalid")
+        : withState(next, "err=invalid"));
+  }
+
+  if (isValuation && isValuationRateLimited(clientIp(headers))) {
+    res.setHeader("Retry-After", "600");
+    return wantsJson
+      ? res.status(429).json({ ok: false, code: "rate_limited" })
+      : res.redirect(303, valuationState(next, "err=rate", "valuation-rate"));
+  }
 
   const results = await Promise.allSettled([textJorge(lead), pushCRM(lead), emailViaResend(lead), emailGuideToLead(lead)]);
   const delivered = results.some((r) => r.status === "fulfilled" && r.value && r.value.ok);
@@ -160,11 +318,25 @@ export default async function handler(req, res) {
     const label = ["twilio", "crm", "resend", "guide-email"][i];
     if (r.status === "rejected") console.error(`lead delivery failed [${label}]:`, r.reason);
   });
-  if (!delivered) console.error("LEAD NOT DELIVERED — no channel configured/succeeded:", JSON.stringify(lead));
+  if (!delivered) {
+    // Keep lead PII out of platform logs; the delivery-channel failures above
+    // provide enough operational context to diagnose configuration problems.
+    console.error("LEAD NOT DELIVERED — no configured channel confirmed receipt", {
+      leadType: lead.leadType,
+      receivedAt: lead.receivedAt,
+    });
+  }
 
   if (!delivered) {
-    const sep = next.includes("?") ? "&" : "?";
-    return wantsJson ? res.status(502).json({ ok: false }) : res.redirect(303, next + sep + "err=1");
+    return wantsJson
+      ? res.status(502).json({ ok: false, code: "delivery_failed" })
+      : res.redirect(303, isValuation
+        ? valuationState(next, "err=1", "valuation-error")
+        : withState(next, "err=1"));
   }
-  return wantsJson ? res.status(200).json({ ok: true }) : res.redirect(303, next);
+  return wantsJson
+    ? res.status(200).json({ ok: true, accepted: true })
+    : res.redirect(303, isValuation
+      ? valuationState(next, "submitted=1", "valuation-submitted")
+      : next);
 }

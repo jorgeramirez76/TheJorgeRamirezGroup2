@@ -16,7 +16,7 @@
     
     <!-- AI & Voice Search Optimization -->
     <meta name="ai-content-declaration" content="human-authored">
-    <meta name="llm-context" content="Jorge Ramirez is a licensed New Jersey real estate agent (License #1754604) with The Jorge Ramirez Group at Keller Williams Premier Properties in Summit, NJ. He is a top listing agent specializing in helping NJ homeowners sell their homes for top dollar using data-driven pricing, professional marketing, and AI-powered buyer targeting. He also helps buyers — especially NYC commuters — find homes across 138 communities in Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. Jorge has personally bought, renovated, and sold investment properties, giving him deep knowledge of home values, renovation costs, and buyer behavior. He provides free home valuations at value.thejorgeramirezgroup.com. Contact: 908-230-7844.">
+    <meta name="llm-context" content="Jorge Ramirez is a licensed New Jersey real estate agent (License #1754604) with The Jorge Ramirez Group at Keller Williams Premier Properties in Summit, NJ. He is a top listing agent specializing in helping NJ homeowners sell their homes for top dollar using data-driven pricing, professional marketing, and AI-powered buyer targeting. He also helps buyers — especially NYC commuters — find homes across 138 communities in Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. Jorge has personally bought, renovated, and sold investment properties, giving him deep knowledge of home values, renovation costs, and buyer behavior. He provides free home valuations at thejorgeramirezgroup.com/home-valuation. Contact: 908-230-7844.">
     
     <!-- Geo Meta Tags -->
     <meta name="geo.region" content="US-NJ">
@@ -504,7 +504,7 @@
     </script>
 </head>
 <body>
-<a href="#main" class="skip-link" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to main content</a>
+<a href="#main" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -537,7 +537,8 @@
             </button>
         </div>
     </nav>
-    
+
+    <main id="main" tabindex="-1">
     <!-- Hero Section — Ken Burns luxury property carousel -->
     <section class="hero" id="home">
         <div class="hero-carousel" aria-hidden="true">
@@ -560,7 +561,7 @@
                 <span>6-county seller focus</span>
             </div>
             <div class="hero-buttons">
-                <a href="https://value.thejorgeramirezgroup.com" class="btn-primary btn-flip" target="_blank" rel="noopener"><span class="flip-front">Get a Real Home Value Review</span><span class="flip-back">Know Your Number →</span></a>
+                <a href="/home-valuation" class="btn-primary btn-flip" rel="noopener"><span class="flip-front">Get a Real Home Value Review</span><span class="flip-back">Know Your Number →</span></a>
                 <a href="#contact" class="btn-secondary btn-flip"><span class="flip-front">Talk to Jorge First</span><span class="flip-back">Start the Conversation →</span></a>
             </div>
             <div class="hero-train-wrap">
@@ -573,9 +574,9 @@
                 </a>
             </div>
         </div>
-        <div class="hero-scroll-indicator" onclick="document.querySelector('.stats-bar').scrollIntoView({behavior:'smooth'})">
+        <button type="button" class="hero-scroll-indicator" aria-label="Scroll to seller credentials" onclick="document.querySelector('.stats-bar').scrollIntoView({behavior:'smooth'})">
             <span class="scroll-arrow"></span>
-        </div>
+        </button>
     </section>
     
     <!-- Stats Bar -->
@@ -628,7 +629,7 @@
                 <span class="reveal-cta">List with Jorge <span aria-hidden="true">→</span></span>
             </a>
             <a href="/home-valuation" class="reveal-tile" style="--reveal-img: url('/images/properties/01-loft-living.webp');">
-                <span class="reveal-eyebrow">03 · Free · 60 Seconds</span>
+                <span class="reveal-eyebrow">03 · Free · 24–48 Hours</span>
                 <h2 class="reveal-title">Value</h2>
                 <span class="reveal-cta">What's my home worth <span aria-hidden="true">→</span></span>
             </a>
@@ -738,7 +739,7 @@
                 <p>These are real transactions pulled straight from his <a href="https://www.zillow.com/profile/TheJorgeRamirezGroup" target="_blank" rel="noopener">Zillow record</a> — 42 sold homes across Northern and Central NJ, nine years of full-time work, every town in the portfolio a public record. A sample is below.</p>
             </div>
             <div class="listings-grid">
-                <article id="main" class="listing-card featured" data-town="verona">
+                <article class="listing-card featured" data-town="verona">
                     <span class="listing-featured-tag">Featured Closing</span>
                     <div class="listing-img" style="background-image: url('images/properties/04-brick-stone.webp');">
                         <span class="listing-status">Sold · 2022</span>
@@ -946,7 +947,7 @@
             </div>
             <div style="text-align: center; margin-top: 40px;">
                 <a href="/home-valuation" class="btn-flip" style="padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em; font-weight: 600;"><span class="flip-front">Free Home Valuation →</span><span class="flip-back">Start Now →</span></a>
-                <p style="margin-top: 15px; color: #666; font-size: 0.95em;">Takes 60 seconds. No spam. No obligation.</p>
+                <p style="margin-top: 15px; color: #666; font-size: 0.95em;">Request takes a few minutes. No spam. No obligation.</p>
             </div>
         </div>
     </section>
@@ -1171,7 +1172,7 @@
 
                 <div class="faq-item">
                     <h3>How do I find out what my NJ home is actually worth?</h3>
-                    <p>Start with our <a href="/home-valuation" style="color: #8A6D14; text-decoration: underline; text-decoration-color:#8A6D14;">free home valuation tool</a> for an instant estimate. But the real answer comes from a comparative market analysis (CMA) — where I look at what similar homes in your specific neighborhood have sold for in the last 60-90 days, what's currently under contract, and what's sitting unsold. Zillow estimates miss local nuance. A CMA from someone who has bought and sold homes across NJ as an investor gives you the number you can actually plan around. It's free, it takes 15 minutes, and there's zero obligation.</p>
+                    <p>Start with our <a href="/home-valuation" style="color: #8A6D14; text-decoration: underline; text-decoration-color:#8A6D14;">free home valuation page</a> to request a free CMA. But the real answer comes from a comparative market analysis (CMA) — where I look at what similar homes in your specific neighborhood have sold for in the last 60-90 days, what's currently under contract, and what's sitting unsold. Zillow estimates miss local nuance. A CMA from someone who has bought and sold homes across NJ as an investor gives you the number you can actually plan around. It's free, Jorge follows up within 24 to 48 hours, and there's zero obligation.</p>
                 </div>
 
                 <div class="faq-item">
@@ -1208,7 +1209,7 @@
     </section>
     
     <!-- JSON-LD Structured Data: FAQ Schema -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "I'm not sure I'm ready to sell. Is it worth talking to you?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the homeowners who end up with the best outcomes are the ones who had the conversation before they needed to. You'll know your number, what the market is doing, and what you'd actually net. No pressure, no commitment. Most people leave that call feeling better informed, not pushed into anything."}}, {"@type": "Question", "name": "How do I find out what my NJ home is actually worth?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the free home valuation tool at value.thejorgeramirezgroup.com for an instant estimate. For a more accurate number, Jorge provides a free comparative market analysis (CMA) based on recent sales in your specific neighborhood. Unlike Zillow estimates, a CMA from an agent who has bought and sold NJ homes as an investor gives you a number you can actually plan around."}}, {"@type": "Question", "name": "My home was listed before and didn't sell. Can Jorge Ramirez help?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. When a listing expires, it's almost always due to pricing, marketing, or agent follow-up issues. Jorge reviews what happened with the previous listing, identifies what went wrong, and applies a different strategy. Many of his best results come from homes that didn't sell with another agent. Learn more at thejorgeramirezgroup.com/expired-listing-help.html"}}, {"@type": "Question", "name": "What is the best time to sell a home in New Jersey?", "acceptedAnswer": {"@type": "Answer", "text": "The best time to sell a home in New Jersey is March through June, when buyer demand peaks as families want to close before the school year ends. The spring market produces the most showings, competing offers, and highest prices relative to list price. September through October is a strong secondary window. For most NJ homeowners, listing in late February or early March maximizes exposure and negotiating leverage. Contact Jorge Ramirez at 908-230-7844 or thejorgeramirezgroup.com"}}, {"@type": "Question", "name": "How much does it cost to sell a home in New Jersey?", "acceptedAnswer": {"@type": "Answer", "text": "The main costs to sell a home in NJ include real estate commission (fully negotiable; NJ surveys average about 5.2%), the NJ realty transfer tax (approximately $2–$6 per $500 of sale price), and attorney fees ($1,500–$2,500). On a $700,000 home, total seller costs typically run $35,000–$50,000. Jorge provides every seller with a full net proceeds estimate before listing. Contact Jorge Ramirez at 908-230-7844 or thejorgeramirezgroup.com"}}, {"@type": "Question", "name": "How long does it take to sell a home in NJ?", "acceptedAnswer": {"@type": "Answer", "text": "From list date to closing, the average NJ home sale takes 60–90 days. In high-demand commuter towns like Summit, Westfield, and Chatham, well-priced homes routinely go under contract within 7–21 days. NJ's mandatory 3-day attorney review period and a 30–45 day mortgage/inspection contingency period make up most of the timeline after an offer is accepted. Contact Jorge Ramirez at 908-230-7844 or thejorgeramirezgroup.com"}}, {"@type": "Question", "name": "What is my home worth in Summit, Westfield, or Chatham NJ?", "acceptedAnswer": {"@type": "Answer", "text": "In Summit, NJ, the median home sale price is approximately $1,095,000 (2025–2026). In Westfield, NJ, the median is approximately $850,000–$900,000. In Chatham Borough, NJ, the median is approximately $950,000–$1,050,000. Your specific home's value depends on size, condition, lot, and recent comparable sales. Get a free CMA at thejorgeramirezgroup.com/home-valuation.html. Contact Jorge Ramirez at 908-230-7844."}}, {"@type": "Question", "name": "Should I use a realtor or sell my home myself in NJ?", "acceptedAnswer": {"@type": "Answer", "text": "Statistically, NJ homes sold with a licensed agent sell for 5–13% more than FSBO homes, according to NAR data. In New Jersey specifically, FSBO sellers face the added complexity of attorney review, mandatory disclosure forms, limited MLS access, and negotiation disadvantages. The commission savings are frequently offset by a lower sale price and longer time on market. Jorge is happy to provide a no-pressure analysis of what you'd net either way. Contact Jorge Ramirez at 908-230-7844 or thejorgeramirezgroup.com"}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "I'm not sure I'm ready to sell. Is it worth talking to you?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the homeowners who end up with the best outcomes are the ones who had the conversation before they needed to. You'll know your number, what the market is doing, and what you'd actually net. No pressure, no commitment. Most people leave that call feeling better informed, not pushed into anything."}}, {"@type": "Question", "name": "How do I find out what my NJ home is actually worth?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the free home valuation page at thejorgeramirezgroup.com/home-valuation to request a free CMA. For a more accurate number, Jorge provides a free comparative market analysis (CMA) based on recent sales in your specific neighborhood. Unlike Zillow estimates, a CMA from an agent who has bought and sold NJ homes as an investor gives you a number you can actually plan around."}}, {"@type": "Question", "name": "My home was listed before and didn't sell. Can Jorge Ramirez help?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. When a listing expires, it's almost always due to pricing, marketing, or agent follow-up issues. Jorge reviews what happened with the previous listing, identifies what went wrong, and applies a different strategy. Many of his best results come from homes that didn't sell with another agent. Learn more at thejorgeramirezgroup.com/expired-listing-help.html"}}, {"@type": "Question", "name": "What is the best time to sell a home in New Jersey?", "acceptedAnswer": {"@type": "Answer", "text": "The best time to sell a home in New Jersey is March through June, when buyer demand peaks as families want to close before the school year ends. The spring market produces the most showings, competing offers, and highest prices relative to list price. September through October is a strong secondary window. For most NJ homeowners, listing in late February or early March maximizes exposure and negotiating leverage. Contact Jorge Ramirez at 908-230-7844 or thejorgeramirezgroup.com"}}, {"@type": "Question", "name": "How much does it cost to sell a home in New Jersey?", "acceptedAnswer": {"@type": "Answer", "text": "The main costs to sell a home in NJ include real estate commission (fully negotiable; NJ surveys average about 5.2%), the NJ realty transfer tax (approximately $2–$6 per $500 of sale price), and attorney fees ($1,500–$2,500). On a $700,000 home, total seller costs typically run $35,000–$50,000. Jorge provides every seller with a full net proceeds estimate before listing. Contact Jorge Ramirez at 908-230-7844 or thejorgeramirezgroup.com"}}, {"@type": "Question", "name": "How long does it take to sell a home in NJ?", "acceptedAnswer": {"@type": "Answer", "text": "From list date to closing, the average NJ home sale takes 60–90 days. In high-demand commuter towns like Summit, Westfield, and Chatham, well-priced homes routinely go under contract within 7–21 days. NJ's mandatory 3-day attorney review period and a 30–45 day mortgage/inspection contingency period make up most of the timeline after an offer is accepted. Contact Jorge Ramirez at 908-230-7844 or thejorgeramirezgroup.com"}}, {"@type": "Question", "name": "What is my home worth in Summit, Westfield, or Chatham NJ?", "acceptedAnswer": {"@type": "Answer", "text": "In Summit, NJ, the median home sale price is approximately $1,095,000 (2025–2026). In Westfield, NJ, the median is approximately $850,000–$900,000. In Chatham Borough, NJ, the median is approximately $950,000–$1,050,000. Your specific home's value depends on size, condition, lot, and recent comparable sales. Get a free CMA at thejorgeramirezgroup.com/home-valuation.html. Contact Jorge Ramirez at 908-230-7844."}}, {"@type": "Question", "name": "Should I use a realtor or sell my home myself in NJ?", "acceptedAnswer": {"@type": "Answer", "text": "Statistically, NJ homes sold with a licensed agent sell for 5–13% more than FSBO homes, according to NAR data. In New Jersey specifically, FSBO sellers face the added complexity of attorney review, mandatory disclosure forms, limited MLS access, and negotiation disadvantages. The commission savings are frequently offset by a lower sale price and longer time on market. Jorge is happy to provide a no-pressure analysis of what you'd net either way. Contact Jorge Ramirez at 908-230-7844 or thejorgeramirezgroup.com"}}]}</script>
     
     <!-- Contact Section -->
     <section id="contact" class="content-section">
@@ -1314,6 +1315,8 @@
         </div>
     </section>
     
+    </main>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">

@@ -3016,6 +3016,19 @@ a.hero-train-pill:focus-visible .htp-arrow {
   }
 }
 @media (max-width: 640px) {
+    .btn-flip {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .btn-flip .flip-front,
+    .btn-flip .flip-back {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        text-align: center;
+    }
+
   .hero {
     min-height: 92vh;
   }
@@ -3235,4 +3248,155 @@ input, select, textarea { border-radius: var(--radius); }
     clip: rect(0 0 0 0);
     white-space: nowrap;
     border: 0;
+}
+
+/* ─── Homepage mobile containment + practical touch targets ────────
+   Keep the established black/red/gold/ivory system while preventing
+   fixed grid minimums and decorative transforms from widening 320px screens. */
+.hero-scroll-indicator {
+    display: grid;
+    place-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+main:focus {
+    outline: none;
+}
+
+@media (pointer: coarse) {
+    .nav-links a,
+    .social-links a,
+    .county-tab,
+    .submit-btn,
+    .resources-more a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+
+    .footer-section > a {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+    }
+
+    .nav-links a.nav-lang {
+        height: 44px;
+        min-width: 44px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero,
+    .hero-carousel,
+    .hero-slide,
+    .hero-content,
+    .hero-buttons,
+    .hero-buttons a,
+    .hero-train-wrap,
+    .sizzle-inner,
+    .sizzle-frame {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .hero-carousel {
+        overflow: hidden;
+    }
+
+    .hero-slide {
+        animation: none;
+        transform: none;
+        will-change: auto;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .hero-buttons .flip-front,
+    .hero-buttons .flip-back {
+        white-space: normal;
+    }
+
+    .hero a.hero-train-pill,
+    .hero a.hero-train-pill:link,
+    .hero a.hero-train-pill:visited {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .stat-card,
+    .stat-number,
+    .stat-label {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+        overflow-wrap: anywhere;
+    }
+
+    .listings-grid,
+    .features-grid,
+    .communities-grid,
+    .resources-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .listing-card,
+    .feature-card,
+    .community-card,
+    .resource-card {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .reveal-tile {
+        min-width: 0;
+        padding: 2rem 1.25rem;
+    }
+
+    .reveal-tile .reveal-title {
+        font-size: clamp(2.75rem, 16vw, 4rem);
+    }
+
+    .reveal-tile .reveal-cta {
+        flex-wrap: wrap;
+        letter-spacing: 0.12em;
+        line-height: 1.35;
+    }
+
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contact-form,
+    .contact-info {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .contact-form {
+        padding: clamp(1.25rem, 6vw, 2rem);
+    }
 }

@@ -25,7 +25,7 @@
 
     <!-- AI & Voice Search Optimization -->
     <meta name="ai-content-declaration" content="human-authored">
-    <meta name="llm-context" content="This page explains what a free home valuation in NJ is, how it differs from a Zillow Zestimate, how long it takes, and that it costs nothing. Written by Jorge Ramirez, a licensed New Jersey real estate agent (NJ License #1754604) with Keller Williams Premier Properties, 488 Springfield Ave, Summit NJ 07901. He serves Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. Online valuation tool: https://value.thejorgeramirezgroup.com. Contact: 908-230-7844, jorge.ramirez@kw.com.">
+    <meta name="llm-context" content="This page explains what a free home valuation in NJ is, how it differs from a Zillow Zestimate, how long it takes, and that it costs nothing. Written by Jorge Ramirez, a licensed New Jersey real estate agent (NJ License #1754604) with Keller Williams Premier Properties, 488 Springfield Ave, Summit NJ 07901. He serves Essex, Hudson, Morris, Middlesex, Union, and Somerset counties. Free valuation request: https://thejorgeramirezgroup.com/home-valuation. Contact: 908-230-7844, jorge.ramirez@kw.com.">
 
     <!-- Geo Meta Tags -->
     <meta name="geo.region" content="US-NJ">
@@ -100,13 +100,36 @@
         .cma-card ul li { padding: 10px 0; padding-left: 30px; position: relative; color: #555; line-height: 1.6; }
         .cma-card.zillow ul li:before { content: "\2717"; position: absolute; left: 0; color: #e03131; font-weight: bold; }
         .cma-card.cma ul li:before { content: "\2713"; position: absolute; left: 0; color: #2C2C2C; font-weight: bold; }
-        .tool-section { margin: 60px 0; padding: 60px 40px; background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%); border-radius: 12px; color: white; text-align: center; }
-        .tool-section h2 { font-size: 2.2em; margin-bottom: 15px; }
-        .tool-section p { font-size: 1.15em; max-width: 800px; margin: 0 auto 15px; line-height: 1.7; opacity: 0.95; }
-        .tool-section .tool-cta { margin-top: 35px; display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; }
-        .tool-section .tool-cta a { display: inline-block; padding: 20px 45px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; font-size: 1.3em; font-weight: 700; transition: all 0.3s ease; }
-        .tool-section .tool-cta a:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .tool-section .subtext { margin-top: 20px; font-size: 0.95em; opacity: 0.8; }
+        .valuation-intake { margin: 60px 0; padding: clamp(40px, 6vw, 64px) clamp(18px, 5vw, 48px); background: linear-gradient(135deg, var(--medium-gray, #333) 0%, var(--dark-gray, #1A1A1A) 100%); border-radius: var(--radius, 8px); color: var(--white, #FFF); text-align: center; }
+        .valuation-intake h2 { font-family: var(--font-display, "Playfair Display", serif); font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.15; margin-bottom: 15px; color: var(--white, #FFF); }
+        .valuation-intake > p { font-size: 1.08rem; max-width: 760px; margin: 0 auto 15px; line-height: 1.7; color: rgba(255,255,255,.9); }
+        .valuation-eyebrow { display: block; margin-bottom: 14px; color: var(--gold-light, #D4AF5A); font: 700 .75rem/1 var(--font-body, Inter, sans-serif); letter-spacing: .18em; text-transform: uppercase; }
+        .valuation-form { max-width: 880px; margin: 32px auto 0; padding: clamp(24px, 4vw, 40px); background: var(--light-gray, #F8F6F2); border: 1px solid rgba(184,150,46,.45); border-radius: var(--radius, 8px); color: var(--text-gray, #2C2C2C); text-align: left; box-shadow: var(--shadow-lg, 0 20px 60px rgba(0,0,0,.14)); }
+        .valuation-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+        .valuation-field { min-width: 0; }
+        .valuation-field-wide { grid-column: 1 / -1; }
+        .valuation-field label { display: block; margin-bottom: 7px; color: var(--black, #000); font: 700 .9rem/1.35 var(--font-body, Inter, sans-serif); }
+        .valuation-field .optional { color: var(--text-light, #666); font-weight: 500; }
+        .valuation-field input, .valuation-field select, .valuation-field textarea { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid var(--border-light, #E8E4DC); border-radius: var(--radius, 8px); background: var(--white, #FFF); color: var(--text-gray, #2C2C2C); font: 500 1rem/1.4 var(--font-body, Inter, sans-serif); }
+        .valuation-field textarea { min-height: 112px; resize: vertical; }
+        .valuation-field input:focus, .valuation-field select:focus, .valuation-field textarea:focus { border-color: var(--gold, #B8962E); outline: 2px solid rgba(184,150,46,.25); outline-offset: 1px; }
+        .valuation-help { display: block; margin-top: 6px; color: var(--text-light, #666); font-size: .8rem; line-height: 1.45; }
+        .valuation-consent { display: flex; align-items: flex-start; gap: 12px; grid-column: 1 / -1; padding: 14px 0 2px; }
+        .valuation-consent input { flex: 0 0 auto; width: 22px; height: 22px; margin-top: 2px; accent-color: var(--primary-red, #C41230); }
+        .valuation-consent label { color: var(--text-gray, #2C2C2C); font-size: .82rem; line-height: 1.5; }
+        .valuation-consent a, .valuation-privacy a { color: var(--dark-red, #8B0D22); text-decoration: underline; text-underline-offset: 2px; }
+        .valuation-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+        .valuation-submit-row { grid-column: 1 / -1; text-align: center; }
+        .valuation-submit { display: inline-flex; align-items: center; justify-content: center; min-width: min(100%, 310px); min-height: 52px; padding: 15px 28px; border: 2px solid var(--primary-red, #C41230); border-radius: var(--radius, 8px); background: var(--primary-red, #C41230); color: var(--white, #FFF); font: 700 1rem/1.2 var(--font-body, Inter, sans-serif); cursor: pointer; box-shadow: 0 8px 24px -6px rgba(196,18,48,.4); }
+        .valuation-submit:hover { background: var(--dark-red, #8B0D22); border-color: var(--dark-red, #8B0D22); transform: translateY(-2px); }
+        .valuation-submit:disabled { cursor: wait; opacity: .72; transform: none; }
+        .valuation-privacy { margin: 12px auto 0; color: var(--text-light, #666); font-size: .8rem; line-height: 1.5; text-align: center; }
+        .valuation-status { max-width: 880px; margin: 24px auto 0; padding: 22px 24px; border-left: 4px solid; border-radius: var(--radius, 8px); background: var(--light-gray, #F8F6F2); color: var(--text-gray, #2C2C2C); font: 700 1rem/1.55 var(--font-body, Inter, sans-serif); text-align: left; }
+        .valuation-status.is-success { border-color: var(--gold, #B8962E); }
+        .valuation-status.is-error { border-color: var(--primary-red, #C41230); color: var(--dark-red, #8B0D22); }
+        .valuation-nojs-status { display: none; }
+        html:not(.js-enabled) .valuation-nojs-status:target { display: block; }
+        html:not(.js-enabled) #valuation-submitted:target ~ .valuation-form { display: none; }
         .how-it-works { margin: 60px 0; }
         .how-it-works h2 { font-size: 2.2em; color: #1a1a1a; text-align: center; margin-bottom: 15px; }
         .how-it-works > p { color: #666; font-size: 1.1em; max-width: 800px; margin: 0 auto 40px; line-height: 1.7; text-align: center; }
@@ -138,6 +161,8 @@
             .val-hero h1 { font-size: 1.8em; }
             .val-hero p { font-size: 1.1em; }
             .cma-comparison { grid-template-columns: 1fr; }
+            .valuation-form-grid { grid-template-columns: minmax(0, 1fr); }
+            .valuation-field-wide, .valuation-consent, .valuation-submit-row { grid-column: 1; }
         }
     .nav-container {
     max-width: 1400px;
@@ -426,12 +451,12 @@
 </script>
 
     <!-- FAQPage Schema -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a home valuation?", "acceptedAnswer": {"@type": "Answer", "text": "A home valuation is an estimate of what your property would sell for on the open market today. A professional valuation, also called a Comparative Market Analysis or CMA, compares your home to recently sold, pending, and currently active listings nearby, then adjusts for your home's size, condition, layout, lot, and upgrades. The result is a specific supportable number rather than a wide range. It is not an appraisal, which is ordered by a lender, and it is not a tax assessment, which your municipality sets on a different cycle and for a different purpose."}}, {"@type": "Question", "name": "How is a free home valuation in NJ different from a Zillow Zestimate?", "acceptedAnswer": {"@type": "Answer", "text": "A Zestimate is produced by an algorithm working from public records. It has never been inside your house, so it cannot see condition, renovations, layout, or the difference between a quiet cul-de-sac and a busy county road. A free home valuation from a licensed NJ agent uses live MLS data, including pending sales that have not yet closed and active listings a buyer would weigh against yours, and factors in what an algorithm cannot observe. Zillow publishes its own accuracy figures for on-market and off-market homes, and the gap between an automated estimate and a professionally prepared valuation is widest on renovated homes, unusual lots, and towns with few comparable sales."}}, {"@type": "Question", "name": "How long does a free home valuation take?", "acceptedAnswer": {"@type": "Answer", "text": "The instant online tool returns an estimate in under a minute once you enter your address. A full valuation prepared by Jorge takes 24 to 48 hours after he has your property details, because it involves pulling and reviewing comparable sales by hand. If Jorge walks the property first, the walkthrough itself usually takes 20 to 30 minutes and the written analysis follows within the same 24 to 48 hours."}}, {"@type": "Question", "name": "Does a home valuation cost anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. Jorge's home valuations are free and carry no obligation to list, sell, or sign anything. There is no fee at any stage and no charge if you decide not to move forward. This is different from a formal appraisal, which is performed by a state-licensed appraiser and typically paid for by the buyer's lender as part of a mortgage transaction. Many NJ homeowners request a valuation a year or more before they plan to make any move, simply to know where they stand."}}, {"@type": "Question", "name": "Should I get a home valuation if I am not planning to sell?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Your home is likely your largest asset, and a current value informs refinancing decisions, insurance coverage, property tax appeals, estate planning, and retirement math. New Jersey homeowners filing a property tax appeal in particular need a defensible market value to argue from."}}, {"@type": "Question", "name": "What NJ areas does the free home valuation cover?", "acceptedAnswer": {"@type": "Answer", "text": "Jorge provides free home valuations across 138 communities in Essex, Hudson, Morris, Middlesex, Union, and Somerset counties — including the NYC commuter towns along the Midtown Direct line such as Summit, Millburn, Chatham, Maplewood, South Orange, Madison, Westfield, and Cranford."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a home valuation?", "acceptedAnswer": {"@type": "Answer", "text": "A home valuation is an estimate of what your property would sell for on the open market today. A professional valuation, also called a Comparative Market Analysis or CMA, compares your home to recently sold, pending, and currently active listings nearby, then adjusts for your home's size, condition, layout, lot, and upgrades. The result is a specific supportable number rather than a wide range. It is not an appraisal, which is ordered by a lender, and it is not a tax assessment, which your municipality sets on a different cycle and for a different purpose."}}, {"@type": "Question", "name": "How is a free home valuation in NJ different from a Zillow Zestimate?", "acceptedAnswer": {"@type": "Answer", "text": "A Zestimate is produced by an algorithm working from public records. It has never been inside your house, so it cannot see condition, renovations, layout, or the difference between a quiet cul-de-sac and a busy county road. A free home valuation from a licensed NJ agent uses live MLS data, including pending sales that have not yet closed and active listings a buyer would weigh against yours, and factors in what an algorithm cannot observe. Zillow publishes its own accuracy figures for on-market and off-market homes, and the gap between an automated estimate and a professionally prepared valuation is widest on renovated homes, unusual lots, and towns with few comparable sales."}}, {"@type": "Question", "name": "How long does a free home valuation take?", "acceptedAnswer": {"@type": "Answer", "text": "Submitting the request takes a few minutes. A full valuation prepared by Jorge takes 24 to 48 hours after he has your property details, because it involves pulling and reviewing comparable sales by hand. If Jorge walks the property first, the walkthrough itself usually takes 20 to 30 minutes and the written analysis follows within the same 24 to 48 hours."}}, {"@type": "Question", "name": "Does a home valuation cost anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. Jorge's home valuations are free and carry no obligation to list, sell, or sign anything. There is no fee at any stage and no charge if you decide not to move forward. This is different from a formal appraisal, which is performed by a state-licensed appraiser and typically paid for by the buyer's lender as part of a mortgage transaction. Many NJ homeowners request a valuation a year or more before they plan to make any move, simply to know where they stand."}}, {"@type": "Question", "name": "Should I get a home valuation if I am not planning to sell?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Your home is likely your largest asset, and a current value informs refinancing decisions, insurance coverage, property tax appeals, estate planning, and retirement math. New Jersey homeowners filing a property tax appeal in particular need a defensible market value to argue from."}}, {"@type": "Question", "name": "What NJ areas does the free home valuation cover?", "acceptedAnswer": {"@type": "Answer", "text": "Jorge provides free home valuations across 138 communities in Essex, Hudson, Morris, Middlesex, Union, and Somerset counties — including the NYC commuter towns along the Midtown Direct line such as Summit, Millburn, Chatham, Maplewood, South Orange, Madison, Westfield, and Cranford."}}]}</script>
 
     <!-- Speakable Schema — tells Bing Copilot and AI which text to cite -->
 </head>
 <body>
-<a href="#main" class="skip-link" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to main content</a>
+<a href="#main" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -461,14 +486,14 @@
         </div>
     </nav>
 
-    <div id="main" class="valuation-page">
+    <main id="main" class="valuation-page" tabindex="-1">
         <!-- Hero -->
         <div class="val-hero">
             <h1>Free Home Valuation NJ — What Is My Home Worth in 2026?</h1>
             <p class="direct-answer"><strong>A free home valuation in NJ is a no-cost estimate of what your home would sell for today. Jorge Ramirez reviews live MLS sold, pending, and active listings near you, adjusts for your home's condition and upgrades, and returns one specific number within 24 to 48 hours. There is no fee and no obligation.</strong></p>
             <p>Most NJ homeowners are surprised by the answer — usually in a good way. Get a free, no-obligation home valuation and find out where you stand, whether you are planning to sell this year or just want to know your number.</p>
             <div class="hero-ctas">
-                <a href="https://value.thejorgeramirezgroup.com" class="btn-white" target="_blank" rel="noopener">Get My Free Home Value Now</a>
+                <a href="#valuation-request" class="btn-white">Request My Free Valuation</a>
                 <a href="tel:+19082307844" class="btn-outline">Talk to Jorge: 908-230-7844</a>
             </div>
         </div>
@@ -505,16 +530,73 @@
             </div>
         </div>
 
-        <!-- Valuation Tool CTA -->
-        <div class="tool-section">
-            <h2>Get Your Instant Home Value Estimate</h2>
-            <p>Use our free online tool to get an immediate estimate of your NJ home's current market value. Enter your address and get results in under 60 seconds.</p>
-            <p>This tool gives you a solid starting point. For a detailed analysis with investor-level insights, Jorge will follow up with a full Comparative Market Analysis at no cost.</p>
-            <div class="tool-cta">
-                <a href="https://value.thejorgeramirezgroup.com" target="_blank" rel="noopener">Find Out What My Home Is Worth</a>
-            </div>
-            <p class="subtext">Free. No obligation. Takes less than 60 seconds.</p>
-        </div>
+        <!-- First-party valuation intake -->
+        <section class="valuation-intake" id="valuation-request" aria-labelledby="valuation-request-title">
+            <span class="valuation-eyebrow">Free · No obligation · Local review</span>
+            <h2 id="valuation-request-title">Request Your Free Home Valuation</h2>
+            <p>Share your property details below. Jorge will review recent sold, pending, and active listings near your home and follow up about your free valuation within 24 to 48 hours.</p>
+            <div id="valuation-submitted" class="valuation-status valuation-nojs-status is-success" role="status">Request received. Jorge will review your property details and follow up about your free valuation within 24 to 48 hours.</div>
+            <div id="valuation-error" class="valuation-status valuation-nojs-status is-error" role="alert">We could not confirm your request. Please try again, or call Jorge at 908-230-7844.</div>
+            <div id="valuation-invalid" class="valuation-status valuation-nojs-status is-error" role="alert">Please check your name, contact information, and property address, then try again.</div>
+            <div id="valuation-rate" class="valuation-status valuation-nojs-status is-error" role="alert">Please wait a few minutes before trying again, or call Jorge at 908-230-7844.</div>
+            <form id="valuationForm" class="valuation-form" action="/api/lead" method="POST">
+                <input name="leadType" value="home-valuation" type="hidden">
+                <input name="intent" value="Home valuation request" type="hidden">
+                <input name="_source" value="/home-valuation" type="hidden">
+                <input name="_next" value="/home-valuation" type="hidden">
+                <div class="valuation-form-grid">
+                    <div class="valuation-field valuation-field-wide">
+                        <label for="valuation-address">Property address</label>
+                        <input id="valuation-address" name="address" type="text" autocomplete="street-address" maxlength="300" aria-describedby="valuation-address-help" required>
+                        <span class="valuation-help" id="valuation-address-help">Include the street, city, and ZIP so Jorge can find the right comparable sales.</span>
+                    </div>
+                    <div class="valuation-field">
+                        <label for="valuation-town">Town <span class="optional">(optional)</span></label>
+                        <input id="valuation-town" name="town" type="text" autocomplete="address-level2" maxlength="120">
+                    </div>
+                    <div class="valuation-field">
+                        <label for="valuation-timeframe">When are you considering a move?</label>
+                        <select id="valuation-timeframe" name="timeframe">
+                            <option value="">Just exploring</option>
+                            <option value="0-3 months">Within 3 months</option>
+                            <option value="3-6 months">3–6 months</option>
+                            <option value="6-12 months">6–12 months</option>
+                            <option value="12+ months">More than a year</option>
+                        </select>
+                    </div>
+                    <div class="valuation-field">
+                        <label for="valuation-name">Your name</label>
+                        <input id="valuation-name" name="name" type="text" autocomplete="name" maxlength="200" required>
+                    </div>
+                    <div class="valuation-field">
+                        <label for="valuation-email">Email</label>
+                        <input id="valuation-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+                    </div>
+                    <div class="valuation-field">
+                        <label for="valuation-phone">Phone <span class="optional">(optional)</span></label>
+                        <input id="valuation-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="60">
+                    </div>
+                    <div class="valuation-field valuation-field-wide">
+                        <label for="valuation-message">Anything Jorge should know? <span class="optional">(optional)</span></label>
+                        <textarea id="valuation-message" name="message" maxlength="2000" placeholder="Recent updates, property condition, or questions"></textarea>
+                    </div>
+                    <div class="valuation-consent">
+                        <input id="valuation-sms-consent" name="smsConsent" type="checkbox">
+                        <label for="valuation-sms-consent">I agree to receive text messages from The Jorge Ramirez Group about this home valuation request. Message and data rates may apply. Reply STOP to opt out. Consent is optional and is not a condition of service. <a href="/sms-terms">SMS terms</a>.</label>
+                    </div>
+                    <div class="valuation-honeypot" hidden>
+                        <label for="valuation-company">Company</label>
+                        <input id="valuation-company" name="_honey" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+                    <input name="_startedAt" type="hidden" value="">
+                    <div class="valuation-submit-row">
+                        <button class="valuation-submit" type="submit">Request My Free Valuation</button>
+                        <p class="valuation-privacy">Your information is used only to respond to this request. See the <a href="/privacy-policy">privacy policy</a>.</p>
+                    </div>
+                </div>
+            </form>
+            <div id="valuationStatus" class="valuation-status" aria-live="polite" tabindex="-1" hidden></div>
+        </section>
 
         <!-- CMA vs Zillow -->
         <div class="cma-section">
@@ -589,9 +671,9 @@
         <!-- Mid-page CTA -->
         <div class="mid-cta">
             <h2>Get Your Number — No Strings Attached</h2>
-            <p>Start with the free online tool for an instant estimate, or call Jorge directly for a full CMA with investor-level analysis. Either way, there is zero obligation.</p>
+            <p>Request a free CMA with investor-level analysis, or call Jorge directly to talk through your property. Either way, there is zero obligation.</p>
             <div>
-                <a href="https://value.thejorgeramirezgroup.com" class="btn-purple" target="_blank" rel="noopener">Instant Online Estimate</a>
+                <a href="#valuation-request" class="btn-purple">Request My Free Valuation</a>
                 <a href="tel:+19082307844" class="btn-border">Call for a Full CMA</a>
             </div>
         </div>
@@ -612,7 +694,7 @@
 
             <div class="faq-item">
                 <h3>How long does a free home valuation take?</h3>
-                <p>The online tool at <a href="https://value.thejorgeramirezgroup.com" style="color: #2C2C2C;" target="_blank" rel="noopener">value.thejorgeramirezgroup.com</a> returns an estimate in under a minute once you enter your address. A full valuation prepared by Jorge takes 24 to 48 hours after he has your property details, because it involves pulling and reviewing comparable sales by hand. If he walks the property first, the walkthrough itself usually runs 20 to 30 minutes and the written analysis follows within that same window.</p>
+                <p>The request form at <a href="#valuation-request" style="color: #2C2C2C;">thejorgeramirezgroup.com/home-valuation</a> collects the property details Jorge needs to begin. A full valuation prepared by Jorge takes 24 to 48 hours because it involves pulling and reviewing comparable sales by hand. If he walks the property first, the walkthrough itself usually runs 20 to 30 minutes and the written analysis follows within that same window.</p>
             </div>
 
             <div class="faq-item">
@@ -675,12 +757,12 @@
             <h2>Get Your Free Home Valuation</h2>
             <p>Answer a few questions about your property and Jorge will put together your free home valuation — a specific number, how he got there, and what it means for your situation, whether that is selling, refinancing, appealing your taxes, or simply planning ahead.</p>
             <div>
-                <a href="https://value.thejorgeramirezgroup.com" class="btn-purple" target="_blank" rel="noopener">Get My Free Home Value</a>
+                <a href="#valuation-request" class="btn-purple">Request My Free Valuation</a>
                 <a href="mailto:jorge.ramirez@kw.com" class="btn-border">Email Jorge</a>
             </div>
             <p style="margin-top: 20px; font-size: 0.95em; opacity: 0.7;">Jorge Ramirez | Keller Williams Premier Properties | 488 Springfield Avenue, Summit, NJ 07901 | NJ License #1754604</p>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
         <div style="max-width:880px;margin:30px auto;padding:22px 26px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
@@ -752,6 +834,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+<script type="module" src="/js/home-valuation.js"></script>
 <script defer src="/js/site-cta.js"></script>
 </body>
 </html>
