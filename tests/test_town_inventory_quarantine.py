@@ -191,11 +191,11 @@ class TownInventoryQuarantineTests(unittest.TestCase):
         hub = read("communities/index.html")
         linked = set(re.findall(r'href=["\']/towns/([^"\']+)["\']', hub))
 
-        self.assertEqual(64, inventory["total"])
+        self.assertEqual(32, inventory["total"])
         self.assertEqual(inventory["total"], len(registered))
         self.assertEqual(registered, submitted)
         self.assertEqual(registered, linked)
-        self.assertIn("64 NJ Community Guides", hub)
+        self.assertIn("32 NJ Community Guides", hub)
 
         item_lists = []
         for obj in json_ld_objects(hub):
@@ -203,7 +203,7 @@ class TownInventoryQuarantineTests(unittest.TestCase):
                 entity = obj.get("mainEntity")
                 if isinstance(entity, dict) and entity.get("@type") == "ItemList":
                     item_lists.append(entity)
-        self.assertEqual([64], [item["numberOfItems"] for item in item_lists])
+        self.assertEqual([32], [item["numberOfItems"] for item in item_lists])
 
         matching_quarantine = [
             entry

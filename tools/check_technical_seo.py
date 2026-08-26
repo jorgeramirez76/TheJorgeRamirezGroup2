@@ -142,7 +142,14 @@ def requires_town_local_business(source: str) -> bool:
             re.IGNORECASE,
         )
     )
-    return not (managed_fallback and noindex_follow)
+    redirect_fallback = bool(
+        re.search(
+            r'<meta\b[^>]*\bhttp-equiv=["\']refresh["\']',
+            source,
+            re.IGNORECASE,
+        )
+    )
+    return not (noindex_follow and (managed_fallback or redirect_fallback))
 
 
 def json_nodes(value: object):
@@ -289,6 +296,9 @@ def main() -> int:
             continue
         for anchor in record["anchors"]:
             href = anchor.get("href", "")
+            parsed_href = urlparse(href)
+            if parsed_href.netloc and parsed_href.netloc != "thejorgeramirezgroup.com":
+                continue
             classes = anchor.get("class", "").lower()
             text = " ".join(anchor.get("_text", "").lower().split())
             if any(token in classes for token in ("cta", "btn", "button")) or text.startswith("read more"):

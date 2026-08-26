@@ -18,9 +18,26 @@ import json
 import html
 from pathlib import Path
 
+from scripts.remediate_indexable_towns import managed_slugs
+
 BASE_DIR = Path("/Users/teddy/TheJorgeRamirezGroup2")
 SITE_URL = "https://thejorgeramirezgroup.com"
 DEFAULT_IMAGE = f"{SITE_URL}/images/hero.jpg"
+MANAGED_TOWN_RISK_SLUGS = managed_slugs()
+
+
+def is_managed_town_artifact(filepath):
+    """Keep deterministic town pages and their compatibility stubs immutable."""
+
+    try:
+        relative = filepath.relative_to(BASE_DIR).as_posix()
+    except ValueError:
+        return False
+    match = re.fullmatch(r"(?:es/)?towns/([a-z0-9-]+)\.html", relative)
+    if match:
+        return match.group(1) in MANAGED_TOWN_RISK_SLUGS
+    match = re.fullmatch(r"realtor/([a-z0-9-]+)-nj\.html", relative)
+    return bool(match and match.group(1) in MANAGED_TOWN_RISK_SLUGS)
 
 # Counters
 changes = {
@@ -107,6 +124,8 @@ def fix_c1_twitter_cards():
     """Add Twitter Card meta tags to all HTML pages missing them."""
     count = 0
     for html_file in sorted(BASE_DIR.rglob("*.html")):
+        if is_managed_town_artifact(html_file):
+            continue
         # Skip es/ directory (Spanish versions are handled separately if needed)
         # Actually, we should fix ALL pages including es/ per the instructions
         # Skip non-content directories
@@ -231,6 +250,8 @@ def fix_c3_og_town_pages():
 
     count = 0
     for html_file in sorted(towns_dir.glob("*.html")):
+        if html_file.stem in MANAGED_TOWN_RISK_SLUGS:
+            continue
         content = read_file(html_file)
 
         # Skip if already has og:title
@@ -376,6 +397,8 @@ def fix_c7_duplicate_hreflang():
     count = 0
 
     for html_file in sorted(BASE_DIR.rglob("*.html")):
+        if is_managed_town_artifact(html_file):
+            continue
         rel = str(html_file.relative_to(BASE_DIR))
         if rel.startswith(("docs/", "features/", "lead-research/", "data/")):
             continue

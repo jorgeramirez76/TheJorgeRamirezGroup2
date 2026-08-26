@@ -62,19 +62,28 @@ def load_redirect_inventory() -> dict[str, str]:
         raise RedirectContractError("missing /communities destination page")
 
     inventory: dict[str, str] = {"index.html": "/communities"}
+    redirect_sources = {str(item.get("source", "")) for item in redirects}
     for item in redirects:
         source = str(item.get("source", ""))
         match = TOWN_RULE.fullmatch(source)
         if not match:
             continue
         slug = match.group(1)
-        destination = f"/towns/{slug}"
-        if item.get("destination") != destination or item.get("permanent") is not True:
+        destination = str(item.get("destination", ""))
+        destination_match = re.fullmatch(r"/towns/([a-z0-9-]+)", destination)
+        if not destination_match or item.get("permanent") is not True:
             raise RedirectContractError(
-                f"{source} must redirect permanently and directly to {destination}"
+                f"{source} must redirect permanently and directly to a town guide"
             )
-        if not (ROOT / "towns" / f"{slug}.html").exists():
+        destination_slug = destination_match.group(1)
+        if destination in redirect_sources:
+            raise RedirectContractError(f"redirect chain detected: {source} -> {destination}")
+        destination_page = ROOT / "towns" / f"{destination_slug}.html"
+        if not destination_page.exists():
             raise RedirectContractError(f"missing destination page: {destination}")
+        destination_source = destination_page.read_text(encoding="utf-8")
+        if re.search(r'<meta\b[^>]*http-equiv=["\']refresh["\']', destination_source, re.I):
+            raise RedirectContractError(f"HTML redirect chain detected: {source} -> {destination}")
         filename = f"{slug}-nj.html"
         if filename in inventory:
             raise RedirectContractError(f"duplicate realtor redirect: {source}")
@@ -88,15 +97,15 @@ def load_redirect_inventory() -> dict[str, str]:
     return dict(sorted(inventory.items()))
 
 
-def destination_label(filename: str) -> str:
+def destination_label(filename: str, destination: str) -> str:
     if filename == "index.html":
         return "communities guide"
-    slug = filename.removesuffix("-nj.html")
+    slug = destination.removeprefix("/towns/")
     return f"{slug.replace('-', ' ').title()} town guide"
 
 
 def render_fallback(filename: str, destination: str) -> str:
-    label = destination_label(filename)
+    label = destination_label(filename, destination)
     safe_destination = html.escape(destination, quote=True)
     safe_canonical = html.escape(SITE_ORIGIN + destination, quote=True)
     safe_label = html.escape(label)

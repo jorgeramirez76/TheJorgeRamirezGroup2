@@ -5,9 +5,11 @@ from pathlib import Path
 from typing import Any, Dict, Optional, Tuple
 
 from scripts.render_noindex_town_fallbacks import all_fallback_slugs
+from scripts.remediate_indexable_towns import managed_slugs
 
 TOWNS_DIR = Path("towns")
 MANAGED_NOINDEX_SLUGS = all_fallback_slugs()
+MANAGED_TOWN_RISK_SLUGS = managed_slugs()
 
 # 1) URL fixes (global replace)
 URL_REPLACEMENTS = [
@@ -231,7 +233,7 @@ def main():
     changed_footer = 0
     skipped_fallbacks = 0
     for fp in files:
-        if fp.stem in MANAGED_NOINDEX_SLUGS:
+        if fp.stem in MANAGED_NOINDEX_SLUGS | MANAGED_TOWN_RISK_SLUGS:
             skipped_fallbacks += 1
             continue
         original = fp.read_text(encoding="utf-8", errors="ignore")

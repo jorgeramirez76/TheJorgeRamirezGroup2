@@ -4,6 +4,66 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/towns/bernards-township",
+      "destination": "/towns/basking-ridge",
+      "permanent": true
+    },
+    {
+      "source": "/towns/bernards-township.html",
+      "destination": "/towns/basking-ridge",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/bernards-township",
+      "destination": "/es/towns/basking-ridge",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/bernards-township.html",
+      "destination": "/es/towns/basking-ridge",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/bernards-township-nj.html",
+      "destination": "/towns/basking-ridge",
+      "permanent": true
+    },
+    {
+      "source": "/communities/bernards-township.html",
+      "destination": "/towns/basking-ridge",
+      "permanent": true
+    },
+    {
+      "source": "/towns/short-hills",
+      "destination": "/towns/millburn",
+      "permanent": true
+    },
+    {
+      "source": "/towns/short-hills.html",
+      "destination": "/towns/millburn",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/short-hills",
+      "destination": "/es/towns/millburn",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/short-hills.html",
+      "destination": "/es/towns/millburn",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/short-hills-nj.html",
+      "destination": "/towns/millburn",
+      "permanent": true
+    },
+    {
+      "source": "/communities/short-hills.html",
+      "destination": "/towns/millburn",
+      "permanent": true
+    },
+    {
       "source": "/blog/chatham-nj-real-estate-market-2025.html",
       "destination": "/blog/market-report-chatham-nj-2026",
       "permanent": true
@@ -251,7 +311,7 @@
     },
     {
       "source": "/realtor/bernards-township-nj",
-      "destination": "/towns/bernards-township",
+      "destination": "/towns/basking-ridge",
       "permanent": true
     },
     {
@@ -791,7 +851,7 @@
     },
     {
       "source": "/realtor/short-hills-nj",
-      "destination": "/towns/short-hills",
+      "destination": "/towns/millburn",
       "permanent": true
     },
     {
@@ -946,7 +1006,7 @@
     },
     {
       "source": "/communities/bernards-township",
-      "destination": "/towns/bernards-township",
+      "destination": "/towns/basking-ridge",
       "permanent": true
     },
     {
@@ -1486,7 +1546,7 @@
     },
     {
       "source": "/communities/short-hills",
-      "destination": "/towns/short-hills",
+      "destination": "/towns/millburn",
       "permanent": true
     },
     {

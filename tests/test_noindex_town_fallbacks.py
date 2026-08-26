@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 SITE = "https://thejorgeramirezgroup.com"
 POLICY_PATH = ROOT / "data" / "english-noindex-town-fallbacks.json"
+INDEXABLE_RISK_POLICY_PATH = ROOT / "data" / "indexable-town-risk-decisions.json"
 RENDERER_PATH = ROOT / "scripts" / "render_noindex_town_fallbacks.py"
 
 STRICT_DUPLICATE_SLUGS = {
@@ -174,6 +175,12 @@ class NoindexTownFallbackTests(unittest.TestCase):
         cls.groups = {group["id"]: set(group["slugs"]) for group in cls.policy["groups"]}
 
     def test_policy_enumerates_the_exact_current_english_noindex_inventory(self) -> None:
+        risk_policy = json.loads(INDEXABLE_RISK_POLICY_PATH.read_text(encoding="utf-8"))
+        newly_managed_noindex = {
+            slug
+            for slug, decision in risk_policy["decisions"].items()
+            if decision["action"] in {"quarantine", "redirect"}
+        }
         actual = {
             path.stem
             for path in (ROOT / "towns").glob("*.html")
@@ -181,7 +188,9 @@ class NoindexTownFallbackTests(unittest.TestCase):
         }
 
         self.assertEqual(74, len(EXPECTED_SLUGS))
-        self.assertEqual(EXPECTED_SLUGS, actual)
+        self.assertEqual(32, len(newly_managed_noindex))
+        self.assertTrue(EXPECTED_SLUGS.isdisjoint(newly_managed_noindex))
+        self.assertEqual(EXPECTED_SLUGS | newly_managed_noindex, actual)
         self.assertEqual(STRICT_DUPLICATE_SLUGS, self.groups["strict-near-duplicate-template"])
         self.assertEqual(WRONG_TOWN_SOMERSET_SLUGS, self.groups["wrong-town-somerset-clones"])
         self.assertEqual(HIGH_RISK_LONG_FORM_SLUGS, self.groups["scaled-long-form-template"])
@@ -446,6 +455,12 @@ class NoindexTownFallbackTests(unittest.TestCase):
         self.assertTrue(
             requires_town_local_business(
                 '<body data-noindex-town-fallback="v1"><main>Unmanaged robots</main>'
+            )
+        )
+        self.assertFalse(
+            requires_town_local_business(
+                '<meta name="robots" content="noindex, follow">'
+                '<meta http-equiv="refresh" content="0;url=/towns/example">'
             )
         )
 

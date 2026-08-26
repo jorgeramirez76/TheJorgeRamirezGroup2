@@ -47,10 +47,10 @@ class ContentIntegrityTests(unittest.TestCase):
         cls.facts = json.loads(FACTS_PATH.read_text(encoding="utf-8"))
         cls.inventory = cls.facts["canonicalTownInventory"]
 
-    def test_inventory_is_unique_and_totals_64(self) -> None:
+    def test_inventory_is_unique_and_totals_32(self) -> None:
         by_county = self.inventory["byCounty"]
         slugs = [slug for towns in by_county.values() for slug in towns]
-        self.assertEqual(64, self.inventory["total"])
+        self.assertEqual(32, self.inventory["total"])
         self.assertEqual(self.inventory["total"], len(slugs))
         self.assertEqual(len(slugs), len(set(slugs)), "town appears in more than one county")
         self.assertEqual(
@@ -97,7 +97,7 @@ class ContentIntegrityTests(unittest.TestCase):
             self.assertEqual(set(expected), actual, f"wrong {county} membership")
             self.assertRegex(section, rf'class=["\']count["\']>{len(expected)} towns<')
 
-        self.assertIn("64 NJ Community Guides", source)
+        self.assertIn("32 NJ Community Guides", source)
         self.assertNotRegex(source, r"\b138\s+(?:NJ\s+)?(?:communities|towns)\b")
         schemas = json_ld_objects(source)
         item_lists = []
@@ -107,7 +107,7 @@ class ContentIntegrityTests(unittest.TestCase):
                 if isinstance(entity, dict) and entity.get("@type") == "ItemList":
                     item_lists.append(entity)
         self.assertTrue(item_lists, "communities page is missing ItemList data")
-        self.assertEqual([64], [item["numberOfItems"] for item in item_lists])
+        self.assertEqual([32], [item["numberOfItems"] for item in item_lists])
 
     def test_spanish_communities_hub_matches_indexable_inventory(self) -> None:
         source = read("es/communities/index.html")
@@ -122,7 +122,7 @@ class ContentIntegrityTests(unittest.TestCase):
         )
         self.assertEqual(registered, hub_slugs)
         self.assertNotRegex(source, r' class=["\']town-card["\'][^>]*href=["\']/towns/')
-        self.assertIn("64 guías de comunidades de NJ", source)
+        self.assertIn("32 guías de comunidades de NJ", source)
 
         item_lists = []
         for obj in json_ld_objects(source):
@@ -130,7 +130,7 @@ class ContentIntegrityTests(unittest.TestCase):
                 entity = obj.get("mainEntity")
                 if isinstance(entity, dict) and entity.get("@type") == "ItemList":
                     item_lists.append(entity)
-        self.assertEqual([64], [item["numberOfItems"] for item in item_lists])
+        self.assertEqual([32], [item["numberOfItems"] for item in item_lists])
         schema_urls = {
             item["url"].removeprefix("https://thejorgeramirezgroup.com/es/towns/")
             for item in item_lists[0]["itemListElement"]
@@ -311,9 +311,11 @@ class ContentIntegrityTests(unittest.TestCase):
         self.assertNotIn("Gladstone Branch", green_brook)
         self.assertNotIn("NJ TRANSIT", green_brook)
 
-        west_orange = visible_text(read("towns/west-orange.html"))
+        west_orange_source = read("towns/west-orange.html")
+        west_orange = visible_text(west_orange_source)
+        self.assertIn('data-noindex-town-fallback="v1"', west_orange_source)
         self.assertNotRegex(west_orange, r"(?i)NJ Transit service:\s*Midtown Direct")
-        self.assertIn("West Orange does not have an NJ TRANSIT rail station", west_orange)
+        self.assertNotRegex(west_orange, r"(?i)\b\d+\s*(?:-|–)?\s*minutes?\b")
 
     def test_self_authored_agent_lists_are_noindex_with_disclosure(self) -> None:
         for county in ("essex", "morris", "union"):

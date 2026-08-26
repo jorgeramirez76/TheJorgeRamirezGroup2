@@ -1,0 +1,3030 @@
+{
+  "schemaVersion": 1,
+  "effectiveDate": "2026-08-26",
+  "scope": "Remaining indexable English town pages identified by the layer-aware fair-housing and factual-risk audit.",
+  "preRemediationBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+  "decisionPolicy": {
+    "measuredDemandRule": "clicks in either comparison period > 0 OR impressions in either comparison period >= 100",
+    "relationshipException": "Basking Ridge is retained as the stronger measured Basking Ridge/Bernards route and explicitly identified as a community within Bernards Township.",
+    "quarantineHandling": "compact noindex, follow fallback; excluded from English sitemap and canonical town hubs; untranslated hreflang removed",
+    "redirectHandling": "permanent one-hop redirect with noindex HTML fallback, mirrored for the Spanish route and legacy entry families",
+    "historicalUse": "The 16-month export is recorded as context but does not override the two-period comparison rule."
+  },
+  "gscExports": {
+    "comparison": {
+      "sourceLabel": "/Users/teddy/Documents/Codex/2026-08-25/t/work/gsc_compare/Pages.csv",
+      "sourceModified": "2026-08-25T18:48:32-04:00",
+      "sourceSha256": "5e66478db75f8693ea762cbeba2fd8d58d63eecbe3d50e71981fcd1f1c80c6f9",
+      "committedFixture": "tests/fixtures/gsc-indexable-town-pages.csv",
+      "periods": {
+        "current3m": {
+          "clicks": "Last 3 months Clicks",
+          "impressions": "Last 3 months Impressions",
+          "position": "Last 3 months Position"
+        },
+        "previous3m": {
+          "clicks": "Previous 3 months Clicks",
+          "impressions": "Previous 3 months Impressions",
+          "position": "Previous 3 months Position"
+        }
+      },
+      "endpointCaveat": "The export supplies relative period labels, not exact start and end dates."
+    },
+    "historical": {
+      "sourceLabel": "/Users/teddy/Documents/Codex/2026-08-25/t/work/gsc16/Pages.csv",
+      "sourceModified": "2026-08-25T18:46:36-04:00",
+      "sourceSha256": "8bacd82585b4ed42b423135ed46c935d1707604311583dc3902e0b83fbdb3f24",
+      "committedFixture": "tests/fixtures/gsc-indexable-town-pages-16m.csv",
+      "periods": {
+        "last16m": {
+          "clicks": "Clicks",
+          "impressions": "Impressions",
+          "position": "Position"
+        }
+      },
+      "endpointCaveat": "The export supplies relative period labels, not exact start and end dates."
+    }
+  },
+  "incomingRedirectFamilies": [
+    {
+      "source": "/blog/neighborhoods-maplewood-nj",
+      "destination": "/counties/essex-county",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/neighborhoods-livingston-nj",
+      "destination": "/counties/essex-county",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/neighborhoods-montclair-nj",
+      "destination": "/counties/essex-county",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/neighborhoods-millburn-nj",
+      "destination": "/counties/essex-county",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/neighborhoods-summit-nj",
+      "destination": "/counties/union-county",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/neighborhoods-scotch-plains-nj",
+      "destination": "/counties/union-county",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/neighborhoods-basking-ridge-nj",
+      "destination": "/counties/somerset-county",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/neighborhoods-madison-nj",
+      "destination": "/counties/morris-county",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/buying-home-montclair-nj-2026",
+      "destination": "/buy-a-home",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/buying-home-randolph-nj-2026",
+      "destination": "/buy-a-home",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/buying-home-jersey-city-nj-2026",
+      "destination": "/buy-a-home",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/buying-home-rahway-nj-2026",
+      "destination": "/buy-a-home",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    },
+    {
+      "source": "/blog/selling-home-maplewood-nj-2026",
+      "destination": "/sell-your-home",
+      "dependency": "stable indexable non-town target; independent of this town decision"
+    }
+  ],
+  "decisions": {
+    "basking-ridge": {
+      "action": "rebuild",
+      "reason": "Relationship exception: this route is the stronger measured Basking Ridge/Bernards family and can accurately explain that Basking Ridge is within Bernards Township.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 28,
+          "position": 7.72
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 10,
+          "position": 21.8
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 38,
+          "position": 11.42
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 13,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/how-much-is-my-nj-home-worth-2026.html",
+          "blog/market-report-basking-ridge-nj-2026.html",
+          "communities.html",
+          "communities/basking-ridge/index.html",
+          "communities/index.html",
+          "counties/morris-county.html",
+          "counties/somerset-county.html",
+          "property-search.html",
+          "realtor/basking-ridge-nj.html",
+          "sell-my-house-basking-ridge-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Basking Ridge",
+      "county": "Somerset",
+      "placeType": "community within Bernards Township",
+      "identity": "Basking Ridge is a community within Bernards Township in Somerset County. Use the Bernards Township municipality, assessor, and land-use records for an address rather than treating Basking Ridge as a separate municipality.",
+      "researchFocus": [
+        "Confirm Bernards Township, block, and lot from the property record.",
+        "Review the municipal zoning and permit sources for the specific parcel.",
+        "For Gladstone Branch planning, check the current NJ TRANSIT schedule for the date and train under consideration."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Bernards Township",
+          "url": "https://www.bernards.org/",
+          "fact_supported": "Basking Ridge is researched through Bernards Township government, departments, and land-use resources.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/bernardstownshipsomersetcountynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Bernards Township as the official Census geography for municipal comparisons.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Bernards Township School District",
+          "url": "https://www.bernardsboe.com/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and district contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://content.njtransit.com/station/basking-ridge-station",
+          "fact_supported": "The official station page identifies Basking Ridge Station and its Bernards Township setting.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "bernards-township": {
+      "action": "redirect",
+      "reason": "The destination is the stronger same-intent route and resolves the duplicated geography without a second indexable page.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 10,
+          "position": 8.8
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 3,
+          "position": 8.33
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 13,
+          "position": 8.69
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 8,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/bernards-township/index.html",
+          "communities/index.html",
+          "counties/somerset-county.html",
+          "realtor/bernards-township-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "destination": "/towns/basking-ridge"
+    },
+    "boonton-township": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 3,
+          "position": 10.0
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 2,
+          "position": 8.5
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 7,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/boonton-township/index.html",
+          "communities/index.html",
+          "realtor/boonton-township-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "caldwell": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 7,
+        "internalInboundExamples": [
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/caldwell/index.html",
+          "communities/index.html",
+          "index.html",
+          "realtor/caldwell-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "chatham": {
+      "action": "rebuild",
+      "reason": "The route met the measured-demand rule and is retained with only official-source, property-specific research framing.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 1,
+          "impressions": 740,
+          "position": 32.67
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 1,
+          "impressions": 313,
+          "position": 36.63
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 2,
+          "impressions": 1084,
+          "position": 33.66
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 103,
+        "internalInboundExamples": [
+          "404.html",
+          "blog/absentee-owner-nj-sell-rental-property.html",
+          "blog/downsizing-your-nj-home.html",
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/expired-listing-nj-what-to-do.html",
+          "blog/fsbo-vs-realtor-new-jersey.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/how-much-is-my-nj-home-worth-2026.html",
+          "blog/how-to-sell-house-fast-nj.html",
+          "blog/index.html",
+          "blog/maplewood-vs-south-orange-nj.html",
+          "blog/market-report-denville-nj-2026.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Chatham",
+      "county": "Morris",
+      "placeType": "name shared by two municipalities",
+      "identity": "Chatham Borough and Chatham Township are separate municipalities in Morris County. A mailing address alone may not identify which assessor, zoning office, permit record, or local rule applies, so begin with the parcel municipality.",
+      "researchFocus": [
+        "Confirm whether the address is in Chatham Borough or Chatham Township.",
+        "Use the matching municipal assessor and land-use resources for that parcel.",
+        "Use official station and date-specific service sources when transportation affects the decision."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Borough of Chatham",
+          "url": "https://www.chathamborough.org/",
+          "fact_supported": "Chatham Borough maintains its own government, departments, assessment, and land-use resources.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "municipality",
+          "publisher": "Chatham Township",
+          "url": "https://chathamtownship.org/",
+          "fact_supported": "Chatham Township maintains a separate government, assessment, zoning, and local-service system.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/chathamboroughnewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Chatham Borough as a distinct official Census geography.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/chathamtownshipmorriscountynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Chatham Township as a distinct official Census geography.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "School District of the Chathams",
+          "url": "https://www.chatham-nj.org/",
+          "fact_supported": "The shared district site provides registration, school, calendar, and contact information.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/chatham-station",
+          "fact_supported": "The station page locates Chatham Station in Chatham Borough and provides current station details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "dunellen": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 4,
+          "position": 50.25
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 4,
+          "position": 50.25
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 6,
+        "internalInboundExamples": [
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/dunellen/index.html",
+          "communities/index.html",
+          "realtor/dunellen-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "edison": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 57,
+          "position": 48.99
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 56,
+          "position": 49.7
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 14,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/market-report-edison-nj-2026.html",
+          "blog/middlesex-county-real-estate-market-q2-2026.html",
+          "communities.html",
+          "communities/edison/index.html",
+          "communities/index.html",
+          "counties/middlesex-county.html",
+          "es/ai-authority.html",
+          "home-valuation.html",
+          "property-search.html",
+          "realtor/edison-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "elizabeth": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 1,
+          "position": 1.0
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 3,
+          "position": 4.33
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 45,
+          "position": 33.56
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 9,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/elizabeth/index.html",
+          "communities/index.html",
+          "counties/union-county.html",
+          "es/ai-authority.html",
+          "realtor/elizabeth-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "florham-park": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 1,
+          "position": 39.0
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 59,
+          "position": 41.54
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 59,
+          "position": 41.54
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 13,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/market-report-florham-park-nj-2026.html",
+          "blog/morris-county-nj-real-estate-market-2026.html",
+          "communities.html",
+          "communities/florham-park/index.html",
+          "communities/index.html",
+          "counties/morris-county.html",
+          "es/ai-authority.html",
+          "property-search.html",
+          "realtor/florham-park-nj.html",
+          "sell-my-house-florham-park-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "glen-ridge": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 11,
+        "internalInboundExamples": [
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/how-much-is-my-nj-home-worth-2026.html",
+          "communities.html",
+          "communities/glen-ridge/index.html",
+          "communities/index.html",
+          "counties/essex-county.html",
+          "montclair-vs-glen-ridge-nj.html",
+          "realtor/glen-ridge-nj.html",
+          "sell-my-house-glen-ridge-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "hoboken": {
+      "action": "rebuild",
+      "reason": "The route met the measured-demand rule and is retained with only official-source, property-specific research framing.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 1,
+          "impressions": 379,
+          "position": 63.02
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 74,
+          "position": 59.41
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 1,
+          "impressions": 467,
+          "position": 61.03
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 16,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/hudson-county-real-estate-market-q2-2026.html",
+          "blog/selling-your-home-summit-nj-guide.html",
+          "communities.html",
+          "communities/hoboken/index.html",
+          "communities/index.html",
+          "counties/hudson-county.html",
+          "es/ai-authority.html",
+          "home-valuation.html",
+          "index.html",
+          "jersey-city-vs-hoboken-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Hoboken",
+      "county": "Hudson",
+      "placeType": "city",
+      "identity": "Hoboken is a city in Hudson County. Address-level research should start with City zoning, assessment, permit, and flood-disclosure sources and should not rely on a neighborhood label as a substitute for parcel records.",
+      "researchFocus": [
+        "Match the address to the City tax map and assessment record.",
+        "Review zoning, permits, and any association documents that apply to the property.",
+        "Check official PATH or NJ TRANSIT sources for the exact date and route being considered."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "City of Hoboken",
+          "url": "https://www.hobokennj.gov/",
+          "fact_supported": "Official City government and department directory for Hoboken.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "City of Hoboken Tax Assessor",
+          "url": "https://www.hobokennj.gov/resources/tax-assessor",
+          "fact_supported": "Official assessment map, ownership-record, and assessor starting point.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "land-use",
+          "publisher": "City of Hoboken Zoning Office",
+          "url": "https://www.hobokennj.gov/departments/zoning-office",
+          "fact_supported": "Official zoning code, map, application, and verification resources.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/hobokencitynewjersey/PST045225",
+          "fact_supported": "Official Census geography profile for Hoboken city.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "Port Authority of New York and New Jersey",
+          "url": "https://www.panynj.gov/path/en/schedules-maps.html",
+          "fact_supported": "Official PATH schedules and maps for date-specific trip research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Department of Environmental Protection",
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "fact_supported": "The state provides flood-disclosure guidance and address-based research tools.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "jefferson": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "position": 4.0
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "position": 1.0
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 2,
+          "position": 2.5
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 7,
+        "internalInboundExamples": [
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/jefferson/index.html",
+          "counties/morris-county.html",
+          "realtor/jefferson-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "jersey-city": {
+      "action": "rebuild",
+      "reason": "The route met the measured-demand rule and is retained with only official-source, property-specific research framing.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 373,
+          "position": 47.29
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 1,
+          "impressions": 372,
+          "position": 57.6
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 1,
+          "impressions": 755,
+          "position": 52.18
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 17,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/best-nj-suburbs-nyc-commuters.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/how-much-is-my-nj-home-worth-2026.html",
+          "blog/hudson-county-real-estate-market-q2-2026.html",
+          "blog/selling-your-home-summit-nj-guide.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/jersey-city/index.html",
+          "counties/hudson-county.html",
+          "es/ai-authority.html",
+          "index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Jersey City",
+      "county": "Hudson",
+      "placeType": "city",
+      "identity": "Jersey City is a city in Hudson County. The City publishes address-oriented planning, zoning, redevelopment, assessment, and tax-map resources; verify the parcel rather than inferring rules from a neighborhood name.",
+      "researchFocus": [
+        "Use the City address and zoning tools to identify parcel-specific land-use rules.",
+        "Review assessment, permit, redevelopment-plan, and association records that apply.",
+        "Use official PATH or NJ TRANSIT tools for the exact trip and date being evaluated."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "City of Jersey City",
+          "url": "https://www.jerseycitynj.gov/",
+          "fact_supported": "Official City government and department directory for Jersey City.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "land-use",
+          "publisher": "Jersey City Division of City Planning",
+          "url": "https://www.jerseycitynj.gov/CityHall/HousingAndDevelopment/cityplanning",
+          "fact_supported": "Official planning, zoning-map, redevelopment-plan, and application resources.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "Jersey City Tax Assessor",
+          "url": "https://www.jerseycitynj.gov/residentresources/TaxAssessor",
+          "fact_supported": "Official assessment and tax-map research starting point.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/jerseycitycitynewjersey/PST045225",
+          "fact_supported": "Official Census geography profile for Jersey City.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "Port Authority of New York and New Jersey",
+          "url": "https://www.panynj.gov/path/en/schedules-maps.html",
+          "fact_supported": "Official PATH schedules and maps for date-specific trip research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Department of Environmental Protection",
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "fact_supported": "The state provides flood-disclosure guidance and address-based research tools.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "livingston": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 42,
+          "position": 9.78
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 41,
+          "position": 9.8
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 12,
+        "internalInboundExamples": [
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/livingston/index.html",
+          "counties/essex-county.html",
+          "home-valuation-livingston-nj.html",
+          "home-valuation.html",
+          "nj-real-estate-agent.html",
+          "realtor/livingston-nj.html",
+          "sell-my-house-livingston-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "long-hill": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 7,
+        "internalInboundExamples": [
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/long-hill/index.html",
+          "counties/morris-county.html",
+          "realtor/long-hill-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "madison": {
+      "action": "rebuild",
+      "reason": "The route met the measured-demand rule and is retained with only official-source, property-specific research framing.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 1,
+          "impressions": 44,
+          "position": 13.86
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 1,
+          "impressions": 55,
+          "position": 20.51
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 26,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/best-nj-suburbs-nyc-commuters.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/how-much-is-my-nj-home-worth-2026.html",
+          "blog/morris-county-nj-real-estate-market-2026.html",
+          "blog/moving-from-jersey-city-hoboken-to-suburbs.html",
+          "buy-a-home.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/madison/index.html",
+          "counties/morris-county.html",
+          "es/ai-authority.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Madison",
+      "county": "Morris",
+      "placeType": "borough",
+      "identity": "Madison is a borough in Morris County. Use Borough, county, state, and property-specific records to evaluate an address; a general town page cannot establish a parcel condition, cost, or outcome.",
+      "researchFocus": [
+        "Confirm the parcel, assessment record, zoning district, and permit history.",
+        "Check municipal maps and public notices for address-specific context.",
+        "Use current official rail tools for the exact travel date and service pattern."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Borough of Madison",
+          "url": "https://www.rosenet.org/",
+          "fact_supported": "The borough site is the official directory for government, assessor, planning, and services.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/madisonboroughnewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Madison Borough as a distinct official Census geography.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Madison Public Schools",
+          "url": "https://www.madisonpublicschools.org/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/madison-station",
+          "fact_supported": "The official Madison Station page provides current rail, station, and parking research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "maplewood": {
+      "action": "rebuild",
+      "reason": "The route met the measured-demand rule and is retained with only official-source, property-specific research framing.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 165,
+          "position": 40.16
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 118,
+          "position": 23.65
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 390,
+          "position": 34.31
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 25,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/best-nj-suburbs-nyc-commuters.html",
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/fsbo-vs-realtor-new-jersey.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/how-much-is-my-nj-home-worth-2026.html",
+          "blog/moving-from-jersey-city-hoboken-to-suburbs.html",
+          "blog/probate-real-estate-nj-guide.html",
+          "blog/selling-your-home-summit-nj-guide.html",
+          "buy-a-home.html",
+          "communities.html",
+          "communities/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Maplewood",
+      "county": "Essex",
+      "placeType": "township",
+      "identity": "Maplewood is a township in Essex County. Parcel, zoning, assessment, permit, and transportation research should be tied to the address and current official records.",
+      "researchFocus": [
+        "Match the address to municipal zoning, assessment, and permit records.",
+        "Review official district-boundary information only if it matters to the buyer's own criteria.",
+        "Check current official station and trip-planning information for the relevant date."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Township of Maplewood",
+          "url": "https://www.maplewoodnj.gov/",
+          "fact_supported": "The township site is the official directory for departments, assessor, planning, and services.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/maplewoodtownshipessexcountynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Maplewood Township as the official Census geography for comparison.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "South Orange–Maplewood School District",
+          "url": "https://www.somsdk12.org/",
+          "fact_supported": "The shared district site provides registration, schools, calendar, and contact information.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/maplewood-station",
+          "fact_supported": "The official Maplewood Station page provides current rail and station research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "metuchen": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 2,
+          "position": 36.0
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 2,
+          "position": 36.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 13,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/best-nj-suburbs-nyc-commuters.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/middlesex-county-real-estate-market-q2-2026.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/metuchen/index.html",
+          "counties/middlesex-county.html",
+          "es/ai-authority.html",
+          "property-search.html",
+          "realtor/metuchen-nj.html",
+          "sell-my-house-metuchen-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "middlesex-borough": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 7,
+        "internalInboundExamples": [
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/middlesex-borough/index.html",
+          "counties/middlesex-county.html",
+          "realtor/middlesex-borough-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "millburn": {
+      "action": "rebuild",
+      "reason": "The route met the measured-demand rule and is retained with only official-source, property-specific research framing.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 347,
+          "position": 41.15
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 205,
+          "position": 35.66
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 597,
+          "position": 38.76
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 21,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/best-nj-suburbs-nyc-commuters.html",
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/moving-from-jersey-city-hoboken-to-suburbs.html",
+          "buy-a-home.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/millburn/index.html",
+          "counties/essex-county.html",
+          "es/ai-authority.html",
+          "home-valuation-millburn-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Millburn Township",
+      "county": "Essex",
+      "placeType": "township that includes Short Hills",
+      "identity": "Short Hills is a community within Millburn Township in Essex County. Municipal, assessment, land-use, and Census research for a Short Hills address belongs under Millburn Township.",
+      "researchFocus": [
+        "Confirm Millburn Township, block, and lot even when the mailing label says Short Hills.",
+        "Review Township zoning, assessment, permit, and flood-disclosure sources.",
+        "Use the official station and trip tools for the exact service date being considered."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Township of Millburn",
+          "url": "https://www.twp.millburn.nj.us/",
+          "fact_supported": "Millburn Township government covers municipal, assessment, and land-use research for Short Hills addresses.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/millburntownshipessexcountynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Millburn Township as the official municipal Census geography.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Millburn Township Public Schools",
+          "url": "https://www.millburn.org/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/millburn-station",
+          "fact_supported": "The official Millburn Station page provides current rail and station research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/short-hills-station",
+          "fact_supported": "The Short Hills Station page identifies Millburn Township and current station information.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "montclair": {
+      "action": "rebuild",
+      "reason": "The route met the measured-demand rule and is retained with only official-source, property-specific research framing.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 121,
+          "position": 44.66
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 135,
+          "position": 43.61
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 272,
+          "position": 43.59
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 98,
+        "internalInboundExamples": [
+          "404.html",
+          "ai-authority.html",
+          "blog/absentee-owner-nj-sell-rental-property.html",
+          "blog/downsizing-your-nj-home.html",
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/expired-listing-nj-what-to-do.html",
+          "blog/fsbo-vs-realtor-new-jersey.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/how-much-is-my-nj-home-worth-2026.html",
+          "blog/how-to-sell-house-fast-nj.html",
+          "blog/index.html",
+          "blog/maplewood-vs-south-orange-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Montclair",
+      "county": "Essex",
+      "placeType": "township",
+      "identity": "Montclair is a township in Essex County. Because land-use, assessment, permit, station, and property conditions are address-specific, use the official sources below for the parcel under review.",
+      "researchFocus": [
+        "Confirm the assessment record, block, lot, and zoning district for the address.",
+        "Review permit, historic-preservation, and flood records when applicable.",
+        "Use current NJ TRANSIT tools for the station, train, and date under consideration."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Township of Montclair",
+          "url": "https://www.montclairnjusa.org/",
+          "fact_supported": "Official Township government and department directory for Montclair.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "Township of Montclair Municipal Assessor",
+          "url": "https://www.montclairnjusa.org/Government/Departments/Finance-and-Taxes/Municipal-Assessor",
+          "fact_supported": "Official assessor contacts and assessment-research starting point.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/montclairtownshipessexcountynewjersey/PST045225",
+          "fact_supported": "Official Census geography profile for Montclair Township.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/trip-planner-to",
+          "fact_supported": "The official trip planner provides date- and time-specific itinerary research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "education",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state provides School Performance Reports with reporting-period and methodology context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Department of Environmental Protection",
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "fact_supported": "The state provides flood-disclosure guidance and address-based research tools.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "morris-township": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 9,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/morris-township/index.html",
+          "counties/morris-county.html",
+          "es/ai-authority.html",
+          "realtor/morris-township-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "morristown": {
+      "action": "rebuild",
+      "reason": "The route met the measured-demand rule and is retained with only official-source, property-specific research framing.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 1,
+          "impressions": 3,
+          "position": 13.0
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 38,
+          "position": 38.58
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 1,
+          "impressions": 41,
+          "position": 36.71
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 92,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/absentee-owner-nj-sell-rental-property.html",
+          "blog/best-nj-suburbs-nyc-commuters.html",
+          "blog/downsizing-your-nj-home.html",
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/expired-listing-nj-what-to-do.html",
+          "blog/fsbo-vs-realtor-new-jersey.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/how-much-is-my-nj-home-worth-2026.html",
+          "blog/how-to-sell-house-fast-nj.html",
+          "blog/index.html",
+          "blog/maplewood-vs-south-orange-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Morristown",
+      "county": "Morris",
+      "placeType": "town",
+      "identity": "Morristown is a town in Morris County and is separate from Morris Township. Confirm the parcel municipality before using assessor, zoning, permit, or local-service records.",
+      "researchFocus": [
+        "Confirm Morristown rather than Morris Township from the parcel record.",
+        "Review Town land-use, assessment, permit, and public-notice sources.",
+        "Use current official station and trip-planning information for the relevant date."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Town of Morristown",
+          "url": "https://www.townofmorristown.org/",
+          "fact_supported": "Official Town government, department, and public-record directory.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "land-use",
+          "publisher": "Town of Morristown Planning Division",
+          "url": "https://www.townofmorristown.org/departments/planning_division/index.php",
+          "fact_supported": "Official planning, redevelopment, and master-plan research starting point.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/morristowntownnewjersey/PST045225",
+          "fact_supported": "Official Census geography profile for Morristown town.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/morristown-station",
+          "fact_supported": "Official Morristown Station information for current trip research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes year-labeled local property-tax and assessment files for independent research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Department of Environmental Protection",
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "fact_supported": "The state provides flood-disclosure guidance and address-based research tools.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "mountainside": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 14,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/market-report-mountainside-nj-2026.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/mountainside/index.html",
+          "counties/union-county.html",
+          "cranford-vs-westfield-nj.html",
+          "es/ai-authority.html",
+          "realtor/mountainside-nj.html",
+          "sell-my-house-mountainside-nj.html",
+          "towns/berkeley-heights.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "new-brunswick": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 11,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/best-nj-suburbs-nyc-commuters.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/middlesex-county-real-estate-market-q2-2026.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/new-brunswick/index.html",
+          "counties/middlesex-county.html",
+          "es/ai-authority.html",
+          "realtor/new-brunswick-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "newark": {
+      "action": "rebuild",
+      "reason": "The route met the measured-demand rule and is retained with only official-source, property-specific research framing.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 4,
+          "position": 2.0
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 1,
+          "impressions": 21,
+          "position": 35.52
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 1,
+          "impressions": 25,
+          "position": 30.16
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 6,
+        "internalInboundExamples": [
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/newark/index.html",
+          "realtor/newark-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Newark",
+      "county": "Essex",
+      "placeType": "city",
+      "identity": "Newark is a city in Essex County. City planning, zoning, assessment, permit, redevelopment, and property records should be checked for the specific address and use under consideration.",
+      "researchFocus": [
+        "Identify the parcel, zoning district, and any applicable redevelopment plan.",
+        "Review assessment, permit, title, flood, and building-specific records.",
+        "Use current official transit tools for the exact origin, destination, and date."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "City of Newark",
+          "url": "https://www.newarknj.gov/",
+          "fact_supported": "Official City government and department directory for Newark.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "land-use",
+          "publisher": "City of Newark Department of Economic and Housing Development",
+          "url": "https://www.newarknj.gov/departments/economichousing",
+          "fact_supported": "Official City starting point for planning, zoning, housing, and development resources.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/newarkcitynewjersey/PST045225",
+          "fact_supported": "Official Census geography profile for Newark city.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/newark-penn-station",
+          "fact_supported": "Official Newark Penn Station information for current trip research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes year-labeled local property-tax and assessment files for independent research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Department of Environmental Protection",
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "fact_supported": "The state provides flood-disclosure guidance and address-based research tools.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "north-caldwell": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 35,
+          "position": 12.46
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 15,
+          "position": 14.0
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 50,
+          "position": 12.92
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 12,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/market-report-north-caldwell-nj-2026.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/north-caldwell/index.html",
+          "counties/essex-county.html",
+          "es/ai-authority.html",
+          "realtor/north-caldwell-nj.html",
+          "sell-my-house-north-caldwell-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "nutley": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 11,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/market-report-nutley-nj-2026.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/nutley/index.html",
+          "counties/essex-county.html",
+          "es/ai-authority.html",
+          "realtor/nutley-nj.html",
+          "sell-my-house-nutley-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "parsippany-troy-hills": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 2,
+          "position": 23.0
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 2,
+          "position": 23.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 10,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/parsippany-troy-hills/index.html",
+          "counties/morris-county.html",
+          "es/ai-authority.html",
+          "realtor/parsippany-troy-hills-nj.html",
+          "sell-my-house-parsippany-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "peapack-gladstone": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 8,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/peapack-gladstone/index.html",
+          "counties/somerset-county.html",
+          "realtor/peapack-gladstone-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "perth-amboy": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 3,
+          "position": 2.0
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 1,
+          "position": 1.0
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 4,
+          "position": 1.75
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 9,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/perth-amboy/index.html",
+          "counties/middlesex-county.html",
+          "es/ai-authority.html",
+          "realtor/perth-amboy-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "plainfield": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 23,
+          "position": 37.35
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 23,
+          "position": 37.35
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 9,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/plainfield/index.html",
+          "counties/union-county.html",
+          "es/ai-authority.html",
+          "realtor/plainfield-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "plainsboro": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 7,
+        "internalInboundExamples": [
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/plainsboro/index.html",
+          "counties/middlesex-county.html",
+          "realtor/plainsboro-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "roselle": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "position": 11.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 10,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/buying-home-roselle-nj-2026.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/roselle/index.html",
+          "counties/union-county.html",
+          "es/ai-authority.html",
+          "realtor/roselle-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "scotch-plains": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 2,
+          "position": 38.5
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 29,
+          "position": 12.93
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 31,
+          "position": 14.58
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 15,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/scotch-plains/index.html",
+          "counties/union-county.html",
+          "cranford-vs-westfield-nj.html",
+          "es/ai-authority.html",
+          "home-valuation-scotch-plains-nj.html",
+          "home-valuation.html",
+          "realtor/scotch-plains-nj.html",
+          "sell-my-house-scotch-plains-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "short-hills": {
+      "action": "redirect",
+      "reason": "The destination is the stronger same-intent route and resolves the duplicated geography without a second indexable page.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 41,
+          "position": 31.07
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 23,
+          "position": 7.13
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 64,
+          "position": 22.47
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 15,
+        "internalInboundExamples": [
+          "404.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/how-much-is-my-nj-home-worth-2026.html",
+          "buy-a-home.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/short-hills/index.html",
+          "home-valuation-short-hills-nj.html",
+          "home-valuation.html",
+          "luxury-homes-nj.html",
+          "property-search.html",
+          "realtor/short-hills-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "destination": "/towns/millburn"
+    },
+    "south-orange": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 45,
+          "position": 11.2
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 45,
+          "position": 11.2
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 17,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/best-nj-suburbs-nyc-commuters.html",
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/moving-from-jersey-city-hoboken-to-suburbs.html",
+          "buy-a-home.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/south-orange/index.html",
+          "counties/essex-county.html",
+          "es/ai-authority.html",
+          "home-valuation-south-orange-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "summit": {
+      "action": "rebuild",
+      "reason": "The route met the measured-demand rule and is retained with only official-source, property-specific research framing.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 54,
+          "position": 42.3
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 255,
+          "position": 13.98
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 397,
+          "position": 23.22
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 113,
+        "internalInboundExamples": [
+          "404.html",
+          "ai-authority.html",
+          "blog/absentee-owner-nj-sell-rental-property.html",
+          "blog/best-nj-suburbs-nyc-commuters.html",
+          "blog/decluttering-items-home-value-nj.html",
+          "blog/downsizing-your-nj-home.html",
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/expired-listing-nj-what-to-do.html",
+          "blog/fsbo-vs-realtor-new-jersey.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/how-much-is-my-nj-home-worth-2026.html",
+          "blog/how-to-sell-house-fast-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Summit",
+      "county": "Union",
+      "placeType": "city",
+      "identity": "Summit is a city in Union County. Use City and state sources for parcel, zoning, assessment, permit, and transportation research rather than relying on an area-wide estimate.",
+      "researchFocus": [
+        "Confirm the parcel record, zoning district, and permit history.",
+        "Review official municipal maps and notices that apply to the address.",
+        "Use the current official station and trip tools for the relevant date."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "City of Summit",
+          "url": "https://www.cityofsummit.org/",
+          "fact_supported": "The city site is the official directory for government, assessment, planning, and services.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/summitcitynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Summit city as the official Census geography for comparison.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Summit Public Schools",
+          "url": "https://www.summit.k12.nj.us/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/summit-station",
+          "fact_supported": "The official Summit Station page provides current rail, station, and parking research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "union": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 4,
+          "position": 16.25
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 7,
+          "position": 10.71
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 11,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/union/index.html",
+          "counties/union-county.html",
+          "es/ai-authority.html",
+          "realtor/union-nj.html",
+          "towns/index.html",
+          "towns/roselle-park.html",
+          "towns/springfield.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "washington-township-morris": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 9,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/washington-township-morris/index.html",
+          "counties/morris-county.html",
+          "es/ai-authority.html",
+          "realtor/washington-township-morris-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "weehawken": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 3,
+          "position": 79.0
+        },
+        "previous3m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 3,
+          "position": 79.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 11,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/hudson-county-real-estate-market-q2-2026.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/weehawken/index.html",
+          "counties/hudson-county.html",
+          "es/ai-authority.html",
+          "property-search.html",
+          "realtor/weehawken-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "west-orange": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "previous3m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 12,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/west-orange/index.html",
+          "counties/essex-county.html",
+          "es/ai-authority.html",
+          "home-valuation-west-orange-nj.html",
+          "realtor/west-orange-nj.html",
+          "sell-my-house-west-orange-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    },
+    "westfield": {
+      "action": "rebuild",
+      "reason": "The route met the measured-demand rule and is retained with only official-source, property-specific research framing.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 84,
+          "position": 35.14
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 212,
+          "position": 39.99
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 325,
+          "position": 38.21
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 108,
+        "internalInboundExamples": [
+          "404.html",
+          "ai-authority.html",
+          "blog/absentee-owner-nj-sell-rental-property.html",
+          "blog/best-nj-suburbs-nyc-commuters.html",
+          "blog/decluttering-items-home-value-nj.html",
+          "blog/downsizing-your-nj-home.html",
+          "blog/essex-county-nj-real-estate-market-2026.html",
+          "blog/expired-listing-nj-what-to-do.html",
+          "blog/fsbo-vs-realtor-new-jersey.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/how-much-is-my-nj-home-worth-2026.html",
+          "blog/how-to-sell-house-fast-nj.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ],
+      "displayName": "Westfield",
+      "county": "Union",
+      "placeType": "town",
+      "identity": "Westfield is a town in Union County. A useful property comparison starts with the address, parcel, zoning, assessment, permit, and current transportation records—not a town-wide promise.",
+      "researchFocus": [
+        "Match the address to the assessment record, zoning district, and permit history.",
+        "Review official maps, notices, and property disclosures that apply.",
+        "Use current official station and trip-planning information for the relevant date."
+      ],
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Town of Westfield",
+          "url": "https://www.westfieldnj.gov/",
+          "fact_supported": "The town site is the official directory for government, assessment, planning, and services.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/westfieldtownnewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Westfield town as the official Census geography for comparison.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Westfield Public Schools",
+          "url": "https://www.westfieldnjk12.org/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/westfield-station",
+          "fact_supported": "The official Westfield Station page provides current rail, station, and parking research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "wharton": {
+      "action": "quarantine",
+      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "gsc": {
+        "current3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 11,
+          "position": 4.19
+        },
+        "previous3m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 0,
+          "position": 0.0
+        },
+        "last16m": {
+          "rows": 2,
+          "clicks": 0,
+          "impressions": 11,
+          "position": 4.19
+        }
+      },
+      "linkEvidence": {
+        "snapshotBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
+        "internalInboundCount": 8,
+        "internalInboundExamples": [
+          "ai-authority.html",
+          "blog/how-long-to-sell-a-house-nj.html",
+          "blog/morris-county-nj-real-estate-market-2026.html",
+          "communities.html",
+          "communities/index.html",
+          "communities/wharton/index.html",
+          "realtor/wharton-nj.html",
+          "towns/index.html"
+        ],
+        "legacyExternalHosts": [
+          "clickmingo.com"
+        ],
+        "legacyOfficialSourceLinkCount": 0,
+        "externalBacklinkEvidence": "not available in supplied exports"
+      },
+      "legacyRiskRules": [
+        "commute_duration",
+        "market_or_finance_claim",
+        "protected_or_proxy_targeting",
+        "school_rank_or_subjective"
+      ]
+    }
+  }
+}

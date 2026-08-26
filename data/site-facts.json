@@ -34,84 +34,52 @@
     "Somerset"
   ],
   "canonicalTownInventory": {
-    "definition": "Unique English /towns/ URLs included in sitemap.xml. Noindex generated pages outside that canonical sitemap set are not counted on the communities hub.",
-    "total": 64,
+    "definition": "Unique indexable English /towns/ URLs included in sitemap.xml and the canonical communities hubs. Noindex fallbacks and relationship redirects are excluded.",
+    "total": 32,
     "byCounty": {
       "Union": [
         "berkeley-heights",
         "cranford",
-        "elizabeth",
         "fanwood",
-        "mountainside",
         "new-providence",
-        "plainfield",
-        "roselle",
         "roselle-park",
-        "scotch-plains",
         "springfield",
         "summit",
-        "union",
         "westfield"
       ],
       "Essex": [
         "bloomfield",
-        "caldwell",
-        "glen-ridge",
-        "livingston",
         "maplewood",
         "millburn",
         "montclair",
         "newark",
-        "north-caldwell",
-        "nutley",
-        "orange",
-        "short-hills",
-        "south-orange",
-        "west-orange"
+        "orange"
       ],
       "Morris": [
-        "boonton-township",
         "chatham",
         "chatham-borough",
         "chatham-township",
         "denville",
         "east-hanover",
-        "florham-park",
-        "jefferson",
-        "long-hill",
         "madison",
         "morris-plains",
-        "morris-township",
-        "morristown",
-        "parsippany-troy-hills",
-        "washington-township-morris",
-        "wharton"
+        "morristown"
       ],
       "Hudson": [
         "guttenberg",
         "hoboken",
         "jersey-city",
-        "weehawken",
         "west-new-york"
       ],
       "Middlesex": [
-        "dunellen",
         "east-brunswick",
-        "edison",
         "helmetta",
-        "metuchen",
         "middlesex",
-        "middlesex-borough",
-        "new-brunswick",
-        "perth-amboy",
-        "plainsboro",
         "south-brunswick",
         "woodbridge"
       ],
       "Somerset": [
-        "basking-ridge",
-        "bernards-township",
-        "peapack-gladstone"
+        "basking-ridge"
       ]
     }
   },
@@ -257,6 +225,63 @@
         "qualityCheck": "tools/check_town_content_quality.py --strict",
         "gscSnapshot": "data/gsc-town-quarantine-impact.json"
       }
+    },
+    {
+      "scope": "indexable-english-town-risk-remediation",
+      "languages": [
+        "en"
+      ],
+      "manifest": "data/indexable-town-risk-decisions.json",
+      "slugs": [
+        "basking-ridge",
+        "bernards-township",
+        "boonton-township",
+        "caldwell",
+        "chatham",
+        "dunellen",
+        "edison",
+        "elizabeth",
+        "florham-park",
+        "glen-ridge",
+        "hoboken",
+        "jefferson",
+        "jersey-city",
+        "livingston",
+        "long-hill",
+        "madison",
+        "maplewood",
+        "metuchen",
+        "middlesex-borough",
+        "millburn",
+        "montclair",
+        "morris-township",
+        "morristown",
+        "mountainside",
+        "new-brunswick",
+        "newark",
+        "north-caldwell",
+        "nutley",
+        "parsippany-troy-hills",
+        "peapack-gladstone",
+        "perth-amboy",
+        "plainfield",
+        "plainsboro",
+        "roselle",
+        "scotch-plains",
+        "short-hills",
+        "south-orange",
+        "summit",
+        "union",
+        "washington-township-morris",
+        "weehawken",
+        "west-orange",
+        "westfield",
+        "wharton"
+      ],
+      "reason": "Layer-aware audit found fair-housing or unsupported factual risk in the remaining legacy English town pages.",
+      "searchHandling": "measured-demand routes rebuilt; duplicate geographies redirected; low-value routes use compact noindex, follow fallbacks",
+      "reviewStatus": "managed-renderer-live",
+      "renderer": "scripts/remediate_indexable_towns.py"
     }
   ],
   "verificationSources": [
