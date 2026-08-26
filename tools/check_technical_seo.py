@@ -357,7 +357,12 @@ def main() -> int:
         if not item.get("permanent"):
             failures.append(f"vercel.json: redirect is not permanent: {item.get('source')}")
         destination = item.get("destination", "")
-        if normalized_path(destination).endswith(".html"):
+        parsed_destination = urlparse(destination)
+        is_local_destination = not parsed_destination.netloc or parsed_destination.netloc in {
+            "thejorgeramirezgroup.com",
+            "www.thejorgeramirezgroup.com",
+        }
+        if is_local_destination and normalized_path(destination).endswith(".html"):
             failures.append(
                 f"vercel.json: redirect destination contains .html: {item.get('source')} -> {destination}"
             )

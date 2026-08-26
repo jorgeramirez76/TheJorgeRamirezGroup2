@@ -449,6 +449,366 @@
       "permanent": true
     },
     {
+      "source": "/features/buyer-workflows",
+      "destination": "https://aisalespipeline.com/features/buyer-workflows-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/buyer-workflows.html",
+      "destination": "https://aisalespipeline.com/features/buyer-workflows-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/buyer-workflows",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/buyer-workflows.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/buyer-workflows-real-estate",
+      "destination": "https://aisalespipeline.com/features/buyer-workflows-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/buyer-workflows-real-estate.html",
+      "destination": "https://aisalespipeline.com/features/buyer-workflows-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/buyer-workflows-real-estate",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/buyer-workflows-real-estate.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-clone-video",
+      "destination": "https://aisalespipeline.com/features/ai-clone-video-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-clone-video.html",
+      "destination": "https://aisalespipeline.com/features/ai-clone-video-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-clone-video",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-clone-video.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-clone-video-real-estate",
+      "destination": "https://aisalespipeline.com/features/ai-clone-video-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-clone-video-real-estate.html",
+      "destination": "https://aisalespipeline.com/features/ai-clone-video-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-clone-video-real-estate",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-clone-video-real-estate.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-email",
+      "destination": "https://aisalespipeline.com/features/ai-email-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-email.html",
+      "destination": "https://aisalespipeline.com/features/ai-email-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-email",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-email.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-email-real-estate",
+      "destination": "https://aisalespipeline.com/features/ai-email-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-email-real-estate.html",
+      "destination": "https://aisalespipeline.com/features/ai-email-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-email-real-estate",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-email-real-estate.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-sms",
+      "destination": "https://aisalespipeline.com/features/ai-sms-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-sms.html",
+      "destination": "https://aisalespipeline.com/features/ai-sms-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-sms",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-sms.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-sms-real-estate",
+      "destination": "https://aisalespipeline.com/features/ai-sms-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-sms-real-estate.html",
+      "destination": "https://aisalespipeline.com/features/ai-sms-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-sms-real-estate",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-sms-real-estate.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-voice",
+      "destination": "https://aisalespipeline.com/features/ai-voice-calls-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-voice.html",
+      "destination": "https://aisalespipeline.com/features/ai-voice-calls-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-voice",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-voice.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-voice-calls-real-estate",
+      "destination": "https://aisalespipeline.com/features/ai-voice-calls-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/ai-voice-calls-real-estate.html",
+      "destination": "https://aisalespipeline.com/features/ai-voice-calls-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-voice-calls-real-estate",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/ai-voice-calls-real-estate.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/custom-ai-brain",
+      "destination": "https://aisalespipeline.com/features/custom-ai-brain-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/custom-ai-brain.html",
+      "destination": "https://aisalespipeline.com/features/custom-ai-brain-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/custom-ai-brain",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/custom-ai-brain.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/custom-ai-brain-real-estate",
+      "destination": "https://aisalespipeline.com/features/custom-ai-brain-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/custom-ai-brain-real-estate.html",
+      "destination": "https://aisalespipeline.com/features/custom-ai-brain-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/custom-ai-brain-real-estate",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/custom-ai-brain-real-estate.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/facebook-retargeting",
+      "destination": "https://aisalespipeline.com/features/facebook-retargeting-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/facebook-retargeting.html",
+      "destination": "https://aisalespipeline.com/features/facebook-retargeting-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/facebook-retargeting",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/facebook-retargeting.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/facebook-retargeting-real-estate",
+      "destination": "https://aisalespipeline.com/features/facebook-retargeting-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/facebook-retargeting-real-estate.html",
+      "destination": "https://aisalespipeline.com/features/facebook-retargeting-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/facebook-retargeting-real-estate",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/facebook-retargeting-real-estate.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/lead-scoring",
+      "destination": "https://aisalespipeline.com/features/lead-scoring-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/lead-scoring.html",
+      "destination": "https://aisalespipeline.com/features/lead-scoring-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/lead-scoring",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/lead-scoring.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/lead-scoring-real-estate",
+      "destination": "https://aisalespipeline.com/features/lead-scoring-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/lead-scoring-real-estate.html",
+      "destination": "https://aisalespipeline.com/features/lead-scoring-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/lead-scoring-real-estate",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/lead-scoring-real-estate.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/seller-workflows",
+      "destination": "https://aisalespipeline.com/features/seller-workflows-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/seller-workflows.html",
+      "destination": "https://aisalespipeline.com/features/seller-workflows-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/seller-workflows",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/seller-workflows.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/features/seller-workflows-real-estate",
+      "destination": "https://aisalespipeline.com/features/seller-workflows-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/features/seller-workflows-real-estate.html",
+      "destination": "https://aisalespipeline.com/features/seller-workflows-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/seller-workflows-real-estate",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/features/seller-workflows-real-estate.html",
+      "destination": "https://aisalespipeline.com/es/",
+      "permanent": true
+    },
+    {
       "source": "/home-valuation-chatham-nj",
       "destination": "/home-valuation",
       "permanent": true

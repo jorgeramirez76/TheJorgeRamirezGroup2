@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-26",
+  "routeSync": "tools/sync_ai_sales_pipeline_routes.py",
+  "sourceAsset": "AI Sales Pipeline feature pages formerly published under thejorgeramirezgroup.com/features and /es/features",
+  "decision": "Treat the duplicate B2B software pages as a product-domain migration. Retire them from the real-estate search inventory while preserving every legacy route with a permanent, one-hop redirect to the verified AI Sales Pipeline equivalent.",
+  "searchHandling": "No feature page remains indexable or appears in either JRG sitemap. Every English clean and .html variant redirects to its exact verified 200 AI Sales Pipeline feature page. Spanish feature equivalents returned 404 during review, so every Spanish variant temporarily redirects to the verified 200 Spanish product homepage.",
+  "routePrefixByLanguage": {
+    "en": "/features/",
+    "es": "/es/features/"
+  },
+  "gscEvidence": {
+    "last16Months": {
+      "export": "work/gsc16/Pages.csv",
+      "observedUrlVariants": 15,
+      "clicks": 1,
+      "impressions": 48
+    },
+    "last3Months": {
+      "export": "work/gsc_compare/Pages.csv",
+      "observedUrlVariants": 17,
+      "clicks": 1,
+      "impressions": 47
+    },
+    "googleGenerativeAiLast3Months": {
+      "export": "work/gsc_ai_3m/Pages.csv",
+      "observedUrlVariants": 3,
+      "impressions": 3
+    }
+  },
+  "liveProductionReview": {
+    "reviewedOn": "2026-08-26",
+    "sampledRoutesReturned200": [
+      "/features/buyer-workflows-real-estate",
+      "/features/ai-sms",
+      "/es/features/ai-sms"
+    ],
+    "pendingReleaseRisk": "Commit abc7df056 removed all 36 HTML files without redirects; deploying that state unchanged would make their clean and .html URLs return 404.",
+    "verifiedProductDestinations": {
+      "reviewedOn": "2026-08-26",
+      "englishExactPages": 9,
+      "englishHttpStatus": 200,
+      "spanishExactPagesTested": 9,
+      "spanishExactHttpStatus": 404,
+      "spanishFallback": "https://aisalespipeline.com/es/",
+      "spanishFallbackHttpStatus": 200
+    },
+    "independentBacklink": "The public aisalespipeline.com homepage contains two contextual HTML links to https://www.thejorgeramirezgroup.com; this migration does not modify them."
+  },
+  "families": [
+    {
+      "id": "buyer-workflows",
+      "aliases": [
+        "buyer-workflows",
+        "buyer-workflows-real-estate"
+      ],
+      "intent": "buyer-service",
+      "destinationByLanguage": {
+        "en": "https://aisalespipeline.com/features/buyer-workflows-real-estate.html",
+        "es": "https://aisalespipeline.com/es/"
+      }
+    },
+    {
+      "id": "ai-clone-video",
+      "aliases": [
+        "ai-clone-video",
+        "ai-clone-video-real-estate"
+      ],
+      "intent": "seller-marketing",
+      "destinationByLanguage": {
+        "en": "https://aisalespipeline.com/features/ai-clone-video-real-estate.html",
+        "es": "https://aisalespipeline.com/es/"
+      }
+    },
+    {
+      "id": "ai-email",
+      "aliases": [
+        "ai-email",
+        "ai-email-real-estate"
+      ],
+      "intent": "seller-marketing",
+      "destinationByLanguage": {
+        "en": "https://aisalespipeline.com/features/ai-email-real-estate.html",
+        "es": "https://aisalespipeline.com/es/"
+      }
+    },
+    {
+      "id": "ai-sms",
+      "aliases": [
+        "ai-sms",
+        "ai-sms-real-estate"
+      ],
+      "intent": "seller-marketing",
+      "destinationByLanguage": {
+        "en": "https://aisalespipeline.com/features/ai-sms-real-estate.html",
+        "es": "https://aisalespipeline.com/es/"
+      }
+    },
+    {
+      "id": "ai-voice",
+      "aliases": [
+        "ai-voice",
+        "ai-voice-calls-real-estate"
+      ],
+      "intent": "seller-marketing",
+      "destinationByLanguage": {
+        "en": "https://aisalespipeline.com/features/ai-voice-calls-real-estate.html",
+        "es": "https://aisalespipeline.com/es/"
+      }
+    },
+    {
+      "id": "custom-ai-brain",
+      "aliases": [
+        "custom-ai-brain",
+        "custom-ai-brain-real-estate"
+      ],
+      "intent": "seller-marketing",
+      "destinationByLanguage": {
+        "en": "https://aisalespipeline.com/features/custom-ai-brain-real-estate.html",
+        "es": "https://aisalespipeline.com/es/"
+      }
+    },
+    {
+      "id": "facebook-retargeting",
+      "aliases": [
+        "facebook-retargeting",
+        "facebook-retargeting-real-estate"
+      ],
+      "intent": "seller-marketing",
+      "destinationByLanguage": {
+        "en": "https://aisalespipeline.com/features/facebook-retargeting-real-estate.html",
+        "es": "https://aisalespipeline.com/es/"
+      }
+    },
+    {
+      "id": "lead-scoring",
+      "aliases": [
+        "lead-scoring",
+        "lead-scoring-real-estate"
+      ],
+      "intent": "seller-marketing",
+      "destinationByLanguage": {
+        "en": "https://aisalespipeline.com/features/lead-scoring-real-estate.html",
+        "es": "https://aisalespipeline.com/es/"
+      }
+    },
+    {
+      "id": "seller-workflows",
+      "aliases": [
+        "seller-workflows",
+        "seller-workflows-real-estate"
+      ],
+      "intent": "seller-marketing",
+      "destinationByLanguage": {
+        "en": "https://aisalespipeline.com/features/seller-workflows-real-estate.html",
+        "es": "https://aisalespipeline.com/es/"
+      }
+    }
+  ]
+}

@@ -25,6 +25,22 @@ from tests.test_remediation import (
 )
 
 
+AI_PIPELINE_MANIFEST = ROOT / "data" / "ai-sales-pipeline-route-migration.json"
+
+
+def expected_ai_pipeline_redirects() -> dict[str, str]:
+    manifest = json.loads(AI_PIPELINE_MANIFEST.read_text(encoding="utf-8"))
+    routes: dict[str, str] = {}
+    for family in manifest["families"]:
+        for alias in family["aliases"]:
+            for language in ("en", "es"):
+                clean = manifest["routePrefixByLanguage"][language] + alias
+                destination = family["destinationByLanguage"][language]
+                routes[clean] = destination
+                routes[clean + ".html"] = destination
+    return routes
+
+
 def title(text: str) -> str:
     match = re.search(r"<title>(.*?)</title>", text, re.I | re.S)
     return html.unescape(re.sub(r"\s+", " ", match.group(1)).strip()) if match else ""
@@ -318,7 +334,7 @@ class WaveTwoContractTests(unittest.TestCase):
         ]
         self.assertEqual([], offenders)
 
-    def test_off_topic_ai_sales_product_is_not_in_public_search_inventory(self):
+    def test_off_topic_ai_sales_product_is_removed_but_legacy_equity_is_preserved(self):
         feature_pages = sorted(
             str(path.relative_to(ROOT))
             for directory in (ROOT / "features", ROOT / "es" / "features")
@@ -331,17 +347,29 @@ class WaveTwoContractTests(unittest.TestCase):
             "AI Sales Pipeline product pages do not belong on the real-estate site",
         )
 
-        inventory_files = (
-            ROOT / "sitemap.xml",
-            ROOT / "sitemap-es.xml",
-            ROOT / "vercel.json",
-        )
-        leaked = [
-            str(path.relative_to(ROOT))
-            for path in inventory_files
-            if re.search(r"(?:/es)?/features/", read(path), re.I)
-        ]
-        self.assertEqual([], leaked)
+        for sitemap in (ROOT / "sitemap.xml", ROOT / "sitemap-es.xml"):
+            with self.subTest(sitemap=sitemap.name):
+                self.assertNotRegex(read(sitemap), r"(?:/es)?/features/")
+
+        expected = expected_ai_pipeline_redirects()
+        redirects = json.loads(read(ROOT / "vercel.json"))["redirects"]
+        feature_redirects = {
+            str(rule.get("source")): rule
+            for rule in redirects
+            if re.fullmatch(
+                r"/(?:es/)?features/[^/:*()]+(?:\.html)?",
+                str(rule.get("source", "")),
+            )
+        }
+        self.assertEqual(set(expected), set(feature_redirects))
+        all_sources = {str(rule.get("source", "")) for rule in redirects}
+        for source, destination in expected.items():
+            with self.subTest(source=source):
+                rule = feature_redirects[source]
+                self.assertEqual(destination, rule.get("destination"))
+                self.assertIs(True, rule.get("permanent"))
+                self.assertTrue(destination.startswith("https://aisalespipeline.com/"))
+                self.assertNotIn(destination, all_sources)
 
 
 if __name__ == "__main__":
