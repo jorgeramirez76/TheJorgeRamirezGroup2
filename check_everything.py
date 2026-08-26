@@ -23,6 +23,17 @@ CONFLICT = re.compile(r'^(<<<<<<<|>>>>>>>|=======$)', re.M)
 
 issues = defaultdict(list)
 
+try:
+    with open("vercel.json", encoding="utf-8") as redirect_file:
+        redirect_config = json.load(redirect_file)
+    EXACT_REDIRECTS = {
+        item["source"]
+        for item in redirect_config.get("redirects", [])
+        if not item.get("has") and ":" not in item.get("source", "")
+    }
+except (OSError, json.JSONDecodeError, KeyError):
+    EXACT_REDIRECTS = set()
+
 
 def add(kind, path, detail=""):
     issues[kind].append((path, detail))
@@ -51,7 +62,11 @@ def check(path):
     if CONFLICT.search(t):
         add("conflict-markers", path)
 
-    if is_stub:
+    deployed_path = "/" + (path[:-5] if path.endswith(".html") else path)
+    if path == "index.html":
+        deployed_path = "/"
+
+    if is_stub or deployed_path in EXACT_REDIRECTS:
         return  # redirect stubs need nothing else
 
     # --- SEO stack ---
