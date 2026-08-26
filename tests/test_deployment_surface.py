@@ -58,12 +58,14 @@ class DeploymentSurfaceTests(unittest.TestCase):
             self.assertTrue((ROOT / relative).is_file(), relative)
 
     def test_web_manifest_matches_verified_brand_and_service_area(self) -> None:
-        manifest = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
-        self.assertEqual("#1A1A1A", manifest["theme_color"])
-        self.assertEqual("#FAFAF8", manifest["background_color"])
-        self.assertEqual("standalone", manifest["display"])
-        for county in ("Union", "Essex", "Morris", "Hudson", "Middlesex", "Somerset"):
-            self.assertIn(county, manifest["description"])
+        for name in ("manifest.json", "site.webmanifest"):
+            with self.subTest(name=name):
+                manifest = json.loads((ROOT / name).read_text(encoding="utf-8"))
+                self.assertEqual("#1A1A1A", manifest["theme_color"])
+                self.assertEqual("#FAFAF8", manifest["background_color"])
+                self.assertEqual("standalone", manifest["display"])
+                for county in ("Union", "Essex", "Morris", "Hudson", "Middlesex", "Somerset"):
+                    self.assertIn(county, manifest["description"])
 
     def test_legacy_schema_asset_cannot_drift_from_verified_business_facts(self) -> None:
         facts = json.loads((ROOT / "data/site-facts.json").read_text(encoding="utf-8"))
