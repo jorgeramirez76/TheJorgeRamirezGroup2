@@ -161,13 +161,68 @@ class LocalSearchArchitectureTests(unittest.TestCase):
             "const townGuideCount = (communitiesData[county] || []).length;",
             source,
         )
-        self.assertIn("${townGuideCount} Town Guides", source)
-        self.assertIn("${towns.length} Town Guides", source)
-        self.assertIn('href="/towns/${slug}"', source)
+        self.assertIn("communityUi.guideCount(townGuideCount)", source)
+        self.assertIn("communityUi.guideCount(towns.length)", source)
+        self.assertIn("count === 1 ? 'Town Guide' : 'Town Guides'", source)
+        self.assertIn("count === 1 ? 'guía' : 'guías'", source)
+        self.assertIn("townPath: slug => `/towns/${slug}`", source)
+        self.assertIn("townPath: slug => `/es/towns/${slug}`", source)
+        self.assertIn("Buscar en las guías del condado de ${county}", source)
+        self.assertIn("No hay guías locales que coincidan", source)
+        self.assertIn("No town guides match", source)
+        self.assertIn('aria-describedby="town-search-status"', source)
+        self.assertIn('role="status" aria-live="polite"', source)
+        self.assertIn('class="search-icon" aria-hidden="true"', source)
+        self.assertIn("a[href^=\"#\"]:not(.skip-link)", source)
         self.assertIn(
             "then narrow the research to a specific address",
             read("index.html"),
         )
+
+    def test_spanish_pages_use_reviewed_translated_conversion_destinations(self) -> None:
+        forbidden = {"/home-valuation", "/property-search"}
+        failures: list[str] = []
+        for path in sorted((ROOT / "es").rglob("*.html")):
+            relative = str(path.relative_to(ROOT))
+            leaked = links(path.read_text(encoding="utf-8")) & forbidden
+            if leaked:
+                failures.append(f"{relative}: {sorted(leaked)}")
+        self.assertEqual([], failures)
+        self.assertIn("/es/home-valuation", links(read("es/index.html")))
+        self.assertIn("/es/property-search", links(read("es/nj-home-buyer-guide.html")))
+
+    def test_spanish_source_cards_are_localized_and_quality_audit_fails_closed(self) -> None:
+        county_files = [
+            f"es/counties/{county.lower()}-county.html"
+            for county in self.facts["canonicalTownInventory"]["byCounty"]
+        ]
+        high_value_files = [
+            "es/buyer-agency-agreement-nj.html",
+            "es/blog/maplewood-vs-south-orange-nj.html",
+            "es/blog/summit-vs-westfield-nj.html",
+            "es/blog/nj-home-selling-timeline.html",
+            "es/blog/probate-real-estate-nj-guide.html",
+        ]
+        forbidden = re.compile(
+            r"\b(?:Buyer and seller research sequences|Select a county|"
+            r"Check the current route|Travel time varies|"
+            r"Official Municipal Website|Open the primary source|"
+            r"state regulatory bulletin|federal tax publication)\b",
+            re.I,
+        )
+        for relative in county_files + high_value_files:
+            with self.subTest(relative=relative):
+                self.assertIsNone(forbidden.search(visible_text(read(relative))))
+
+        result = subprocess.run(
+            [sys.executable, "tools/audit_spanish_quality.py", "--json"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+        self.assertEqual(0, json.loads(result.stdout)["files_with_findings"])
 
     def test_priority_town_pathway_sync_is_deterministic_and_branded(self) -> None:
         result = subprocess.run(
@@ -185,9 +240,20 @@ class LocalSearchArchitectureTests(unittest.TestCase):
         self.assertIn("'Inter'", css)
 
     def test_communities_hubs_explain_the_directory_and_link_the_research_layers(self) -> None:
-        for relative in ("communities.html", "es/communities.html"):
+        aliases = (
+            ("communities.html", "communities/index.html"),
+            ("es/communities.html", "es/communities/index.html"),
+        )
+        for relative, directory_alias in aliases:
             with self.subTest(relative=relative):
                 source = read(relative)
+                self.assertEqual(source, read(directory_alias))
+                main = re.search(r'<main\b[^>]*id=["\']main["\'][^>]*>(.*?)</main>', source, re.I | re.S)
+                self.assertIsNotNone(main)
+                self.assertIn('tabindex="-1"', main.group(0))
+                self.assertIn('class="communities-hero"', main.group(1))
+                self.assertIn('id="town-search"', main.group(1))
+                self.assertIn('class="county-section"', main.group(1))
                 hrefs = links(source)
                 description = re.search(
                     r'<meta\b[^>]*name=["\']description["\'][^>]*content=["\']([^"\']+)',

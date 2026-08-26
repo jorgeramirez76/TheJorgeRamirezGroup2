@@ -61,6 +61,13 @@ EXPECTED_CLUSTERS = {
     "westfield-scotch-plains": {"westfield-vs-scotch-plains-nj.html"},
     "multiple-heirs-alias": {FALLBACK_PATH},
 }
+SPANISH_SOURCE_CLUSTERS = {
+    "buyer-agency",
+    "maplewood-south-orange",
+    "summit-westfield",
+    "selling-timeline",
+    "probate",
+}
 
 SOURCE_FIELDS = {
     "id",
@@ -125,6 +132,19 @@ def load_manifest(path: Path = MANIFEST_PATH) -> Dict[str, Any]:
         missing = set(record["sourceIds"]) - known
         if missing:
             raise ValueError("cluster %s refers to unknown sources: %s" % (cluster, sorted(missing)))
+    spanish_source_copy = document.get("spanishSourceCopy")
+    translated_source_ids = {
+        source_id
+        for cluster in SPANISH_SOURCE_CLUSTERS
+        for source_id in clusters[cluster]["sourceIds"]
+    }
+    if not isinstance(spanish_source_copy, dict) or set(spanish_source_copy) != translated_source_ids:
+        raise ValueError("Spanish source-copy inventory changed")
+    for source_id, source_copy in spanish_source_copy.items():
+        if not isinstance(source_copy, dict) or set(source_copy) != {"kind", "title", "use", "limit"}:
+            raise ValueError("Spanish source copy for %s changed fields" % source_id)
+        if not all(str(value).strip() for value in source_copy.values()):
+            raise ValueError("Spanish source copy for %s is incomplete" % source_id)
     return document
 
 
@@ -1127,19 +1147,24 @@ def render_sections(sections: Sequence[Mapping[str, Any]]) -> str:
     return "\n".join(rendered)
 
 
-def render_sources(sources: Sequence[Mapping[str, Any]], lang: str) -> str:
+def render_sources(
+    sources: Sequence[Mapping[str, Any]],
+    lang: str,
+    spanish_source_copy: Mapping[str, Mapping[str, str]],
+) -> str:
     cards: List[str] = []
     for source in sources:
+        copy = spanish_source_copy.get(source["id"], source) if lang == "es" else source
         cards.append(
             '<article class="source-card"><p class="source-kind">%s</p><h3>%s</h3>'
             '<p><strong>%s</strong></p><p>%s</p><p class="source-limit">%s</p>'
             '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a></article>'
             % (
-                esc(source["kind"]),
-                esc(source["title"]),
+                esc(copy["kind"]),
+                esc(copy["title"]),
                 esc(source["publisher"]),
-                esc(source["use"]),
-                esc(source["limit"]),
+                esc(copy["use"]),
+                esc(copy["limit"]),
                 esc(source["url"]),
                 "Abrir la fuente primaria" if lang == "es" else "Open the primary source",
             )
@@ -1152,6 +1177,7 @@ def render_page(
     source_map: Mapping[str, Mapping[str, Any]],
     cluster_source_ids: Sequence[str],
     business: Mapping[str, Any],
+    spanish_source_copy: Mapping[str, Mapping[str, str]],
 ) -> str:
     lang = page["lang"]
     prefix = "/es" if lang == "es" else ""
@@ -1408,7 +1434,7 @@ def render_page(
         <section class="source-section" aria-labelledby="sources-heading">
           <h2 id="sources-heading">{esc(labels["sourcesHeading"])}</h2>
           <p class="source-intro">{esc(labels["sourcesIntro"])}</p>
-          {render_sources(sources, lang)}
+          {render_sources(sources, lang, spanish_source_copy)}
         </section>
         <section class="cta-panel" aria-labelledby="next-heading">
           <h2 id="next-heading">{esc(page["ctaHeading"])}</h2>
@@ -1514,7 +1540,18 @@ def targets(
         if page["lang"] not in {"en", "es"}:
             raise ValueError("page %s has an invalid language" % relative)
         source_ids = manifest["clusters"][page["cluster"]]["sourceIds"]
-        result.append((ROOT / relative, render_page(page, source_map, source_ids, business)))
+        result.append(
+            (
+                ROOT / relative,
+                render_page(
+                    page,
+                    source_map,
+                    source_ids,
+                    business,
+                    manifest["spanishSourceCopy"],
+                ),
+            )
+        )
         seen.add(relative)
     expected_indexable = EXPECTED_FILES - {FALLBACK_PATH}
     if seen != expected_indexable:

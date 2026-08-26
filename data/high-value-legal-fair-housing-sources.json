@@ -3,6 +3,212 @@
   "reviewedOn": "2026-08-26",
   "renderer": "tools/generate_high_value_legal_fair_housing.py",
   "scope": "Primary-source record and exact route contract for high-value New Jersey buyer-agreement, selling-timeline, probate, assessment-appeal, and neutral municipal-comparison pages.",
+  "spanishSourceCopy": {
+    "cfpb-closing-disclosure": {
+      "kind": "orientación federal para consumidores hipotecarios",
+      "title": "Explicación de la Divulgación de Cierre",
+      "use": "Sustenta la Divulgación de Cierre proporcionada por el prestamista y su período de revisión de tres días hábiles para las operaciones hipotecarias cubiertas.",
+      "limit": "La regla de divulgación es un requisito entre prestatario y prestamista para ciertos préstamos; no es un plazo universal de contrato ni de revisión por un abogado en Nueva Jersey."
+    },
+    "cfpb-loan-estimate": {
+      "kind": "orientación federal para consumidores hipotecarios",
+      "title": "Explicación de la Estimación del Préstamo",
+      "use": "Sustenta la comparación y revisión de los términos del préstamo y costos de cierre estimados para una hipoteca cubierta antes del cierre.",
+      "limit": "Una Estimación del Préstamo no es un compromiso de préstamo, informe de título, valoración de la propiedad ni predicción de la fecha de cierre."
+    },
+    "irs-publication-559-2025": {
+      "kind": "publicación tributaria federal",
+      "title": "Publicación 559 (2025): sobrevivientes, albaceas y administradores",
+      "use": "Sustenta conceptos generales de la base tributaria federal de una propiedad heredada, incluida la regla habitual del valor justo de mercado a la fecha de fallecimiento y las excepciones indicadas.",
+      "limit": "La Publicación 559 ofrece información tributaria federal general; la titularidad, elecciones de valoración, declaraciones, mejoras, depreciación y hechos individuales requieren revisión profesional."
+    },
+    "maplewood-census-profile": {
+      "kind": "perfil geográfico federal",
+      "title": "Perfil del Censo de Maplewood Township",
+      "use": "Identifica Maplewood Township como una geografía específica del Censo y ofrece estimaciones públicas con la versión indicada.",
+      "limit": "Las estimaciones de encuestas tienen períodos y márgenes de error; los datos demográficos no deben usarse para orientar una decisión de vivienda."
+    },
+    "maplewood-municipality": {
+      "kind": "fuente municipal primaria",
+      "title": "Sitio web municipal oficial",
+      "use": "Ofrece rutas vigentes a departamentos, tasador fiscal, planificación, avisos, mapas y servicios locales de Maplewood.",
+      "limit": "La información municipal puede cambiar y no establece los hechos, estado, asignación ni valor de una propiedad específica."
+    },
+    "maplewood-station": {
+      "kind": "página oficial de la estación",
+      "title": "Estación de Maplewood",
+      "use": "Ofrece información vigente de la estación de Maplewood para usarla con una consulta del planificador por fecha.",
+      "limit": "La página de la estación no promete tiempo de viaje, transbordos, estacionamiento disponible ni nivel de servicio futuro."
+    },
+    "nj-dca-fair-housing": {
+      "kind": "orientación estatal sobre vivienda justa",
+      "title": "Discriminación en la vivienda",
+      "use": "Ofrece recursos de Nueva Jersey sobre discriminación en la vivienda y rutas oficiales de asistencia y denuncias.",
+      "limit": "La página ofrece orientación pública y contactos; no decide si un acto específico viola la ley estatal o federal."
+    },
+    "nj-oag-fair-housing": {
+      "kind": "orientación estatal sobre derechos civiles",
+      "title": "Discriminación en la vivienda",
+      "use": "Apoya una comparación neutral que evita orientar o recomendar según características protegidas o sustitutos demográficos.",
+      "limit": "La página ofrece información pública sobre derechos civiles, no una opinión jurídica sobre una interacción, anuncio o transacción específica."
+    },
+    "nar-open-house-guide": {
+      "kind": "orientación al consumidor sobre políticas de MLS",
+      "title": "Guía del consumidor sobre jornadas de puertas abiertas y contratos escritos",
+      "use": "Sustenta la excepción para una jornada de puertas abiertas cuando el consumidor asiste sin su propio agente y distingue las conversaciones de mercadeo del trabajo con un comprador.",
+      "limit": "La guía señala expresamente que las prácticas varían según la ley estatal y local y que la propia guía del consumidor no cambia la política de NAR."
+    },
+    "nar-written-buyer-agreements": {
+      "kind": "orientación sobre políticas de MLS",
+      "title": "Contratos escritos con compradores 101",
+      "use": "Sustenta la política para participantes de MLS antes de mostrar propiedades, la compensación determinable objetivamente, la divulgación de su carácter negociable y preguntas contractuales del consumidor.",
+      "limit": "Es orientación de una asociación profesional y de MLS, no legislación de Nueva Jersey ni sustituto de la ley estatal o de un contrato firmado."
+    },
+    "nj-inheritance-estate-tax": {
+      "kind": "orientación tributaria estatal",
+      "title": "Impuestos sobre herencias y patrimonios",
+      "use": "Sustenta la vigencia del marco del impuesto sobre herencias de Nueva Jersey y el fin del impuesto estatal sobre patrimonios para quienes fallecieron a partir del 1 de enero de 2018.",
+      "limit": "El tratamiento tributario depende del domicilio, fecha de fallecimiento, ubicación de los activos, clase de beneficiario, titularidad y declaraciones; la página no determina un patrimonio específico."
+    },
+    "nj-inheritance-tax-forms": {
+      "kind": "directorio estatal de formularios tributarios",
+      "title": "Formularios de impuestos sobre herencias y patrimonios",
+      "use": "Ofrece el directorio estatal vigente de declaraciones del impuesto sobre herencias y formularios relacionados con exenciones, incluidas solicitudes de exención para bienes inmuebles.",
+      "limit": "El formulario y la presentación adecuados dependen del patrimonio; el directorio no autoriza una venta ni determina si una presentación está completa."
+    },
+    "nj-property-tax-statistics": {
+      "kind": "biblioteca estatal de datos de impuestos sobre la propiedad",
+      "title": "Información estadística: impuestos locales sobre la propiedad",
+      "use": "Ofrece archivos por año sobre tasaciones, igualación, tasas fiscales y promedios residenciales para investigación municipal.",
+      "limit": "Los datos municipales agregados no son la factura fiscal, valor actual, tasación futura, precio de publicación ni valoración profesional de una parcela."
+    },
+    "nj-tax-waiver-requirements": {
+      "kind": "orientación estatal sobre impuestos y transferencias",
+      "title": "Requisitos de exención tributaria para la propiedad de una persona fallecida",
+      "use": "Sustenta la necesidad de determinar si se requiere una exención tributaria de Nueva Jersey antes de transferir una propiedad a nombre de una persona fallecida.",
+      "limit": "La fuente enumera excepciones y rutas según los hechos; una página web no puede determinar el estado de la exención, la autoridad sobre el título ni las obligaciones de presentación de un patrimonio."
+    },
+    "nj-treasury-surrogate-directory": {
+      "kind": "orientación estatal sobre contactos de condados y documentos sucesorios",
+      "title": "Documentación del Tribunal del Sustituto y contactos de los condados",
+      "use": "Explica que cada condado de Nueva Jersey tiene un Tribunal del Sustituto y ofrece contactos estatales para preguntas sobre documentos sucesorios.",
+      "limit": "La página se centra en documentación de bienes no reclamados y debe usarse como ruta de contacto, no como asesoría jurídica para vender bienes inmuebles."
+    },
+    "njcourts-county-surrogate": {
+      "kind": "definición del poder judicial estatal",
+      "title": "Sustituto del condado",
+      "use": "Sustenta la función del sustituto del condado en asuntos sucesorios y patrimoniales no impugnados y la relación del Tribunal del Sustituto con la Sala de Sucesiones.",
+      "limit": "El glosario define la función del tribunal; no determina quién tiene autoridad en un patrimonio específico ni resuelve un asunto impugnado."
+    },
+    "njdobi-bulletin-24-11": {
+      "kind": "boletín regulatorio estatal",
+      "title": "Boletín 24-11: relaciones comerciales de corretaje inmobiliario, incluida la agencia designada",
+      "use": "Sustenta los plazos del contrato de servicios de corretaje en Nueva Jersey, los términos requeridos, la compensación negociable, los pagadores permitidos y las divulgaciones de agencia.",
+      "limit": "El boletín resume P.L. 2024, c.32 y no proporciona los términos negociados del contrato de un consumidor ni asesoría jurídica individual."
+    },
+    "njdobi-buying-a-home": {
+      "kind": "guía estatal para consumidores",
+      "title": "Todo lo que quería saber sobre la compra de una vivienda",
+      "use": "Sustenta la afirmación limitada de que muchos compradores de Nueva Jersey contratan abogados aunque no sea obligatorio, además de conceptos de inspección y título sujetos al contrato.",
+      "limit": "La guía contiene referencias antiguas a formularios federales; estas páginas la usan solo para las afirmaciones limitadas de Nueva Jersey identificadas y remiten los formularios de préstamo vigentes al CFPB."
+    },
+    "njdobi-real-estate-consumer-topics": {
+      "kind": "centro estatal de orientación al consumidor",
+      "title": "Información para consumidores: bienes raíces",
+      "use": "Identifica la función regulatoria de la Comisión de Bienes Raíces y ofrece acceso vigente a materiales para consumidores de Nueva Jersey.",
+      "limit": "La página es un directorio de fuentes y no determina los plazos, términos contractuales, asuntos de título ni fecha de cierre de una operación."
+    },
+    "njrec-compliance-faq": {
+      "kind": "preguntas frecuentes del regulador estatal",
+      "title": "Preguntas frecuentes sobre bienes raíces",
+      "use": "Sustenta la diferencia entre la Declaración de Información al Consumidor y el contrato escrito separado que establece una relación de agencia con el comprador.",
+      "limit": "Las preguntas frecuentes no reemplazan el contrato firmado de servicios de corretaje ni la asesoría de un abogado de Nueva Jersey sobre un contrato específico."
+    },
+    "njdoe-school-performance-2024-25": {
+      "kind": "portal estatal de datos educativos",
+      "title": "Informes de Rendimiento Escolar 2024-2025",
+      "use": "Ofrece registros, definiciones y metodología del período 2024-25 para revisar datos oficiales de escuelas públicas según una dirección.",
+      "limit": "Los informes son registros públicos de un período, no una recomendación, clasificación, predicción ni sustituto de confirmar la asignación con el distrito."
+    },
+    "njtransit-trip-planner": {
+      "kind": "herramienta oficial de planificación de transporte",
+      "title": "Planificador de viajes",
+      "use": "Permite investigar itinerarios por fecha, hora, origen y destino en vez de prometer un tiempo fijo de viaje.",
+      "limit": "Los horarios, transbordos, patrones de servicio, estacionamiento y condiciones cambian; ejecute un itinerario vigente para la dirección y hora exactas."
+    },
+    "somsd": {
+      "kind": "fuente primaria del distrito escolar público",
+      "title": "Sitio web oficial del distrito",
+      "use": "Ofrece rutas vigentes de inscripción, escuelas, calendario, políticas y contactos del distrito para ambos municipios.",
+      "limit": "Confirme con el distrito la asignación de la dirección y la información vigente; el enlace no clasifica escuelas ni predice una experiencia."
+    },
+    "south-orange-census-profile": {
+      "kind": "perfil geográfico federal",
+      "title": "Perfil del Censo de South Orange Village Township",
+      "use": "Identifica South Orange Village Township como una geografía específica del Censo y ofrece estimaciones públicas con la versión indicada.",
+      "limit": "Las estimaciones de encuestas tienen períodos y márgenes de error; los datos demográficos no deben usarse para orientar una decisión de vivienda."
+    },
+    "south-orange-municipality": {
+      "kind": "fuente municipal primaria",
+      "title": "Sitio web municipal oficial",
+      "use": "Ofrece rutas vigentes a departamentos, tasador fiscal, planificación, avisos, mapas y servicios locales de South Orange.",
+      "limit": "La información municipal puede cambiar y no establece los hechos, estado, asignación ni valor de una propiedad específica."
+    },
+    "south-orange-station": {
+      "kind": "página oficial de la estación",
+      "title": "Estación de South Orange",
+      "use": "Ofrece información vigente de la estación de South Orange para usarla con una consulta del planificador por fecha.",
+      "limit": "La página de la estación no promete tiempo de viaje, transbordos, estacionamiento disponible ni nivel de servicio futuro."
+    },
+    "summit-census-profile": {
+      "kind": "perfil geográfico federal",
+      "title": "Perfil del Censo de la ciudad de Summit",
+      "use": "Identifica la ciudad de Summit como una geografía específica del Censo y ofrece estimaciones públicas con la versión indicada.",
+      "limit": "Las estimaciones de encuestas tienen períodos y márgenes de error; los datos demográficos no deben usarse para orientar una decisión de vivienda."
+    },
+    "summit-municipality": {
+      "kind": "fuente municipal primaria",
+      "title": "Sitio web municipal oficial",
+      "use": "Ofrece rutas vigentes a departamentos, tasador fiscal, planificación, avisos, mapas y servicios locales de Summit.",
+      "limit": "La información municipal puede cambiar y no establece los hechos, estado, asignación ni valor de una propiedad específica."
+    },
+    "summit-school-district": {
+      "kind": "fuente primaria del distrito escolar público",
+      "title": "Sitio web oficial del distrito",
+      "use": "Ofrece rutas vigentes de inscripción, escuelas, calendario, políticas y contactos del distrito de Summit.",
+      "limit": "Confirme con el distrito la asignación de la dirección y la información vigente; el enlace no clasifica escuelas ni predice una experiencia."
+    },
+    "summit-station": {
+      "kind": "página oficial de la estación",
+      "title": "Estación de Summit",
+      "use": "Ofrece información vigente de la estación de Summit para usarla con una consulta del planificador por fecha.",
+      "limit": "La página de la estación no promete tiempo de viaje, transbordos, estacionamiento disponible ni nivel de servicio futuro."
+    },
+    "westfield-census-profile": {
+      "kind": "perfil geográfico federal",
+      "title": "Perfil del Censo del municipio de Westfield",
+      "use": "Identifica el municipio de Westfield como una geografía específica del Censo y ofrece estimaciones públicas con la versión indicada.",
+      "limit": "Las estimaciones de encuestas tienen períodos y márgenes de error; los datos demográficos no deben usarse para orientar una decisión de vivienda."
+    },
+    "westfield-municipality": {
+      "kind": "fuente municipal primaria",
+      "title": "Sitio web municipal oficial",
+      "use": "Ofrece rutas vigentes a departamentos, tasador fiscal, planificación, avisos, mapas y servicios locales de Westfield.",
+      "limit": "La información municipal puede cambiar y no establece los hechos, estado, asignación ni valor de una propiedad específica."
+    },
+    "westfield-school-district": {
+      "kind": "fuente primaria del distrito escolar público",
+      "title": "Sitio web oficial del distrito",
+      "use": "Ofrece rutas vigentes de inscripción, escuelas, calendario, políticas y contactos del distrito de Westfield.",
+      "limit": "Confirme con el distrito la asignación de la dirección y la información vigente; el enlace no clasifica escuelas ni predice una experiencia."
+    },
+    "westfield-station": {
+      "kind": "página oficial de la estación",
+      "title": "Estación de Westfield",
+      "use": "Ofrece información vigente de la estación de Westfield para usarla con una consulta del planificador por fecha.",
+      "limit": "La página de la estación no promete tiempo de viaje, transbordos, estacionamiento disponible ni nivel de servicio futuro."
+    }
+  },
   "managedFiles": [
     "blog/how-to-appeal-nj-property-taxes-2026.html",
     "blog/maplewood-vs-south-orange-nj.html",

@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """Audit Spanish HTML pages for obvious mixed-language leftovers.
 
-This is intentionally conservative: it flags known broken machine-translation
-fragments and high-signal English real-estate terms, but allows proper nouns
-such as NJ, NYC, Zillow, Keller Williams, and Jorge Ramirez.
+The audit reads DOM-visible copy, user-facing accessibility attributes, and
+reviewed social/search metadata. It deliberately ignores code, CSS, URLs, and
+official English organization names so proper nouns do not mask real UI leaks.
 """
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
+from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,30 +23,73 @@ PATTERNS: dict[str, str] = {
     "broken_titles": r"\b(?:Your\s+Listado|First-Time\s+Comprador|Free\s+NJ|What\s+Is\s+Mi\s+Casa|Sell\s+Mi\s+Casa\s+Fast|Buyer\s+Costs|Why\s+Choose\s+Jorge|Two\s+Small\s+Ciudad|Commuterss)\b",
     "english_cta": r"\b(?:Get\s+Home\s+Value|Know\s+My\s+Number|Start\s+the\s+Conversation|Find\s+a\s+Home|List\s+With\s+Jorge|Learn\s+More|Get\s+Started)\b",
     "english_real_estate": r"\b(?:Looking\s+to|Expert\s+guidance|Expert\s+bienes|buyer\s+and\s+seller|buyer\s+representation|seller\s+representation|Licensed\s+Agente|top[- ]rated|full[- ]time|since\s+2017)\b",
-    "english_metrics": r"\b(?:Median\s+price|Average\s+price|Days\s+on\s+Market|Property\s+Tax|Closing\s+Costs|Down\s+Payment)\b",
-    "english_context_words": r"\b(?:neighborhood|schools|commute|market\s+data|home\s+value|home\s+buyer|home\s+seller|homes\s+for\s+sale)\b",
+    # "Property Tax Statistics" is an official source title and is allowed.
+    "english_metrics": r"\b(?:Median\s+price|Average\s+price|Days\s+on\s+Market|Closing\s+Costs|Down\s+Payment)\b",
+    "english_context_words": r"\b(?:neighborhood\s+names|commute\s+(?:promise|time)|market\s+data|home\s+value|home\s+buyer|home\s+seller|homes\s+for\s+sale)\b",
+    "english_source_ui": r"\b(?:Buyer\s+and\s+seller\s+research\s+sequences|Open\s+the\s+primary\s+source|Official\s+municipal\s+website|Official\s+district\s+website)\b",
+    "english_source_kinds": r"\b(?:federal\s+geographic\s+profile|primary\s+municipal\s+source|official\s+station\s+page|state\s+fair\s+housing\s+guidance|state\s+civil\s+rights\s+guidance|state\s+property-tax\s+data\s+library|state\s+education\s+data\s+portal|official\s+transit\s+planning\s+tool|public-school\s+district\s+primary\s+source)\b",
+    "english_source_sentences": r"\b(?:Select\s+a\s+county|County\s+reports\s+do\s+not\s+establish|Review\s+the\s+state(?:'s|’s)|Averages,\s+assessments,\s+and\s+equalization\s+data|Search\s+current\s+state-published|Confirm\s+the\s+district\s+and\s+attendance\s+assignment|Confirm\s+whether\s+a\s+place\s+name|Check\s+the\s+current\s+route|Travel\s+time\s+varies|Postal\s+and\s+neighborhood\s+names|does\s+not\s+(?:establish|describe|promise|rank|predict))\b",
     "mojibake": r"(?:Ã|Â|â€™|â€œ|â€|�)",
 }
 
-# Lines dominated by paths/URLs/scripts are noisy. Meta/title/schema text still matters.
-SKIP_LINE = re.compile(r"(<script\b|</script>|href=|src=|canonical|@id|\"url\"|https?://)", re.I)
-KEEP_EVEN_IF_SKIP = re.compile(r"(<title\b|<meta\b|\"description\"|\"jobTitle\"|\"knowsAbout\")", re.I)
+IGNORED_ELEMENTS = {"script", "style", "template", "noscript", "svg"}
+USER_FACING_ATTRIBUTES = {"alt", "aria-label", "placeholder", "title"}
+META_FIELDS = {
+    "description",
+    "og:title",
+    "og:description",
+    "twitter:title",
+    "twitter:description",
+}
 
-# Match <style>...</style> blocks (any depth) — CSS is code, not prose.
-# Class selectors like ".neighborhood-card", ".schools-highlight", ".commute"
-# would otherwise trigger english_context_words false positives.
-STYLE_BLOCK = re.compile(r"<style\b[^>]*>.*?</style>", re.I | re.S)
+
+class SpanishCopyExtractor(HTMLParser):
+    """Collect prose a visitor, assistive technology, or search preview sees."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.ignored_depth = 0
+        self.parts: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        tag = tag.casefold()
+        attributes = {name.casefold(): value or "" for name, value in attrs}
+        if tag in IGNORED_ELEMENTS:
+            self.ignored_depth += 1
+            return
+        if self.ignored_depth:
+            return
+        if tag == "meta":
+            field = (attributes.get("name") or attributes.get("property") or "").casefold()
+            if field in META_FIELDS:
+                self._append(attributes.get("content", ""))
+        for name in USER_FACING_ATTRIBUTES:
+            self._append(attributes.get(name, ""))
+
+    def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        self.handle_starttag(tag, attrs)
+        if tag.casefold() in IGNORED_ELEMENTS:
+            self.handle_endtag(tag)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.casefold() in IGNORED_ELEMENTS and self.ignored_depth:
+            self.ignored_depth -= 1
+
+    def handle_data(self, data: str) -> None:
+        if not self.ignored_depth:
+            self._append(data)
+
+    def _append(self, value: str) -> None:
+        cleaned = " ".join(html.unescape(value).split())
+        if cleaned:
+            self.parts.append(cleaned)
 
 
 def visibleish_text(raw: str) -> str:
-    # Strip <style> blocks entirely — CSS class names are code, not visible content.
-    raw = STYLE_BLOCK.sub("", raw)
-    lines: list[str] = []
-    for line in raw.splitlines():
-        if SKIP_LINE.search(line) and not KEEP_EVEN_IF_SKIP.search(line):
-            continue
-        lines.append(line)
-    return "\n".join(lines)
+    parser = SpanishCopyExtractor()
+    parser.feed(raw)
+    parser.close()
+    return "\n".join(parser.parts)
 
 
 def audit_file(path: Path) -> dict[str, object]:
@@ -100,7 +145,7 @@ def main() -> int:
         for r in results[: args.limit]:
             cats = ", ".join(f"{k}={v}" for k, v in dict(r["categories"]).items())
             print(f"  {int(r['score']):>4}  {r['path']}  {cats}")
-    return 0
+    return 1 if results else 0
 
 
 if __name__ == "__main__":

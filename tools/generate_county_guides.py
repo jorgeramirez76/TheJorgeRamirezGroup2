@@ -42,6 +42,10 @@ def load_data() -> tuple[dict, dict]:
         "nj-locality-search",
     }:
         raise ValueError("county guide source inventory is incomplete")
+    for source in document["sharedSources"]:
+        for field in ("titleEs", "useEs", "limitEs"):
+            if not str(source.get(field, "")).strip():
+                raise ValueError(f"county guide source {source.get('id')} lacks {field}")
     return document, facts
 
 
@@ -55,6 +59,12 @@ def language_copy(language: str, county: dict) -> dict:
         return {
             "lang": "en",
             "locale": "en_US",
+            "county_name": f"{name} County",
+            "nav_label": "Primary navigation",
+            "breadcrumb_label": "Breadcrumb",
+            "credentials_label": "Page credentials",
+            "research_sequences_label": "Buyer and seller research sequences",
+            "license_label": "NJ License",
             "title": f"{name} County NJ Real Estate Guide | Jorge Ramirez",
             "description": (
                 f"Official-source {name} County NJ real estate guide for buyers and sellers, "
@@ -175,6 +185,12 @@ def language_copy(language: str, county: dict) -> dict:
     return {
         "lang": "es",
         "locale": "es_US",
+        "county_name": f"Condado de {name}",
+        "nav_label": "Navegación principal",
+        "breadcrumb_label": "Ruta de navegación",
+        "credentials_label": "Credenciales de la página",
+        "research_sequences_label": "Secuencias de investigación para compradores y vendedores",
+        "license_label": "Licencia de NJ",
         "title": f"Guía de Bienes Raíces: Condado de {name} NJ | Jorge Ramirez",
         "description": (
             f"Guía inmobiliaria del Condado de {name} para compradores y vendedores, con fuentes oficiales, "
@@ -305,12 +321,15 @@ def source_cards(document: dict, county: dict, copy: dict) -> str:
     ]
     cards = []
     for item in sources:
+        title = item.get("titleEs", item["title"]) if copy["lang"] == "es" else item["title"]
+        use = item.get("useEs", item["use"]) if copy["lang"] == "es" else item["use"]
+        limit = item.get("limitEs", item["limit"]) if copy["lang"] == "es" else item["limit"]
         cards.append(
             f'''<article class="source-card">
               <p class="source-publisher">{esc(item["publisher"])}</p>
-              <h3><a href="{esc(item["url"], quote=True)}" rel="noopener">{esc(item["title"])}</a></h3>
-              <p><strong>{esc(copy["use"])}:</strong> {esc(item["use"])}</p>
-              <p><strong>{esc(copy["limit"])}:</strong> {esc(item["limit"])}</p>
+              <h3><a href="{esc(item["url"], quote=True)}" rel="noopener">{esc(title)}</a></h3>
+              <p><strong>{esc(copy["use"])}:</strong> {esc(use)}</p>
+              <p><strong>{esc(copy["limit"])}:</strong> {esc(limit)}</p>
             </article>'''
         )
     return "\n".join(cards)
@@ -359,7 +378,7 @@ def render(document: dict, facts: dict, county: dict, language: str) -> str:
         comparison_markup = f'''
     <section class="county-section" aria-labelledby="comparisons-title">
       <div class="county-wrap">
-        <div class="section-heading"><span>{esc(name)} County</span><h2 id="comparisons-title">{esc(copy["comparisons_title"])}</h2><p>{esc(copy["comparisons_intro"])}</p></div>
+        <div class="section-heading"><span>{esc(copy["county_name"])}</span><h2 id="comparisons-title">{esc(copy["comparisons_title"])}</h2><p>{esc(copy["comparisons_intro"])}</p></div>
         <div class="town-grid">{comparison_links}</div>
       </div>
     </section>'''
@@ -474,7 +493,7 @@ def render(document: dict, facts: dict, county: dict, language: str) -> str:
 </head>
 <body class="county-research-page" data-source-review="{REVIEWED_ON}">
   <a class="skip-link" href="#main">{esc(copy["skip"])}</a>
-  <nav class="county-nav" aria-label="Primary navigation">
+  <nav class="county-nav" aria-label="{esc(copy["nav_label"], quote=True)}">
     <div class="county-nav__inner">
       <a class="county-logo" href="{prefix or '/'}" aria-label="The Jorge Ramirez Group">
         <picture><source srcset="/images/jorge-logo.webp" type="image/webp"><img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="250" height="100"></picture>
@@ -495,18 +514,18 @@ def render(document: dict, facts: dict, county: dict, language: str) -> str:
   <main id="main" tabindex="-1">
     <header class="county-hero">
       <div class="county-wrap">
-        <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{prefix or '/'}">{esc(copy["crumbs"][0])}</a><span aria-hidden="true">/</span><a href="{county_hub_route}">{esc(copy["crumbs"][1])}</a><span aria-hidden="true">/</span><span>{esc(copy["crumbs"][2])}</span></nav>
+        <nav class="breadcrumbs" aria-label="{esc(copy["breadcrumb_label"], quote=True)}"><a href="{prefix or '/'}">{esc(copy["crumbs"][0])}</a><span aria-hidden="true">/</span><a href="{county_hub_route}">{esc(copy["crumbs"][1])}</a><span aria-hidden="true">/</span><span>{esc(copy["crumbs"][2])}</span></nav>
         <p class="county-eyebrow">{esc(copy["eyebrow"])}</p>
         <h1>{esc(copy["h1"])}</h1>
         <p class="county-hero__intro">{esc(copy["hero"])}</p>
-        <div class="county-badges" aria-label="Page credentials">{badges}</div>
+        <div class="county-badges" aria-label="{esc(copy["credentials_label"], quote=True)}">{badges}</div>
         <div class="hero-actions">{hero_links}</div>
       </div>
     </header>
 
     <section class="county-section" aria-labelledby="scope-title">
       <div class="county-wrap">
-        <div class="section-heading"><span>{esc(name)} County</span><h2 id="scope-title">{esc(copy["scope_title"])}</h2><p>{esc(copy["scope_intro"])}</p></div>
+        <div class="section-heading"><span>{esc(copy["county_name"])}</span><h2 id="scope-title">{esc(copy["scope_title"])}</h2><p>{esc(copy["scope_intro"])}</p></div>
         <div class="scope-grid">{scope_cards}</div>
       </div>
     </section>
@@ -520,7 +539,7 @@ def render(document: dict, facts: dict, county: dict, language: str) -> str:
 
     <section class="county-section county-section--paper" aria-labelledby="towns-title">
       <div class="county-wrap">
-        <div class="section-heading"><span>{esc(name)} County</span><h2 id="towns-title">{esc(copy["towns_title"])}</h2><p>{esc(copy["towns_intro"])}</p></div>
+        <div class="section-heading"><span>{esc(copy["county_name"])}</span><h2 id="towns-title">{esc(copy["towns_title"])}</h2><p>{esc(copy["towns_intro"])}</p></div>
         <div class="town-grid">{town_links}</div>
         <a class="directory-link" href="{esc(county["directoryUrl"], quote=True)}" rel="noopener">{esc(copy["directory"])} →</a>
         <a class="directory-link" href="{town_hub_route}">{esc(copy["all_towns"])} →</a>
@@ -528,7 +547,7 @@ def render(document: dict, facts: dict, county: dict, language: str) -> str:
     </section>
 {comparison_markup}
 
-    <section class="county-section" aria-label="Buyer and seller research sequences">
+    <section class="county-section" aria-label="{esc(copy["research_sequences_label"], quote=True)}">
       <div class="county-wrap sequence-grid">
         <article class="sequence-card"><h2>{esc(copy["buyer_title"])}</h2><ol>{buyer_steps}</ol><a class="button button--primary" href="{prefix}/buy-a-home">{esc(copy["buyer_cta"])}</a></article>
         <article class="sequence-card sequence-card--gold"><h2>{esc(copy["seller_title"])}</h2><ol>{seller_steps}</ol><a class="button button--primary" href="{prefix}/home-valuation">{esc(copy["seller_cta"])}</a></article>
@@ -554,7 +573,7 @@ def render(document: dict, facts: dict, county: dict, language: str) -> str:
   <footer class="county-footer">
     <div class="county-wrap">
       <div class="footer-grid">
-        <section class="footer-brand"><picture><source srcset="/images/jorge-logo.webp" type="image/webp"><img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="250" height="100" loading="lazy"></picture><p>{esc(copy["footer_blurb"])}</p><p>488 Springfield Avenue<br>Summit, NJ 07901<br>NJ License #1754604</p></section>
+        <section class="footer-brand"><picture><source srcset="/images/jorge-logo.webp" type="image/webp"><img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="250" height="100" loading="lazy"></picture><p>{esc(copy["footer_blurb"])}</p><p>488 Springfield Avenue<br>Summit, NJ 07901<br>{esc(copy["license_label"])} #1754604</p></section>
         <section><h2>{esc(copy["footer_research"])}</h2><a href="{prefix}/communities">{esc(copy["nav"]["communities"])}</a><a href="{prefix}/blog">{esc(copy["nav"]["research"])}</a><a href="{prefix}/nj-train-map">NJ TRANSIT</a></section>
         <section><h2>{esc(copy["footer_services"])}</h2><a href="{prefix}/buy-a-home">{esc(copy["nav"]["buy"])}</a><a href="{prefix}/sell-your-home">{esc(copy["nav"]["sell"])}</a><a href="{prefix}/home-valuation">{esc(copy["nav"]["value"])}</a></section>
         <section><h2>{esc(copy["footer_contact"])}</h2><a href="tel:+19082307844">908-230-7844</a><a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a><a href="{prefix}/privacy-policy">{esc(copy["privacy"])}</a></section>

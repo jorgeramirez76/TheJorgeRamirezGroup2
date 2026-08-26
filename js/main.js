@@ -1,7 +1,7 @@
 // Main JavaScript for Jorge Ramirez Real Estate Website
 
 // Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
@@ -46,38 +46,112 @@ if (mobileMenuBtn) {
 }
 
 // Communities rendering functionality
-// County info for display
-const countyInfo = {
-    "Essex": {
-        highlight: "Bloomfield, Maplewood, Millburn, Montclair",
-        description: "Six maintained guides connecting Essex County addresses to municipal, property, tax, transit, and district sources.",
-        photo: "/images/county-cards/essex.webp"
+const communityLanguage = (document.documentElement.lang || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const isSpanishCommunityUi = communityLanguage === 'es';
+const countyInfoByLanguage = {
+    en: {
+        "Essex": {
+            highlight: "Bloomfield, Maplewood, Millburn, Montclair",
+            description: "Six maintained guides connecting Essex County addresses to municipal, property, tax, transit, and district sources.",
+            photo: "/images/county-cards/essex.webp"
+        },
+        "Hudson": {
+            highlight: "Guttenberg, Hoboken, Jersey City, West New York",
+            description: "Four maintained guides connecting Hudson County addresses to municipal, property, transit, and tax sources.",
+            photo: "/images/county-cards/hudson.webp"
+        },
+        "Morris": {
+            highlight: "Chatham, Denville, Madison, Morristown",
+            description: "Eight maintained guides for municipal records, property research, transportation sources, and district information.",
+            photo: "/images/county-cards/morris.webp"
+        },
+        "Middlesex": {
+            highlight: "East Brunswick, Helmetta, Middlesex, Woodbridge",
+            description: "Five maintained guides for municipal, property, transportation, tax, and district-source research.",
+            photo: "/images/county-cards/middlesex.webp"
+        },
+        "Union": {
+            highlight: "Berkeley Heights, Cranford, Summit, Westfield",
+            description: "Jorge's Summit office is in Union County, with eight maintained guides for property and municipal research.",
+            photo: "/images/county-cards/union.webp"
+        },
+        "Somerset": {
+            highlight: "Basking Ridge",
+            description: "The maintained Basking Ridge guide connects an address to Bernards Township, property, tax, transit, and district sources.",
+            photo: "/images/county-cards/somerset.webp"
+        }
     },
-    "Hudson": {
-        highlight: "Guttenberg, Hoboken, Jersey City, West New York",
-        description: "Four maintained guides connecting Hudson County addresses to municipal, property, transit, and tax sources.",
-        photo: "/images/county-cards/hudson.webp"
-    },
-    "Morris": {
-        highlight: "Chatham, Denville, Madison, Morristown",
-        description: "Eight maintained guides for municipal records, property research, transportation sources, and district information.",
-        photo: "/images/county-cards/morris.webp"
-    },
-    "Middlesex": {
-        highlight: "East Brunswick, Helmetta, Middlesex, Woodbridge",
-        description: "Five maintained guides for municipal, property, transportation, tax, and district-source research.",
-        photo: "/images/county-cards/middlesex.webp"
-    },
-    "Union": {
-        highlight: "Berkeley Heights, Cranford, Summit, Westfield",
-        description: "Jorge's Summit office is in Union County, with eight maintained guides for property and municipal research.",
-        photo: "/images/county-cards/union.webp"
-    },
-    "Somerset": {
-        highlight: "Basking Ridge",
-        description: "The maintained Basking Ridge guide connects an address to Bernards Township, property, tax, transit, and district sources.",
-        photo: "/images/county-cards/somerset.webp"
+    es: {
+        "Essex": {
+            highlight: "Bloomfield, Maplewood, Millburn, Montclair",
+            description: "Seis guías revisadas conectan las direcciones del condado de Essex con fuentes municipales, de propiedad, impuestos, transporte y distritos escolares.",
+            photo: "/images/county-cards/essex.webp"
+        },
+        "Hudson": {
+            highlight: "Guttenberg, Hoboken, Jersey City, West New York",
+            description: "Cuatro guías revisadas conectan las direcciones del condado de Hudson con fuentes municipales, de propiedad, transporte e impuestos.",
+            photo: "/images/county-cards/hudson.webp"
+        },
+        "Morris": {
+            highlight: "Chatham, Denville, Madison, Morristown",
+            description: "Ocho guías revisadas permiten consultar registros municipales, propiedades, transporte y distritos escolares.",
+            photo: "/images/county-cards/morris.webp"
+        },
+        "Middlesex": {
+            highlight: "East Brunswick, Helmetta, Middlesex, Woodbridge",
+            description: "Cinco guías revisadas permiten consultar fuentes municipales, de propiedad, transporte, impuestos y distritos escolares.",
+            photo: "/images/county-cards/middlesex.webp"
+        },
+        "Union": {
+            highlight: "Berkeley Heights, Cranford, Summit, Westfield",
+            description: "La oficina de Jorge en Summit está en el condado de Union, con ocho guías revisadas para investigar propiedades y registros municipales.",
+            photo: "/images/county-cards/union.webp"
+        },
+        "Somerset": {
+            highlight: "Basking Ridge",
+            description: "La guía revisada de Basking Ridge conecta una dirección con fuentes de Bernards Township, propiedad, impuestos, transporte y distrito escolar.",
+            photo: "/images/county-cards/somerset.webp"
+        }
     }
+};
+const countyInfo = countyInfoByLanguage[communityLanguage];
+const communityUi = isSpanishCommunityUi ? {
+    countyName: county => `Condado de ${county}`,
+    exploreCounty: county => `Explorar el condado de ${county}`,
+    guideCount: count => `${count} ${count === 1 ? 'guía' : 'guías'} locales`,
+    allCounties: 'Todos los condados',
+    searchPlaceholder: county => `Buscar municipio en el condado de ${county}...`,
+    searchLabel: county => `Buscar en las guías del condado de ${county}`,
+    resultStatus: count => count === 0
+        ? 'No hay guías locales que coincidan con la búsqueda.'
+        : `${count} ${count === 1 ? 'guía local disponible' : 'guías locales disponibles'}.`,
+    emptyState: 'No hay guías locales que coincidan. Prueba con otro municipio.',
+    exploreTown: town => `Explorar ${town}`,
+    commuteLabel: 'Viaje a NYC:',
+    districtLabel: 'Distrito escolar:',
+    townPath: slug => `/es/towns/${slug}`,
+    description: community => {
+        const sources = community.url_slug === 'basking-ridge'
+            ? 'fuentes oficiales de Bernards Township, de propiedad, impuestos, transporte y distrito escolar'
+            : 'fuentes oficiales municipales, de propiedad, impuestos, transporte y distrito escolar';
+        return `Usa la guía revisada de ${community.town} para consultar ${sources} para una dirección específica.`;
+    }
+} : {
+    countyName: county => `${county} County`,
+    exploreCounty: county => `Explore ${county} County`,
+    guideCount: count => `${count} ${count === 1 ? 'Town Guide' : 'Town Guides'}`,
+    allCounties: 'All Counties',
+    searchPlaceholder: county => `Search towns in ${county} County...`,
+    searchLabel: county => `Search ${county} County town guides`,
+    resultStatus: count => count === 0
+        ? 'No town guides match this search.'
+        : `${count} ${count === 1 ? 'town guide available' : 'town guides available'}.`,
+    emptyState: 'No town guides match. Try another town name.',
+    exploreTown: town => `Explore ${town}`,
+    commuteLabel: 'NYC Commute:',
+    districtLabel: 'School district:',
+    townPath: slug => `/towns/${slug}`,
+    description: community => community.description || ''
 };
 
 let activeCounty = null;
@@ -90,14 +164,14 @@ function renderCountyCards() {
         const info = countyInfo[county];
         const townGuideCount = (communitiesData[county] || []).length;
         return `
-        <button type="button" class="county-hero-card" data-county="${county}" aria-label="Explore ${county} County" onclick="openCounty('${county}')">
+        <button type="button" class="county-hero-card" data-county="${county}" aria-label="${communityUi.exploreCounty(county)}" onclick="openCounty('${county}')">
             <span class="county-hero-photo" data-bg="${info.photo}" aria-hidden="true"></span>
             <span class="county-hero-body">
-                <span class="county-hero-name">${county} County</span>
-                <span class="county-hero-towns">${townGuideCount} Town Guides</span>
+                <span class="county-hero-name">${communityUi.countyName(county)}</span>
+                <span class="county-hero-towns">${communityUi.guideCount(townGuideCount)}</span>
                 <span class="county-hero-highlight">${info.highlight}</span>
                 <span class="county-hero-desc">${info.description}</span>
-                <span class="county-hero-cta">Explore ${county} County →</span>
+                <span class="county-hero-cta">${communityUi.exploreCounty(county)} →</span>
             </span>
         </button>`;
     }).join('');
@@ -170,16 +244,17 @@ function openCounty(county) {
 
     const towns = communitiesData[county] || [];
 
-    const backBtn = `<button type="button" class="county-back-btn" onclick="closeCounty()">\u2190 All Counties</button>`;
+    const backBtn = `<button type="button" class="county-back-btn" onclick="closeCounty()">\u2190 ${communityUi.allCounties}</button>`;
     const countyTitle = `<div class="county-open-header">
-        <h3>${county} County — ${towns.length} Town Guides</h3>
+        <h3>${communityUi.countyName(county)} — ${communityUi.guideCount(towns.length)}</h3>
         <p>${countyInfo[county].description}</p>
     </div>`;
 
     const search = `<div class="county-search-wrap">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="town-search" placeholder="Search towns in ${county} County..." oninput="filterTowns('${county}', this.value)">
-    </div>`;
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input type="text" id="town-search" aria-label="${communityUi.searchLabel(county)}" aria-describedby="town-search-status" placeholder="${communityUi.searchPlaceholder(county)}" oninput="filterTowns('${county}', this.value)">
+    </div>
+    <p id="town-search-status" class="visually-hidden" role="status" aria-live="polite">${communityUi.resultStatus(towns.length)}</p>`;
 
     const townCards = `<div class="communities-grid" id="towns-grid">` +
         towns.map(c => buildTownCard(c, county)).join('') +
@@ -208,9 +283,13 @@ function filterTowns(county, term) {
     if (!grid) return;
     const towns = communitiesData[county] || [];
     const filtered = term
-        ? towns.filter(c => c.town.toLowerCase().includes(term.toLowerCase()) || (c.description && c.description.toLowerCase().includes(term.toLowerCase())))
+        ? towns.filter(c => c.town.toLowerCase().includes(term.toLowerCase()) || communityUi.description(c).toLowerCase().includes(term.toLowerCase()))
         : towns;
-    grid.innerHTML = filtered.map(c => buildTownCard(c, county)).join('');
+    grid.innerHTML = filtered.length
+        ? filtered.map(c => buildTownCard(c, county)).join('')
+        : `<p class="community-empty-state">${communityUi.emptyState}</p>`;
+    const status = document.getElementById('town-search-status');
+    if (status) status.textContent = communityUi.resultStatus(filtered.length);
 }
 
 function buildTownCard(c, county) {
@@ -220,15 +299,15 @@ function buildTownCard(c, county) {
         : '';
     return `
     <div class="community-card">
-        <span class="county-badge">${county} County</span>
+        <span class="county-badge">${communityUi.countyName(county)}</span>
         <h3>${c.town}</h3>
-        <p class="community-desc">${c.description || ''}</p>
+        <p class="community-desc">${communityUi.description(c)}</p>
         ${transitBadges}
         <div class="community-details">
-            ${c.commute_to_nyc ? `<div class="detail-item"><span class="detail-label">NYC Commute:</span> ${c.commute_to_nyc}</div>` : ''}
-            ${c.schools ? `<div class="detail-item"><span class="detail-label">Schools:</span> ${c.schools.substring(0,100)}...</div>` : ''}
+            ${c.commute_to_nyc ? `<div class="detail-item"><span class="detail-label">${communityUi.commuteLabel}</span> ${c.commute_to_nyc}</div>` : ''}
+            ${c.schools ? `<div class="detail-item"><span class="detail-label">${communityUi.districtLabel}</span> ${c.schools.substring(0,100)}...</div>` : ''}
         </div>
-        <a href="/towns/${slug}" class="community-link">Explore ${c.town} →</a>
+        <a href="${communityUi.townPath(slug)}" class="community-link">${communityUi.exploreTown(c.town)} →</a>
     </div>`;
 }
 

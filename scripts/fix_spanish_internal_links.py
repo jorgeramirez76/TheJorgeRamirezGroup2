@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Repair the two reviewed missing-route patterns in Spanish public HTML."""
+"""Repair reviewed missing and cross-language routes in Spanish public HTML."""
 
 from __future__ import annotations
 
@@ -13,11 +13,18 @@ MISSING_TERMS = re.compile(
     r'\s*(?:·\s*)?<a\s+href=["\']/es/terms-of-service["\'][^>]*>.*?</a>',
     re.IGNORECASE | re.DOTALL,
 )
+TRANSLATED_DESTINATIONS = {
+    "/home-valuation": "/es/home-valuation",
+    "/property-search": "/es/property-search",
+}
 
 
 def normalize(document: str) -> str:
     document = document.replace('href="/es/contact"', 'href="/es/#contact"')
     document = document.replace("href='/es/contact'", "href='/es/#contact'")
+    for english, spanish in TRANSLATED_DESTINATIONS.items():
+        document = document.replace(f'href="{english}"', f'href="{spanish}"')
+        document = document.replace(f"href='{english}'", f"href='{spanish}'")
     return MISSING_TERMS.sub("", document)
 
 

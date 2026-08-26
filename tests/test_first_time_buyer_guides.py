@@ -35,7 +35,7 @@ PAGES = {
         "lang": "es",
         "canonical": "https://thejorgeramirezgroup.com/es/blog/first-time-home-buyer-nj-guide",
         "contact": "/es#contact",
-        "search": "/property-search",
+        "search": "/es/property-search",
         "required_copy": (
             "El contrato controla",
             "totalmente negociable y no está fijada por ley",
