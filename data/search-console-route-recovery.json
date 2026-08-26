@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-26",
+  "source": "Read-only Google Search Console coverage exports supplied for the 2026-08-26 release audit; raw owner exports remain outside the repository.",
+  "policy": "Redirect only an observed broken or retired address when a current, indexable, same-language destination preserves the address's apparent intent. Vercel cleanUrls normally covers the matching .html request before the exact clean-route redirect; a pre-existing explicit .html rule is retained only when another retirement contract already established it.",
+  "routes": [
+    {
+      "source": "/towns/${s.slug}",
+      "destination": "/towns",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/blog/es/como-elegir-agente-inmobiliario-nj",
+      "destination": "/es/ai-authority",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/blog/es/informe-mercado-inmobiliario-union-county-nj",
+      "destination": "/es/blog/union-county-nj-real-estate-market-report-2026",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/blog/es/propiedades-heredadas-probate-nj",
+      "destination": "/es/blog/probate-real-estate-nj-guide",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/neighborhoods-millburn-nj",
+      "destination": "/counties/essex-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/viral-grout-cleaning-hack-tile-damage-nj-2026",
+      "destination": "/sell-your-home",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/viral-grout-cleaning-hack-tile-damage-nj-2026.html",
+      "destination": "/sell-your-home",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/nyc-to-nj-commute-guide-2026",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/nyc-to-nj-commute-guide-2026.html",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/es/towns/hanover-township",
+      "destination": "/es/counties/morris-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/es/towns/hanover-township.html",
+      "destination": "/es/counties/morris-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/highland-park-nj",
+      "destination": "/es/counties/middlesex-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/garwood-nj",
+      "destination": "/es/counties/union-county",
+      "evidence": "not-found,crawled-not-indexed"
+    },
+    {
+      "source": "/es/towns/es/garwood-nj",
+      "destination": "/es/counties/union-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/west-caldwell-nj",
+      "destination": "/es/counties/essex-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/jamesburg-nj",
+      "destination": "/es/counties/middlesex-county",
+      "evidence": "not-found,crawled-not-indexed"
+    },
+    {
+      "source": "/towns/es/butler-nj",
+      "destination": "/es/counties/morris-county",
+      "evidence": "not-found,crawled-not-indexed"
+    },
+    {
+      "source": "/es/towns/es/butler-nj",
+      "destination": "/es/counties/morris-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/chatham-nj",
+      "destination": "/es/towns/chatham",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/es/towns/es/chatham-nj",
+      "destination": "/es/towns/chatham",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/chatham-township-nj",
+      "destination": "/es/towns/chatham-township",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/morristown-nj",
+      "destination": "/es/towns/morristown",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/springfield-nj",
+      "destination": "/es/towns/springfield",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/roseland-nj",
+      "destination": "/es/counties/essex-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/scotch-plains-nj",
+      "destination": "/es/counties/union-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/milltown-nj",
+      "destination": "/es/counties/middlesex-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/es/towns/es/harrison-nj",
+      "destination": "/es/counties/hudson-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/es/towns/es/morris-township-nj",
+      "destination": "/es/counties/morris-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/boonton-nj",
+      "destination": "/es/counties/morris-county",
+      "evidence": "crawled-not-indexed"
+    },
+    {
+      "source": "/towns/es/mount-arlington-nj",
+      "destination": "/es/counties/morris-county",
+      "evidence": "crawled-not-indexed"
+    },
+    {
+      "source": "/towns/es/south-river-nj",
+      "destination": "/es/counties/middlesex-county",
+      "evidence": "crawled-not-indexed"
+    },
+    {
+      "source": "/es/towns/es/south-river-nj",
+      "destination": "/es/counties/middlesex-county",
+      "evidence": "not-found"
+    },
+    {
+      "source": "/towns/es/short-hills-nj",
+      "destination": "/es/towns/millburn",
+      "evidence": "crawled-not-indexed"
+    },
+    {
+      "source": "/towns/es/montclair-nj",
+      "destination": "/es/towns/montclair",
+      "evidence": "crawled-not-indexed"
+    },
+    {
+      "source": "/towns/es/clark-nj",
+      "destination": "/es/counties/union-county",
+      "evidence": "crawled-not-indexed"
+    },
+    {
+      "source": "/towns/es/denville-nj",
+      "destination": "/es/towns/denville",
+      "evidence": "crawled-not-indexed"
+    }
+  ]
+}

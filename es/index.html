@@ -21,8 +21,8 @@
     <!-- Geo Meta Tags -->
     <meta name="geo.region" content="US-NJ">
     <meta name="geo.placename" content="Summit, Nueva Jersey">
-    <meta name="geo.position" content="40.7195;-74.3648">
-    <meta name="ICBM" content="40.7195, -74.3648">
+    <meta name="geo.position" content="40.7157;-74.3601">
+    <meta name="ICBM" content="40.7157, -74.3601">
     
     <!-- Bing Optimization -->
     <meta name="msnbot" content="index, follow">
@@ -77,10 +77,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
     
-    <!-- Preload hero fallback for faster LCP -->
-    <link rel="preload" as="image" href="/images/hero.webp" type="image/webp">
-    <!-- Preconnect to Unsplash for carousel images -->
-    <link rel="preconnect" href="https://images.unsplash.com">
+    <!-- Preload the first local carousel image for faster LCP. -->
+    <link rel="preload" as="image" href="/images/properties/04-brick-stone.webp" type="image/webp">
 
     <link rel="stylesheet" href="/css/styles.css">
     <!-- AI Context File — helps ChatGPT, Perplexity, Claude, Gemini understand this site -->
@@ -92,13 +90,15 @@
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   "@id": "https://thejorgeramirezgroup.com/#agent",
-  "name": "Jorge Ramirez - The Jorge Ramirez Group",
+  "name": "The Jorge Ramirez Group",
   "image": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
+  "logo": "https://thejorgeramirezgroup.com/images/jorge-logo.jpg",
   "url": "https://thejorgeramirezgroup.com",
-  "telephone": "+1-908-230-7844",
+  "telephone": "+19082307844",
+  "email": "jorge.ramirez@kw.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "488 Springfield Avenue",
+    "streetAddress": "488 Springfield Ave",
     "addressLocality": "Summit",
     "addressRegion": "NJ",
     "postalCode": "07901",
@@ -106,30 +106,33 @@
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "40.7195",
-    "longitude": "-74.3648"
+    "latitude": 40.7157,
+    "longitude": -74.3601
   },
-  "priceRange": "$$",
   "areaServed": [
     {
       "@type": "AdministrativeArea",
-      "name": "Condado de Essex, Nueva Jersey"
+      "name": "Union County, New Jersey"
     },
     {
       "@type": "AdministrativeArea",
-      "name": "Condado de Hudson, Nueva Jersey"
+      "name": "Essex County, New Jersey"
     },
     {
       "@type": "AdministrativeArea",
-      "name": "Condado de Morris, Nueva Jersey"
+      "name": "Morris County, New Jersey"
     },
     {
       "@type": "AdministrativeArea",
-      "name": "Condado de Middlesex, Nueva Jersey"
+      "name": "Hudson County, New Jersey"
     },
     {
       "@type": "AdministrativeArea",
-      "name": "Condado de Union, Nueva Jersey"
+      "name": "Middlesex County, New Jersey"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Somerset County, New Jersey"
     }
   ],
   "sameAs": [
@@ -137,39 +140,25 @@
     "https://www.linkedin.com/in/jorge-ramirez-37034025",
     "https://www.facebook.com/thejorgeramirezgroup"
   ],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "08:00",
-    "closes": "20:00"
-  },
-  "makesOffer": {
-    "@type": "Offer",
-    "itemOffered": {
-      "@type": "Service",
-      "name": "Segmentación Inteligente de Prospectos",
-      "description": "Sistema de ventas impulsado por IA que conecta automáticamente las propiedades con compradores calificados mediante alcance por correo electrónico, mensaje de texto y teléfono, con seguimiento automatizado"
+  "founder": {
+    "@type": "Person",
+    "name": "Jorge Ramirez",
+    "jobTitle": "Agente inmobiliario de Nueva Jersey",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "New Jersey Real Estate License",
+      "value": "1754604"
     }
   },
   "parentOrganization": {
     "@type": "Organization",
-    "name": "Keller Williams Realty Premier Properties",
-    "url": "https://www.kw.com"
+    "name": "Keller Williams Premier Properties"
   },
   "knowsAbout": [
     "Bienes Raíces en Nueva Jersey",
     "Estrategia de Venta de Casas",
     "Fijación de Precio de Casas y Análisis de Mercado",
     "Servicios de Agente de Listado",
-    "Marketing de Bienes Raíces Impulsado por IA",
     "Propiedades para Quienes Viajan a NYC",
     "Compradores de Casa Primerizos",
     "Propiedades de Inversión",
@@ -184,55 +173,16 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": "https://thejorgeramirezgroup.com/#website",
       "name": "The Jorge Ramirez Group",
       "alternateName": "Jorge Ramirez Bienes Raíces",
       "url": "https://thejorgeramirezgroup.com",
       "description": "Sitio web de bienes raíces de Nueva Jersey de The Jorge Ramirez Group en Keller Williams Premier Properties. Ayuda a los propietarios de NJ a vender al mejor precio y a los compradores a encontrar la casa correcta en comunidades de los condados de Essex, Hudson, Morris, Middlesex, Union y Somerset.",
       "publisher": {
-        "@type": "RealEstateAgent",
-        "name": "Jorge Ramirez",
         "@id": "https://thejorgeramirezgroup.com/#agent"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://thejorgeramirezgroup.com/#communities?q={search_term_string}",
-        "query-input": "required name=search_term_string"
       }
     }
     </script>
-
-    <!-- JSON-LD Structured Data: Person Schema -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Jorge Ramirez",
-  "jobTitle": "Agente Inmobiliario",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Keller Williams Premier Properties"
-  },
-  "url": "https://thejorgeramirezgroup.com",
-  "image": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
-  "telephone": "+1-908-230-7844",
-  "email": "jorge.ramirez@kw.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "488 Springfield Avenue",
-    "addressLocality": "Summit",
-    "addressRegion": "NJ",
-    "postalCode": "07901",
-    "addressCountry": "US"
-  },
-  "knowsAbout": [
-    "Bienes Raíces",
-    "Casas de Lujo",
-    "Propiedades para Quienes Viajan a NYC",
-    "Propiedades de Inversión",
-    "Compradores de Casa Primerizos"
-  ]
-}
-</script>
 
     <!-- JSON-LD Structured Data: Service Schema -->
     <script type="application/ld+json">
@@ -243,10 +193,14 @@
       "provider": {
         "@id": "https://thejorgeramirezgroup.com/#agent"
       },
-      "areaServed": {
-        "@type": "State",
-        "name": "Nueva Jersey"
-      },
+      "areaServed": [
+        {"@type": "AdministrativeArea", "name": "Union County, New Jersey"},
+        {"@type": "AdministrativeArea", "name": "Essex County, New Jersey"},
+        {"@type": "AdministrativeArea", "name": "Morris County, New Jersey"},
+        {"@type": "AdministrativeArea", "name": "Hudson County, New Jersey"},
+        {"@type": "AdministrativeArea", "name": "Middlesex County, New Jersey"},
+        {"@type": "AdministrativeArea", "name": "Somerset County, New Jersey"}
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Servicios de Bienes Raíces",
@@ -284,85 +238,6 @@
     }
     </script>
     
-    <!-- JSON-LD Structured Data: Breadcrumb Schema -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Inicio",
-      "item": "https://thejorgeramirezgroup.com/es/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Comunidades",
-      "item": "https://thejorgeramirezgroup.com/es#communities"
-    }
-  ]
-}
-</script>
-    
-    <!-- Speakable Schema — tells Bing Copilot and AI which text to cite -->
-
-    <!-- JSON-LD: LocalBusiness Schema (critical for local SEO) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://thejorgeramirezgroup.com/#localbusiness",
-      "name": "The Jorge Ramirez Group",
-      "image": "https://thejorgeramirezgroup.com/images/jorge-logo.jpg",
-      "url": "https://thejorgeramirezgroup.com",
-      "telephone": "+1-908-230-7844",
-      "email": "jorge.ramirez@kw.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "488 Springfield Avenue",
-        "addressLocality": "Summit",
-        "addressRegion": "NJ",
-        "postalCode": "07901",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "40.7195",
-        "longitude": "-74.3648"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "08:00",
-          "closes": "20:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday","Sunday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        }
-      ],
-      "priceRange": "$$",
-      "areaServed": [
-        {"@type": "City", "name": "Summit, NJ"},
-        {"@type": "City", "name": "Westfield, NJ"},
-        {"@type": "City", "name": "Chatham, NJ"},
-        {"@type": "City", "name": "Montclair, NJ"},
-        {"@type": "City", "name": "Maplewood, NJ"},
-        {"@type": "City", "name": "Hoboken, NJ"},
-        {"@type": "City", "name": "Jersey City, NJ"}
-      ],
-      "sameAs": [
-        "https://www.instagram.com/jorgesellsnjhomes",
-        "https://www.linkedin.com/in/jorge-ramirez-37034025",
-        "https://www.facebook.com/thejorgeramirezgroup"
-      ]
-    }
-    </script>
 </head>
 <body>
 <a href="#home" class="skip-link" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Saltar al contenido principal</a>
@@ -398,12 +273,12 @@
     <!-- Hero Section — Rotating Image Carousel -->
     <main id="main" tabindex="-1">
     <section class="hero" id="home">
-        <div class="hero-carousel">
-            <div class="hero-slide active" data-bg="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80&fit=crop"></div>
-            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1920&q=80&fit=crop"></div>
+        <div class="hero-carousel" aria-hidden="true">
+            <div class="hero-slide active" data-bg="/images/properties/04-brick-stone.webp" style="background-image:url('/images/properties/04-brick-stone.webp')"></div>
+            <div class="hero-slide" data-bg="/images/properties/03-shingle-porch.webp"></div>
+            <div class="hero-slide" data-bg="/images/properties/01-loft-living.webp"></div>
+            <div class="hero-slide" data-bg="/images/properties/08-exterior.webp"></div>
+            <div class="hero-slide" data-bg="/images/properties/05-kitchen.webp"></div>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -905,7 +780,7 @@
 
             <!-- Google Maps Embed -->
             <div style="margin-top: 3rem;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.8!2d-74.3648!3d40.7195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3ad0!2s488+Springfield+Ave%2C+Summit%2C+NJ+07901!5e0!3m2!1sen!2sus!4v1" width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Jorge Ramirez Group - Ubicación de la Oficina de Keller Williams en Summit, NJ"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.8!2d-74.3601!3d40.7157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3ad0!2s488+Springfield+Ave%2C+Summit%2C+NJ+07901!5e0!3m2!1sen!2sus!4v1" width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Jorge Ramirez Group - Ubicación de la Oficina de Keller Williams en Summit, NJ"></iframe>
             </div>
         </div>
     </section>

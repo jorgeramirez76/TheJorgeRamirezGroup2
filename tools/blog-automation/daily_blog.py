@@ -115,7 +115,7 @@ OLD_KEYWORDS = ("Cranford NJ homes for sale, buying home Cranford NJ, Cranford r
 OLD_SLUG = "buying-a-home-in-new-jersey-2026"
 OLD_GEO = "Cranford, New Jersey"
 
-HERO_IMG = "https://images.unsplash.com/photo-1560185127-6a63a8f07ab9?w=600&h=180&fit=crop"
+HERO_IMG = "/images/blog-hero/decluttering-living-room-768.webp"
 
 
 def log(msg):
@@ -442,7 +442,7 @@ def add_to_index(post, slug):
     card = f'''
                 <!-- AUTO {datetime.date.today().isoformat()} -->
             <article style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: white; box-shadow:0 8px 24px rgba(0,0,0,0.06);">
-                <img src="{HERO_IMG}" alt="{esc(post['h1'])}" style="width: 100%; height: 180px; object-fit: cover;" onerror="this.src='{HERO_IMG}'">
+                <img src="{HERO_IMG}" alt="{esc(post['h1'])}" width="768" height="481" loading="lazy" decoding="async" style="width: 100%; height: 180px; object-fit: cover;">
                 <div style="padding: 20px;">
                     <p style="color:#b8962e;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin:0 0 8px;">{esc(post['category'])} · New</p>
                     <h2 style="margin-top: 0;"><a href="{slug}.html" style="color: #333; text-decoration: none;">{esc(post['h1'])}</a></h2>

@@ -52,37 +52,37 @@ const countyInfo = {
         towns: 11,
         highlight: "Maplewood, South Orange, Montclair, Livingston",
         description: "Walkable downtowns, Midtown Direct trains, and communities from Montclair to Livingston.",
-        photo: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80&fit=crop"
+        photo: "/images/county-cards/essex.webp"
     },
     "Hudson": {
         towns: 12,
         highlight: "Hoboken, Jersey City, Weehawken, Bayonne",
         description: "Waterfront living with NYC skyline views, PATH access, and vibrant urban neighborhoods.",
-        photo: "https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80&fit=crop"
+        photo: "/images/county-cards/hudson.webp"
     },
     "Morris": {
         towns: 37,
         highlight: "Chatham, Madison, Morristown, Florham Park",
         description: "local school-district information, green space, and higher-priced commuter towns along the Morris & Essex Line.",
-        photo: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&fit=crop"
+        photo: "/images/county-cards/morris.webp"
     },
     "Middlesex": {
         towns: 22,
         highlight: "Edison, Metuchen, Woodbridge, South Plainfield",
         description: "Communities with local schools, major highway access, and varied housing options.",
-        photo: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80&fit=crop"
+        photo: "/images/county-cards/middlesex.webp"
     },
     "Union": {
         towns: 21,
         highlight: "Summit, Westfield, Cranford, Scotch Plains",
         description: "Jorge's home turf — top commuter towns with local public-school districts and direct resale values.",
-        photo: "https://images.unsplash.com/photo-1598228723793-52759bba239c?w=600&q=80&fit=crop"
+        photo: "/images/county-cards/union.webp"
     },
     "Somerset": {
         towns: 10,
         highlight: "Warren, Watchung, Basking Ridge, Bridgewater",
         description: "Room to breathe, local schools, corporate access, and move-up neighborhoods.",
-        photo: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&fit=crop"
+        photo: "/images/county-cards/somerset.webp"
     }
 };
 
@@ -96,7 +96,7 @@ function renderCountyCards() {
         const info = countyInfo[county];
         return `
         <div class="county-hero-card" data-county="${county}" onclick="openCounty('${county}')">
-            <div class="county-hero-photo" style="background-image:url('${info.photo}')"></div>
+            <div class="county-hero-photo" data-bg="${info.photo}" aria-hidden="true"></div>
             <div class="county-hero-body">
                 <div class="county-hero-name">${county} County</div>
                 <div class="county-hero-towns">${info.towns} Communities</div>
@@ -106,7 +106,68 @@ function renderCountyCards() {
             </div>
         </div>`;
     }).join('');
+    observeCountyPhotos(container);
 }
+
+function observeCountyPhotos(container) {
+    const photos = Array.from(container.querySelectorAll('.county-hero-photo[data-bg]'));
+    const load = photo => {
+        photo.style.backgroundImage = `url('${photo.dataset.bg}')`;
+        delete photo.dataset.bg;
+    };
+    if (!('IntersectionObserver' in window)) {
+        photos.forEach(load);
+        return;
+    }
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            load(entry.target);
+            currentObserver.unobserve(entry.target);
+        });
+    }, { rootMargin: '300px 0px' });
+    photos.forEach(photo => observer.observe(photo));
+}
+
+(function observeRevealTilePhotos() {
+    const tiles = Array.from(document.querySelectorAll('.reveal-tile[data-reveal-img]'));
+    const load = tile => {
+        tile.style.setProperty('--reveal-img', `url('${tile.dataset.revealImg}')`);
+        delete tile.dataset.revealImg;
+    };
+    if (!('IntersectionObserver' in window)) {
+        tiles.forEach(load);
+        return;
+    }
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            load(entry.target);
+            currentObserver.unobserve(entry.target);
+        });
+    }, { rootMargin: '300px 0px' });
+    tiles.forEach(tile => observer.observe(tile));
+})();
+
+(function observeListingPhotos() {
+    const photos = Array.from(document.querySelectorAll('.listing-img[data-listing-img]'));
+    const load = photo => {
+        photo.style.backgroundImage = `url('${photo.dataset.listingImg}')`;
+        delete photo.dataset.listingImg;
+    };
+    if (!('IntersectionObserver' in window)) {
+        photos.forEach(load);
+        return;
+    }
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            load(entry.target);
+            currentObserver.unobserve(entry.target);
+        });
+    }, { rootMargin: '300px 0px' });
+    photos.forEach(photo => observer.observe(photo));
+})();
 
 function openCounty(county) {
     activeCounty = county;
@@ -208,32 +269,64 @@ if ('IntersectionObserver' in window) {
 // HERO IMAGE CAROUSEL
 // ============================
 (function initHeroCarousel() {
-    const slides = document.querySelectorAll('.hero-slide');
+    const slides = Array.from(document.querySelectorAll('.hero-slide'));
     if (slides.length === 0) return;
 
-    // Load background images from data-bg attribute
-    slides.forEach(slide => {
-        // Skip any slide already painted inline (the LCP hero) — avoids a wasteful re-fetch/re-paint.
-        if (slide.style.backgroundImage) return;
+    function loadSlide(slide) {
+        if (slide.style.backgroundImage) return Promise.resolve(true);
+        if (slide.dataset.loadState === 'failed') return Promise.resolve(false);
+        if (slide.dataset.loadState === 'loading' && slide._imagePromise) return slide._imagePromise;
+
         const url = slide.getAttribute('data-bg');
-        if (url) {
+        if (!url) return Promise.resolve(false);
+        slide.dataset.loadState = 'loading';
+        slide._imagePromise = new Promise(resolve => {
             const img = new Image();
-            img.onload = () => { slide.style.backgroundImage = `url('${url}')`; };
+            img.onload = () => {
+                slide.style.backgroundImage = `url('${url}')`;
+                slide.dataset.loadState = 'loaded';
+                resolve(true);
+            };
+            img.onerror = () => {
+                slide.dataset.loadState = 'failed';
+                resolve(false);
+            };
             img.src = url;
-        }
-    });
+        });
+        return slide._imagePromise;
+    }
 
     let current = 0;
     const INTERVAL = 12000;
 
-    // Don't auto-rotate for users who prefer reduced motion (images already loaded above).
+    // Keep the first locally painted slide static for reduced-motion and save-data users.
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (navigator.connection && navigator.connection.saveData) return;
 
-    setInterval(() => {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-    }, INTERVAL);
+    let rotating = false;
+    async function rotate() {
+        if (rotating) return;
+        rotating = true;
+        const next = (current + 1) % slides.length;
+        const ready = await loadSlide(slides[next]);
+        if (ready) {
+            slides[current].classList.remove('active');
+            slides[next].classList.add('active');
+            current = next;
+            // Warm only the following slide after the current transition. This
+            // keeps the carousel smooth without downloading every background at startup.
+            setTimeout(() => loadSlide(slides[(current + 1) % slides.length]), 1500);
+        }
+        rotating = false;
+    }
+
+    const warmNext = () => loadSlide(slides[1 % slides.length]);
+    if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(warmNext, { timeout: 6000 });
+    } else {
+        setTimeout(warmNext, 3500);
+    }
+    setInterval(rotate, INTERVAL);
 })();
 
 // ============================

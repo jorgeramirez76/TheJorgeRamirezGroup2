@@ -21,8 +21,8 @@
     <!-- Geo Meta Tags -->
     <meta name="geo.region" content="US-NJ">
     <meta name="geo.placename" content="Summit, New Jersey">
-    <meta name="geo.position" content="40.7195;-74.3648">
-    <meta name="ICBM" content="40.7195, -74.3648">
+    <meta name="geo.position" content="40.7157;-74.3601">
+    <meta name="ICBM" content="40.7157, -74.3601">
     
     <!-- Bing Optimization -->
     <meta name="msnbot" content="index, follow">
@@ -76,23 +76,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Smooth-scroll enhancement (Lenis) -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <style>
-      /* Inlined from enhance.css — Lenis smooth-scroll baseline only.
-         No reveal/visibility rules here — the site's own animation
-         system (main.js) owns all element reveals. */
-      html.lenis, html.lenis body { height: auto; }
-      .lenis.lenis-smooth { scroll-behavior: auto !important; }
-      .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-      .lenis.lenis-stopped { overflow: hidden; }
-    </style>
-
     <!-- Preload first hero slide for faster LCP -->
     <link rel="preload" as="image" href="/images/properties/04-brick-stone.webp">
-    <!-- Preconnect to Unsplash (still used by testimonial avatars) -->
-    <link rel="preconnect" href="https://images.unsplash.com">
-
     <style>
       /* Critical above-the-fold CSS (nav + hero), extracted with `critical`
          at a 412x823 mobile viewport. Lets first paint happen without
@@ -151,6 +136,11 @@
           "addressRegion": "NJ",
           "postalCode": "07901",
           "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 40.7157,
+          "longitude": -74.3601
         },
         "areaServed": [
           {"@type": "AdministrativeArea", "name": "Union County, New Jersey"},
@@ -295,17 +285,17 @@
     <!-- Buy / Sell / Value tile reveal — image fades in on hover -->
     <section class="tile-reveal-section" aria-label="Core services">
         <div class="tile-reveal-grid">
-            <a href="/buy-a-home" class="reveal-tile" style="--reveal-img: url('/images/properties/05-kitchen.webp');">
+            <a href="/buy-a-home" class="reveal-tile" data-reveal-img="/images/properties/05-kitchen.webp">
                 <span class="reveal-eyebrow">01 · For Buyers</span>
                 <h2 class="reveal-title">Buy</h2>
                 <span class="reveal-cta">Find a home <span aria-hidden="true">→</span></span>
             </a>
-            <a href="/sell-your-home" class="reveal-tile" style="--reveal-img: url('/images/properties/04-brick-stone.webp');">
+            <a href="/sell-your-home" class="reveal-tile" data-reveal-img="/images/properties/04-brick-stone.webp">
                 <span class="reveal-eyebrow">02 · For Sellers</span>
                 <h2 class="reveal-title">Sell</h2>
                 <span class="reveal-cta">List with Jorge <span aria-hidden="true">→</span></span>
             </a>
-            <a href="/home-valuation" class="reveal-tile" style="--reveal-img: url('/images/properties/01-loft-living.webp');">
+            <a href="/home-valuation" class="reveal-tile" data-reveal-img="/images/properties/01-loft-living.webp">
                 <span class="reveal-eyebrow">03 · Free · No Obligation</span>
                 <h2 class="reveal-title">Value</h2>
                 <span class="reveal-cta">What's my home worth <span aria-hidden="true">→</span></span>
@@ -418,7 +408,7 @@
             <div class="listings-grid">
                 <article class="listing-card featured" data-town="verona">
                     <span class="listing-featured-tag">Featured Closing</span>
-                    <div class="listing-img" style="background-image: url('images/properties/04-brick-stone.webp');">
+                    <div class="listing-img" data-listing-img="/images/properties/04-brick-stone.webp">
                         <span class="listing-status">Sold · 2022</span>
                         <span class="listing-days">DUAL-SIDED SALE</span>
                     </div>
@@ -437,7 +427,7 @@
                 </article>
 
                 <article class="listing-card" data-town="warren">
-                    <div class="listing-img" style="background-image: url('images/properties/03-shingle-porch.webp');">
+                    <div class="listing-img" data-listing-img="/images/properties/03-shingle-porch.webp">
                         <span class="listing-status">Sold · 2022</span>
                         <span class="listing-days">BUYER REPRESENTATION</span>
                     </div>
@@ -456,7 +446,7 @@
                 </article>
 
                 <article class="listing-card" data-town="south-orange">
-                    <div class="listing-img" style="background-image: url('images/properties/01-loft-living.webp');">
+                    <div class="listing-img" data-listing-img="/images/properties/01-loft-living.webp">
                         <span class="listing-status">Sold · 2022</span>
                         <span class="listing-days">LISTING AGENT</span>
                     </div>
@@ -475,7 +465,7 @@
                 </article>
 
                 <article class="listing-card" data-town="roselle-park">
-                    <div class="listing-img" style="background-image: url('images/properties/08-exterior.webp');">
+                    <div class="listing-img" data-listing-img="/images/properties/08-exterior.webp">
                         <span class="listing-status">Sold · 2024</span>
                         <span class="listing-days">RECENT · BUYER REP</span>
                     </div>
@@ -494,7 +484,7 @@
                 </article>
 
                 <article class="listing-card" data-town="fanwood">
-                    <div class="listing-img" style="background-image: url('images/properties/05-kitchen.webp');">
+                    <div class="listing-img" data-listing-img="/images/properties/05-kitchen.webp">
                         <span class="listing-status">Sold · 2022</span>
                         <span class="listing-days">BUYER REPRESENTATION</span>
                     </div>
@@ -513,7 +503,7 @@
                 </article>
 
                 <article class="listing-card" data-town="cranford">
-                    <div class="listing-img" style="background-image: url('images/properties/07-dining.webp');">
+                    <div class="listing-img" data-listing-img="/images/properties/07-dining.webp">
                         <span class="listing-status">Sold · 2019</span>
                         <span class="listing-days">BUYER REPRESENTATION</span>
                     </div>
@@ -986,7 +976,7 @@
 
             <!-- Google Maps Embed -->
             <div style="margin-top: 3rem;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.8!2d-74.3648!3d40.7195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3ad0!2s488+Springfield+Ave%2C+Summit%2C+NJ+07901!5e0!3m2!1sen!2sus!4v1" width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Jorge Ramirez Group - Keller Williams Summit NJ Office Location"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.8!2d-74.3601!3d40.7157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3ad0!2s488+Springfield+Ave%2C+Summit%2C+NJ+07901!5e0!3m2!1sen!2sus!4v1" width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Jorge Ramirez Group - Keller Williams Summit NJ Office Location"></iframe>
             </div>
         </div>
     </section>
@@ -1100,10 +1090,6 @@
     
     <script defer src="js/communities-data.js"></script>
     <script defer src="js/main.js?v=20260417-v4"></script>
-
-    <!-- Smooth scroll (Lenis) — deferred, non-render-blocking -->
-    <script defer src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
-    <script defer src="enhance.js?v=20260627b"></script>
 
 <script defer src="/js/site-cta.js"></script>
 <script defer src="/js/lead-attribution.js"></script>

@@ -449,6 +449,221 @@
       "permanent": true
     },
     {
+      "source": "/towns/${s.slug}",
+      "destination": "/towns",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/como-elegir-agente-inmobiliario-nj",
+      "destination": "/es/ai-authority",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/informe-mercado-inmobiliario-union-county-nj",
+      "destination": "/es/blog/union-county-nj-real-estate-market-report-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/es/propiedades-heredadas-probate-nj",
+      "destination": "/es/blog/probate-real-estate-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/neighborhoods-millburn-nj",
+      "destination": "/counties/essex-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/highland-park-nj",
+      "destination": "/es/counties/middlesex-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/garwood-nj",
+      "destination": "/es/counties/union-county",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/es/garwood-nj",
+      "destination": "/es/counties/union-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/west-caldwell-nj",
+      "destination": "/es/counties/essex-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/jamesburg-nj",
+      "destination": "/es/counties/middlesex-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/butler-nj",
+      "destination": "/es/counties/morris-county",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/es/butler-nj",
+      "destination": "/es/counties/morris-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/chatham-nj",
+      "destination": "/es/towns/chatham",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/es/chatham-nj",
+      "destination": "/es/towns/chatham",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/chatham-township-nj",
+      "destination": "/es/towns/chatham-township",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/morristown-nj",
+      "destination": "/es/towns/morristown",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/springfield-nj",
+      "destination": "/es/towns/springfield",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/roseland-nj",
+      "destination": "/es/counties/essex-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/scotch-plains-nj",
+      "destination": "/es/counties/union-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/milltown-nj",
+      "destination": "/es/counties/middlesex-county",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/es/harrison-nj",
+      "destination": "/es/counties/hudson-county",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/es/morris-township-nj",
+      "destination": "/es/counties/morris-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/boonton-nj",
+      "destination": "/es/counties/morris-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/mount-arlington-nj",
+      "destination": "/es/counties/morris-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/south-river-nj",
+      "destination": "/es/counties/middlesex-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/short-hills-nj",
+      "destination": "/es/towns/millburn",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/montclair-nj",
+      "destination": "/es/towns/montclair",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/clark-nj",
+      "destination": "/es/counties/union-county",
+      "permanent": true
+    },
+    {
+      "source": "/towns/es/denville-nj",
+      "destination": "/es/towns/denville",
+      "permanent": true
+    },
+    {
+      "source": "/blog/neighborhoods-maplewood-nj",
+      "destination": "/counties/essex-county",
+      "permanent": true
+    },
+    {
+      "source": "/blog/neighborhoods-livingston-nj",
+      "destination": "/counties/essex-county",
+      "permanent": true
+    },
+    {
+      "source": "/blog/neighborhoods-montclair-nj",
+      "destination": "/counties/essex-county",
+      "permanent": true
+    },
+    {
+      "source": "/blog/neighborhoods-millburn-nj",
+      "destination": "/counties/essex-county",
+      "permanent": true
+    },
+    {
+      "source": "/blog/neighborhoods-summit-nj",
+      "destination": "/counties/union-county",
+      "permanent": true
+    },
+    {
+      "source": "/blog/neighborhoods-scotch-plains-nj",
+      "destination": "/counties/union-county",
+      "permanent": true
+    },
+    {
+      "source": "/blog/neighborhoods-basking-ridge-nj",
+      "destination": "/counties/somerset-county",
+      "permanent": true
+    },
+    {
+      "source": "/blog/neighborhoods-madison-nj",
+      "destination": "/counties/morris-county",
+      "permanent": true
+    },
+    {
+      "source": "/blog/buying-home-montclair-nj-2026",
+      "destination": "/buy-a-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/buying-home-randolph-nj-2026",
+      "destination": "/buy-a-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/buying-home-jersey-city-nj-2026",
+      "destination": "/buy-a-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/buying-home-rahway-nj-2026",
+      "destination": "/buy-a-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/selling-home-maplewood-nj-2026",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/es/south-river-nj",
+      "destination": "/es/counties/middlesex-county",
+      "permanent": true
+    },
+    {
       "source": "/features/buyer-workflows",
       "destination": "https://aisalespipeline.com/features/buyer-workflows-real-estate.html",
       "permanent": true
@@ -2997,12 +3212,12 @@
     },
     {
       "source": "/es/towns/hanover-township.html",
-      "destination": "/es/towns/hanover",
+      "destination": "/es/counties/morris-county",
       "permanent": true
     },
     {
       "source": "/es/towns/hanover-township",
-      "destination": "/es/towns/hanover",
+      "destination": "/es/counties/morris-county",
       "permanent": true
     },
     {
@@ -3022,22 +3237,22 @@
     },
     {
       "source": "/nyc-to-nj-commute-guide-2026.html",
-      "destination": "/blog/nyc-to-nj-commute-guide-2026",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
       "permanent": true
     },
     {
       "source": "/nyc-to-nj-commute-guide-2026",
-      "destination": "/blog/nyc-to-nj-commute-guide-2026",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
       "permanent": true
     },
     {
       "source": "/viral-grout-cleaning-hack-tile-damage-nj-2026.html",
-      "destination": "/blog/viral-grout-cleaning-hack-tile-damage-nj-2026",
+      "destination": "/sell-your-home",
       "permanent": true
     },
     {
       "source": "/viral-grout-cleaning-hack-tile-damage-nj-2026",
-      "destination": "/blog/viral-grout-cleaning-hack-tile-damage-nj-2026",
+      "destination": "/sell-your-home",
       "permanent": true
     }
   ],

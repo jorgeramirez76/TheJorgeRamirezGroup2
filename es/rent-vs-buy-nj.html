@@ -42,6 +42,7 @@
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Es más barato rentar o comprar en NJ en 2026?", "acceptedAnswer": {"@type": "Answer", "text": "En la mayoría de los pueblos de NJ para viajeros diarios, comprar se vuelve más barato que rentar alrededor del año 4 a 6 cuando incluyes apreciación y el pago del capital. Los mercados urbanos (Hoboken, Jersey City) con rentas altas y precios altos suelen alcanzar el punto de equilibrio más rápido que los pueblos suburbanos. Esta calculadora hace la comparación completa de costos a 5 años usando tus números específicos."}}, {"@type": "Question", "name": "¿Cuál es el punto de equilibrio entre rentar y comprar en Nueva Jersey?", "acceptedAnswer": {"@type": "Answer", "text": "El punto de equilibrio entre rentar y comprar es el año en que el costo total de comprar (hipoteca + impuestos + mantenimiento + cierre - patrimonio + apreciación) cae por debajo del costo total de rentar (renta × 12 × años + costo de oportunidad del pago inicial). En los pueblos de NJ para viajeros diarios en 2026, eso suele ser de 4 a 6 años para compradores estables."}}, {"@type": "Question", "name": "¿El impuesto a la propiedad de NJ hace que rentar se vea mejor?", "acceptedAnswer": {"@type": "Answer", "text": "El impuesto a la propiedad de NJ (2 al 4 por ciento del valor de la casa anualmente) es significativo pero no tan grande como los compradores temen. En una casa de 700,000 dólares con una tasa efectiva del 2.5 por ciento, eso son 17,500 dólares al año o 1,458 dólares al mes. Al mismo tiempo, estás construyendo entre 1,500 y 2,000 dólares al mes de patrimonio vía pago del capital. Resultado neto: comprar generalmente sigue ganando después de 5 años o más."}}, {"@type": "Question", "name": "¿Cuánto tiempo debo quedarme en una casa en NJ para que valga la pena comprar?", "acceptedAnswer": {"@type": "Answer", "text": "Un período de tenencia de 3 años es el mínimo absoluto para que la mayoría de los compradores en NJ cubran los costos de cierre. Cinco años o más es cuando comprar gana confiablemente en lo financiero sobre rentar. Si podrías mudarte en menos de 3 años, rentar suele ser más inteligente a menos que la casa tenga un fuerte potencial de renta como inversión a largo plazo."}}]}</script>
 <style>
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
   body { font-family:'Inter',sans-serif; background:#f8f9fa; margin:0; color:#1a1a1a; }
   .calc-wrapper { max-width:900px; margin:60px auto; padding:0 20px 60px; }
   .calc-header { text-align:center; margin-bottom:36px; }
@@ -152,13 +153,14 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Cómo usar la Calculadora Rentar vs Comprar en NJ","step":[{"@type":"HowToStep","position":1,"text":"Ingresa el precio de compra de la casa que estás considerando"},{"@type":"HowToStep","position":2,"text":"Ingresa la renta mensual actual para una casa comparable en el mismo pueblo"},{"@type":"HowToStep","position":3,"text":"Establece tu porcentaje de pago inicial y tasa de hipoteca"},{"@type":"HowToStep","position":4,"text":"Ingresa la tasa de impuesto a la propiedad de NJ para el pueblo (usa 2.5% como predeterminado)"},{"@type":"HowToStep","position":5,"text":"Establece la apreciación anual esperada y la inflación de la renta"},{"@type":"HowToStep","position":6,"text":"Elige tu período de tenencia planeado en años"},{"@type":"HowToStep","position":7,"text":"Haz clic en Calcular para ver el punto de equilibrio a 5 años y el veredicto"}]}</script>
 </head>
 <body>
+<a href="#main" class="skip-link">Saltar al contenido principal</a>
 <nav id="navbar">
   <div class="nav-container">
     <a href="/es" class="logo"><img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" class="logo-img" width="200" height="84" fetchpriority="high"></a>
   </div>
 </nav>
 
-<div class="calc-wrapper">
+<div id="main" class="calc-wrapper" role="main">
   <div class="calc-header">
     <h1>Calculadora Rentar vs Comprar en NJ</h1>
     <p>¿Deberías rentar o comprar en Nueva Jersey ahora mismo? Ingresa tus números y esta calculadora ejecuta la comparación completa de costos a 5 años — impuesto a la propiedad de NJ, impuesto de mansión, costos de cierre, mantenimiento, inflación de la renta y apreciación de la casa, todo incluido.</p>
@@ -203,6 +205,7 @@
     <button class="calc-btn" onclick="calcRentVsBuy()">Calcular Mi Punto de Equilibrio</button>
 
     <div class="results" id="results">
+      <h2 class="sr-only">Resultados de la comparación</h2>
       <div class="verdict" id="verdict"></div>
       <div class="breakdown">
         <div class="col">

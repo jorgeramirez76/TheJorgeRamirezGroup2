@@ -152,7 +152,7 @@ summary:focus-visible {
   border-bottom: 4px solid var(--comparison-red);
   background:
     linear-gradient(110deg, rgba(10,10,10,.97), rgba(26,26,26,.91)),
-    url('/images/blog-hero/families-2026.jpg') center / cover;
+    url('/images/blog-hero/families-2026-1280.webp') center / cover;
   color: #FFFFFF;
 }
 .comparison-container {
