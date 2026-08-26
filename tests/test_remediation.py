@@ -129,6 +129,24 @@ def sitemap_urls() -> set[str]:
     return {url for url in urls if url}
 
 
+def deployed_path(path: Path) -> str:
+    relative = path.relative_to(ROOT).as_posix()
+    if relative == "index.html":
+        return "/"
+    if relative.endswith("/index.html"):
+        return "/" + relative[: -len("/index.html")]
+    return "/" + relative[:-5]
+
+
+def exact_redirect_sources() -> set[str]:
+    config = json.loads(read(ROOT / "vercel.json"))
+    return {
+        item["source"]
+        for item in config.get("redirects", [])
+        if not item.get("has") and ":" not in item.get("source", "")
+    }
+
+
 class RemediationContractTests(unittest.TestCase):
     maxDiff = None
 
@@ -205,9 +223,14 @@ class RemediationContractTests(unittest.TestCase):
     def test_hreflang_targets_exist_and_are_reciprocal(self):
         bad = []
         submitted = {url.rstrip("/") for url in sitemap_urls()}
+        redirected = exact_redirect_sources()
         for source in public_html():
             source_text = read(source)
-            if robots_noindex(source_text) or is_redirect_stub(source_text):
+            if (
+                robots_noindex(source_text)
+                or is_redirect_stub(source_text)
+                or deployed_path(source) in redirected
+            ):
                 continue
             source_canonical = canonical_url(source_text)
             if not source_canonical or source_canonical.rstrip("/") not in submitted:
