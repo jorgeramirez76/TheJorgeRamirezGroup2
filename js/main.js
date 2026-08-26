@@ -63,13 +63,13 @@ const countyInfo = {
     "Morris": {
         towns: 37,
         highlight: "Chatham, Madison, Morristown, Florham Park",
-        description: "Top-rated schools, green space, and premier commuter towns along the Morris & Essex Line.",
+        description: "local schools, green space, and premier commuter towns along the Morris & Essex Line.",
         photo: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&fit=crop"
     },
     "Middlesex": {
         towns: 22,
         highlight: "Edison, Metuchen, Woodbridge, South Plainfield",
-        description: "Diverse communities with strong schools, major highway access, and excellent value.",
+        description: "Diverse communities with local schools, major highway access, and varied housing options.",
         photo: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80&fit=crop"
     },
     "Union": {
@@ -81,7 +81,7 @@ const countyInfo = {
     "Somerset": {
         towns: 10,
         highlight: "Warren, Watchung, Basking Ridge, Bridgewater",
-        description: "Room to breathe, strong schools, corporate access, and move-up neighborhoods with long-term appeal.",
+        description: "Room to breathe, local schools, corporate access, and move-up neighborhoods.",
         photo: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&fit=crop"
     }
 };

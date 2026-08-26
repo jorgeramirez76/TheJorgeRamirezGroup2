@@ -29,7 +29,7 @@ const communitiesData = {
     },
     {
       "town": "North Caldwell",
-      "description": "Upscale borough with luxury homes, top schools, and suburban tranquility.",
+      "description": "Upscale borough with luxury homes, local schools, and suburban neighborhoods.",
       "schools": "North Caldwell students attend North Caldwell School District (K–6) and West Essex Regional School District (7–12).",
       "primary_transit": "Commuters typically use buses along Bloomfield Avenue or drive to nearby rail/PATH access.",
       "commute_to_nyc": "Door-to-door Midtown commutes often 45–75 minutes via bus or park-and-ride.",
@@ -38,7 +38,7 @@ const communitiesData = {
     },
     {
       "town": "Nutley",
-      "description": "Family-friendly township with strong schools, parks, and proximity to NYC.",
+      "description": "Township with local schools, parks, and proximity to NYC.",
       "schools": "Nutley Public Schools provide K–12 education with neighborhood schools and AP offerings.",
       "primary_transit": "NJ Transit buses to Newark and NYC; some residents use nearby rail or light rail connections.",
       "commute_to_nyc": "Many commuters travel 45–75 minutes via bus/rail combinations to Midtown.",
@@ -240,7 +240,7 @@ const communitiesData = {
     },
     {
       "town": "Chatham Borough",
-      "description": "Historic downtown with top schools, Midtown Direct trains, and strong community spirit.",
+      "description": "Historic downtown with local schools, Midtown Direct trains, and community amenities.",
       "schools": "Chatham Borough School District (K–8), then School District of the Chathams for high school.",
       "primary_transit": "NJ Transit Morris & Essex Line with Midtown Direct service from Chatham Station.",
       "commute_to_nyc": "Direct trains to New York Penn typically 40–50 minutes.",
@@ -380,7 +380,7 @@ const communitiesData = {
       "primary_transit": "NJ Transit Morris & Essex Line Midtown Direct from Morristown Station.",
       "commute_to_nyc": "Direct trains to New York Penn typically 55–65 minutes.",
       "highways": "I-287, Route 24.",
-      "notes": "More suburban feel than Morristown proper; strong school system."
+      "notes": "More suburban feel than Morristown proper; local school systems."
     },
     {
       "town": "Morristown",
@@ -411,7 +411,7 @@ const communitiesData = {
     },
     {
       "town": "Mountain Lakes",
-      "description": "Exclusive lake community with Tudor-style homes and top schools.",
+      "description": "Lake community with Tudor-style homes and local schools.",
       "schools": "Mountain Lakes School District (K–12), highly ranked.",
       "primary_transit": "NJ Transit Morris & Essex Line (Montclair-Boonton branch) from Mountain Lakes Station.",
       "commute_to_nyc": "Trains to Hoboken or transfer; typically 60–80 minutes to Midtown.",
@@ -438,12 +438,12 @@ const communitiesData = {
     },
     {
       "town": "Randolph",
-      "description": "Family-friendly township with top schools, parks, and trail systems.",
+      "description": "Township with local schools, parks, and trail systems.",
       "schools": "Randolph Township Schools (K–12), highly regarded.",
       "primary_transit": "No direct rail; commuters drive to nearby stations (Morristown, Dover).",
       "commute_to_nyc": "Park-and-ride often 60–90 minutes total.",
       "highways": "Route 10, I-287.",
-      "notes": "Strong school district and numerous parks/trails make it popular with families."
+      "notes": "local school districts and numerous parks/trails make it popular with families."
     },
     {
       "town": "Riverdale",
@@ -530,12 +530,12 @@ const communitiesData = {
     },
     {
       "town": "East Brunswick",
-      "description": "Large suburban township with top schools, shopping, and diverse neighborhoods.",
+      "description": "Large suburban township with local schools, shopping, and diverse neighborhoods.",
       "schools": "East Brunswick Public Schools (K–12), consistently highly ranked.",
       "primary_transit": "Extensive NJ Transit bus service to NYC; no direct train.",
       "commute_to_nyc": "Buses to Port Authority often 45–70 minutes depending on traffic.",
       "highways": "NJ Turnpike, Route 18, Route 1.",
-      "notes": "Strong school district draws families; large retail centers."
+      "notes": "local school districts draws families; large retail centers."
     },
     {
       "town": "Edison",
@@ -712,7 +712,7 @@ const communitiesData = {
   "Union": [
     {
       "town": "Summit",
-      "description": "Premier hilltop city with charming downtown, top schools, and Midtown Direct service—home to Jorge Ramirez's office!",
+      "description": "Hilltop city with a downtown, local schools, and Midtown Direct service—home to Jorge Ramirez's office!",
       "schools": "Summit Public Schools (K–12) are consistently ranked among New Jersey's best districts.",
       "primary_transit": "NJ Transit Morris & Essex Line with Midtown Direct service from Summit Station.",
       "commute_to_nyc": "Direct trains to New York Penn typically 35–45 minutes, making Summit a prime commuter town.",
@@ -807,11 +807,11 @@ const communitiesData = {
       "primary_transit": "No direct train; residents drive to nearby Midtown Direct stations (Millburn, Summit).",
       "commute_to_nyc": "Park-and-ride typically 40–60 minutes total via Midtown Direct.",
       "highways": "Route 22, Route 24, I-78 nearby.",
-      "notes": "Family-friendly with strong schools; close to premier shopping."
+      "notes": "Residential community with local schools; close to regional shopping."
     },
     {
       "town": "Mountainside",
-      "description": "Small, quiet borough with wooded lots and top-rated schools.",
+      "description": "Small, quiet borough with wooded lots and local schools.",
       "schools": "Mountainside Public Schools (K–8), then students attend Governor Livingston High School.",
       "primary_transit": "No direct train; residents drive to nearby stations (Summit, Westfield).",
       "commute_to_nyc": "Park-and-ride typically 45–65 minutes total.",
@@ -825,11 +825,11 @@ const communitiesData = {
       "primary_transit": "NJ Transit Raritan Valley Line from Berkeley Heights Station.",
       "commute_to_nyc": "Trains typically 55–70 minutes to New York Penn via Newark.",
       "highways": "Route 22, Route 78, I-287 nearby.",
-      "notes": "Large lots, strong community, and top schools make this popular with families."
+      "notes": "Large lots, community amenities, and local schools shape buyer interest."
     },
     {
       "town": "New Providence",
-      "description": "Charming borough with walkable downtown, top schools, and direct Midtown service.",
+      "description": "Borough with a walkable downtown, local schools, and direct Midtown service.",
       "schools": "New Providence School District (K–12), highly regarded.",
       "primary_transit": "NJ Transit Morris & Essex Line with Midtown Direct from New Providence Station.",
       "commute_to_nyc": "Direct trains to New York Penn typically 45–55 minutes.",
@@ -856,7 +856,7 @@ const communitiesData = {
     },
     {
       "town": "Scotch Plains",
-      "description": "Spacious suburban township with top schools and large residential lots.",
+      "description": "Spacious suburban township with local schools and large residential lots.",
       "schools": "Scotch Plains-Fanwood Regional School District (K–12), highly rated.",
       "primary_transit": "NJ Transit Raritan Valley Line from Fanwood Station (shared with Fanwood).",
       "commute_to_nyc": "Trains typically 55–70 minutes to New York Penn via Newark.",
@@ -904,7 +904,7 @@ const communitiesData = {
     {
       "town": "Warren Township",
       "url_slug": "warren-township",
-      "description": "A sought-after Somerset County move-up market known for larger lots, privacy, and strong schools.",
+      "description": "A Somerset County move-up market with larger lots, privacy, and local schools.",
       "schools": "Warren Township Schools serve K–8, with students attending Watchung Hills Regional High School.",
       "primary_transit": "Primarily a car-commute town; residents often use nearby train stations, Route 78, I-287, and corporate corridors.",
       "commute_to_nyc": "Door-to-door NYC commutes vary widely, often 60–90 minutes depending on route and schedule.",

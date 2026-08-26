@@ -97,7 +97,7 @@ class ContentIntegrityTests(unittest.TestCase):
             self.assertEqual(set(expected), actual, f"wrong {county} membership")
             self.assertRegex(section, rf'class=["\']count["\']>{len(expected)} towns<')
 
-        self.assertIn("64 NJ Communities We Serve", source)
+        self.assertIn("64 NJ Community Guides", source)
         self.assertNotRegex(source, r"\b138\s+(?:NJ\s+)?(?:communities|towns)\b")
         schemas = json_ld_objects(source)
         item_lists = []

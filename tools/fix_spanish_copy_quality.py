@@ -22,9 +22,9 @@ CONTENT_ATTR_RE = re.compile(r'\b(content|title|alt)=("[^"]*"|\'[^\']*\')', re.I
 
 REPLACEMENTS: list[tuple[re.Pattern[str], str]] = [
     # Homepage / communities consistency
-    (re.compile(r"\b103\s+Comunidades\b"), "138 Comunidades"),
-    (re.compile(r"\b120\s+Pueblos\b"), "138 Pueblos"),
-    (re.compile(r"\b109\s+Pueblos\b"), "138 Pueblos"),
+    (re.compile(r"\b103\s+Comunidades\b"), "Comunidades en Seis Condados de Nueva Jersey"),
+    (re.compile(r"\b120\s+Pueblos\b"), "Municipios en Seis Condados de Nueva Jersey"),
+    (re.compile(r"\b109\s+Pueblos\b"), "Municipios en Seis Condados de Nueva Jersey"),
 
     # Broken top-level title/meta fragments observed in inspection
     (re.compile(r"\bYour Listado Expired\? Here's What Went Wrong — and How to Fix It\b"), "¿Tu Listado Venció? Qué Salió Mal y Cómo Solucionarlo"),

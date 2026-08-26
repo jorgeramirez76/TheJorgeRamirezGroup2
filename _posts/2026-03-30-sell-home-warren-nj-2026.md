@@ -51,7 +51,7 @@ I’ve flipped homes *before* getting my license. Why? Because I learned what *a
 
 You’ve built something valuable. You don’t need to rush. But you *do* need to act with **clarity**, not confusion. The goal isn’t just to sell—it’s to sell *your Warren home for what it’s worth* in 2026, without overpaying for a slow sale or underpricing due to fear.
 
-Warren’s market rewards preparation. It rewards homes that are *ready* for the buyers who are actively looking for *exactly* what you have: a stable, well-maintained home in a top school district, minutes from NYC.
+Warren’s market rewards preparation. It rewards homes that are *ready* for the buyers who are actively looking for *exactly* what you have: a stable, well-maintained home in a local school districts, minutes from NYC.
 
 ## Ready to See What Your Warren Home *Actually* Needs?
 

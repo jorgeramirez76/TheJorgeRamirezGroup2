@@ -87,7 +87,7 @@ for county in counties:
 schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "NJ Communities Served by The Jorge Ramirez Group",
+    "name": "New Jersey Community Guides | The Jorge Ramirez Group",
     "description": (
         f"Directory of {total} supported New Jersey community guides across "
         + ", ".join(counties[:-1])
@@ -177,7 +177,7 @@ def spanish_section_html(county: str) -> str:
 source = OUT.read_text(encoding="utf-8")
 source = re.sub(
     r"<title>.*?</title>",
-    f"<title>NJ Communities — {total} Towns We Serve | The Jorge Ramirez Group</title>",
+    f"<title>NJ Community Guides — {total} Towns | The Jorge Ramirez Group</title>",
     source,
     count=1,
     flags=re.S,
@@ -201,7 +201,7 @@ source = re.sub(
 )
 source = re.sub(
     r'<meta property="og:title" content="[^"]*">',
-    f'<meta property="og:title" content="NJ Communities — {total} Towns We Serve | The Jorge Ramirez Group">',
+    f'<meta property="og:title" content="NJ Community Guides — {total} Towns | The Jorge Ramirez Group">',
     source,
     count=1,
 )
@@ -233,8 +233,8 @@ source = re.sub(
     flags=re.S,
 )
 source = re.sub(
-    r"<h1>\d+ NJ Communities We Serve</h1>",
-    f"<h1>{total} NJ Communities We Serve</h1>",
+    r"<h1>\d+ NJ (?:Communities We Serve|Community Guides)</h1>",
+    f"<h1>{total} NJ Community Guides</h1>",
     source,
     count=1,
 )

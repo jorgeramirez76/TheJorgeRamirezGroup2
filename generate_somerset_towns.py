@@ -26,7 +26,7 @@ SOMERSET = [
     {'slug':'bernards-township', 'name':'Bernards Township', 'zip':'07920',
      'median':'$1,050,000', 'commute':'55', 'schools':'10/10',
      'district':'Bernards Township Public Schools',
-     'intro':('Bernards Township includes Basking Ridge, Lyons, and Liberty Corner — Somerset County\'s flagship commuter township with 10/10 schools, a picture-perfect colonial downtown in Basking Ridge, and 55-minute commute to NYC via the Gladstone Branch. Median sale prices around $1.05M reflect the combination of top schools and substantial lot sizes. The Somerset Hills region stretches across Bernards, Bernardsville, and Far Hills, giving buyers options from $800K cape cods to $3M estates within 10 miles.'),
+     'intro':('Bernards Township includes Basking Ridge, Lyons, and Liberty Corner — a Somerset County commuter township with a colonial downtown in Basking Ridge and a 55-minute commute to NYC via the Gladstone Branch. Median sale prices around $1.05M reflect local market conditions and substantial lot sizes. The Somerset Hills region stretches across Bernards, Bernardsville, and Far Hills, giving buyers options from $800K cape cods to $3M estates within 10 miles.'),
      'why':('Bernards delivers the highest school ratings in Somerset County with commute times competitive with much closer Essex/Union towns.')},
     {'slug':'bernardsville', 'name':'Bernardsville', 'zip':'07924',
      'median':'$1,250,000', 'commute':'60', 'schools':'9/10',

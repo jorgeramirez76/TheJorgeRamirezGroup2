@@ -195,7 +195,7 @@ class TownInventoryQuarantineTests(unittest.TestCase):
         self.assertEqual(inventory["total"], len(registered))
         self.assertEqual(registered, submitted)
         self.assertEqual(registered, linked)
-        self.assertIn("64 NJ Communities We Serve", hub)
+        self.assertIn("64 NJ Community Guides", hub)
 
         item_lists = []
         for obj in json_ld_objects(hub):

@@ -40,14 +40,92 @@ def description(text: str) -> str:
     return html.unescape(content.group(2).strip()) if content else ""
 
 
+def public_claim_documents() -> list[Path]:
+    documents = list(public_html())
+    for name in (
+        "llms.txt",
+        "llms-full.txt",
+        "llms-es.txt",
+        "schema-realtor.json",
+        "manifest.json",
+        "site.webmanifest",
+    ):
+        path = ROOT / name
+        if path.exists():
+            documents.append(path)
+    return documents
+
+
+def indexable_public_html() -> list[Path]:
+    redirected = exact_redirect_sources()
+    return [
+        path
+        for path in public_html()
+        if not robots_noindex(read(path))
+        and not is_redirect_stub(read(path))
+        and deployed_path(path) not in redirected
+        and canonical_url(read(path))
+    ]
+
+
+def public_claim_emitters() -> list[Path]:
+    names = (
+        "api/lead.js",
+        "build_communities_page.py",
+        "bulk_update_towns.py",
+        "fix_site_issues_v2.py",
+        "gen_serp_pages.py",
+        "generate_blog.py",
+        "generate_county_reports_and_comparisons.py",
+        "generate_new_landing_pages.py",
+        "generate_somerset_towns.py",
+        "index.html.backup",
+        "js/communities-data.js",
+        "js/main.js",
+        "optimize_seo.py",
+    )
+    sources = [ROOT / name for name in names if (ROOT / name).exists()]
+    sources.extend(sorted((ROOT / "_posts").glob("*.md")))
+    return sources
+
+
 class WaveTwoContractTests(unittest.TestCase):
     maxDiff = None
 
     def test_unverified_community_total_is_absent_from_public_pages(self):
+        unsupported_total = re.compile(
+            r"\b(?:103|109|120|138)\s+(?:(?:NJ|New Jersey)\s+)?(?:communities|towns)\b|"
+            r"\b(?:103|109|120|138)\s+(?:comunidades|pueblos|municipios)\b|"
+            r"data-target=[\"'](?:103|109|120|138)[\"']|"
+            r">(?:103|109|120|138)</[^>]+>[^<]{0,30}<[^>]+>[^<]*(?:communities|towns|comunidades|pueblos|municipios)",
+            re.I,
+        )
         offenders = [
             str(path.relative_to(ROOT))
-            for path in public_html()
-            if re.search(r"\b138\s+(?:NJ\s+)?communit", read(path), re.I)
+            for path in public_claim_documents()
+            if unsupported_total.search(read(path))
+        ]
+        self.assertEqual([], offenders)
+
+    def test_claim_emitters_cannot_restore_wave_two_failures(self):
+        forbidden = re.compile(
+            r"\b(?:103|109|120|138)\s+(?:(?:NJ|New Jersey)\s+)?"
+            r"(?:communities|towns|comunidades|pueblos|municipios)\b|"
+            r"\btop[- ]rated\s+(?:(?:NJ|New Jersey)\s+)?"
+            r"(?:real estate\s+)?(?:agent|Realtor|agency|team|group)\b|"
+            r"(?:Jorge Ramirez|The Jorge Ramirez Group)[^.<\n]{0,120}\b"
+            r"(?:top|best) (?:listing |real estate )?agent\b|"
+            r"\b(?:I(?:'|’)?ve|I have|Jorge has|we have)\s+helped\s+hundreds\s+of\s+families\b|"
+            r"\byears?\s+(?:of\s+)?helping\s+(?:(?:New Jersey|NJ)\s+)?families\b|"
+            r"\b(?:active development pipeline|historical appreciation demonstrates reliable returns|healthy inventory levels?)\b|"
+            r"\b(?:strong|top(?:[- ]rated|[- ]tier)?)\s+"
+            r"school(?:s|\s+districts?|\s+systems?|[- ]districts?|\s+towns?)\b",
+            re.I,
+        )
+        offenders = [
+            str(path.relative_to(ROOT))
+            for path in public_claim_emitters()
+            if forbidden.search(read(path))
         ]
         self.assertEqual([], offenders)
 
@@ -61,18 +139,93 @@ class WaveTwoContractTests(unittest.TestCase):
                 re.I,
             ),
             "agent top-rated claim": re.compile(
-                r"(?:Jorge Ramirez|The Jorge Ramirez Group)[^.<\n]{0,120}\btop[- ]rated\b|"
-                r"\btop[- ]rated\b[^.<\n]{0,120}(?:Jorge Ramirez|real estate agent|Realtor)",
+                r"\btop[- ]rated\s+(?:(?:NJ|New Jersey)\s+)?"
+                r"(?:real estate\s+)?(?:agent|Realtor|agency|team|group)\b|"
+                r"\b(?:agente|agencia)\s+de\s+bienes\s+ra[ií]ces\s+mejor\s+calificad[oa]\b|"
+                r"\bmejor\s+calificad[oa]\s+agente\s+de\s+bienes\s+ra[ií]ces\b|"
+                r"\b(?:mejor|destacad[oa])\s+agente(?:\s+inmobiliari[oa])?\b|"
+                r"\bagente\s+inmobiliari[oa]\s+(?:de\s+primer\s+nivel|destacad[oa])\b",
                 re.I,
             ),
             "top-agent claim": re.compile(
                 r"(?:Jorge Ramirez|The Jorge Ramirez Group)[^.<\n]{0,120}\btop (?:listing |real estate )?agent\b|"
-                r"\btop (?:listing |real estate )?agent\b[^.<\n]{0,120}(?:Jorge Ramirez|The Jorge Ramirez Group)",
+                r"\btop (?:listing |real estate )?agent\b[^.<\n]{0,120}(?:Jorge Ramirez|The Jorge Ramirez Group)|"
+                r"\bJorge(?: Ramirez)?(?:'s)?[^.<\n]{0,80}\btop-agent network\b|"
+                r"\bJorge(?: Ramirez)?(?:'s)?[^.<\n]{0,80}\btop listing agents\b",
+                re.I,
+            ),
+            "best-agent claim": re.compile(
+                r"(?:Jorge Ramirez|The Jorge Ramirez Group)[^.<\n]{0,120}\bbest "
+                r"(?:listing |real estate )?agent\b|"
+                r"\bbest (?:listing |real estate )?agent\b[^.<\n]{0,120}"
+                r"(?:Jorge Ramirez|The Jorge Ramirez Group)|"
+                r"\bI(?:'m| am)[^.<\n]{0,60}\b(?:the )?best agent\b|"
+                r"\bsoy[^.<\n]{0,60}\bel mejor agente\b",
+                re.I,
+            ),
+            "15-year tenure": re.compile(
+                r"\b(?:15|fifteen)\+?(?:[- ]year|\s+years?)\s+(?:of\s+)?"
+                r"(?:real estate|agent|Realtor|selling|listing|transaction|experience)|"
+                r"\b(?:Jorge Ramirez|real estate agent|Realtor)[^.<\n]{0,100}"
+                r"\b(?:for|with|over)\s+(?:15|fifteen)\+?\s+years?\b",
                 re.I,
             ),
         }
         failures: dict[str, list[str]] = {key: [] for key in forbidden}
-        for path in public_html():
+        for path in public_claim_documents():
+            text = read(path)
+            for label, pattern in forbidden.items():
+                if pattern.search(text):
+                    failures[label].append(str(path.relative_to(ROOT)))
+        self.assertEqual({key: [] for key in forbidden}, failures)
+
+    def test_indexable_copy_avoids_unsupported_trust_patterns(self):
+        forbidden = {
+            "numeric or categorical service scope": re.compile(
+                r"\b(?:serves?|serving)\s+(?:all\s+)?(?:the\s+)?\d+\s+(?:NJ\s+)?(?:[A-Z][A-Za-z -]+ County\s+(?:NJ\s+)?)?(?:towns|communities)\b|"
+                r"\b\d+\s+(?:NJ\s+)?(?:[A-Z][A-Za-z -]+ County\s+(?:NJ\s+)?)?(?:towns|communities)\s+served\b|"
+                r"\batiende\s+(?:a\s+)?(?:(?:todos?|todas?)\s+)?(?:(?:los|las)\s+)?\d+\s+(?:pueblos|comunidades|municipios)\b|"
+                r"\batendiendo\s+(?:a\s+)?(?:(?:todos?|todas?)\s+)?(?:(?:los|las)\s+)?\d+\s+(?:pueblos|comunidades|municipios)\b|"
+                r"\b\d+\s+(?:pueblos|comunidades|municipios)\s+(?:atendidos?|atendidas?)\b|"
+                r"\b\d+\s+(?:pueblos|comunidades|municipios)\s+del\s+Condado\s+de\s+[A-Za-zÁÉÍÓÚÜÑáéíóúüñ -]+\s+(?:atendidos?|atendidas?)\b|"
+                r"\b\d+\s+(?:pueblos|comunidades|municipios)\s+de\s+[A-Za-zÁÉÍÓÚÜÑáéíóúüñ -]+\s+County\s+(?:atendidos?|atendidas?)\b|"
+                r"\b(?:covers?|serves?)\s+(?:all|every)\s+(?:NJ\s+)?(?:[A-Z][A-Za-z -]+ County\s+)?(?:town|community)\b|"
+                r"\bcovers?\s+every\s+[A-Z][A-Za-z-]+\s+town\b|"
+                r"\batiende\s+(?:a\s+)?(?:todos?|todas?)\s+(?:los|las)\s+(?:pueblos|comunidades|municipios)\b|"
+                r"\b(?:cubre\s+cada\s+pueblo|atiende\s+cada\s+comunidad)\b",
+                re.I,
+            ),
+            "categorical block or street knowledge": re.compile(
+                r"\b(?:know|knows|knowing)\s+every\s+(?:block|street)\b|"
+                r"\bconoce\s+cada\s+(?:cuadra|calle)\b|"
+                r"\bconozco\s+cada\s+(?:cuadra|calle)\b",
+                re.I,
+            ),
+            "unsupported family volume or tenure": re.compile(
+                r"\b(?:I(?:'|’)?ve|I have|Jorge has|we have)\s+helped\s+hundreds\s+of\s+families\b|"
+                r"\byears?\s+(?:of\s+)?helping\s+families\b|"
+                r"\b(?:he|ha|han)\s+ayudado\s+a\s+cientos\s+de\s+familias\b|"
+                r"\ba[ñn]os\s+ayudando\s+a\s+familias\b",
+                re.I,
+            ),
+            "unsupported market certainty": re.compile(
+                r"\bactive development pipeline\b|"
+                r"\bhistorical appreciation demonstrates reliable returns\b|"
+                r"\bhealthy inventory levels?\b|"
+                r"\bcartera activa de desarrollo\b|"
+                r"\bla apreciaci[oó]n hist[oó]rica demuestra rendimientos confiables\b|"
+                r"\bniveles? de inventario saludables?\b",
+                re.I,
+            ),
+            "unsupported school ranking": re.compile(
+                r"\b(?:strong|top(?:[- ]rated|[- ]tier)?)\s+school(?:s|\s+districts?|\s+systems?|[- ]districts?|\s+towns?)\b|"
+                r"\b(?:escuelas?(?:\s+p[uú]blicas?)?|distritos?\s+escolares?)\s+"
+                r"(?:s[oó]lidas?|fuertes?|de\s+primer\s+nivel|mejor(?:es)?\s+calificad[oa]s?)\b",
+                re.I,
+            ),
+        }
+        failures: dict[str, list[str]] = {key: [] for key in forbidden}
+        for path in indexable_public_html():
             text = read(path)
             for label, pattern in forbidden.items():
                 if pattern.search(text):

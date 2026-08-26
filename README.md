@@ -3,11 +3,11 @@
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.thejorgeramirezgroup.com)](https://www.thejorgeramirezgroup.com)
 [![License](https://img.shields.io/badge/license-Proprietary-blue)]()
 
-> Top-rated New Jersey real estate team serving 103 communities with AI-powered technology
+> New Jersey real estate group led by licensed NJ real estate agent Jorge Ramirez
 
 ## 🏠 About
 
-This repository contains the website for **The Jorge Ramirez Group**, a leading real estate team affiliated with Keller Williams Realty Premier Properties. We serve home buyers and sellers across Northern and Central New Jersey.
+This repository contains the website for **The Jorge Ramirez Group**, affiliated with Keller Williams Realty Premier Properties. We serve home buyers and sellers across six counties in Northern and Central New Jersey.
 
 ### Our Differentiator: Intelligent Lead Targeting
 
@@ -18,7 +18,7 @@ We leverage **Intelligent Lead Targeting** - an AI-powered sales pipeline that a
 
 ## 📍 Service Areas
 
-We serve **103 communities** across **5 counties**:
+We serve communities across **6 New Jersey counties**:
 
 | County | Key Towns |
 |--------|-----------|
@@ -27,13 +27,14 @@ We serve **103 communities** across **5 counties**:
 | **Essex** | Montclair, Maplewood, South Orange, Livingston, West Orange |
 | **Hudson** | Jersey City, Hoboken, Weehawken, Bayonne, North Bergen |
 | **Morris** | Morristown, Madison, Chatham, Florham Park, Parsippany |
+| **Somerset** | Bridgewater, Basking Ridge, Warren, Watchung, Somerville |
 
 ## 🗂️ Repository Structure
 
 ```
 ├── index.html              # Homepage
 ├── ai-authority.html       # AI authority/about page
-├── towns/                  # 103 individual town landing pages
+├── towns/                  # Individual town landing pages
 │   ├── summit.html
 │   ├── westfield.html
 │   └── ...

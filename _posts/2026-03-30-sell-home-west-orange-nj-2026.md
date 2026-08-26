@@ -35,7 +35,7 @@ West Orange has no "average" home. A 3-bed ranch on Oak Street sells differently
 ### 2. **Your Home’s "Commuter Edge" Is Non-Negotiable**  
 West Orange’s appeal? 30-minute train rides to NYC (via Montclair line), proximity to Route 24, and *no* tolls. Buyers here care about:  
 - Walkability to West Orange Train Station (1.2 miles max for 90% of homes).  
-- Access to top schools (West Orange Public Schools, ranked #1 in Essex County).  
+- Access to local schools (verify current district information with NJ DOE reports).
 - Nearby amenities (Maplewood’s dining, South Orange’s shops).  
 
 **What to fix now**: If your home has a dated kitchen but is *within 0.5 miles of the train station*, invest $5k in updates (new countertops, lighting). That’s a 12% price lift in 2025. A "stale" kitchen in a prime location? *Worth* $15k more than a "perfect" kitchen in a dead zone.

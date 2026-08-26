@@ -59,7 +59,7 @@ def optimize_families_page():
         <td style="padding: 10px; border: 1px solid #ddd;">9-10/10</td>
         <td style="padding: 10px; border: 1px solid #ddd;">$1.3M-$1.5M</td>
         <td style="padding: 10px; border: 1px solid #ddd;">38 min (Midtown Direct)</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Top schools + fast commute</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Local schools + fast commute</td>
       </tr>
       <tr>
         <td style="padding: 10px; border: 1px solid #ddd;"><a href="/towns/millburn.html" style="color: #2563eb; font-weight: 600;">Millburn/Short Hills</a></td>
@@ -91,7 +91,7 @@ def optimize_families_page():
         <td style="padding: 10px; border: 1px solid #ddd;">9-10/10</td>
         <td style="padding: 10px; border: 1px solid #ddd;">$850K-$950K</td>
         <td style="padding: 10px; border: 1px solid #ddd;">50 min (bus/car)</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Top schools, no train</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Local schools, no train</td>
       </tr>
       <tr>
         <td style="padding: 10px; border: 1px solid #ddd;"><a href="/towns/madison.html" style="color: #2563eb; font-weight: 600;">Madison</a></td>
@@ -172,7 +172,7 @@ def optimize_families_page():
     buy_link = '<p>If you\'re <a href="/buy-a-home.html" style="color: #2563eb; font-weight: 600;">ready to buy in one of NJ\'s top family towns</a>, here\'s how I help families match schools, budget, and lifestyle beyond just school rankings.</p>'
     
     # Link 2: Add sell link after a section
-    sell_link = '<p>Thinking about selling in one of these top school districts? Family demand is your biggest advantage. <a href="/sell-your-home.html" style="color: #2563eb; font-weight: 600;">Here\'s exactly how we position your home</a> to capture multiple offers from motivated families with school deadlines.</p>'
+    sell_link = '<p>Thinking about selling in one of these local school districts? Family demand is your biggest advantage. <a href="/sell-your-home.html" style="color: #2563eb; font-weight: 600;">Here\'s exactly how we position your home</a> to capture multiple offers from motivated families with school deadlines.</p>'
     
     # Link 3: Add valuation link
     valuation_link = '<p>Want to know what your home could sell for in one of these premium family towns? <a href="/home-valuation.html" style="color: #2563eb; font-weight: 600;">Get your free CMA (not a Zestimate)</a> — we\'ll show you block-by-block comps and exactly what\'s driving prices in your neighborhood.</p>'

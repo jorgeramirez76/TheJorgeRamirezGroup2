@@ -144,7 +144,7 @@ def ensure_agent_updates(agent: Dict[str, Any], town_name: str) -> bool:
         agent["hasCredential"] = HAS_CREDENTIAL
         changed = True
     desired_desc = (
-        f"Jorge Ramirez is a top-rated real estate agent serving {town_name}, NJ "
+        f"Jorge Ramirez is a licensed NJ real estate agent serving {town_name}, NJ "
         f"(License #{LICENSE_NUM}). Specializing in luxury homes, first-time buyers, "
         f"and investment properties with an AI-powered marketing system."
     )

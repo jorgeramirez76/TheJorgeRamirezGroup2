@@ -6,7 +6,7 @@
   "url": "https://thejorgeramirezgroup.com",
   "logo": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
   "image": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
-  "description": "Top-rated real estate agent serving 103 communities across Union, Essex, Morris, Middlesex, and Hudson County in Northern New Jersey. Specializing in luxury homes, NYC commuter properties, and first-time home buyers since 2017.",
+  "description": "Licensed NJ real estate agent serving communities across Union, Essex, Morris, Middlesex, and Hudson County in Northern New Jersey. Specializing in luxury homes, NYC commuter properties, and first-time home buyers since 2017.",
   "priceRange": "$$-$$$",
   "telephone": "+19082307844",
   "email": "info@thejorgeramirezgroup.com",
@@ -99,7 +99,7 @@
       "itemOffered": {
         "@type": "Service",
         "name": "Agente Inmobiliario Bilingüe",
-        "description": "Jorge Ramirez es un agente inmobiliario bilingüe (inglés/español) sirviendo más de 103 comunidades en New Jersey."
+        "description": "Jorge Ramirez es un agente inmobiliario bilingüe (inglés/español) sirviendo más de comunidades en New Jersey."
       }
     }
   ],

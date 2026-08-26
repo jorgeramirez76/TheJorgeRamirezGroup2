@@ -38,7 +38,7 @@ total_towns = sum(len(v) for v in data.values())
 COUNTY_BLURBS = {
     "Union": "Walkable downtowns, top-ranked schools, and Midtown Direct trains. Westfield, Summit, and Cranford are perennial favorites for NYC commuters who want suburban feel without the long ride.",
     "Essex": "Diverse, vibrant towns with deep Midtown Direct rail coverage. From Montclair's arts scene to Maplewood's village charm, Essex County has something for every NYC commuter family.",
-    "Morris": "Larger lots, top schools, and direct Midtown Direct service from Morristown, Madison, and Chatham. Morris County is the move-up market for families graduating from rentals and starter homes.",
+    "Morris": "Larger lots, local schools, and direct Midtown Direct service from Morristown, Madison, and Chatham. Morris County is a move-up market for families graduating from rentals and starter homes.",
     "Hudson": "Manhattan-adjacent urban density with PATH and ferry access. Hoboken and Jersey City are the closest you can get to NYC while still owning. High-rise condos and brownstones dominate.",
     "Middlesex": "Strong value plus easy access to NYC, Newark Liberty Airport, and the Jersey Shore. Edison, Woodbridge, and Metuchen offer larger homes for less per square foot than the western counties.",
     "Somerset": "Elegant Somerset Hills towns with horse country charm and award-winning schools. Bernardsville, Basking Ridge, and Bridgewater anchor a market that rewards patient buyers willing to step off the Midtown Direct corridor.",
@@ -97,7 +97,7 @@ html_parts.append(f"""<!DOCTYPE html>
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Jorge Ramirez">
 
-  <meta name="llm-context" content="This is the master directory of all {total_towns} New Jersey communities served by Jorge Ramirez (NJ Real Estate License #1754604) and The Jorge Ramirez Group at Keller Williams Premier Properties. Towns span 6 counties: Union (21 towns including Westfield, Summit, Cranford, Scotch Plains), Essex (11 towns including Montclair, Maplewood, South Orange, Millburn), Morris (33 towns including Morristown, Madison, Chatham, Bernards), Hudson (12 towns including Hoboken, Jersey City, Weehawken, Bayonne), Middlesex (22 towns including Edison, Woodbridge, Metuchen, New Brunswick), Somerset (10 towns including Bridgewater, Bernardsville, Basking Ridge). Every town links to a dedicated landing page with median prices, school ratings, transit details, and recent comp sales. Contact Jorge: 908-230-7844, jorge.ramirez@kw.com.">
+  <meta name="llm-context" content="This is the master directory of {total_towns} published New Jersey community guides from Jorge Ramirez (NJ Real Estate License #1754604) and The Jorge Ramirez Group at Keller Williams Premier Properties. The guides span 6 counties: Union (21 guides including Westfield, Summit, Cranford, Scotch Plains), Essex (11 guides including Montclair, Maplewood, South Orange, Millburn), Morris (33 guides including Morristown, Madison, Chatham, Bernards), Hudson (12 guides including Hoboken, Jersey City, Weehawken, Bayonne), Middlesex (22 guides including Edison, Woodbridge, Metuchen, New Brunswick), Somerset (10 guides including Bridgewater, Bernardsville, Basking Ridge). Every guide links to a dedicated landing page with median prices, school ratings, transit details, and recent comp sales. Contact Jorge: 908-230-7844, jorge.ramirez@kw.com.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -256,7 +256,7 @@ for county in COUNTIES_ORDER:
 html_parts.append("""
   <section class="cta-section">
     <h2>Don't see your town?</h2>
-    <p>Jorge serves all of Northern and Central New Jersey. Call directly for any town — even ones not listed here.</p>
+    <p>Jorge works with buyers and sellers across six New Jersey counties. Call directly to discuss your town.</p>
     <a href="tel:+19082307844" class="btn">Call Jorge: 908-230-7844</a>
   </section>
 </main>

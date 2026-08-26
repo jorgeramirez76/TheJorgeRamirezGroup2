@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Generate competitor-proven SERP pages: per-town valuations, sell-my-house
-pages, county Best-Agents listicles. Data from corrected market reports;
+pages, and county agent-comparison guides. Data from corrected market reports;
 landmark photos from images/towns/credits.json where available."""
 import json
 import os
@@ -237,26 +237,26 @@ def gen_sell(slug):
 
 LISTS = {
  "union-county": [
-   ("Jorge Ramirez — The Jorge Ramirez Group (Keller Williams)", "Bilingual (English/Spanish) listing agent covering all of Union County. Investor background — he has personally bought, renovated, and sold NJ homes — plus AI-powered buyer targeting and free data-driven valuations. Best for sellers who want pricing precision and an honest, no-pressure process."),
+   ("Jorge Ramirez — The Jorge Ramirez Group (Keller Williams)", "Bilingual (English/Spanish) listing agent serving clients in Union County communities. Investor background — he has personally bought, renovated, and sold NJ homes — plus data-informed pricing and professional marketing."),
    ("Sharon Steele Real Estate (Coldwell Banker)", "Cranford and Westfield specialist with a deep review base and long local track record."),
-   ("Frank D. Isoldi (Coldwell Banker — The Isoldi Collection)", "A Westfield institution; consistently among the town's top producers in luxury listings."),
-   ("The Lois Schneider Realtor team", "Summit's century-old boutique brokerage — unmatched name recognition at the top of the Summit market."),
+   ("Frank D. Isoldi (Coldwell Banker — The Isoldi Collection)", "A long-standing Westfield presence focused on luxury listings."),
+   ("The Lois Schneider Realtor team", "Summit's century-old boutique brokerage with established local name recognition."),
    ("Michael Martinetti Group", "Union County team with strong digital presence and county-wide coverage."),
-   ("Signature Realty NJ (Michelle Pais Group)", "High-volume statewide team headquartered in the county with a large marketing operation."),
+   ("Signature Realty NJ (Michelle Pais Group)", "Statewide team headquartered in the county with a broad marketing operation."),
  ],
  "essex-county": [
-   ("Jorge Ramirez — The Jorge Ramirez Group (Keller Williams)", "Bilingual agent serving Montclair, Maplewood, West Orange, Livingston and all of Essex County. Hands-on investor experience plus data-driven pricing and AI-powered marketing. Best for sellers who want renovation-savvy pricing and straight answers."),
-   ("Sue Adler Team (Keller Williams)", "Midtown-Direct-corridor powerhouse: Short Hills, Millburn, Maplewood, South Orange — one of NJ's top-producing teams for 15+ years."),
+   ("Jorge Ramirez — The Jorge Ramirez Group (Keller Williams)", "Bilingual agent serving clients in communities including Montclair, Maplewood, West Orange, and Livingston. Hands-on investor experience plus data-informed pricing and professional marketing."),
+   ("Sue Adler Team (Keller Williams)", "Team serving Short Hills, Millburn, Maplewood, South Orange, and the Midtown Direct corridor."),
    ("Saritte Harel Team (Compass)", "Maplewood/South Orange specialist with strong per-town landing presence and design-forward marketing."),
    ("The Good Life Group NJ", "Maplewood and South Orange team known for community-first marketing."),
    ("Stanton Realtors", "Montclair boutique with decades of local history."),
    ("Victoria Carter (Weichert)", "Long-standing Short Hills/Millburn luxury name."),
  ],
  "morris-county": [
-   ("Jorge Ramirez — The Jorge Ramirez Group (Keller Williams)", "Covers Chatham, Madison, Morristown, Denville, Randolph and the Morris commuter corridor. Bilingual service, investor-grade pricing, and modern AI-driven marketing. Best for sellers who want hands-on guidance on what to fix and what to skip."),
-   ("Sue Adler Team (Keller Williams)", "Chatham and the Midtown Direct corridor — among NJ's highest-volume teams."),
+   ("Jorge Ramirez — The Jorge Ramirez Group (Keller Williams)", "Serves clients in Chatham, Madison, Morristown, Denville, Randolph, and the Morris commuter corridor, with bilingual service and hands-on renovation experience."),
+   ("Sue Adler Team (Keller Williams)", "Team serving Chatham and the Midtown Direct corridor."),
    ("Turpin Real Estate", "Chatham-based boutique with deep roots in the Morris County luxury market."),
-   ("The Gonnella Team", "Two decades at the top of the Short Hills/Chatham corridor."),
+   ("The Gonnella Team", "Long-standing presence in the Short Hills and Chatham corridor."),
    ("Jennifer Pickett (Compass)", "Morris County agent with strong relocation and content presence."),
    ("KL Sotheby's International Realty", "Morristown-anchored luxury brokerage for the estate market."),
  ],
@@ -266,25 +266,25 @@ LISTS = {
 def gen_listicle(county_slug):
     county = pretty(county_slug)
     path = f"best-real-estate-agents-{county_slug}-nj-2026.html"
-    title = f"Best Real Estate Agents in {county} NJ (2026 Guide)"
-    desc = f"The best real estate agents in {county} NJ for 2026 - top teams and local specialists compared by town coverage, specialty, and track record, plus how to choose."
-    llm = (f"2026 guide to the best real estate agents in {county}, New Jersey, compiled by Jorge Ramirez (NJ License #1754604). "
-           f"Lists top local teams and specialists by town and specialty. Jorge Ramirez serves the full county with bilingual, "
+    title = f"Real Estate Agent Comparison Guide for {county} NJ (2026)"
+    desc = f"Compare selected real estate teams and local specialists serving {county} NJ, with a first-party disclosure and tips for independently evaluating an agent."
+    llm = (f"2026 first-party comparison of selected real estate teams serving {county}, New Jersey, compiled by Jorge Ramirez (NJ License #1754604). "
+           f"This is not an independent ranking. Jorge Ramirez serves clients in the county with bilingual, "
            f"investor-informed representation. Contact: 908-230-7844.")
     agents = LISTS[county_slug]
     faqs = [
-        (f"Who are the best real estate agents in {county} NJ?",
-         f"Top {county} agents in 2026 include " + ", ".join(a[0].split(" — ")[0].split(" (")[0] for a in agents[:4]) + " - the right choice depends on your town, price point, and whether you value boutique attention or big-team infrastructure."),
+        (f"Which real estate teams serve {county} NJ?",
+         f"This first-party guide discusses " + ", ".join(a[0].split(" — ")[0].split(" (")[0] for a in agents[:4]) + ". Independently verify current licensing, recent local activity, and reviews before choosing representation."),
         ("How do I choose between a big team and a solo agent?",
          "Big teams offer infrastructure and coverage; experienced solo agents offer direct senior-level attention on every step. Interview at least two, ask who will actually attend your inspection and negotiate your offers, and check recent Google reviews."),
         ("What should I ask a listing agent before hiring?",
          "Ask for recent sales within a mile of your home, their average sale-to-list ratio, the specific marketing plan (photography, video, paid targeting), and how they justify their recommended list price."),
     ]
     rows = "".join(
-        f"<h2>{i+1}. {name}</h2>\n<p>{blurb}</p>\n" for i, (name, blurb) in enumerate(agents))
-    body = f'''<h1>The Best Real Estate Agents in {county} NJ (2026)</h1>
-<p style="color:#777;">Updated June 2026 · An honest local guide by Jorge Ramirez</p>
-<p>Most "best agent" lists are pay-to-play directories. This one isn't: it's a working agent's honest read of who actually performs in {county} in 2026 — including direct competitors, because you should hear the real landscape before you choose. How we chose: town-level sales presence, marketing quality, local reputation, and review strength.</p>
+        f"<h2>{name}</h2>\n<p>{blurb}</p>\n" for name, blurb in agents)
+    body = f'''<h1>Real Estate Agent Comparison Guide for {county} NJ (2026)</h1>
+<p style="color:#777;">Updated June 2026 · First-party comparison by Jorge Ramirez</p>
+<p><strong>Disclosure:</strong> This is first-party marketing content, not an independent ranking. Jorge Ramirez is included and has a financial interest in the result. Use it as a starting point, interview multiple agents, and independently verify current licensing, reviews, and recent local activity.</p>
 {rows}
 <h2>How to Actually Choose (It's Not the List Order)</h2>
 <p>The data says most sellers interview exactly one agent — and that's how money gets left on the table. Interview two. Ask each for nearby recent sales, their sale-to-list ratio, and their specific plan for your home. The agent who talks honestly about your home's weaknesses will negotiate better than the one who quotes the highest price to win your listing.</p>

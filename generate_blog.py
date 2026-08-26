@@ -89,7 +89,7 @@ TOWNS = {
         "market_type": "seller's",
         "dom": "18–24 days",
         "yoy": "+4.8%",
-        "notes": "Livingston is renowned for its top-rated schools and strong family-oriented community. The school district's academic reputation is a primary driver of home values here.",
+        "notes": "Livingston is renowned for its local schools and strong family-oriented community. The school district's academic reputation is a primary driver of home values here.",
         "sell_notes": "Livingston's school district reputation means demand stays strong year-round. Homes in the attendance zones for highest-rated elementary schools move fastest.",
         "geo": "Livingston, New Jersey",
         "slug": "livingston-nj",
@@ -119,7 +119,7 @@ TOWNS = {
         "market_type": "seller's",
         "dom": "20–27 days",
         "yoy": "+4.0%",
-        "notes": "Known as the 'Rose City,' Madison offers a storybook downtown, two universities (Drew and Fairleigh Dickinson), and top-rated schools in a charming borough setting.",
+        "notes": "Known as the 'Rose City,' Madison offers a storybook downtown, two universities (Drew and Fairleigh Dickinson), and local schools in a charming borough setting.",
         "sell_notes": "Madison's walkable downtown and university presence create consistent year-round demand. Homes within walking distance of the train or downtown command the strongest premiums.",
         "geo": "Madison, New Jersey",
         "slug": "madison-nj",
@@ -135,7 +135,7 @@ TOWNS = {
         "dom": "18–25 days",
         "yoy": "+4.3%",
         "notes": "Chatham's school district is one of New Jersey's finest, which—combined with its charming downtown and train access—keeps this Morris County community highly competitive.",
-        "sell_notes": "In Chatham, school district quality is the #1 selling point. Market your home's proximity to top schools and the train station to attract the most motivated buyers.",
+        "sell_notes": "In Chatham, school district quality is the #1 selling point. Market your home's proximity to local schools and the train station to attract the most motivated buyers.",
         "geo": "Chatham, New Jersey",
         "slug": "chatham-nj",
     },
@@ -239,7 +239,7 @@ TOWNS = {
         "market_type": "balanced",
         "dom": "27–37 days",
         "yoy": "+3.1%",
-        "notes": "Randolph is a spacious Morris County township known for large lots, strong schools, and the scenic Randolph Lake and Freedom Park recreational areas.",
+        "notes": "Randolph is a spacious Morris County township known for large lots, local schools, and the scenic Randolph Lake and Freedom Park recreational areas.",
         "sell_notes": "Randolph buyers prioritize space and schools. Highlight lot size, school rankings, and the township's parks and recreation when positioning your home.",
         "geo": "Randolph, New Jersey",
         "slug": "randolph-nj",
@@ -428,7 +428,7 @@ def buying_post(town_key):
   <li><strong>Don't skip the inspection</strong> — many {name} homes are 50–80 years old; a thorough inspection protects you.</li>
 </ol>
 
-<p>Ready to start your search? I work exclusively in this market and know every street. Call or text me at <strong><a href="tel:+19082307844">908-230-7844</a></strong> and I'll put together a personalized list of homes that match your criteria.</p>
+<p>Ready to start your search? I work actively in this market and track local market trends. Call or text me at <strong><a href="tel:+19082307844">908-230-7844</a></strong> and I'll put together a personalized list of homes that match your criteria.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div class="faq-section">{faq_html}
@@ -453,7 +453,7 @@ def selling_post(town_key):
     name = t["name"]
     filename = f"selling-home-{town_key}-nj-2026.html"
     title = f"Selling Your Home in {name} NJ 2026 | Jorge Ramirez"
-    desc = f"Selling your home in {name} NJ in 2026? Expert pricing strategy, market insights, and proven marketing from top local realtor Jorge Ramirez. Median ~{t['median']}."[:160]
+    desc = f"Selling your home in {name} NJ in 2026? Pricing strategy, market insights, and marketing from licensed NJ real estate agent Jorge Ramirez. Median ~{t['median']}."[:160]
     keywords = f"selling home {name} NJ, {name} NJ home value, {name} real estate agent, {t['county']} home seller, Jorge Ramirez listing agent, {name} NJ market 2026, home sale {name} NJ"
     canonical = f"https://thejorgeramirezgroup.com/blog/{filename}"
     headline = f"Selling Your Home in {name}, NJ — 2026 Seller's Guide"

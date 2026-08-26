@@ -21,7 +21,7 @@ Why? Because the 2015-2017 market was different. Developers built for a differen
 You bought in a market where Hoboken was "the next Jersey City." You paid $550k for a 1BR in a 2015 building. Now? That same building’s selling for $720k. But here’s the math: **Your equity isn’t just the price jump—it’s the *systemic undervaluation* of your asset class.**
 
 - **The 2018 "Reset"**: When the 2018 market softened, pre-2018 condos got caught in the crossfire. Sellers overpriced, buyers walked, and the market *stuck* a price tag on these units that’s now 15-20% below what they’d fetch *today* with the right positioning.
-- **The Hudson County Factor**: Hoboken’s proximity to NYC (15-20 min to Midtown via PATH) and top schools (Hoboken Public Schools, ranked #2 in Hudson County for K-8) makes *all* condos valuable—but pre-2018 units are the *only* ones with proven, stable appreciation since 2015.
+- **The Hudson County Factor**: Hoboken’s proximity to NYC (15-20 min to Midtown via PATH) and local schools shape buyer demand. Condo value still depends on the building, condition, fees, and current comparable sales.
 - **The Data**: In 2025, pre-2018 condos in Hoboken sold **12% faster** than the market average (compared to 2023’s 5% speed). Why? Buyers know they’re getting a *decent* asset at a *fair* price—no "new build" premium.
 
 ### Common Mistakes: Why You’re Leaving Equity on the Table

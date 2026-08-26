@@ -85,7 +85,7 @@ SUBS = [
     (r"who's owned and sold 60\+ properties in NJ", "who's owned and sold properties across NJ"),
     (r"who's owned and sold 60\+ properties en NJ", "who's owned and sold properties across NJ"),
     (r'who has personally renovated over 60 properties', 'who has personally renovated dozens of properties'),
-    (r'evaluation\. 60\+ homes flipped\. 138 communities\.', 'evaluation. 138 communities.'),
+    (r'evaluation\. 60\+ homes flipped\. 138 communities\.', 'evaluation. Communities across six New Jersey counties.'),
     (r'60\+ homes flipped means', 'Investor experience means'),
     (r"Jorge's 60\+ Flip Advantage", "Jorge's Investor Advantage"),
     (r'His 60\+ flip background', 'His investor background'),

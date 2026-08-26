@@ -531,7 +531,7 @@ PAGES = {
         "pain_cards": [
             ("Buying in the Wrong Commuter Town", "'Commutable to NYC' covers everywhere from a 22-minute Summit direct train to a 90-minute transfer-heavy ride from Bridgewater. Some towns have Midtown Direct. Some do not. Some have ferry service. Jorge maps out your exact door-to-office commute for every town you are considering — not the fantasy version."),
             ("Underestimating NJ Property Taxes", "A $1.2M house in Summit can come with $22K+ a year in property taxes — which is common knowledge to locals but a shock to NYC buyers. Jorge shows you the all-in monthly cost (mortgage + tax + insurance) for every property, so you are never surprised at closing. Some NJ towns have half the tax rate of others — this matters."),
-            ("Picking a School District Blindfolded", "NYC school reputation does not transfer to NJ. Montclair, Maplewood, Summit, Westfield, Chatham, and Millburn/Short Hills all have strong public schools — with very different cultures and demographics. Jorge matches buyers to the town that fits their family style, not just the GreatSchools rating."),
+            ("Picking a School District Blindfolded", "NYC school reputation does not transfer to NJ. Montclair, Maplewood, Summit, Westfield, Chatham, and Millburn/Short Hills all have local public schools — with very different cultures and demographics. Jorge matches buyers to the town that fits their family style, not just the GreatSchools rating."),
             ("Skipping the Apartment-to-House Reality Check", "Driving everywhere. Managing a lawn. Shoveling in winter. Commuting 45 minutes each way. Paying for things supers used to handle. NYC apartment life and NJ suburban life are different operating systems. Jorge has the honest conversation about what changes before you buy — not after."),
             ("Missing NYC Exit Tax and Selling Timing", "If you sell a NYC apartment, NY state and city taxes apply. If you are renting in NYC, the savings on NYC income tax after the move are significant (NJ does not have NYC's local income tax, though it has its own). Jorge works with buyers' CPAs to think through the tax year timing of the move."),
         ],
@@ -569,7 +569,7 @@ PAGES = {
         ],
         "faq_h2": "NYC to NJ — Questions Every Transplant Asks",
         "faqs": [
-            ("What's the real difference between Summit, Westfield, Chatham, and Montclair?", "All four have top public schools, Midtown Direct train, walkable downtowns, and similar price bands — but very different cultures. Summit is tight-knit, corporate, walk-to-train small. Westfield is larger, suburban, more kid-focused. Chatham is smaller, quieter, more traditional. Montclair is artistic, diverse, more urban energy. Jorge walks through the cultural fit, not just the specs."),
+            ("What's the real difference between Summit, Westfield, Chatham, and Montclair?", "All four have local public schools, Midtown Direct train, walkable downtowns, and similar price bands — but very different cultures. Summit is tight-knit, corporate, walk-to-train small. Westfield is larger, suburban, more kid-focused. Chatham is smaller, quieter, more traditional. Montclair is artistic, diverse, more urban energy. Jorge walks through the cultural fit, not just the specs."),
             ("How much should I expect to pay in NJ property taxes?", "Depends heavily on the town. NJ property tax rates range from ~1.5% (e.g., Hoboken) to ~3%+ (e.g., some parts of Essex County). On a $1M home, that is a $15K–$30K+ annual tax bill. Jorge shows you the all-in monthly cost for every property so there are no surprises."),
             ("What's the best commuter town from NYC?", "For shortest commute: Hoboken or Jersey City (PATH, 10–15 min). For suburban lifestyle: Summit, Chatham, or Maplewood (Midtown Direct, 25–45 min). For best value: further-out towns like Westfield or Montclair give you larger homes but slightly longer commutes. The 'best' town depends on your priority — Jorge matches buyer to town based on the actual weekly routine."),
             ("How long does it take to buy a house in NJ from NYC?", "Once you start seriously looking: 6–12 weeks to find the right home and get under contract. 45–60 days from signed contract to closing. Total NYC-to-NJ relocation timeline: 4–6 months from first call to move-in day, if you want to do it without rushing."),
@@ -674,7 +674,7 @@ PAGES = {
         "pain_intro": "Agents who sell median-price homes can be excellent at what they do — and still be wrong for a $2M luxury transaction. The needs are different. Here is what luxury clients consistently flag as the gaps they have experienced with previous agents.",
         "pain_cards": [
             ("Privacy and Discretion Standards", "Celebrity clients, professional athletes, executives, and high-net-worth families need the transaction to stay quiet. That means NDAs on request, controlled access to showings, listings kept off the public MLS when appropriate, and no social media posts mentioning the property. Jorge operates at this discretion standard by default."),
-            ("Off-Market and Pocket Listing Access", "Many luxury homes never hit the public market. They move through private networks, agent-to-agent whispers, and pocket listings. Without access to that flow, luxury buyers see only 40% of what is actually available. Jorge's network includes top listing agents in every premium NJ town."),
+            ("Off-Market and Pocket Listing Access", "Many luxury homes never hit the public market. They move through private networks, agent-to-agent whispers, and pocket listings. Without access to that flow, luxury buyers see only 40% of what is actually available. Jorge's network includes established listing agents in premium NJ towns."),
             ("Global Buyer Reach for Luxury Sellers", "The buyer for a $3M Short Hills home might be in Manhattan — or Singapore. Luxury sellers need marketing that reaches international qualified buyers, not just local Zillow traffic. Jorge's listings get distributed through Keller Williams Premier Properties' luxury network and international channels."),
             ("Legal and Financial Complexity", "Trusts, LLCs, 1031 exchanges, foreign buyer FIRPTA requirements, prenuptial implications, estate planning considerations. Luxury transactions often involve multiple attorneys and tax advisors. Jorge coordinates all these parties so the sale does not stall in the legal weeds."),
             ("Pricing in a Thin Market", "Luxury homes have fewer comps, unique features, and wider pricing bands. Pricing a $2.5M home is not a math problem — it is a judgment call informed by strategy. Jorge pairs data (recent sales, inventory, absorption rates) with luxury-specific market intelligence to land on pricing that invites qualified bids without giving the home away."),
@@ -691,7 +691,7 @@ PAGES = {
             "$1M–$10M+ NJ representation across Summit, Westfield, Chatham, Short Hills, Madison",
             "Keller Williams Luxury Network — national and international distribution",
             "Private showings, NDA handling, controlled access standards",
-            "Off-market and pocket listing access via Jorge's top-agent network",
+            "Off-market and pocket listing access via Jorge's agent network",
             "Coordination with trusts, LLCs, foreign buyers, and multi-attorney transactions",
             "Cinematic listing photography and video at luxury price points",
         ],
@@ -709,7 +709,7 @@ PAGES = {
         "ai_cards": [
             ("Short Hills & Millburn ($1.5M–$8M+)", "Deep luxury market, top-tier Millburn schools, Midtown Direct to NYC. Buyers are NYC executives, finance, and tech professionals. Inventory is tight — off-market deals are common."),
             ("Summit & Chatham ($1M–$5M+)", "Walkable downtowns, Midtown Direct, excellent schools. Attracts NYC commuters and families moving up from starter homes. Jorge's home office is Summit — deep local market knowledge."),
-            ("Montclair, Westfield, Madison ($1M–$4M+)", "Three distinct luxury cultures. Montclair: artistic, urban, diverse. Westfield: traditional suburban luxury, large lots. Madison: small-town luxury with strong schools and a pedestrian downtown."),
+            ("Montclair, Westfield, Madison ($1M–$4M+)", "Three distinct luxury cultures. Montclair: artistic, urban, diverse. Westfield: traditional suburban luxury, large lots. Madison: small-town luxury with local schools and a pedestrian downtown."),
         ],
         "faq_h2": "Luxury NJ Real Estate — Your Questions",
         "faqs": [

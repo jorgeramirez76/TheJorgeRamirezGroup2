@@ -21,7 +21,7 @@ COUNTIES = {
         "dom": "22 days",
         "inv_months": "2.1 months",
         "top_towns": ["Montclair", "Maplewood", "South Orange", "West Orange", "Glen Ridge"],
-        "flavor": "Essex County continues to be one of the most in-demand suburban markets in New Jersey for NYC commuters. Montclair, Maplewood, and South Orange lead on both volume and price appreciation, driven by Midtown Direct access and strong school districts.",
+        "flavor": "Essex County continues to be one of the most in-demand suburban markets in New Jersey for NYC commuters. Montclair, Maplewood, and South Orange lead on both volume and price appreciation, driven by Midtown Direct access and local school districts.",
         "segment_notes": [
             ("Luxury ($1.5M+)", "Short Hills–adjacent Millburn neighborhoods and upper Montclair continue to see multiple offers on well-prepped homes, with premium buyers often coming from NYC relocations. Q2 2026 luxury inventory in Essex County remains tight — under 3 months of supply at the $1.5M+ tier."),
             ("Mid-Market ($700K–$1.2M)", "The competitive sweet spot. Homes priced accurately are seeing 3-8 offers within the first week. Overpriced listings are sitting 45+ days then dropping — classic pattern this spring."),
@@ -89,7 +89,7 @@ COMPARISONS = {
         "town_b": "Summit",
         "title": "Westfield vs Summit NJ — Which Commuter Town Is Right for You?",
         "meta_desc": "Choosing between Westfield and Summit NJ? Compare commute, schools, prices, and lifestyle for 2026. Jorge Ramirez breaks down both towns honestly. Call 908-230-7844.",
-        "intro": "Westfield and Summit are two of New Jersey's premier NYC commuter towns — both on the Raritan Valley / Midtown Direct line, both with strong school districts, both with walkable downtowns. But they are genuinely different towns with different personalities. Here's how to pick.",
+        "intro": "Westfield and Summit are two of New Jersey's premier NYC commuter towns — both on the Raritan Valley / Midtown Direct line, both with local school districts, both with walkable downtowns. But they are genuinely different towns with different personalities. Here's how to pick.",
         "verdict": "Summit is tighter, faster-paced, and more corporate. Westfield is larger, more family-oriented, and slightly more affordable. Choose Summit if you want a shorter commute and walk-to-train living. Choose Westfield if you want more space for the money and a bigger community feel.",
         "rows": [
             ("Median Home Price 2026", "~$1.15M", "~$925K"),
@@ -110,8 +110,8 @@ COMPARISONS = {
         "town_a": "Chatham",
         "town_b": "Madison",
         "title": "Chatham vs Madison NJ — Two Small Commuter Towns, Compared",
-        "meta_desc": "Chatham vs Madison NJ — both small Morris County commuter towns with top schools. Jorge Ramirez breaks down prices, commute, and lifestyle. Call 908-230-7844.",
-        "intro": "Chatham and Madison are the quintessential 'small NJ commuter town' choice — both on the Morristown Line (Midtown Direct), both with top-tier schools, both with intimate walkable downtowns. They're more alike than different, but the nuances matter for the right buyer.",
+        "meta_desc": "Chatham vs Madison NJ — two small Morris County commuter towns with local schools. Jorge Ramirez breaks down prices, commute, and lifestyle. Call 908-230-7844.",
+        "intro": "Chatham and Madison are the quintessential 'small NJ commuter town' choice — both on the Morristown Line (Midtown Direct), both with local schools, both with intimate walkable downtowns. They're more alike than different, but the nuances matter for the right buyer.",
         "verdict": "Madison has a slightly more energetic downtown and better restaurant scene. Chatham is quieter, more family-traditional, and has newer housing stock. Both deliver excellent schools and similar commute times. For many buyers the choice comes down to specific neighborhoods and what's on market.",
         "rows": [
             ("Median Home Price 2026", "~$1.1M", "~$975K"),
@@ -305,7 +305,7 @@ COUNTY_TEMPLATE = r'''<!DOCTYPE html>
         <div class="content-section">
             <h2>Market Summary</h2>
             <p>{flavor}</p>
-            <p>As of April 2026, {county} represents one of the more active segments of the NJ real estate market. Home prices are up {yoy_change} year-over-year, with strong activity in towns like {top_towns_list} — each of which benefits from a mix of NYC commuter appeal, strong public schools, and limited new-construction inventory.</p>
+            <p>As of April 2026, {county} represents one of the more active segments of the NJ real estate market. Home prices are up {yoy_change} year-over-year, with strong activity in towns like {top_towns_list} — each of which benefits from a mix of NYC commuter appeal, local public schools, and limited new-construction inventory.</p>
 
             <h2>Segment Breakdown</h2>
 {segment_html}

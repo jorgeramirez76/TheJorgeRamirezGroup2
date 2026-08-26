@@ -29,7 +29,7 @@ Your $1.8M home sold for $2.4M in 2019? That’s irrelevant. The *current* comps
 
 ### ❌ Mistake #2: Ignoring the “Livingston Advantage” Factor
 Livingston isn’t just another suburb. It’s a *destination* for buyers who value:
-- **Top-tier schools** (Livingston Public Schools consistently rank #1 in Essex County for K-12)
+- **local schools** (Livingston Public Schools consistently rank #1 in Essex County for K-12)
 - **25-minute commute to NYC** (via Montclair-Boonton Line, not the train station—*that* matters)
 - **Walkable neighborhoods** (e.g., the historic district near the library, or the gated estates off South Mountain Road)
 
