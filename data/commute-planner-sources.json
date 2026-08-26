@@ -1,0 +1,49 @@
+{
+  "reviewed": "2026-08-26",
+  "sources": [
+    {
+      "publisher_en": "NJ TRANSIT",
+      "publisher_es": "NJ TRANSIT",
+      "title_en": "Trip Planner and Service Near a Location",
+      "title_es": "Planificador de viajes y servicio cerca de una ubicación",
+      "url": "https://www.njtransit.com/trip-planner-service-near-to",
+      "use_en": "Check a current itinerary for the specific origin, destination, date, and departure time.",
+      "use_es": "Consulte un itinerario vigente para el origen, destino, fecha y hora de salida específicos.",
+      "limit_en": "A planned itinerary can change. Recheck it near the travel date and review current service notices.",
+      "limit_es": "Un itinerario planificado puede cambiar. Vuelva a consultarlo cerca de la fecha del viaje y revise los avisos vigentes."
+    },
+    {
+      "publisher_en": "NJ TRANSIT",
+      "publisher_es": "NJ TRANSIT",
+      "title_en": "Schedules and Fares",
+      "title_es": "Horarios y tarifas",
+      "url": "https://www.njtransit.com/schedules-and-fares/",
+      "use_en": "Verify current rail, bus, or light-rail schedules and fare information for the route being compared.",
+      "use_es": "Verifique los horarios y las tarifas vigentes de tren, autobús o tren ligero para la ruta que compara.",
+      "limit_en": "This worksheet does not import live schedules or fares; enter only figures you have checked at the source.",
+      "limit_es": "Esta hoja no importa horarios ni tarifas en vivo; ingrese únicamente cifras que haya verificado en la fuente."
+    },
+    {
+      "publisher_en": "NJ TRANSIT",
+      "publisher_es": "NJ TRANSIT",
+      "title_en": "My Transit Alerts",
+      "title_es": "Alertas My Transit",
+      "url": "https://www.njtransit.com/mytransit",
+      "use_en": "Review the agency's options for route, schedule-change, delay, and station advisories.",
+      "use_es": "Revise las opciones de la agencia para recibir avisos de rutas, cambios de horario, demoras y estaciones.",
+      "limit_en": "An alert service helps with current notices; it cannot predict future reliability for a property search.",
+      "limit_es": "Un servicio de alertas ayuda con avisos vigentes; no puede predecir la confiabilidad futura para una búsqueda de vivienda."
+    },
+    {
+      "publisher_en": "Port Authority of New York and New Jersey",
+      "publisher_es": "Autoridad Portuaria de Nueva York y Nueva Jersey",
+      "title_en": "PATH schedules, maps, fares, and station updates",
+      "title_es": "Horarios, mapas, tarifas y avisos de estaciones de PATH",
+      "url": "https://www.panynj.gov/path/en/index.html",
+      "use_en": "Check current PATH information when a comparison includes Newark, Harrison, Jersey City, or Hoboken service.",
+      "use_es": "Consulte la información vigente de PATH cuando una comparación incluya servicio en Newark, Harrison, Jersey City o Hoboken.",
+      "limit_en": "PATH and NJ TRANSIT are separate systems; verify each leg with the agency operating it.",
+      "limit_es": "PATH y NJ TRANSIT son sistemas distintos; verifique cada tramo con la agencia que lo opera."
+    }
+  ]
+}
