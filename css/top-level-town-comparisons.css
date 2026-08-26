@@ -111,10 +111,19 @@ body.tc-page {
 }
 
 .tc-header-nav {
+  position: static;
+  top: auto;
+  z-index: auto;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  width: auto;
   gap: 8px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: none;
 }
 
 .tc-header-nav a {

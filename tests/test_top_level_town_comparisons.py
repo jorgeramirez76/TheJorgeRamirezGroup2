@@ -236,10 +236,16 @@ class TopLevelTownComparisonTests(unittest.TestCase):
         self.assertIn("prefers-reduced-motion", css)
         self.assertRegex(css, r"@media\s*\(max-width:\s*480px\)")
         self.assertIn("min-height:44px", compact)
+        header_nav = re.search(r"\.tc-header-nav\s*\{([^}]*)\}", css, re.S)
+        self.assertIsNotNone(header_nav)
+        header_nav_rules = re.sub(r"\s+", "", header_nav.group(1)).lower()
+        for reset in ("position:static", "width:auto", "padding:0", "background:transparent"):
+            self.assertIn(reset, header_nav_rules)
         for banned in BANNED_STYLE:
             self.assertNotIn(banned, css.lower())
         for relative in PAGES:
             raw = read(relative)
+            self.assertIn('srcset="/images/jorge-logo.webp"', raw)
             self.assertIn('href="/css/styles.css"', raw)
             self.assertIn('href="/css/top-level-town-comparisons.css"', raw)
             self.assertLess(
