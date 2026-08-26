@@ -1,0 +1,64 @@
+{
+  "reviewed": "2026-08-26",
+  "pages": {
+    "middlesex": {
+      "display_name": "Middlesex Borough",
+      "county": "Middlesex",
+      "identity": "This route refers to Middlesex Borough in Middlesex County. Confirm the municipality, block, and lot in the public record before using countywide or postal-name information for a property.",
+      "municipal_label": "Middlesex Borough official website",
+      "municipal_url": "https://www.middlesexboro-nj.gov/",
+      "record_label": "Middlesex Borough finance and assessment resources",
+      "record_url": "https://www.middlesexboro-nj.gov/finance"
+    },
+    "woodbridge": {
+      "display_name": "Woodbridge Township",
+      "county": "Middlesex",
+      "identity": "This route refers to Woodbridge Township in Middlesex County. Confirm the legal municipality and parcel record for the exact address rather than relying on a postal or neighborhood label.",
+      "municipal_label": "Woodbridge Township government directory",
+      "municipal_url": "https://www.twp.woodbridge.nj.us/27/Government",
+      "record_label": "Woodbridge Township departments",
+      "record_url": "https://www.twp.woodbridge.nj.us/101/Departments"
+    },
+    "orange": {
+      "display_name": "Orange City Township",
+      "county": "Essex",
+      "identity": "This route refers to Orange City Township in Essex County. Confirm the name shown in the parcel record; Orange, East Orange, South Orange, and West Orange are not interchangeable municipal records.",
+      "municipal_label": "Orange City Township official website",
+      "municipal_url": "https://www.orangenj.gov/",
+      "record_label": "Orange City Township Zoning Division",
+      "record_url": "https://www.orangenj.gov/355/Zoning-Division"
+    },
+    "helmetta": {
+      "display_name": "Helmetta",
+      "county": "Middlesex",
+      "identity": "This route refers to the Borough of Helmetta in Middlesex County. Start with the exact address and parcel identifiers, then verify which local or state office maintains each record you need.",
+      "municipal_label": "Borough of Helmetta official website",
+      "municipal_url": "https://www.helmettaboro.com/",
+      "record_label": "New Jersey construction-code resources",
+      "record_url": "https://www.nj.gov/dca/codes/"
+    }
+  },
+  "shared_sources": [
+    {
+      "category": "State education reports",
+      "label": "New Jersey School Performance Reports",
+      "url": "https://www.nj.gov/education/spr/",
+      "purpose": "Search the state's current reports by school or district and read the reporting year and methodology.",
+      "limit": "A state report does not assign an address to a school; confirm the current assignment directly with the responsible district."
+    },
+    {
+      "category": "Transportation",
+      "label": "NJ TRANSIT schedules and fares",
+      "url": "https://www.njtransit.com/schedules-and-fares/",
+      "purpose": "Check a route for the actual origin, destination, date, and travel window.",
+      "limit": "Schedules, fares, transfers, and service conditions can change; a town page cannot promise a travel time."
+    },
+    {
+      "category": "Flood disclosure",
+      "label": "New Jersey DEP flood-disclosure resources",
+      "url": "https://dep.nj.gov/flooddisclosure/",
+      "purpose": "Review the state's property-focused flood-disclosure resources and linked tools.",
+      "limit": "Regional context is not a parcel determination or an insurance quote. Use the exact address and current professional guidance."
+    }
+  ]
+}
