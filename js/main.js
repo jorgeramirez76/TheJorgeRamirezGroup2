@@ -49,39 +49,33 @@ if (mobileMenuBtn) {
 // County info for display
 const countyInfo = {
     "Essex": {
-        towns: 11,
-        highlight: "Maplewood, South Orange, Montclair, Livingston",
-        description: "Walkable downtowns, Midtown Direct trains, and communities from Montclair to Livingston.",
+        highlight: "Bloomfield, Maplewood, Millburn, Montclair",
+        description: "Six maintained guides connecting Essex County addresses to municipal, property, tax, transit, and district sources.",
         photo: "/images/county-cards/essex.webp"
     },
     "Hudson": {
-        towns: 12,
-        highlight: "Hoboken, Jersey City, Weehawken, Bayonne",
-        description: "Waterfront living with NYC skyline views, PATH access, and vibrant urban neighborhoods.",
+        highlight: "Guttenberg, Hoboken, Jersey City, West New York",
+        description: "Four maintained guides connecting Hudson County addresses to municipal, property, transit, and tax sources.",
         photo: "/images/county-cards/hudson.webp"
     },
     "Morris": {
-        towns: 37,
-        highlight: "Chatham, Madison, Morristown, Florham Park",
-        description: "local school-district information, green space, and higher-priced commuter towns along the Morris & Essex Line.",
+        highlight: "Chatham, Denville, Madison, Morristown",
+        description: "Eight maintained guides for municipal records, property research, transportation sources, and district information.",
         photo: "/images/county-cards/morris.webp"
     },
     "Middlesex": {
-        towns: 22,
-        highlight: "Edison, Metuchen, Woodbridge, South Plainfield",
-        description: "Communities with local schools, major highway access, and varied housing options.",
+        highlight: "East Brunswick, Helmetta, Middlesex, Woodbridge",
+        description: "Five maintained guides for municipal, property, transportation, tax, and district-source research.",
         photo: "/images/county-cards/middlesex.webp"
     },
     "Union": {
-        towns: 21,
-        highlight: "Summit, Westfield, Cranford, Scotch Plains",
-        description: "Jorge's home turf — top commuter towns with local public-school districts and direct resale values.",
+        highlight: "Berkeley Heights, Cranford, Summit, Westfield",
+        description: "Jorge's Summit office is in Union County, with eight maintained guides for property and municipal research.",
         photo: "/images/county-cards/union.webp"
     },
     "Somerset": {
-        towns: 10,
-        highlight: "Warren, Watchung, Basking Ridge, Bridgewater",
-        description: "Room to breathe, local schools, corporate access, and move-up neighborhoods.",
+        highlight: "Basking Ridge",
+        description: "The maintained Basking Ridge guide connects an address to Bernards Township, property, tax, transit, and district sources.",
         photo: "/images/county-cards/somerset.webp"
     }
 };
@@ -94,17 +88,18 @@ function renderCountyCards() {
     container.classList.remove('county-open');
     container.innerHTML = Object.keys(countyInfo).map(county => {
         const info = countyInfo[county];
+        const townGuideCount = (communitiesData[county] || []).length;
         return `
-        <div class="county-hero-card" data-county="${county}" onclick="openCounty('${county}')">
-            <div class="county-hero-photo" data-bg="${info.photo}" aria-hidden="true"></div>
-            <div class="county-hero-body">
-                <div class="county-hero-name">${county} County</div>
-                <div class="county-hero-towns">${info.towns} Communities</div>
-                <div class="county-hero-highlight">${info.highlight}</div>
-                <p class="county-hero-desc">${info.description}</p>
-                <div class="county-hero-cta">Explore ${county} County →</div>
-            </div>
-        </div>`;
+        <button type="button" class="county-hero-card" data-county="${county}" aria-label="Explore ${county} County" onclick="openCounty('${county}')">
+            <span class="county-hero-photo" data-bg="${info.photo}" aria-hidden="true"></span>
+            <span class="county-hero-body">
+                <span class="county-hero-name">${county} County</span>
+                <span class="county-hero-towns">${townGuideCount} Town Guides</span>
+                <span class="county-hero-highlight">${info.highlight}</span>
+                <span class="county-hero-desc">${info.description}</span>
+                <span class="county-hero-cta">Explore ${county} County →</span>
+            </span>
+        </button>`;
     }).join('');
     observeCountyPhotos(container);
 }
@@ -175,9 +170,9 @@ function openCounty(county) {
 
     const towns = communitiesData[county] || [];
 
-    const backBtn = `<div class="county-back-btn" onclick="closeCounty()">\u2190 All Counties</div>`;
+    const backBtn = `<button type="button" class="county-back-btn" onclick="closeCounty()">\u2190 All Counties</button>`;
     const countyTitle = `<div class="county-open-header">
-        <h3>${county} County — ${towns.length} Communities</h3>
+        <h3>${county} County — ${towns.length} Town Guides</h3>
         <p>${countyInfo[county].description}</p>
     </div>`;
 
@@ -192,12 +187,20 @@ function openCounty(county) {
 
     container.classList.add('county-open');
     container.innerHTML = backBtn + countyTitle + search + townCards;
+    const backButton = container.querySelector('.county-back-btn');
+    if (backButton) backButton.focus({ preventScroll: true });
     container.scrollIntoView({behavior: 'smooth', block: 'start'});
 }
 
 function closeCounty() {
+    const closingCounty = activeCounty;
     activeCounty = null;
     renderCountyCards();
+    const container = document.getElementById('communities-container');
+    const returningCard = container && closingCounty
+        ? container.querySelector(`.county-hero-card[data-county="${closingCounty}"]`)
+        : null;
+    if (returningCard) returningCard.focus({ preventScroll: true });
 }
 
 function filterTowns(county, term) {
@@ -225,7 +228,7 @@ function buildTownCard(c, county) {
             ${c.commute_to_nyc ? `<div class="detail-item"><span class="detail-label">NYC Commute:</span> ${c.commute_to_nyc}</div>` : ''}
             ${c.schools ? `<div class="detail-item"><span class="detail-label">Schools:</span> ${c.schools.substring(0,100)}...</div>` : ''}
         </div>
-        <a href="communities/${slug}" class="community-link">Explore ${c.town} →</a>
+        <a href="/towns/${slug}" class="community-link">Explore ${c.town} →</a>
     </div>`;
 }
 

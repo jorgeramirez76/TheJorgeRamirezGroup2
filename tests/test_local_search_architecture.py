@@ -46,6 +46,14 @@ def sitemap_town_slugs() -> set[str]:
     }
 
 
+def homepage_community_data() -> dict[str, list[dict[str, str]]]:
+    source = read("js/communities-data.js")
+    match = re.search(r"const\s+communitiesData\s*=\s*(\{.*\});\s*$", source, re.S)
+    if not match:
+        raise AssertionError("js/communities-data.js is not a JSON-compatible data object")
+    return json.loads(match.group(1))
+
+
 class LocalSearchArchitectureTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -109,6 +117,57 @@ class LocalSearchArchitectureTests(unittest.TestCase):
             for slug in town_slugs:
                 with self.subTest(route=route, slug=slug):
                     self.assertIn(route, links(read(f"towns/{slug}.html")))
+
+    def test_westfield_legacy_comparison_has_a_contextual_town_inbound(self) -> None:
+        self.assertIn(
+            "/westfield-vs-scotch-plains-nj",
+            links(read("towns/westfield.html")),
+        )
+
+    def test_homepage_community_cards_match_the_maintained_inventory(self) -> None:
+        cards = homepage_community_data()
+        inventory = self.facts["canonicalTownInventory"]["byCounty"]
+        self.assertEqual(set(inventory), set(cards))
+        self.assertEqual(32, sum(len(records) for records in cards.values()))
+        for county, expected_slugs in inventory.items():
+            records = cards[county]
+            with self.subTest(county=county):
+                self.assertEqual(set(expected_slugs), {item["url_slug"] for item in records})
+                self.assertTrue(
+                    all(set(item) == {"town", "url_slug", "description"} for item in records)
+                )
+
+    def test_homepage_county_copy_is_objective_and_counted_from_inventory(self) -> None:
+        source = read("js/main.js")
+        risky = re.compile(
+            r"\b(?:top|best|prestigious|affluent|vibrant|inclusive|"
+            r"famil(?:y|ies)|move-up|desirable|safest?|higher-priced|"
+            r"resale values?|room to breathe|diverse|latino)\b|"
+            r"\b\d+\s*(?:-|–|to)\s*\d+\s*minutes?\b",
+            re.I,
+        )
+        cards = homepage_community_data()
+        self.assertIsNone(risky.search(json.dumps(cards)))
+        for county, slugs in self.facts["canonicalTownInventory"]["byCounty"].items():
+            block = re.search(
+                rf'"{re.escape(county)}"\s*:\s*\{{(.*?)\n\s*\}}',
+                source,
+                re.S,
+            )
+            self.assertIsNotNone(block, county)
+            self.assertNotRegex(block.group(1), r"\btowns:\s*\d+", county)
+            self.assertIsNone(risky.search(block.group(1)), county)
+        self.assertIn(
+            "const townGuideCount = (communitiesData[county] || []).length;",
+            source,
+        )
+        self.assertIn("${townGuideCount} Town Guides", source)
+        self.assertIn("${towns.length} Town Guides", source)
+        self.assertIn('href="/towns/${slug}"', source)
+        self.assertIn(
+            "then narrow the research to a specific address",
+            read("index.html"),
+        )
 
     def test_priority_town_pathway_sync_is_deterministic_and_branded(self) -> None:
         result = subprocess.run(

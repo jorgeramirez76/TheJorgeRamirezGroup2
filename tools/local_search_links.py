@@ -12,6 +12,18 @@ MANIFEST = ROOT / "data" / "top-level-town-comparison-sources.json"
 PLACE_TO_CANONICAL_TOWN = {
     "millburn-short-hills": "millburn",
 }
+TOWN_ONLY_LINKS = {
+    "westfield": [
+        {
+            "slug": "westfield-vs-scotch-plains-nj",
+            "route": "/westfield-vs-scotch-plains-nj",
+            "label": "Westfield vs. Scotch Plains: compare official records",
+            "left_town": "westfield",
+            "right_town": "scotch-plains",
+            "counties": ["Union"],
+        }
+    ],
+}
 
 
 def load_comparisons() -> dict[str, object]:
@@ -51,11 +63,14 @@ def comparison_links(*, language: str = "en") -> list[dict[str, str]]:
 
 
 def links_for_town(slug: str, *, language: str = "en") -> list[dict[str, str]]:
-    return [
+    records = [
         record
         for record in comparison_links(language=language)
         if slug in {record["left_town"], record["right_town"]}
     ]
+    if language == "en":
+        records.extend(TOWN_ONLY_LINKS.get(slug, []))
+    return records
 
 
 def links_for_county(county: str, *, language: str = "en") -> list[dict[str, str]]:
