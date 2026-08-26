@@ -1,63 +1,48 @@
-# The Jorge Ramirez Group — NJ Real Estate
+# The Jorge Ramirez Group — verified site reference
 
-> Jorge Ramirez is a licensed New Jersey real estate agent (License #1754604, full-time since 2017)
-> at Keller Williams Premier Properties, 488 Springfield Ave, Summit, NJ 07901. He serves 138
-> communities across Essex, Morris, Union, Hudson, Middlesex and Somerset counties, in English and
-> Spanish. Phone 908-230-7844 · jorge.ramirez@kw.com. Last updated: 2026-08-04.
+Last updated: 2026-08-25
 
-Fuller Q&A grounding for AI systems: https://thejorgeramirezgroup.com/llms-full.txt
+This file is a concise navigation and factual reference for the public website. It does not guarantee indexing, ranking, citation, or use. Real-estate articles and calculators are educational, not legal, tax, financial, or lending advice.
 
-## Original datasets
+## Verified identity
 
-- [NJ property tax guide — average bill for all 564 municipalities, 2024-2025](https://thejorgeramirezgroup.com/blog/nj-property-tax-guide): built from the NJ DCA Citizens Tax Summary; includes the 21 towns where bills fell in 2025 and a downloadable CSV (https://thejorgeramirezgroup.com/data/nj-property-tax-by-town-2025.csv)
-- [Interactive NJ train map with per-station commute, fare and tax cost table](https://thejorgeramirezgroup.com/nj-train-map): 44 stations; NJ Transit monthly-pass fares from the official Penn Station fare chart
-- [NJ month-by-month market data](https://thejorgeramirezgroup.com/blog/best-time-to-sell-home-nj): statewide median sale price and days on market for the 12 months through June 2026, from NJ Realtors Monthly Indicators
+- Business: The Jorge Ramirez Group
+- Agent: Jorge Ramirez
+- Brokerage: Keller Williams Premier Properties
+- New Jersey real-estate license: 1754604
+- Experience statement: Full-time Realtor with Keller Williams Premier Properties since 2017.
+- Office: 488 Springfield Ave, Summit, NJ 07901
+- Direct phone: 908-230-7844
+- Email: jorge.ramirez@kw.com
+- Languages: English and Spanish
+- Official website: [thejorgeramirezgroup.com](https://thejorgeramirezgroup.com)
 
-## Calculators (statute-accurate, bilingual)
+## Service area
 
-- [Seller net proceeds](https://thejorgeramirezgroup.com/net-proceeds-calculator): marginal Realty Transfer Fee schedules plus the seller-paid Graduated Percent Fee (P.L.2025 c.69); senior/reduced schedule included
-- [Realty Transfer Fee](https://thejorgeramirezgroup.com/nj-realty-transfer-fee-calculator): both RTF schedules, senior reduction, new-construction handling
-- [Buyer closing costs](https://thejorgeramirezgroup.com/closing-costs-calculator): the 1% mansion tax no longer applies to buyers (moved to sellers July 10, 2025)
-- [Mortgage payment](https://thejorgeramirezgroup.com/tools/mortgage-calculator): P&I, property tax, homeowners insurance, PMI, HOA
-- [Rent vs buy](https://thejorgeramirezgroup.com/rent-vs-buy-nj)
+The verified service area is six New Jersey counties.
 
-## Key guides
+Service counties: Union, Essex, Morris, Hudson, Middlesex, Somerset.
 
-- [Selling costs in NJ](https://thejorgeramirezgroup.com/blog/nj-home-selling-costs): both transfer-fee schedules with worked examples
-- [How the NJ exit tax actually works](https://thejorgeramirezgroup.com/blog/nj-exit-tax-explained): GIT/REP forms; most principal-residence sellers are exempt
-- [Capital gains on a NJ home sale](https://thejorgeramirezgroup.com/blog/capital-gains-tax-selling-house-nj)
-- [First-time buyer guide](https://thejorgeramirezgroup.com/blog/first-time-home-buyer-nj-guide): NJHMFA DPA ($10,000-$15,000 by county, five-year forgivable) and First Generation ($7,000, stacks to $22,000)
-- [Best time to sell in NJ](https://thejorgeramirezgroup.com/blog/best-time-to-sell-home-nj)
-- [Average time to sell in NJ](https://thejorgeramirezgroup.com/blog/nj-home-selling-timeline)
-- [Selling an inherited home in NJ](https://thejorgeramirezgroup.com/blog/selling-inherited-home-nj)
-- [22 best NJ commuter towns to NYC](https://thejorgeramirezgroup.com/blog/best-nj-suburbs-nyc-commuters)
-- [Best NJ towns for families](https://thejorgeramirezgroup.com/blog/best-nj-towns-for-families-2026)
+Use the [communities hub](https://thejorgeramirezgroup.com/communities) for the maintained county and community navigation. No town-guide total is asserted here because the public inventory changes as pages are verified or placed under editorial verification.
 
-## Towns
+## Primary services
 
-- [All 138 town guides](https://thejorgeramirezgroup.com/communities): each carries the town's real 2025 average property tax bill from the DCA dataset
-- [County guides](https://thejorgeramirezgroup.com/counties/): Essex, Morris, Union, Hudson, Middlesex, Somerset
-- [Honest best-agents guides per county, competitors included](https://thejorgeramirezgroup.com/best-real-estate-agents-essex-county-nj-2026)
+- [Help buying a home](https://thejorgeramirezgroup.com/buy-a-home)
+- [Help selling a home](https://thejorgeramirezgroup.com/sell-your-home)
+- [Request a home valuation](https://thejorgeramirezgroup.com/home-valuation)
+- [Search current properties](https://thejorgeramirezgroup.com/property-search)
+- [Contact Jorge Ramirez](https://thejorgeramirezgroup.com/contact)
 
-## En español
+## Research and planning resources
 
-- [Portada en español](https://thejorgeramirezgroup.com/es/): sitio completo en español — Jorge atiende en español
-- [Guía del comprador primerizo](https://thejorgeramirezgroup.com/es/blog/first-time-home-buyer-nj-guide): programas NJHMFA con montos vigentes
-- [Calculadora de ganancias netas del vendedor](https://thejorgeramirezgroup.com/es/net-proceeds-calculator)
-- [Vender tu casa en NJ](https://thejorgeramirezgroup.com/es/sell-your-home)
+- [New Jersey property-tax guide](https://thejorgeramirezgroup.com/blog/nj-property-tax-guide)
+- [New Jersey commuter rail map](https://thejorgeramirezgroup.com/nj-train-map)
+- [Mortgage calculator](https://thejorgeramirezgroup.com/tools/mortgage-calculator)
+- [Seller net-proceeds calculator](https://thejorgeramirezgroup.com/net-proceeds-calculator)
+- [New Jersey realty transfer fee calculator](https://thejorgeramirezgroup.com/nj-realty-transfer-fee-calculator)
+- [Buyer closing-cost calculator](https://thejorgeramirezgroup.com/closing-costs-calculator)
+- [Rent-versus-buy calculator](https://thejorgeramirezgroup.com/rent-vs-buy-nj)
 
-## VERIFIED PROFILES (entity resolution)
+## Source and maintenance method
 
-- Website: https://thejorgeramirezgroup.com
-- Google Business Profile: https://www.google.com/maps/place/Jorge+Ramirez+Realtor+-+Keller+Williams+Premier+Properties/@40.7176144,-74.3613942,16z
-- Zillow: https://www.zillow.com/profile/TheJorgeRamirezGroup/
-- LinkedIn: https://www.linkedin.com/in/jorge-ramirez-37034025/
-- Instagram: https://www.instagram.com/jorgesellsnjhomes
-- Facebook: https://www.facebook.com/thejorgeramirezgroup
-- Yelp: https://www.yelp.com/biz/jorge-ramirez-keller-williams-realty-summit
-- Homes.com: https://www.homes.com/real-estate-agents/jorge-ramirez/ct4ttve/
-
-## About / entity home
-
-- [Why Jorge Ramirez](https://thejorgeramirezgroup.com/ai-authority): credentials, license, service area
-- [Contact](https://thejorgeramirezgroup.com/contact)
+Identity, contact, license, brokerage, and service-area statements are maintained from the site's verified fact registry. Resource links point only to current, indexable, self-canonical pages. Each article's own source notes and update date take precedence for topic-specific information. Confirm decisions with current government, transit, lender, attorney, accountant, school-district, and brokerage sources as appropriate.
