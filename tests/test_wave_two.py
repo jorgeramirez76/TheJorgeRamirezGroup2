@@ -37,7 +37,6 @@ def expected_ai_pipeline_redirects() -> dict[str, str]:
                 clean = manifest["routePrefixByLanguage"][language] + alias
                 destination = family["destinationByLanguage"][language]
                 routes[clean] = destination
-                routes[clean + ".html"] = destination
     return routes
 
 
@@ -362,6 +361,8 @@ class WaveTwoContractTests(unittest.TestCase):
             )
         }
         self.assertEqual(set(expected), set(feature_redirects))
+        self.assertIs(True, json.loads(read(ROOT / "vercel.json")).get("cleanUrls"))
+        self.assertFalse(any(source.endswith(".html") for source in feature_redirects))
         all_sources = {str(rule.get("source", "")) for rule in redirects}
         for source, destination in expected.items():
             with self.subTest(source=source):

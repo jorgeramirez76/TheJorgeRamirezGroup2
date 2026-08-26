@@ -3,8 +3,17 @@
   "reviewedOn": "2026-08-26",
   "routeSync": "tools/sync_ai_sales_pipeline_routes.py",
   "sourceAsset": "AI Sales Pipeline feature pages formerly published under thejorgeramirezgroup.com/features and /es/features",
-  "decision": "Treat the duplicate B2B software pages as a product-domain migration. Retire them from the real-estate search inventory while preserving every legacy route with a permanent, one-hop redirect to the verified AI Sales Pipeline equivalent.",
-  "searchHandling": "No feature page remains indexable or appears in either JRG sitemap. Every English clean and .html variant redirects to its exact verified 200 AI Sales Pipeline feature page. Spanish feature equivalents returned 404 during review, so every Spanish variant temporarily redirects to the verified 200 Spanish product homepage.",
+  "decision": "Treat the duplicate B2B software pages as a product-domain migration. Retire them from the real-estate search inventory while preserving all 36 clean legacy routes with permanent redirects to the verified AI Sales Pipeline equivalent.",
+  "searchHandling": "No feature page remains indexable or appears in either JRG sitemap. Each English clean route redirects to its exact verified 200 AI Sales Pipeline feature page, while each Spanish clean route redirects to the verified 200 Spanish product homepage because the tested Spanish feature equivalents returned 404. With Vercel cleanUrls enabled, every .html request is first normalized to its matching clean route with a platform 308 and then uses that reviewed product-domain redirect.",
+  "vercelRoutingSemantics": {
+    "cleanUrls": true,
+    "cleanRouteRedirects": 36,
+    "legacyAddressVariantsCovered": 72,
+    "cleanAddressHops": 1,
+    "htmlAddressHops": 2,
+    "reason": "Vercel cleanUrls always returns a 308 from an .html request to its extensionless path before ordinary deployment redirects, so explicit .html redirect entries would be unreachable and must not be described as one-hop rules.",
+    "officialDocumentation": "https://vercel.com/docs/project-configuration/vercel-json#cleanurls"
+  },
   "routePrefixByLanguage": {
     "en": "/features/",
     "es": "/es/features/"

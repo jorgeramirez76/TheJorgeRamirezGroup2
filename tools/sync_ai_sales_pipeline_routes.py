@@ -92,9 +92,12 @@ def base_routes(manifest: dict[str, Any]) -> list[dict[str, str]]:
 
 def desired_redirects(manifest: dict[str, Any]) -> list[dict[str, object]]:
     return [
-        {"source": source, "destination": record["destination"], "permanent": True}
+        {
+            "source": record["source"],
+            "destination": record["destination"],
+            "permanent": True,
+        }
         for record in base_routes(manifest)
-        for source in (record["source"], record["source"] + ".html")
     ]
 
 
@@ -118,7 +121,11 @@ def synchronized_vercel(manifest: dict[str, Any], current: str) -> str:
     if not isinstance(redirects, list):
         raise RouteMigrationError("vercel.json redirects must be a list")
     desired = desired_redirects(manifest)
-    managed_sources = {str(rule["source"]) for rule in desired}
+    managed_sources = {
+        source
+        for record in base_routes(manifest)
+        for source in (record["source"], record["source"] + ".html")
+    }
     preserved: list[dict[str, Any]] = []
     for rule in redirects:
         if not isinstance(rule, dict):

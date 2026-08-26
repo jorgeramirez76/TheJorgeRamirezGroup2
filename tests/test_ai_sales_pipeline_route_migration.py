@@ -51,10 +51,10 @@ class AiSalesPipelineRouteMigrationTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.manifest = load_manifest()
         cls.routes = base_routes(cls.manifest)
-        cls.expected = {
-            source: destination
-            for clean, destination in cls.routes.items()
-            for source in (clean, clean + ".html")
+        cls.legacy_addresses = {
+            address
+            for clean in cls.routes
+            for address in (clean, clean + ".html")
         }
 
     def test_manifest_exactly_describes_the_reviewed_asset(self) -> None:
@@ -63,8 +63,14 @@ class AiSalesPipelineRouteMigrationTests(unittest.TestCase):
         self.assertEqual("tools/sync_ai_sales_pipeline_routes.py", self.manifest["routeSync"])
         self.assertEqual(9, len(self.manifest["families"]))
         self.assertEqual(36, len(self.routes))
-        self.assertEqual(72, len(self.expected))
+        self.assertEqual(72, len(self.legacy_addresses))
         self.assertEqual(10, len(set(self.routes.values())))
+        semantics = self.manifest["vercelRoutingSemantics"]
+        self.assertIs(True, semantics["cleanUrls"])
+        self.assertEqual(36, semantics["cleanRouteRedirects"])
+        self.assertEqual(72, semantics["legacyAddressVariantsCovered"])
+        self.assertEqual(1, semantics["cleanAddressHops"])
+        self.assertEqual(2, semantics["htmlAddressHops"])
         buyer_routes = {route for route in self.routes if "buyer-workflows" in route}
         self.assertEqual(4, len(buyer_routes))
         self.assertEqual(
@@ -96,8 +102,11 @@ class AiSalesPipelineRouteMigrationTests(unittest.TestCase):
         )
         self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
 
-    def test_all_clean_and_html_routes_redirect_permanently_in_one_hop(self) -> None:
-        redirects = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))["redirects"]
+    def test_clean_routes_redirect_permanently_and_html_uses_clean_url_normalization(self) -> None:
+        config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
+        self.assertIs(True, config.get("cleanUrls"))
+        self.assertIs(False, config.get("trailingSlash"))
+        redirects = config["redirects"]
         feature_rules = [
             rule
             for rule in redirects
@@ -106,17 +115,37 @@ class AiSalesPipelineRouteMigrationTests(unittest.TestCase):
         by_source: dict[str, list[dict]] = {}
         for rule in feature_rules:
             by_source.setdefault(str(rule["source"]), []).append(rule)
-        self.assertEqual(set(self.expected), set(by_source))
+        self.assertEqual(set(self.routes), set(by_source))
+        self.assertFalse(any(source.endswith(".html") for source in by_source))
         all_redirect_sources = {str(rule.get("source", "")) for rule in redirects}
-        for source, destination in self.expected.items():
+        for source, destination in self.routes.items():
             with self.subTest(source=source):
                 self.assertEqual(1, len(by_source[source]))
                 rule = by_source[source][0]
                 self.assertEqual(destination, rule.get("destination"))
                 self.assertIs(True, rule.get("permanent"))
+                self.assertNotIn("statusCode", rule)
                 self.assertNotIn("has", rule)
                 self.assertEqual(PRODUCT_HOST, urlsplit(destination).netloc)
                 self.assertNotIn(destination, all_redirect_sources)
+
+        feature_indexes = [
+            index
+            for index, rule in enumerate(redirects)
+            if str(rule.get("source", "")) in self.routes
+        ]
+        pattern_indexes = [
+            index
+            for index, rule in enumerate(redirects)
+            if any(mark in str(rule.get("source", "")) for mark in (":", "*", "("))
+            or rule.get("has")
+        ]
+        self.assertLess(max(feature_indexes), min(pattern_indexes))
+
+        declared_route_rules = sum(
+            len(config.get(key, [])) for key in ("redirects", "rewrites", "headers")
+        )
+        self.assertLess(declared_route_rules, 2048)
 
         external_html_rules = {
             str(rule["source"]): str(rule["destination"])
@@ -126,7 +155,7 @@ class AiSalesPipelineRouteMigrationTests(unittest.TestCase):
         }
         expected_external_html = {
             source: destination
-            for source, destination in self.expected.items()
+            for source, destination in self.routes.items()
             if destination.endswith(".html")
         }
         self.assertEqual(expected_external_html, external_html_rules)
