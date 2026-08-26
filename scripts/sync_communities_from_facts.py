@@ -14,10 +14,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FACTS = json.loads((ROOT / "data" / "site-facts.json").read_text(encoding="utf-8"))
-# `/communities` resolves to this directory index in production. Keep the
-# generator attached to the deployed page, rather than the legacy root-level
-# `communities.html` file that is no longer canonical.
+# Vercel's clean-URL routing can resolve `/communities` from the root-level
+# `communities.html` file while conventional static servers resolve the
+# directory index. Generate both route candidates from one source so preview
+# and production cannot publish different inventories.
 OUT = ROOT / "communities" / "index.html"
+ROUTE_ALIASES = (ROOT / "communities.html",)
 
 SPECIAL_NAMES = {
     "boonton-township": "Boonton Township",
@@ -228,4 +230,9 @@ source = source.replace(
 )
 
 OUT.write_text(source, encoding="utf-8")
-print(f"Synchronized {OUT.name}: {total} towns across {len(counties)} counties")
+for alias in ROUTE_ALIASES:
+    alias.write_text(source, encoding="utf-8")
+print(
+    f"Synchronized /communities route candidates: {total} towns across "
+    f"{len(counties)} counties"
+)

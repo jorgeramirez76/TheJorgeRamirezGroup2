@@ -73,10 +73,10 @@ class ContentIntegrityTests(unittest.TestCase):
         self.assertEqual(registered, sitemap_slugs)
 
     def test_deployed_communities_hub_matches_inventory_and_county_membership(self) -> None:
-        # The clean `/communities` URL resolves to this directory index. Testing
-        # the legacy root-level HTML file would allow the production hub to
-        # drift away from the registry without failing CI.
+        # Static previews and Vercel clean-URL routing can select different
+        # source files for `/communities`; both must be generated identically.
         source = read("communities/index.html")
+        self.assertEqual(source, read("communities.html"))
         registered = {
             slug
             for towns in self.inventory["byCounty"].values()
