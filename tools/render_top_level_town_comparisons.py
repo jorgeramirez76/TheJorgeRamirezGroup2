@@ -271,7 +271,11 @@ def render_page(
     alternate_path = f"/{slug}" if language == "es" else f"/es/{slug}"
     home = str(ui["home"])
     contact = f"{home}#contact"
-    programs = f"/es/first-time-buyer-nj-programs" if language == "es" else "/first-time-buyer-nj-programs"
+    programs = (
+        "/es/blog/first-time-home-buyer-nj-guide"
+        if language == "es"
+        else "/blog/first-time-home-buyer-nj-guide"
+    )
     mortgage = f"/es/tools/mortgage-calculator" if language == "es" else "/tools/mortgage-calculator"
     closing = f"/es/closing-costs-calculator" if language == "es" else "/closing-costs-calculator"
     faq = faq_data(ui, left_copy["label"], right_copy["label"])

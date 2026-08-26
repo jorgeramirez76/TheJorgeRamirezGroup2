@@ -438,6 +438,17 @@ class TopLevelTownComparisonTests(unittest.TestCase):
         self.assertNotIn("/blog/chatham-vs-madison-nj</loc>", combined_sitemaps)
         self.assertNotIn("/es/blog/chatham-vs-madison-nj</loc>", combined_sitemaps)
 
+    def test_planning_resources_link_directly_to_the_canonical_buyer_guide(self) -> None:
+        for relative in PAGES:
+            with self.subTest(relative=relative):
+                raw = read(relative)
+                if relative.startswith("es/"):
+                    self.assertIn('href="/es/blog/first-time-home-buyer-nj-guide"', raw)
+                    self.assertNotIn('href="/es/first-time-buyer-nj-programs"', raw)
+                else:
+                    self.assertIn('href="/blog/first-time-home-buyer-nj-guide"', raw)
+                    self.assertNotIn('href="/first-time-buyer-nj-programs"', raw)
+
     def test_renderer_owns_exact_output_and_is_idempotent(self) -> None:
         self.assertTrue(RENDERER.exists())
         result = subprocess.run(
