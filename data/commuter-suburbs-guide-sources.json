@@ -1,0 +1,114 @@
+{
+  "reviewed": "2026-08-26",
+  "scope": "English and Spanish comparison guide for selected New Jersey towns with NYC transit planning relevance",
+  "methodology": {
+    "gtfs_snapshot_date": "2026-08-19",
+    "gtfs_archive_sha256": "9b7e6bcb33e5c5c34a48b0d452f10a7085cd25337ccf8ef542827809409b471e",
+    "selection": "The town examples are an illustrative, unranked cross-section of station areas in the six New Jersey counties served by Jorge Ramirez. They were selected to explain route and due-diligence differences, not to identify a universally preferred place.",
+    "included_fields": [
+      "official rail route membership",
+      "official station or system reference",
+      "county",
+      "route-specific planning questions",
+      "links to the site's source-backed town guide when one exists"
+    ],
+    "excluded_fields": [
+      "fixed or estimated travel time",
+      "fare or parking price",
+      "home price or market forecast",
+      "school rating or ranking",
+      "crime or safety characterization",
+      "demographic targeting",
+      "subjective town ranking"
+    ],
+    "refresh_rule": "Travelers must use official date-specific trip planning, alerts, station, parking, fare, and accessibility sources before relying on a route."
+  },
+  "sources": [
+    {
+      "id": "njt-gtfs-rail",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/rail_data.zip",
+      "fact_supported": "Official GTFS rail route names, station names, station identifiers, and route membership used to check the comparison set.",
+      "accessed": "2026-08-26",
+      "visible": false
+    },
+    {
+      "id": "njt-gtfs-documentation",
+      "publisher": "NJ TRANSIT",
+      "url": "https://developer.njtransit.com/registration/appdoc?app=GTFS-RAIL",
+      "fact_supported": "NJ TRANSIT identifies GTFS-RAIL as its rail schedule data product.",
+      "accessed": "2026-08-26",
+      "visible": false
+    },
+    {
+      "id": "njt-system-map",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/accessibility/System-Map",
+      "fact_supported": "Official rail-system orientation and transfer reference.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-new-york-routing",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/getting-new-york-train",
+      "fact_supported": "Current route-dependent guidance for service to New York and transfer patterns.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-ride-rail",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/ride-rail",
+      "fact_supported": "Official rail travel, ticketing, accessibility, and rider-information starting point.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-trip-planner",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/trip-planner-to",
+      "fact_supported": "Official date- and time-specific itinerary planning destination.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-stations",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/station-park-ride-to",
+      "fact_supported": "Official station-specific parking, access, and facility research destination.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-alerts",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/travel-alerts-to",
+      "fact_supported": "Official current service and station alert destination.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "path-schedules-maps",
+      "publisher": "Port Authority of New York and New Jersey",
+      "url": "https://www.panynj.gov/path/en/schedules-maps.html",
+      "fact_supported": "Official PATH schedules and maps for Hudson County trip research.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njdoe-performance-reports",
+      "publisher": "New Jersey Department of Education",
+      "url": "https://www.nj.gov/education/schoolperformance/",
+      "fact_supported": "Official school performance reports are the neutral public source for readers who independently choose to compare school data.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njsp-ucr",
+      "publisher": "New Jersey State Police",
+      "url": "https://www.nj.gov/njsp/ucr/uniform-crime-reports.shtml",
+      "fact_supported": "Official statewide crime-reporting source for readers who independently choose to review crime data.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "hud-consistent-data-guidance",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "url": "https://www.hud.gov/news/hud-no-26-028",
+      "fact_supported": "HUD states that school and crime data may be shared consistently and without discriminatory intent; the guide directs every reader to the same public sources.",
+      "accessed": "2026-08-26"
+    }
+  ]
+}

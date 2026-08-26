@@ -472,7 +472,7 @@
       "description": "Read a New Jersey seller guide to overpricing, preparation, timing and negotiation mistakes to consider before listing a home."
     },
     "tools/mortgage-calculator.html": {
-      "description": "Estimate a New Jersey home budget with principal, interest, property tax, insurance, PMI and HOA inputs in one mortgage calculator."
+      "description": "Estimate a New Jersey mortgage payment using the price, down payment, note rate, taxes, insurance, mortgage insurance, and HOA costs you enter."
     }
   }
 }

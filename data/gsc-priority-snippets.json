@@ -179,8 +179,8 @@
         "description": "Maplewood: 30 min Midtown Direct, $750K. Summit: 44 min, $1.3M. All 22 NJ commuter towns to NYC ranked by train line, commute time and budget — from under $500K to over $1M."
       },
       "after": {
-        "title": "22 NJ Commuter Towns to NYC: Train Times and Budgets",
-        "description": "Compare 22 New Jersey commuter towns by rail line, typical train time, home-price range and budget—from closer-in suburbs to lower-cost options."
+        "title": "NJ Commuter Towns to NYC: Official Rail Comparison",
+        "description": "Compare selected New Jersey commuter towns by official rail route, station access, transfer questions, and a practical door-to-destination checklist."
       },
       "sync_fields": [
         "property:og:title",
