@@ -89,9 +89,9 @@ schema = {
     "@type": "CollectionPage",
     "name": "New Jersey Community Guides | The Jorge Ramirez Group",
     "description": (
-        f"Directory of {total} supported New Jersey community guides across "
+        f"Directory of {total} maintained New Jersey real estate community guides across "
         + ", ".join(counties[:-1])
-        + f", and {counties[-1]} counties."
+        + f", and {counties[-1]} counties, with official-source town and county research."
     ),
     "url": "https://thejorgeramirezgroup.com/communities",
     "isPartOf": {
@@ -145,6 +145,7 @@ def section_html(county: str) -> str:
       <div class="town-grid">
 {chr(10).join(cards)}
       </div>
+      <p><a href="/counties/{county.lower()}-county">Open the {county} County real estate guide →</a></p>
     </div>
   </section>'''
 
@@ -170,6 +171,7 @@ def spanish_section_html(county: str) -> str:
       <div class="town-grid">
 {chr(10).join(cards)}
       </div>
+      <p><a href="/es/counties/{county.lower()}-county">Abrir la guía inmobiliaria del condado de {county} →</a></p>
     </div>
   </section>'''
 
@@ -184,7 +186,7 @@ source = re.sub(
 )
 source = re.sub(
     r'<meta name="description" content="[^"]*">',
-    f'<meta name="description" content="Directory of {total} supported NJ community guides across six counties.">',
+    f'<meta name="description" content="Explore {total} maintained NJ real estate community guides across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties with local research.">',
     source,
     count=1,
 )
@@ -207,7 +209,7 @@ source = re.sub(
 )
 source = re.sub(
     r'<meta property="og:description" content="[^"]*">',
-    f'<meta property="og:description" content="Directory of {total} supported NJ community guides across six counties.">',
+    f'<meta property="og:description" content="Explore {total} maintained NJ real estate community guides across six counties with town, county, buyer, and seller research.">',
     source,
     count=1,
 )
@@ -219,7 +221,7 @@ source = re.sub(
 )
 source = re.sub(
     r'<meta name="twitter:description" content="[^"]*">',
-    f'<meta name="twitter:description" content="Directory of {total} supported NJ community guides across six counties.">',
+    f'<meta name="twitter:description" content="Explore {total} maintained NJ real estate community guides across six counties with town and county research.">',
     source,
     count=1,
 )
@@ -238,13 +240,15 @@ source = re.sub(
     source,
     count=1,
 )
-source = re.sub(
-    r"<p>Local expertise across .*?</p>",
-    "<p>Community guides across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties.</p>",
+source, replacements = re.subn(
+    r'(<section class="communities-hero">\s*<h1>.*?</h1>)\s*<p>.*?</p>',
+    r"\1\n  <p>Explore maintained real estate guides across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties. Each guide connects public records and local research to a property-specific buyer or seller decision.</p>",
     source,
     count=1,
     flags=re.S,
 )
+if replacements != 1:
+    raise RuntimeError("English communities hub is missing its hero introduction")
 for county in counties:
     source = re.sub(
         rf'(<button class="county-filter" data-county="{county}">{county} \()\d+(\)</button>)',
@@ -263,6 +267,22 @@ source = source.replace(
     "<p>Jorge serves all of Northern and Central New Jersey. Call directly for any town — even ones not listed here.</p>",
     "<p>Looking for help in a town not listed here? Call Jorge to confirm current coverage.</p>",
 )
+source, replacements = re.subn(
+    r'  <section class="cta-section">.*?</section>',
+    '''  <section class="cta-section">
+    <h2>Choose the right local real estate research path</h2>
+    <p>Browse the complete maintained town directory, start with a six-county guide, or continue to the buyer and seller planning resources. Every property conclusion should remain tied to the address and current evidence.</p>
+    <a href="/towns" class="btn">All Town Guides</a>
+    <a href="/counties" class="btn">Six County Guides</a>
+    <a href="/buy-a-home" class="btn">Buyer Planning</a>
+    <a href="/sell-your-home" class="btn">Seller Planning</a>
+  </section>''',
+    source,
+    count=1,
+    flags=re.S,
+)
+if replacements != 1:
+    raise RuntimeError("English communities hub is missing its closing pathway section")
 
 OUT.write_text(source, encoding="utf-8")
 for alias in ROUTE_ALIASES:
@@ -273,8 +293,8 @@ spanish_schema = {
     "@type": "CollectionPage",
     "name": "Guías de comunidades de Nueva Jersey",
     "description": (
-        f"Directorio de {total} guías de comunidades de Nueva Jersey en los "
-        "condados de Union, Essex, Morris, Hudson, Middlesex y Somerset."
+        f"Directorio de {total} guías inmobiliarias mantenidas de Nueva Jersey en los "
+        "condados de Union, Essex, Morris, Hudson, Middlesex y Somerset, con fuentes oficiales."
     ),
     "url": "https://thejorgeramirezgroup.com/es/communities",
     "inLanguage": "es-US",
@@ -330,7 +350,7 @@ spanish_replacements = (
     ),
     (
         r'<meta name="description" content="[^"]*">',
-        f'<meta name="description" content="Directorio de {total} guías de comunidades de NJ en seis condados.">',
+        f'<meta name="description" content="Explora {total} guías inmobiliarias de NJ en Union, Essex, Morris, Hudson, Middlesex y Somerset, con recursos locales para compradores y vendedores.">',
     ),
     (
         r'<meta name="llm-context" content="[^"]*">',
@@ -346,7 +366,7 @@ spanish_replacements = (
     ),
     (
         r'<meta property="og:description" content="[^"]*">',
-        f'<meta property="og:description" content="Directorio de {total} guías de comunidades de NJ en seis condados.">',
+        f'<meta property="og:description" content="Explora {total} guías inmobiliarias de NJ en seis condados con recursos de pueblos, condados, compra y venta.">',
     ),
     (
         r'<meta name="twitter:title" content="[^"]*">',
@@ -354,7 +374,7 @@ spanish_replacements = (
     ),
     (
         r'<meta name="twitter:description" content="[^"]*">',
-        f'<meta name="twitter:description" content="Directorio de {total} guías de comunidades de NJ en seis condados.">',
+        f'<meta name="twitter:description" content="Explora {total} guías inmobiliarias de NJ en seis condados con investigación local.">',
     ),
 )
 for pattern, replacement in spanish_replacements:
@@ -386,7 +406,7 @@ if replacements != 1:
     raise RuntimeError("Spanish communities hub is missing its numeric heading")
 spanish = re.sub(
     r'(<section class="communities-hero">\s*<h1>.*?</h1>)\s*<p>.*?</p>',
-    r"\1\n  <p>Guías de comunidades en los condados de Union, Essex, Morris, Hudson, Middlesex y Somerset.</p>",
+    r"\1\n  <p>Explora guías inmobiliarias mantenidas en los condados de Union, Essex, Morris, Hudson, Middlesex y Somerset. Cada guía conecta registros públicos e investigación local con una decisión específica de compra o venta.</p>",
     spanish,
     count=1,
     flags=re.S,
@@ -411,6 +431,21 @@ spanish = spanish.replace(
     "<p>Jorge atiende todo el norte y centro de Nueva Jersey. Llámalo directamente para cualquier pueblo.</p>",
     "<p>¿Buscas ayuda en otro pueblo? Llama a Jorge para confirmar la cobertura actual.</p>",
 )
+spanish, replacements = re.subn(
+    r'  <section class="cta-section">.*?</section>',
+    '''  <section class="cta-section">
+    <h2>Elige la ruta correcta de investigación inmobiliaria local</h2>
+    <p>Consulta el directorio completo de pueblos, empieza con una guía de los seis condados o continúa con los recursos para compradores y vendedores. Cada conclusión debe mantenerse vinculada a la dirección y evidencia vigente.</p>
+    <a href="/es/communities#union" class="btn">Explorar por Condado</a>
+    <a href="/es/buy-a-home" class="btn">Plan para Comprar</a>
+    <a href="/es/sell-your-home" class="btn">Plan para Vender</a>
+  </section>''',
+    spanish,
+    count=1,
+    flags=re.S,
+)
+if replacements != 1:
+    raise RuntimeError("Spanish communities hub is missing its closing pathway section")
 
 SPANISH_OUT.write_text(spanish, encoding="utf-8")
 for alias in SPANISH_ROUTE_ALIASES:

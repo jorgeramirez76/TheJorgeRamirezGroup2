@@ -28,6 +28,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from town_data import COUNTY  # noqa: E402
+from tools.local_search_links import comparison_links, links_for_town  # noqa: E402
 
 
 def load_manifest(path: Path = MANIFEST_PATH) -> dict[str, object]:
@@ -144,6 +145,8 @@ def navigation() -> str:
         </picture>
       </a>
       <ul class="town-guide__nav-links">
+        <li><a href="/buy-a-home">Buy</a></li>
+        <li><a href="/sell-your-home">Sell</a></li>
         <li><a href="/communities">Communities</a></li>
         <li><a href="/contact">Contact Jorge</a></li>
       </ul>
@@ -157,10 +160,10 @@ def render_guide(slug: str, decision: dict[str, object]) -> str:
     place_type = str(decision["placeType"])
     identity = str(decision["identity"])
     canonical = f"{SITE}/towns/{slug}"
-    title = f"{town} Property Research Guide | Jorge Ramirez"
+    title = f"{town} NJ Real Estate Guide | Buyers & Sellers"
     description = (
-        f"Official-source property research guide for {town} in {county} County, "
-        "with parcel-focused checks and direct public-source links."
+        f"Research {town}, NJ real estate with official property sources, "
+        "buyer and seller checklists, county context, and an address-specific value review."
     )
     schema = {
         "@context": "https://schema.org",
@@ -224,6 +227,20 @@ def render_guide(slug: str, decision: dict[str, object]) -> str:
           </article>'''
         )
     source_markup = "\n".join(sources)
+    related = links_for_town(slug)
+    related_markup = ""
+    if related:
+        related_items = "".join(
+            f'<li><a href="{html.escape(item["route"], quote=True)}">{html.escape(item["label"])}</a></li>'
+            for item in related
+        )
+        related_markup = f'''
+        <section class="town-guide__section" aria-labelledby="related-heading">
+          <p class="town-guide__eyebrow">Related local research</p>
+          <h2 id="related-heading">Compare {html.escape(town)} with the same address-first method</h2>
+          <p>These comparisons apply the same public-record checklist to both places. They do not rank communities or replace a property-specific review.</p>
+          <ul class="town-guide__checklist">{related_items}</ul>
+        </section>'''
 
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -239,8 +256,8 @@ def render_guide(slug: str, decision: dict[str, object]) -> str:
     <section class="town-guide__hero" aria-labelledby="page-title">
       <div class="town-guide__hero-inner">
         <p class="town-guide__eyebrow">{html.escape(county)} County · Official-source planning</p>
-        <h1 id="page-title">{html.escape(town)} property research guide</h1>
-        <p class="town-guide__lede">A practical starting point for confirming the municipality, parcel, land-use records, public data, and property-specific questions tied to an address.</p>
+        <h1 id="page-title">{html.escape(town)} real estate guide for buyers and sellers</h1>
+        <p class="town-guide__lede">Research the municipality, parcel, land-use records, public data, current comparable properties, and transaction questions tied to one address before planning a purchase or sale.</p>
       </div>
     </section>
 
@@ -278,6 +295,7 @@ def render_guide(slug: str, decision: dict[str, object]) -> str:
           <h2 id="worksheet-heading">Keep the decision tied to your own criteria</h2>
           <p>For each address, record the municipality, block and lot, property type, current tax record, zoning district, permit history, disclosures, association documents when applicable, insurance questions, and the date-specific transportation plan you tested. Apply the same checklist to every property you compare.</p>
         </section>
+{related_markup}
       </article>
 
       <aside class="town-guide__aside" aria-labelledby="method-heading">
@@ -285,14 +303,15 @@ def render_guide(slug: str, decision: dict[str, object]) -> str:
         <p>It does not rank places or predict a price, schedule, school result, neighborhood condition, investment return, or transaction outcome.</p>
         <p>Property and travel details are user-entered and date-specific. Confirm them independently.</p>
         <a href="/counties/{county.lower()}-county">View the {html.escape(county)} County guide</a>
+        <a href="/towns">Browse all maintained town guides</a>
       </aside>
     </div>
 
     <section class="town-guide__cta" aria-labelledby="contact-heading">
       <div class="town-guide__cta-inner">
-        <h2 id="contact-heading">Need an address-specific research plan?</h2>
-        <p>Send the property address and the records or transaction questions you want to investigate. No form is submitted from this page.</p>
-        <a class="town-guide__button" href="/contact">Contact Jorge</a>
+        <h2 id="contact-heading">Planning a {html.escape(town)} purchase or sale?</h2>
+        <p>Start with the property address, then choose the research or transaction path that matches your next decision.</p>
+        <div class="town-guide__actions"><a class="town-guide__button" href="/buy-a-home">Plan a home search</a><a class="town-guide__button" href="/sell-your-home">Review the selling process</a><a class="town-guide__button" href="/home-valuation">Request a home value review</a><a class="town-guide__button" href="/contact">Contact Jorge</a></div>
       </div>
     </section>
   </main>
@@ -364,37 +383,66 @@ def render_redirect_stub(
     town = display_name(slug)
     canonical = SITE + destination
     if language == "es":
-        title = "Página trasladada | The Jorge Ramirez Group"
+        destination_slug = destination.rstrip("/").split("/")[-1]
+        destination_name = {
+            "basking-ridge": "Basking Ridge",
+            "millburn": "Millburn Township",
+        }.get(destination_slug, display_name(destination_slug))
+        title = f"Página trasladada a {destination_name} | The Jorge Ramirez Group"
+        description = (
+            f"La ruta de {town} se consolidó en la guía de {destination_name}."
+        )
         heading = "Esta página se trasladó"
-        message = "Continúe a la guía consolidada para esta ubicación."
-        action = "Continuar a la guía"
-        lang = "es"
+        message = f"Continúa a la guía consolidada de {destination_name}."
+        action = "Abrir la guía"
+        lang = "es-US"
+        marker = "data-spanish-town-redirect=\"v1\""
+        skip_link = '  <a href="#main" class="skip-link">Saltar al contenido principal</a>\n'
+        theme_meta = '  <meta name="theme-color" content="#0A0A0A">\n'
     else:
         title = "Page moved | The Jorge Ramirez Group"
+        description = ""
         heading = "This page has moved"
         message = "Continue to the consolidated guide for this location."
         action = "Continue to the guide"
         lang = "en"
+        marker = 'data-town-relationship-redirect="v1"'
+        skip_link = ""
+        theme_meta = ""
+    description_meta = (
+        f'  <meta name="description" content="{html.escape(description, quote=True)}">\n'
+        if description
+        else ""
+    )
+    action_anchor = (
+        f'<a class="town-fallback__button town-fallback__button--primary" '
+        f'href="{html.escape(destination, quote=True)}">{html.escape(action)}</a>'
+    )
+    action_markup = (
+        f'<div class="town-fallback__actions">{action_anchor}</div>'
+        if language == "es"
+        else action_anchor
+    )
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, follow">
+{theme_meta}  <meta name="robots" content="noindex, follow">
   <meta http-equiv="refresh" content="0; url={html.escape(destination, quote=True)}">
   <link rel="canonical" href="{html.escape(canonical, quote=True)}">
   <title>{html.escape(title)}</title>
-  <link rel="stylesheet" href="/css/styles.css">
+{description_meta}  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/town-fallback.css">
   <script>window.location.replace({json.dumps(destination)});</script>
 </head>
-<body class="town-fallback" data-town-relationship-redirect="v1">
-  <main id="main" tabindex="-1" class="town-fallback__content">
+<body class="town-fallback" {marker}>
+{skip_link}  <main id="main" tabindex="-1" class="town-fallback__content">
     <article class="town-fallback__card">
       <p class="town-fallback__eyebrow">{html.escape(town)}</p>
       <h1>{html.escape(heading)}</h1>
       <p>{html.escape(message)}</p>
-      <a class="town-fallback__button town-fallback__button--primary" href="{html.escape(destination, quote=True)}">{html.escape(action)}</a>
+      {action_markup}
     </article>
   </main>
 </body>
@@ -611,10 +659,10 @@ def render_towns_index() -> str:
     facts = json.loads((ROOT / "data" / "site-facts.json").read_text(encoding="utf-8"))
     inventory = facts["canonicalTownInventory"]
     canonical = f"{SITE}/towns"
-    title = "New Jersey Property Research Guides | Jorge Ramirez"
+    title = "NJ Real Estate Town Guides & Comparisons | Jorge Ramirez"
     description = (
-        f"Browse {inventory['total']} indexable New Jersey property research guides "
-        "organized by county, with direct links to each maintained town page."
+        f"Browse {inventory['total']} maintained NJ real estate town guides, six county hubs, "
+        "and official-source comparisons for buyers and sellers planning a move."
     )
     cards: list[str] = []
     schema_items: list[dict[str, object]] = []
@@ -637,8 +685,13 @@ def render_towns_index() -> str:
             f'''        <section class="town-guide__source-card" aria-labelledby="{county.lower()}-heading">
           <h2 id="{county.lower()}-heading">{html.escape(county)} County</h2>
           <ul class="town-guide__checklist">{''.join(links)}</ul>
+          <p><a href="/counties/{county.lower()}-county">Open the {html.escape(county)} County real estate guide</a></p>
         </section>'''
         )
+    comparison_cards = "".join(
+        f'''        <article class="town-guide__source-card"><h3>{html.escape(item["label"])}</h3><p>Compare municipal identity, public records, transit research, and address-level questions without ranking either place.</p><a href="{html.escape(item["route"], quote=True)}">Open the official-record comparison</a></article>'''
+        for item in comparison_links()
+    )
     schema = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
@@ -650,16 +703,21 @@ def render_towns_index() -> str:
 <html lang="en">
 <head>
 {shared_head(title=title, description=description, canonical=canonical, robots="index, follow, max-image-preview:large")}
-  <meta name="llm-context" content="Maintained index of English New Jersey property research guides organized by county. Only indexable canonical town routes are listed.">
+  <meta name="llm-context" content="Maintained index of English New Jersey real estate guides and official-record town comparisons across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties. Only indexable canonical town routes are listed.">
   <link rel="stylesheet" href="/css/town-evidence-guide.css">
   <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
 </head>
 <body class="town-evidence-guide">
 {navigation()}
   <main id="main" tabindex="-1">
-    <section class="town-guide__hero" aria-labelledby="page-title"><div class="town-guide__hero-inner"><p class="town-guide__eyebrow">Maintained directory</p><h1 id="page-title">New Jersey property research guides</h1><p class="town-guide__lede">Browse the {inventory['total']} indexable town routes currently maintained across six counties. Each guide is framed around official sources and address-specific checks.</p></div></section>
-    <div class="town-guide__layout"><article class="town-guide__article"><div class="town-guide__sources">{''.join(cards)}</div></article><aside class="town-guide__aside"><h2>Need a regional starting point?</h2><p>The county guides organize broader research without treating every property in a municipality as interchangeable.</p><a href="/communities">Open the communities directory</a></aside></div>
-    <section class="town-guide__cta"><div class="town-guide__cta-inner"><h2>Have a particular address in mind?</h2><p>Send the property address and the public records you want to review.</p><a class="town-guide__button" href="/contact">Contact Jorge</a></div></section>
+    <section class="town-guide__hero" aria-labelledby="page-title"><div class="town-guide__hero-inner"><p class="town-guide__eyebrow">Six-county real estate directory</p><h1 id="page-title">New Jersey real estate town guides and comparisons</h1><p class="town-guide__lede">Explore {inventory['total']} maintained town guides across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties. Each guide starts with official records and then connects buyers and sellers to an address-specific next step.</p></div></section>
+    <div class="town-guide__layout"><article class="town-guide__article">
+      <section class="town-guide__section" aria-labelledby="directory-method"><p class="town-guide__eyebrow">Choose the right research layer</p><h2 id="directory-method">Start broad, then narrow to the property</h2><p>Use a county guide to understand the responsible regional sources, a town guide to identify municipal record offices and local transportation resources, and a comparison guide to apply the same questions to two places. None of those layers can establish the condition, legal use, current value, insurance terms, or transaction result for one home.</p><p>For a purchase, compare the exact property type, parcel records, condition, current alternatives, and travel plan. For a sale, combine current comparable properties with the home's updates, constraints, presentation, access, and timing. Recheck every time-sensitive source before acting.</p></section>
+      <div class="town-guide__sources">{''.join(cards)}</div>
+      <section class="town-guide__section" aria-labelledby="comparison-directory"><p class="town-guide__eyebrow">Related town research</p><h2 id="comparison-directory">Official-record New Jersey town comparisons</h2><p>These guides answer common town-versus-town searches with municipal identity, public records, transit tools, and a repeatable address worksheet. They avoid community rankings, protected-characteristic targeting, school reputation, safety labels, and outcome promises.</p><div class="town-guide__sources">{comparison_cards}</div></section>
+      <section class="town-guide__section" aria-labelledby="decision-path"><p class="town-guide__eyebrow">Your next step</p><h2 id="decision-path">Turn the guide into a property decision</h2><p>Open the <a href="/buy-a-home">buyer planning guide</a> when you are comparing active options. Review the <a href="/sell-your-home">seller process</a> when preparing a listing, or request a <a href="/home-valuation">property-specific home value review</a> based on current comparable evidence. Keep broad market research separate from advice about one address.</p></section>
+    </article><aside class="town-guide__aside"><h2>Need a regional starting point?</h2><p>The county guides organize broader research without treating every property in a municipality as interchangeable.</p><a href="/counties">Browse all six county guides</a><a href="/communities">Open the communities directory</a></aside></div>
+    <section class="town-guide__cta"><div class="town-guide__cta-inner"><h2>Have a particular address in mind?</h2><p>Choose a buyer, seller, or valuation path and keep every conclusion tied to current property evidence.</p><div class="town-guide__actions"><a class="town-guide__button" href="/buy-a-home">Plan a home search</a><a class="town-guide__button" href="/sell-your-home">Plan a sale</a><a class="town-guide__button" href="/home-valuation">Request a value review</a><a class="town-guide__button" href="/contact">Contact Jorge</a></div></div></section>
   </main>
   <footer class="town-guide__footer"><p>The Jorge Ramirez Group · Keller Williams Premier Properties</p><p><a href="/">Home</a> · <a href="/privacy-policy">Privacy Policy</a></p></footer>
 </body>

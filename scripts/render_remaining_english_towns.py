@@ -6,12 +6,17 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "remaining-english-town-guides.json"
 SITE = "https://thejorgeramirezgroup.com"
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from tools.local_search_links import links_for_town  # noqa: E402
 
 
 def esc(value: str) -> str:
@@ -33,8 +38,8 @@ def render(slug: str, page: dict, shared: list[dict], reviewed: str) -> str:
     county = page["county"]
     canonical = f"{SITE}/towns/{slug}"
     spanish = f"{SITE}/es/towns/{slug}"
-    title = f"{town} Property Research Guide | Jorge Ramirez"
-    description = f"Research a {town}, NJ property with direct municipal, state, flood-disclosure, education, and transit sources tied to the exact address."
+    title = f"{town} NJ Real Estate Guide | Buyers & Sellers"
+    description = f"Research {town}, NJ real estate with direct property sources, buyer and seller planning, county context, and an address-specific home value review."
     sources = [
         source_card(
             "Municipal government",
@@ -78,6 +83,14 @@ def render(slug: str, page: dict, shared: list[dict], reviewed: str) -> str:
         ],
     }
     schema_json = json.dumps(schema, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    related = links_for_town(slug)
+    related_markup = ""
+    if related:
+        related_items = "".join(
+            f'<li><a href="{esc(item["route"])}">{esc(item["label"])}</a></li>'
+            for item in related
+        )
+        related_markup = f'''      <section class="town-guide__section" aria-labelledby="related-heading"><p class="town-guide__eyebrow">Related local research</p><h2 id="related-heading">Compare {esc(town)} with the same address-first method</h2><p>Use the same municipal, property-record, transportation, and personal-criteria worksheet for both places. The comparison does not rank communities.</p><ul class="town-guide__checklist">{related_items}</ul></section>'''
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,16 +116,17 @@ def render(slug: str, page: dict, shared: list[dict], reviewed: str) -> str:
 </head>
 <body class="town-evidence-guide" data-town-evidence-guide="retained-v1" data-source-review="{reviewed}">
   <a class="skip-link" href="#main">Skip to main content</a>
-  <nav class="town-guide__nav" aria-label="Primary navigation"><div class="town-guide__nav-inner"><a class="town-guide__brand" href="/" aria-label="The Jorge Ramirez Group home"><picture><source srcset="/images/jorge-logo.webp" type="image/webp"><img src="/images/jorge-logo.jpg" width="250" height="100" alt="The Jorge Ramirez Group"></picture></a><ul class="town-guide__nav-links"><li><a href="/communities">Communities</a></li><li><a href="{spanish.replace(SITE, '')}" hreflang="es-US">Español</a></li><li><a href="/contact">Contact Jorge</a></li></ul></div></nav>
+  <nav class="town-guide__nav" aria-label="Primary navigation"><div class="town-guide__nav-inner"><a class="town-guide__brand" href="/" aria-label="The Jorge Ramirez Group home"><picture><source srcset="/images/jorge-logo.webp" type="image/webp"><img src="/images/jorge-logo.jpg" width="250" height="100" alt="The Jorge Ramirez Group"></picture></a><ul class="town-guide__nav-links"><li><a href="/buy-a-home">Buy</a></li><li><a href="/sell-your-home">Sell</a></li><li><a href="/communities">Communities</a></li><li><a href="{spanish.replace(SITE, '')}" hreflang="es-US">Español</a></li><li><a href="/contact">Contact Jorge</a></li></ul></div></nav>
   <main id="main" tabindex="-1">
-    <section class="town-guide__hero" aria-labelledby="page-title"><div class="town-guide__hero-inner"><p class="town-guide__eyebrow">{esc(county)} County · official-source property research</p><h1 id="page-title">How to research a property in {esc(town)}</h1><p class="town-guide__lede">A practical starting point for confirming the municipality, parcel, land-use records, education sources, flood-disclosure resources, and a date-specific transportation plan tied to one address.</p></div></section>
+    <section class="town-guide__hero" aria-labelledby="page-title"><div class="town-guide__hero-inner"><p class="town-guide__eyebrow">{esc(county)} County · official-source property research</p><h1 id="page-title">{esc(town)} real estate guide for buyers and sellers</h1><p class="town-guide__lede">Confirm the municipality, parcel, land-use records, education sources, flood-disclosure resources, current comparable properties, and a date-specific transportation plan tied to one address.</p></div></section>
     <div class="town-guide__layout"><article class="town-guide__article">
       <section class="town-guide__section" aria-labelledby="identity-heading"><p class="town-guide__eyebrow">Public-record identity first</p><h2 id="identity-heading">Confirm which office maintains the parcel</h2><div class="town-guide__notice"><p>{esc(page["identity"])}</p></div><p>Postal names, municipal boundaries, school assignments, transit labels, and market-report geographies answer different questions. Record the exact address and parcel identifiers before comparing information from different systems.</p></section>
       <section class="town-guide__section" aria-labelledby="checks-heading"><p class="town-guide__eyebrow">Address-level review</p><h2 id="checks-heading">Run the same checks for every property</h2><p>A community page cannot determine a parcel's physical condition, legal use, current tax bill, title, permit history, insurance terms, association obligations, school assignment, travel time, or transaction result.</p><ul class="town-guide__checklist"><li>Confirm the legal municipality, address, block and lot, and property type.</li><li>Review the current assessment, tax record, land-use information, permits, and available public filings.</li><li>Check deed, survey, title, disclosures, and association documents when applicable with the responsible professional.</li><li>Search current state education reports, then confirm the address assignment directly with the district.</li><li>Test transportation using the real origin, destination, date, time, transfers, and current service notices.</li><li>Apply the same objective worksheet and questions to each property you consider.</li></ul></section>
       <section class="town-guide__section" aria-labelledby="sources-heading"><p class="town-guide__eyebrow">Sources reviewed August 26, 2026</p><h2 id="sources-heading">Open the primary public sources</h2><p>Use each source only for the job it actually performs. Records, assignments, schedules, and service conditions can change; reopen the original source for the address and date that matter.</p><div class="town-guide__sources">{"".join(sources)}</div></section>
       <section class="town-guide__section" aria-labelledby="method-heading"><p class="town-guide__eyebrow">Neutral method</p><h2 id="method-heading">Separate sourced facts from personal preferences</h2><p>For each address, record the source, access date, and result. Keep your personal criteria—such as property type, budget, accessibility, commute destinations, and proximity to specific services—in a separate column and apply them consistently.</p><p>This guide does not rank communities or predict price, travel duration, school results, neighborhood conditions, investment performance, or a transaction outcome. Request a current property analysis for any market figure.</p></section>
+{related_markup}
     </article><aside class="town-guide__aside" aria-labelledby="aside-heading"><h2 id="aside-heading">Bring one address</h2><p>Have the full address, block and lot when available, property type, questions about records, and the date you need the information.</p><p>Keep every answer tied to that property and an identifiable source.</p><a href="/counties/{county.lower()}-county">View the {esc(county)} County guide</a></aside></div>
-    <section class="town-guide__cta" aria-labelledby="contact-heading"><div class="town-guide__cta-inner"><h2 id="contact-heading">Need an address-specific research plan?</h2><p>Send the address and the record or transaction questions you want to investigate. This page does not submit a form by itself.</p><a class="town-guide__button" href="/contact">Contact Jorge</a></div></section>
+    <section class="town-guide__cta" aria-labelledby="contact-heading"><div class="town-guide__cta-inner"><h2 id="contact-heading">Planning a {esc(town)} purchase or sale?</h2><p>Start with the address, then choose the buyer, seller, or valuation path that matches your next decision.</p><div class="town-guide__actions"><a class="town-guide__button" href="/buy-a-home">Plan a home search</a><a class="town-guide__button" href="/sell-your-home">Review the selling process</a><a class="town-guide__button" href="/home-valuation">Request a home value review</a><a class="town-guide__button" href="/contact">Contact Jorge</a></div></div></section>
   </main>
   <footer class="town-guide__footer"><p>The Jorge Ramirez Group · Keller Williams Premier Properties · NJ License #1754604</p><p><a href="/">Home</a> · <a href="/privacy-policy">Privacy Policy</a></p></footer>
   <script defer src="/js/site-cta.js"></script><script defer src="/js/lead-attribution.js"></script>

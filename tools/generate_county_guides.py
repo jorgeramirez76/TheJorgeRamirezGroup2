@@ -8,6 +8,8 @@ import html
 import json
 from pathlib import Path
 
+from local_search_links import links_for_county
+
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "county-guide-sources.json"
@@ -53,10 +55,10 @@ def language_copy(language: str, county: dict) -> dict:
         return {
             "lang": "en",
             "locale": "en_US",
-            "title": f"{name} County NJ Real Estate Research | Jorge Ramirez",
+            "title": f"{name} County NJ Real Estate Guide | Jorge Ramirez",
             "description": (
-                f"Research {name} County real estate with official county, tax, district, "
-                "transit, and market-report sources plus maintained local guides."
+                f"Official-source {name} County NJ real estate guide for buyers and sellers, "
+                "with town comparisons, public records, transit research, and local next steps."
             ),
             "llm": (
                 f"Official-source {name} County, New Jersey real estate research guide from "
@@ -77,7 +79,7 @@ def language_copy(language: str, county: dict) -> dict:
             },
             "crumbs": ("Home", "County guides", f"{name} County"),
             "eyebrow": f"{name} County · official-source real estate research",
-            "h1": f"Research {name} County real estate at the source",
+            "h1": f"{name} County real estate guide for buyers and sellers",
             "hero": (
                 "Use county reports, municipal records, state tax tables, district reports, "
                 "and live transit tools before treating a regional headline as a fact about one property."
@@ -89,6 +91,7 @@ def language_copy(language: str, county: dict) -> dict:
             ),
             "market_cta": "Open the county market research guide",
             "source_cta": "Start with the public county reports",
+            "hero_value_cta": "Request a property-specific value review",
             "scope_title": "Start with the geography, then narrow to the address",
             "scope_intro": (
                 f"A {name} County statistic is regional context. It does not describe every "
@@ -122,6 +125,12 @@ def language_copy(language: str, county: dict) -> dict:
                 "Use the official county directory for the full government list."
             ),
             "directory": "Open the official county directory",
+            "all_towns": "Browse all maintained NJ town guides",
+            "comparisons_title": f"Address-first comparisons connected to {name} County",
+            "comparisons_intro": (
+                "Use the same municipal, property-record, transportation, and personal-criteria worksheet for both places. "
+                "These guides do not rank communities or substitute a broad place name for an address review."
+            ),
             "buyer_title": "A buyer research sequence",
             "buyer_steps": (
                 "Confirm the legal municipality and the property's exact address.",
@@ -166,10 +175,10 @@ def language_copy(language: str, county: dict) -> dict:
     return {
         "lang": "es",
         "locale": "es_US",
-        "title": f"Bienes Raíces en el Condado de {name} NJ | Jorge Ramirez",
+        "title": f"Guía de Bienes Raíces: Condado de {name} NJ | Jorge Ramirez",
         "description": (
-            f"Investigue bienes raíces en el Condado de {name} con fuentes oficiales del condado, "
-            "impuestos, distritos, transporte e informes de mercado."
+            f"Guía inmobiliaria del Condado de {name} para compradores y vendedores, con fuentes oficiales, "
+            "comparaciones de pueblos, transporte y análisis de una propiedad."
         ),
         "llm": (
             f"Guía de investigación inmobiliaria del Condado de {name}, Nueva Jersey, con fuentes "
@@ -190,7 +199,7 @@ def language_copy(language: str, county: dict) -> dict:
         },
         "crumbs": ("Inicio", "Guías de condados", f"Condado de {name}"),
         "eyebrow": f"Condado de {name} · investigación inmobiliaria con fuentes oficiales",
-        "h1": f"Investigue los bienes raíces del Condado de {name} en la fuente",
+        "h1": f"Guía de bienes raíces del Condado de {name} para compradores y vendedores",
         "hero": (
             "Use informes del condado, registros municipales, tablas estatales de impuestos, informes de distritos "
             "y herramientas de transporte en vivo antes de tratar un titular regional como dato de una propiedad."
@@ -202,6 +211,7 @@ def language_copy(language: str, county: dict) -> dict:
         ),
         "market_cta": "Abrir la guía de investigación del mercado",
         "source_cta": "Empezar con los informes públicos del condado",
+        "hero_value_cta": "Solicitar una revisión específica del valor",
         "scope_title": "Empiece con la geografía y termine en la dirección",
         "scope_intro": (
             f"Una estadística del Condado de {name} sirve como contexto regional. No describe cada municipio, "
@@ -226,6 +236,12 @@ def language_copy(language: str, county: dict) -> dict:
             "Use el directorio oficial para la lista gubernamental completa."
         ),
         "directory": "Abrir el directorio oficial del condado",
+        "all_towns": "Ver todas las guías de pueblos de NJ",
+        "comparisons_title": f"Comparaciones por dirección relacionadas con el Condado de {name}",
+        "comparisons_intro": (
+            "Use la misma lista de registros municipales, propiedad, transporte y criterios personales para ambos lugares. "
+            "Estas guías no clasifican comunidades ni sustituyen la revisión de una dirección."
+        ),
         "buyer_title": "Secuencia de investigación para compradores",
         "buyer_steps": (
             "Confirme el municipio legal y la dirección exacta de la propiedad.",
@@ -309,6 +325,7 @@ def render(document: dict, facts: dict, county: dict, language: str) -> str:
     en_route = f"/counties/{slug}-county"
     es_route = f"/es/counties/{slug}-county"
     county_hub_route = "/es/communities" if language == "es" else "/counties"
+    town_hub_route = "/es/communities" if language == "es" else "/towns"
     alternate_route = en_route if language == "es" else es_route
     alternate_label = "English" if language == "es" else "ES"
     market_route = None
@@ -332,15 +349,35 @@ def render(document: dict, facts: dict, county: dict, language: str) -> str:
     seller_steps = "\n".join(f"<li>{esc(step)}</li>" for step in copy["seller_steps"])
     badges = "\n".join(f"<span>{esc(item)}</span>" for item in copy["badges"])
 
+    related_comparisons = links_for_county(name, language=language)
+    comparison_markup = ""
+    if related_comparisons:
+        comparison_links = "\n".join(
+            f'<a class="town-link" href="{esc(item["route"], quote=True)}">{esc(item["label"])}</a>'
+            for item in related_comparisons
+        )
+        comparison_markup = f'''
+    <section class="county-section" aria-labelledby="comparisons-title">
+      <div class="county-wrap">
+        <div class="section-heading"><span>{esc(name)} County</span><h2 id="comparisons-title">{esc(copy["comparisons_title"])}</h2><p>{esc(copy["comparisons_intro"])}</p></div>
+        <div class="town-grid">{comparison_links}</div>
+      </div>
+    </section>'''
+
     if market_route:
-        primary_source_link = (
-            f'<a class="button button--primary" href="{market_route}">{esc(copy["market_cta"])}</a>'
+        research_link = (
+            f'<a class="button button--outline" href="{market_route}">{esc(copy["market_cta"])}</a>'
         )
     else:
-        primary_source_link = (
-            f'<a class="button button--primary" href="{document["sharedSources"][0]["url"]}" rel="noopener">'
+        research_link = (
+            f'<a class="button button--outline" href="{document["sharedSources"][0]["url"]}" rel="noopener">'
             f'{esc(copy["source_cta"])}</a>'
         )
+    hero_links = (
+        f'<a class="button button--primary" href="{prefix}/home-valuation">{esc(copy["hero_value_cta"])}</a>'
+        + research_link
+        + f'<a class="button button--outline" href="{esc(county["directoryUrl"], quote=True)}" rel="noopener">{esc(copy["directory"])}</a>'
+    )
 
     structured = {
         "@context": "https://schema.org",
@@ -463,7 +500,7 @@ def render(document: dict, facts: dict, county: dict, language: str) -> str:
         <h1>{esc(copy["h1"])}</h1>
         <p class="county-hero__intro">{esc(copy["hero"])}</p>
         <div class="county-badges" aria-label="Page credentials">{badges}</div>
-        <div class="hero-actions">{primary_source_link}<a class="button button--outline" href="{esc(county["directoryUrl"], quote=True)}" rel="noopener">{esc(copy["directory"])}</a></div>
+        <div class="hero-actions">{hero_links}</div>
       </div>
     </header>
 
@@ -486,8 +523,10 @@ def render(document: dict, facts: dict, county: dict, language: str) -> str:
         <div class="section-heading"><span>{esc(name)} County</span><h2 id="towns-title">{esc(copy["towns_title"])}</h2><p>{esc(copy["towns_intro"])}</p></div>
         <div class="town-grid">{town_links}</div>
         <a class="directory-link" href="{esc(county["directoryUrl"], quote=True)}" rel="noopener">{esc(copy["directory"])} →</a>
+        <a class="directory-link" href="{town_hub_route}">{esc(copy["all_towns"])} →</a>
       </div>
     </section>
+{comparison_markup}
 
     <section class="county-section" aria-label="Buyer and seller research sequences">
       <div class="county-wrap sequence-grid">

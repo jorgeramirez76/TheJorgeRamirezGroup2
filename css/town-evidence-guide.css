@@ -303,6 +303,13 @@ body.town-evidence-guide {
   margin: 16px auto 24px;
 }
 
+.town-guide__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
 .town-guide__button {
   min-height: 48px;
   padding: 12px 22px;
@@ -319,6 +326,10 @@ body.town-evidence-guide {
 
 .town-guide__button:hover {
   background: #211518;
+}
+
+.town-guide__aside > a + a {
+  margin-top: 10px;
 }
 
 .town-guide__footer {
