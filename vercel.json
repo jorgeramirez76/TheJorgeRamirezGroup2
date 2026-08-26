@@ -4,6 +4,26 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/sell-home-fast-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/sell-home-fast-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/sell-home-fast-nj",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/sell-home-fast-nj.html",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
       "source": "/blog/selling-inherited-house-multiple-heirs-nj",
       "destination": "/blog/selling-inherited-home-nj",
       "permanent": true

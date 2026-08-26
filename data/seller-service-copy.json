@@ -1,0 +1,790 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-26",
+  "pages": {
+    "sell-your-home": {
+      "en": {
+        "title": "Sell Your Home in New Jersey | Jorge Ramirez",
+        "description": "Plan a New Jersey home sale with property-specific pricing evidence, current disclosure sources, a clear launch plan, and local seller guidance.",
+        "llm": "Primary New Jersey home-selling service from licensed agent Jorge Ramirez. The page explains property-specific pricing, preparation, disclosures, offer comparison, and closing coordination without promising a sale price or timeline.",
+        "eyebrow": "New Jersey seller representation · six-county service area",
+        "h1": "Sell your New Jersey home with the property—not a promise—at the center",
+        "intro": "A useful selling plan begins with the address, condition, recent comparable sales, current competition, and your priorities. Jorge organizes that evidence into a written pricing and launch discussion for homes across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties.",
+        "focusTitle": "Build the sale around three decisions you can verify",
+        "focusIntro": "There is no single statewide formula for a list price or launch date. These three decisions keep the discussion tied to current evidence and the facts of your home.",
+        "focusCards": [
+          {"title": "Pricing evidence", "text": "Compare recent closed sales, relevant pending information when available, and active alternatives with the same property type, location, condition, size, and material features. Record why each comparable belongs in the analysis."},
+          {"title": "Property preparation", "text": "Separate maintenance, disclosure issues, presentation choices, and optional improvements. Review cost, disruption, lead time, and how a change may affect the intended launch before approving work."},
+          {"title": "Seller priorities", "text": "Define preferred timing, occupancy, access, move coordination, and financial constraints. The plan can then compare tradeoffs without turning a personal priority into a market prediction."}
+        ],
+        "processTitle": "A documented path from first review to closing coordination",
+        "processIntro": "The working plan stays visible as facts change. You can see what has been verified, what still needs an answer, and which professional owns each question.",
+        "processSteps": [
+          {"title": "Property review", "text": "Confirm the address, ownership names, occupancy, property type, condition, known defects, updates, and seller objectives before discussing a public launch."},
+          {"title": "Pricing discussion", "text": "Review the comparable set, adjustments, active competition, and evidence limits. Select a strategy only after the assumptions and alternatives are clear."},
+          {"title": "Launch and access", "text": "Coordinate photography, listing facts, showing instructions, disclosure materials, and a communication cadence that reflects the property's actual readiness."},
+          {"title": "Offer and closing file", "text": "Compare written terms on the same worksheet, track dates and contingencies, and route title, contract, tax, inspection, and lending questions to the proper professionals."}
+        ],
+        "checklistTitle": "Bring the facts that make a pricing review useful",
+        "checklistIntro": "You do not need a perfect file before the first conversation. These items identify gaps early and reduce guesswork when a plan is prepared.",
+        "checklist": [
+          "Property address, ownership names, occupancy, and preferred contact method",
+          "Known repairs, defects, insurance claims, permits, and material updates",
+          "Mortgage or lien information for the closing team to review",
+          "Current tax record, association documents, leases, or other property agreements",
+          "Move timing, access limitations, pets, work schedules, and possession preferences",
+          "Questions for an attorney, tax professional, title professional, or other specialist"
+        ],
+        "optionsTitle": "Compare preparation and launch choices on the same facts",
+        "optionsIntro": "A property can be marketed in its present condition or after selected work. The appropriate path depends on the home, available time, budget, documentation, and current alternatives—not a blanket rule.",
+        "options": [
+          {"title": "Market in present condition", "text": "Document condition accurately, identify disclosure and access needs, and compare the likely buyer questions with the cost and disruption avoided. The pricing discussion should reflect the observed condition."},
+          {"title": "Complete selected preparation", "text": "Limit the plan to work with a clear purpose, written scope, realistic schedule, and approved budget. Recheck comparable sales and active competition when the property is ready."}
+        ],
+        "guidance": "Jorge provides real-estate pricing, marketing, communication, and transaction coordination within the brokerage relationship. The written brokerage services agreement identifies the relationship, term, services, and compensation; New Jersey's bulletin states that broker compensation is fully negotiable and not set by law.",
+        "faq": [
+          {"question": "How is a New Jersey list-price range developed?", "answer": "The review starts with recent property-specific comparable sales and current alternatives, then documents meaningful differences in location, property type, condition, size, features, and timing. A comparative market analysis is an informed real-estate opinion, not an appraisal or a promised sale price."},
+          {"question": "Do I need to renovate before listing?", "answer": "Not as a universal rule. Compare each proposed task by cost, time, disruption, condition evidence, and the way similar properties are currently competing. Some owners choose a present-condition launch; others approve a limited preparation plan."},
+          {"question": "Which New Jersey seller costs should be reviewed?", "answer": "A property-specific estimate can include the mortgage payoff, liens, negotiated brokerage compensation, attorney or title charges, the Realty Transfer Fee when applicable, agreed credits, and other transaction items. Closing and tax professionals should confirm the actual figures."}
+        ],
+        "ctaTitle": "Start with one address and a written set of assumptions",
+        "ctaText": "Share the property address, condition, and timing priorities. Jorge can prepare the questions and comparable-sale framework for a property-specific pricing conversation without promising a result.",
+        "serviceName": "New Jersey home-selling and pricing planning"
+      },
+      "es": {
+        "title": "Vender su Casa en New Jersey | Jorge Ramirez",
+        "description": "Planifique la venta de su casa en New Jersey con evidencia de precio, fuentes oficiales de divulgación y un plan claro para la propiedad.",
+        "llm": "Servicio principal para vender una vivienda en New Jersey con el agente licenciado Jorge Ramirez. Explica precio según la propiedad, preparación, divulgaciones, comparación de ofertas y coordinación del cierre sin prometer precio ni plazo.",
+        "eyebrow": "Representación para vendedores en New Jersey · seis condados",
+        "h1": "Venda su casa en New Jersey con la propiedad, no una promesa, en el centro",
+        "intro": "Un plan útil comienza con la dirección, condición, ventas comparables recientes, competencia actual y sus prioridades. Jorge organiza esa evidencia en una conversación escrita sobre precio y lanzamiento para propiedades en los condados de Union, Essex, Morris, Hudson, Middlesex y Somerset.",
+        "focusTitle": "Construya la venta alrededor de tres decisiones verificables",
+        "focusIntro": "No existe una fórmula estatal única para el precio de salida ni la fecha de publicación. Estas decisiones mantienen el análisis conectado con evidencia actual y con los datos de la vivienda.",
+        "focusCards": [
+          {"title": "Evidencia de precio", "text": "Compare ventas cerradas recientes, información pendiente pertinente cuando esté disponible y propiedades activas del mismo tipo, ubicación, condición, tamaño y características materiales. Anote por qué cada comparable pertenece al análisis."},
+          {"title": "Preparación de la propiedad", "text": "Separe mantenimiento, temas de divulgación, presentación y mejoras opcionales. Revise costo, interrupción, tiempo necesario y efecto sobre la fecha prevista antes de aprobar trabajo."},
+          {"title": "Prioridades del vendedor", "text": "Defina tiempo preferido, ocupación, acceso, coordinación de mudanza y limitaciones financieras. El plan puede comparar concesiones sin convertir una prioridad personal en predicción de mercado."}
+        ],
+        "processTitle": "Un camino documentado desde la primera revisión hasta el cierre",
+        "processIntro": "El plan de trabajo permanece visible cuando cambian los datos. Usted puede ver qué está verificado, qué falta responder y qué profesional atiende cada pregunta.",
+        "processSteps": [
+          {"title": "Revisión de la propiedad", "text": "Confirme dirección, nombres de propietarios, ocupación, tipo de vivienda, condición, defectos conocidos, mejoras y objetivos antes de hablar de una publicación."},
+          {"title": "Conversación de precio", "text": "Revise el conjunto de comparables, diferencias, competencia activa y límites de la evidencia. Seleccione una estrategia después de entender supuestos y alternativas."},
+          {"title": "Lanzamiento y acceso", "text": "Coordine fotografías, datos del anuncio, instrucciones de visitas, materiales de divulgación y frecuencia de comunicación según la preparación real de la propiedad."},
+          {"title": "Ofertas y archivo de cierre", "text": "Compare términos escritos en la misma hoja, siga fechas y contingencias, y lleve preguntas de título, contrato, impuestos, inspección y préstamo al profesional correspondiente."}
+        ],
+        "checklistTitle": "Reúna los datos que hacen útil una revisión de precio",
+        "checklistIntro": "No necesita un archivo perfecto para la primera conversación. Estos elementos identifican vacíos temprano y reducen suposiciones al preparar el plan.",
+        "checklist": [
+          "Dirección, nombres de propietarios, ocupación y método de contacto preferido",
+          "Reparaciones, defectos, reclamos de seguro, permisos y mejoras materiales conocidas",
+          "Información de hipoteca o gravámenes para revisión del equipo de cierre",
+          "Registro fiscal, documentos de asociación, contratos de arrendamiento u otros acuerdos",
+          "Tiempo de mudanza, límites de acceso, mascotas, horarios y preferencia de posesión",
+          "Preguntas para abogado, profesional fiscal, profesional de títulos u otro especialista"
+        ],
+        "optionsTitle": "Compare preparación y lanzamiento con los mismos datos",
+        "optionsIntro": "Una propiedad puede salir al mercado en su condición actual o después de trabajo seleccionado. El camino depende de la vivienda, tiempo, presupuesto, documentos y competencia vigente, no de una regla general.",
+        "options": [
+          {"title": "Publicar en condición actual", "text": "Documente la condición con precisión, identifique divulgaciones y acceso, y compare las preguntas probables de compradores con el costo y la interrupción que se evitan. El análisis de precio debe reflejar la condición observada."},
+          {"title": "Completar preparación seleccionada", "text": "Limite el plan a trabajo con propósito claro, alcance escrito, calendario realista y presupuesto aprobado. Revise de nuevo los comparables y la competencia cuando la propiedad esté lista."}
+        ],
+        "guidance": "Jorge aporta precio inmobiliario, marketing, comunicación y coordinación dentro de la relación de corretaje. El acuerdo escrito de servicios identifica relación, plazo, servicios y compensación; el boletín de New Jersey indica que la compensación del corredor es totalmente negociable y no la fija la ley.",
+        "faq": [
+          {"question": "¿Cómo se desarrolla un rango de precio de salida en New Jersey?", "answer": "La revisión comienza con ventas comparables recientes y alternativas actuales para la propiedad, y documenta diferencias relevantes de ubicación, tipo, condición, tamaño, características y fecha. Un análisis comparativo es una opinión inmobiliaria informada, no una tasación ni una promesa de precio."},
+          {"question": "¿Necesito renovar antes de publicar?", "answer": "No como regla universal. Compare cada tarea propuesta por costo, tiempo, interrupción, evidencia de condición y forma en que compiten propiedades semejantes. Algunos propietarios eligen publicar en condición actual; otros aprueban una preparación limitada."},
+          {"question": "¿Qué costos del vendedor deben revisarse?", "answer": "Una estimación para la propiedad puede incluir saldo hipotecario, gravámenes, compensación de corretaje negociada, cargos de abogado o título, Realty Transfer Fee cuando corresponda, créditos acordados y otros elementos. Profesionales de cierre e impuestos confirman las cifras reales."}
+        ],
+        "ctaTitle": "Empiece con una dirección y un conjunto escrito de supuestos",
+        "ctaText": "Comparta dirección, condición y prioridades de tiempo. Jorge puede preparar las preguntas y el marco de ventas comparables para una conversación específica sin prometer un resultado.",
+        "serviceName": "Planificación de venta y precio de vivienda en New Jersey"
+      }
+    },
+    "how-we-sell-your-home": {
+      "en": {
+        "title": "How We Sell Your NJ Home | Transparent Listing Plan",
+        "description": "See the listing plan Jorge uses for a New Jersey home: verify facts, review pricing evidence, prepare the launch, compare offers, and coordinate closing.",
+        "llm": "Transparent New Jersey listing-service workflow from licensed agent Jorge Ramirez. It covers verified listing facts, pricing evidence, launch assets, showing communication, written offer comparison, and closing coordination without outcome claims.",
+        "eyebrow": "A transparent New Jersey listing workflow",
+        "h1": "See the launch plan before your home reaches the market",
+        "intro": "A listing service should be understandable before it begins. This page shows the work product, decision points, communication rhythm, and source checks used to move one New Jersey property from review to public marketing and closing coordination.",
+        "focusTitle": "Agree on the work product, not a sales slogan",
+        "focusIntro": "The plan identifies what will be prepared, who approves it, where it will be distributed, and how new evidence can change the strategy.",
+        "focusCards": [
+          {"title": "Verified listing file", "text": "Confirm ownership and occupancy details, room and property facts, known conditions, inclusions, exclusions, permits, association information, and source documents before publication."},
+          {"title": "Approved presentation", "text": "Review photography, copy, floor-plan or measurement materials when used, showing instructions, and property disclosures. The seller approves facts and access before the launch."},
+          {"title": "Written communication", "text": "Set a cadence for activity, showing feedback, competing inventory, pricing evidence, open decisions, and next steps. Written updates make changes easier to evaluate."}
+        ],
+        "processTitle": "Four checkpoints in the listing and launch plan",
+        "processIntro": "Each checkpoint produces something the seller can inspect. Marketing activity is documented as distribution and communication—not as a promised buyer response.",
+        "processSteps": [
+          {"title": "Evidence brief", "text": "Assemble the property profile, current comparable set, active alternatives, preparation questions, seller priorities, and source limitations in one working brief."},
+          {"title": "Launch package", "text": "Prepare approved listing facts, photographs, remarks, disclosures, showing instructions, syndication settings, and direct outreach materials appropriate to the property."},
+          {"title": "Market review", "text": "Track inquiries, showings, feedback, changes in competing inventory, and new comparable evidence. Discuss adjustments against the original assumptions."},
+          {"title": "Offer and transaction log", "text": "Normalize written terms, note contingencies and dates, record seller instructions, and keep professionals aligned through inspection, appraisal, title, lending, and closing work."}
+        ],
+        "checklistTitle": "What is reviewed before the listing is published",
+        "checklistIntro": "This launch checklist reduces contradictory facts and helps the seller understand what is ready, pending, or outside the agent's scope.",
+        "checklist": [
+          "Property profile and comparable-sale evidence with dates and source notes",
+          "Seller-approved list price, inclusions, exclusions, access, and showing instructions",
+          "Current property condition, known material information, and disclosure documents",
+          "Photography, written remarks, measurements, and media approved for publication",
+          "Brokerage relationship, listing term, services, and negotiated compensation in writing",
+          "Named contacts for attorney, title, tax, association, repair, or other specialist questions"
+        ],
+        "optionsTitle": "Adjust the plan only when the evidence supports the discussion",
+        "optionsIntro": "Activity data is useful when read in context. A showing count, online view, or comment does not independently establish market value or predict an offer.",
+        "options": [
+          {"title": "Hold the approved strategy", "text": "Keep the plan when the property is positioned as intended and the available evidence has not materially changed. Continue documenting activity and competing inventory."},
+          {"title": "Revisit a launch assumption", "text": "Discuss price, condition, presentation, access, or timing when new comparable evidence, repeated property-specific feedback, or a changed seller constraint makes the original assumption less useful."}
+        ],
+        "guidance": "The listing plan describes services and decisions; it does not turn distribution, photography, advertising, or communication into a price or timing promise. Written offer terms and transaction facts remain the basis for seller decisions.",
+        "faq": [
+          {"question": "Where will the listing be marketed?", "answer": "The written plan identifies the listing database and permitted syndication, property pages or media, direct communication, showing access, and any property-specific outreach. Distribution can make information available; it cannot establish who will respond or what terms they may offer."},
+          {"question": "How will I know what is happening after launch?", "answer": "Agree on a written update schedule covering inquiries, showing activity, feedback themes, current competition, new comparable sales, open transaction questions, and decisions that need seller direction."},
+          {"question": "What happens when an offer arrives?", "answer": "Offers can be placed on a consistent worksheet covering price, financing evidence, deposit, contingencies, requested credits, dates, included items, and other material terms. The seller selects instructions after reviewing the full written proposal and professional advice where needed."}
+        ],
+        "ctaTitle": "Review the listing work before selecting the strategy",
+        "ctaText": "Ask for a property-specific launch outline that identifies the comparable set, preparation questions, marketing assets, communication plan, and unresolved professional questions.",
+        "serviceName": "New Jersey listing and launch plan"
+      },
+      "es": {
+        "title": "Cómo Vendemos su Casa en NJ | Plan de Publicación",
+        "description": "Vea el plan para una casa en New Jersey: verificar datos, revisar evidencia de precio, preparar la publicación, comparar ofertas y coordinar el cierre.",
+        "llm": "Flujo transparente del servicio de publicación en New Jersey con el agente licenciado Jorge Ramirez. Cubre datos verificados, evidencia de precio, materiales, comunicación, comparación escrita de ofertas y coordinación sin afirmar resultados.",
+        "eyebrow": "Flujo transparente para publicar una propiedad en New Jersey",
+        "h1": "Vea el plan de lanzamiento antes de que su casa llegue al mercado",
+        "intro": "Un servicio de publicación debe entenderse antes de comenzar. Esta página muestra el trabajo, puntos de decisión, ritmo de comunicación y fuentes usados para llevar una propiedad de New Jersey desde la revisión hasta el marketing público y la coordinación del cierre.",
+        "focusTitle": "Acuerde el trabajo, no un eslogan de ventas",
+        "focusIntro": "El plan identifica qué se preparará, quién lo aprueba, dónde se distribuirá y cómo la evidencia nueva puede cambiar la estrategia.",
+        "focusCards": [
+          {"title": "Archivo verificado", "text": "Confirme propiedad y ocupación, datos de habitaciones y terreno, condiciones conocidas, inclusiones, exclusiones, permisos, asociación y documentos fuente antes de publicar."},
+          {"title": "Presentación aprobada", "text": "Revise fotografías, texto, planos o medidas cuando se usen, instrucciones de visitas y divulgaciones. El vendedor aprueba datos y acceso antes del lanzamiento."},
+          {"title": "Comunicación escrita", "text": "Defina una frecuencia para actividad, comentarios de visitas, inventario competidor, evidencia de precio, decisiones abiertas y próximos pasos. Las actualizaciones escritas facilitan evaluar cambios."}
+        ],
+        "processTitle": "Cuatro controles en el plan de publicación y lanzamiento",
+        "processIntro": "Cada control produce algo que el vendedor puede revisar. La actividad de marketing se documenta como distribución y comunicación, no como respuesta prometida del mercado.",
+        "processSteps": [
+          {"title": "Resumen de evidencia", "text": "Reúna perfil de la propiedad, comparables actuales, alternativas activas, preguntas de preparación, prioridades y límites de las fuentes en un documento de trabajo."},
+          {"title": "Paquete de lanzamiento", "text": "Prepare datos aprobados, fotografías, comentarios, divulgaciones, instrucciones de visitas, configuración de distribución y materiales de contacto apropiados para la propiedad."},
+          {"title": "Revisión del mercado", "text": "Registre consultas, visitas, comentarios, cambios en inventario competidor y evidencia comparable nueva. Discuta ajustes contra los supuestos originales."},
+          {"title": "Registro de oferta y operación", "text": "Normalice términos escritos, anote contingencias y fechas, registre instrucciones y mantenga alineados a los profesionales en inspección, tasación, título, préstamo y cierre."}
+        ],
+        "checklistTitle": "Lo que se revisa antes de publicar el anuncio",
+        "checklistIntro": "Esta lista reduce datos contradictorios y ayuda al vendedor a entender qué está listo, pendiente o fuera del alcance del agente.",
+        "checklist": [
+          "Perfil de la propiedad y evidencia de ventas comparables con fechas y notas",
+          "Precio, inclusiones, exclusiones, acceso e instrucciones aprobados por el vendedor",
+          "Condición actual, información material conocida y documentos de divulgación",
+          "Fotografías, comentarios, medidas y medios aprobados para publicación",
+          "Relación de corretaje, plazo, servicios y compensación negociada por escrito",
+          "Contactos de abogado, título, impuestos, asociación, reparación u otros especialistas"
+        ],
+        "optionsTitle": "Ajuste el plan cuando la evidencia respalde la conversación",
+        "optionsIntro": "Los datos de actividad son útiles en contexto. Una cantidad de visitas, vista en línea o comentario no establece por sí solo el valor ni predice una oferta.",
+        "options": [
+          {"title": "Mantener la estrategia aprobada", "text": "Mantenga el plan cuando la propiedad esté posicionada como se acordó y la evidencia disponible no haya cambiado de forma material. Continúe documentando actividad y competencia."},
+          {"title": "Revisar un supuesto del lanzamiento", "text": "Discuta precio, condición, presentación, acceso o tiempo cuando evidencia comparable nueva, comentarios repetidos sobre la propiedad o una limitación diferente reduzcan la utilidad del supuesto original."}
+        ],
+        "guidance": "El plan describe servicios y decisiones; no convierte distribución, fotografía, publicidad o comunicación en promesa de precio ni de plazo. Los términos escritos y los datos de la operación siguen siendo la base de las instrucciones del vendedor.",
+        "faq": [
+          {"question": "¿Dónde se promocionará el anuncio?", "answer": "El plan escrito identifica la base de anuncios y distribución permitida, páginas o medios de la propiedad, comunicación directa, acceso a visitas y contacto específico. La distribución pone información disponible; no establece quién responderá ni qué términos ofrecerá."},
+          {"question": "¿Cómo sabré qué ocurre después del lanzamiento?", "answer": "Acuerde un calendario escrito que cubra consultas, actividad de visitas, temas en los comentarios, competencia actual, ventas comparables nuevas, preguntas abiertas y decisiones que necesitan instrucciones."},
+          {"question": "¿Qué sucede cuando llega una oferta?", "answer": "Las ofertas pueden colocarse en una hoja consistente con precio, evidencia de fondos o préstamo, depósito, contingencias, créditos, fechas, elementos incluidos y otros términos. El vendedor da instrucciones después de revisar la propuesta escrita y asesoría profesional cuando corresponda."}
+        ],
+        "ctaTitle": "Revise el trabajo de publicación antes de escoger la estrategia",
+        "ctaText": "Solicite un esquema para la propiedad que identifique comparables, preguntas de preparación, materiales de marketing, plan de comunicación y preguntas pendientes para otros profesionales.",
+        "serviceName": "Plan de publicación y lanzamiento en New Jersey"
+      }
+    },
+    "expired-listing-help": {
+      "en": {
+        "title": "Expired Listing Help in New Jersey | Relaunch Review",
+        "description": "Review an expired New Jersey listing with a documented audit of listing history, pricing evidence, presentation, access, feedback, and relaunch choices.",
+        "llm": "New Jersey expired-listing audit and relaunch planning with licensed agent Jorge Ramirez. It reviews listing history, comparable evidence, property presentation, access, feedback, and changed conditions without blaming a single factor or promising a sale.",
+        "eyebrow": "Expired New Jersey listing · evidence-based relaunch review",
+        "h1": "An expired listing is a record to audit, not a verdict on the home",
+        "intro": "Before changing the price, photographs, agent, or launch date, reconstruct what the market actually saw. Jorge reviews the listing history, property condition, comparable evidence, access, feedback, and material changes to create a property-specific relaunch discussion.",
+        "focusTitle": "Separate observed facts from assumptions about why it expired",
+        "focusIntro": "A listing can end without a sale for more than one reason. The audit looks for evidence across positioning, presentation, access, and written terms instead of assigning a simple cause.",
+        "focusCards": [
+          {"title": "Listing history", "text": "Record original and changed prices, dates, status changes, days available, media, remarks, showing instructions, open houses, disclosures, and any periods when the property could not be shown."},
+          {"title": "Market evidence", "text": "Compare the original comparable set with sales, expirations, withdrawals, pending activity, and active competition that appeared during or after the listing period."},
+          {"title": "Property response", "text": "Organize showing feedback and inspection or offer history by repeated property-specific themes. Distinguish verified facts from isolated opinions and comments about matters outside housing-service criteria."}
+        ],
+        "processTitle": "A relaunch begins with an audit trail",
+        "processIntro": "The relaunch plan should show what changed, why the change is being considered, and how the seller will evaluate the next round of evidence.",
+        "processSteps": [
+          {"title": "Recover the file", "text": "Collect the prior listing sheet, photos, remarks, disclosures, showing record, feedback, price changes, offer history, inspection material, and relevant seller instructions."},
+          {"title": "Rebuild the comparable set", "text": "Use current, property-specific sales and alternatives. Note which evidence did not exist during the earlier pricing discussion and which old comparables are no longer useful."},
+          {"title": "Choose material changes", "text": "Evaluate price, preparation, presentation, access, disclosures, and timing separately. Approve changes with a written reason rather than changing everything at once."},
+          {"title": "Set the review cadence", "text": "Define what will be tracked after relaunch, when it will be discussed, and which evidence would support keeping or revisiting the strategy."}
+        ],
+        "checklistTitle": "Bring the prior record into the relaunch meeting",
+        "checklistIntro": "The old file is useful even when it is incomplete. It prevents the next plan from repeating assumptions and makes the new pricing discussion easier to test.",
+        "checklist": [
+          "Prior listing sheet, price and status history, photographs, remarks, and disclosures",
+          "Showing log, access restrictions, cancellations, open-house notes, and feedback",
+          "Written offers, counteroffers, inspection reports, appraisal issues, or credits discussed",
+          "Repairs, maintenance, permits, insurance matters, or presentation changes since the listing",
+          "Current occupancy, move constraints, preferred timing, and availability for showings",
+          "Questions about the prior agreement or new brokerage terms for the appropriate professionals"
+        ],
+        "optionsTitle": "Decide whether to relaunch now or prepare first",
+        "optionsIntro": "The expiration date alone does not determine the next launch. Review current evidence, property readiness, seller constraints, and the tasks needed to publish accurate information.",
+        "options": [
+          {"title": "Relaunch with documented changes", "text": "Use this path when property facts and disclosure materials are ready, access is workable, the current comparable set has been reviewed, and the seller has approved the revised positioning."},
+          {"title": "Pause for targeted preparation", "text": "Use the pause to complete selected work, obtain documents, resolve access issues, or seek professional advice. Set a decision point for reviewing the evidence again rather than selecting a date by slogan."}
+        ],
+        "guidance": "A relaunch cannot erase public listing history or assure a different response. It can present accurate current facts, a reasoned price discussion, updated materials, clearer access, and a documented process for reviewing new evidence.",
+        "faq": [
+          {"question": "Should an expired listing automatically reduce its price?", "answer": "No automatic rule fits every property. Rebuild the current comparable set and review condition, presentation, access, feedback, competition, and seller constraints. A price change is one possible decision and should have a written evidence-based reason."},
+          {"question": "Can the prior photos and description be reused?", "answer": "First confirm ownership or permission, accuracy, current condition, and whether the materials represent the property as it will be shown. New or revised material may be appropriate when condition, presentation, season, access, or listing facts changed."},
+          {"question": "What should I review before signing a new listing agreement?", "answer": "Review the brokerage relationship, agreement term, services, listing database and distribution choices, seller duties, compensation, cancellation terms, dual or designated agency language, and the written launch and communication plan. Legal questions belong with an attorney."}
+        ],
+        "ctaTitle": "Turn the prior listing file into a focused relaunch review",
+        "ctaText": "Share the former listing address or sheet and describe what changed. Jorge can organize the audit questions and current comparable framework before discussing a new launch.",
+        "serviceName": "Expired listing audit and relaunch planning"
+      },
+      "es": {
+        "title": "Ayuda con Anuncio Vencido en NJ | Revisión para Relanzar",
+        "description": "Revise un anuncio vencido en New Jersey con una auditoría del historial, evidencia de precio, presentación, acceso, comentarios y opciones para relanzar.",
+        "llm": "Auditoría y planificación para relanzar un anuncio vencido en New Jersey con el agente licenciado Jorge Ramirez. Revisa historial, comparables, presentación, acceso, comentarios y cambios sin culpar un factor ni prometer una venta.",
+        "eyebrow": "Anuncio vencido en New Jersey · revisión con evidencia",
+        "h1": "Un anuncio vencido es un registro para auditar, no un veredicto sobre la casa",
+        "intro": "Antes de cambiar precio, fotografías, agente o fecha, reconstruya lo que el mercado realmente vio. Jorge revisa el historial del anuncio, condición, comparables, acceso, comentarios y cambios materiales para una conversación específica de relanzamiento.",
+        "focusTitle": "Separe hechos observados de suposiciones sobre el vencimiento",
+        "focusIntro": "Un anuncio puede terminar sin venta por más de una razón. La auditoría busca evidencia en posición, presentación, acceso y términos escritos en vez de asignar una sola causa.",
+        "focusCards": [
+          {"title": "Historial del anuncio", "text": "Registre precios iniciales y cambios, fechas, estados, días disponible, medios, texto, instrucciones de visitas, jornadas abiertas, divulgaciones y períodos sin acceso."},
+          {"title": "Evidencia de mercado", "text": "Compare el conjunto original con ventas, vencimientos, retiros, actividad pendiente y competencia que apareció durante o después del período de publicación."},
+          {"title": "Respuesta a la propiedad", "text": "Organice comentarios de visitas e historial de inspección u ofertas por temas repetidos sobre la propiedad. Distinga hechos verificados de opiniones aisladas y comentarios fuera de criterios de vivienda."}
+        ],
+        "processTitle": "Un relanzamiento comienza con una pista de auditoría",
+        "processIntro": "El plan debe mostrar qué cambió, por qué se considera y cómo el vendedor evaluará la siguiente evidencia.",
+        "processSteps": [
+          {"title": "Recuperar el archivo", "text": "Reúna hoja anterior, fotos, texto, divulgaciones, registro de visitas, comentarios, cambios de precio, ofertas, inspecciones e instrucciones pertinentes."},
+          {"title": "Reconstruir comparables", "text": "Use ventas y alternativas actuales para la propiedad. Anote qué evidencia no existía en el análisis anterior y qué comparables antiguos ya no son útiles."},
+          {"title": "Elegir cambios materiales", "text": "Evalúe precio, preparación, presentación, acceso, divulgaciones y tiempo por separado. Apruebe cada cambio con una razón escrita en vez de modificar todo a la vez."},
+          {"title": "Definir frecuencia de revisión", "text": "Determine qué se registrará después del relanzamiento, cuándo se discutirá y qué evidencia respaldaría mantener o revisar la estrategia."}
+        ],
+        "checklistTitle": "Lleve el registro anterior a la reunión",
+        "checklistIntro": "El archivo viejo sirve aun cuando esté incompleto. Evita repetir supuestos y permite probar con más claridad el nuevo análisis de precio.",
+        "checklist": [
+          "Hoja anterior, historial de precio y estado, fotografías, texto y divulgaciones",
+          "Registro de visitas, límites de acceso, cancelaciones, jornadas abiertas y comentarios",
+          "Ofertas, contraofertas, inspecciones, temas de tasación o créditos discutidos",
+          "Reparaciones, mantenimiento, permisos, seguro o presentación que cambiaron",
+          "Ocupación actual, límites de mudanza, tiempo preferido y acceso para visitas",
+          "Preguntas sobre el acuerdo anterior o nuevos términos para el profesional adecuado"
+        ],
+        "optionsTitle": "Decida si relanzar ahora o preparar primero",
+        "optionsIntro": "La fecha de vencimiento no decide por sí sola el próximo lanzamiento. Revise evidencia actual, preparación, límites y tareas para publicar información precisa.",
+        "options": [
+          {"title": "Relanzar con cambios documentados", "text": "Considere este camino cuando datos y divulgaciones estén listos, el acceso funcione, se haya revisado el conjunto comparable y el vendedor apruebe la posición revisada."},
+          {"title": "Pausar para preparación dirigida", "text": "Use la pausa para trabajo seleccionado, documentos, acceso o asesoría profesional. Defina un punto para revisar la evidencia otra vez en lugar de escoger una fecha por un eslogan."}
+        ],
+        "guidance": "Un relanzamiento no puede borrar el historial público ni asegurar una respuesta distinta. Puede presentar datos actuales precisos, análisis razonado, materiales actualizados, acceso claro y un proceso documentado para revisar evidencia nueva.",
+        "faq": [
+          {"question": "¿Un anuncio vencido debe reducir el precio automáticamente?", "answer": "Ninguna regla automática sirve para toda propiedad. Reconstruya comparables actuales y revise condición, presentación, acceso, comentarios, competencia y límites. Un cambio de precio es una decisión posible y necesita una razón escrita basada en evidencia."},
+          {"question": "¿Se pueden reutilizar fotos y descripción anteriores?", "answer": "Confirme propiedad o permiso, precisión, condición vigente y si representan la propiedad como se mostrará. Material nuevo o revisado puede corresponder cuando cambiaron condición, presentación, temporada, acceso o datos."},
+          {"question": "¿Qué reviso antes de firmar un nuevo acuerdo?", "answer": "Revise relación de corretaje, plazo, servicios, base de anuncios y distribución, deberes del vendedor, compensación, cancelación, lenguaje de agencia y plan escrito de lanzamiento y comunicación. Preguntas legales corresponden a un abogado."}
+        ],
+        "ctaTitle": "Convierta el archivo anterior en una revisión enfocada",
+        "ctaText": "Comparta dirección u hoja anterior y describa qué cambió. Jorge puede organizar preguntas de auditoría y el marco comparable actual antes de hablar de un relanzamiento.",
+        "serviceName": "Auditoría y planificación para anuncio vencido"
+      }
+    },
+    "fsbo-help": {
+      "en": {
+        "title": "FSBO Help in New Jersey | Review Your Selling Options",
+        "description": "Review a New Jersey owner-led sale, current pricing evidence, disclosure sources, access, offer terms, and the option of brokerage representation.",
+        "llm": "New Jersey FSBO decision guide from licensed agent Jorge Ramirez. It helps an owner audit an owner-led sale, pricing evidence, disclosures, access, written offers, and brokerage options without criticism or outcome promises.",
+        "eyebrow": "New Jersey FSBO support · a respectful options review",
+        "h1": "Review your owner-led sale before deciding what kind of help comes next",
+        "intro": "Selling without representation can reveal where the file is clear and where more support may help. Jorge can review the property facts, pricing evidence, disclosure sources, inquiry process, showing access, and written offer terms without assuming that every owner needs the same service.",
+        "focusTitle": "Audit the owner-led sale as it operates today",
+        "focusIntro": "A useful review starts with the actual file and workflow—not general claims about owners or agents. You decide whether to continue, seek limited professional advice elsewhere, or discuss a brokerage relationship.",
+        "focusCards": [
+          {"title": "Information accuracy", "text": "Check the address, ownership, room and property facts, condition, permits, inclusions, exclusions, occupancy, association details, and disclosure documents against reliable records."},
+          {"title": "Inquiry and access process", "text": "Document how inquiries are received, what information is requested, how showings are scheduled, who enters the property, how feedback is recorded, and how personal information is handled."},
+          {"title": "Written terms", "text": "Place each proposal on a consistent worksheet covering price, funds or financing evidence, deposit, contingencies, credits, dates, included items, and unresolved professional questions."}
+        ],
+        "processTitle": "A transition review that preserves the work already completed",
+        "processIntro": "If you explore representation, the existing file becomes the starting point. Accurate materials can be retained while outdated, unsupported, or unclear items are corrected.",
+        "processSteps": [
+          {"title": "Inventory the file", "text": "Collect the property description, photos, disclosures, inquiry log, showing schedule, feedback, comparable analysis, offers, and professional contacts already in use."},
+          {"title": "Recheck the evidence", "text": "Update recent comparable sales and active alternatives, verify material property facts, and identify which pricing assumptions still apply."},
+          {"title": "Define requested services", "text": "Discuss the brokerage relationship, term, listing and distribution choices, seller responsibilities, communication, compensation, and any transition from existing advertising."},
+          {"title": "Document the handoff", "text": "Preserve seller communications and active professional matters, provide accurate status information, and avoid giving a new party instructions that conflict with an existing agreement."}
+        ],
+        "checklistTitle": "Use this file for a FSBO options conversation",
+        "checklistIntro": "The goal is to understand the current sale, not to grade it. Bring what exists and identify questions that need a licensed, legal, tax, title, inspection, or lending answer.",
+        "checklist": [
+          "Current advertisement, property facts, photographs, and all public-facing claims",
+          "Comparable sales used for pricing and the date each source was reviewed",
+          "Property condition, known material information, disclosures, permits, and association records",
+          "Inquiry and showing log with access instructions and privacy practices",
+          "Written offers, proof or financing information, contingencies, credits, and dates",
+          "Any existing agreement with a broker, photographer, platform, attorney, or other provider"
+        ],
+        "optionsTitle": "Choose the service path after reviewing the gap",
+        "optionsIntro": "The review may show that the owner-led process is functioning as intended or that representation would address specific work. The decision belongs in a written comparison of services and terms.",
+        "options": [
+          {"title": "Continue the owner-led sale", "text": "Keep the file current, use accurate property information, compare written terms consistently, and seek qualified professional advice for contract, title, tax, disclosure, inspection, lending, or security questions."},
+          {"title": "Discuss brokerage representation", "text": "Review the proposed relationship, services, term, database and distribution choices, communication, seller responsibilities, compensation, and transition plan before authorizing brokerage work."}
+        ],
+        "guidance": "New Jersey's official bulletin explains written brokerage services agreements and states that broker compensation is fully negotiable and not set by law. A conversation or comparative market analysis alone does not obligate an owner to enter a brokerage relationship.",
+        "faq": [
+          {"question": "Can Jorge review my FSBO without taking over the listing?", "answer": "A first conversation can identify property facts, comparable evidence, workflow questions, and possible professional referrals. Any brokerage services, duties, term, and compensation would be described in a written agreement before that representation is provided."},
+          {"question": "What should I compare in an offer?", "answer": "Compare the complete written terms: price, deposit, funds or financing evidence, appraisal and inspection provisions, other contingencies, requested credits, included items, dates, occupancy, and costs. An attorney can advise on contract language and legal effect."},
+          {"question": "Do disclosure questions change when an owner sells without representation?", "answer": "Do not assume that an owner-led sale removes property disclosure duties. The NJ DOBI bulletin and official property condition form explain the current statewide framework, while an attorney can advise how it applies to the transaction."}
+        ],
+        "ctaTitle": "Bring the current FSBO file to a no-assumption review",
+        "ctaText": "Share the property address, advertisement, pricing evidence, and any written proposal. Jorge can organize the real-estate questions and explain what a proposed brokerage service would include.",
+        "serviceName": "New Jersey FSBO options review"
+      },
+      "es": {
+        "title": "Ayuda FSBO en New Jersey | Revise Opciones de Venta",
+        "description": "Revise una venta por cuenta propia en New Jersey, evidencia de precio, divulgaciones, acceso, términos de ofertas y representación de corretaje.",
+        "llm": "Guía de decisión FSBO en New Jersey del agente licenciado Jorge Ramirez. Ayuda a auditar una venta por cuenta propia, precio, divulgaciones, acceso, ofertas escritas y opciones de corretaje sin crítica ni promesas.",
+        "eyebrow": "Apoyo FSBO en New Jersey · revisión respetuosa de opciones",
+        "h1": "Revise su venta por cuenta propia antes de decidir qué ayuda sigue",
+        "intro": "Vender sin representación puede mostrar qué partes del archivo están claras y cuáles necesitan apoyo. Jorge puede revisar datos, evidencia de precio, divulgaciones, consultas, acceso y términos escritos sin suponer que todo propietario necesita el mismo servicio.",
+        "focusTitle": "Audite la venta por cuenta propia como funciona hoy",
+        "focusIntro": "Una revisión útil comienza con el archivo y proceso reales, no con afirmaciones generales sobre propietarios o agentes. Usted decide si continúa, busca asesoría limitada o conversa sobre corretaje.",
+        "focusCards": [
+          {"title": "Precisión de información", "text": "Verifique dirección, propiedad, habitaciones, terreno, condición, permisos, inclusiones, exclusiones, ocupación, asociación y divulgaciones contra registros confiables."},
+          {"title": "Consultas y acceso", "text": "Documente cómo llegan consultas, qué información se solicita, cómo se programan visitas, quién entra, cómo se registran comentarios y cómo se maneja información personal."},
+          {"title": "Términos escritos", "text": "Coloque cada propuesta en una hoja consistente con precio, evidencia de fondos o préstamo, depósito, contingencias, créditos, fechas, elementos incluidos y preguntas profesionales."}
+        ],
+        "processTitle": "Una revisión de transición que conserva el trabajo útil",
+        "processIntro": "Si explora representación, el archivo existente es el punto de partida. Material preciso puede conservarse mientras se corrige lo antiguo, no respaldado o confuso.",
+        "processSteps": [
+          {"title": "Inventariar el archivo", "text": "Reúna descripción, fotos, divulgaciones, consultas, visitas, comentarios, análisis comparable, ofertas y contactos profesionales que ya usa."},
+          {"title": "Revisar evidencia", "text": "Actualice ventas comparables y alternativas activas, verifique datos materiales e identifique qué supuestos de precio todavía aplican."},
+          {"title": "Definir servicios solicitados", "text": "Discuta relación, plazo, publicación y distribución, responsabilidades, comunicación, compensación y transición desde publicidad existente."},
+          {"title": "Documentar el traspaso", "text": "Conserve comunicaciones y asuntos profesionales activos, informe el estado con precisión y evite instrucciones que choquen con un acuerdo existente."}
+        ],
+        "checklistTitle": "Use este archivo para conversar sobre opciones FSBO",
+        "checklistIntro": "El propósito es entender la venta actual, no calificarla. Lleve lo existente e identifique preguntas para licencia, ley, impuestos, título, inspección o préstamo.",
+        "checklist": [
+          "Publicidad actual, datos, fotografías y todas las afirmaciones públicas",
+          "Ventas comparables usadas para precio y fecha de revisión de cada fuente",
+          "Condición, información material conocida, divulgaciones, permisos y asociación",
+          "Registro de consultas y visitas con instrucciones de acceso y privacidad",
+          "Ofertas escritas, fondos o préstamo, contingencias, créditos y fechas",
+          "Acuerdo existente con corredor, fotógrafo, plataforma, abogado u otro proveedor"
+        ],
+        "optionsTitle": "Elija el camino después de revisar el vacío",
+        "optionsIntro": "La revisión puede mostrar que el proceso funciona como se esperaba o que la representación atendería tareas específicas. La decisión corresponde a una comparación escrita de servicios y términos.",
+        "options": [
+          {"title": "Continuar por cuenta propia", "text": "Mantenga el archivo actual, use datos precisos, compare términos escritos de manera consistente y busque asesoría calificada para contrato, título, impuestos, divulgación, inspección, préstamo o seguridad."},
+          {"title": "Conversar sobre representación", "text": "Revise relación propuesta, servicios, plazo, bases y distribución, comunicación, responsabilidades, compensación y transición antes de autorizar trabajo de corretaje."}
+        ],
+        "guidance": "El boletín oficial de New Jersey explica los acuerdos escritos de servicios y señala que la compensación del corredor es totalmente negociable y no la fija la ley. Una conversación o análisis comparativo por sí solo no obliga al propietario a entrar en una relación.",
+        "faq": [
+          {"question": "¿Puede Jorge revisar mi FSBO sin tomar el anuncio?", "answer": "Una primera conversación puede identificar datos, comparables, preguntas de proceso y posibles referencias profesionales. Cualquier servicio, deber, plazo y compensación de corretaje se describiría en un acuerdo escrito antes de prestar representación."},
+          {"question": "¿Qué comparo en una oferta?", "answer": "Compare términos completos: precio, depósito, fondos o préstamo, tasación e inspección, otras contingencias, créditos, elementos incluidos, fechas, ocupación y costos. Un abogado puede orientar sobre lenguaje y efecto legal."},
+          {"question": "¿Cambian las divulgaciones al vender sin representación?", "answer": "No suponga que la venta por cuenta propia elimina deberes de divulgación. El boletín de NJ DOBI y el formulario oficial explican el marco estatal vigente; un abogado puede orientar sobre su aplicación a la operación."}
+        ],
+        "ctaTitle": "Lleve el archivo FSBO actual a una revisión sin suposiciones",
+        "ctaText": "Comparta dirección, publicidad, evidencia de precio y cualquier propuesta escrita. Jorge puede organizar las preguntas inmobiliarias y explicar qué incluiría un servicio de corretaje propuesto.",
+        "serviceName": "Revisión de opciones FSBO en New Jersey"
+      }
+    },
+    "cash-offer-nj": {
+      "en": {
+        "title": "Evaluate a Cash Offer for Your NJ Home | Jorge Ramirez",
+        "description": "Compare a written cash offer for a New Jersey home with a public-market path using the same property facts, costs, contingencies, dates, and net assumptions.",
+        "llm": "Neutral New Jersey cash-offer comparison guide from licensed agent Jorge Ramirez. It does not claim that Jorge or an investor will make an offer. It explains written-term, net, contingency, timing, and public-market comparison questions.",
+        "eyebrow": "New Jersey cash-offer review · written terms before slogans",
+        "h1": "Evaluate a cash proposal beside its real alternative",
+        "intro": "A cash label does not reveal the complete transaction. Compare a written cash offer with a public-market path using the same property facts, condition, costs, contingencies, dates, access, occupancy, and professional estimates before deciding what matters for your address.",
+        "focusTitle": "Put every proposal on the same comparison sheet",
+        "focusIntro": "The comparison should use written terms and clearly labeled estimates. Jorge can organize the real-estate evidence; attorneys, title and tax professionals address their parts of the transaction.",
+        "focusCards": [
+          {"title": "Written cash offer", "text": "Identify the legal buyer, purchase price, deposit, proof of funds, inspection or due-diligence rights, assignment language, requested credits, included items, closing date, possession, and expiration."},
+          {"title": "Estimated seller net", "text": "Start from each written price and list property-specific payoffs, liens, negotiated compensation, Realty Transfer Fee when applicable, professional charges, credits, repairs, carrying costs, and other known items."},
+          {"title": "Execution conditions", "text": "Compare access, inspection scope, financing or appraisal provisions, title requirements, buyer cancellation rights, seller obligations, occupancy, move logistics, and the people responsible for closing work."}
+        ],
+        "processTitle": "A cash comparison is an evidence exercise",
+        "processIntro": "A proposal can be straightforward or contain material conditions. The process below makes the assumptions visible without predicting which path will produce a particular result.",
+        "processSteps": [
+          {"title": "Verify the proposal", "text": "Obtain the complete written offer and identify buyer, signatory, funds evidence, assignment rights, contingencies, inspection provisions, dates, credits, and closing contacts."},
+          {"title": "Review the property", "text": "Document condition, disclosures, occupancy, title questions, access, seller priorities, and current comparable sales so the alternative is grounded in the same home."},
+          {"title": "Model both paths", "text": "Create clearly labeled estimates for the cash proposal and a public-market launch. Use the same cost categories and state which numbers require professional confirmation."},
+          {"title": "Select instructions", "text": "Review the complete written terms and professional advice, then give transaction instructions based on the tradeoffs that matter to the owner—not on the word cash alone."}
+        ],
+        "checklistTitle": "Documents and questions for a cash-offer review",
+        "checklistIntro": "Do not compare an advertised headline with an estimated list price. Bring the complete proposal and use a consistent file for both transaction paths.",
+        "checklist": [
+          "Full written offer, addenda, buyer identity, signature authority, and expiration",
+          "Proof-of-funds material and the attorney, title, or closing contact identified by the buyer",
+          "Inspection, due-diligence, cancellation, assignment, credit, and access provisions",
+          "Property condition, disclosures, occupancy, included items, title issues, and move needs",
+          "Property-specific net assumptions with the same cost categories for both paths",
+          "Legal, title, tax, and wire-instruction questions for the appropriate professionals"
+        ],
+        "optionsTitle": "Compare a direct proposal with a public-market launch",
+        "optionsIntro": "Neither path is automatically appropriate for every seller. Compare actual written terms, property readiness, seller priorities, execution risk, and estimated net using consistent assumptions.",
+        "options": [
+          {"title": "Accept or negotiate a direct proposal", "text": "Evaluate the buyer and complete contract terms, not only price and closing date. Clarify inspection, assignment, credits, access, possession, title, closing administration, and seller obligations with the appropriate advisers."},
+          {"title": "Prepare a public-market launch", "text": "Build a property-specific comparable set and launch plan, then estimate preparation, access, marketing, timing variables, contingencies, and costs. A public listing creates an opportunity for market response, not a promised response."}
+        ],
+        "guidance": "Jorge is presented here as a licensed real-estate agent who can compare property and transaction information. This page does not state that Jorge, Keller Williams, or an unnamed investor will purchase the property or provide a cash offer.",
+        "faq": [
+          {"question": "Does cash mean the offer has no contingencies?", "answer": "No. Cash describes the funding method, not every contract term. Read the written inspection, due-diligence, title, cancellation, assignment, access, credit, date, and possession provisions with an attorney."},
+          {"question": "How should I compare the net from two paths?", "answer": "Use the same worksheet and label every estimate. Include price, payoffs, liens, negotiated compensation, Realty Transfer Fee when applicable, professional charges, credits, repairs, carrying costs, moving costs, and other property-specific items. Have the proper professionals confirm their figures."},
+          {"question": "Can Jorge obtain a cash offer for my property?", "answer": "This page makes no promise that a buyer will submit an offer. Jorge can review a proposal you received, discuss current comparable evidence and a public-market alternative, and explain any brokerage services in writing."}
+        ],
+        "ctaTitle": "Compare the complete proposal, not the headline",
+        "ctaText": "Share the property address and the written proposal, with sensitive account information removed. Jorge can organize a side-by-side real-estate review and identify questions for your attorney, title, and tax professionals.",
+        "serviceName": "New Jersey cash-offer comparison"
+      },
+      "es": {
+        "title": "Evalúe una Oferta en Efectivo por su Casa en NJ",
+        "description": "Compare una oferta escrita en efectivo por una casa de New Jersey con el mercado público usando los mismos datos, costos, contingencias y fechas.",
+        "llm": "Guía neutral para comparar una oferta en efectivo en New Jersey con el agente licenciado Jorge Ramirez. No afirma que Jorge ni un inversionista presentará una oferta. Explica términos escritos, neto, contingencias, fechas y alternativa pública.",
+        "eyebrow": "Revisión de oferta en efectivo en New Jersey · términos escritos",
+        "h1": "Evalúe una propuesta en efectivo junto a su alternativa real",
+        "intro": "La palabra efectivo no revela la operación completa. Compare una oferta escrita en efectivo con el mercado público usando los mismos datos, condición, costos, contingencias, fechas, acceso, ocupación y estimaciones profesionales antes de decidir qué importa para la dirección.",
+        "focusTitle": "Coloque cada propuesta en la misma hoja de comparación",
+        "focusIntro": "La comparación usa términos escritos y estimaciones claramente marcadas. Jorge organiza evidencia inmobiliaria; abogados y profesionales de título e impuestos atienden sus partes.",
+        "focusCards": [
+          {"title": "Oferta escrita en efectivo", "text": "Identifique comprador legal, precio, depósito, evidencia de fondos, derechos de inspección, lenguaje de cesión, créditos, elementos incluidos, cierre, posesión y vencimiento."},
+          {"title": "Neto estimado del vendedor", "text": "Empiece con cada precio y enumere saldos, gravámenes, compensación negociada, Realty Transfer Fee cuando aplique, cargos profesionales, créditos, reparaciones, costos de mantener y otros elementos."},
+          {"title": "Condiciones de ejecución", "text": "Compare acceso, inspección, disposiciones de préstamo o tasación, título, cancelación del comprador, obligaciones, ocupación, mudanza y responsables del cierre."}
+        ],
+        "processTitle": "Una comparación en efectivo es un ejercicio de evidencia",
+        "processIntro": "Una propuesta puede ser sencilla o contener condiciones materiales. El proceso hace visibles los supuestos sin predecir qué camino producirá un resultado específico.",
+        "processSteps": [
+          {"title": "Verificar la propuesta", "text": "Obtenga la oferta completa e identifique comprador, firmante, fondos, derechos de cesión, contingencias, inspección, fechas, créditos y contactos de cierre."},
+          {"title": "Revisar la propiedad", "text": "Documente condición, divulgaciones, ocupación, título, acceso, prioridades y ventas comparables actuales para que la alternativa use la misma vivienda."},
+          {"title": "Modelar ambos caminos", "text": "Cree estimaciones marcadas para la propuesta directa y la publicación pública. Use las mismas categorías de costo e indique qué cifras requieren confirmación profesional."},
+          {"title": "Seleccionar instrucciones", "text": "Revise términos completos y asesoría profesional, y luego dé instrucciones según las concesiones importantes para el propietario, no por la palabra efectivo solamente."}
+        ],
+        "checklistTitle": "Documentos y preguntas para revisar una oferta",
+        "checklistIntro": "No compare un titular publicitario con un precio estimado. Lleve la propuesta completa y use un archivo consistente para ambos caminos.",
+        "checklist": [
+          "Oferta completa, anexos, identidad del comprador, autoridad de firma y vencimiento",
+          "Evidencia de fondos y contacto de abogado, título o cierre indicado por el comprador",
+          "Disposiciones de inspección, diligencia, cancelación, cesión, crédito y acceso",
+          "Condición, divulgaciones, ocupación, elementos incluidos, título y mudanza",
+          "Supuestos de neto para la propiedad con las mismas categorías en ambos caminos",
+          "Preguntas legales, de título, impuestos y transferencia para los profesionales adecuados"
+        ],
+        "optionsTitle": "Compare una propuesta directa con publicación pública",
+        "optionsIntro": "Ningún camino corresponde automáticamente a todo vendedor. Compare términos escritos, preparación, prioridades, ejecución y neto estimado con supuestos consistentes.",
+        "options": [
+          {"title": "Aceptar o negociar propuesta directa", "text": "Evalúe al comprador y contrato completo, no solo precio y fecha. Aclare inspección, cesión, créditos, acceso, posesión, título, administración y obligaciones con los asesores adecuados."},
+          {"title": "Preparar publicación pública", "text": "Construya comparables y plan para la propiedad, y estime preparación, acceso, marketing, variables de tiempo, contingencias y costos. Un anuncio público crea oportunidad de respuesta, no una respuesta prometida."}
+        ],
+        "guidance": "Jorge aparece aquí como agente licenciado que puede comparar información de propiedad y operación. Esta página no declara que Jorge, Keller Williams o un inversionista sin identificar comprará la propiedad o proporcionará una oferta en efectivo.",
+        "faq": [
+          {"question": "¿Efectivo significa que no hay contingencias?", "answer": "No. Efectivo describe el método de fondos, no cada término. Lea con un abogado las disposiciones escritas de inspección, diligencia, título, cancelación, cesión, acceso, créditos, fechas y posesión."},
+          {"question": "¿Cómo comparo el neto de dos caminos?", "answer": "Use la misma hoja y marque cada estimación. Incluya precio, saldos, gravámenes, compensación negociada, Realty Transfer Fee cuando aplique, cargos, créditos, reparaciones, costos de mantener, mudanza y otros elementos. Los profesionales correspondientes confirman sus cifras."},
+          {"question": "¿Puede Jorge obtener una oferta en efectivo por mi propiedad?", "answer": "Esta página no promete que un comprador presentará una oferta. Jorge puede revisar una propuesta recibida, discutir comparables y una alternativa pública, y explicar por escrito cualquier servicio de corretaje."}
+        ],
+        "ctaTitle": "Compare la propuesta completa, no el titular",
+        "ctaText": "Comparta dirección y propuesta escrita, retirando datos sensibles de cuentas. Jorge puede organizar una revisión inmobiliaria lado a lado e identificar preguntas para abogado, título e impuestos.",
+        "serviceName": "Comparación de oferta en efectivo en New Jersey"
+      }
+    },
+    "relocating-from-nj": {
+      "en": {
+        "title": "Relocating From New Jersey | Remote Home-Sale Plan",
+        "description": "Coordinate a New Jersey home sale while relocating with a remote property file, access plan, local contacts, written decisions, and closing handoff.",
+        "llm": "Remote-capable New Jersey home-sale planning from licensed agent Jorge Ramirez. It covers property access, local contacts, verified documents, digital approvals, maintenance, offer review, and closing handoff without promising a timeline.",
+        "eyebrow": "Relocating from New Jersey · remote-capable sale coordination",
+        "h1": "Keep the New Jersey property file clear after your move begins",
+        "intro": "A relocation can separate the owner from the property before listing or closing work is complete. Jorge builds a remote sale plan around verified access, local contacts, written approvals, condition updates, document security, and a clear handoff to the closing professionals.",
+        "focusTitle": "Design the sale for distance before distance becomes a problem",
+        "focusIntro": "The remote plan assigns access, communication, and decision authority while the owner can still verify the property and introduce the people involved.",
+        "focusCards": [
+          {"title": "Access and custody", "text": "Document keys, alarms, lockboxes, occupants, pets, vehicles, vendors, emergency contacts, permitted entry, and who can authorize access. Update the record when custody changes."},
+          {"title": "Condition and maintenance", "text": "Create a dated condition record and define utilities, landscaping, weather response, mail, association communication, repairs, insurance contacts, and approval limits while the home is vacant or remotely managed."},
+          {"title": "Written decisions", "text": "Choose secure channels for documents and approvals, identify all owners and authorized signers, state time-zone or work constraints, and name legal, title, tax, and relocation contacts."}
+        ],
+        "processTitle": "A remote sale plan with named owners for every task",
+        "processIntro": "Distance does not change the need for property-specific pricing, accurate disclosure, and careful written terms. It increases the value of a visible task and communication record.",
+        "processSteps": [
+          {"title": "Pre-move inventory", "text": "Verify property condition, included and excluded items, documents, keys, access, utilities, maintenance, insurance contacts, owner signatures, and unresolved specialist questions."},
+          {"title": "Pricing and launch", "text": "Review current comparable evidence, preparation choices, public facts, disclosures, showing instructions, remote approvals, and the communication cadence."},
+          {"title": "Remote property watch", "text": "Use dated updates for authorized visits, material condition changes, vendor work, weather events, access issues, and decisions that need owner direction."},
+          {"title": "Contract-to-closing handoff", "text": "Track written terms, dates, inspections, appraisal, title, lending, repairs, final access, possession, signatures, proceeds instructions, and document retention with the professionals involved."}
+        ],
+        "checklistTitle": "Build the remote property file before departure",
+        "checklistIntro": "This checklist helps the owner and local contacts work from the same record. Sensitive financial information should move only through channels approved by the relevant closing professional.",
+        "checklist": [
+          "All owner names, authorized signers, contact preferences, time constraints, and travel dates",
+          "Keys, alarm, lockbox, occupants, pets, vehicles, access permissions, and local contact",
+          "Utilities, landscaping, association, mail, maintenance, insurance, and emergency plan",
+          "Condition record, known material information, repairs, permits, disclosures, and included items",
+          "Current mortgage or lien contacts for the closing team and questions about signing logistics",
+          "Attorney, title, tax, moving, storage, relocation, and property-service contacts"
+        ],
+        "optionsTitle": "Decide when to launch relative to the move",
+        "optionsIntro": "Compare property readiness, occupancy, access, carrying obligations, document availability, move workload, and current market evidence. No fixed sequence fits every relocation.",
+        "options": [
+          {"title": "Launch before departure", "text": "Coordinate preparation, disclosure, media, access, and initial activity while the owner is nearby. Define how any contract and closing work will continue if the move occurs first."},
+          {"title": "Launch after the move", "text": "Establish local access, maintenance, condition reporting, secure document procedures, and decision cadence before publication. Recheck the property and comparable evidence at launch."}
+        ],
+        "guidance": "Remote coordination is a communication and access plan, not a shortened legal, title, lending, inspection, or tax process. Verify signing, identity, wire, and proceeds instructions directly with the closing professionals through trusted contact information.",
+        "faq": [
+          {"question": "Can a New Jersey sale be coordinated after I move?", "answer": "Many listing, communication, and transaction tasks can be coordinated at a distance when access, documents, signatures, property care, and professional contacts are planned. The attorney, title provider, lender, and other professionals confirm their own procedures."},
+          {"question": "Who should have access to the property?", "answer": "The owner decides authorized access within applicable agreements and law. Keep a current written record of keys, lockboxes, occupants, vendors, agents, inspectors, appraisers, emergency contacts, and any limits on entry."},
+          {"question": "How should wire instructions be handled remotely?", "answer": "Treat payment and proceeds instructions as a closing-security matter. Use only the procedure provided by the responsible attorney, title, escrow, or banking professional and independently verify instructions through trusted contact information before sending funds or sensitive data."}
+        ],
+        "ctaTitle": "Map the property tasks before the moving calendar takes over",
+        "ctaText": "Share the address, move window, occupancy, access, and condition. Jorge can outline a remote real-estate workflow and identify the questions that belong with closing, legal, title, tax, or relocation professionals.",
+        "serviceName": "Remote New Jersey home-sale coordination"
+      },
+      "es": {
+        "title": "Mudarse Fuera de New Jersey | Plan de Venta a Distancia",
+        "description": "Coordine la venta de una casa en New Jersey durante una mudanza con archivo remoto, plan de acceso, contactos locales, decisiones y cierre.",
+        "llm": "Plan de venta a distancia para una vivienda en New Jersey con el agente licenciado Jorge Ramirez. Cubre acceso, contactos locales, documentos, aprobaciones digitales, mantenimiento, ofertas y cierre sin prometer un plazo.",
+        "eyebrow": "Mudanza fuera de New Jersey · coordinación de venta a distancia",
+        "h1": "Mantenga claro el archivo de la propiedad cuando empiece su mudanza",
+        "intro": "Una reubicación puede separar al propietario de la vivienda antes de terminar la publicación o el cierre. Jorge construye un plan a distancia con acceso verificado, contactos locales, aprobaciones escritas, condición, seguridad de documentos y traspaso claro a los profesionales.",
+        "focusTitle": "Diseñe la venta para la distancia antes de que sea un problema",
+        "focusIntro": "El plan asigna acceso, comunicación y autoridad mientras el propietario todavía puede verificar la propiedad y presentar a las personas involucradas.",
+        "focusCards": [
+          {"title": "Acceso y custodia", "text": "Documente llaves, alarma, caja, ocupantes, mascotas, vehículos, proveedores, contactos de emergencia, entrada permitida y quién autoriza acceso. Actualice el registro cuando cambie."},
+          {"title": "Condición y mantenimiento", "text": "Cree un registro con fecha y defina servicios, jardín, clima, correo, asociación, reparaciones, seguro y límites de aprobación mientras la vivienda esté vacía o administrada a distancia."},
+          {"title": "Decisiones escritas", "text": "Elija canales protegidos para documentos y aprobaciones, identifique propietarios y firmantes, indique restricciones de horario y nombre contactos legales, de título, impuestos y reubicación."}
+        ],
+        "processTitle": "Un plan a distancia con responsable para cada tarea",
+        "processIntro": "La distancia no cambia la necesidad de precio específico, divulgación precisa y términos escritos. Aumenta el valor de un registro visible de tareas y comunicación.",
+        "processSteps": [
+          {"title": "Inventario antes de mudarse", "text": "Verifique condición, elementos incluidos y excluidos, documentos, llaves, acceso, servicios, mantenimiento, seguro, firmas y preguntas pendientes."},
+          {"title": "Precio y lanzamiento", "text": "Revise comparables, preparación, datos públicos, divulgaciones, visitas, aprobaciones remotas y frecuencia de comunicación."},
+          {"title": "Seguimiento remoto", "text": "Use actualizaciones con fecha para visitas autorizadas, cambios materiales, trabajo de proveedores, clima, acceso y decisiones que necesitan dirección."},
+          {"title": "Traspaso al cierre", "text": "Registre términos, fechas, inspección, tasación, título, préstamo, reparaciones, acceso final, posesión, firmas, instrucciones de fondos y documentos con los profesionales."}
+        ],
+        "checklistTitle": "Construya el archivo remoto antes de salir",
+        "checklistIntro": "La lista ayuda a propietarios y contactos locales a usar el mismo registro. Información financiera sensible viaja solo por canales aprobados por el profesional responsable.",
+        "checklist": [
+          "Nombres, firmantes autorizados, contacto preferido, horarios y fechas de viaje",
+          "Llaves, alarma, caja, ocupantes, mascotas, vehículos, permisos y contacto local",
+          "Servicios, jardín, asociación, correo, mantenimiento, seguro y emergencias",
+          "Condición, información material, reparaciones, permisos, divulgaciones y elementos incluidos",
+          "Contactos hipotecarios o gravámenes para el cierre y preguntas sobre firmas",
+          "Contactos de abogado, título, impuestos, mudanza, almacenamiento y reubicación"
+        ],
+        "optionsTitle": "Decida cuándo publicar en relación con la mudanza",
+        "optionsIntro": "Compare preparación, ocupación, acceso, obligaciones, documentos, carga de mudanza y evidencia actual. Ninguna secuencia fija sirve para toda reubicación.",
+        "options": [
+          {"title": "Publicar antes de salir", "text": "Coordine preparación, divulgación, medios, acceso y actividad inicial mientras está cerca. Defina cómo continuará contrato y cierre si la mudanza ocurre primero."},
+          {"title": "Publicar después de mudarse", "text": "Establezca acceso local, mantenimiento, reportes de condición, documentos y decisiones antes de publicar. Revise de nuevo propiedad y comparables al lanzar."}
+        ],
+        "guidance": "La coordinación a distancia es un plan de comunicación y acceso, no un proceso legal, de título, préstamo, inspección o impuestos abreviado. Verifique firmas, identidad, transferencias y fondos directamente con profesionales usando contactos confiables.",
+        "faq": [
+          {"question": "¿Se puede coordinar una venta en New Jersey después de mudarme?", "answer": "Muchas tareas pueden coordinarse a distancia cuando acceso, documentos, firmas, cuidado y contactos están planificados. El abogado, título, prestamista y otros profesionales confirman sus propios procedimientos."},
+          {"question": "¿Quién debe tener acceso a la propiedad?", "answer": "El propietario decide el acceso autorizado dentro de acuerdos y ley aplicables. Mantenga un registro actual de llaves, cajas, ocupantes, proveedores, agentes, inspectores, tasadores, emergencias y límites de entrada."},
+          {"question": "¿Cómo se manejan instrucciones de transferencia a distancia?", "answer": "Trate pagos y fondos como asunto de seguridad de cierre. Use el procedimiento del abogado, título, depósito o banco responsable y verifique de forma independiente mediante contacto confiable antes de enviar fondos o datos sensibles."}
+        ],
+        "ctaTitle": "Organice las tareas antes de que domine el calendario de mudanza",
+        "ctaText": "Comparta dirección, ventana de mudanza, ocupación, acceso y condición. Jorge puede delinear el flujo inmobiliario remoto e identificar preguntas para cierre, ley, título, impuestos o reubicación.",
+        "serviceName": "Coordinación remota de venta en New Jersey"
+      }
+    },
+    "divorce-home-sale-nj": {
+      "en": {
+        "title": "Selling a House During Divorce in NJ | Property Plan",
+        "description": "Coordinate New Jersey property marketing during divorce with shared facts, written owner instructions, access rules, offer comparisons, and legal boundaries.",
+        "llm": "New Jersey property-marketing coordination during divorce with licensed agent Jorge Ramirez. It separates real-estate pricing and listing tasks from ownership, court, settlement, and proceeds decisions handled by attorneys and the parties.",
+        "eyebrow": "New Jersey divorce-related property sale · defined roles",
+        "h1": "Keep property marketing separate from the legal dispute",
+        "intro": "A real-estate agent can organize property facts, comparable sales, preparation, access, marketing, and written offers. The agent does not decide ownership rights, court issues, settlement terms, or division of proceeds. A workable plan begins with authorized instructions and defined professional roles.",
+        "focusTitle": "Create one property record both owners can verify",
+        "focusIntro": "The listing file should distinguish jointly verified property facts, individual preferences, attorney instructions, and unresolved legal questions. That separation reduces contradictory marketing decisions.",
+        "focusCards": [
+          {"title": "Shared property facts", "text": "Document condition, known material information, updates, permits, occupancy, title contacts, included items, disclosures, and comparable evidence in a record available to both owners as authorized."},
+          {"title": "Owner instructions", "text": "Identify who can approve price, preparation, access, media, offers, credits, repairs, dates, possession, and changes. Refer conflicts about authority or ownership to the attorneys."},
+          {"title": "Communication boundaries", "text": "Set written channels, recipients, response procedures, access rules, and emergency contacts. Do not use the listing agent to carry privileged legal messages or resolve personal disputes."}
+        ],
+        "processTitle": "A property workflow with legal decisions outside the listing lane",
+        "processIntro": "Both owners, their attorneys, and the real-estate professionals need a consistent understanding of what the agent can do and which instructions require legal clarification.",
+        "processSteps": [
+          {"title": "Authority and contacts", "text": "Confirm ownership names, authorized instructions, attorney contacts, occupancy, access, document recipients, and unresolved court or settlement questions before public marketing."},
+          {"title": "Property analysis", "text": "Review current comparable sales, condition, preparation choices, disclosures, title questions, seller constraints, and the assumptions behind a proposed list-price strategy."},
+          {"title": "Launch and reporting", "text": "Publish only approved property facts, follow agreed access instructions, and provide the same activity and evidence reports to the authorized recipients."},
+          {"title": "Offer and closing coordination", "text": "Compare written terms consistently, record owner instructions, and route contract, authority, title, tax, proceeds, possession, and dispute questions to the attorneys and closing professionals."}
+        ],
+        "checklistTitle": "Clarify authority before preparing the public listing",
+        "checklistIntro": "This checklist is not a substitute for legal advice. It identifies the information a listing professional needs and exposes questions that should return to counsel.",
+        "checklist": [
+          "Names on title, current occupancy, authorized representatives, and attorney contacts",
+          "Written direction about approvals, recipients, access, showings, media, and communication",
+          "Property condition, known material information, repairs, permits, disclosures, and included items",
+          "Mortgage, lien, association, title, insurance, or other contacts for professional review",
+          "Move and possession constraints plus any limits the agent is authorized to communicate",
+          "Unresolved questions about ownership, authority, settlement, court orders, or proceeds for counsel"
+        ],
+        "optionsTitle": "Choose the property path only after authority is clear",
+        "optionsIntro": "A listing, direct proposal, buyout discussion, or delayed sale may have different property and legal implications. The real-estate agent can supply market evidence; the parties and attorneys determine the legal path.",
+        "options": [
+          {"title": "Prepare a public-market listing", "text": "Use shared property facts, approved access, current comparable evidence, accurate disclosures, and an agreed offer-review process. Public marketing does not resolve disagreements about authority or proceeds."},
+          {"title": "Review another property disposition", "text": "A direct proposal, ownership transfer, deferred sale, or other arrangement requires legal and financial review. Jorge can provide property-specific market context without advising on the legal structure."}
+        ],
+        "guidance": "Jorge is a real-estate licensee, not a lawyer, mediator, tax adviser, or decision-maker for either owner. Neutral handling of property information means consistent process and shared factual reporting as authorized; it does not create legal neutrality or representation of both parties outside the disclosed brokerage relationship.",
+        "faq": [
+          {"question": "Can one owner list the property without the other?", "answer": "Authority depends on title, agreements, court matters, and the transaction facts. The listing professional should obtain clear authorized instructions and send ownership or signing questions to the attorneys and title professionals before marketing or accepting directions."},
+          {"question": "How can both owners receive the same market information?", "answer": "Agree in writing on authorized recipients and provide the same comparable analysis, listing drafts, activity summaries, feedback themes, written-offer worksheet, and decision requests to them. Attorneys can advise when communications or instructions should be handled differently."},
+          {"question": "Does the listing agent decide how proceeds are divided?", "answer": "No. The listing agent can estimate transaction items for planning and communicate agreed property terms. Attorneys, title or settlement professionals, court orders, and the parties' agreements control legal entitlement and disbursement."}
+        ],
+        "ctaTitle": "Define the property lane before discussing a launch",
+        "ctaText": "With appropriate authorization, share the property address, ownership contacts, occupancy, condition, and attorney contact information. Jorge can organize the real-estate questions without entering the legal dispute.",
+        "serviceName": "Divorce-related New Jersey property-sale coordination"
+      },
+      "es": {
+        "title": "Vender una Casa Durante un Divorcio en NJ | Plan",
+        "description": "Coordine el marketing de una propiedad en New Jersey durante un divorcio con datos compartidos, instrucciones escritas, acceso y límites legales.",
+        "llm": "Coordinación de marketing de propiedad durante un divorcio en New Jersey con el agente licenciado Jorge Ramirez. Separa precio y publicación de decisiones de propiedad, tribunal, acuerdo y fondos que atienden abogados y partes.",
+        "eyebrow": "Venta relacionada con divorcio en New Jersey · roles definidos",
+        "h1": "Mantenga el marketing de la propiedad separado de la disputa legal",
+        "intro": "Un agente puede organizar datos, ventas comparables, preparación, acceso, marketing y ofertas escritas. No decide derechos de propiedad, asuntos judiciales, términos de acuerdo ni división de fondos. Un plan funcional comienza con instrucciones autorizadas y roles definidos.",
+        "focusTitle": "Cree un registro que ambos propietarios puedan verificar",
+        "focusIntro": "El archivo distingue datos verificados conjuntamente, preferencias individuales, instrucciones de abogados y preguntas legales pendientes. Esa separación reduce decisiones contradictorias.",
+        "focusCards": [
+          {"title": "Datos compartidos", "text": "Documente condición, información material, mejoras, permisos, ocupación, contactos de título, elementos incluidos, divulgaciones y comparables en un registro disponible para ambos propietarios según autorización."},
+          {"title": "Instrucciones de propietarios", "text": "Identifique quién aprueba precio, preparación, acceso, medios, ofertas, créditos, reparaciones, fechas, posesión y cambios. Lleve conflictos de autoridad o propiedad a los abogados."},
+          {"title": "Límites de comunicación", "text": "Defina canales escritos, destinatarios, respuestas, acceso y emergencias. No use al agente para llevar mensajes legales privilegiados ni resolver disputas personales."}
+        ],
+        "processTitle": "Un flujo de propiedad con decisiones legales fuera del anuncio",
+        "processIntro": "Ambos propietarios, abogados y profesionales necesitan entender de forma consistente qué puede hacer el agente y qué instrucciones requieren aclaración legal.",
+        "processSteps": [
+          {"title": "Autoridad y contactos", "text": "Confirme nombres, instrucciones autorizadas, abogados, ocupación, acceso, destinatarios y preguntas judiciales o de acuerdo antes del marketing público."},
+          {"title": "Análisis de propiedad", "text": "Revise comparables, condición, preparación, divulgaciones, título, restricciones y supuestos de una estrategia de precio propuesta."},
+          {"title": "Lanzamiento e informes", "text": "Publique solo datos aprobados, siga el acceso acordado y entregue los mismos informes de actividad y evidencia a destinatarios autorizados."},
+          {"title": "Ofertas y cierre", "text": "Compare términos de forma consistente, registre instrucciones y lleve contrato, autoridad, título, impuestos, fondos, posesión y disputas a abogados y cierre."}
+        ],
+        "checklistTitle": "Aclare autoridad antes de preparar el anuncio público",
+        "checklistIntro": "Esta lista no sustituye asesoría legal. Identifica información que necesita el profesional y muestra preguntas que regresan al abogado.",
+        "checklist": [
+          "Nombres en el título, ocupación, representantes autorizados y abogados",
+          "Dirección escrita sobre aprobaciones, destinatarios, acceso, visitas, medios y comunicación",
+          "Condición, información material, reparaciones, permisos, divulgaciones y elementos incluidos",
+          "Contactos de hipoteca, gravamen, asociación, título, seguro u otros para revisión",
+          "Restricciones de mudanza y posesión y límites que el agente puede comunicar",
+          "Preguntas de propiedad, autoridad, acuerdo, órdenes o fondos para el abogado"
+        ],
+        "optionsTitle": "Elija el camino después de aclarar la autoridad",
+        "optionsIntro": "Un anuncio público, propuesta directa, compra de participación o venta aplazada puede tener efectos distintos. El agente aporta evidencia; las partes y abogados deciden la vía legal.",
+        "options": [
+          {"title": "Preparar publicación pública", "text": "Use datos compartidos, acceso aprobado, comparables actuales, divulgaciones precisas y proceso acordado para ofertas. El marketing público no resuelve desacuerdos de autoridad ni fondos."},
+          {"title": "Revisar otra disposición", "text": "Una propuesta directa, transferencia, venta aplazada u otro arreglo requiere revisión legal y financiera. Jorge puede aportar contexto de mercado sin orientar sobre estructura legal."}
+        ],
+        "guidance": "Jorge es agente de bienes raíces, no abogado, mediador, asesor fiscal ni decisor para ninguno de los propietarios. Manejar información de forma consistente y compartir datos según autorización no crea neutralidad legal ni representación de ambas partes fuera de la relación de corretaje revelada.",
+        "faq": [
+          {"question": "¿Puede un propietario publicar sin el otro?", "answer": "La autoridad depende del título, acuerdos, asuntos judiciales y datos de la operación. El profesional obtiene instrucciones autorizadas claras y envía preguntas de propiedad o firma a abogados y título antes de promocionar o aceptar dirección."},
+          {"question": "¿Cómo reciben ambos propietarios la misma información?", "answer": "Acuerden destinatarios autorizados y envíen el mismo análisis, borradores, actividad, temas de comentarios, hoja de ofertas y solicitudes de decisión. Los abogados orientan cuando comunicaciones o instrucciones deben tratarse de otra manera."},
+          {"question": "¿El agente decide cómo se dividen los fondos?", "answer": "No. Puede estimar elementos de la operación y comunicar términos acordados de la propiedad. Abogados, profesionales de título o cierre, órdenes judiciales y acuerdos controlan derecho legal y desembolso."}
+        ],
+        "ctaTitle": "Defina el carril de la propiedad antes del lanzamiento",
+        "ctaText": "Con autorización apropiada, comparta dirección, contactos de propietarios, ocupación, condición y abogados. Jorge puede organizar preguntas inmobiliarias sin entrar en la disputa legal.",
+        "serviceName": "Coordinación de venta por divorcio en New Jersey"
+      }
+    },
+    "sell-rental-property-nj": {
+      "en": {
+        "title": "Sell a Rental Property in New Jersey | Owner Plan",
+        "description": "Plan a New Jersey rental-property sale with the lease, occupancy, access, disclosures, operating records, pricing evidence, and tax questions in view.",
+        "llm": "New Jersey rental-property sale planning from licensed agent Jorge Ramirez. It organizes lease and occupancy facts, access, disclosures, operations, buyer path, comparable evidence, and professional tax questions without giving legal or tax directives.",
+        "eyebrow": "New Jersey rental-property sale · occupied or vacant planning",
+        "h1": "Build the sale plan around the lease, property, and current records",
+        "intro": "A rental property is both real estate and an operating file. Before selecting an occupied or vacant marketing path, organize the lease, occupancy, deposits, notices, access, condition, disclosures, income and expense records, title contacts, comparable sales, and tax questions.",
+        "focusTitle": "Keep property, tenancy, and tax work in separate lanes",
+        "focusIntro": "Jorge can coordinate real-estate pricing and marketing. Attorneys, tax advisers, title professionals, property managers, and other qualified specialists address the rules and calculations within their scopes.",
+        "focusCards": [
+          {"title": "Lease and occupancy file", "text": "Collect every current lease and amendment, occupant and unit information, deposits, rent ledger, notices, access terms, management agreement, assistance documents when applicable, and open disputes or maintenance matters."},
+          {"title": "Property and operations", "text": "Verify unit configuration, legal use, registrations, inspections, permits, utilities, systems, condition, capital work, service agreements, income and expense records, and known material information."},
+          {"title": "Sale and tax questions", "text": "Review current comparable evidence and buyer paths while a tax professional addresses basis, depreciation, gain, entity, installment, exchange, and state or federal reporting questions."}
+        ],
+        "processTitle": "A rental-sale workflow that begins with the operating file",
+        "processIntro": "The same property may present differently to an owner-occupant or investment buyer, but marketing must remain accurate and access must follow applicable agreements and professional guidance.",
+        "processSteps": [
+          {"title": "Document the current tenancy", "text": "Confirm occupants, lease terms, deposits, notices, rent ledger, access, management, open matters, and the professionals advising on landlord-tenant questions."},
+          {"title": "Verify property facts", "text": "Review unit count and use, condition, systems, permits, registrations, disclosures, flood and lead questions, expenses, service contracts, and property-specific comparable sales."},
+          {"title": "Choose a marketing path", "text": "Compare occupied and vacant timing, buyer audience based on lawful property-use criteria, access, records available, preparation, seller priorities, and professional advice."},
+          {"title": "Coordinate the handoff", "text": "Track written offers, contingencies, dates, access, tenant communications by authorized parties, deposits and records for closing, title, tax, possession, and management transition."}
+        ],
+        "checklistTitle": "Create a rental-property sale data room",
+        "checklistIntro": "Organize records before sharing them and use secure methods for personal or financial information. An attorney or property manager can advise what may be disclosed and how notices should be handled.",
+        "checklist": [
+          "Leases, amendments, occupant and unit list, deposits, ledger, notices, and management agreement",
+          "Registrations, inspections, permits, certificates, legal-use information, and association records",
+          "Income, operating expenses, utilities, service contracts, capital work, and maintenance history",
+          "Condition, known material information, flood and lead records, claims, and disclosures",
+          "Mortgage, liens, entity or ownership documents, title contacts, and insurance information",
+          "Questions for landlord-tenant counsel and tax adviser, including any exchange consideration"
+        ],
+        "optionsTitle": "Compare occupied and vacant marketing with professional input",
+        "optionsIntro": "Do not assume a lease ends, a tenant leaves, or an occupied sale follows one universal procedure. Use the actual agreements, tenancy facts, property type, law, and counsel's advice.",
+        "options": [
+          {"title": "Market with occupancy", "text": "Prepare accurate lease and operating records, define lawful access and communication, document property condition, and identify which terms and records a prospective buyer may review under the approved process."},
+          {"title": "Plan for vacant marketing", "text": "Review lease and notice questions with counsel, coordinate possession and deposits, document the condition at transition, decide on preparation, and update comparable evidence when the property is ready."}
+        ],
+        "guidance": "The IRS explains that Section 1031 treatment concerns qualifying real property held for business or investment and has detailed requirements. If an exchange or another tax structure is being considered, involve a qualified tax adviser before the sale is structured; the real-estate listing plan does not determine eligibility.",
+        "faq": [
+          {"question": "Can a New Jersey rental property be sold while occupied?", "answer": "An occupied sale may be possible, but the lease, tenancy, access, notices, protected-tenancy questions, property type, and transaction facts matter. Review the actual file with a New Jersey attorney and use the state's landlord-tenant publications as general background."},
+          {"question": "What records may an investment buyer request?", "answer": "Requests may include leases, amendments, deposits, rent ledger, unit and utility information, income and expenses, service contracts, registrations, inspections, permits, condition records, and capital work. Review privacy, accuracy, and disclosure procedures with the appropriate professionals before sharing."},
+          {"question": "Is a Section 1031 exchange available for my sale?", "answer": "That is a tax question. The IRS states that qualifying like-kind exchange treatment applies to certain real property held for business or investment and is subject to detailed rules. A qualified tax adviser should evaluate eligibility and sequencing before a transaction is structured."}
+        ],
+        "ctaTitle": "Start with the lease and operating file, not a generic investor pitch",
+        "ctaText": "Share the property type, occupancy, county, lease status, and your intended timing without sending tenant personal data. Jorge can outline the real-estate analysis and identify legal, title, management, and tax questions.",
+        "serviceName": "New Jersey rental-property sale planning"
+      },
+      "es": {
+        "title": "Vender Propiedad de Alquiler en NJ | Plan del Dueño",
+        "description": "Planifique la venta de una propiedad de alquiler en New Jersey con contrato de arrendamiento, ocupación, acceso, registros, precio e impuestos.",
+        "llm": "Planificación de venta de propiedad de alquiler en New Jersey con el agente licenciado Jorge Ramirez. Organiza contrato, ocupación, acceso, divulgaciones, operaciones, comparables e impuestos sin dar instrucciones legales ni fiscales.",
+        "eyebrow": "Venta de propiedad de alquiler en New Jersey · plan ocupada o vacante",
+        "h1": "Construya el plan alrededor del contrato, la propiedad y los registros",
+        "intro": "Una propiedad de alquiler es inmueble y archivo operativo. Antes de escoger venta ocupada o vacante, organice contrato de arrendamiento, ocupación, depósitos, avisos, acceso, condición, divulgaciones, ingresos, gastos, título, comparables y preguntas fiscales.",
+        "focusTitle": "Mantenga propiedad, arrendamiento e impuestos en carriles separados",
+        "focusIntro": "Jorge coordina precio y marketing inmobiliario. Abogados, asesores fiscales, título, administradores y especialistas atienden reglas y cálculos en sus alcances.",
+        "focusCards": [
+          {"title": "Archivo de arrendamiento", "text": "Reúna cada contrato y enmienda, ocupantes y unidades, depósitos, registro de renta, avisos, acceso, administración, documentos de asistencia cuando apliquen y asuntos de mantenimiento o disputa."},
+          {"title": "Propiedad y operaciones", "text": "Verifique configuración, uso legal, registros, inspecciones, permisos, servicios, sistemas, condición, mejoras, contratos, ingresos, gastos e información material conocida."},
+          {"title": "Venta e impuestos", "text": "Revise comparables y caminos de comprador mientras un profesional fiscal atiende base, depreciación, ganancia, entidad, cuotas, intercambio y reportes estatales o federales."}
+        ],
+        "processTitle": "Un flujo que comienza con el archivo operativo",
+        "processIntro": "La misma propiedad puede presentarse de forma distinta a un ocupante o inversionista, pero el marketing sigue preciso y el acceso respeta acuerdos y orientación profesional.",
+        "processSteps": [
+          {"title": "Documentar arrendamiento", "text": "Confirme ocupantes, contrato, depósitos, avisos, registro, acceso, administración, asuntos abiertos y profesionales para preguntas de propietario e inquilino."},
+          {"title": "Verificar la propiedad", "text": "Revise unidades y uso, condición, sistemas, permisos, registros, divulgaciones, inundación, plomo, gastos, contratos y comparables para la propiedad."},
+          {"title": "Elegir camino de marketing", "text": "Compare tiempo ocupada o vacante, tipo de comprador según criterios legales de uso, acceso, registros, preparación, prioridades y asesoría profesional."},
+          {"title": "Coordinar el traspaso", "text": "Registre ofertas, contingencias, fechas, acceso, comunicaciones autorizadas, depósitos y archivos para cierre, título, impuestos, posesión y transición administrativa."}
+        ],
+        "checklistTitle": "Cree un archivo de venta de la propiedad",
+        "checklistIntro": "Organice registros antes de compartirlos y use métodos protegidos para datos personales o financieros. Abogado o administrador orienta qué divulgar y cómo manejar avisos.",
+        "checklist": [
+          "Contratos, enmiendas, ocupantes y unidades, depósitos, registro, avisos y administración",
+          "Registros, inspecciones, permisos, certificados, uso legal y asociación",
+          "Ingresos, gastos, servicios, contratos, mejoras y mantenimiento",
+          "Condición, información material, inundación, plomo, reclamos y divulgaciones",
+          "Hipoteca, gravámenes, entidad o propiedad, título y seguro",
+          "Preguntas para abogado de arrendamiento y asesor fiscal, incluido posible intercambio"
+        ],
+        "optionsTitle": "Compare marketing ocupada y vacante con orientación profesional",
+        "optionsIntro": "No suponga que un contrato termina, un inquilino sale o una venta ocupada sigue un procedimiento universal. Use acuerdos reales, datos, tipo de propiedad, ley y asesoría.",
+        "options": [
+          {"title": "Promocionar con ocupación", "text": "Prepare registros precisos, defina acceso y comunicación legales, documente condición e identifique qué términos y archivos puede revisar un comprador dentro del proceso aprobado."},
+          {"title": "Planificar marketing vacante", "text": "Revise contrato y avisos con abogado, coordine posesión y depósitos, documente condición, decida preparación y actualice comparables cuando la propiedad esté lista."}
+        ],
+        "guidance": "El IRS explica que la Sección 1031 trata ciertos inmuebles que califican y se mantienen para negocio o inversión, con requisitos detallados. Si considera un intercambio u otra estructura fiscal, involucre un asesor fiscal antes de estructurar la venta; el plan inmobiliario no determina elegibilidad.",
+        "faq": [
+          {"question": "¿Se puede vender una propiedad de alquiler ocupada?", "answer": "Puede ser posible, pero importan contrato, arrendamiento, acceso, avisos, posibles protecciones, tipo de propiedad y datos de la operación. Revise el archivo con un abogado de New Jersey y use publicaciones estatales como contexto general."},
+          {"question": "¿Qué registros puede pedir un comprador inversionista?", "answer": "Puede pedir contratos, enmiendas, depósitos, registro de renta, unidades, servicios, ingresos, gastos, contratos de servicio, registros, inspecciones, permisos, condición y mejoras. Revise privacidad, precisión y divulgación antes de compartir."},
+          {"question": "¿Está disponible un intercambio Sección 1031?", "answer": "Es una pregunta fiscal. El IRS indica que el tratamiento puede aplicar a ciertos inmuebles mantenidos para negocio o inversión y tiene reglas detalladas. Un asesor fiscal calificado evalúa elegibilidad y secuencia antes de estructurar la operación."}
+        ],
+        "ctaTitle": "Empiece con el contrato y archivo, no un discurso genérico",
+        "ctaText": "Comparta tipo de propiedad, ocupación, condado, estado del contrato y tiempo previsto sin enviar datos personales de inquilinos. Jorge puede delinear el análisis e identificar preguntas legales, de título, administración e impuestos.",
+        "serviceName": "Plan de venta de propiedad de alquiler en New Jersey"
+      }
+    }
+  }
+}

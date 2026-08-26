@@ -59,7 +59,6 @@
     "es/property-search.html",
     "es/relocating-from-nj.html",
     "es/rent-vs-buy-nj.html",
-    "es/sell-home-fast-nj.html",
     "es/sell-rental-property-nj.html",
     "es/sell-your-home.html",
     "es/short-hills-vs-chatham-nj.html",
@@ -274,6 +273,7 @@
       "es/blog/nj-property-tax-guide-homeowners.html",
       "es/blog/selling-your-home-summit-nj-guide.html",
       "es/nyc-to-nj-relocation.html",
+      "es/sell-home-fast-nj.html",
       "es/westfield-vs-summit-nj.html"
     ],
     "directories": [

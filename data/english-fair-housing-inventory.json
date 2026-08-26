@@ -98,7 +98,6 @@
     "property-search.html",
     "relocating-from-nj.html",
     "rent-vs-buy-nj.html",
-    "sell-home-fast-nj.html",
     "sell-rental-property-nj.html",
     "sell-your-home.html",
     "short-hills-vs-chatham-nj.html",
@@ -658,7 +657,8 @@
       "communities/wharton/index.html",
       "communities/winfield/index.html",
       "communities/woodbridge/index.html",
-      "maplewood-vs-montclair-nj.html"
+      "maplewood-vs-montclair-nj.html",
+      "sell-home-fast-nj.html"
     ],
     "directories": [
       "es/55-plus-communities-nj.html",

@@ -61,11 +61,11 @@ class SpanishFairHousingInventoryTests(unittest.TestCase):
         self.assertEqual(reviewed | quarantined, set(discovered.pop("owned")))
         self.assertEqual(self.inventory["excluded"], discovered)
         self.assertEqual(expected_payload(), self.inventory)
-        self.assertEqual(71, len(reviewed))
+        self.assertEqual(70, len(reviewed))
         self.assertEqual(105, len(quarantined))
         self.assertEqual(10, len(self.inventory["excluded"]["rebuilt"]))
         self.assertEqual(50, len(self.inventory["excluded"]["market_reports"]))
-        self.assertEqual(6, len(self.inventory["excluded"]["redirects"]))
+        self.assertEqual(7, len(self.inventory["excluded"]["redirects"]))
         self.assertEqual(138, len(self.inventory["excluded"]["directories"]))
 
     def test_public_pages_and_emitters_have_no_contextual_risk(self) -> None:

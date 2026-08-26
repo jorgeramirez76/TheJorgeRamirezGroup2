@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-26",
+  "renderer": "tools/generate_seller_services.py",
+  "scope": "Primary official sources used for the bilingual New Jersey seller-service cluster. The pages provide general real-estate education and a property-specific planning process. They do not provide legal or tax advice, promise a price or timeline, advertise an unverified cash buyer, or claim that a marketing method determines an outcome.",
+  "sources": [
+    {
+      "id": "nj-dobi-24-11",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "title": "Real Estate Commission Bulletin 24-11",
+      "url": "https://www.nj.gov/dobi/bulletins/blt24_11.pdf",
+      "use": "Explains New Jersey brokerage relationships, written brokerage services agreements, the property condition disclosure statement, and negotiable broker compensation.",
+      "limit": "It is statewide regulatory guidance, not advice about a particular contract, title issue, property, or dispute.",
+      "useEs": "Explica las relaciones de corretaje en New Jersey, los acuerdos escritos de servicios de corretaje, la declaración sobre la condición de la propiedad y que la compensación del corredor es negociable.",
+      "limitEs": "Es orientación regulatoria estatal, no asesoría sobre un contrato, título, propiedad o disputa en particular."
+    },
+    {
+      "id": "nj-treasury-rtf",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Realty Transfer Fee",
+      "url": "https://nj.gov/treasury/taxation/realty.shtml",
+      "use": "Explains the current Realty Transfer Fee framework, forms, rates, exemptions, and the seller's statutory responsibility for the fee when it applies.",
+      "limit": "The amount and any exemption depend on the transaction and current law; a closing or tax professional should calculate the property-specific figure.",
+      "useEs": "Explica el marco vigente de la tarifa de transferencia de bienes raíces, sus formularios, tasas, exenciones y la responsabilidad legal del vendedor cuando corresponde.",
+      "limitEs": "El monto y cualquier exención dependen de la operación y la ley vigente; un profesional de cierre o impuestos debe calcular la cifra específica para la propiedad."
+    },
+    {
+      "id": "nj-property-condition-disclosure",
+      "publisher": "New Jersey Division of Consumer Affairs",
+      "title": "Seller's Property Condition Disclosure Statement",
+      "url": "https://www.njconsumeraffairs.gov/Documents/Sellers-Property-Condition-Disclosure-Statement.pdf",
+      "use": "Shows the state's residential disclosure questions concerning occupancy, systems, defects, environmental conditions, flood risk, and other known property facts.",
+      "limit": "The form records the seller's knowledge and does not replace inspections, legal advice, or a property-specific review of disclosure duties.",
+      "useEs": "Muestra las preguntas estatales de divulgación residencial sobre ocupación, sistemas, defectos, condiciones ambientales, riesgo de inundación y otros datos conocidos de la propiedad.",
+      "limitEs": "El formulario registra el conocimiento del vendedor y no sustituye inspecciones, asesoría legal ni una revisión específica de las obligaciones de divulgación."
+    },
+    {
+      "id": "njdep-flood-disclosure",
+      "publisher": "New Jersey Department of Environmental Protection",
+      "title": "Flood Disclosure Law",
+      "url": "https://dep.nj.gov/flooddisclosure/",
+      "use": "Explains New Jersey flood-risk notifications for real-estate sales and rentals and provides the state's address-level flood notification tool.",
+      "limit": "Flood maps and notices answer defined questions; they do not predict whether or when a property will flood or replace professional advice.",
+      "useEs": "Explica las notificaciones de riesgo de inundación de New Jersey para ventas y alquileres, y ofrece la herramienta estatal de notificación por dirección.",
+      "limitEs": "Los mapas y avisos responden preguntas definidas; no predicen si una propiedad se inundará ni cuándo, y no sustituyen asesoría profesional."
+    },
+    {
+      "id": "epa-lead-disclosure",
+      "publisher": "United States Environmental Protection Agency",
+      "title": "Lead-Based Paint Disclosure Rule",
+      "url": "https://www.epa.gov/lead/lead-based-paint-disclosure-rule-section-1018-title-x",
+      "use": "Explains the federal lead-based-paint disclosure process that generally applies before a buyer is obligated under a contract for most pre-1978 housing.",
+      "limit": "The federal page describes coverage and exceptions; property age and transaction facts should be checked with the appropriate professionals.",
+      "useEs": "Explica el proceso federal de divulgación de pintura con plomo que generalmente aplica antes de que un comprador quede obligado por contrato para la mayoría de viviendas anteriores a 1978.",
+      "limitEs": "La página federal describe cobertura y excepciones; la antigüedad de la propiedad y los datos de la operación deben verificarse con los profesionales correspondientes."
+    },
+    {
+      "id": "nj-dca-landlord-tenant",
+      "publisher": "New Jersey Department of Community Affairs",
+      "title": "Landlord-Tenant Information",
+      "url": "https://www.nj.gov/dca/home/landlord-tenant.shtml",
+      "use": "Provides current state landlord-tenant publications, including Truth in Renting, flood notices, security-deposit information, and related forms.",
+      "limit": "The state publications are general information and do not decide how a lease, notice, protected tenancy, or dispute applies to one sale.",
+      "useEs": "Ofrece publicaciones estatales vigentes sobre propietarios e inquilinos, incluidas Truth in Renting, avisos de inundación, información de depósitos de garantía y formularios relacionados.",
+      "limitEs": "Las publicaciones estatales son información general y no determinan cómo un contrato, aviso, arrendamiento protegido o disputa aplica a una venta concreta."
+    },
+    {
+      "id": "irs-like-kind-exchanges",
+      "publisher": "Internal Revenue Service",
+      "title": "Like-Kind Exchanges — Real Estate Tax Tips",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
+      "use": "Explains the federal framework for qualifying exchanges of real property held for business or investment and links to Form 8824 guidance.",
+      "limit": "Eligibility, sequencing, intermediaries, gain recognition, and deadlines are tax matters for a qualified tax adviser before a sale is structured.",
+      "useEs": "Explica el marco federal para intercambios que califican de bienes inmuebles mantenidos para negocio o inversión y enlaza orientación sobre el Formulario 8824.",
+      "limitEs": "Elegibilidad, secuencia, intermediarios, reconocimiento de ganancia y plazos son asuntos fiscales para un asesor calificado antes de estructurar una venta."
+    },
+    {
+      "id": "irs-publication-544",
+      "publisher": "Internal Revenue Service",
+      "title": "Publication 544 — Sales and Other Dispositions of Assets",
+      "url": "https://www.irs.gov/publications/p544",
+      "use": "Explains federal concepts used to determine and report gain or loss on dispositions of property, including business and rental property.",
+      "limit": "The publication is not a property-specific tax calculation and state tax treatment may also apply.",
+      "useEs": "Explica conceptos federales para determinar y reportar ganancia o pérdida al disponer de bienes, incluidos inmuebles comerciales y de alquiler.",
+      "limitEs": "La publicación no es un cálculo fiscal específico para la propiedad y también puede aplicar el tratamiento tributario estatal."
+    },
+    {
+      "id": "njcourts-divorce",
+      "publisher": "New Jersey Courts",
+      "title": "Divorce and Related Issues",
+      "url": "https://www.njcourts.gov/node/242671",
+      "use": "Provides official New Jersey Judiciary information about divorce, economic issues, forms, dispute-resolution paths, and finding legal help.",
+      "limit": "A real-estate licensee does not decide ownership rights, court issues, settlement terms, or how sale proceeds are divided.",
+      "useEs": "Ofrece información oficial del Poder Judicial de New Jersey sobre divorcio, asuntos económicos, formularios, vías de resolución de disputas y cómo encontrar ayuda legal.",
+      "limitEs": "Un profesional con licencia inmobiliaria no decide derechos de propiedad, asuntos judiciales, términos de acuerdos ni cómo se dividen los fondos de la venta."
+    }
+  ],
+  "routes": [
+    {
+      "slug": "sell-your-home",
+      "intent": "Primary New Jersey home-selling service and pricing-planning hub.",
+      "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
+    },
+    {
+      "slug": "how-we-sell-your-home",
+      "intent": "Transparent explanation of the listing, launch, communication, offer-review, and closing process.",
+      "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
+    },
+    {
+      "slug": "expired-listing-help",
+      "intent": "Evidence-based audit and relaunch planning for an expired New Jersey listing.",
+      "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
+    },
+    {
+      "slug": "fsbo-help",
+      "intent": "Decision support for New Jersey owners considering a transition from an owner-led sale to brokerage representation.",
+      "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
+    },
+    {
+      "slug": "cash-offer-nj",
+      "intent": "A neutral, written-term comparison between a cash proposal and a public-market listing path.",
+      "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
+    },
+    {
+      "slug": "relocating-from-nj",
+      "intent": "Remote-capable sale planning for an owner moving away from New Jersey.",
+      "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
+    },
+    {
+      "slug": "divorce-home-sale-nj",
+      "intent": "Property-marketing coordination during a New Jersey divorce, separated from legal decision-making.",
+      "sourceIds": ["njcourts-divorce", "nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
+    },
+    {
+      "slug": "sell-rental-property-nj",
+      "intent": "Occupied-or-vacant rental-property sale planning with lease, disclosure, and tax questions routed to the proper professionals.",
+      "sourceIds": ["nj-dca-landlord-tenant", "irs-like-kind-exchanges", "irs-publication-544", "nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
+    }
+  ]
+}
