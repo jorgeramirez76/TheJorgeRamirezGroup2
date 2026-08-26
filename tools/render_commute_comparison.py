@@ -76,7 +76,7 @@ COPY = {
             ("Test the trip", "When practical, make the route during the travel window that matters to you and note what the published itinerary did not capture.")
         ],
         "fair_title": "Keep the comparison personal and property-specific",
-        "fair_text": "Use your own work location, schedule, mobility needs, budget, and property criteria. This worksheet does not characterize a community or rank places by schools, demographics, crime, or any protected-class proxy.",
+        "fair_text": "Use your own work location, schedule, mobility needs, budget, and property criteria. The calculation uses only the trip components you enter; it does not assess people, schools, reported crime, or neighborhood character.",
         "sources_kicker": "Research",
         "sources_h2": "Official source notebook",
         "sources_intro": "Open the operating agency's current information before entering a figure. Each source has a specific job and a limit.",
@@ -158,7 +158,7 @@ COPY = {
             ("Pruebe el viaje", "Cuando sea práctico, haga la ruta durante el horario que le importa y anote lo que el itinerario publicado no captó.")
         ],
         "fair_title": "Mantenga la comparación personal y específica a la propiedad",
-        "fair_text": "Use su lugar de trabajo, horario, necesidades de movilidad, presupuesto y criterios de vivienda. Esta hoja no caracteriza comunidades ni clasifica lugares por escuelas, demografía, criminalidad ni ningún indicador de una clase protegida.",
+        "fair_text": "Use su lugar de trabajo, horario, necesidades de movilidad, presupuesto y criterios de vivienda. El cálculo usa solamente los componentes de viaje que usted ingresa; no evalúa personas, escuelas, criminalidad reportada ni el carácter de una zona.",
         "sources_kicker": "Investigación",
         "sources_h2": "Cuaderno de fuentes oficiales",
         "sources_intro": "Abra la información vigente de la agencia operadora antes de ingresar una cifra. Cada fuente tiene una función y un límite.",
