@@ -599,6 +599,7 @@ window.STATIONS = [
   {line:'ne', name:'New Brunswick',     slug:'new-brunswick',     lat:40.4956, lng:-74.4436, commute:50, price:475000,  schools:6,  county:'Middlesex', trend:4.3,hwy:'Route 18, Route 1, Route 27'},
 ];
 const STATIONS = window.STATIONS;
+const townGuidePath = slug => '/towns/' + encodeURIComponent(slug);
 
 // NYC anchor
 const NYC = { lat:40.7506, lng:-73.9936 };
@@ -690,6 +691,7 @@ STATIONS.forEach((s, i) => {
   }).addTo(map);
 
   const priceStr = '$' + (s.price/1000).toFixed(0) + 'K';
+  const guidePath = townGuidePath(s.slug);
   marker.bindPopup(`
     <div class="popup-card">
       <h4>${s.name}</h4>
@@ -699,7 +701,7 @@ STATIONS.forEach((s, i) => {
       <div class="row"><span class="k">Schools</span><span class="v">${s.schools}/10</span></div>
       <div class="row"><span class="k">Price trend</span><span class="v" style="color:${s.trend>=0?'#0B6B3A':'#C41230'}">${s.trend>=0?'+':''}${s.trend.toFixed(1)}%</span></div>
       <div class="row"><span class="k">Highway</span><span class="v">${s.hwy.split(',')[0]}</span></div>
-      <a class="btn" href="/towns/${s.slug}">See ${s.name} full guide →</a>
+      <a class="btn" href="` + guidePath + `">See ${s.name} full guide →</a>
     </div>
   `, {maxWidth: 260});
 
@@ -717,6 +719,7 @@ function selectStation(s, i) {
   card.style.display = 'block';
   const priceStr = '$' + (s.price/1000).toFixed(0) + 'K';
   const lineColor = LINES[s.line].color;
+  const guidePath = townGuidePath(s.slug);
   card.innerHTML = `
     <div class="station-card">
       <span class="line-tag" style="background:${lineColor}; color:${s.line==='md'?'var(--ink)':'#fff'};">${LINES[s.line].name}</span>
@@ -732,7 +735,7 @@ function selectStation(s, i) {
         <strong>Highway access</strong>${s.hwy}
       </div>
       <div class="card-ctas">
-        <a href="/towns/${s.slug}" class="cta-primary">See ${s.name} Full Guide</a>
+        <a href="` + guidePath + `" class="cta-primary">See ${s.name} Full Guide</a>
         <a href="tel:9082307844" class="cta-secondary">Ask Jorge About ${s.name}</a>
       </div>
     </div>

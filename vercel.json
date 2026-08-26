@@ -20,6 +20,136 @@
       "permanent": true
     },
     {
+      "source": "/realtor/:slug-nj.html",
+      "destination": "/towns/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/communities/:slug.html",
+      "destination": "/towns/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/westfield-vs-summit-nj.html",
+      "destination": "/blog/summit-vs-westfield-nj",
+      "permanent": true
+    },
+    {
+      "source": "/westfield-vs-summit-nj",
+      "destination": "/blog/summit-vs-westfield-nj",
+      "permanent": true
+    },
+    {
+      "source": "/chatham-vs-madison-nj.html",
+      "destination": "/blog/chatham-vs-madison-nj",
+      "permanent": true
+    },
+    {
+      "source": "/chatham-vs-madison-nj",
+      "destination": "/blog/chatham-vs-madison-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/morris-county-real-estate-market-q2-2026.html",
+      "destination": "/blog/morris-county-nj-real-estate-market-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/morris-county-real-estate-market-q2-2026",
+      "destination": "/blog/morris-county-nj-real-estate-market-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/selling-your-home-summit-nj-guide.html",
+      "destination": "/blog/selling-home-summit-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/selling-your-home-summit-nj-guide",
+      "destination": "/blog/selling-home-summit-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/essex-county-real-estate-market-q2-2026.html",
+      "destination": "/blog/essex-county-nj-real-estate-market-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/essex-county-real-estate-market-q2-2026",
+      "destination": "/blog/essex-county-nj-real-estate-market-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nj-property-tax-guide-homeowners.html",
+      "destination": "/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nj-property-tax-guide-homeowners",
+      "destination": "/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/westfield-vs-summit-nj.html",
+      "destination": "/es/blog/summit-vs-westfield-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/westfield-vs-summit-nj",
+      "destination": "/es/blog/summit-vs-westfield-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/chatham-vs-madison-nj.html",
+      "destination": "/es/blog/chatham-vs-madison-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/chatham-vs-madison-nj",
+      "destination": "/es/blog/chatham-vs-madison-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/morris-county-real-estate-market-q2-2026.html",
+      "destination": "/es/blog/morris-county-nj-real-estate-market-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/morris-county-real-estate-market-q2-2026",
+      "destination": "/es/blog/morris-county-nj-real-estate-market-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/selling-your-home-summit-nj-guide.html",
+      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/selling-your-home-summit-nj-guide",
+      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/essex-county-real-estate-market-q2-2026.html",
+      "destination": "/es/blog/essex-county-nj-real-estate-market-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/essex-county-real-estate-market-q2-2026",
+      "destination": "/es/blog/essex-county-nj-real-estate-market-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/nj-property-tax-guide-homeowners.html",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/nj-property-tax-guide-homeowners",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
       "source": "/nyc-to-nj-relocation.html",
       "destination": "/blog/moving-from-nyc-to-nj-guide",
       "permanent": true
