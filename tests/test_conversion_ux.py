@@ -32,6 +32,23 @@ def public_html_files() -> list[Path]:
 
 
 class ConversionUxStaticTests(unittest.TestCase):
+    def test_public_forms_do_not_send_leads_to_formsubmit(self) -> None:
+        offenders = [
+            str(path.relative_to(ROOT))
+            for path in public_html_files()
+            if "formsubmit.co" in path.read_text(encoding="utf-8").lower()
+        ]
+        self.assertEqual([], offenders)
+
+    def test_primary_contact_forms_use_the_first_party_delivery_path(self) -> None:
+        for relative in ("index.html", "es/index.html", "contact.html"):
+            text = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertRegex(text, r'<form[^>]+action="/api/lead"', relative)
+            self.assertIn('name="leadType" value="website-contact"', text, relative)
+            self.assertIn('name="_source"', text, relative)
+            self.assertIn('name="_next"', text, relative)
+            self.assertIn('name="_errorNext"', text, relative)
+
     def test_dead_valuation_host_is_absent_from_all_public_html(self) -> None:
         offenders = [
             str(path.relative_to(ROOT))
@@ -106,6 +123,65 @@ class ConversionUxStaticTests(unittest.TestCase):
         self.assertEqual(1, len(re.findall(r'id=["\']main["\']', text, re.IGNORECASE)))
         self.assertRegex(text, r'<main\s+id="main"')
         self.assertIn('href="#main" class="skip-link"', text)
+
+    def test_primary_spanish_and_calculator_pages_have_one_main_landmark(self) -> None:
+        for relative in (
+            "es/index.html",
+            "tools/mortgage-calculator.html",
+            "es/tools/mortgage-calculator.html",
+        ):
+            text = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertEqual(
+                1,
+                len(re.findall(r"<main(?:\s|>)", text, re.IGNORECASE)),
+                relative,
+            )
+            self.assertEqual(1, text.lower().count("</main>"), relative)
+            self.assertRegex(text, r'<main\s+id="main"', relative)
+
+    def test_confirmation_and_calculator_pages_follow_homepage_brand_tokens(self) -> None:
+        for relative in (
+            "thank-you.html",
+            "es/thank-you.html",
+            "tools/mortgage-calculator.html",
+            "es/tools/mortgage-calculator.html",
+        ):
+            text = (ROOT / relative).read_text(encoding="utf-8")
+            for token in ("#C41230", "#B8962E", "#FAFAF8", "Playfair Display", "Inter"):
+                self.assertIn(token, text, f"{relative}: missing {token}")
+
+    def test_confirmation_pages_avoid_unverified_delivery_and_response_promises(self) -> None:
+        forbidden = (
+            "went straight to jorge's inbox and his phone",
+            "typically responds within a few hours",
+            "always by the next morning",
+            "available 8am–9pm, 7 days a week",
+            "llegó directo al correo y al teléfono de jorge",
+            "siempre antes de la mañana siguiente",
+            "disponible de 8am a 9pm, los 7 días",
+            "serves 138 communities",
+            "atiende a 138 comunidades",
+        )
+        for relative in ("thank-you.html", "es/thank-you.html"):
+            text = (ROOT / relative).read_text(encoding="utf-8").lower()
+            for phrase in forbidden:
+                self.assertNotIn(phrase, text, relative)
+            self.assertIn("<main", text, relative)
+
+    def test_contact_page_uses_verified_credentials_and_no_response_guarantee(self) -> None:
+        text = (ROOT / "contact.html").read_text(encoding="utf-8").lower()
+        for forbidden in (
+            "serving 138 communities",
+            "hands-on renovation and investment experience",
+            "openinghours",
+            "response-time guarantee",
+            "a reply within 24 hours",
+            "138 towns across six nj counties",
+            "standard nj commission structure",
+        ):
+            self.assertNotIn(forbidden, text)
+        self.assertIn("nj license #1754604", text)
+        self.assertIn("broker compensation is negotiable and is not set by law", text)
 
     def test_every_town_page_has_exactly_one_main_landmark(self) -> None:
         town_pages = sorted((ROOT / "towns").glob("*.html"))

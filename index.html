@@ -109,6 +109,16 @@
         align-items: center;
         min-height: 44px;
       }
+      .contact-form-status {
+        display: none;
+        margin: 0 0 1rem;
+        padding: .9rem 1rem;
+        border: 1px solid var(--primary-red);
+        border-radius: 8px;
+        background: #FFF4F5;
+        color: var(--dark-red);
+      }
+      .contact-form-status:target { display: block; }
     </style>
     <!-- AI Context File — helps ChatGPT, Perplexity, Claude, Gemini understand this site -->
     <link rel="llms" href="/llms.txt" type="text/plain" title="AI Context">
@@ -886,10 +896,12 @@
             
             <div class="contact-grid">
                 <div class="contact-form">
-                    <form id="contactForm" action="https://formsubmit.co/jorgeramirez76@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="New Lead — The Jorge Ramirez Group Website">
-                        <input type="hidden" name="_next" value="https://thejorgeramirezgroup.com/thank-you">
-                        <input type="hidden" name="_captcha" value="false">
+                    <div id="contact-error" class="contact-form-status" role="alert" tabindex="-1">We could not confirm delivery. Please review the required fields and try again, or call Jorge at <a href="tel:+19082307844">908-230-7844</a>.</div>
+                    <form id="contactForm" action="/api/lead" method="POST">
+                        <input type="hidden" name="leadType" value="website-contact">
+                        <input type="hidden" name="_source" value="/">
+                        <input type="hidden" name="_next" value="/thank-you">
+                        <input type="hidden" name="_errorNext" value="/#contact-error">
                         <input type="text" name="_honey" style="display:none" aria-hidden="true" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Full Name *</label>

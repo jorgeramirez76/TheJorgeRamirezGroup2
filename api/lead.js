@@ -20,7 +20,7 @@ const VALUATION_RATE_WINDOW_MS = 10 * 60 * 1000;
 const VALUATION_RATE_MAX = 5;
 const valuationAttempts = new Map();
 
-function safeNext(next) {
+function safeNext(next, fallback = "/thank-you") {
   if (typeof next === "string") {
     if (/^\/(?![\\/])[^\r\n]*$/.test(next)) return next;
     if (next === ORIGIN) return "/";
@@ -29,7 +29,7 @@ function safeNext(next) {
       if (/^\/(?![\\/])[^\r\n]*$/.test(path)) return path;
     }
   }
-  return "/thank-you";
+  return fallback;
 }
 
 function clean(value, maxLength) {
@@ -261,6 +261,9 @@ export default async function handler(req, res) {
   const leadType = clean(b.leadType, 40);
   const isValuation = leadType === "home-valuation";
   const next = isValuation ? "/home-valuation" : safeNext(b._next);
+  const errorNext = isValuation
+    ? ""
+    : safeNext(b._errorNext, withState(next, "err=1"));
 
   if (isLikelySpam(b, wantsJson)) {
     return wantsJson
@@ -302,7 +305,7 @@ export default async function handler(req, res) {
       ? res.status(400).json({ ok: false, code: "invalid_lead", fields: validationErrors })
       : res.redirect(303, isValuation
         ? valuationState(next, "err=invalid", "valuation-invalid")
-        : withState(next, "err=invalid"));
+        : errorNext);
   }
 
   if (isValuation && isValuationRateLimited(clientIp(headers))) {
@@ -332,7 +335,7 @@ export default async function handler(req, res) {
       ? res.status(502).json({ ok: false, code: "delivery_failed" })
       : res.redirect(303, isValuation
         ? valuationState(next, "err=1", "valuation-error")
-        : withState(next, "err=1"));
+        : errorNext);
   }
   return wantsJson
     ? res.status(200).json({ ok: true, accepted: true })

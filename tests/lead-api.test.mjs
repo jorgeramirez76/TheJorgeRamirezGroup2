@@ -266,6 +266,37 @@ test("does not redirect a failed non-JavaScript valuation to the success page", 
   assert.equal(state.redirect, "/home-valuation?err=1#valuation-error");
 });
 
+test("uses a same-site error destination when a contact lead is not delivered", async () => {
+  const { state, response } = createResponse();
+
+  await handler(request({
+    leadType: "website-contact",
+    name: "Contact Visitor",
+    email: "contact@example.com",
+    _source: "/",
+    _next: "/thank-you",
+    _errorNext: "/#contact-error",
+  }, { json: false }), response);
+
+  assert.equal(state.status, 303);
+  assert.equal(state.redirect, "/#contact-error");
+});
+
+test("does not accept an external contact error destination", async () => {
+  const { state, response } = createResponse();
+
+  await handler(request({
+    leadType: "website-contact",
+    name: "Contact Visitor",
+    email: "contact@example.com",
+    _next: "/thank-you",
+    _errorNext: "https://attacker.example/collect",
+  }, { json: false }), response);
+
+  assert.equal(state.status, 303);
+  assert.equal(state.redirect, "/thank-you?err=1");
+});
+
 test("rate limits repeated valid valuation delivery attempts from one IP", async () => {
   let fetchCalls = 0;
   globalThis.fetch = async () => {

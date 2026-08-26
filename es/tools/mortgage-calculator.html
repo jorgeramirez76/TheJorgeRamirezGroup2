@@ -27,10 +27,10 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="/css/styles.css">
   <style>
-    body { font-family:'Inter',sans-serif; background: #f8f9fa; }
+    body { font-family:'Inter',sans-serif; background: #FAFAF8; }
     .calc-wrapper { max-width: 800px; margin: 60px auto; padding: 0 20px 60px; }
     .calc-header { text-align: center; margin-bottom: 40px; }
-    .calc-header h1 { font-size: 2rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 10px; }
+    .calc-header h1 { font-family:'Playfair Display',Georgia,serif; font-size: 2rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 10px; }
     .calc-header p { color: #666; font-size: 1rem; }
     .calc-card { background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 40px; }
     .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
@@ -41,14 +41,14 @@
       border-radius: 8px; font-size: 1rem; font-family: inherit;
       transition: border-color 0.2s; box-sizing: border-box;
     }
-    .input-group input:focus, .input-group select:focus { outline: none; border-color: #2C2C2C; }
+    .input-group input:focus, .input-group select:focus { outline: none; border-color: #B8962E; }
     .calc-btn {
-      width: 100%; padding: 16px; background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%);
+      width: 100%; padding: 16px; background: linear-gradient(135deg, #C41230 0%, #8B0D22 100%);
       color: white; border: none; border-radius: 8px; font-size: 1.1rem;
       font-weight: 700; cursor: pointer; font-family: inherit; transition: opacity 0.2s;
     }
     .calc-btn:hover { opacity: 0.9; }
-    .results { display: none; margin-top: 30px; padding: 30px; background: #f0f4ff; border-radius: 10px; }
+    .results { display: none; margin-top: 30px; padding: 30px; background: #F8F6F2; border-radius: 10px; }
     .results h2 { font-size: 1.3rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 20px; }
     .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
     @media(max-width:500px){ .results-grid { grid-template-columns: 1fr; } }
@@ -66,9 +66,9 @@
     .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     @media(max-width:500px){ .lead-grid { grid-template-columns: 1fr; } }
     .lead-grid input { width: 100%; padding: 10px 14px; border: 2px solid #e0e0e0; border-radius: 8px; font-family: inherit; font-size: 0.95rem; box-sizing: border-box; }
-    .send-btn { margin-top: 12px; width: 100%; padding: 13px; background: #28a745; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit; }
-    .send-btn:hover { background: #218838; }
-    .success-msg { display: none; padding: 16px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; color: #155724; text-align: center; margin-top: 12px; font-weight: 600; }
+    .send-btn { margin-top: 12px; width: 100%; padding: 13px; background: #C41230; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+    .send-btn:hover { background: #8B0D22; }
+    .success-msg { display: none; padding: 16px; background: #F8F6F2; border: 1px solid #B8962E; border-radius: 8px; color: #2C2C2C; text-align: center; margin-top: 12px; font-weight: 600; }
     .error-msg { display: none; padding: 16px; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; color: #721c24; text-align: center; margin-top: 12px; }
   </style>
 
@@ -166,6 +166,7 @@
     </div>
   </nav>
 
+  <main id="main">
   <div class="calc-wrapper">
     <div class="calc-header">
       <h1>¿Cuánta Casa Puedes Pagar en NJ?</h1>
@@ -242,19 +243,20 @@
 
         <div class="cta-box">
           <h3>Por curiosidad — ¿estos números te funcionan para tu situación?</h3>
-          <p>He ayudado a cientos de compradores en NJ a descubrir cuánto podían pagar en realidad, comparado con lo que decían los bancos. A veces esos números son muy diferentes. Si quieres una conversación real — sin presión — con gusto te ayudo a analizarlo.</p>
+          <p>Usa este estimado para planificar y confirma los términos del financiamiento con un prestamista licenciado y los costos de la propiedad con los profesionales correspondientes.</p>
           <a href="tel:908-230-7844">Llama a Jorge: 908-230-7844</a>
         </div>
 
         <div class="lead-section">
-          <h3>¿Quieres que te envíe este desglose y una lista de casas en tu rango de precio?</h3>
+          <h3>¿Quieres que Jorge revise este estimado contigo?</h3>
           <div class="lead-grid">
             <input type="text" id="lead-name" placeholder="Tu Nombre">
             <input type="tel" id="lead-phone" placeholder="Número de Teléfono">
             <input type="email" id="lead-email" placeholder="Correo Electrónico" style="grid-column: span 2">
           </div>
-          <button class="send-btn" onclick="sendLead()">Enviarme el Desglose</button>
-          <div class="success-msg" id="success-msg">✅ ¡Listo! Jorge se pondrá en contacto contigo pronto con tu desglose personalizado.</div>
+          <button class="send-btn" onclick="sendLead()">Solicitar Seguimiento</button>
+          <p style="font-size:.78rem;color:#777;margin:.75rem 0 0;">El teléfono es opcional. Esta solicitud no te inscribe en mensajes de texto automatizados.</p>
+          <div class="success-msg" id="success-msg">Solicitud confirmada mediante el sistema de entrega del sitio.</div>
           <div class="error-msg" id="error-msg">Algo salió mal. Por favor llama a Jorge directamente al 908-230-7844.</div>
         </div>
       </div>
@@ -294,6 +296,8 @@
       <p style="color: #444; line-height: 1.7; margin: 0 0 16px;">Un préstamo a 15 años ahorra muchísimo interés pero casi duplica el pago mensual. Uno a 30 años te da flexibilidad — siempre puedes pagar capital extra, pero no estás <em>obligado</em>. La mayoría de compradores en NJ elige 30 años por seguridad de flujo y adelanta pagos cuando puede.</p>
     </section>
   </div>
+
+  </main>
 
   <footer class="site-footer">
     <div class="container">
@@ -395,17 +399,19 @@ Resultados de la Calculadora:
       };
 
       try {
-        const res = await fetch('https://formsubmit.co/ajax/jorge.ramirez@kw.com', {
+        const res = await fetch('/api/lead', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
           body: JSON.stringify({
-            _subject: `Lead de Calculadora de Hipoteca — ${name}`,
+            leadType: 'mortgage-calculator',
+            intent: 'Solicitud de seguimiento de la calculadora de hipoteca',
+            _source: '/es/tools/mortgage-calculator',
             name, email, phone,
             message: body.message
           })
         });
         const data = await res.json();
-        if (data.success === 'true' || data.success === true) {
+        if (res.ok && data.ok === true && data.accepted === true) {
           document.getElementById('success-msg').style.display = 'block';
           document.getElementById('error-msg').style.display = 'none';
         } else {
