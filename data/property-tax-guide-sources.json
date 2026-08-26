@@ -1,0 +1,130 @@
+{
+  "reviewed": "2026-08-26",
+  "scope": "Official New Jersey sources used to rebuild the English and Spanish parcel-specific property-tax guides. No third-party rate, ranking, bill, savings, or deadline data is used.",
+  "pages": {
+    "blog/nj-property-tax-guide.html": [
+      {
+        "url": "https://www.nj.gov/treasury/taxation/lpt/genlpt.shtml",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "New Jersey real property is taxed according to value; local budget needs and the taxable assessment base determine a municipality's general rate, which is multiplied by a parcel's assessed value.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "The State publishes general and effective rates by municipality, common level ranges, equalization tables, MOD-IV assessment files, and historical data. The general rate computes a bill; the effective rate is a statistical comparison measure and does not compute the bill.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://nj.gov/transparency/property/",
+        "publisher": "New Jersey Transparency Center",
+        "fact_supported": "The official Property Explorer includes parcel identifiers, land and improvement assessments, classification, and prior-year tax information; changes after the annual county filing may not appear in that file.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/lpt/lpt-appeal.shtml",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "The State explains assessment-appeal standards, county calendar differences, the current forms, added or omitted assessments, and Tax Court review.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/pdf/other_forms/lpt/petappl.pdf",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "Current Form A-1 says only the property value, not the amount of tax, can be appealed and supplies the filing dates, service, evidence, fee, hearing, and payment instructions that a filer must review.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/pdf/lpt/cb/ctb-statewide.pdf",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "The State publishes the official contact list for all New Jersey County Boards of Taxation so a taxpayer can verify county-specific deadlines and procedures.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/prntlpt.shtml",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "The official forms library provides the current A-1 petition, comparable-sales analysis, added or omitted assessment petition, and deduction and exemption forms.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dca/dlgs/resources/Property_Tax_info.shtml",
+        "publisher": "New Jersey Division of Local Government Services",
+        "fact_supported": "DLGS publishes municipal property-tax tables, abstracts of ratables, property-value classifications, billing materials, and related local-government data.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dca/dlgs/programs/mc_budgets.shtml",
+        "publisher": "New Jersey Division of Local Government Services",
+        "fact_supported": "DLGS provides the User-Friendly Budget Database and current municipal and county budget resources that give context to local levies without substituting for a parcel's official bill.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/relief.shtml",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "The State's current relief portal is the authoritative place for program funding, eligibility, applications, deadlines, status checks, and scam warnings; those details may change with budgets and program rules.",
+        "accessed": "2026-08-26"
+      }
+    ],
+    "es/blog/nj-property-tax-guide.html": [
+      {
+        "url": "https://www.nj.gov/treasury/taxation/lpt/genlpt.shtml",
+        "publisher": "División de Tributación de Nueva Jersey",
+        "fact_supported": "Nueva Jersey grava la propiedad según su valor; las necesidades presupuestarias y la base tasada tributable determinan la tasa general municipal, que se multiplica por el valor tasado de una parcela.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+        "publisher": "División de Tributación de Nueva Jersey",
+        "fact_supported": "El Estado publica tasas generales y efectivas, rangos de nivel común, tablas de igualación fiscal, archivos MOD-IV y datos históricos. La tasa general calcula la factura; la efectiva es una medida estadística y no calcula la factura.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://nj.gov/transparency/property/",
+        "publisher": "Centro de Transparencia de Nueva Jersey",
+        "fact_supported": "El Explorador estatal incluye identificadores de parcela, tasaciones de terreno y mejoras, clasificación e impuestos anteriores; ciertos cambios posteriores al archivo anual del condado pueden no aparecer.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/lpt/lpt-appeal.shtml",
+        "publisher": "División de Tributación de Nueva Jersey",
+        "fact_supported": "El Estado explica las normas de apelación, diferencias entre calendarios de condados, formularios vigentes, tasaciones adicionales u omitidas y revisión del Tax Court.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/pdf/other_forms/lpt/petappl.pdf",
+        "publisher": "División de Tributación de Nueva Jersey",
+        "fact_supported": "El formulario A-1 vigente dice que solo se apela el valor de la propiedad, no el monto del impuesto, y contiene fechas, notificación, evidencia, tarifas, audiencia y requisitos de pago.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/pdf/lpt/cb/ctb-statewide.pdf",
+        "publisher": "División de Tributación de Nueva Jersey",
+        "fact_supported": "El Estado publica la lista oficial de contactos de las juntas tributarias de todos los condados para confirmar fechas y procedimientos específicos.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/prntlpt.shtml",
+        "publisher": "División de Tributación de Nueva Jersey",
+        "fact_supported": "La biblioteca oficial ofrece la petición A-1 vigente, el análisis de ventas comparables, apelaciones de tasaciones adicionales u omitidas y formularios de deducciones y exenciones.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dca/dlgs/resources/Property_Tax_info.shtml",
+        "publisher": "División de Servicios de Gobierno Local de Nueva Jersey",
+        "fact_supported": "DLGS publica tablas municipales de impuestos, resúmenes de bienes imponibles, clasificaciones de valor, materiales de facturación y otros datos locales.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dca/dlgs/programs/mc_budgets.shtml",
+        "publisher": "División de Servicios de Gobierno Local de Nueva Jersey",
+        "fact_supported": "DLGS ofrece la base de presupuestos de lectura sencilla y recursos municipales y de condado que explican el contexto del gravamen sin reemplazar la factura oficial de una parcela.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/relief.shtml",
+        "publisher": "División de Tributación de Nueva Jersey",
+        "fact_supported": "El portal estatal vigente es la fuente autorizada para financiamiento, elegibilidad, solicitudes, fechas, estado y alertas de fraude; estos detalles pueden cambiar con presupuestos y reglas.",
+        "accessed": "2026-08-26"
+      }
+    ]
+  }
+}
