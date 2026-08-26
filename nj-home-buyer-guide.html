@@ -87,9 +87,12 @@
         <p style="color:#555;font-size:.98rem;margin:0 0 18px;">Pre-approval, offers, inspections, and closing — the full NJ buyer playbook. Enter your info and it downloads right away.</p>
         <form id="lmForm" novalidate style="display:flex;flex-direction:column;gap:10px;">
           <div style="position:absolute;left:-9999px;" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
-          <input name="name" type="text" autocomplete="given-name" required placeholder="First name" style="padding:12px 14px;border:1px solid #ccc;border-radius:8px;font-size:1rem;">
-          <input name="email" type="email" autocomplete="email" required placeholder="you@email.com" style="padding:12px 14px;border:1px solid #ccc;border-radius:8px;font-size:1rem;">
-          <input name="phone" type="tel" autocomplete="tel" placeholder="Phone (optional — needed only for texts)" style="padding:12px 14px;border:1px solid #ccc;border-radius:8px;font-size:1rem;">
+          <label class="visually-hidden" for="buyer-guide-name">First name</label>
+          <input id="buyer-guide-name" name="name" type="text" autocomplete="given-name" required placeholder="First name" style="padding:12px 14px;border:1px solid #ccc;border-radius:8px;font-size:1rem;">
+          <label class="visually-hidden" for="buyer-guide-email">Email address</label>
+          <input id="buyer-guide-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com" style="padding:12px 14px;border:1px solid #ccc;border-radius:8px;font-size:1rem;">
+          <label class="visually-hidden" for="buyer-guide-phone">Phone (optional)</label>
+          <input id="buyer-guide-phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone (optional — needed only for texts)" style="padding:12px 14px;border:1px solid #ccc;border-radius:8px;font-size:1rem;">
           <label style="display:flex;align-items:flex-start;gap:8px;font-size:.8rem;color:#666;line-height:1.45;cursor:pointer;">
             <input type="checkbox" name="smsConsent" value="on" style="margin-top:3px;flex:0 0 auto;width:auto;">
             <span><strong style="color:#444;">Text me too</strong> (optional) — I agree that Jorge Ramirez, licensed NJ real estate agent (The Jorge Ramirez Group at Keller Williams, brokerage of record), may call and text me, including by automated technology, about my real estate request and to send related updates such as appointment and showing reminders, new-listing and price alerts, home-value follow-ups, and transaction updates. Consent is not a condition of getting the guide or of any purchase. Message frequency varies, typically a few per month. Message and data rates may apply. Reply STOP to opt out, HELP for help.</span>
