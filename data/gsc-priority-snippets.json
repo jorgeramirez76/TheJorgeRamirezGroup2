@@ -1,0 +1,656 @@
+{
+  "source": {
+    "name": "Google Search Console Pages export",
+    "export_file": "work/gsc_compare/Pages.csv",
+    "search_type": "Web",
+    "period_label": "Last 3 months",
+    "aggregation": "Current, .html, extensionless, and exact-redirect URL variants folded into the page canonical declared in the repository.",
+    "analyzed_on": "2026-08-25"
+  },
+  "selected_canonical_pages": 20,
+  "aggregate_last_three_month_impressions": 70443,
+  "aggregate_last_three_month_clicks": 336,
+  "baseline_aggregate_ctr_percent": 0.477,
+  "pages": [
+    {
+      "file": "blog/nj-property-tax-guide.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/nj-property-tax-guide",
+      "last_three_month_impressions": 19039,
+      "last_three_month_clicks": 53,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/nj-property-tax-guide",
+          "impressions": 15612,
+          "clicks": 40
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/nj-property-tax-guide.html",
+          "impressions": 3399,
+          "clicks": 13
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/nj-property-tax-guide-homeowners.html",
+          "impressions": 18,
+          "clicks": 0
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/nj-property-tax-guide-homeowners",
+          "impressions": 10,
+          "clicks": 0
+        }
+      ],
+      "before": {
+        "title": "NJ Property Tax Guide 2026: Avg Bill $10,597, Rates by Town",
+        "description": "New Jersey's average property tax bill is $10,597 (NJ DCA, 2025). Where bills rose in 544 of 565 towns, county-by-county averages, and how to estimate yours."
+      },
+      "after": {
+        "title": "New Jersey Property Taxes: 2025 Bills and Rates by Town",
+        "description": "See 2025 average property tax bills across New Jersey towns, how assessments and equalization work, and when a county tax appeal may make sense."
+      },
+      "sync_fields": [
+        "name:title",
+        "property:og:title",
+        "property:og:description"
+      ]
+    },
+    {
+      "file": "blog/first-time-home-buyer-nj-guide.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/first-time-home-buyer-nj-guide",
+      "last_three_month_impressions": 9523,
+      "last_three_month_clicks": 35,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/first-time-home-buyer-nj-guide.html",
+          "impressions": 7361,
+          "clicks": 22
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/first-time-home-buyer-nj-guide",
+          "impressions": 2162,
+          "clicks": 13
+        }
+      ],
+      "before": {
+        "title": "Buying a House in NJ for the First Time: Step-by-Step (2026)",
+        "description": "Every step of buying your first house in NJ — what each stage costs, how long it takes, and the NJHMFA programs worth up to $22,000 for eligible first-time buyers."
+      },
+      "after": {
+        "title": "First-Time Home Buyer NJ Guide: Steps and Programs (2026)",
+        "description": "Follow the New Jersey home-buying process from budget and preapproval through attorney review and closing, with 2026 NJHMFA assistance details."
+      },
+      "sync_fields": [
+        "property:og:title",
+        "name:twitter:title",
+        "property:og:description",
+        "name:twitter:description"
+      ]
+    },
+    {
+      "file": "blog/best-nj-towns-for-families-2026.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/best-nj-towns-for-families-2026",
+      "last_three_month_impressions": 8178,
+      "last_three_month_clicks": 48,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/best-nj-towns-for-families.html",
+          "impressions": 3003,
+          "clicks": 7
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/best-nj-towns-for-families-2026.html",
+          "impressions": 2683,
+          "clicks": 16
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/best-nj-towns-for-families-2026",
+          "impressions": 1976,
+          "clicks": 21
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/best-nj-towns-for-families",
+          "impressions": 516,
+          "clicks": 4
+        }
+      ],
+      "before": {
+        "title": "Best NJ Towns for Families in 2026: Schools, Commute & Prices",
+        "description": "The 12 best NJ towns for families in 2026 — ranked by school ratings, NYC commute time, median home prices, and safety. Data-driven picks from Jorge Ramirez, KW agent."
+      },
+      "after": {
+        "title": "Best NJ Towns for Families in 2026: Data and Trade-Offs",
+        "description": "Compare 12 New Jersey towns using school data, home prices, safety and NYC commute times, plus a disclosed weighted family score."
+      },
+      "sync_fields": [
+        "property:og:description"
+      ]
+    },
+    {
+      "file": "nj-train-map.html",
+      "canonical": "https://thejorgeramirezgroup.com/nj-train-map",
+      "last_three_month_impressions": 7816,
+      "last_three_month_clicks": 45,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/nj-train-map",
+          "impressions": 5815,
+          "clicks": 27
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/nj-train-map.html",
+          "impressions": 2001,
+          "clicks": 18
+        }
+      ],
+      "before": {
+        "title": "NJ Train Map 2026 (Interactive): NYC Commute Times by Station",
+        "description": "Interactive map of NJ Transit lines to NYC — commute times, median home prices & school ratings by station. Compare towns side by side and find yours."
+      },
+      "after": {
+        "title": "NJ Transit Train Map: NYC Commute Times by Station (2026)",
+        "description": "Use the interactive NJ Transit map to compare rail lines, station-to-NYC times, town home-price context and school data before choosing a commute."
+      },
+      "sync_fields": [
+        "name:title",
+        "property:og:title",
+        "name:twitter:title",
+        "property:og:description",
+        "name:twitter:description"
+      ]
+    },
+    {
+      "file": "blog/best-nj-suburbs-nyc-commuters.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/best-nj-suburbs-nyc-commuters",
+      "last_three_month_impressions": 4649,
+      "last_three_month_clicks": 26,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/best-nj-suburbs-nyc-commuters",
+          "impressions": 3095,
+          "clicks": 23
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/best-nj-suburbs-nyc-commuters.html",
+          "impressions": 1554,
+          "clicks": 3
+        }
+      ],
+      "before": {
+        "title": "22 Best NJ Commuter Towns to NYC, Ranked by Budget (2026)",
+        "description": "Maplewood: 30 min Midtown Direct, $750K. Summit: 44 min, $1.3M. All 22 NJ commuter towns to NYC ranked by train line, commute time and budget — from under $500K to over $1M."
+      },
+      "after": {
+        "title": "22 NJ Commuter Towns to NYC: Train Times and Budgets",
+        "description": "Compare 22 New Jersey commuter towns by rail line, typical train time, home-price range and budget—from closer-in suburbs to lower-cost options."
+      },
+      "sync_fields": [
+        "property:og:title",
+        "property:og:description"
+      ]
+    },
+    {
+      "file": "blog/best-time-to-sell-home-nj.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/best-time-to-sell-home-nj",
+      "last_three_month_impressions": 3556,
+      "last_three_month_clicks": 16,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/best-time-to-sell-home-nj",
+          "impressions": 1902,
+          "clicks": 7
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/best-time-to-sell-home-nj.html",
+          "impressions": 1654,
+          "clicks": 9
+        }
+      ],
+      "before": {
+        "title": "Best Time to Sell a House in NJ (2026): Month-by-Month Data",
+        "description": "The best time to sell a house in NJ in 2026 — which months bring the highest prices and fastest sales, backed by New Jersey market data. Spring vs. fall, explained."
+      },
+      "after": {
+        "title": "Best Time to Sell a House in NJ: 2025–26 Monthly Data",
+        "description": "Review New Jersey median sale prices and days on market from July 2025 through June 2026, then compare the spring, fall and winter trade-offs."
+      },
+      "sync_fields": []
+    },
+    {
+      "file": "blog/best-nj-towns-to-sell-home.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/best-nj-towns-to-sell-home",
+      "last_three_month_impressions": 3103,
+      "last_three_month_clicks": 20,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/best-nj-towns-to-sell-home.html",
+          "impressions": 2730,
+          "clicks": 11
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/best-nj-towns-to-sell-home",
+          "impressions": 373,
+          "clicks": 9
+        }
+      ],
+      "before": {
+        "title": "Best NJ Towns to Sell a Home Fast in 2026 (Ranked by Days on Market)",
+        "description": "Summit and Chatham go pending in 12–20 days. See where NJ sellers have the most leverage in 2026, ranked by days on market, inventory and buyer demand."
+      },
+      "after": {
+        "title": "NJ Towns Where Homes Sell Fastest: 2026 Market Guide",
+        "description": "Compare selected New Jersey towns by days on market, inventory and buyer demand, with 2026 context for sellers weighing price, timing and competition."
+      },
+      "sync_fields": [
+        "property:og:description"
+      ]
+    },
+    {
+      "file": "blog/midtown-direct-towns-nj.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/midtown-direct-towns-nj",
+      "last_three_month_impressions": 2014,
+      "last_three_month_clicks": 12,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/midtown-direct-towns-nj",
+          "impressions": 1296,
+          "clicks": 9
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/midtown-direct-towns-nj.html",
+          "impressions": 718,
+          "clicks": 3
+        }
+      ],
+      "before": {
+        "title": "Midtown Direct Towns in NJ (2026): Every Direct Train to NYC",
+        "description": "Every NJ Transit Midtown Direct town — express commute times to Penn Station, median home prices & school ratings. Find the fastest one-seat ride to Manhattan."
+      },
+      "after": {
+        "title": "NJ Midtown Direct Towns: Stops, Times and Home Prices",
+        "description": "Compare Midtown Direct stops with typical Penn Station travel times, home-price context and school information to narrow your New Jersey town search."
+      },
+      "sync_fields": []
+    },
+    {
+      "file": "blog/moving-from-nyc-to-nj-guide.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/moving-from-nyc-to-nj-guide",
+      "last_three_month_impressions": 1865,
+      "last_three_month_clicks": 0,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/moving-from-nyc-to-nj-guide",
+          "impressions": 1254,
+          "clicks": 0
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/nyc-to-nj-relocation.html",
+          "impressions": 552,
+          "clicks": 0
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/moving-from-nyc-to-nj-guide.html",
+          "impressions": 59,
+          "clicks": 0
+        }
+      ],
+      "before": {
+        "title": "Moving From NYC to NJ: A Practical Relocation Guide",
+        "description": "Plan a move from NYC to New Jersey with a source-led guide to towns, commuting, housing, movers, MVC deadlines, New York plates, and tax questions."
+      },
+      "after": {
+        "title": "Moving From NYC to New Jersey: Practical 2026 Guide",
+        "description": "Plan your move from New York City to New Jersey: compare towns and commute costs, choose an interstate mover, and organize MVC, plates and tax questions."
+      },
+      "sync_fields": [
+        "property:og:title",
+        "name:twitter:title"
+      ]
+    },
+    {
+      "file": "blog/selling-inherited-home-nj.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/selling-inherited-home-nj",
+      "last_three_month_impressions": 1493,
+      "last_three_month_clicks": 10,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/selling-inherited-home-nj.html",
+          "impressions": 916,
+          "clicks": 6
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/selling-inherited-home-nj",
+          "impressions": 398,
+          "clicks": 4
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/inherited-home-nj.html",
+          "impressions": 126,
+          "clicks": 0
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/inherited-home-nj",
+          "impressions": 53,
+          "clicks": 0
+        }
+      ],
+      "before": {
+        "title": "Sell an Inherited Home in NJ: Step-by-Step Guide",
+        "description": "Selling an inherited home in New Jersey? Start with signing authority, title and tax-waiver records, then compare repair, as-is and listing options."
+      },
+      "after": {
+        "title": "Selling an Inherited House in NJ: Process and Options",
+        "description": "Learn the New Jersey sequence for authority, title and tax-waiver records, then compare repairs, an as-is sale and a traditional listing."
+      },
+      "sync_fields": [
+        "property:og:title",
+        "name:twitter:title"
+      ]
+    },
+    {
+      "file": "blog/maplewood-vs-south-orange-nj.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/maplewood-vs-south-orange-nj",
+      "last_three_month_impressions": 1428,
+      "last_three_month_clicks": 6,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/maplewood-vs-south-orange-nj.html",
+          "impressions": 900,
+          "clicks": 4
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/maplewood-vs-south-orange-nj",
+          "impressions": 528,
+          "clicks": 2
+        }
+      ],
+      "before": {
+        "title": "Maplewood vs South Orange NJ (2026): Prices, Taxes & Schools",
+        "description": "Maplewood vs South Orange NJ: near-identical 28–31 minute Midtown Direct commutes and one shared school district. Here is what actually separates them in 2026."
+      },
+      "after": {
+        "title": "Maplewood vs South Orange NJ: Commute, Prices and Schools",
+        "description": "Compare Maplewood and South Orange on Midtown Direct travel, housing costs, taxes, downtown feel and their shared school district before you tour."
+      },
+      "sync_fields": [
+        "name:title",
+        "property:og:title",
+        "property:og:description"
+      ]
+    },
+    {
+      "file": "cranford-vs-westfield-nj.html",
+      "canonical": "https://thejorgeramirezgroup.com/cranford-vs-westfield-nj",
+      "last_three_month_impressions": 1336,
+      "last_three_month_clicks": 9,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/cranford-vs-westfield-nj.html",
+          "impressions": 924,
+          "clicks": 3
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/cranford-vs-westfield-nj",
+          "impressions": 412,
+          "clicks": 6
+        }
+      ],
+      "before": {
+        "title": "Cranford vs. Westfield NJ (2026): Which Fits Your Budget?",
+        "description": "Cranford vs. Westfield NJ in 2026 — compare median home prices, NYC commute times, property taxes, and schools side by side to find the Union County town."
+      },
+      "after": {
+        "title": "Cranford vs Westfield NJ: Prices, Commute and Schools",
+        "description": "Compare Cranford and Westfield on home prices, property taxes, NYC rail service, schools and downtown character to see which Union County fit suits you."
+      },
+      "sync_fields": []
+    },
+    {
+      "file": "buyer-agency-agreement-nj.html",
+      "canonical": "https://thejorgeramirezgroup.com/buyer-agency-agreement-nj",
+      "last_three_month_impressions": 1266,
+      "last_three_month_clicks": 10,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/buyer-agency-agreement-nj.html",
+          "impressions": 920,
+          "clicks": 7
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/buyer-agency-agreement-nj",
+          "impressions": 346,
+          "clicks": 3
+        }
+      ],
+      "before": {
+        "title": "Buyer Agency Agreement NJ 2026 | Who Pays? | Jorge Ramirez",
+        "description": "NJ buyer agency agreement explained — who pays, what the 2024 NAR settlement changed, how to negotiate it. Free guide by Jorge Ramirez. 908-230-7844."
+      },
+      "after": {
+        "title": "NJ Buyer Agency Agreement: Fees, Terms and Who Pays (2026)",
+        "description": "Understand New Jersey buyer agency agreements, negotiable compensation, contract terms and what changed after the 2024 NAR settlement before you sign."
+      },
+      "sync_fields": []
+    },
+    {
+      "file": "blog/chatham-vs-madison-nj.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/chatham-vs-madison-nj",
+      "last_three_month_impressions": 1087,
+      "last_three_month_clicks": 9,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/chatham-vs-madison-nj.html",
+          "impressions": 419,
+          "clicks": 0
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/chatham-vs-madison-nj",
+          "impressions": 285,
+          "clicks": 3
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/chatham-vs-madison-nj",
+          "impressions": 262,
+          "clicks": 3
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/chatham-vs-madison-nj.html",
+          "impressions": 121,
+          "clicks": 3
+        }
+      ],
+      "before": {
+        "title": "Chatham vs Madison NJ 2026 | Prices, Schools & Commute",
+        "description": "Chatham vs Madison NJ: both have 9–10/10 schools and medians in the $950K–$1.1M range. Chatham runs ~52 minutes to Penn Station, Madison ~55. The honest read."
+      },
+      "after": {
+        "title": "Chatham vs Madison NJ: Prices, Schools and Commute (2026)",
+        "description": "Compare Chatham and Madison on home prices, property taxes, schools, direct-train travel and downtown life before choosing a Morris County town."
+      },
+      "sync_fields": [
+        "property:og:description"
+      ]
+    },
+    {
+      "file": "blog/summit-vs-westfield-nj.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/summit-vs-westfield-nj",
+      "last_three_month_impressions": 926,
+      "last_three_month_clicks": 9,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/summit-vs-westfield-nj.html",
+          "impressions": 302,
+          "clicks": 3
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/westfield-vs-summit-nj",
+          "impressions": 240,
+          "clicks": 1
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/westfield-vs-summit-nj.html",
+          "impressions": 196,
+          "clicks": 5
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/summit-vs-westfield-nj",
+          "impressions": 188,
+          "clicks": 0
+        }
+      ],
+      "before": {
+        "title": "Summit vs Westfield NJ: Which Town Is Right for You?",
+        "description": "Summit vs Westfield NJ compared on commute, schools, downtown and home prices. Two of Union County's strongest towns — and they are not interchangeable."
+      },
+      "after": {
+        "title": "Summit vs Westfield NJ: Home Prices, Commute and Schools",
+        "description": "Compare Summit and Westfield on home prices, property taxes, NYC rail service, schools and downtown life to decide which Union County town fits."
+      },
+      "sync_fields": [
+        "property:og:description"
+      ]
+    },
+    {
+      "file": "net-proceeds-calculator.html",
+      "canonical": "https://thejorgeramirezgroup.com/net-proceeds-calculator",
+      "last_three_month_impressions": 758,
+      "last_three_month_clicks": 7,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/net-proceeds-calculator",
+          "impressions": 464,
+          "clicks": 3
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/net-proceeds-calculator.html",
+          "impressions": 294,
+          "clicks": 4
+        }
+      ],
+      "before": {
+        "title": "NJ Seller Net Proceeds Calculator 2026",
+        "description": "Free NJ seller net proceeds calculator. See exactly what you'll net after commission, transfer tax, attorney, payoff, and closing costs. Call Jorge at 908-230-7844."
+      },
+      "after": {
+        "title": "NJ Home Sale Net Proceeds Calculator (2026)",
+        "description": "Estimate what you may keep after mortgage payoff, commission, New Jersey Realty Transfer Fee, attorney costs and other seller closing expenses."
+      },
+      "sync_fields": []
+    },
+    {
+      "file": "blog/nj-property-taxes-lowest-commuter-towns-2026.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/nj-property-taxes-lowest-commuter-towns-2026",
+      "last_three_month_impressions": 742,
+      "last_three_month_clicks": 6,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/nj-property-taxes-lowest-commuter-towns-2026.html",
+          "impressions": 647,
+          "clicks": 6
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/nj-property-taxes-lowest-commuter-towns-2026",
+          "impressions": 95,
+          "clicks": 0
+        }
+      ],
+      "before": {
+        "title": "NJ Property Taxes 2026: Lowest-Tax NYC Commuter Towns, Ranked",
+        "description": "NJ has the highest property taxes in America (~2.23%). But effective rates swing $3,000+ a year between commuter towns in the same price range."
+      },
+      "after": {
+        "title": "Lower-Tax NJ Commuter Towns: Rates and Bills Compared",
+        "description": "Compare selected NYC commuter towns using effective tax rates and typical bills, and learn why the same home budget can produce different annual taxes."
+      },
+      "sync_fields": [
+        "property:og:title"
+      ]
+    },
+    {
+      "file": "55-plus-communities-nj.html",
+      "canonical": "https://thejorgeramirezgroup.com/55-plus-communities-nj",
+      "last_three_month_impressions": 702,
+      "last_three_month_clicks": 5,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/55-plus-communities-nj.html",
+          "impressions": 558,
+          "clicks": 4
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/55-plus-communities-nj",
+          "impressions": 144,
+          "clicks": 1
+        }
+      ],
+      "before": {
+        "title": "55+ Communities in New Jersey: Home Downsizing Guide",
+        "description": "Named 55+ communities in New Jersey by town and county, how the age restriction works, what the HOA covers, Stay NJ tax relief, and home downsizing timing."
+      },
+      "after": {
+        "title": "55+ Communities in New Jersey: Towns, HOAs and Costs",
+        "description": "Explore named 55+ communities by town and county, how age rules work, what HOA fees may cover, and how Stay NJ can affect a downsizing plan."
+      },
+      "sync_fields": [
+        "property:og:title",
+        "name:twitter:title",
+        "property:og:description",
+        "name:twitter:description"
+      ]
+    },
+    {
+      "file": "blog/nj-commute-cost-nyc-2026.html",
+      "canonical": "https://thejorgeramirezgroup.com/blog/nj-commute-cost-nyc-2026",
+      "last_three_month_impressions": 619,
+      "last_three_month_clicks": 4,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/blog/nj-commute-cost-nyc-2026.html",
+          "impressions": 619,
+          "clicks": 4
+        }
+      ],
+      "before": {
+        "title": "NJ to NYC Commute Costs: $5,000+ a Year in 2026 (Breakdown)",
+        "description": "A NJ Transit peak monthly pass runs ~$400-450, or $5,000-$5,400 a year — before parking, PATH, and the value of your time."
+      },
+      "after": {
+        "title": "NJ to NYC Commute Cost 2026: Train, Parking and Time",
+        "description": "Compare 2026 NJ Transit pass estimates with parking, PATH or subway connections and commute time to budget the full cost of getting to New York City."
+      },
+      "sync_fields": [
+        "property:og:title"
+      ]
+    },
+    {
+      "file": "montclair-vs-maplewood-nj.html",
+      "canonical": "https://thejorgeramirezgroup.com/montclair-vs-maplewood-nj",
+      "last_three_month_impressions": 343,
+      "last_three_month_clicks": 6,
+      "source_rows": [
+        {
+          "url": "https://thejorgeramirezgroup.com/montclair-vs-maplewood-nj.html",
+          "impressions": 260,
+          "clicks": 4
+        },
+        {
+          "url": "https://thejorgeramirezgroup.com/montclair-vs-maplewood-nj",
+          "impressions": 83,
+          "clicks": 2
+        }
+      ],
+      "before": {
+        "title": "Montclair vs Maplewood NJ — Which Is the Better Move From NYC?",
+        "description": "Montclair (median ~$895K) vs Maplewood (~$775K): the two most common NYC-transplant landings in Essex County, compared on commute, schools and daily feel."
+      },
+      "after": {
+        "title": "Montclair vs Maplewood NJ: Prices, Commute and Lifestyle",
+        "description": "Compare Montclair and Maplewood on home prices, Midtown Direct travel, schools, downtowns and daily feel before choosing an Essex County suburb."
+      },
+      "sync_fields": [
+        "property:og:title",
+        "name:twitter:title",
+        "property:og:description",
+        "name:twitter:description"
+      ]
+    }
+  ]
+}
