@@ -469,19 +469,29 @@
   </script>
 
   <style>
+    :root { --jrg-red: #C41230; --jrg-dark-red: #8B0D22; --jrg-gold: #B8962E; --jrg-gold-light: #D4AF5A; --jrg-black: #0A0A0A; --jrg-charcoal: #1A1A1A; --jrg-ivory: #FAFAF8; }
+    body { background: var(--jrg-ivory); color: #2C2C2C; font-family: Inter, -apple-system, sans-serif; }
+    .site-header { background: var(--jrg-black); color: white; padding: 1rem 5%; }
+    .site-header > .container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .site-header .logo { color: white; font-family: 'Playfair Display', Georgia, serif; text-decoration: none; }
+    .site-header nav { position: static; width: auto; padding: 0; background: transparent; box-shadow: none; backdrop-filter: none; }
+    .site-header nav ul { display: flex; align-items: center; gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
+    .site-header nav a { color: white; text-decoration: none; font-weight: 600; }
+    .site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--jrg-gold-light); }
     .communities-hero {
-      background: linear-gradient(135deg, #1a3a5c 0%, #2c5f8d 100%);
+      background: linear-gradient(135deg, var(--jrg-charcoal) 0%, var(--jrg-black) 100%);
       color: white;
       padding: 80px 20px 60px;
       text-align: center;
+      border-bottom: 1px solid rgba(184, 150, 46, 0.5);
     }
-    .communities-hero h1 { font-size: 2.5rem; margin: 0 0 1rem; line-height: 1.2; }
+    .communities-hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 2.5rem; margin: 0 0 1rem; line-height: 1.2; }
     .communities-hero p { font-size: 1.15rem; max-width: 720px; margin: 0 auto; opacity: 0.95; }
     .county-section { padding: 60px 20px; border-bottom: 1px solid #eaeaea; }
-    .county-section:nth-child(even) { background: #fafafa; }
+    .county-section:nth-child(even) { background: #F5F2EC; }
     .county-section .container { max-width: 1200px; margin: 0 auto; }
     .county-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem; }
-    .county-header h2 { font-size: 2rem; margin: 0; color: #1a3a5c; }
+    .county-header h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; margin: 0; color: var(--jrg-charcoal); }
     .county-header .count { font-size: 1rem; color: #666; }
     .county-blurb { color: #555; max-width: 720px; margin: 0 0 2rem; line-height: 1.6; }
     .town-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
@@ -489,10 +499,10 @@
       background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.25rem;
       transition: transform 0.18s, box-shadow 0.18s; text-decoration: none; color: inherit; display: block;
     }
-    .town-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); border-color: #2c5f8d; }
-    .town-card h3 { margin: 0 0 0.5rem; font-size: 1.15rem; color: #1a3a5c; }
+    .town-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); border-color: var(--jrg-red); }
+    .town-card h3 { margin: 0 0 0.5rem; font-size: 1.15rem; color: var(--jrg-charcoal); }
     .town-card p { margin: 0; font-size: 0.9rem; color: #666; line-height: 1.5; }
-    .town-card .arrow { display: inline-block; margin-top: 0.75rem; color: #2c5f8d; font-weight: 600; font-size: 0.9rem; }
+    .town-card .arrow { display: inline-flex; align-items: center; min-height: 44px; margin-top: 0.5rem; color: var(--jrg-red); font-weight: 700; font-size: 0.9rem; }
     .filter-bar {
       position: sticky; top: 0; background: white; border-bottom: 1px solid #eaeaea; padding: 1rem 20px;
       z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -500,16 +510,20 @@
     .filter-bar .container { max-width: 1200px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
     .filter-bar input { flex: 1; min-width: 220px; padding: 0.75rem 1rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
     .filter-bar button { padding: 0.7rem 1.1rem; border: 1px solid #ccc; background: white; border-radius: 6px; cursor: pointer; font-size: 0.95rem; }
-    .filter-bar button.active { background: #1a3a5c; color: white; border-color: #1a3a5c; }
-    .cta-section { background: #1a3a5c; color: white; padding: 60px 20px; text-align: center; }
-    .cta-section h2 { font-size: 2rem; margin: 0 0 1rem; }
+    .filter-bar button.active { background: var(--jrg-red); color: white; border-color: var(--jrg-red); }
+    .filter-bar button:focus-visible, .town-card:focus-visible, .cta-section .btn:focus-visible { outline: 3px solid var(--jrg-gold); outline-offset: 3px; }
+    .cta-section { background: var(--jrg-charcoal); color: white; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(184, 150, 46, 0.5); }
+    .cta-section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; margin: 0 0 1rem; }
     .cta-section p { max-width: 640px; margin: 0 auto 1.5rem; opacity: 0.95; }
     .cta-section .btn {
-      display: inline-block; background: #f5b942; color: #1a3a5c; padding: 0.9rem 2rem;
+      display: inline-flex; align-items: center; min-height: 44px; background: var(--jrg-gold); color: var(--jrg-charcoal); padding: 0.9rem 2rem;
       border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1.05rem;
     }
-    .cta-section .btn:hover { background: #ffc857; }
+    .cta-section .btn:hover { background: var(--jrg-gold-light); }
     @media (max-width: 640px) {
+      .site-header > .container { align-items: flex-start; flex-direction: column; }
+      .site-header nav { width: 100%; }
+      .site-header nav ul { gap: 0.75rem 1rem; flex-wrap: wrap; }
       .communities-hero { padding: 60px 16px 40px; }
       .communities-hero h1 { font-size: 1.75rem; }
       .county-section { padding: 40px 16px; }

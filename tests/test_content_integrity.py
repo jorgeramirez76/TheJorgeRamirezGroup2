@@ -137,6 +137,15 @@ class ContentIntegrityTests(unittest.TestCase):
         }
         self.assertEqual(registered, schema_urls)
 
+    def test_communities_hubs_use_the_homepage_palette(self) -> None:
+        for relative in ("communities/index.html", "es/communities/index.html"):
+            source = read(relative)
+            self.assertNotRegex(source, r"(?i)#(?:1a3a5c|2c5f8d|f5b942|ffc857)\b")
+            for token in ("#C41230", "#B8962E", "#1A1A1A", "#FAFAF8"):
+                self.assertIn(token, source, f"{relative} is missing {token}")
+            self.assertIn("'Playfair Display', Georgia, serif", source)
+            self.assertRegex(source, r"\.town-card \.arrow \{[^}]*min-height: 44px")
+
     def test_basking_ridge_relationship_is_somerset_not_morris(self) -> None:
         relationship = self.facts["placeRelationships"]["basking-ridge"]
         self.assertEqual("Somerset", relationship["county"])

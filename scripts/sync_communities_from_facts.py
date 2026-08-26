@@ -377,7 +377,7 @@ if replacements != 1:
     raise RuntimeError("Spanish communities hub is missing its JSON-LD block")
 
 spanish, replacements = re.subn(
-    r"<h1>\d+ Comunidades de NJ que Atendemos</h1>",
+    r"<h1>(?:\d+ Comunidades de NJ que Atendemos|\d+ guías de comunidades de NJ)</h1>",
     f"<h1>{total} guías de comunidades de NJ</h1>",
     spanish,
     count=1,
