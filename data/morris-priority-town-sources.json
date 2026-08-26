@@ -1,0 +1,387 @@
+{
+  "accessed": "2026-08-25",
+  "scope": "Primary and official sources used for the five Morris County priority town guides",
+  "towns": {
+    "chatham-borough": [
+      {
+        "category": "municipal",
+        "publisher": "Borough of Chatham",
+        "url": "https://www.chathamborough.org/",
+        "fact_supported": "The municipal website represents Chatham Borough government and publishes current department and public-service contacts.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Borough of Chatham",
+        "url": "https://www.chathamborough.org/how/313-view",
+        "fact_supported": "The borough resource hub links its code, master plan, zoning map, tax map, flood maps, and historic-district guidance.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Borough of Chatham Tax Assessor",
+        "url": "https://www.chathamborough.org/departments/assessor",
+        "fact_supported": "The assessor maintains borough ownership and assessment records and provides access to current property-record resources.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "civic",
+        "publisher": "Borough of Chatham Recreation Department",
+        "url": "https://www.chathamborough.org/departments/recreation",
+        "fact_supported": "The borough recreation page identifies municipal facilities including Shepard Kollock Park, Memorial Park, Lum Field, Garden Park, and Stanley Park.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "transportation",
+        "publisher": "NJ TRANSIT",
+        "url": "https://www.njtransit.com/station/chatham-station",
+        "fact_supported": "Chatham Station is on Front Street in Chatham, serves the Morris and Essex line, and directs parking questions to Chatham Borough.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "School District of the Chathams",
+        "url": "https://www.chatham-nj.org/",
+        "fact_supported": "The official district website is the source for registration, school contacts, calendars, and attendance information serving the Chathams.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "New Jersey Department of Education",
+        "url": "https://www.nj.gov/education/schoolperformance/",
+        "fact_supported": "The state publishes School Performance Reports for neutral research into each public school and district.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "demographics",
+        "publisher": "U.S. Census Bureau",
+        "url": "https://www.census.gov/quickfacts/fact/table/chathamboroughnewjersey/",
+        "fact_supported": "QuickFacts treats Chatham Borough as its own Census geography, separate from Chatham Township.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "New Jersey Department of Environmental Protection",
+        "url": "https://dep.nj.gov/climatechange/flood-tool/",
+        "fact_supported": "The state flood indicator is a screening resource and says a site-specific assessment is still necessary.",
+        "accessed": "2026-08-25"
+      }
+    ],
+    "chatham-township": [
+      {
+        "category": "municipal",
+        "publisher": "Township of Chatham",
+        "url": "https://chathamtownship.org/",
+        "fact_supported": "The official municipal website identifies Chatham Township government and its municipal building at 58 Meyersville Road.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Township of Chatham",
+        "url": "https://chathamtownship.org/resources/maps/",
+        "fact_supported": "The township map library links its zoning map, tax map, watershed map, county GIS, state GIS, and FEMA mapping resources.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Township of Chatham Tax Assessor",
+        "url": "https://chathamtownship.org/departments/tax-assessor/",
+        "fact_supported": "The township assessor page is the official starting point for current assessment records and assessment questions.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "civic",
+        "publisher": "Township of Chatham Parks and Recreation",
+        "url": "https://chathamtownship.org/departments/parks-recreation/",
+        "fact_supported": "The township recreation page identifies Colony Pool and township facilities including Nash, Shunpike, Esternay, and Mountainview.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "civic",
+        "publisher": "Township of Chatham Open Space Committee",
+        "url": "https://chathamtownship.org/government/open-space-committee/documents-files/",
+        "fact_supported": "The township publishes open-space plans, inventories, and trail-map documents for current civic research.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "transportation",
+        "publisher": "NJ TRANSIT",
+        "url": "https://www.njtransit.com/station/chatham-station",
+        "fact_supported": "The named Chatham rail station is on Front Street and its municipal parking contact is Chatham Borough, not Chatham Township.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "School District of the Chathams",
+        "url": "https://www.chatham-nj.org/",
+        "fact_supported": "The shared district website supplies current registration, school, and attendance information for the two Chatham municipalities.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "New Jersey Department of Education",
+        "url": "https://www.nj.gov/education/schoolperformance/",
+        "fact_supported": "The state publishes School Performance Reports for neutral school-by-school and district research.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "demographics",
+        "publisher": "U.S. Census Bureau",
+        "url": "https://www.census.gov/quickfacts/fact/table/chathamtownshipmorriscountynewjersey/",
+        "fact_supported": "QuickFacts identifies Chatham Township in Morris County as a separate Census geography from Chatham Borough.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "New Jersey Department of Environmental Protection",
+        "url": "https://dep.nj.gov/climatechange/flood-tool/",
+        "fact_supported": "The state flood indicator is a screening resource and does not replace site-specific flood investigation.",
+        "accessed": "2026-08-25"
+      }
+    ],
+    "east-hanover": [
+      {
+        "category": "municipal",
+        "publisher": "Township of East Hanover",
+        "url": "https://www.easthanovertownship.com/",
+        "fact_supported": "The municipal website is the official directory for East Hanover Township government, departments, notices, and meetings.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "civic",
+        "publisher": "Township of East Hanover Recreation Department",
+        "url": "https://www.easthanovertownship.com/Departments/recreation",
+        "fact_supported": "The recreation department publishes current information for township facilities and programs centered at Lurker Park.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Township of East Hanover Tax Assessor",
+        "url": "https://www.easthanovertownship.com/Departments/tax-assessor",
+        "fact_supported": "The assessor page links official property-tax records, tax maps, and county taxation resources.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Township of East Hanover",
+        "url": "https://www.easthanovertownship.com/ordinances",
+        "fact_supported": "The township posts adopted ordinances, including measures that may affect land use and zoning requirements.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "transportation",
+        "publisher": "NJ TRANSIT",
+        "url": "https://www.njtransit.com/trip-planner-to",
+        "fact_supported": "The official trip planner provides current address-specific transit options, times, transfers, and service alerts.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "East Hanover Township School District",
+        "url": "https://www.easthanoverschools.org/",
+        "fact_supported": "The district website is the official source for elementary and middle-school registration, contacts, and calendars.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "Hanover Park Regional High School District",
+        "url": "https://www.hpreg.org/",
+        "fact_supported": "The regional district website provides current secondary-school information and registration resources.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "New Jersey Department of Education",
+        "url": "https://www.nj.gov/education/schoolperformance/",
+        "fact_supported": "The state publishes School Performance Reports for neutral district and school research without third-party scores.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "demographics",
+        "publisher": "U.S. Census Bureau",
+        "url": "https://www.census.gov/quickfacts/fact/table/easthanovertownshipmorriscountynewjersey/PST045225",
+        "fact_supported": "QuickFacts supplies official Census context for East Hanover Township in Morris County.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "New Jersey Department of Environmental Protection",
+        "url": "https://dep.nj.gov/climatechange/flood-tool/",
+        "fact_supported": "The state flood indicator is a screening resource and advises property-specific investigation.",
+        "accessed": "2026-08-25"
+      }
+    ],
+    "denville": [
+      {
+        "category": "municipal",
+        "publisher": "Township of Denville",
+        "url": "https://www.denvillenj.gov/",
+        "fact_supported": "The official township website publishes Denville government, department, meeting, and public-service information.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Township of Denville Zoning Department",
+        "url": "https://www.denvillenj.gov/departments/ZONINGDEPARTMENT.php",
+        "fact_supported": "The zoning department explains that land use and many property projects require municipal review and current survey information.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Township of Denville",
+        "url": "https://www.denvillenj.gov/departments/selling_your_house.php",
+        "fact_supported": "The official sale checklist directs sellers to fire-safety inspection requirements and closure of open permits before transfer.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Township of Denville Tax Assessor",
+        "url": "https://www.denvillenj.gov/departments/tax_assessor.php",
+        "fact_supported": "The assessor maintains local tax maps, assessment lists, and real-property valuation records.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "civic",
+        "publisher": "Township of Denville",
+        "url": "https://www.denvillenj.gov/parks_and_fields.php",
+        "fact_supported": "The township inventory identifies Cook's Pond, Veterans Memorial Park, Muriel Hepner Park, Gardner Field, and other public spaces.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "civic",
+        "publisher": "Township of Denville",
+        "url": "https://www.denvillenj.gov/trail_system.php",
+        "fact_supported": "The municipal trail page provides official trail-system information for trip and access research.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "transportation",
+        "publisher": "NJ TRANSIT",
+        "url": "https://www.njtransit.com/station/denville-station",
+        "fact_supported": "Denville Station is on Estling Lake Road and serves both Morris and Essex and Montclair-Boonton rail lines.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "Denville Township School District",
+        "url": "https://www.denville.org/",
+        "fact_supported": "The district website supplies current information for Lakeview, Riverview, and Valleyview schools and registration.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "Morris Hills Regional District",
+        "url": "https://www.mhrd.org/",
+        "fact_supported": "The regional district website provides current secondary-school, registration, and attendance information.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "New Jersey Department of Education",
+        "url": "https://www.nj.gov/education/schoolperformance/",
+        "fact_supported": "The state publishes School Performance Reports for neutral research into public schools and districts.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "New Jersey Department of Environmental Protection",
+        "url": "https://dep.nj.gov/climatechange/flood-tool/",
+        "fact_supported": "The state flood indicator is a screening tool and does not replace parcel-specific due diligence.",
+        "accessed": "2026-08-25"
+      }
+    ],
+    "morris-plains": [
+      {
+        "category": "municipal",
+        "publisher": "Borough of Morris Plains",
+        "url": "https://morrisplainsboro.org/",
+        "fact_supported": "The official borough website publishes Morris Plains government, department, notice, and meeting resources.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "municipal",
+        "publisher": "Borough of Morris Plains",
+        "url": "https://morrisplainsboro.org/governing-body/",
+        "fact_supported": "The governing-body page identifies Morris Plains as a borough and explains its municipal government structure.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Borough of Morris Plains Tax Assessor",
+        "url": "https://morrisplainsboro.org/tax-assessor/",
+        "fact_supported": "The assessor maintains property assessments and records and links the Morris County Board of Taxation.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Borough of Morris Plains",
+        "url": "https://morrisplainsboro.org/borough-maps/",
+        "fact_supported": "The borough map library includes zoning, land-use, open-space, trail, street-classification, and development maps.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Borough of Morris Plains",
+        "url": "https://morrisplainsboro.org/zoning-permit-requirements/",
+        "fact_supported": "The borough publishes current zoning-permit requirements for property changes and land-use questions.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "Borough of Morris Plains",
+        "url": "https://morrisplainsboro.org/residential-sales-rentals/",
+        "fact_supported": "The borough explains current inspection and municipal steps connected with residential sales and changes of occupancy.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "civic",
+        "publisher": "Borough of Morris Plains",
+        "url": "https://morrisplainsboro.org/venues/",
+        "fact_supported": "The official venue directory identifies Watnong Park, Community Park, and borough recreation facilities.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "transportation",
+        "publisher": "NJ TRANSIT",
+        "url": "https://www.njtransit.com/station/morris-plains-station",
+        "fact_supported": "Morris Plains Station is in the Speedwell Avenue and Route 202 area and serves the Morris and Essex line.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "Morris Plains School District",
+        "url": "https://sites.google.com/mpsdk8.org/mpsdk8/district-info",
+        "fact_supported": "The district identifies Mountain Way for prekindergarten through grade two, Borough School for grades three through eight, and a high-school sending relationship.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "Morris School District",
+        "url": "https://www.morrisschooldistrict.org/district/school-overviews",
+        "fact_supported": "The receiving district's school overview identifies Morristown High School and current district contacts.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "schools",
+        "publisher": "New Jersey Department of Education",
+        "url": "https://www.nj.gov/education/schoolperformance/",
+        "fact_supported": "The state publishes School Performance Reports for neutral school and district research.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "demographics",
+        "publisher": "U.S. Census Bureau",
+        "url": "https://www.census.gov/quickfacts/fact/table/morrisplainsboroughnewjersey/PST045225",
+        "fact_supported": "QuickFacts supplies official Census context for Morris Plains Borough as its own geography.",
+        "accessed": "2026-08-25"
+      },
+      {
+        "category": "property",
+        "publisher": "New Jersey Department of Environmental Protection",
+        "url": "https://dep.nj.gov/climatechange/flood-tool/",
+        "fact_supported": "The state flood indicator supports preliminary screening while requiring property-specific investigation.",
+        "accessed": "2026-08-25"
+      }
+    ]
+  }
+}
