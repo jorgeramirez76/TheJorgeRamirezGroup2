@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "reviewed": "2026-08-26",
+  "scope": "Bilingual New Jersey home-buyer process and downloadable planning guide",
+  "methodology": {
+    "principle": "Use the agency responsible for each step, keep volatile amounts out of editorial copy, and direct buyers to their current contract, property, program, loan, title, insurance, inspection, and closing documents.",
+    "volatile_values_excluded": [
+      "interest rates, annual percentage rates, and payment examples",
+      "down-payment rules of thumb and minimum credit scores",
+      "assistance amounts, income limits, and purchase-price limits",
+      "closing-cost percentages and professional fee ranges",
+      "market forecasts, offer-volume claims, and transaction-duration promises"
+    ]
+  },
+  "sources": [
+    {
+      "id": "njdobi-real-estate-topics",
+      "url": "https://www.nj.gov/dobi/division_consumers/realestate/re_menu.htm",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "fact_supported": "NJDOBI identifies New Jersey brokerage relationships, the Real Estate Commission, license resources, and its official consumer buying guides.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "njdobi-buying-guide",
+      "url": "https://nj.gov/dobi/division_consumers/pdf/buyingahome.pdf",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "fact_supported": "NJDOBI states that many buyers choose legal representation but it is not required, and explains licensee-prepared contracts, attorney review, independent inspection, title work, and settlement preparation.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "njdobi-brokerage-bulletin",
+      "url": "https://www.nj.gov/dobi/bulletins/blt24_11.pdf",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "fact_supported": "NJDOBI explains written brokerage service agreements, required agreement terms, brokerage relationships, and that broker compensation is negotiable and not set by law.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "njhmfa-roadmap",
+      "url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/",
+      "publisher": "New Jersey Housing and Mortgage Finance Agency",
+      "fact_supported": "NJHMFA publishes a homebuying roadmap, participating-lender path, education resources, program links, and housing-counselor resources.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "njhmfa-programs",
+      "url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/",
+      "publisher": "New Jersey Housing and Mortgage Finance Agency",
+      "fact_supported": "NJHMFA publishes current mortgage and assistance program descriptions, eligibility resources, fact sheets, and the participating-lender route.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "njhmfa-faq",
+      "url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/faqs/",
+      "publisher": "New Jersey Housing and Mortgage Finance Agency",
+      "fact_supported": "NJHMFA says its FAQs are general information rather than final program requirements and directs applicants to current program materials and participating lenders.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "cfpb-toolkit",
+      "url": "https://www.consumerfinance.gov/owning-a-home/explore/home-loan-toolkit/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "fact_supported": "CFPB's home-loan toolkit organizes mortgage shopping, closing-cost review, and preparation for homeownership.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "cfpb-loan-estimate",
+      "url": "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "fact_supported": "CFPB explains how to review and compare Loan Estimates, including loan terms, projected payment, loan costs, other costs, lender credits, and estimated cash to close.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "cfpb-closing-disclosure",
+      "url": "https://www.consumerfinance.gov/owning-a-home/closing-disclosure/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "fact_supported": "CFPB explains how to compare the Closing Disclosure with the latest Loan Estimate and resolve unexpected terms or charges before closing.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "cfpb-closing-roadmap",
+      "url": "https://www.consumerfinance.gov/owning-a-home/close/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "fact_supported": "CFPB publishes a closing roadmap covering final documents, cash-to-close preparation, the final walk-through, signing, and post-closing records.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "cfpb-model-forms",
+      "url": "https://www.consumerfinance.gov/compliance/compliance-resources/mortgage-resources/tila-respa-integrated-disclosures/forms-samples/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "fact_supported": "CFPB publishes English and Spanish Loan Estimate and Closing Disclosure model forms and samples.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "hud-fair-housing",
+      "url": "https://www.hud.gov/helping-americans/fair-housing-act-overview",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "fact_supported": "HUD explains that the Fair Housing Act applies when buying a home, seeking a mortgage, and taking part in other housing-related activities.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    },
+    {
+      "id": "hud-housing-counseling",
+      "url": "https://www.hud.gov/stat/sfh/housing-counseling",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "fact_supported": "HUD maintains the search and telephone path for participating housing-counseling agencies.",
+      "accessed": "2026-08-26",
+      "http_status": 200
+    }
+  ],
+  "pages": {
+    "nj-home-buyer-guide.html": {
+      "language": "en-US",
+      "source_ids": [
+        "njdobi-real-estate-topics",
+        "njdobi-buying-guide",
+        "njdobi-brokerage-bulletin",
+        "njhmfa-roadmap",
+        "njhmfa-programs",
+        "njhmfa-faq",
+        "cfpb-toolkit",
+        "cfpb-loan-estimate",
+        "cfpb-closing-disclosure",
+        "cfpb-closing-roadmap",
+        "cfpb-model-forms",
+        "hud-fair-housing",
+        "hud-housing-counseling"
+      ]
+    },
+    "es/nj-home-buyer-guide.html": {
+      "language": "es-US",
+      "source_ids": [
+        "njdobi-real-estate-topics",
+        "njdobi-buying-guide",
+        "njdobi-brokerage-bulletin",
+        "njhmfa-roadmap",
+        "njhmfa-programs",
+        "njhmfa-faq",
+        "cfpb-toolkit",
+        "cfpb-loan-estimate",
+        "cfpb-closing-disclosure",
+        "cfpb-closing-roadmap",
+        "cfpb-model-forms",
+        "hud-fair-housing",
+        "hud-housing-counseling"
+      ]
+    }
+  }
+}

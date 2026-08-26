@@ -10,11 +10,24 @@
   var form = document.getElementById("lmForm");
   var success = document.getElementById("lmSuccess");
   var dl = document.getElementById("lmDownload");
+  var formStatus = document.getElementById("lmFormStatus");
   if (!card || !form || !success) return;
 
   var guide = card.getAttribute("data-guide") || "guide";
   var pdf = card.getAttribute("data-pdf") || "/guides/nj-home-seller-guide.pdf";
   var source = card.getAttribute("data-source") || (location.pathname || "").replace(/^\//, "");
+  var errorName = card.getAttribute("data-error-name") || "Please enter your first name.";
+  var errorEmail = card.getAttribute("data-error-email") || "Please enter a valid email so we can follow up.";
+  var sendingLabel = card.getAttribute("data-sending") || "Sending…";
+
+  function showError(message, field) {
+    if (formStatus) {
+      formStatus.textContent = message;
+    } else {
+      alert(message);
+    }
+    if (field && typeof field.focus === "function") field.focus();
+  }
 
   function deliver() {
     // Instant download of the e-book (same-origin, download attribute honored)
@@ -29,8 +42,11 @@
     } catch (e) { /* fall back to the manual link below */ }
     if (dl) dl.setAttribute("href", pdf);
     // Swap form for the success/confirmation panel
+    card.hidden = true;
     card.style.display = "none";
+    success.hidden = false;
     success.style.display = "block";
+    success.focus();
     try { success.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
     try { if (window.gtag) gtag("event", "generate_lead", { form: "lead-magnet", guide: guide }); } catch (e) {}
   }
@@ -42,13 +58,17 @@
     var honey = form.querySelector('input[name="_honey"]');
     if (honey && honey.value) { deliver(); return; }
 
-    var name = (form.querySelector('[name="name"]') || {}).value || "";
-    var email = (form.querySelector('[name="email"]') || {}).value || "";
-    var phone = (form.querySelector('[name="phone"]') || {}).value || "";
+    var nameField = form.querySelector('[name="name"]');
+    var emailField = form.querySelector('[name="email"]');
+    var phoneField = form.querySelector('[name="phone"]');
+    var name = (nameField || {}).value || "";
+    var email = (emailField || {}).value || "";
+    var phone = (phoneField || {}).value || "";
     name = name.trim(); email = email.trim(); phone = phone.trim();
 
-    if (!name) { alert("Please enter your first name."); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert("Please enter a valid email so we can follow up."); return; }
+    if (formStatus) formStatus.textContent = "";
+    if (!name) { showError(errorName, nameField); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError(errorEmail, emailField); return; }
 
     // Optional SMS opt-in — a lead is only textable if they ticked the box AND gave a phone.
     var smsBox = form.querySelector('[name="smsConsent"]');
@@ -56,7 +76,8 @@
     var consentLanguage = card.getAttribute("data-consent") || "";
 
     var btn = form.querySelector('button[type="submit"]');
-    if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+    if (btn) { btn.disabled = true; btn.textContent = sendingLabel; }
+    form.setAttribute("aria-busy", "true");
 
     var payload = {
       name: name,
