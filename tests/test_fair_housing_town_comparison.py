@@ -196,10 +196,10 @@ class FairHousingTownComparisonTests(unittest.TestCase):
             exact,
         )
 
-    def test_pages_explain_legacy_query_without_turning_it_into_targeting(self) -> None:
-        for language, source, phrase in (
-            ("en", self.en, "best NJ towns for families"),
-            ("es", self.es, "mejores pueblos de NJ para familias"),
+    def test_pages_explain_legacy_intent_without_repeating_targeting_queries(self) -> None:
+        for language, source, phrase, neutral_marker in (
+            ("en", self.en, "best NJ towns for families", "objective information"),
+            ("es", self.es, "mejores pueblos de NJ para familias", "información objetiva"),
         ):
             note = re.search(
                 r'<aside\b[^>]*class=["\'][^"\']*legacy-query-note[^"\']*["\'][^>]*>(.*?)</aside>',
@@ -208,8 +208,8 @@ class FairHousingTownComparisonTests(unittest.TestCase):
             )
             with self.subTest(language=language):
                 self.assertIsNotNone(note)
-                self.assertIn(phrase.casefold(), visible_text(note.group(1)).casefold())
-                self.assertNotIn(phrase.casefold(), visible_text(without_legacy_note(source)).casefold())
+                self.assertIn(neutral_marker.casefold(), visible_text(note.group(1)).casefold())
+                self.assertNotIn(phrase.casefold(), visible_text(source).casefold())
 
     def test_visible_copy_and_metadata_avoid_steering_rankings_and_invented_numbers(self) -> None:
         failures: list[str] = []
