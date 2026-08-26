@@ -12,6 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPING = ROOT / "data" / "english-snippet-backlog.json"
+QUARANTINE = ROOT / "data" / "english-fair-housing-quarantine.json"
 SKIP_DIRS = {".git", "crm", "node_modules", "property-leads-system"}
 
 
@@ -67,6 +68,10 @@ class EnglishSnippetBacklogTests(unittest.TestCase):
         mapping = json.loads(MAPPING.read_text(encoding="utf-8"))
         cls.pages: dict[str, dict[str, str]] = mapping["pages"]
         cls.retired_pages = set(mapping.get("retired_pages", []))
+        cls.quarantined_pages = {
+            page["file"]
+            for page in json.loads(QUARANTINE.read_text(encoding="utf-8"))["pages"]
+        }
 
     def test_mapping_has_exact_original_backlog_scope(self) -> None:
         self.assertEqual(140, len(self.pages))
@@ -79,7 +84,7 @@ class EnglishSnippetBacklogTests(unittest.TestCase):
 
     def test_exact_metadata_lengths_and_social_sync(self) -> None:
         for relative, expected in self.pages.items():
-            if relative in self.retired_pages:
+            if relative in self.retired_pages or relative in self.quarantined_pages:
                 continue
             parser = parse(ROOT / relative)
 
@@ -121,15 +126,19 @@ class EnglishSnippetBacklogTests(unittest.TestCase):
             if any(part in SKIP_DIRS for part in relative.parts):
                 continue
             parser = parse(path)
+            if "noindex" in parser.meta("name", "robots").lower():
+                continue
             title_owners[parser.title.strip()].append(relative.as_posix())
             description_owners[parser.meta("name", "description")].append(
                 relative.as_posix()
             )
 
         for relative in self.pages:
-            if relative in self.retired_pages:
+            if relative in self.retired_pages or relative in self.quarantined_pages:
                 continue
             parser = parse(ROOT / relative)
+            if "noindex" in parser.meta("name", "robots").lower():
+                continue
             self.assertEqual(
                 [relative],
                 title_owners[parser.title.strip()],

@@ -51,7 +51,7 @@ const countyInfo = {
     "Essex": {
         towns: 11,
         highlight: "Maplewood, South Orange, Montclair, Livingston",
-        description: "Walkable downtowns, Midtown Direct trains, and diverse communities from Montclair to Livingston.",
+        description: "Walkable downtowns, Midtown Direct trains, and communities from Montclair to Livingston.",
         photo: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80&fit=crop"
     },
     "Hudson": {
@@ -63,19 +63,19 @@ const countyInfo = {
     "Morris": {
         towns: 37,
         highlight: "Chatham, Madison, Morristown, Florham Park",
-        description: "local schools, green space, and premier commuter towns along the Morris & Essex Line.",
+        description: "local school-district information, green space, and higher-priced commuter towns along the Morris & Essex Line.",
         photo: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&fit=crop"
     },
     "Middlesex": {
         towns: 22,
         highlight: "Edison, Metuchen, Woodbridge, South Plainfield",
-        description: "Diverse communities with local schools, major highway access, and varied housing options.",
+        description: "Communities with local schools, major highway access, and varied housing options.",
         photo: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80&fit=crop"
     },
     "Union": {
         towns: 21,
         highlight: "Summit, Westfield, Cranford, Scotch Plains",
-        description: "Jorge's home turf — top commuter towns with outstanding schools and strong resale values.",
+        description: "Jorge's home turf — top commuter towns with local public-school districts and direct resale values.",
         photo: "https://images.unsplash.com/photo-1598228723793-52759bba239c?w=600&q=80&fit=crop"
     },
     "Somerset": {

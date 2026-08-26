@@ -1,0 +1,73 @@
+{
+  "base": "831c7918f9fcaad2496c4ea039ed1d8cc217038c",
+  "archived_on": "2026-08-26",
+  "policy": "Every listed Markdown source is a concise published:false stub and cannot regenerate unsupported or steering-oriented public copy.",
+  "sources": [
+    {
+      "file": "_posts/2026-03-30-sell-home-hoboken-nj-2026.md",
+      "public_file": "blog/selling-home-hoboken-nj-2026.html",
+      "destination": "/sell-your-home",
+      "reason": "public-route-quarantined"
+    },
+    {
+      "file": "_posts/2026-03-30-sell-home-livingston-nj-2026.md",
+      "public_file": "blog/selling-home-livingston-nj-2026.html",
+      "destination": "/sell-your-home",
+      "reason": "public-route-quarantined"
+    },
+    {
+      "file": "_posts/2026-03-30-sell-home-montclair-nj-2026.md",
+      "public_file": "blog/selling-home-montclair-nj-2026.html",
+      "destination": "/sell-your-home",
+      "reason": "public-route-quarantined"
+    },
+    {
+      "file": "_posts/2026-03-30-sell-home-old-bridge-nj-2026.md",
+      "public_file": "blog/selling-home-old-bridge-nj-2026.html",
+      "destination": "/sell-your-home",
+      "reason": "public-route-quarantined"
+    },
+    {
+      "file": "_posts/2026-03-30-sell-home-scotch-plains-nj-2026.md",
+      "public_file": "blog/selling-home-scotch-plains-nj-2026.html",
+      "destination": "/sell-your-home",
+      "reason": "public-route-quarantined"
+    },
+    {
+      "file": "_posts/2026-03-30-sell-home-summit-nj-2026.md",
+      "public_file": "blog/selling-home-summit-nj-2026.html",
+      "destination": "/sell-your-home",
+      "reason": "public-route-quarantined"
+    },
+    {
+      "file": "_posts/2026-03-30-sell-home-warren-nj-2026.md",
+      "public_file": "blog/selling-home-warren-township-nj-2026.html",
+      "destination": "/sell-your-home",
+      "reason": "public-route-quarantined"
+    },
+    {
+      "file": "_posts/2026-03-30-sell-home-west-orange-nj-2026.md",
+      "public_file": "blog/selling-home-west-orange-nj-2026.html",
+      "destination": "/sell-your-home",
+      "reason": "public-route-quarantined"
+    },
+    {
+      "file": "_posts/2026-04-03-nj-vs-ny-moving-2026.md",
+      "public_file": null,
+      "destination": "/nyc-to-nj-relocation",
+      "reason": "duplicate-ungrounded-draft"
+    },
+    {
+      "file": "_posts/2026-04-05-best-nj-towns-remote-workers-2026.md",
+      "public_file": null,
+      "destination": "/buy-a-home",
+      "reason": "ungrounded-audience-ranking-draft"
+    },
+    {
+      "file": "_posts/2026-04-10-nj-vs-ny-moving-2026.md",
+      "public_file": null,
+      "destination": "/nyc-to-nj-relocation",
+      "reason": "duplicate-ungrounded-draft"
+    }
+  ]
+}

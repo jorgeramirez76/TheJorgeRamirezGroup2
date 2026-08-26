@@ -90,56 +90,56 @@ COMPARISONS = {
         "title": "Westfield vs Summit NJ — Which Commuter Town Is Right for You?",
         "meta_desc": "Choosing between Westfield and Summit NJ? Compare commute, schools, prices, and lifestyle for 2026. Jorge Ramirez breaks down both towns honestly. Call 908-230-7844.",
         "intro": "Westfield and Summit are two of New Jersey's premier NYC commuter towns — both on the Raritan Valley / Midtown Direct line, both with local school districts, both with walkable downtowns. But they are genuinely different towns with different personalities. Here's how to pick.",
-        "verdict": "Summit is tighter, faster-paced, and more corporate. Westfield is larger, more family-oriented, and slightly more affordable. Choose Summit if you want a shorter commute and walk-to-train living. Choose Westfield if you want more space for the money and a bigger community feel.",
+        "verdict": "Summit is tighter, faster-paced, and more corporate. Westfield is larger, more residential, and slightly more affordable. Choose Summit if you want a shorter commute and walk-to-train living. Choose Westfield if you want more space for the money and a bigger community feel.",
         "rows": [
             ("Median Home Price 2026", "~$1.15M", "~$925K"),
             ("Population", "~22,000", "~31,000"),
             ("NYC Commute (Penn Station)", "25-30 min direct", "50-55 min (transfer)"),
-            ("School Rating", "A+ (Top 5 NJ)", "A+ (Top 10 NJ)"),
+            ("School-District Resource", "Review NJDOE reports", "Review NJDOE reports"),
             ("Downtown Walkability", "Very walkable, dense", "Very walkable, larger"),
             ("Property Tax Rate", "~2.0%", "~2.3%"),
             ("Average Lot Size", "Smaller (0.2 acres)", "Larger (0.3-0.5 acres)"),
-            ("Vibe", "Tight, corporate, compact", "Family, broad, sports-focused"),
+            ("Vibe", "Tight, corporate, compact", "Larger municipality; municipal recreation programs"),
         ],
-        "detail_a": "Summit is a small, dense, extraordinarily well-run town centered on a walkable downtown. The Midtown Direct train puts Penn Station at 25-30 minutes. Corporate executives, finance professionals, and NYC-adjacent families dominate the buyer pool. Home prices average 15-25% higher than nearby alternatives because of the commute and compactness. Summit Hall at the intersection of Springfield Ave and the train line is the civic center of town life.",
-        "detail_b": "Westfield is meaningfully larger — both geographically and demographically — with a bustling downtown anchored by Lord & Taylor (now Macy's), dozens of restaurants, and the Sunday farmers market. Schools are similarly strong. Lot sizes average 25-50% bigger than Summit. Commute is longer (Raritan Valley Line requires a transfer at Newark), which is the main reason Westfield homes price lower than Summit homes.",
-        "ideal_a": "Young professionals who walk to the train. DINK couples. Small families prioritizing short commute. Executives who need NYC access multiple days per week.",
-        "ideal_b": "Families with 2-3 kids. Buyers who want larger lots and more house for the money. Homeowners who work hybrid and only commute to NYC 2-3 days per week.",
+        "detail_a": "Summit is a small, dense, extraordinarily well-run town centered on a walkable downtown. The Midtown Direct train puts Penn Station at 25-30 minutes. Current home prices, inventory, and transit access should be compared using dated property-specific sales and official schedules. Summit Hall at the intersection of Springfield Ave and the train line is the civic center of town life.",
+        "detail_b": "Westfield is meaningfully larger — both in land area and population — with a bustling downtown anchored by Lord & Taylor (now Macy's), dozens of restaurants, and the Sunday farmers market. The towns have separate public-school systems. Lot sizes average 25-50% bigger than Summit. Commute is longer (Raritan Valley Line requires a transfer at Newark), which is the main reason Westfield homes price lower than Summit homes.",
+        "ideal_a": "Buyers comparing transit and employment access who walk to the train. households comparing two commuting schedules. Buyers comparing shorter commute options. Compare current NYC transit schedules and frequency for multi-day commuting.",
+        "ideal_b": "Buyers needing additional bedrooms and lot space. Buyers who want larger lots and more house for the money. Homeowners who work hybrid and only commute to NYC 2-3 days per week.",
     },
     "chatham-vs-madison-nj": {
         "town_a": "Chatham",
         "town_b": "Madison",
         "title": "Chatham vs Madison NJ — Two Small Commuter Towns, Compared",
         "meta_desc": "Chatham vs Madison NJ — two small Morris County commuter towns with local schools. Jorge Ramirez breaks down prices, commute, and lifestyle. Call 908-230-7844.",
-        "intro": "Chatham and Madison are the quintessential 'small NJ commuter town' choice — both on the Morristown Line (Midtown Direct), both with local schools, both with intimate walkable downtowns. They're more alike than different, but the nuances matter for the right buyer.",
-        "verdict": "Madison has a slightly more energetic downtown and better restaurant scene. Chatham is quieter, more family-traditional, and has newer housing stock. Both deliver excellent schools and similar commute times. For many buyers the choice comes down to specific neighborhoods and what's on market.",
+        "intro": "Chatham and Madison are neighboring Morris County rail-served municipalities — both on the Morristown Line (Midtown Direct), both with local schools, both with intimate walkable downtowns. They're more alike than different, but the property and transit differences should be verified directly.",
+        "verdict": "Madison has a slightly more energetic downtown and better restaurant scene. Chatham is quieter, lower in evening commercial activity, and has newer housing stock. Both deliver local public schools and similar commute times. For many buyers the choice comes down to specific neighborhoods and what's on market.",
         "rows": [
             ("Median Home Price 2026", "~$1.1M", "~$975K"),
             ("Population", "~9,000 (Borough)", "~16,000"),
             ("NYC Commute (Penn Station)", "42-48 min direct", "45-50 min direct"),
-            ("School Rating", "A+ (Top 5 NJ)", "A+ (Top 10 NJ)"),
-            ("Downtown Vibe", "Small, sleepy, family", "Livelier, restaurants, Drew University"),
+            ("School-District Resource", "Review NJDOE reports", "Review NJDOE reports"),
+            ("Downtown Vibe", "Small downtown; less evening activity", "Livelier, restaurants, Drew University"),
             ("Property Tax Rate", "~2.1%", "~2.0%"),
             ("Typical Home Age", "Newer construction common", "Mix — historic + newer"),
             ("Character", "Traditional suburban", "College-town energy"),
         ],
-        "detail_a": "Chatham Borough is tiny (about 9,000 people) and intensely family-focused. Streets of well-maintained Colonials and newer construction. The downtown has the basics (coffee, pharmacy, a couple restaurants) but isn't a dining destination. Top-rated Chatham schools are the #1 draw. Note: Chatham Township and Chatham Borough are different municipalities with different tax rates, housing stock, and school boundaries.",
+        "detail_a": "Chatham Borough is a compact municipality with Colonials and newer construction. Its downtown includes coffee shops, a pharmacy, and restaurants. Buyers should review the Chatham school district through current NJDOE School Performance Reports. Note: Chatham Township and Chatham Borough are different municipalities with different tax rates, housing stock, and school boundaries.",
         "detail_b": "Madison is larger and livelier — Drew University and Fairleigh Dickinson bring college-town energy, and the Main Street has noticeably more restaurants, boutiques, and bars than Chatham. The downtown Madison station puts Penn Station at 45-50 min via Midtown Direct. Housing stock is a mix of century-old historic homes and newer construction — more variety than Chatham.",
-        "ideal_a": "Traditional families with young kids who prioritize schools and quiet neighborhoods. Buyers who want new construction or turnkey homes.",
-        "ideal_b": "Families who want a more vibrant downtown and walkable restaurant scene. Buyers who appreciate older character homes alongside modern construction.",
+        "ideal_a": "You want to compare current NJDOE school-district information, available housing types, and street-level conditions. You prefer new construction or a turnkey home.",
+        "ideal_b": "Buyers who prefer a more vibrant downtown and walkable restaurant scene. Buyers who appreciate older character homes alongside modern construction.",
     },
     "montclair-vs-maplewood-nj": {
         "town_a": "Montclair",
         "town_b": "Maplewood",
         "title": "Montclair vs Maplewood NJ — Which Is the Better Move From NYC?",
         "meta_desc": "Montclair vs Maplewood NJ comparison. Both are top NYC transplant towns in Essex County — here's how they differ on price, commute, and culture. Call Jorge at 908-230-7844.",
-        "intro": "Montclair and Maplewood are the two most common destinations for NYC transplants leaving Brooklyn for NJ. Both are Essex County suburbs with diverse populations, strong arts scenes, and Midtown Direct-adjacent trains. They're frequently compared because they share a similar spirit — but the practical differences matter.",
-        "verdict": "Montclair is bigger, more urban, and more expensive — think 'small city' with museums, restaurants, and dense downtowns. Maplewood is smaller, cozier, with a more intimate village feel and slightly better affordability. Both attract the 'NYC creative-professional' demographic and both have strong progressive public schools.",
+        "intro": "Montclair and Maplewood are the two most common destinations for NYC transplants leaving Brooklyn for NJ. Both are Essex County suburbs with arts venues and Midtown Direct-adjacent trains. They're frequently compared because they share a similar spirit — but the practical differences matter.",
+        "verdict": "Montclair is bigger, more urban, and more expensive — think 'small city' with museums, restaurants, and dense downtowns. Maplewood is smaller, cozier, with a more intimate village feel and slightly better affordability. Both have arts venues, transit access, and local public-school districts; compare each factor independently.",
         "rows": [
             ("Median Home Price 2026", "~$895K", "~$775K"),
             ("Population", "~41,000", "~26,000"),
             ("NYC Commute (Midtown Direct)", "45-55 min (Montclair Heights/Walnut St)", "30-35 min direct from Maplewood Village"),
-            ("School Rating", "A- (diverse, progressive)", "A- (diverse, progressive)"),
+            ("School-District Resource", "Review NJDOE reports", "Review NJDOE reports"),
             ("Downtown Scale", "Multiple downtowns, much bigger", "One intimate village downtown"),
             ("Property Tax Rate", "~2.8%", "~2.9%"),
             ("Arts & Culture", "Montclair Art Museum, NJPAC nearby, robust", "Smaller but strong local arts"),
@@ -148,51 +148,51 @@ COMPARISONS = {
         "detail_a": "Montclair is often called 'the sixth borough' — it really does feel like a small city adjacent to NYC. Six train stations, three distinct downtowns (Upper Montclair, Montclair Center, Walnut Street), and a dining and arts scene that's deeper than most small NJ towns. Price tag reflects this. Home styles vary wildly: stately Victorian in Upper Montclair, modest Colonials in South End, mid-century in Watchung Plaza.",
         "detail_b": "Maplewood is smaller and more village-scaled. Maplewood Village (the downtown) is intensely walkable with local coffee shops, bookstores, boutiques, and restaurants. The Maplewood Midtown Direct station is the shortest commute in this comparison — 30-35 min to Penn Station. Slightly more affordable than Montclair for similar-quality housing.",
         "ideal_a": "Urban-minded NYC transplants who want more restaurants, more arts, multiple downtown options. Buyers willing to pay a premium for city-lite feel.",
-        "ideal_b": "Buyers who want shorter commute + cozier village scale + slightly better price. Families who want diverse progressive schools in a smaller-town setting.",
+        "ideal_b": "Buyers who want shorter commute + cozier village scale + slightly better price. Review current school programs and performance through district and NJDOE sources.",
     },
     "short-hills-vs-westfield-nj": {
         "town_a": "Short Hills (Millburn Township)",
         "town_b": "Westfield",
         "title": "Short Hills vs Westfield NJ — Which Luxury Commuter Town Wins?",
         "meta_desc": "Short Hills (Millburn) vs Westfield NJ — two of NJ's top-tier luxury commuter markets, compared on price, commute, schools, and lifestyle. Jorge Ramirez, 908-230-7844.",
-        "intro": "Short Hills and Westfield are both premier NJ luxury commuter towns, but they attract different buyer profiles. Short Hills is the pricier, more corporate, more nationally-known option. Westfield is the larger, slightly more affordable, family-heavy option. Both are on Midtown Direct — with meaningfully different commute times.",
+        "intro": "Short Hills and Westfield have different housing prices, municipal structures, downtown scale, and rail schedules. Short Hills is part of Millburn Township; Westfield is a separate municipality. Verify current property and transit information directly.",
         "verdict": "Short Hills for buyers who want the ultimate luxury name + shortest commute, willing to pay $200K-$500K+ more for the address. Westfield for buyers who want the premium commuter lifestyle at a relative discount with more house for the money.",
         "rows": [
             ("Median Home Price 2026", "~$1.7M (Short Hills)", "~$925K"),
             ("Population (Township)", "~20,000 (Millburn Twp)", "~31,000"),
             ("NYC Commute (Penn Station)", "30-35 min direct (Short Hills station)", "50-55 min (transfer via Newark)"),
-            ("School Rating", "A+ (Millburn Public Schools, Top 3 NJ)", "A+ (Top 10 NJ)"),
+            ("School-District Resource", "Millburn Township Public Schools", "Review NJDOE reports"),
             ("Downtown", "Small commercial area + The Mall at Short Hills", "Full vibrant downtown"),
             ("Luxury Market Depth", "Very deep $2M-$5M+ inventory", "Strong but less $3M+ availability"),
             ("Property Tax Rate", "~1.8%", "~2.0%"),
             ("Lot Sizes", "Larger on average (0.3-1 acre)", "Medium (0.2-0.4 acre)"),
         ],
-        "detail_a": "Short Hills is a neighborhood of Millburn Township — a small, affluent, intensely corporate section anchored by the Short Hills train station and The Mall at Short Hills. The Millburn Public Schools system routinely ranks in the top 3 of NJ. Home prices reflect the combination of premium schools, 30-35 min Midtown Direct commute, and genuine luxury inventory. Many residents work in NYC finance, consulting, or executive roles.",
-        "detail_b": "Westfield is larger, less corporate, and more family-focused than Short Hills. The downtown is a true destination (restaurants, shops, farmers market). Schools are excellent but the commute is 15-25 min longer because of the required transfer at Newark Penn. For families that want premium suburbs without the Short Hills price tag, Westfield is the most common alternative.",
-        "ideal_a": "NYC executives and finance professionals requiring shortest commute + top-3 schools + willing to pay premium. $1.5M-$4M buyers.",
-        "ideal_b": "Families who want premium commuter-town lifestyle for $250K-$500K less. Buyers who value bigger downtown and are ok with 50-min commute.",
+        "detail_a": "Short Hills is a section of Millburn Township with a rail station, the Mall at Short Hills, and higher-priced housing. Review current NJ Transit schedules, property-specific sales, taxes, and Millburn school information through official sources.",
+        "detail_b": "Westfield is larger, less corporate, and more residential than Short Hills. The downtown is a true destination (restaurants, shops, farmers market). Westfield Public Schools publishes current information through NJDOE. Verify current NJ Transit schedules, property-specific prices, taxes, and housing condition rather than treating Westfield as a categorical alternative.",
+        "ideal_a": "NYC executives and buyers comparing access to employment centers requiring shortest commute + Millburn school-district research plus a higher housing budget. $1.5M-$4M buyers.",
+        "ideal_b": "Buyers who prefer premium commuter-town lifestyle for $250K-$500K less. Buyers who value bigger downtown and are ok with 50-min commute.",
     },
     "cranford-vs-westfield-nj": {
         "town_a": "Cranford",
         "town_b": "Westfield",
         "title": "Cranford vs Westfield NJ — Price, Commute & Schools Compared",
         "meta_desc": "Cranford vs Westfield NJ — two Union County commuter towns with very different price points. Jorge Ramirez breaks down the real differences. Call 908-230-7844.",
-        "intro": "Cranford and Westfield are neighboring Union County towns, both on the Raritan Valley Line. They share the same county, similar commute, and similar school quality — but Westfield carries a $200K+ premium on similar homes. Here's when that premium is worth it, and when it isn't.",
-        "verdict": "Westfield if the premium makes sense for your budget and you want the deeper downtown and slightly better schools. Cranford if you want excellent schools and a walkable downtown for meaningfully less — Cranford is one of the best-value Union County towns right now.",
+        "intro": "Cranford and Westfield are neighboring Union County towns, both on the Raritan Valley Line. They share the same county, similar commute, and similar housing attributes, while Westfield's prices differ on similar homes. Here's when that premium is worth it, and when it isn't.",
+        "verdict": "Compare Westfield and Cranford using current property-specific prices, downtown and station distance, district records, taxes, and housing condition. Neither town label determines value for a particular property.",
         "rows": [
             ("Median Home Price 2026", "~$700K", "~$925K"),
             ("Population", "~24,000", "~31,000"),
             ("NYC Commute", "50-55 min (Raritan Valley + transfer)", "50-55 min (same line)"),
-            ("School Rating", "A (Top 30 NJ)", "A+ (Top 10 NJ)"),
+            ("School-District Resource", "Review NJDOE reports", "Review NJDOE reports"),
             ("Downtown", "Walkable, Rahway River running through", "Larger, more restaurants + retail"),
             ("Property Tax Rate", "~2.5%", "~2.0%"),
             ("Lot Sizes", "Medium (0.2-0.3 acre)", "Medium (0.2-0.4 acre)"),
-            ("Value Proposition", "Strong — under-priced relative to peer towns", "Premium — established brand town"),
+            ("Value Proposition", "Strong — under-priced relative to peer towns", "Higher listed prices — compare recent property-specific sales"),
         ],
         "detail_a": "Cranford is a quietly excellent commuter town that's been overlooked relative to Westfield despite being on the same train line. Cranford High is strong (though ranked slightly below Westfield's), the downtown is cute and walkable, and the Rahway River running through town adds distinctive character. For buyers who want the Union County commuter experience without the Westfield price tag, Cranford is the value play.",
-        "detail_b": "Westfield is the established premium town in Union County — the downtown is larger, restaurants deeper, school rankings slightly higher, and home prices reflect all three. Everything about Westfield is a half-step better than Cranford on paper, and the market has priced it accordingly. Worth it? Depends on your budget and what matters most.",
-        "ideal_a": "Value-seeking families who want a walkable commuter town for $200K+ less than Westfield. Buyers who don't need the #1 school ranking but want a solid A-rated district.",
-        "ideal_b": "Families willing to pay the premium for Westfield's brand, deeper amenities, and top-10 NJ school ranking.",
+        "detail_b": "Westfield's larger downtown, separate district structure, property mix, taxes, and current sale prices differ from Cranford's. Compare the same property type and date range rather than treating a town-wide label as a verdict.",
+        "ideal_a": "Compare walkability, current sale prices, transit schedules, and address-specific NJDOE school information; verify every figure before deciding.",
+        "ideal_b": "Compare current prices, downtown amenities, property condition, and address-specific NJDOE School Performance Reports directly.",
     },
 }
 
@@ -480,18 +480,18 @@ COMPARISON_TEMPLATE = r'''<!DOCTYPE html>
             <div class="town-card">
                 <h2>{town_a} — Deep Dive</h2>
                 <p>{detail_a}</p>
-                <div class="ideal"><strong>Ideal for:</strong> {ideal_a}</div>
+                <div class="ideal"><strong>Consider if:</strong> {ideal_a}</div>
             </div>
             <div class="town-card">
                 <h2>{town_b} — Deep Dive</h2>
                 <p>{detail_b}</p>
-                <div class="ideal"><strong>Ideal for:</strong> {ideal_b}</div>
+                <div class="ideal"><strong>Consider if:</strong> {ideal_b}</div>
             </div>
         </div>
 
         <div class="content-section">
             <h2>The Honest Recommendation</h2>
-            <p>Most buyers can be happy in either {town_a} or {town_b} — both are objectively excellent NJ towns. The right choice comes down to what you specifically value: commute length, lifestyle pace, home price, downtown character, or school ranking nuance. I walk buyers through these trade-offs in the first consultation so you're not picking based on a Zillow photo.</p>
+            <p>Most buyers can be happy in either {town_a} or {town_b} — compare current transit schedules, property-specific prices and condition, taxes, downtown access, and address-specific official information. The client makes the location decision after independent research.</p>
             <p>The other factor: what's actually on market when you're ready to buy. {town_a} might win on paper but have no inventory in your price range this month. {town_b} might have three listings that perfectly fit. Flexibility matters — don't fall in love with the town, fall in love with the right house in whichever town has it.</p>
 
             <h2>Related Resources</h2>
@@ -500,7 +500,7 @@ COMPARISON_TEMPLATE = r'''<!DOCTYPE html>
 
         <div class="cta-section">
             <h2>Ready to Dive Deeper?</h2>
-            <p>A free 30-minute conversation. We'll map your commute, budget, and school priorities, and you'll leave knowing which town (and which specific neighborhoods within it) actually fit.</p>
+            <p>A free 30-minute conversation. We'll organize current transit schedules, budget, housing criteria, taxes, and official public sources; you decide which properties to consider.</p>
             <a href="tel:908-230-7844">Call Jorge: 908-230-7844</a>
             <a href="index.html#contact">Request Consultation</a>
         </div>

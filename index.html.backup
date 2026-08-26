@@ -419,7 +419,7 @@
             <div class="section-header">
                 <span class="section-tag">Local Expertise</span>
                 <h2>Communities Across New Jersey</h2>
-                <p>Expert local knowledge of schools, transit, and neighborhoods. Search or filter by county to find your perfect community across 5 counties.</p>
+                <p>Expert local knowledge of schools, transit, and neighborhoods. Search or filter by county to find your community across 5 counties.</p>
             </div>
             
             <div class="search-container">
@@ -491,7 +491,7 @@
                 </div>
                 <div class="resource-card">
                     <h3>📍 School Districts</h3>
-                    <p>Research school ratings and districts across communities across six New Jersey counties.</p>
+                    <p>Research school-district resources and districts across communities across six New Jersey counties.</p>
                     <a href="#communities" class="resource-link">View Schools →</a>
                 </div>
                 <div class="resource-card">

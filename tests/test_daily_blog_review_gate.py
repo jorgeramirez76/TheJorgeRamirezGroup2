@@ -86,6 +86,33 @@ class DailyBlogReviewGateTests(unittest.TestCase):
             self.module.main(["--publish-reviewed"])
         self.assertEqual(2, raised.exception.code)
 
+    def test_prompt_requires_neutral_fair_housing_framing(self) -> None:
+        topic = {
+            "prompt_subject": "comparing New Jersey housing options",
+        }
+        prompt = self.module.build_prompt(topic)
+        self.assertIn("Follow fair-housing rules", prompt)
+        self.assertIn("proxy audiences", prompt)
+        self.assertIn("Present official school", prompt)
+
+    def test_validator_rejects_steering_language_before_publication(self) -> None:
+        self.post["body_html"] += (
+            "<p>This family-friendly community has top-rated schools and is "
+            "perfect for young professionals.</p>"
+        )
+        self.assertEqual(
+            "fair-housing review required: protected-audience targeting",
+            self.module.validate(self.post),
+        )
+
+    def test_validator_accepts_neutral_official_source_research(self) -> None:
+        self.post["body_html"] += (
+            "<p>Review address-level assignments and current NJDOE School "
+            "Performance Reports directly. Compare NJ Transit schedules, "
+            "municipal services, housing type, price, and property condition.</p>"
+        )
+        self.assertIsNone(self.module.validate(self.post))
+
 
 if __name__ == "__main__":
     unittest.main()

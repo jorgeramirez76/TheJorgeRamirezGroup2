@@ -24,15 +24,15 @@ def optimize_families_page():
     
     # 2. OPTIMIZE TITLE TAG (line 19)
     content = re.sub(
-        r'<title>Best NJ Towns for Families 2026 \| Schools, Safety &amp; Value</title>',
-        '<title>12 Best NJ Towns for Families 2026 (Ranked by Schools, Budget &amp; Commute)</title>',
+        r'<title>NJ Town Comparison 2026 \| Schools, Safety &amp; Value</title>',
+        '<title>12 NJ Town Comparison 2026 (Public Data, Budget &amp; Commute)</title>',
         content
     )
     
     # 3. OPTIMIZE META DESCRIPTION (line 21)
     content = re.sub(
-        r'<meta name="description" content="2026 update: 15 best NJ towns for families ranked by school ratings, safety, commute times &amp; home prices\. Summit, Westfield, Chatham, Cranford, Maplewood">',
-        '<meta name="description" content="Summit, Chatham &amp; Millburn lead with 9-10/10 schools ($1M-1.5M). Cranford &amp; Maplewood win on value ($700-850K). All 12 NJ family towns ranked by schools, commute time &amp; budget for 2026.">',
+        r'<meta name="description" content="2026 update: 15 NJ town comparisons using public data ratings, safety, commute times &amp; home prices\. Summit, Westfield, Chatham, Cranford, Maplewood">',
+        '<meta name="description" content="Summit, Chatham &amp; Millburn lead with school-district information ($1M-1.5M). Cranford &amp; Maplewood win on value ($700-850K). Compare 12 NJ towns using official school information, transit schedules, housing costs, and taxes.">',
         content
     )
     
@@ -40,7 +40,7 @@ def optimize_families_page():
     # Find the first <p> after the hero section and insert table after it
     comparison_table = '''
 <div class="comparison-table-wrapper" style="margin: 40px 0; overflow-x: auto;">
-  <h2 style="font-size: 1.75rem; margin-bottom: 20px; color: #1a1a1a;">Quick Comparison: Top 12 NJ Family Towns 2026</h2>
+  <h2 style="font-size: 1.75rem; margin-bottom: 20px; color: #1a1a1a;">NJ Town Comparison Using Public Information</h2>
   <table class="comparison-table" style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
     <thead>
       <tr style="background-color: #1a365d; color: white;">
@@ -56,7 +56,7 @@ def optimize_families_page():
       <tr style="background-color: #f7fafc;">
         <td style="padding: 10px; border: 1px solid #ddd;"><a href="/towns/summit.html" style="color: #2563eb; font-weight: 600;">Summit</a></td>
         <td style="padding: 10px; border: 1px solid #ddd;">Union</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">9-10/10</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">district-specific information</td>
         <td style="padding: 10px; border: 1px solid #ddd;">$1.3M-$1.5M</td>
         <td style="padding: 10px; border: 1px solid #ddd;">38 min (Midtown Direct)</td>
         <td style="padding: 10px; border: 1px solid #ddd;">Local schools + fast commute</td>
@@ -64,15 +64,15 @@ def optimize_families_page():
       <tr>
         <td style="padding: 10px; border: 1px solid #ddd;"><a href="/towns/millburn.html" style="color: #2563eb; font-weight: 600;">Millburn/Short Hills</a></td>
         <td style="padding: 10px; border: 1px solid #ddd;">Essex</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">9-10/10</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">district-specific information</td>
         <td style="padding: 10px; border: 1px solid #ddd;">$1.5M-$1.8M</td>
         <td style="padding: 10px; border: 1px solid #ddd;">35 min (Midtown Direct)</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Best schools in NJ</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">School-district information in NJ</td>
       </tr>
       <tr style="background-color: #f7fafc;">
         <td style="padding: 10px; border: 1px solid #ddd;"><a href="/towns/chatham.html" style="color: #2563eb; font-weight: 600;">Chatham</a></td>
         <td style="padding: 10px; border: 1px solid #ddd;">Morris</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">9-10/10</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">district-specific information</td>
         <td style="padding: 10px; border: 1px solid #ddd;">$1.0M-$1.1M</td>
         <td style="padding: 10px; border: 1px solid #ddd;">40 min (Midtown Direct)</td>
         <td style="padding: 10px; border: 1px solid #ddd;">Tight inventory, high demand</td>
@@ -80,7 +80,7 @@ def optimize_families_page():
       <tr>
         <td style="padding: 10px; border: 1px solid #ddd;"><a href="/towns/westfield.html" style="color: #2563eb; font-weight: 600;">Westfield</a></td>
         <td style="padding: 10px; border: 1px solid #ddd;">Union</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">9-10/10</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">district-specific information</td>
         <td style="padding: 10px; border: 1px solid #ddd;">$1.2M</td>
         <td style="padding: 10px; border: 1px solid #ddd;">55 min (Raritan Valley)</td>
         <td style="padding: 10px; border: 1px solid #ddd;">Downtown + youth sports</td>
@@ -88,7 +88,7 @@ def optimize_families_page():
       <tr style="background-color: #f7fafc;">
         <td style="padding: 10px; border: 1px solid #ddd;"><a href="/towns/livingston.html" style="color: #2563eb; font-weight: 600;">Livingston</a></td>
         <td style="padding: 10px; border: 1px solid #ddd;">Essex</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">9-10/10</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">district-specific information</td>
         <td style="padding: 10px; border: 1px solid #ddd;">$850K-$950K</td>
         <td style="padding: 10px; border: 1px solid #ddd;">50 min (bus/car)</td>
         <td style="padding: 10px; border: 1px solid #ddd;">Local schools, no train</td>
@@ -96,7 +96,7 @@ def optimize_families_page():
       <tr>
         <td style="padding: 10px; border: 1px solid #ddd;"><a href="/towns/madison.html" style="color: #2563eb; font-weight: 600;">Madison</a></td>
         <td style="padding: 10px; border: 1px solid #ddd;">Morris</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">8-9/10</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">district-specific information</td>
         <td style="padding: 10px; border: 1px solid #ddd;">$950K</td>
         <td style="padding: 10px; border: 1px solid #ddd;">48 min (Midtown Direct)</td>
         <td style="padding: 10px; border: 1px solid #ddd;">Walkable downtown</td>
@@ -104,7 +104,7 @@ def optimize_families_page():
       <tr style="background-color: #f7fafc;">
         <td style="padding: 10px; border: 1px solid #ddd;"><a href="/towns/ridgewood.html" style="color: #2563eb; font-weight: 600;">Ridgewood</a></td>
         <td style="padding: 10px; border: 1px solid #ddd;">Bergen</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">9-10/10</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">district-specific information</td>
         <td style="padding: 10px; border: 1px solid #ddd;">$1.1M-$1.3M</td>
         <td style="padding: 10px; border: 1px solid #ddd;">55 min (NJ Transit)</td>
         <td style="padding: 10px; border: 1px solid #ddd;">Bergen County favorite</td>
@@ -112,7 +112,7 @@ def optimize_families_page():
       <tr>
         <td style="padding: 10px; border: 1px solid #ddd;"><a href="/towns/glen-ridge.html" style="color: #2563eb; font-weight: 600;">Glen Ridge</a></td>
         <td style="padding: 10px; border: 1px solid #ddd;">Essex</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">9-10/10</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">district-specific information</td>
         <td style="padding: 10px; border: 1px solid #ddd;">$850K-$950K</td>
         <td style="padding: 10px; border: 1px solid #ddd;">45 min (Midtown Direct adj.)</td>
         <td style="padding: 10px; border: 1px solid #ddd;">Small-town feel</td>
@@ -169,13 +169,13 @@ def optimize_families_page():
     
     # 5. ADD INTERNAL LINKS
     # Link 1: After intro, add link to buy-a-home.html
-    buy_link = '<p>If you\'re <a href="/buy-a-home.html" style="color: #2563eb; font-weight: 600;">ready to buy in one of NJ\'s top family towns</a>, here\'s how I help families match schools, budget, and lifestyle beyond just school rankings.</p>'
+    buy_link = '<p>If you\'re <a href="/buy-a-home.html" style="color: #2563eb; font-weight: 600;">ready to buy in one of NJ\'s top family towns</a>, here\'s how I help families match schools, budget, and lifestyle beyond just official school-district information.</p>'
     
     # Link 2: Add sell link after a section
-    sell_link = '<p>Thinking about selling in one of these local school districts? Family demand is your biggest advantage. <a href="/sell-your-home.html" style="color: #2563eb; font-weight: 600;">Here\'s exactly how we position your home</a> to capture multiple offers from motivated families with school deadlines.</p>'
+    sell_link = '<p>Thinking about selling in one of these local school districts? Property-specific buyer interest varies by price, condition, location, and timing. <a href="/sell-your-home.html" style="color: #2563eb; font-weight: 600;">Here\'s exactly how we position your home</a> to reach active housing searches without protected-class profiling.</p>'
     
     # Link 3: Add valuation link
-    valuation_link = '<p>Want to know what your home could sell for in one of these premium family towns? <a href="/home-valuation.html" style="color: #2563eb; font-weight: 600;">Get your free CMA (not a Zestimate)</a> — we\'ll show you block-by-block comps and exactly what\'s driving prices in your neighborhood.</p>'
+    valuation_link = '<p>Want to know what your home could sell for in one of these New Jersey towns? <a href="/home-valuation.html" style="color: #2563eb; font-weight: 600;">Get your free CMA (not a Zestimate)</a> — we\'ll show you block-by-block comps and exactly what\'s driving prices in your neighborhood.</p>'
     
     # Find a good spot to insert these - after the comparison table
     content = re.sub(
@@ -211,8 +211,8 @@ def optimize_commuter_page():
     
     # 2. OPTIMIZE TITLE TAG
     content = re.sub(
-        r'<title>22 Best NJ Suburbs for NYC Commuters \(2026\)</title>',
-        '<title>22 Best NJ Commuter Towns by Budget: Maplewood ($750K), Summit ($1.3M)</title>',
+        r'<title>22 NJ Suburb Comparison for NYC Commuters \(2026\)</title>',
+        '<title>22 NJ Commuter Town Comparisons by Budget: Maplewood ($750K), Summit ($1.3M)</title>',
         content
     )
     
@@ -305,7 +305,7 @@ def optimize_first_time_buyer_page():
       "name": "What are the best affordable towns for first-time buyers in NJ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Starter homes under $600K are available in Linden ($400-475K), Rahway ($375-475K), Fanwood ($550-650K), Cranford ($700-750K for starter homes), Bloomfield ($425-525K), and Nutley ($450-540K). These towns offer train access to NYC and good school systems."
+        "text": "Starter homes under $600K are available in Linden ($400-475K), Rahway ($375-475K), Fanwood ($550-650K), Cranford ($700-750K for starter homes), Bloomfield ($425-525K), and Nutley ($450-540K). These towns offer train access to NYC and local school districts; review current NJDOE reports."
       }
     }
   ]

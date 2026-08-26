@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 """Generate upgraded SEO blog posts for The Jorge Ramirez Group."""
 
+import json
 import os
+from pathlib import Path
 
 BASE = "/Users/teddy/.openclaw/workspace/TheJorgeRamirezGroup2/blog"
+QUARANTINE_MANIFEST = Path(__file__).resolve().parent / "data" / "english-fair-housing-quarantine.json"
+QUARANTINED_OUTPUTS = {
+    Path(item["file"]).name
+    for item in json.loads(QUARANTINE_MANIFEST.read_text(encoding="utf-8"))["pages"]
+}
 
 NAV = """  <nav class="site-nav"><div class="nav-container">
     <a href="/" class="nav-logo">The Jorge Ramirez Group</a>
@@ -350,6 +357,9 @@ def schema(headline, description, filename, faqs):
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, indent=2)
 
 def write_file(filename, content):
+    if filename in QUARANTINED_OUTPUTS:
+        print(f"  Protected noindex fallback, skipped: {filename}")
+        return
     path = os.path.join(BASE, filename)
     with open(path, 'w') as f:
         f.write(content)

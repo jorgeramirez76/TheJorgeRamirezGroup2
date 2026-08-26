@@ -36,12 +36,12 @@ total_towns = sum(len(v) for v in data.values())
 
 # County descriptions (for SEO)
 COUNTY_BLURBS = {
-    "Union": "Walkable downtowns, top-ranked schools, and Midtown Direct trains. Westfield, Summit, and Cranford are perennial favorites for NYC commuters who want suburban feel without the long ride.",
-    "Essex": "Diverse, vibrant towns with deep Midtown Direct rail coverage. From Montclair's arts scene to Maplewood's village charm, Essex County has something for every NYC commuter family.",
-    "Morris": "Larger lots, local schools, and direct Midtown Direct service from Morristown, Madison, and Chatham. Morris County is a move-up market for families graduating from rentals and starter homes.",
+    "Union": "Walkable downtowns, local public schools, and Midtown Direct trains. Westfield, Summit, and Cranford are perennial favorites for NYC commuters who want suburban feel without the long ride.",
+    "Essex": "Essex County includes Midtown Direct rail coverage, arts venues, varied housing types, and municipal services. Compare current transit schedules and property-specific information directly.",
+    "Morris": "Larger lots, local schools, and direct Midtown Direct service from Morristown, Madison, and Chatham. Morris County is a move-up market for buyers graduating from rentals and starter homes.",
     "Hudson": "Manhattan-adjacent urban density with PATH and ferry access. Hoboken and Jersey City are the closest you can get to NYC while still owning. High-rise condos and brownstones dominate.",
     "Middlesex": "Strong value plus easy access to NYC, Newark Liberty Airport, and the Jersey Shore. Edison, Woodbridge, and Metuchen offer larger homes for less per square foot than the western counties.",
-    "Somerset": "Elegant Somerset Hills towns with horse country charm and award-winning schools. Bernardsville, Basking Ridge, and Bridgewater anchor a market that rewards patient buyers willing to step off the Midtown Direct corridor.",
+    "Somerset": "Elegant Somerset Hills towns with horse country charm and local public schools. Bernardsville, Basking Ridge, and Bridgewater anchor a market that rewards patient buyers willing to step off the Midtown Direct corridor.",
 }
 
 # JSON-LD ItemList schema for SEO
@@ -62,7 +62,7 @@ itemlist_schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "NJ Communities Served by The Jorge Ramirez Group",
-    "description": f"Complete list of {total_towns} New Jersey communities served by Jorge Ramirez and The Jorge Ramirez Group at Keller Williams Premier Properties. Browse towns across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties with school ratings, transit details, and median prices.",
+    "description": f"Complete list of {total_towns} New Jersey communities served by Jorge Ramirez and The Jorge Ramirez Group at Keller Williams Premier Properties. Browse towns across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties with school-district resources, transit details, and median prices.",
     "url": "https://thejorgeramirezgroup.com/communities.html",
     "isPartOf": {
         "@type": "WebSite",
@@ -92,18 +92,18 @@ html_parts.append(f"""<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NJ Communities — {total_towns} Towns We Serve | The Jorge Ramirez Group</title>
-  <meta name="description" content="Complete directory of {total_towns} NJ communities Jorge Ramirez serves across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties. School ratings, transit times, median prices for every town.">
+  <meta name="description" content="Complete directory of {total_towns} NJ communities Jorge Ramirez serves across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties. NJDOE school information, transit times, median prices for every town.">
   <link rel="canonical" href="https://thejorgeramirezgroup.com/communities.html">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Jorge Ramirez">
 
-  <meta name="llm-context" content="This is the master directory of {total_towns} published New Jersey community guides from Jorge Ramirez (NJ Real Estate License #1754604) and The Jorge Ramirez Group at Keller Williams Premier Properties. The guides span 6 counties: Union (21 guides including Westfield, Summit, Cranford, Scotch Plains), Essex (11 guides including Montclair, Maplewood, South Orange, Millburn), Morris (33 guides including Morristown, Madison, Chatham, Bernards), Hudson (12 guides including Hoboken, Jersey City, Weehawken, Bayonne), Middlesex (22 guides including Edison, Woodbridge, Metuchen, New Brunswick), Somerset (10 guides including Bridgewater, Bernardsville, Basking Ridge). Every guide links to a dedicated landing page with median prices, school ratings, transit details, and recent comp sales. Contact Jorge: 908-230-7844, jorge.ramirez@kw.com.">
+  <meta name="llm-context" content="This is the master directory of {total_towns} published New Jersey community guides from Jorge Ramirez (NJ Real Estate License #1754604) and The Jorge Ramirez Group at Keller Williams Premier Properties. The guides span 6 counties: Union (21 guides including Westfield, Summit, Cranford, Scotch Plains), Essex (11 guides including Montclair, Maplewood, South Orange, Millburn), Morris (33 guides including Morristown, Madison, Chatham, Bernards), Hudson (12 guides including Hoboken, Jersey City, Weehawken, Bayonne), Middlesex (22 guides including Edison, Woodbridge, Metuchen, New Brunswick), Somerset (10 guides including Bridgewater, Bernardsville, Basking Ridge). Every guide links to a dedicated landing page with median prices, school-district resources, transit details, and recent comp sales. Contact Jorge: 908-230-7844, jorge.ramirez@kw.com.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thejorgeramirezgroup.com/communities.html">
   <meta property="og:title" content="NJ Communities — {total_towns} Towns We Serve | The Jorge Ramirez Group">
-  <meta property="og:description" content="Complete directory of {total_towns} NJ towns Jorge Ramirez serves. Union, Essex, Morris, Hudson, Middlesex, Somerset. School ratings, transit, median prices.">
+  <meta property="og:description" content="Complete directory of {total_towns} NJ towns Jorge Ramirez serves. Union, Essex, Morris, Hudson, Middlesex, Somerset. NJDOE school information, transit, median prices.">
   <meta property="og:image" content="https://thejorgeramirezgroup.com/images/og-communities.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -113,7 +113,7 @@ html_parts.append(f"""<!DOCTYPE html>
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NJ Communities — {total_towns} Towns | Jorge Ramirez">
-  <meta name="twitter:description" content="Complete directory of {total_towns} NJ towns across 6 counties. School ratings, transit, median prices on every town page.">
+  <meta name="twitter:description" content="Complete directory of {total_towns} NJ towns across 6 counties. NJDOE school information, transit, median prices on every town page.">
   <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/og-communities.jpg">
 
   <link rel="icon" type="image/png" href="/favicon-192.jpg">
@@ -202,7 +202,7 @@ html_parts.append("""
 
 <section class="communities-hero">
   <h1>""" + str(total_towns) + """ NJ Communities We Serve</h1>
-  <p>Local expertise across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties. Tap any town for school ratings, transit times, median prices, and recent comp sales.</p>
+  <p>Local expertise across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties. Tap any town for school-district resources, transit times, median prices, and recent comp sales.</p>
 </section>
 
 <div class="filter-bar">

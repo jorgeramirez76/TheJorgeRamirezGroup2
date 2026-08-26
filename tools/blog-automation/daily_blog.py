@@ -47,16 +47,72 @@ PHONE = "908-230-7844"
 # it appears in the frozen template five times, so banning it aborted every run.
 BANNED = "908" + "31" + "7" + "32" + "27"  # -> CRM line, never in copy
 
+# Deterministic publication gate for language that could steer a reader toward
+# or away from housing based on protected classes or common proxies. The checks
+# stay scoped to housing recommendations, while neutral official-source and
+# property-attribute references remain valid.
+FAIR_HOUSING_FORBIDDEN = (
+    (
+        "protected-audience targeting",
+        re.compile(
+            r"\b(?:family[- ]friendly|family[- ]oriented|family[- ]focused|"
+            r"families " r"with (?:children|kids)|young " r"professionals?|"
+            r"retir" r"ees?|empty " r"nesters?|dual[- ]income families)\b",
+            re.I,
+        ),
+    ),
+    (
+        "subjective education claim",
+        re.compile(
+            r"\b(?:top(?:[- ]rated)?|best|excellent|outstanding|highly[- ]rated|"
+            r"strong|weak)\s+(?:public\s+)?(?:schools?|school districts?|districts?)\b|"
+            r"\b(?:schools?|school districts?)\s+(?:are|is|rank|rates?)\s+"
+            r"(?:among\s+)?(?:the\s+)?(?:best|top|excellent|outstanding|strong|weak)\b",
+            re.I,
+        ),
+    ),
+    (
+        "subjective safety or crime claim",
+        re.compile(
+            r"\b(?:safe" r"st|safe(?:r)?|low[- ]crime|crime[- ]free)\s+"
+            r"(?:towns?|communities|neighbou?rhoods?|areas?|places?)\b|"
+            r"\b(?:neighbou?rhoods?|towns?|communities)\s+(?:are|is|feel|feels)\s+"
+            r"(?:very\s+)?safe\b",
+            re.I,
+        ),
+    ),
+    (
+        "protected-audience community fit",
+        re.compile(
+            r"\b(?:best|perfect|ideal)\s+"
+            r"(?:(?:towns?|communities|neighbou?rhoods?|suburbs?|places?|areas?)\s+)?"
+            r"for\s+(?:families|parents|children|kids|young " r"professionals?|"
+            r"retir" r"ees?|empty " r"nesters?)\b",
+            re.I,
+        ),
+    ),
+    (
+        "demographic preference",
+        re.compile(
+            r"\b(?:racial|ethnic|religious|age|family)\s+"
+            r"(?:makeup|composition|profile|demographics?)\b|"
+            r"\b(?:predominantly|mostly)\s+"
+            r"(?:white|black|hispanic|asian|christian|jewish|muslim)\b",
+            re.I,
+        ),
+    ),
+)
+
 # ---- Literals in the frozen template (template_source.html) to swap out ----
 OLD_TITLE = "Buying a Home in Cranford NJ 2026 | Jorge Ramirez"
-OLD_DESC = ("Buying a home in Cranford NJ in 2026? Median prices ~$510K, top neighborhoods, "
-            "Cranford School District (one of Union County's best), commute info, and expert t")
-OLD_TW_DESC = ("Buying a home in Cranford NJ in 2026? Median prices ~$510K, top neighborhoods, "
+OLD_DESC = ("Buying a home in Cranford NJ in 2026? Median prices ~$510K, neighborhood overview, "
+            "Cranford School District, commute info, and expert t")
+OLD_TW_DESC = ("Buying a home in Cranford NJ in 2026? Median prices ~$510K, neighborhood overview, "
                "Cranford School District (one of Union County")
 OLD_KEYWORDS = ("Cranford NJ homes for sale, buying home Cranford NJ, Cranford real estate 2026, "
-                "Cranford NJ neighborhoods, Cranford School District (one of Union County's best), "
+                "Cranford NJ neighborhoods, Cranford School District, "
                 "Union County real estate, Jorge Ramirez realtor NJ, Cranford home prices")
-OLD_SLUG = "buying-home-cranford-nj-2026"
+OLD_SLUG = "buying-a-home-in-new-jersey-2026"
 OLD_GEO = "Cranford, New Jersey"
 
 HERO_IMG = "https://images.unsplash.com/photo-1560185127-6a63a8f07ab9?w=600&h=180&fit=crop"
@@ -223,6 +279,7 @@ VOICE — Brandon Mulrenin "Reverse Selling": calm, curious, helpful expert. Nev
 
 HARD RULES:
 - Do NOT invent specific statistics, prices, percentages, or days-on-market numbers. Use qualitative language ("typically", "in many cases", "often"). If a real specific number is genuinely well-known you may reference it generally, but never fabricate precise figures.
+- Follow fair-housing rules: do not rank or recommend communities using subjective education or public-safety judgments, resident profiles, protected classes, or proxy audiences. Do not describe who should live in a place. Present official school, public-safety, and municipal sources neutrally so readers can research their own priorities.
 - Serve NJ buyers/sellers, focus on Union, Essex, Morris, Middlesex, Hudson, Somerset counties where relevant.
 - The ONLY phone number is {PHONE}. Never output any other phone number.
 - 850-1100 words in the body. Genuinely useful, specific to New Jersey, not generic filler.
@@ -248,7 +305,7 @@ META: {post.get('meta_description')}
 BODY:
 {post.get('body_html')}
 
-Score 0-100 on: (1) genuinely useful & specific to NJ real estate, (2) NO fabricated/hallucinated statistics or fake precise numbers, (3) reads like a knowledgeable human advisor, not generic AI filler, (4) grammatically clean, (5) helpful/no-pressure tone, (6) >= 800 words of real substance. A post that invents specific stats or is generic filler must score below 70.
+Score 0-100 on: (1) genuinely useful & specific to NJ real estate, (2) NO fabricated/hallucinated statistics or fake precise numbers, (3) reads like a knowledgeable human advisor, not generic AI filler, (4) grammatically clean, (5) helpful/no-pressure tone, (6) >= 800 words of real substance, and (7) follows fair-housing rules by avoiding subjective education/public-safety judgments, resident profiles, and protected-class or proxy-audience targeting. A post that invents specific stats, is generic filler, or creates fair-housing/steering risk must score below 70.
 
 Return ONLY JSON: {{"score": <int 0-100>, "pass": <true|false>, "issues": ["short issue", ...]}}"""
 
@@ -425,6 +482,10 @@ def validate(post):
     blob = json.dumps(post)
     if re.search(r"9\D?0\D?8\D?2\D?3\D?0\D?7\D?8\D?4\D?4", blob):
         return "banned personal phone number present"
+    review_text = html.unescape(re.sub(r"<[^>]+>", " ", blob))
+    for label, pattern in FAIR_HOUSING_FORBIDDEN:
+        if pattern.search(review_text):
+            return f"fair-housing review required: {label}"
     if len(re.sub(r"<[^>]+>", "", post["body_html"]).split()) < 650:
         return "body too short"
     if len(post["faqs"]) < 3:

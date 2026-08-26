@@ -1,0 +1,1540 @@
+{
+  "base": "831c7918f9fcaad2496c4ea039ed1d8cc217038c",
+  "quarantined_on": "2026-08-26",
+  "reason": "Scaled town pages depended on subjective school, safety, neighborhood, or protected-audience framing without maintained official local research.",
+  "signalReview": {
+    "gsc": {
+      "sourceExport": "/Users/teddy/Documents/Codex/2026-08-25/t/work/gsc_compare/Pages.csv",
+      "sourceExportSha256": "5e66478db75f8693ea762cbeba2fd8d58d63eecbe3d50e71981fcd1f1c80c6f9",
+      "snapshotCaveat": "Historical snapshot from the supplied Search Console Pages export; metrics are not live beyond that export.",
+      "trafficPreservedBySameIntentRedirect": {
+        "routes": 16,
+        "routesWithRows": 15,
+        "lastThreeMonthsClicks": 30,
+        "previousThreeMonthsClicks": 27,
+        "lastThreeMonthsImpressions": 3606,
+        "previousThreeMonthsImpressions": 3624
+      },
+      "staticNoindexFallback": {
+        "routes": 91,
+        "routesWithRows": 90,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 1478,
+        "previousThreeMonthsImpressions": 1216
+      }
+    },
+    "recordedLeads": {
+      "status": "no-page-attribution-dataset-in-repository",
+      "note": "The repository lead stores do not persist landing-page URLs for these routes."
+    },
+    "externalBacklinks": {
+      "status": "no-backlink-export-in-repository",
+      "note": "No external backlink inventory was available in the supplied workspace."
+    },
+    "internalLinks": {
+      "status": "rewired-on-owned-english-inventory",
+      "note": "Owned English links point to each route's documented stronger destination."
+    }
+  },
+  "pages": [
+    {
+      "file": "blog/best-school-districts-in-union-county-nj-for-families-buying-2026.html",
+      "path": "/blog/best-school-districts-in-union-county-nj-for-families-buying-2026",
+      "destination": "/counties/union-county",
+      "cluster": "subjective-school-ranking",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 140,
+        "previousThreeMonthsImpressions": 40
+      }
+    },
+    {
+      "file": "blog/buying-home-basking-ridge-nj-2026.html",
+      "path": "/blog/buying-home-basking-ridge-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 14,
+        "previousThreeMonthsImpressions": 13
+      }
+    },
+    {
+      "file": "blog/buying-home-berkeley-heights-nj-2026.html",
+      "path": "/blog/buying-home-berkeley-heights-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 5,
+        "previousThreeMonthsImpressions": 3
+      }
+    },
+    {
+      "file": "blog/buying-home-bloomfield-nj-2026.html",
+      "path": "/blog/buying-home-bloomfield-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 59,
+        "previousThreeMonthsImpressions": 65
+      }
+    },
+    {
+      "file": "blog/buying-home-chatham-nj-2026.html",
+      "path": "/blog/buying-home-chatham-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 6,
+        "previousThreeMonthsImpressions": 8
+      }
+    },
+    {
+      "file": "blog/buying-home-clark-nj-2026.html",
+      "path": "/blog/buying-home-clark-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 0,
+        "previousThreeMonthsImpressions": 1
+      }
+    },
+    {
+      "file": "blog/buying-home-cranford-nj-2026.html",
+      "path": "/blog/buying-home-cranford-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 7,
+        "previousThreeMonthsImpressions": 26
+      }
+    },
+    {
+      "file": "blog/buying-home-denville-nj-2026.html",
+      "path": "/blog/buying-home-denville-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 3,
+        "previousThreeMonthsImpressions": 10
+      }
+    },
+    {
+      "file": "blog/buying-home-east-brunswick-nj-2026.html",
+      "path": "/blog/buying-home-east-brunswick-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 38,
+        "previousThreeMonthsImpressions": 10
+      }
+    },
+    {
+      "file": "blog/buying-home-edison-nj-2026.html",
+      "path": "/blog/buying-home-edison-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 34,
+        "previousThreeMonthsImpressions": 10
+      }
+    },
+    {
+      "file": "blog/buying-home-fanwood-nj-2026.html",
+      "path": "/blog/buying-home-fanwood-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 35,
+        "previousThreeMonthsImpressions": 5
+      }
+    },
+    {
+      "file": "blog/buying-home-florham-park-nj-2026.html",
+      "path": "/blog/buying-home-florham-park-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 1,
+        "previousThreeMonthsImpressions": 3
+      }
+    },
+    {
+      "file": "blog/buying-home-glen-ridge-nj-2026.html",
+      "path": "/blog/buying-home-glen-ridge-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 0,
+        "previousThreeMonthsImpressions": 7
+      }
+    },
+    {
+      "file": "blog/buying-home-highland-park-nj-2026.html",
+      "path": "/blog/buying-home-highland-park-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 9,
+        "previousThreeMonthsImpressions": 12
+      }
+    },
+    {
+      "file": "blog/buying-home-hoboken-nj-2026.html",
+      "path": "/blog/buying-home-hoboken-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 6,
+        "previousThreeMonthsImpressions": 11
+      }
+    },
+    {
+      "file": "blog/buying-home-jersey-city-nj-2026.html",
+      "path": "/blog/buying-home-jersey-city-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 1,
+        "lastThreeMonthsImpressions": 0,
+        "previousThreeMonthsImpressions": 22
+      }
+    },
+    {
+      "file": "blog/buying-home-kenilworth-nj-2026.html",
+      "path": "/blog/buying-home-kenilworth-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 5,
+        "previousThreeMonthsImpressions": 9
+      }
+    },
+    {
+      "file": "blog/buying-home-linden-nj-2026.html",
+      "path": "/blog/buying-home-linden-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 8,
+        "previousThreeMonthsImpressions": 5
+      }
+    },
+    {
+      "file": "blog/buying-home-livingston-nj-2026.html",
+      "path": "/blog/buying-home-livingston-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 2,
+        "previousThreeMonthsImpressions": 2
+      }
+    },
+    {
+      "file": "blog/buying-home-madison-nj-2026.html",
+      "path": "/blog/buying-home-madison-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 14,
+        "previousThreeMonthsImpressions": 43
+      }
+    },
+    {
+      "file": "blog/buying-home-maplewood-nj-2026.html",
+      "path": "/blog/buying-home-maplewood-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 17,
+        "previousThreeMonthsImpressions": 55
+      }
+    },
+    {
+      "file": "blog/buying-home-metuchen-nj-2026.html",
+      "path": "/blog/buying-home-metuchen-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 17,
+        "previousThreeMonthsImpressions": 3
+      }
+    },
+    {
+      "file": "blog/buying-home-millburn-nj-2026.html",
+      "path": "/blog/buying-home-millburn-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 33,
+        "previousThreeMonthsImpressions": 129
+      }
+    },
+    {
+      "file": "blog/buying-home-montclair-nj-2026.html",
+      "path": "/blog/buying-home-montclair-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 2,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 108,
+        "previousThreeMonthsImpressions": 35
+      }
+    },
+    {
+      "file": "blog/buying-home-morristown-nj-2026.html",
+      "path": "/blog/buying-home-morristown-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 44,
+        "previousThreeMonthsImpressions": 43
+      }
+    },
+    {
+      "file": "blog/buying-home-mountain-lakes-nj-2026.html",
+      "path": "/blog/buying-home-mountain-lakes-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 11,
+        "previousThreeMonthsImpressions": 4
+      }
+    },
+    {
+      "file": "blog/buying-home-mountainside-nj-2026.html",
+      "path": "/blog/buying-home-mountainside-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 21,
+        "previousThreeMonthsImpressions": 7
+      }
+    },
+    {
+      "file": "blog/buying-home-new-brunswick-nj-2026.html",
+      "path": "/blog/buying-home-new-brunswick-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 3,
+        "previousThreeMonthsImpressions": 2
+      }
+    },
+    {
+      "file": "blog/buying-home-new-providence-nj-2026.html",
+      "path": "/blog/buying-home-new-providence-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 6,
+        "previousThreeMonthsImpressions": 22
+      }
+    },
+    {
+      "file": "blog/buying-home-north-caldwell-nj-2026.html",
+      "path": "/blog/buying-home-north-caldwell-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 46,
+        "previousThreeMonthsImpressions": 26
+      }
+    },
+    {
+      "file": "blog/buying-home-nutley-nj-2026.html",
+      "path": "/blog/buying-home-nutley-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 31,
+        "previousThreeMonthsImpressions": 30
+      }
+    },
+    {
+      "file": "blog/buying-home-old-bridge-nj-2026.html",
+      "path": "/blog/buying-home-old-bridge-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 39,
+        "previousThreeMonthsImpressions": 12
+      }
+    },
+    {
+      "file": "blog/buying-home-parsippany-nj-2026.html",
+      "path": "/blog/buying-home-parsippany-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 26,
+        "previousThreeMonthsImpressions": 6
+      }
+    },
+    {
+      "file": "blog/buying-home-piscataway-nj-2026.html",
+      "path": "/blog/buying-home-piscataway-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 3,
+        "previousThreeMonthsImpressions": 2
+      }
+    },
+    {
+      "file": "blog/buying-home-rahway-nj-2026.html",
+      "path": "/blog/buying-home-rahway-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 1,
+        "lastThreeMonthsImpressions": 3,
+        "previousThreeMonthsImpressions": 7
+      }
+    },
+    {
+      "file": "blog/buying-home-randolph-nj-2026.html",
+      "path": "/blog/buying-home-randolph-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 1,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 59,
+        "previousThreeMonthsImpressions": 21
+      }
+    },
+    {
+      "file": "blog/buying-home-ridgewood-nj-2026.html",
+      "path": "/blog/buying-home-ridgewood-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 39,
+        "previousThreeMonthsImpressions": 111
+      }
+    },
+    {
+      "file": "blog/buying-home-roseland-nj-2026.html",
+      "path": "/blog/buying-home-roseland-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 4,
+        "previousThreeMonthsImpressions": 5
+      }
+    },
+    {
+      "file": "blog/buying-home-scotch-plains-nj-2026.html",
+      "path": "/blog/buying-home-scotch-plains-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 3,
+        "previousThreeMonthsImpressions": 26
+      }
+    },
+    {
+      "file": "blog/buying-home-south-brunswick-nj-2026.html",
+      "path": "/blog/buying-home-south-brunswick-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 8,
+        "previousThreeMonthsImpressions": 22
+      }
+    },
+    {
+      "file": "blog/buying-home-south-orange-nj-2026.html",
+      "path": "/blog/buying-home-south-orange-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 9,
+        "previousThreeMonthsImpressions": 6
+      }
+    },
+    {
+      "file": "blog/buying-home-springfield-nj-2026.html",
+      "path": "/blog/buying-home-springfield-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 4,
+        "previousThreeMonthsImpressions": 3
+      }
+    },
+    {
+      "file": "blog/buying-home-summit-nj-2026.html",
+      "path": "/blog/buying-home-summit-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 15,
+        "previousThreeMonthsImpressions": 32
+      }
+    },
+    {
+      "file": "blog/buying-home-verona-nj-2026.html",
+      "path": "/blog/buying-home-verona-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 12,
+        "previousThreeMonthsImpressions": 18
+      }
+    },
+    {
+      "file": "blog/buying-home-warren-township-nj-2026.html",
+      "path": "/blog/buying-home-warren-township-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 6,
+        "previousThreeMonthsImpressions": 5
+      }
+    },
+    {
+      "file": "blog/buying-home-west-orange-nj-2026.html",
+      "path": "/blog/buying-home-west-orange-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 86,
+        "previousThreeMonthsImpressions": 17
+      }
+    },
+    {
+      "file": "blog/buying-home-westfield-nj-2026.html",
+      "path": "/blog/buying-home-westfield-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 2,
+        "previousThreeMonthsImpressions": 15
+      }
+    },
+    {
+      "file": "blog/buying-home-woodbridge-nj-2026.html",
+      "path": "/blog/buying-home-woodbridge-nj-2026",
+      "destination": "/buy-a-home",
+      "cluster": "scaled-town-buying",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 18,
+        "previousThreeMonthsImpressions": 7
+      }
+    },
+    {
+      "file": "blog/chatham-vs-madison-nj.html",
+      "path": "/blog/chatham-vs-madison-nj",
+      "destination": "/chatham-vs-madison-nj",
+      "cluster": "duplicate-town-comparison",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 3,
+        "previousThreeMonthsClicks": 7,
+        "lastThreeMonthsImpressions": 704,
+        "previousThreeMonthsImpressions": 973
+      }
+    },
+    {
+      "file": "blog/neighborhoods-basking-ridge-nj.html",
+      "path": "/blog/neighborhoods-basking-ridge-nj",
+      "destination": "/counties/somerset-county",
+      "cluster": "scaled-neighborhood-ranking",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 4,
+        "previousThreeMonthsClicks": 3,
+        "lastThreeMonthsImpressions": 175,
+        "previousThreeMonthsImpressions": 30
+      }
+    },
+    {
+      "file": "blog/neighborhoods-chatham-nj.html",
+      "path": "/blog/neighborhoods-chatham-nj",
+      "destination": "/communities",
+      "cluster": "scaled-neighborhood-ranking",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 32,
+        "previousThreeMonthsImpressions": 34
+      }
+    },
+    {
+      "file": "blog/neighborhoods-livingston-nj.html",
+      "path": "/blog/neighborhoods-livingston-nj",
+      "destination": "/counties/essex-county",
+      "cluster": "scaled-neighborhood-ranking",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 5,
+        "previousThreeMonthsClicks": 1,
+        "lastThreeMonthsImpressions": 201,
+        "previousThreeMonthsImpressions": 76
+      }
+    },
+    {
+      "file": "blog/neighborhoods-madison-nj.html",
+      "path": "/blog/neighborhoods-madison-nj",
+      "destination": "/counties/morris-county",
+      "cluster": "scaled-neighborhood-ranking",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 1,
+        "previousThreeMonthsClicks": 1,
+        "lastThreeMonthsImpressions": 148,
+        "previousThreeMonthsImpressions": 192
+      }
+    },
+    {
+      "file": "blog/neighborhoods-maplewood-nj.html",
+      "path": "/blog/neighborhoods-maplewood-nj",
+      "destination": "/counties/essex-county",
+      "cluster": "scaled-neighborhood-ranking",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 7,
+        "previousThreeMonthsClicks": 5,
+        "lastThreeMonthsImpressions": 761,
+        "previousThreeMonthsImpressions": 392
+      }
+    },
+    {
+      "file": "blog/neighborhoods-millburn-nj.html",
+      "path": "/blog/neighborhoods-millburn-nj",
+      "destination": "/counties/essex-county",
+      "cluster": "scaled-neighborhood-ranking",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 1,
+        "lastThreeMonthsImpressions": 107,
+        "previousThreeMonthsImpressions": 58
+      }
+    },
+    {
+      "file": "blog/neighborhoods-montclair-nj.html",
+      "path": "/blog/neighborhoods-montclair-nj",
+      "destination": "/counties/essex-county",
+      "cluster": "scaled-neighborhood-ranking",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 1,
+        "lastThreeMonthsImpressions": 270,
+        "previousThreeMonthsImpressions": 88
+      }
+    },
+    {
+      "file": "blog/neighborhoods-scotch-plains-nj.html",
+      "path": "/blog/neighborhoods-scotch-plains-nj",
+      "destination": "/counties/union-county",
+      "cluster": "scaled-neighborhood-ranking",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 1,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 123,
+        "previousThreeMonthsImpressions": 29
+      }
+    },
+    {
+      "file": "blog/neighborhoods-south-orange-nj.html",
+      "path": "/blog/neighborhoods-south-orange-nj",
+      "destination": "/communities",
+      "cluster": "scaled-neighborhood-ranking",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 0,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 0,
+        "previousThreeMonthsImpressions": 0
+      }
+    },
+    {
+      "file": "blog/neighborhoods-summit-nj.html",
+      "path": "/blog/neighborhoods-summit-nj",
+      "destination": "/counties/union-county",
+      "cluster": "scaled-neighborhood-ranking",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 4,
+        "previousThreeMonthsClicks": 4,
+        "lastThreeMonthsImpressions": 465,
+        "previousThreeMonthsImpressions": 466
+      }
+    },
+    {
+      "file": "blog/neighborhoods-westfield-nj.html",
+      "path": "/blog/neighborhoods-westfield-nj",
+      "destination": "/communities",
+      "cluster": "scaled-neighborhood-ranking",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 160,
+        "previousThreeMonthsImpressions": 6
+      }
+    },
+    {
+      "file": "blog/nyc-to-nj-commute-guide-2026.html",
+      "path": "/blog/nyc-to-nj-commute-guide-2026",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
+      "cluster": "legacy-commuter-ranking",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 1,
+        "previousThreeMonthsClicks": 2,
+        "lastThreeMonthsImpressions": 447,
+        "previousThreeMonthsImpressions": 1226
+      }
+    },
+    {
+      "file": "blog/selling-home-basking-ridge-nj-2026.html",
+      "path": "/blog/selling-home-basking-ridge-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 21,
+        "previousThreeMonthsImpressions": 3
+      }
+    },
+    {
+      "file": "blog/selling-home-bloomfield-nj-2026.html",
+      "path": "/blog/selling-home-bloomfield-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 5,
+        "previousThreeMonthsImpressions": 4
+      }
+    },
+    {
+      "file": "blog/selling-home-chatham-nj-2026.html",
+      "path": "/blog/selling-home-chatham-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 8,
+        "previousThreeMonthsImpressions": 2
+      }
+    },
+    {
+      "file": "blog/selling-home-clark-nj-2026.html",
+      "path": "/blog/selling-home-clark-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 1,
+        "previousThreeMonthsImpressions": 0
+      }
+    },
+    {
+      "file": "blog/selling-home-cranford-nj-2026.html",
+      "path": "/blog/selling-home-cranford-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 4,
+        "previousThreeMonthsImpressions": 3
+      }
+    },
+    {
+      "file": "blog/selling-home-denville-nj-2026.html",
+      "path": "/blog/selling-home-denville-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 5,
+        "previousThreeMonthsImpressions": 1
+      }
+    },
+    {
+      "file": "blog/selling-home-edison-nj-2026.html",
+      "path": "/blog/selling-home-edison-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 11,
+        "previousThreeMonthsImpressions": 8
+      }
+    },
+    {
+      "file": "blog/selling-home-fanwood-nj-2026.html",
+      "path": "/blog/selling-home-fanwood-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 5,
+        "previousThreeMonthsImpressions": 1
+      }
+    },
+    {
+      "file": "blog/selling-home-florham-park-nj-2026.html",
+      "path": "/blog/selling-home-florham-park-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 7,
+        "previousThreeMonthsImpressions": 1
+      }
+    },
+    {
+      "file": "blog/selling-home-glen-ridge-nj-2026.html",
+      "path": "/blog/selling-home-glen-ridge-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 2,
+        "previousThreeMonthsImpressions": 4
+      }
+    },
+    {
+      "file": "blog/selling-home-highland-park-nj-2026.html",
+      "path": "/blog/selling-home-highland-park-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 8,
+        "previousThreeMonthsImpressions": 5
+      }
+    },
+    {
+      "file": "blog/selling-home-hoboken-nj-2026.html",
+      "path": "/blog/selling-home-hoboken-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 3,
+        "previousThreeMonthsImpressions": 17
+      }
+    },
+    {
+      "file": "blog/selling-home-jersey-city-nj-2026.html",
+      "path": "/blog/selling-home-jersey-city-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 3,
+        "previousThreeMonthsImpressions": 1
+      }
+    },
+    {
+      "file": "blog/selling-home-kenilworth-nj-2026.html",
+      "path": "/blog/selling-home-kenilworth-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 3,
+        "previousThreeMonthsImpressions": 9
+      }
+    },
+    {
+      "file": "blog/selling-home-linden-nj-2026.html",
+      "path": "/blog/selling-home-linden-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 9,
+        "previousThreeMonthsImpressions": 4
+      }
+    },
+    {
+      "file": "blog/selling-home-livingston-nj-2026.html",
+      "path": "/blog/selling-home-livingston-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 3,
+        "previousThreeMonthsImpressions": 9
+      }
+    },
+    {
+      "file": "blog/selling-home-madison-nj-2026.html",
+      "path": "/blog/selling-home-madison-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 7,
+        "previousThreeMonthsImpressions": 1
+      }
+    },
+    {
+      "file": "blog/selling-home-maplewood-nj-2026.html",
+      "path": "/blog/selling-home-maplewood-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 1,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 35,
+        "previousThreeMonthsImpressions": 9
+      }
+    },
+    {
+      "file": "blog/selling-home-metuchen-nj-2026.html",
+      "path": "/blog/selling-home-metuchen-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 3,
+        "previousThreeMonthsImpressions": 2
+      }
+    },
+    {
+      "file": "blog/selling-home-millburn-nj-2026.html",
+      "path": "/blog/selling-home-millburn-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 2,
+        "previousThreeMonthsImpressions": 0
+      }
+    },
+    {
+      "file": "blog/selling-home-montclair-nj-2026.html",
+      "path": "/blog/selling-home-montclair-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 5,
+        "previousThreeMonthsImpressions": 5
+      }
+    },
+    {
+      "file": "blog/selling-home-morristown-nj-2026.html",
+      "path": "/blog/selling-home-morristown-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 33,
+        "previousThreeMonthsImpressions": 2
+      }
+    },
+    {
+      "file": "blog/selling-home-mountain-lakes-nj-2026.html",
+      "path": "/blog/selling-home-mountain-lakes-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 24,
+        "previousThreeMonthsImpressions": 4
+      }
+    },
+    {
+      "file": "blog/selling-home-mountainside-nj-2026.html",
+      "path": "/blog/selling-home-mountainside-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 6,
+        "previousThreeMonthsImpressions": 1
+      }
+    },
+    {
+      "file": "blog/selling-home-new-providence-nj-2026.html",
+      "path": "/blog/selling-home-new-providence-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 11,
+        "previousThreeMonthsImpressions": 2
+      }
+    },
+    {
+      "file": "blog/selling-home-north-caldwell-nj-2026.html",
+      "path": "/blog/selling-home-north-caldwell-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 2,
+        "previousThreeMonthsImpressions": 0
+      }
+    },
+    {
+      "file": "blog/selling-home-nutley-nj-2026.html",
+      "path": "/blog/selling-home-nutley-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 7,
+        "previousThreeMonthsImpressions": 12
+      }
+    },
+    {
+      "file": "blog/selling-home-old-bridge-nj-2026.html",
+      "path": "/blog/selling-home-old-bridge-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 27,
+        "previousThreeMonthsImpressions": 5
+      }
+    },
+    {
+      "file": "blog/selling-home-parsippany-nj-2026.html",
+      "path": "/blog/selling-home-parsippany-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 1,
+        "previousThreeMonthsImpressions": 1
+      }
+    },
+    {
+      "file": "blog/selling-home-rahway-nj-2026.html",
+      "path": "/blog/selling-home-rahway-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 2,
+        "previousThreeMonthsImpressions": 0
+      }
+    },
+    {
+      "file": "blog/selling-home-randolph-nj-2026.html",
+      "path": "/blog/selling-home-randolph-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 1,
+        "previousThreeMonthsImpressions": 3
+      }
+    },
+    {
+      "file": "blog/selling-home-ridgewood-nj-2026.html",
+      "path": "/blog/selling-home-ridgewood-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 5,
+        "previousThreeMonthsImpressions": 1
+      }
+    },
+    {
+      "file": "blog/selling-home-roseland-nj-2026.html",
+      "path": "/blog/selling-home-roseland-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 20,
+        "previousThreeMonthsImpressions": 4
+      }
+    },
+    {
+      "file": "blog/selling-home-scotch-plains-nj-2026.html",
+      "path": "/blog/selling-home-scotch-plains-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 11,
+        "previousThreeMonthsImpressions": 20
+      }
+    },
+    {
+      "file": "blog/selling-home-short-hills-nj-2026.html",
+      "path": "/blog/selling-home-short-hills-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 4,
+        "previousThreeMonthsImpressions": 6
+      }
+    },
+    {
+      "file": "blog/selling-home-south-brunswick-nj-2026.html",
+      "path": "/blog/selling-home-south-brunswick-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 22,
+        "previousThreeMonthsImpressions": 118
+      }
+    },
+    {
+      "file": "blog/selling-home-south-orange-nj-2026.html",
+      "path": "/blog/selling-home-south-orange-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 7,
+        "previousThreeMonthsImpressions": 0
+      }
+    },
+    {
+      "file": "blog/selling-home-springfield-nj-2026.html",
+      "path": "/blog/selling-home-springfield-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 1,
+        "previousThreeMonthsImpressions": 5
+      }
+    },
+    {
+      "file": "blog/selling-home-summit-nj-2026.html",
+      "path": "/blog/selling-home-summit-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 4,
+        "previousThreeMonthsImpressions": 6
+      }
+    },
+    {
+      "file": "blog/selling-home-verona-nj-2026.html",
+      "path": "/blog/selling-home-verona-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 1,
+        "previousThreeMonthsImpressions": 0
+      }
+    },
+    {
+      "file": "blog/selling-home-warren-township-nj-2026.html",
+      "path": "/blog/selling-home-warren-township-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 7,
+        "previousThreeMonthsImpressions": 2
+      }
+    },
+    {
+      "file": "blog/selling-home-west-orange-nj-2026.html",
+      "path": "/blog/selling-home-west-orange-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 25,
+        "previousThreeMonthsImpressions": 8
+      }
+    },
+    {
+      "file": "blog/selling-home-westfield-nj-2026.html",
+      "path": "/blog/selling-home-westfield-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 2,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 10,
+        "previousThreeMonthsImpressions": 4
+      }
+    },
+    {
+      "file": "blog/selling-home-woodbridge-nj-2026.html",
+      "path": "/blog/selling-home-woodbridge-nj-2026",
+      "destination": "/sell-your-home",
+      "cluster": "scaled-town-selling",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 2,
+        "previousThreeMonthsImpressions": 1
+      }
+    },
+    {
+      "file": "blog/summit-vs-chatham-vs-westfield-nj.html",
+      "path": "/blog/summit-vs-chatham-vs-westfield-nj",
+      "destination": "/blog/best-nj-towns-for-families-2026",
+      "cluster": "legacy-three-town-ranking",
+      "disposition": "same-intent-redirect",
+      "gsc": {
+        "variantRows": 0,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 0,
+        "previousThreeMonthsImpressions": 0
+      }
+    },
+    {
+      "file": "livingston-vs-west-orange-nj.html",
+      "path": "/livingston-vs-west-orange-nj",
+      "destination": "/counties/essex-county",
+      "cluster": "unmaintained-school-ranking-comparison",
+      "disposition": "static-noindex-fallback",
+      "gsc": {
+        "variantRows": 1,
+        "lastThreeMonthsClicks": 0,
+        "previousThreeMonthsClicks": 0,
+        "lastThreeMonthsImpressions": 49,
+        "previousThreeMonthsImpressions": 0
+      }
+    }
+  ]
+}

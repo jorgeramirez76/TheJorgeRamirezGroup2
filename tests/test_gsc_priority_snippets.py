@@ -12,6 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPING = ROOT / "data" / "gsc-priority-snippets.json"
+QUARANTINE = ROOT / "data" / "english-fair-housing-quarantine.json"
+SITE = "https://thejorgeramirezgroup.com"
 
 
 class HeadParser(HTMLParser):
@@ -57,6 +59,10 @@ class GscPrioritySnippetTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.mapping = json.loads(MAPPING.read_text(encoding="utf-8"))
+        cls.quarantined = {
+            page["file"]: page
+            for page in json.loads(QUARANTINE.read_text(encoding="utf-8"))["pages"]
+        }
 
     def test_mapping_reconciles_canonicalized_gsc_totals(self) -> None:
         pages = self.mapping["pages"]
@@ -96,6 +102,12 @@ class GscPrioritySnippetTests(unittest.TestCase):
             parser = HeadParser()
             parser.feed((ROOT / page["file"]).read_text(encoding="utf-8"))
             expected = page["after"]
+
+            if page["file"] in self.quarantined:
+                archived = self.quarantined[page["file"]]
+                self.assertIn("noindex", parser.meta("name:robots").lower())
+                self.assertEqual(SITE + archived["destination"], parser.canonical)
+                continue
 
             self.assertNotEqual(page["before"], expected, page["file"])
             self.assertEqual(expected["title"], parser.title.strip(), page["file"])
@@ -137,12 +149,16 @@ class GscPrioritySnippetTests(unittest.TestCase):
                 continue
             parser = HeadParser()
             parser.feed(path.read_text(encoding="utf-8", errors="replace"))
+            if "noindex" in parser.meta("name:robots").lower():
+                continue
             title_owners[parser.title.strip()].append(relative.as_posix())
             description_owners[parser.meta("name:description")].append(
                 relative.as_posix()
             )
 
         for page in self.mapping["pages"]:
+            if page["file"] in self.quarantined:
+                continue
             self.assertEqual(
                 [page["file"]],
                 title_owners[page["after"]["title"]],

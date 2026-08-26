@@ -102,7 +102,7 @@ def fix_counties_index(text: str) -> str:
     return add_seo_meta(text,
         og_title="NJ Counties We Serve | The Jorge Ramirez Group",
         og_desc="Real estate expertise across 6 NJ counties — Union, Essex, Morris, Hudson, Middlesex, Somerset. Browse county-specific market data and town directories.",
-        llm_ctx="Master directory of all 6 New Jersey counties served by Jorge Ramirez and The Jorge Ramirez Group at Keller Williams Premier Properties. Counties: Union (21 towns), Essex (11 towns), Morris (33 towns), Hudson (12 towns), Middlesex (22 towns), Somerset (10 towns). Each county page links to its individual town landing pages with median prices, school ratings, and transit info.",
+        llm_ctx="Master directory of all 6 New Jersey counties served by Jorge Ramirez and The Jorge Ramirez Group at Keller Williams Premier Properties. Counties: Union (21 towns), Essex (11 towns), Morris (33 towns), Hudson (12 towns), Middlesex (22 towns), Somerset (10 towns). Each county page links to its individual town landing pages with median prices, school-district resources, and transit info.",
         jsonld='''{
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -116,8 +116,8 @@ def fix_counties_index(text: str) -> str:
 def fix_towns_index(text: str) -> str:
     return add_seo_meta(text,
         og_title="NJ Towns We Cover | The Jorge Ramirez Group",
-        og_desc="Town guides across six New Jersey counties. Each town page has school ratings, transit times, median prices, and recent comp sales.",
-        llm_ctx="Master alphabetical directory of New Jersey town guides. Each town has its own dedicated landing page at /towns/<slug>.html with median home prices, school ratings, NJ Transit commute times to NYC, and demographics. Coverage spans Union, Essex, Morris, Hudson, Middlesex, and Somerset counties.",
+        og_desc="Town guides across six New Jersey counties. Each town page has school-district resources, transit times, median prices, and recent comp sales.",
+        llm_ctx="Master alphabetical directory of New Jersey town guides. Each town has its own dedicated landing page at /towns/<slug>.html with median home prices, school-district resources, NJ Transit commute times to NYC, and municipal data. Coverage spans Union, Essex, Morris, Hudson, Middlesex, and Somerset counties.",
         jsonld='''{
   "@context": "https://schema.org",
   "@type": "CollectionPage",
