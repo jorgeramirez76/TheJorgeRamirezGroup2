@@ -165,6 +165,31 @@ class WaveTwoContractTests(unittest.TestCase):
         ]
         self.assertEqual([], offenders)
 
+    def test_off_topic_ai_sales_product_is_not_in_public_search_inventory(self):
+        feature_pages = sorted(
+            str(path.relative_to(ROOT))
+            for directory in (ROOT / "features", ROOT / "es" / "features")
+            if directory.exists()
+            for path in directory.glob("*.html")
+        )
+        self.assertEqual(
+            [],
+            feature_pages,
+            "AI Sales Pipeline product pages do not belong on the real-estate site",
+        )
+
+        inventory_files = (
+            ROOT / "sitemap.xml",
+            ROOT / "sitemap-es.xml",
+            ROOT / "vercel.json",
+        )
+        leaked = [
+            str(path.relative_to(ROOT))
+            for path in inventory_files
+            if re.search(r"(?:/es)?/features/", read(path), re.I)
+        ]
+        self.assertEqual([], leaked)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
