@@ -22,6 +22,11 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.render_noindex_town_fallbacks import group_slugs, render_fallbacks
+
 GSC_EXPORT = Path(
     "/Users/teddy/Documents/Codex/2026-08-25/t/work/gsc_compare/Pages.csv"
 )
@@ -47,56 +52,7 @@ PRIORITY_REWRITE_SLUGS = {
     "west-new-york",
 }
 
-LOW_VALUE_STRICT_SLUGS = {
-    "bayonne",
-    "boonton",
-    "butler",
-    "carteret",
-    "chester-borough",
-    "chester-township",
-    "clark",
-    "dover",
-    "east-newark",
-    "garwood",
-    "hanover",
-    "harding",
-    "harrison",
-    "highland-park",
-    "hillside",
-    "jamesburg",
-    "kearny",
-    "kenilworth",
-    "kinnelon",
-    "lincoln-park",
-    "linden",
-    "mendham-borough",
-    "mendham-township",
-    "milltown",
-    "mine-hill",
-    "monroe-township",
-    "mount-arlington",
-    "mount-olive",
-    "mountain-lakes",
-    "netcong",
-    "north-bergen",
-    "north-brunswick",
-    "old-bridge",
-    "piscataway",
-    "rahway",
-    "randolph",
-    "riverdale",
-    "rockaway-borough",
-    "rockaway-township",
-    "roxbury",
-    "sayreville",
-    "secaucus",
-    "south-amboy",
-    "south-plainfield",
-    "spotswood",
-    "union-city",
-    "verona",
-    "victory-gardens",
-}
+LOW_VALUE_STRICT_SLUGS = group_slugs("strict-near-duplicate-template")
 
 ROBOTS_TAG = re.compile(
     r'<meta\b[^>]*\bname=["\']robots["\'][^>]*>', flags=re.IGNORECASE
@@ -108,7 +64,7 @@ HREFLANG_LINE = re.compile(
 URL_BLOCK = re.compile(r"(?ms)^  <url>\n.*?^  </url>\n?")
 
 
-def quarantine_page(path: Path) -> None:
+def quarantine_page(path: Path) -> bool:
     source = path.read_text(encoding="utf-8")
     updated, replacements = ROBOTS_TAG.subn(
         '<meta name="robots" content="noindex, follow">', source, count=1
@@ -117,29 +73,24 @@ def quarantine_page(path: Path) -> None:
         raise RuntimeError(f"{path}: expected exactly one robots meta tag")
     updated = HREFLANG_LINE.sub("", updated)
     if updated == source:
-        raise RuntimeError(f"{path}: quarantine produced no change")
+        return False
     path.write_text(updated, encoding="utf-8")
+    return True
 
 
 def remove_sitemap_urls(path: Path, target_urls: set[str]) -> None:
     source = path.read_text(encoding="utf-8")
-    removed: set[str] = set()
 
     def keep_or_remove(match: re.Match[str]) -> str:
         block = match.group(0)
         loc = re.search(r"<loc>([^<]+)</loc>", block)
         if loc and loc.group(1) in target_urls:
-            removed.add(loc.group(1))
             return ""
         return block
 
     updated = URL_BLOCK.sub(keep_or_remove, source)
-    missing = target_urls - removed
-    if missing:
-        raise RuntimeError(
-            f"{path}: expected submitted URLs were absent: {', '.join(sorted(missing))}"
-        )
-    path.write_text(updated, encoding="utf-8")
+    if updated != source:
+        path.write_text(updated, encoding="utf-8")
 
 
 def update_site_facts() -> int:
@@ -147,15 +98,6 @@ def update_site_facts() -> int:
     facts = json.loads(path.read_text(encoding="utf-8"))
     inventory = facts["canonicalTownInventory"]
     by_county = inventory["byCounty"]
-
-    before = {slug for slugs in by_county.values() for slug in slugs}
-    missing = LOW_VALUE_STRICT_SLUGS - before
-    if missing:
-        raise RuntimeError(
-            "site-facts inventory is missing expected quarantine slugs: "
-            + ", ".join(sorted(missing))
-        )
-
     for county, slugs in by_county.items():
         by_county[county] = [
             slug for slug in slugs if slug not in LOW_VALUE_STRICT_SLUGS
@@ -171,7 +113,8 @@ def update_site_facts() -> int:
             "to justify search indexing in either language."
         ),
         "searchHandling": "noindex, follow; omitted from sitemaps and hreflang",
-        "reviewStatus": "pending-local-fact-verification-and-editorial-rewrite",
+        "reviewStatus": "compact-noindex-fallback-live",
+        "fallbackRenderer": "scripts/render_noindex_town_fallbacks.py",
         "evidence": {
             "qualityCheck": "tools/check_town_content_quality.py --strict",
             "gscSnapshot": "data/gsc-town-quarantine-impact.json",
@@ -266,8 +209,8 @@ def main() -> int:
     if PRIORITY_REWRITE_SLUGS & LOW_VALUE_STRICT_SLUGS:
         raise RuntimeError("priority and quarantine policies overlap")
 
+    render_fallbacks(slugs=LOW_VALUE_STRICT_SLUGS)
     for slug in sorted(LOW_VALUE_STRICT_SLUGS):
-        quarantine_page(ROOT / "towns" / f"{slug}.html")
         quarantine_page(ROOT / "es" / "towns" / f"{slug}.html")
 
     remove_sitemap_urls(

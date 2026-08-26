@@ -118,6 +118,33 @@ def is_extensionless(url: str) -> bool:
     return not normalized_path(url).endswith(".html")
 
 
+def requires_town_local_business(source: str) -> bool:
+    """Return whether a town page should publish its full local-business graph.
+
+    Compact town fallbacks are intentionally noindex and carry no rich-result
+    schema. Requiring the normal town graph on those pages would undo that
+    quarantine. Both the managed marker and the exact robots policy are needed
+    so an arbitrary noindex page cannot bypass the full-guide regression check.
+    """
+
+    managed_fallback = bool(
+        re.search(
+            r'<body\b[^>]*\bdata-noindex-town-fallback=["\']v1["\']',
+            source,
+            re.IGNORECASE,
+        )
+    )
+    noindex_follow = bool(
+        re.search(
+            r'<meta\b(?=[^>]*\bname=["\']robots["\'])'
+            r'(?=[^>]*\bcontent=["\']\s*noindex\s*,\s*follow\s*["\'])[^>]*>',
+            source,
+            re.IGNORECASE,
+        )
+    )
+    return not (managed_fallback and noindex_follow)
+
+
 def json_nodes(value: object):
     if isinstance(value, dict):
         yield value
@@ -408,8 +435,9 @@ def main() -> int:
     for directory in (ROOT / "towns", ROOT / "es" / "towns"):
         for path in sorted(directory.glob("*.html")):
             relative = path.relative_to(ROOT).as_posix()
+            source = path.read_text(encoding="utf-8")
             try:
-                blocks = json_ld_blocks(path.read_text(encoding="utf-8"))
+                blocks = json_ld_blocks(source)
             except json.JSONDecodeError as error:
                 failures.append(f"{relative}: invalid JSON-LD: {error}")
                 continue
@@ -436,7 +464,7 @@ def main() -> int:
                         f"{relative}: Summit office address has non-Summit geo {coordinates}"
                     )
             expected_town = AREA_SERVED_TOWNS.get(path.name)
-            if expected_town:
+            if expected_town and requires_town_local_business(source):
                 matching_business = [
                     node
                     for node in office_nodes

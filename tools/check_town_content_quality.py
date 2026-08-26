@@ -70,6 +70,18 @@ UNSUPPORTED_CLAIMS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ),
 )
 
+NOINDEX_FALLBACK_RISKY_COPY = re.compile(
+    r"(?:"
+    r"\b(?:best|strongest|top[- ]rated|top dollar|rank(?:ed|ing|ings)?|family|families|family-friendly)\b|"
+    r"\b(?:school|schools|school district|safe|safety|crime rate)\b|"
+    r"\b(?:median|average sale|inventory|days on market|commute time)\b|"
+    r"\b(?:appreciation|return on investment|roi|guarantee[ds]?)\b|"
+    r"\b(?:young professionals|empty nesters|retirees)\b|"
+    r"\$\s*\d|\b\d+(?:\.\d+)?\s*%"
+    r")",
+    re.IGNORECASE,
+)
+
 
 def robots_noindex(source: str) -> bool:
     tags = re.findall(
@@ -210,8 +222,43 @@ def unsupported_claim_issues(pages: list[TownPage]) -> list[str]:
     return issues
 
 
+def noindex_fallback_issues(pages: list[TownPage]) -> list[str]:
+    """Reject unsafe English copy that is merely hidden behind ``noindex``."""
+
+    issues: list[str] = []
+    for page in pages:
+        if page.language != "en" or page.indexable or redirect_stub(page.source):
+            continue
+
+        problems: list[str] = []
+        if 'data-noindex-town-fallback="v1"' not in page.source:
+            problems.append("missing compact fallback marker")
+        if page.word_count > 220:
+            problems.append(f"not compact ({page.word_count} words)")
+        if re.search(
+            r"application/ld\+json|schema\.org|itemscope|itemtype=",
+            page.source,
+            re.IGNORECASE,
+        ):
+            problems.append("rich-result schema remains")
+        if not re.search(
+            r'<meta\b[^>]*name=["\']robots["\'][^>]*'
+            r'content=["\']noindex,\s*follow["\']',
+            page.source,
+            re.IGNORECASE,
+        ):
+            problems.append("robots directive is not noindex, follow")
+        if NOINDEX_FALLBACK_RISKY_COPY.search(page.normalized_text):
+            problems.append("risky local claims remain")
+
+        if problems:
+            issues.append(f"{page.path}: unsafe noindex town page ({'; '.join(problems)})")
+    return issues
+
+
 def blocking_issues(pages: list[TownPage], *, strict: bool = False) -> list[str]:
     issues = unsupported_claim_issues(pages)
+    issues.extend(noindex_fallback_issues(pages))
     if strict:
         minimum_words = REVIEW_MINIMUM_WORDS
         similarity = REVIEW_SIMILARITY

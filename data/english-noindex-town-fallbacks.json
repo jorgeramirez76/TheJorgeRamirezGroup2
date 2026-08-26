@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "effectiveDate": "2026-08-26",
+  "language": "en",
+  "routePattern": "/towns/{slug}",
+  "renderer": "scripts/render_noindex_town_fallbacks.py",
+  "searchHandling": {
+    "robots": "noindex, follow",
+    "sitemap": "excluded",
+    "hreflang": "omitted",
+    "richResultSchema": "omitted"
+  },
+  "countyGuides": {
+    "Essex": {
+      "label": "Essex County guide",
+      "href": "/counties/essex-county"
+    },
+    "Hudson": {
+      "label": "Hudson County guide",
+      "href": "/counties/hudson-county"
+    },
+    "Middlesex": {
+      "label": "Middlesex County guide",
+      "href": "/counties/middlesex-county"
+    },
+    "Morris": {
+      "label": "Morris County guide",
+      "href": "/counties/morris-county"
+    },
+    "Somerset": {
+      "label": "Somerset County guide",
+      "href": "/counties/somerset-county"
+    },
+    "Union": {
+      "label": "Union County guide",
+      "href": "/counties/union-county"
+    }
+  },
+  "groups": [
+    {
+      "id": "strict-near-duplicate-template",
+      "legacySource": "scripts/quarantine_low_value_towns.py",
+      "reason": "Near-exact generated guides did not contain enough source-backed local information to retain their long-form copy.",
+      "slugs": [
+        "bayonne",
+        "boonton",
+        "butler",
+        "carteret",
+        "chester-borough",
+        "chester-township",
+        "clark",
+        "dover",
+        "east-newark",
+        "garwood",
+        "hanover",
+        "harding",
+        "harrison",
+        "highland-park",
+        "hillside",
+        "jamesburg",
+        "kearny",
+        "kenilworth",
+        "kinnelon",
+        "lincoln-park",
+        "linden",
+        "mendham-borough",
+        "mendham-township",
+        "milltown",
+        "mine-hill",
+        "monroe-township",
+        "mount-arlington",
+        "mount-olive",
+        "mountain-lakes",
+        "netcong",
+        "north-bergen",
+        "north-brunswick",
+        "old-bridge",
+        "piscataway",
+        "rahway",
+        "randolph",
+        "riverdale",
+        "rockaway-borough",
+        "rockaway-township",
+        "roxbury",
+        "sayreville",
+        "secaucus",
+        "south-amboy",
+        "south-plainfield",
+        "spotswood",
+        "union-city",
+        "verona",
+        "victory-gardens"
+      ]
+    },
+    {
+      "id": "wrong-town-somerset-clones",
+      "legacySource": "generate_somerset_towns.py",
+      "reason": "Template substitutions left details from another municipality in the generated pages.",
+      "slugs": [
+        "bedminster",
+        "bernardsville",
+        "bound-brook",
+        "branchburg",
+        "bridgewater",
+        "far-hills",
+        "franklin-township",
+        "green-brook",
+        "hillsborough",
+        "manville",
+        "millstone",
+        "montgomery",
+        "north-plainfield",
+        "raritan",
+        "rocky-hill",
+        "somerville",
+        "south-bound-brook"
+      ]
+    },
+    {
+      "id": "scaled-long-form-template",
+      "legacySource": "data/site-facts.json",
+      "qualityGate": "tools/check_town_content_quality.py",
+      "reason": "Long-form templates contained unsupported market, experience, investment, school, inventory, or development assertions.",
+      "slugs": [
+        "cranbury",
+        "montville",
+        "pequannock-township",
+        "roseland",
+        "south-river",
+        "warren-township",
+        "watchung",
+        "west-caldwell",
+        "winfield"
+      ]
+    }
+  ],
+  "protectedSourceBackedPrioritySlugs": [
+    "berkeley-heights",
+    "bloomfield",
+    "chatham-borough",
+    "chatham-township",
+    "cranford",
+    "denville",
+    "east-brunswick",
+    "east-hanover",
+    "fanwood",
+    "guttenberg",
+    "morris-plains",
+    "new-providence",
+    "roselle-park",
+    "south-brunswick",
+    "springfield",
+    "west-new-york"
+  ],
+  "legacyMutationGuards": [
+    "generate_somerset_towns.py",
+    "scripts/quarantine_low_value_towns.py",
+    "bulk_update_towns.py",
+    "tools/check_town_content_quality.py"
+  ]
+}

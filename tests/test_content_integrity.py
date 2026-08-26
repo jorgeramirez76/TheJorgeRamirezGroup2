@@ -303,11 +303,13 @@ class ContentIntegrityTests(unittest.TestCase):
         self.assertIn("Gladstone Branch", basking)
         self.assertIn("check the current NJ TRANSIT schedule", basking)
 
-        green_brook = visible_text(read("towns/green-brook.html"))
+        green_brook_source = read("towns/green-brook.html")
+        green_brook = visible_text(green_brook_source)
+        self.assertIn('data-noindex-town-fallback="v1"', green_brook_source)
         self.assertNotRegex(green_brook, r"(?i)\bGreen Brook (?:train )?station\b")
         self.assertNotRegex(green_brook, r"(?i)\b55\s*(?:-|–)?\s*(?:min|minutes?)\b")
         self.assertNotIn("Gladstone Branch", green_brook)
-        self.assertIn("does not have an NJ TRANSIT rail station", green_brook)
+        self.assertNotIn("NJ TRANSIT", green_brook)
 
         west_orange = visible_text(read("towns/west-orange.html"))
         self.assertNotRegex(west_orange, r"(?i)NJ Transit service:\s*Midtown Direct")

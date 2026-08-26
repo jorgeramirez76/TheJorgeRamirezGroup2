@@ -161,7 +161,37 @@
       ],
       "reason": "Near-exact long-form town templates contain unsupported market, experience, investment-return, school, inventory, and development assertions.",
       "searchHandling": "noindex, follow; omitted from sitemaps and hreflang",
-      "reviewStatus": "pending-local-fact-verification-and-editorial-rewrite"
+      "reviewStatus": "compact-noindex-fallback-live",
+      "fallbackRenderer": "scripts/render_noindex_town_fallbacks.py"
+    },
+    {
+      "scope": "town-guide-wrong-town-somerset-clones",
+      "languages": [
+        "en"
+      ],
+      "slugs": [
+        "bedminster",
+        "bernardsville",
+        "bound-brook",
+        "branchburg",
+        "bridgewater",
+        "far-hills",
+        "franklin-township",
+        "green-brook",
+        "hillsborough",
+        "manville",
+        "millstone",
+        "montgomery",
+        "north-plainfield",
+        "raritan",
+        "rocky-hill",
+        "somerville",
+        "south-bound-brook"
+      ],
+      "reason": "Template substitutions left details from another municipality in the generated English pages.",
+      "searchHandling": "compact noindex, follow fallback; omitted from sitemap and hreflang",
+      "reviewStatus": "compact-noindex-fallback-live",
+      "fallbackRenderer": "scripts/render_noindex_town_fallbacks.py"
     },
     {
       "scope": "town-guide-strict-near-duplicate-cluster",
@@ -221,7 +251,8 @@
       ],
       "reason": "Near-exact generated town guides lack enough source-backed local value to justify search indexing in either language.",
       "searchHandling": "noindex, follow; omitted from sitemaps and hreflang",
-      "reviewStatus": "pending-local-fact-verification-and-editorial-rewrite",
+      "reviewStatus": "compact-noindex-fallback-live",
+      "fallbackRenderer": "scripts/render_noindex_town_fallbacks.py",
       "evidence": {
         "qualityCheck": "tools/check_town_content_quality.py --strict",
         "gscSnapshot": "data/gsc-town-quarantine-impact.json"

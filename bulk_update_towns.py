@@ -4,7 +4,10 @@ import re
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple
 
+from scripts.render_noindex_town_fallbacks import all_fallback_slugs
+
 TOWNS_DIR = Path("towns")
+MANAGED_NOINDEX_SLUGS = all_fallback_slugs()
 
 # 1) URL fixes (global replace)
 URL_REPLACEMENTS = [
@@ -226,7 +229,11 @@ def main():
     changed_url = 0
     changed_jsonld = 0
     changed_footer = 0
+    skipped_fallbacks = 0
     for fp in files:
+        if fp.stem in MANAGED_NOINDEX_SLUGS:
+            skipped_fallbacks += 1
+            continue
         original = fp.read_text(encoding="utf-8", errors="ignore")
         html = original
         file_changed = False
@@ -254,6 +261,7 @@ def main():
     print(f"Files with URL fixes: {changed_url}")
     print(f"Files with JSON-LD updates: {changed_jsonld}")
     print(f"Files with footer updates: {changed_footer}")
+    print(f"Managed noindex fallbacks skipped: {skipped_fallbacks}")
 
 if __name__ == "__main__":
     main()
