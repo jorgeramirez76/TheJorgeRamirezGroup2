@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-26",
+  "renderer": "tools/generate_town_market_research_essex_middlesex.py",
+  "publicationPolicy": {
+    "status": "reviewed-primary-sources",
+    "scope": "Eleven retained English and Spanish town market-research route pairs",
+    "treasuryRule": "Render only the exact single-district row from the finalized 2025 NJ Treasury Average Residential Statistics file and preserve its published labels.",
+    "currentYearRule": "Link the 2026 file for current-year context only; do not infer or render missing 2026 sales or tax fields.",
+    "realtorRule": "Link the NJ Realtors public county-report portal and its publication page; do not copy member-only municipality tables.",
+    "propertyRule": "A property-specific CMA requires current comparable properties and facts about the subject property.",
+    "fairHousingRule": "Do not rank or steer by protected characteristics, demographic proxies, institutions, or subjective place labels."
+  },
+  "designContract": {
+    "source": "Main homepage",
+    "palette": ["#0A0A0A", "#1A1A1A", "#C41230", "#8B0D22", "#B8962E", "#D4AF5A", "#FAFAF8", "#F8F6F2"],
+    "displayFont": "Playfair Display",
+    "bodyFont": "Inter",
+    "minimumControlHeight": "44px"
+  },
+  "sharedSources": [
+    {
+      "id": "nj-treasury-statistics",
+      "publisher": "New Jersey Department of the Treasury, Division of Taxation",
+      "title": "Property Tax Statistics",
+      "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+      "accessedOn": "2026-08-26",
+      "use": "Locate the Division of Taxation's annual Average Residential Statistics files and read their year-specific labels.",
+      "limit": "Tax and assessment statistics are not a listing-service report, appraisal, or property-specific valuation."
+    },
+    {
+      "id": "nj-treasury-average-residential-2025",
+      "publisher": "New Jersey Department of the Treasury, Division of Taxation",
+      "title": "2025 Average Residential Statistics",
+      "url": "https://www.nj.gov/treasury/taxation/pdf/lpt/class4/2025AvgResStat.pdf",
+      "accessedOn": "2026-08-26",
+      "use": "Supply the finalized district row using the exact published columns: # of Line Items, Avg Assessment, Avg Tax Bill, # of Sales, and Avg Sales Price.",
+      "limit": "The published figures are district-level 2025 values with average labels; they are not a current listing price or a property-specific CMA."
+    },
+    {
+      "id": "nj-treasury-average-residential-2026-context",
+      "publisher": "New Jersey Department of the Treasury, Division of Taxation",
+      "title": "2026 Average Residential Statistics",
+      "url": "https://www.nj.gov/treasury/taxation/pdf/lpt/class4/2026AvgResStat.pdf",
+      "accessedOn": "2026-08-26",
+      "use": "Provide a direct link to the current-year file so readers can review what the State has published.",
+      "limit": "At review time the file did not expose the complete tax and sales columns used below; do not infer missing 2026 values or label 2025 values as 2026."
+    },
+    {
+      "id": "njr-market-data",
+      "publisher": "New Jersey Realtors",
+      "title": "10K Market Data",
+      "url": "https://www.njrealtor.com/research/10k/",
+      "accessedOn": "2026-08-26",
+      "use": "Confirm the official route to public state and county market reports and the distinction between public county reports and member municipality reports.",
+      "limit": "A county report does not establish a town result, and this site does not reproduce member-only municipality tables."
+    },
+    {
+      "id": "njr-public-county-portal",
+      "publisher": "New Jersey Realtors / ShowingTime Plus",
+      "title": "Public State and County Reports",
+      "url": "https://njar-public.stats.10kresearch.com/reports",
+      "accessedOn": "2026-08-26",
+      "use": "Let readers select a county, exact reporting period, and available property category at the source.",
+      "limit": "Selections and values change with the chosen geography, period, and category; no portal table is copied into these town pages."
+    },
+    {
+      "id": "nj-dca-fair-housing",
+      "publisher": "New Jersey Department of Community Affairs",
+      "title": "Housing Discrimination and Fair Housing",
+      "url": "https://www.nj.gov/dca/home/discrimination.shtml",
+      "accessedOn": "2026-08-26",
+      "use": "Provide a direct state resource for fair-housing rights and complaint information.",
+      "limit": "This page is a public information resource and does not decide an individual legal matter."
+    }
+  ],
+  "reports": [
+    {
+      "slug": "glen-ridge",
+      "displayName": "Glen Ridge",
+      "county": "Essex",
+      "countyGuideSlug": "essex-county",
+      "publishedOn": "2026-03-09",
+      "routes": {
+        "en": "/blog/market-report-glen-ridge-nj-2026",
+        "es": "/es/blog/market-report-glen-ridge-nj-2026"
+      },
+      "treasuryDistrict": "GLEN RIDGE TWP",
+      "treasuryCode": "0708",
+      "statisticsYear": 2025,
+      "statistics": {
+        "# of Line Items": "2,293",
+        "Avg Assessment": "$674,911",
+        "Avg Tax Bill": "$23,676",
+        "# of Sales": "79",
+        "Avg Sales Price": "$1,200,070.27"
+      },
+      "identityEn": "Glen Ridge is in Essex County. The Treasury table publishes this tax-district row as GLEN RIDGE TWP, so the source name is preserved exactly here.",
+      "identityEs": "Glen Ridge está en el condado de Essex. La tabla del Treasury publica este distrito fiscal como GLEN RIDGE TWP, por lo que aquí se conserva el nombre exacto de la fuente.",
+      "researchNoteEn": "Keep the State's district label in any comparison, then use the Borough's own records for an address, block, lot, assessment, or permit question.",
+      "researchNoteEs": "Conserve la etiqueta estatal del distrito al comparar y use los registros del Borough para una consulta sobre dirección, bloque, lote, tasación o permiso.",
+      "municipalitySource": {
+        "publisher": "Borough of Glen Ridge",
+        "title": "Official municipal website",
+        "url": "https://www.glenridgenj.org/",
+        "accessedOn": "2026-08-26",
+        "use": "Find current municipal departments, notices, records, and contacts."
+      },
+      "censusSource": {
+        "publisher": "U.S. Census Bureau",
+        "title": "Census profile: Glen Ridge borough",
+        "url": "https://data.census.gov/profile?g=060XX00US3401326610",
+        "accessedOn": "2026-08-26",
+        "use": "Confirm the Census geography and consult release-dated public estimates."
+      }
+    },
+    {
+      "slug": "livingston",
+      "displayName": "Livingston",
+      "county": "Essex",
+      "countyGuideSlug": "essex-county",
+      "publishedOn": "2026-03-09",
+      "routes": {
+        "en": "/blog/market-report-livingston-nj-2026",
+        "es": "/es/blog/market-report-livingston-nj-2026"
+      },
+      "treasuryDistrict": "LIVINGSTON TWP",
+      "treasuryCode": "0710",
+      "statisticsYear": 2025,
+      "statistics": {
+        "# of Line Items": "10,151",
+        "Avg Assessment": "$729,727",
+        "Avg Tax Bill": "$18,469",
+        "# of Sales": "307",
+        "Avg Sales Price": "$1,142,065.20"
+      },
+      "identityEn": "Livingston is a township in Essex County. The values below belong to the LIVINGSTON TWP row and should remain attached to that district and year.",
+      "identityEs": "Livingston es un township del condado de Essex. Los valores siguientes pertenecen a la fila LIVINGSTON TWP y deben mantenerse unidos a ese distrito y año.",
+      "researchNoteEn": "Use Township records for a particular parcel; a district average cannot describe the condition, improvements, or market evidence for one home.",
+      "researchNoteEs": "Use los registros del Township para una parcela específica; un promedio distrital no describe la condición, las mejoras ni la evidencia de mercado de una vivienda.",
+      "municipalitySource": {
+        "publisher": "Township of Livingston",
+        "title": "Official municipal website",
+        "url": "https://www.livingstonnj.org/",
+        "accessedOn": "2026-08-26",
+        "use": "Find current municipal departments, notices, records, and contacts."
+      },
+      "censusSource": {
+        "publisher": "U.S. Census Bureau",
+        "title": "QuickFacts: Livingston township",
+        "url": "https://www.census.gov/quickfacts/fact/table/livingstontownshipessexcountynewjersey/PST045225",
+        "accessedOn": "2026-08-26",
+        "use": "Confirm the Census geography and consult release-dated public estimates."
+      }
+    },
+    {
+      "slug": "maplewood",
+      "displayName": "Maplewood",
+      "county": "Essex",
+      "countyGuideSlug": "essex-county",
+      "publishedOn": "2026-03-09",
+      "routes": {
+        "en": "/blog/market-report-maplewood-nj-2026",
+        "es": "/es/blog/market-report-maplewood-nj-2026"
+      },
+      "treasuryDistrict": "MAPLEWOOD TWP",
+      "treasuryCode": "0711",
+      "statisticsYear": 2025,
+      "statistics": {
+        "# of Line Items": "6,888",
+        "Avg Assessment": "$807,155",
+        "Avg Tax Bill": "$19,380",
+        "# of Sales": "219",
+        "Avg Sales Price": "$908,544.95"
+      },
+      "identityEn": "Maplewood is a township in Essex County. Its Treasury district row is separate from neighboring municipal rows even when regional topics overlap.",
+      "identityEs": "Maplewood es un township del condado de Essex. Su fila distrital del Treasury es distinta de las filas municipales vecinas aunque algunos temas regionales coincidan.",
+      "researchNoteEn": "Compare MAPLEWOOD TWP only with rows that use the same source year and field labels, and return to municipal records for the address under review.",
+      "researchNoteEs": "Compare MAPLEWOOD TWP solo con filas del mismo año y con las mismas etiquetas, y vuelva a los registros municipales para la dirección estudiada.",
+      "municipalitySource": {
+        "publisher": "Township of Maplewood",
+        "title": "Official municipal website",
+        "url": "https://www.maplewoodnj.gov/",
+        "accessedOn": "2026-08-26",
+        "use": "Find current municipal departments, notices, records, and contacts."
+      },
+      "censusSource": {
+        "publisher": "U.S. Census Bureau",
+        "title": "QuickFacts: Maplewood township",
+        "url": "https://www.census.gov/quickfacts/fact/table/maplewoodtownshipessexcountynewjersey/PST045225",
+        "accessedOn": "2026-08-26",
+        "use": "Confirm the Census geography and consult release-dated public estimates."
+      }
+    },
+    {
+      "slug": "montclair",
+      "displayName": "Montclair",
+      "county": "Essex",
+      "countyGuideSlug": "essex-county",
+      "publishedOn": "2026-03-09",
+      "routes": {
+        "en": "/blog/market-report-montclair-nj-2026",
+        "es": "/es/blog/market-report-montclair-nj-2026"
+      },
+      "treasuryDistrict": "MONTCLAIR TWP",
+      "treasuryCode": "0713",
+      "statisticsYear": 2025,
+      "statistics": {
+        "# of Line Items": "9,605",
+        "Avg Assessment": "$639,628",
+        "Avg Tax Bill": "$22,489",
+        "# of Sales": "311",
+        "Avg Sales Price": "$1,285,489.41"
+      },
+      "identityEn": "Montclair is a township in Essex County. The State's MONTCLAIR TWP row is a district-level annual reference, not a neighborhood or parcel result.",
+      "identityEs": "Montclair es un township del condado de Essex. La fila estatal MONTCLAIR TWP es una referencia anual del distrito, no un resultado de vecindario ni de parcela.",
+      "researchNoteEn": "For a property question, confirm the block, lot, assessment record, land-use documents, and current comparable properties rather than applying the district average.",
+      "researchNoteEs": "Para una consulta de propiedad, confirme bloque, lote, registro de tasación, documentos de uso de suelo y comparables vigentes en vez de aplicar el promedio distrital.",
+      "municipalitySource": {
+        "publisher": "Township of Montclair",
+        "title": "Official municipal website",
+        "url": "https://www.montclairnjusa.org/",
+        "accessedOn": "2026-08-26",
+        "use": "Find current municipal departments, notices, records, and contacts."
+      },
+      "censusSource": {
+        "publisher": "U.S. Census Bureau",
+        "title": "QuickFacts: Montclair township",
+        "url": "https://www.census.gov/quickfacts/fact/table/montclairtownshipessexcountynewjersey/PST045225",
+        "accessedOn": "2026-08-26",
+        "use": "Confirm the Census geography and consult release-dated public estimates."
+      }
+    },
+    {
+      "slug": "short-hills",
+      "displayName": "Short Hills",
+      "county": "Essex",
+      "countyGuideSlug": "essex-county",
+      "publishedOn": "2026-03-09",
+      "routes": {
+        "en": "/blog/market-report-short-hills-nj-2026",
+        "es": "/es/blog/market-report-short-hills-nj-2026"
+      },
+      "treasuryDistrict": "MILLBURN TWP",
+      "treasuryCode": "0712",
+      "statisticsYear": 2025,
+      "statistics": {
+        "# of Line Items": "6,219",
+        "Avg Assessment": "$1,302,529",
+        "Avg Tax Bill": "$26,298",
+        "# of Sales": "207",
+        "Avg Sales Price": "$1,945,207.55"
+      },
+      "identityEn": "Short Hills is a community and mailing name within Millburn Township in Essex County. The State does not publish a separate Short Hills tax-district row in this table.",
+      "identityEs": "Short Hills es una comunidad y nombre postal dentro de Millburn Township, condado de Essex. El Estado no publica una fila fiscal separada para Short Hills en esta tabla.",
+      "researchNoteEn": "The figures below therefore reproduce the MILLBURN TWP row. Do not relabel them as a Short Hills-only result; verify the municipality, block, and lot for an address.",
+      "researchNoteEs": "Por eso, las cifras siguientes reproducen la fila MILLBURN TWP. No las presente como un resultado solo de Short Hills; verifique municipio, bloque y lote de la dirección.",
+      "municipalitySource": {
+        "publisher": "Township of Millburn",
+        "title": "Official municipal website",
+        "url": "https://www.twp.millburn.nj.us/",
+        "accessedOn": "2026-08-26",
+        "use": "Confirm that Short Hills addresses use Millburn Township municipal records and find current departments and contacts."
+      },
+      "censusSource": {
+        "publisher": "U.S. Census Bureau",
+        "title": "QuickFacts: Millburn township",
+        "url": "https://www.census.gov/quickfacts/fact/table/millburntownshipessexcountynewjersey/PST045225",
+        "accessedOn": "2026-08-26",
+        "use": "Use the municipal Census geography for release-dated public estimates."
+      }
+    },
+    {
+      "slug": "south-orange",
+      "displayName": "South Orange",
+      "county": "Essex",
+      "countyGuideSlug": "essex-county",
+      "publishedOn": "2026-03-09",
+      "routes": {
+        "en": "/blog/market-report-south-orange-nj-2026",
+        "es": "/es/blog/market-report-south-orange-nj-2026"
+      },
+      "treasuryDistrict": "SOUTH ORANGE VILLAGE TW",
+      "treasuryCode": "0719",
+      "statisticsYear": 2025,
+      "statistics": {
+        "# of Line Items": "4,353",
+        "Avg Assessment": "$879,273",
+        "Avg Tax Bill": "$22,720",
+        "# of Sales": "153",
+        "Avg Sales Price": "$990,016.57"
+      },
+      "identityEn": "South Orange is in Essex County. The Treasury file abbreviates its district row as SOUTH ORANGE VILLAGE TW, and that exact label stays with these values.",
+      "identityEs": "South Orange está en el condado de Essex. El archivo del Treasury abrevia la fila distrital como SOUTH ORANGE VILLAGE TW y esa etiqueta exacta acompaña estos valores.",
+      "researchNoteEn": "Keep this row separate from Maplewood and other Essex districts; for a property, use South Orange's municipal records and current comparable evidence.",
+      "researchNoteEs": "Mantenga esta fila separada de Maplewood y otros distritos de Essex; para una propiedad, use registros de South Orange y comparables vigentes.",
+      "municipalitySource": {
+        "publisher": "South Orange Village",
+        "title": "Official municipal website",
+        "url": "https://www.southorange.org/",
+        "accessedOn": "2026-08-26",
+        "use": "Find current municipal departments, notices, records, and contacts."
+      },
+      "censusSource": {
+        "publisher": "U.S. Census Bureau",
+        "title": "QuickFacts: South Orange Village township",
+        "url": "https://www.census.gov/quickfacts/fact/table/southorangevillagetownshipessexcountynewjersey/PST045225",
+        "accessedOn": "2026-08-26",
+        "use": "Confirm the Census geography and consult release-dated public estimates."
+      }
+    },
+    {
+      "slug": "west-orange",
+      "displayName": "West Orange",
+      "county": "Essex",
+      "countyGuideSlug": "essex-county",
+      "publishedOn": "2026-03-09",
+      "routes": {
+        "en": "/blog/market-report-west-orange-nj-2026",
+        "es": "/es/blog/market-report-west-orange-nj-2026"
+      },
+      "treasuryDistrict": "WEST ORANGE TWP",
+      "treasuryCode": "0722",
+      "statisticsYear": 2025,
+      "statistics": {
+        "# of Line Items": "13,326",
+        "Avg Assessment": "$615,472",
+        "Avg Tax Bill": "$16,168",
+        "# of Sales": "180",
+        "Avg Sales Price": "$690,053.18"
+      },
+      "identityEn": "West Orange is a township in Essex County. The WEST ORANGE TWP row provides an annual district reference and does not describe every property or part of the township.",
+      "identityEs": "West Orange es un township del condado de Essex. La fila WEST ORANGE TWP ofrece una referencia anual del distrito y no describe cada propiedad ni cada parte del township.",
+      "researchNoteEn": "Use the district row for like-for-like annual research, then move to Township assessment, land-use, permit, and comparable-property records for an address.",
+      "researchNoteEs": "Use la fila distrital para investigación anual comparable y después consulte tasación, uso de suelo, permisos y comparables para una dirección.",
+      "municipalitySource": {
+        "publisher": "Township of West Orange",
+        "title": "Official municipal website",
+        "url": "https://www.westorange.org/",
+        "accessedOn": "2026-08-26",
+        "use": "Find current municipal departments, notices, records, and contacts."
+      },
+      "censusSource": {
+        "publisher": "U.S. Census Bureau",
+        "title": "QuickFacts: West Orange township",
+        "url": "https://www.census.gov/quickfacts/fact/table/westorangetownshipessexcountynewjersey/PST045225",
+        "accessedOn": "2026-08-26",
+        "use": "Confirm the Census geography and consult release-dated public estimates."
+      }
+    },
+    {
+      "slug": "metuchen",
+      "displayName": "Metuchen",
+      "county": "Middlesex",
+      "countyGuideSlug": "middlesex-county",
+      "publishedOn": "2026-03-09",
+      "routes": {
+        "en": "/blog/market-report-metuchen-nj-2026",
+        "es": "/es/blog/market-report-metuchen-nj-2026"
+      },
+      "treasuryDistrict": "METUCHEN BORO",
+      "treasuryCode": "1209",
+      "statisticsYear": 2025,
+      "statistics": {
+        "# of Line Items": "4,601",
+        "Avg Assessment": "$190,473",
+        "Avg Tax Bill": "$13,819",
+        "# of Sales": "67",
+        "Avg Sales Price": "$730,566.34"
+      },
+      "identityEn": "Metuchen is a borough in Middlesex County. Its METUCHEN BORO tax-district row is distinct from surrounding municipal and county totals.",
+      "identityEs": "Metuchen es un borough del condado de Middlesex. Su fila fiscal METUCHEN BORO es distinta de los totales municipales vecinos y del condado.",
+      "researchNoteEn": "Use the borough row only for the named 2025 fields; property research requires Metuchen parcel records and current comparable properties.",
+      "researchNoteEs": "Use la fila del borough solo para los campos nombrados de 2025; una propiedad exige registros de parcela de Metuchen y comparables vigentes.",
+      "municipalitySource": {
+        "publisher": "Borough of Metuchen",
+        "title": "Official municipal website",
+        "url": "https://www.metuchennj.org/",
+        "accessedOn": "2026-08-26",
+        "use": "Find current municipal departments, notices, records, and contacts."
+      },
+      "censusSource": {
+        "publisher": "U.S. Census Bureau",
+        "title": "Census profile: Metuchen borough",
+        "url": "https://data.census.gov/profile/Metuchen_borough%2C_Middlesex_County%2C_New_Jersey?g=060XX00US3402345690",
+        "accessedOn": "2026-08-26",
+        "use": "Confirm the Census geography and consult release-dated public estimates."
+      }
+    },
+    {
+      "slug": "south-brunswick",
+      "displayName": "South Brunswick",
+      "county": "Middlesex",
+      "countyGuideSlug": "middlesex-county",
+      "publishedOn": "2026-03-09",
+      "routes": {
+        "en": "/blog/market-report-south-brunswick-nj-2026",
+        "es": "/es/blog/market-report-south-brunswick-nj-2026"
+      },
+      "treasuryDistrict": "SOUTH BRUNSWICK TWP",
+      "treasuryCode": "1221",
+      "statisticsYear": 2025,
+      "statistics": {
+        "# of Line Items": "13,366",
+        "Avg Assessment": "$196,320",
+        "Avg Tax Bill": "$10,951",
+        "# of Sales": "301",
+        "Avg Sales Price": "$674,347.81"
+      },
+      "identityEn": "South Brunswick is a township in Middlesex County. The SOUTH BRUNSWICK TWP row must not be mixed with North Brunswick or countywide results.",
+      "identityEs": "South Brunswick es un township del condado de Middlesex. La fila SOUTH BRUNSWICK TWP no debe mezclarse con North Brunswick ni con resultados de todo el condado.",
+      "researchNoteEn": "Keep the legal municipality and tax district explicit. Use Township records for the address and current comparables for a pricing discussion.",
+      "researchNoteEs": "Mantenga explícitos el municipio legal y el distrito fiscal. Use registros del Township para la dirección y comparables vigentes para hablar de precio.",
+      "municipalitySource": {
+        "publisher": "Township of South Brunswick",
+        "title": "Official municipal website",
+        "url": "https://southbrunswicknj.gov/",
+        "accessedOn": "2026-08-26",
+        "use": "Find current municipal departments, notices, records, and contacts."
+      },
+      "censusSource": {
+        "publisher": "U.S. Census Bureau",
+        "title": "QuickFacts: South Brunswick township",
+        "url": "https://www.census.gov/quickfacts/fact/table/southbrunswicktownshipmiddlesexcountynewjersey/PST045225",
+        "accessedOn": "2026-08-26",
+        "use": "Confirm the Census geography and consult release-dated public estimates."
+      }
+    },
+    {
+      "slug": "woodbridge",
+      "displayName": "Woodbridge Township",
+      "county": "Middlesex",
+      "countyGuideSlug": "middlesex-county",
+      "publishedOn": "2026-03-09",
+      "routes": {
+        "en": "/blog/market-report-woodbridge-nj-2026",
+        "es": "/es/blog/market-report-woodbridge-nj-2026"
+      },
+      "treasuryDistrict": "WOODBRIDGE TWP",
+      "treasuryCode": "1225",
+      "statisticsYear": 2025,
+      "statistics": {
+        "# of Line Items": "26,447",
+        "Avg Assessment": "$79,752",
+        "Avg Tax Bill": "$9,597",
+        "# of Sales": "476",
+        "Avg Sales Price": "$487,111.87"
+      },
+      "identityEn": "Woodbridge Township is in Middlesex County. The WOODBRIDGE TWP row aggregates the tax district and is not a value for an individual neighborhood or property.",
+      "identityEs": "Woodbridge Township está en el condado de Middlesex. La fila WOODBRIDGE TWP agrega el distrito fiscal y no es el valor de un vecindario ni de una propiedad.",
+      "researchNoteEn": "A townshipwide average is only a dated reference. Confirm the address, assessment record, physical facts, and current comparable properties before drawing a pricing conclusion.",
+      "researchNoteEs": "Un promedio de todo el township es solo una referencia fechada. Confirme dirección, tasación, características físicas y comparables vigentes antes de concluir un precio.",
+      "municipalitySource": {
+        "publisher": "Township of Woodbridge",
+        "title": "Official municipal website",
+        "url": "https://www.twp.woodbridge.nj.us/",
+        "accessedOn": "2026-08-26",
+        "use": "Find current municipal departments, notices, records, and contacts."
+      },
+      "censusSource": {
+        "publisher": "U.S. Census Bureau",
+        "title": "QuickFacts: Woodbridge township",
+        "url": "https://www.census.gov/quickfacts/fact/table/woodbridgetownshipmiddlesexcountynewjersey/PST045225",
+        "accessedOn": "2026-08-26",
+        "use": "Confirm the Census geography and consult release-dated public estimates."
+      }
+    },
+    {
+      "slug": "warren-township",
+      "displayName": "Warren Township",
+      "county": "Somerset",
+      "countyGuideSlug": "somerset-county",
+      "publishedOn": "2026-03-09",
+      "routes": {
+        "en": "/blog/market-report-warren-township-nj-2026",
+        "es": "/es/blog/market-report-warren-township-nj-2026"
+      },
+      "treasuryDistrict": "WARREN TWP",
+      "treasuryCode": "1820",
+      "statisticsYear": 2025,
+      "statistics": {
+        "# of Line Items": "5,393",
+        "Avg Assessment": "$970,235",
+        "Avg Tax Bill": "$16,999",
+        "# of Sales": "34",
+        "Avg Sales Price": "$1,133,999.97"
+      },
+      "identityEn": "Warren Township is in Somerset County. It is not Warren County; the 1820 WARREN TWP row appears within the Somerset County section of the State table.",
+      "identityEs": "Warren Township está en el condado de Somerset, no en Warren County. La fila 1820 WARREN TWP aparece en la sección de Somerset del informe estatal.",
+      "researchNoteEn": "Keep Somerset County attached to the row in every note or comparison, then use Township parcel records and current comparable properties for an address.",
+      "researchNoteEs": "Mantenga el condado de Somerset unido a la fila en cada nota o comparación y use registros de parcela y comparables vigentes para una dirección.",
+      "municipalitySource": {
+        "publisher": "Township of Warren",
+        "title": "Official municipal website",
+        "url": "https://www.warrennj.org/",
+        "accessedOn": "2026-08-26",
+        "use": "Find current municipal departments, notices, records, and contacts."
+      },
+      "censusSource": {
+        "publisher": "U.S. Census Bureau",
+        "title": "QuickFacts: Warren township, Somerset County",
+        "url": "https://www.census.gov/quickfacts/fact/table/warrentownshipsomersetcountynewjersey/PST045225",
+        "accessedOn": "2026-08-26",
+        "use": "Confirm the Somerset County Census geography and consult release-dated public estimates."
+      }
+    }
+  ]
+}
