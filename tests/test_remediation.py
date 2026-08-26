@@ -306,14 +306,30 @@ class RemediationContractTests(unittest.TestCase):
             "500 E Clay Ave": [],
             "© 2©": [],
         }
-        experience = re.compile(r"\b(?:I've|I have|In)\b[^.<]{0,120}\b(?:over\s+)?15 years\b", re.I)
+        experience = (
+            re.compile(
+                r"\b(?:after|in|based on)\s+(?:15|fifteen)\+?\s+years?\s+(?:of\s+)?"
+                r"(?:selling|listing|showing|walking|helping|working|real estate|transactions?|closings?)",
+                re.I,
+            ),
+            re.compile(
+                r"\bI(?:'ve| have)\s+(?:been|spent|worked|helped|sold|walked|listed|managed)"
+                r"[^.!?]{0,160}\b(?:for|over|in)\s+(?:15|fifteen)\+?\s+years?\b",
+                re.I,
+            ),
+            re.compile(
+                r"\b(?:15|fifteen)\+?\s+years?\s+(?:of\s+)?"
+                r"(?:selling|listing|showing|real estate|experience|helping|working|walking|pre-listing)",
+                re.I,
+            ),
+        )
         experience_offenders = []
         for path in public_html():
             text = read(path)
             for phrase in forbidden:
                 if phrase in text:
                     forbidden[phrase].append(str(path.relative_to(ROOT)))
-            if experience.search(text):
+            if any(pattern.search(text) for pattern in experience):
                 experience_offenders.append(str(path.relative_to(ROOT)))
         self.assertEqual({key: [] for key in forbidden}, forbidden)
         self.assertEqual([], experience_offenders)
