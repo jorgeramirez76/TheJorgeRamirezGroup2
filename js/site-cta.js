@@ -87,3 +87,60 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
+
+/* ============================================================
+   "Prefer us on Google" badge — deep-links visitors to Google's
+   Preferred Sources tool for thejorgeramirezgroup.com.
+   URL format per developers.google.com/search/docs/appearance/preferred-sources.
+   Inserted before <footer>; end of <main> on pages without one.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var PREF_URL = 'https://www.google.com/preferences/source?q=thejorgeramirezgroup.com';
+  var isES = (document.documentElement.lang || '').toLowerCase().indexOf('es') === 0;
+  var btnLabel = isES ? 'Prefiérenos en Google' : 'Prefer us on Google';
+  var note = isES
+    ? 'Haz de thejorgeramirezgroup.com una fuente preferida en tus resultados de Google.'
+    : 'Make thejorgeramirezgroup.com a preferred source in your Google Search results.';
+  var aria = isES
+    ? 'Añadir The Jorge Ramirez Group como fuente preferida en Google (se abre en una pestaña nueva)'
+    : 'Add The Jorge Ramirez Group as a preferred source on Google (opens in a new tab)';
+
+  function init() {
+    if (document.getElementById('jrg-prefer-google')) return;
+
+    var css = [
+      '#jrg-prefer-google{text-align:center;padding:2.2rem 5% 2.4rem;',
+      'border-top:1px solid #E8E4DC;font-family:inherit}',
+      '#jrg-prefer-google .jrg-pg-btn{display:inline-flex;align-items:center;gap:8px;',
+      'min-height:44px;padding:10px 24px;border:1px solid #B8962E;border-radius:999px;',
+      'background:#FFFFFF;color:#8A6D14;font-weight:600;font-size:15px;',
+      'letter-spacing:.01em;text-decoration:none;transition:background .25s,color .25s}',
+      '#jrg-prefer-google .jrg-pg-btn:hover,#jrg-prefer-google .jrg-pg-btn:focus-visible{',
+      'background:#B8962E;color:#1A1A1A}',
+      '#jrg-prefer-google svg{width:17px;height:17px;fill:currentColor;flex:none}',
+      '#jrg-prefer-google .jrg-pg-note{margin:10px auto 0;max-width:520px;',
+      'font-size:13px;line-height:1.5;color:#6E6E6E}'
+    ].join('');
+    var style = document.createElement('style');
+    style.textContent = css;
+    document.head.appendChild(style);
+
+    var starSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.3 4.9 5.4.7-4 3.7 1 5.3-4.7-2.6-4.7 2.6 1-5.3-4-3.7 5.4-.7L12 3.6zm0-3.1L8.9 7.2l-7.3 1 5.3 5-1.3 7.2 6.4-3.5 6.4 3.5-1.3-7.2 5.3-5-7.3-1L12 .5z"/></svg>';
+
+    var wrap = document.createElement('div');
+    wrap.id = 'jrg-prefer-google';
+    wrap.innerHTML =
+      '<a class="jrg-pg-btn" href="' + PREF_URL + '" target="_blank" rel="noopener" aria-label="' + aria + '">' +
+      starSvg + '<span>' + btnLabel + '</span></a>' +
+      '<p class="jrg-pg-note">' + note + '</p>';
+
+    var footer = document.querySelector('footer');
+    if (footer && footer.parentNode) footer.parentNode.insertBefore(wrap, footer);
+    else (document.querySelector('main') || document.body).appendChild(wrap);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
