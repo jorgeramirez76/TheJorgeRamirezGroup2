@@ -56,7 +56,7 @@
     .skip-link { position: fixed; left: 16px; top: -90px; z-index: 2000; background: var(--paper); color: var(--ink); padding: 12px 18px; border: 2px solid var(--gold); border-radius: 4px; font-weight: 700; }
     .skip-link:focus { top: 12px; }
     .site-header { position: sticky; top: 0; z-index: 1000; background: var(--night); border-bottom: 2px solid var(--gold); }
-    .nav-wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .site-header .nav-wrap { position: static !important; top: auto; z-index: auto; width: min(1180px, calc(100% - 32px)); margin: 0 auto; min-height: 72px; padding: 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: transparent; backdrop-filter: none; box-shadow: none; transition: none; }
     .brand { color: var(--paper); font-family: 'Playfair Display', serif; font-size: 1.18rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
     .brand span { color: var(--gold); }
     .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }

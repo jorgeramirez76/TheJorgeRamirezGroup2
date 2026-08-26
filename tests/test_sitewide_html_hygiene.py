@@ -30,6 +30,10 @@ class FormAccessibilityParser(HTMLParser):
         self._hidden_depth = 0
         self.label_targets = set()
         self.controls = []
+        self.ids = []
+        self.fragment_links = []
+        self.images_without_alt = []
+        self.blank_links_without_noopener = []
 
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
@@ -70,6 +74,22 @@ class FormAccessibilityParser(HTMLParser):
                     ),
                 }
             )
+
+        element_id = attributes.get("id")
+        if element_id:
+            self.ids.append(element_id)
+
+        if tag == "img" and "alt" not in attributes:
+            self.images_without_alt.append(attributes.get("src") or "img")
+
+        if tag == "a":
+            href = attributes.get("href", "")
+            if href.startswith("#") and len(href) > 1:
+                self.fragment_links.append(href[1:])
+            if attributes.get("target", "").lower() == "_blank":
+                rel = {token.lower() for token in (attributes.get("rel") or "").split()}
+                if "noopener" not in rel:
+                    self.blank_links_without_noopener.append(href or "a")
 
         if tag not in VOID_ELEMENTS:
             self._stack.append((tag, starts_hidden))
@@ -117,6 +137,41 @@ class SitewideHtmlHygieneTests(unittest.TestCase):
                 unnamed.append(f"{path.relative_to(ROOT)}: {control['descriptor']}")
 
         self.assertEqual([], unnamed, "Form controls missing accessible names: " + ", ".join(unnamed))
+
+    def test_ids_are_unique_and_same_page_fragments_resolve(self):
+        findings = []
+        for path in html_files():
+            parser = FormAccessibilityParser()
+            parser.feed(path.read_text(encoding="utf-8", errors="replace"))
+            id_set = set(parser.ids)
+            duplicate_ids = sorted({value for value in parser.ids if parser.ids.count(value) > 1})
+            missing_fragments = sorted({value for value in parser.fragment_links if value not in id_set})
+            if duplicate_ids:
+                findings.append(f"{path.relative_to(ROOT)}: duplicate ids {', '.join(duplicate_ids)}")
+            if missing_fragments:
+                findings.append(
+                    f"{path.relative_to(ROOT)}: missing fragments {', '.join(missing_fragments)}"
+                )
+
+        self.assertEqual([], findings, "Invalid document anchors: " + "; ".join(findings))
+
+    def test_images_have_alt_attributes_and_blank_links_are_safe(self):
+        findings = []
+        for path in html_files():
+            parser = FormAccessibilityParser()
+            parser.feed(path.read_text(encoding="utf-8", errors="replace"))
+            if parser.images_without_alt:
+                findings.append(
+                    f"{path.relative_to(ROOT)}: images without alt "
+                    + ", ".join(parser.images_without_alt)
+                )
+            if parser.blank_links_without_noopener:
+                findings.append(
+                    f"{path.relative_to(ROOT)}: target=_blank without noopener "
+                    + ", ".join(parser.blank_links_without_noopener)
+                )
+
+        self.assertEqual([], findings, "Unsafe or unnamed media links: " + "; ".join(findings))
 
 
 if __name__ == "__main__":

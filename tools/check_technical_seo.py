@@ -240,6 +240,14 @@ def main() -> int:
             if is_canonical_page(record)
         ]
 
+    # Every JSON-LD block on the deployable surface must remain parseable,
+    # not only the town-page business graphs checked later in this script.
+    for relative, record in sorted(pages.items()):
+        try:
+            json_ld_blocks(record["text"])
+        except json.JSONDecodeError as error:
+            failures.append(f"{relative}: invalid JSON-LD: {error}")
+
     # Canonical URL format and resolvability.
     for relative, record in sorted(pages.items()):
         if len(record["canonical_links"]) != 1:
@@ -425,6 +433,16 @@ def main() -> int:
                 failures.append(
                     f"{sitemap_name}: {loc} and {href} are not reciprocal in sitemap hreflang"
                 )
+
+    # A self-canonical indexable page that is absent from both sitemaps is an
+    # accidental discovery/indexing gap. Noindex and redirect fallbacks are
+    # excluded by ``is_canonical_page`` above.
+    for relative, record in sorted(pages.items()):
+        if not is_canonical_page(record):
+            continue
+        canonical = normalized_url(record["canonical"])
+        if canonical not in sitemap_entries:
+            failures.append(f"{relative}: indexable canonical page is absent from sitemaps: {canonical}")
 
     # The index should advertise only the two language-segmented sitemaps.
     sitemap_index = ET.parse(ROOT / "sitemap-index.xml").getroot()

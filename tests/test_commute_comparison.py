@@ -68,6 +68,15 @@ class CommuteComparisonTests(unittest.TestCase):
             for field_id in ids:
                 self.assertIn(f'<label for="{field_id}">', text)
 
+    def test_breadcrumb_nav_cannot_inherit_the_global_fixed_nav(self):
+        required_reset = (
+            ".commute-page .breadcrumbs{position:static;top:auto;z-index:auto;"
+            "width:auto;padding:0;background:transparent;backdrop-filter:none;"
+            "box-shadow:none;transition:none"
+        )
+        for page in PAGES:
+            self.assertIn(required_reset, page.read_text(encoding="utf-8"), page)
+
 
 if __name__ == "__main__":
     unittest.main()

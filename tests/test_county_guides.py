@@ -159,6 +159,12 @@ class CountyGuideTests(unittest.TestCase):
                 self.assertIn("/images/jorge-logo.jpg", source)
                 self.assertIn("Playfair Display", source)
                 self.assertIn("Inter", source)
+                self.assertIn(
+                    ".county-research-page .breadcrumbs{position:static;top:auto;"
+                    "z-index:auto;width:auto;padding:0;background:transparent;"
+                    "backdrop-filter:none;box-shadow:none;transition:none",
+                    source,
+                )
                 for color in PALETTE:
                     self.assertIn(color, source)
                 for url in source_urls | {county["directoryUrl"]}:

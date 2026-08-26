@@ -129,6 +129,16 @@ class CommuterSuburbsGuideTests(unittest.TestCase):
                 self.assertIn("--ivory: #FAFAF8", source)
                 self.assertIn("'Playfair Display'", source)
                 self.assertIn("'Inter'", source)
+                self.assertIn(
+                    ".site-header .nav-wrap { position: static !important; "
+                    "top: auto; z-index: auto;",
+                    source,
+                )
+                self.assertIn(
+                    "background: transparent; backdrop-filter: none; "
+                    "box-shadow: none; transition: none;",
+                    source,
+                )
                 self.assertRegex(source, re.compile(r'<table\b[^>]*>.*?<caption\b', re.I | re.S))
 
     def test_json_ld_is_parseable_factual_and_bilingual(self) -> None:

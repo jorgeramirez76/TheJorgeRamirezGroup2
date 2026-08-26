@@ -17,6 +17,27 @@
   <meta name="llm-context" content="Master directory of all 6 New Jersey counties served by Jorge Ramirez and The Jorge Ramirez Group at Keller Williams Premier Properties. Counties: Union (21 towns), Essex (11 towns), Morris (33 towns), Hudson (12 towns), Middlesex (22 towns), Somerset (10 towns). Each county page links to its individual town landing pages with median prices, school-district resources, and transit info.">
 <link rel="canonical" href="https://thejorgeramirezgroup.com/counties">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+  body.county-index-page { background:#FAFAF8; color:#2C2C2C; font-family:'Inter',sans-serif; }
+  .county-index-page > header { padding:18px max(20px,5vw); border-bottom:2px solid #B8962E; background:#0A0A0A; color:#FFFFFF; }
+  .county-index-page > header > div a { color:#FFFFFF; font-family:'Playfair Display',Georgia,serif; font-size:1.25rem; font-weight:700; text-decoration:none; }
+  .county-index-page > header > nav { position:static; top:auto; z-index:auto; display:flex; width:auto; margin-top:12px; padding:0; flex-wrap:wrap; gap:6px 20px; background:transparent; backdrop-filter:none; box-shadow:none; transition:none; }
+  .county-index-page > header > nav a { display:inline-flex; min-height:44px; padding:8px 0; align-items:center; color:#FFFFFF; font-weight:600; text-decoration:none; }
+  .county-index-page > header > nav a:hover,
+  .county-index-page > header > nav a:focus-visible { color:#D4AF5A; }
+  .county-index-page main > nav[aria-label="Breadcrumb"] { position:static; top:auto; z-index:auto; display:block; width:auto; padding:0; background:transparent; backdrop-filter:none; box-shadow:none; transition:none; }
+  .county-index-page main h1,
+  .county-index-page main h2 { color:#1A1A1A; font-family:'Playfair Display',Georgia,serif; }
+  .county-index-page main a { color:#8B0D22 !important; }
+  .county-index-page main a:hover { color:#C41230 !important; }
+  @media (max-width:640px) {
+    .county-index-page > header > nav { display:grid; grid-template-columns:1fr 1fr; gap:2px 16px; }
+    .county-index-page > header > nav a { min-width:0; }
+  }
+</style>
 
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
@@ -37,7 +58,7 @@
 }
 </script>
 </head>
-<body>
+<body class="county-index-page">
 <a href="#main" class="skip-link" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to main content</a>
 <header>
   <div><a href="/">The Jorge Ramirez Group</a></div>
