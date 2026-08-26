@@ -295,7 +295,8 @@ class ContentIntegrityTests(unittest.TestCase):
     def test_verified_content_corrections(self) -> None:
         market = read("blog/nj-housing-market-peak-august-2026.html")
         self.assertNotIn("Summit (Morris County)", market)
-        self.assertIn("Summit (Union County)", market)
+        self.assertIn('content="noindex, follow"', market)
+        self.assertIn('href="/blog/best-time-to-sell-home-nj"', market)
 
         basking = visible_text(read("towns/basking-ridge.html"))
         self.assertNotRegex(basking, r"(?i)\b(?:55|65)\s*(?:-|–)?\s*minutes?\b")

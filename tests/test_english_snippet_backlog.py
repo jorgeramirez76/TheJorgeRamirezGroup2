@@ -64,9 +64,9 @@ class EnglishSnippetBacklogTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.pages: dict[str, dict[str, str]] = json.loads(
-            MAPPING.read_text(encoding="utf-8")
-        )["pages"]
+        mapping = json.loads(MAPPING.read_text(encoding="utf-8"))
+        cls.pages: dict[str, dict[str, str]] = mapping["pages"]
+        cls.retired_pages = set(mapping.get("retired_pages", []))
 
     def test_mapping_has_exact_original_backlog_scope(self) -> None:
         self.assertEqual(140, len(self.pages))
@@ -79,6 +79,8 @@ class EnglishSnippetBacklogTests(unittest.TestCase):
 
     def test_exact_metadata_lengths_and_social_sync(self) -> None:
         for relative, expected in self.pages.items():
+            if relative in self.retired_pages:
+                continue
             parser = parse(ROOT / relative)
 
             if "title" in expected:
@@ -125,6 +127,8 @@ class EnglishSnippetBacklogTests(unittest.TestCase):
             )
 
         for relative in self.pages:
+            if relative in self.retired_pages:
+                continue
             parser = parse(ROOT / relative)
             self.assertEqual(
                 [relative],

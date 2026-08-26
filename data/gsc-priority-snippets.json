@@ -44,11 +44,10 @@
         "description": "New Jersey's average property tax bill is $10,597 (NJ DCA, 2025). Where bills rose in 544 of 565 towns, county-by-county averages, and how to estimate yours."
       },
       "after": {
-        "title": "New Jersey Property Taxes: 2025 Bills and Rates by Town",
-        "description": "See 2025 average property tax bills across New Jersey towns, how assessments and equalization work, and when a county tax appeal may make sense."
+        "title": "New Jersey Property Tax Guide: Assessments and Appeals",
+        "description": "Understand NJ assessed value, general tax rates, property bills, official parcel records, relief resources, and the assessment appeal process."
       },
       "sync_fields": [
-        "name:title",
         "property:og:title",
         "property:og:description"
       ]

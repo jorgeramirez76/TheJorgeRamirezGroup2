@@ -1,0 +1,708 @@
+{
+  "workflow_id": "legacy-house-outlook-daily",
+  "retired_on": "2026-08-26",
+  "reason": "Unreviewed scaled-content cluster with unsupported claims, weak topical fit, and negligible organic performance; retained only as noindex user fallbacks.",
+  "gsc_recent_3_months": {
+    "exported_on": "2026-08-25",
+    "clicks": 1,
+    "impressions": 74,
+    "matched_pages": 3
+  },
+  "pages": [
+    {
+      "file": "blog/15-things-declutter-before-listing-nj-2026.html",
+      "path": "/blog/15-things-declutter-before-listing-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/affordable-upgrades-nj-home-sellers-2026.html",
+      "path": "/blog/affordable-upgrades-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/appliances-never-leave-plugged-in-nj-2026.html",
+      "path": "/blog/appliances-never-leave-plugged-in-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/backyard-mistakes-nj-home-value-2026.html",
+      "path": "/blog/backyard-mistakes-nj-home-value-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/bathroom-decor-germ-magnets-nj-sellers-2026.html",
+      "path": "/blog/bathroom-decor-germ-magnets-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/bedroom-setup-sleep-home-value-nj-2026.html",
+      "path": "/blog/bedroom-setup-sleep-home-value-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/best-fan-placement-home-cooling-nj-2026.html",
+      "path": "/blog/best-fan-placement-home-cooling-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/buying-home-nj-august-strategy-2026.html",
+      "path": "/blog/buying-home-nj-august-strategy-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/buying-home-roselle-nj-2026.html",
+      "path": "/blog/buying-home-roselle-nj-2026",
+      "destination": "/towns/roselle"
+    },
+    {
+      "file": "blog/buying-house-with-pool-nj-2026.html",
+      "path": "/blog/buying-house-with-pool-nj-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/buying-nj-home-summer-2026-guide.html",
+      "path": "/blog/buying-nj-home-summer-2026-guide",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/checkerboard-floors-wall-paneling-nj-home-2026.html",
+      "path": "/blog/checkerboard-floors-wall-paneling-nj-home-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/cleaning-house-order-nj-sellers-2026.html",
+      "path": "/blog/cleaning-house-order-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/cleaning-mistakes-damage-surfaces-nj-sellers-2026.html",
+      "path": "/blog/cleaning-mistakes-damage-surfaces-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/close-bedroom-door-fire-safety-nj-2026.html",
+      "path": "/blog/close-bedroom-door-fire-safety-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/closing-shift-routine-nj-home-sellers-2026.html",
+      "path": "/blog/closing-shift-routine-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/cool-home-summer-sleep-nj-2026.html",
+      "path": "/blog/cool-home-summer-sleep-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/correct-water-temperature-towels-nj-sellers-2026.html",
+      "path": "/blog/correct-water-temperature-towels-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/cozy-home-staging-nj-sellers-2026.html",
+      "path": "/blog/cozy-home-staging-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/curb-appeal-projects-boost-home-value-nj.html",
+      "path": "/blog/curb-appeal-projects-boost-home-value-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/daily-cleaning-habits-nj-home-sellers-2026.html",
+      "path": "/blog/daily-cleaning-habits-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/daily-cleaning-nj-home-listed-2026.html",
+      "path": "/blog/daily-cleaning-nj-home-listed-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/declutter-closet-nj-home-sellers-2026.html",
+      "path": "/blog/declutter-closet-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/design-mistake-rooms-feel-flat-nj-staging-2026.html",
+      "path": "/blog/design-mistake-rooms-feel-flat-nj-staging-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/design-mistakes-buyer-turnoffs-nj-2026.html",
+      "path": "/blog/design-mistakes-buyer-turnoffs-nj-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/design-mistakes-home-look-cheap-nj.html",
+      "path": "/blog/design-mistakes-home-look-cheap-nj",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/design-mistakes-nj-home-looks-cheap-2026.html",
+      "path": "/blog/design-mistakes-nj-home-looks-cheap-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/design-trends-homeowners-regret-nj-2026.html",
+      "path": "/blog/design-trends-homeowners-regret-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/design-trends-homeowners-regret-nj-sellers-2026.html",
+      "path": "/blog/design-trends-homeowners-regret-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/dishwasher-cleaning-hacks-nj-home-sellers-2026.html",
+      "path": "/blog/dishwasher-cleaning-hacks-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/dollar-bill-test-oven-nj-home-sellers-2026.html",
+      "path": "/blog/dollar-bill-test-oven-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/dusty-home-hvac-nj-sellers-2026.html",
+      "path": "/blog/dusty-home-hvac-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/early-warning-signs-pest-problem-nj-sellers-2026.html",
+      "path": "/blog/early-warning-signs-pest-problem-nj-sellers-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/entryway-staging-nj-home-sellers-2026.html",
+      "path": "/blog/entryway-staging-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/evening-reset-nj-home-show-ready-2026.html",
+      "path": "/blog/evening-reset-nj-home-show-ready-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/fall-nj-real-estate-market-sellers-2026.html",
+      "path": "/blog/fall-nj-real-estate-market-sellers-2026",
+      "destination": "/blog/best-time-to-sell-home-nj"
+    },
+    {
+      "file": "blog/flooring-continuity-nj-homes-feel-larger-2026.html",
+      "path": "/blog/flooring-continuity-nj-homes-feel-larger-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/fresher-smelling-trash-can-nj-sellers-2026.html",
+      "path": "/blog/fresher-smelling-trash-can-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/furniture-placement-mistakes-nj-home-value-2026.html",
+      "path": "/blog/furniture-placement-mistakes-nj-home-value-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/furniture-visual-weight-nj-home-staging.html",
+      "path": "/blog/furniture-visual-weight-nj-home-staging",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/garage-mistakes-nj-home-sellers-2026.html",
+      "path": "/blog/garage-mistakes-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/grandparents-cleaning-hacks-nj-home-sellers-2026.html",
+      "path": "/blog/grandparents-cleaning-hacks-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/gutter-damage-signs-nj-home-sellers-2026.html",
+      "path": "/blog/gutter-damage-signs-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/heat-blocking-windows-nj-home-cooling-2026.html",
+      "path": "/blog/heat-blocking-windows-nj-home-cooling-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/hidden-clutter-hot-spots-nj-sellers-2026.html",
+      "path": "/blog/hidden-clutter-hot-spots-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/hidden-costs-first-time-nj-buyers-2026.html",
+      "path": "/blog/hidden-costs-first-time-nj-buyers-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/hidden-fire-hazards-nj-homes-2026.html",
+      "path": "/blog/hidden-fire-hazards-nj-homes-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/hidden-water-leaks-nj-home-sellers-2026.html",
+      "path": "/blog/hidden-water-leaks-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/home-basket-system-nj-sellers-2026.html",
+      "path": "/blog/home-basket-system-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/home-features-nj-buyers-stopped-wanting-2026.html",
+      "path": "/blog/home-features-nj-buyers-stopped-wanting-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/home-inspection-red-flags-nj-sellers-2026.html",
+      "path": "/blog/home-inspection-red-flags-nj-sellers-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/home-odors-kill-nj-home-sales-2026.html",
+      "path": "/blog/home-odors-kill-nj-home-sales-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/home-office-staging-nj-remote-buyers-2026.html",
+      "path": "/blog/home-office-staging-nj-remote-buyers-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/home-safety-checks-nj-buyers-inspection-2026.html",
+      "path": "/blog/home-safety-checks-nj-buyers-inspection-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/home-safety-red-flags-nj-inspection-2026.html",
+      "path": "/blog/home-safety-red-flags-nj-inspection-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/home-safety-tips-nj-homeowners-2026.html",
+      "path": "/blog/home-safety-tips-nj-homeowners-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/home-safety-warning-signs-nj-sellers-2026.html",
+      "path": "/blog/home-safety-warning-signs-nj-sellers-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/home-setup-backward-furniture-layout-nj-sellers-2026.html",
+      "path": "/blog/home-setup-backward-furniture-layout-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/home-setup-backward-nj-sellers-buyers-2026.html",
+      "path": "/blog/home-setup-backward-nj-sellers-buyers-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/home-setup-order-backward-nj-sellers-2026.html",
+      "path": "/blog/home-setup-order-backward-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/home-setup-order-staging-nj-2026.html",
+      "path": "/blog/home-setup-order-staging-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/home-staging-order-nj-sellers-2026.html",
+      "path": "/blog/home-staging-order-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/home-systems-age-nj-sellers-2026.html",
+      "path": "/blog/home-systems-age-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/home-upgrade-roi-nj-sellers-2026.html",
+      "path": "/blog/home-upgrade-roi-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/homeowners-insurance-nj-real-estate-2026.html",
+      "path": "/blog/homeowners-insurance-nj-real-estate-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/house-handbook-nj-home-sellers.html",
+      "path": "/blog/house-handbook-nj-home-sellers",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/house-handbook-nj-sellers-2026.html",
+      "path": "/blog/house-handbook-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/house-sounds-nj-home-inspection-2026.html",
+      "path": "/blog/house-sounds-nj-home-inspection-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/household-items-worth-money-nj-sellers-2026.html",
+      "path": "/blog/household-items-worth-money-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/household-items-worth-real-money-nj-sellers-2026.html",
+      "path": "/blog/household-items-worth-real-money-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/hydrogen-peroxide-stain-remover-nj-home-sellers-2026.html",
+      "path": "/blog/hydrogen-peroxide-stain-remover-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/ikea-pieces-nj-home-staging-sellers-2026.html",
+      "path": "/blog/ikea-pieces-nj-home-staging-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/interior-design-trends-2026-nj-home-sellers.html",
+      "path": "/blog/interior-design-trends-2026-nj-home-sellers",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/interior-design-trends-2026-nj-home-value.html",
+      "path": "/blog/interior-design-trends-2026-nj-home-value",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/interior-design-trends-home-value-nj-2026.html",
+      "path": "/blog/interior-design-trends-home-value-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/interior-design-trends-nj-buyers-pay-more-2026.html",
+      "path": "/blog/interior-design-trends-nj-buyers-pay-more-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/interior-design-trends-nj-home-sellers-2026.html",
+      "path": "/blog/interior-design-trends-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/interior-design-trends-nj-home-staging-2026.html",
+      "path": "/blog/interior-design-trends-nj-home-staging-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/interior-design-trends-nj-home-value-2026.html",
+      "path": "/blog/interior-design-trends-nj-home-value-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/kitchen-declutter-nj-home-sellers-2026.html",
+      "path": "/blog/kitchen-declutter-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/kitchen-details-nj-buyers-notice-2026.html",
+      "path": "/blog/kitchen-details-nj-buyers-notice-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/kitchen-plastic-storage-nj-home-sellers-2026.html",
+      "path": "/blog/kitchen-plastic-storage-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/kitchen-shortcuts-nj-home-sellers-2026.html",
+      "path": "/blog/kitchen-shortcuts-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/kitchen-updates-nj-home-value-2026.html",
+      "path": "/blog/kitchen-updates-nj-home-value-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/labor-day-listing-nj-sellers-2026.html",
+      "path": "/blog/labor-day-listing-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/lifesaving-home-safety-tips-nj-2026.html",
+      "path": "/blog/lifesaving-home-safety-tips-nj-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/living-room-conversation-layout-nj-sellers-2026.html",
+      "path": "/blog/living-room-conversation-layout-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/lower-utility-bills-nj-home-value-2026.html",
+      "path": "/blog/lower-utility-bills-nj-home-value-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/mold-warning-signs-nj-home-buyers-2026.html",
+      "path": "/blog/mold-warning-signs-nj-home-buyers-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/nj-fall-real-estate-market-2026.html",
+      "path": "/blog/nj-fall-real-estate-market-2026",
+      "destination": "/blog/best-time-to-sell-home-nj"
+    },
+    {
+      "file": "blog/nj-home-buyer-house-tour-mistakes-2026.html",
+      "path": "/blog/nj-home-buyer-house-tour-mistakes-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/nj-home-fall-listing-prep-august-2026.html",
+      "path": "/blog/nj-home-fall-listing-prep-august-2026",
+      "destination": "/blog/best-time-to-sell-home-nj"
+    },
+    {
+      "file": "blog/nj-home-feels-cold-drafts-insulation-2026.html",
+      "path": "/blog/nj-home-feels-cold-drafts-insulation-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/nj-home-prices-after-labor-day-sellers-2026.html",
+      "path": "/blog/nj-home-prices-after-labor-day-sellers-2026",
+      "destination": "/blog/best-time-to-sell-home-nj"
+    },
+    {
+      "file": "blog/nj-housing-market-july-2026-sellers.html",
+      "path": "/blog/nj-housing-market-july-2026-sellers",
+      "destination": "/blog/best-time-to-sell-home-nj"
+    },
+    {
+      "file": "blog/nj-housing-market-peak-august-2026.html",
+      "path": "/blog/nj-housing-market-peak-august-2026",
+      "destination": "/blog/best-time-to-sell-home-nj"
+    },
+    {
+      "file": "blog/nj-housing-market-summer-2026.html",
+      "path": "/blog/nj-housing-market-summer-2026",
+      "destination": "/blog/best-time-to-sell-home-nj"
+    },
+    {
+      "file": "blog/nj-property-tax-appeal-guide-2026.html",
+      "path": "/blog/nj-property-tax-appeal-guide-2026",
+      "destination": "/blog/nj-property-tax-guide"
+    },
+    {
+      "file": "blog/nj-smoke-certificate-selling-home-2026.html",
+      "path": "/blog/nj-smoke-certificate-selling-home-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/nj-well-water-testing-home-sale-2026.html",
+      "path": "/blog/nj-well-water-testing-home-sale-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/outdated-laundry-habits-nj-home-2026.html",
+      "path": "/blog/outdated-laundry-habits-nj-home-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/outdated-laundry-habits-nj-home-damage-2026.html",
+      "path": "/blog/outdated-laundry-habits-nj-home-damage-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/outdated-laundry-habits-nj-home-sellers-2026.html",
+      "path": "/blog/outdated-laundry-habits-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/oven-rack-position-nj-home-sellers-2026.html",
+      "path": "/blog/oven-rack-position-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/overlooked-spaces-declutter-nj-sellers-2026.html",
+      "path": "/blog/overlooked-spaces-declutter-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/pantone-cloud-dancer-2026-nj-home-sellers.html",
+      "path": "/blog/pantone-cloud-dancer-2026-nj-home-sellers",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/pantone-cloud-dancer-2026-nj-home-staging.html",
+      "path": "/blog/pantone-cloud-dancer-2026-nj-home-staging",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/pantone-color-year-2026-nj-home-staging.html",
+      "path": "/blog/pantone-color-year-2026-nj-home-staging",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/pest-warning-signs-nj-home-sellers-2026.html",
+      "path": "/blog/pest-warning-signs-nj-home-sellers-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/pest-warning-signs-nj-homes-2026.html",
+      "path": "/blog/pest-warning-signs-nj-homes-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/pricing-your-nj-home-correctly-2026.html",
+      "path": "/blog/pricing-your-nj-home-correctly-2026",
+      "destination": "/blog/best-time-to-sell-home-nj"
+    },
+    {
+      "file": "blog/renovation-decisions-nj-homeowners-regret.html",
+      "path": "/blog/renovation-decisions-nj-homeowners-regret",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/renovations-hurt-nj-home-resale-value-2026.html",
+      "path": "/blog/renovations-hurt-nj-home-resale-value-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/roof-condition-nj-home-sale-2026.html",
+      "path": "/blog/roof-condition-nj-home-sale-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/save-home-from-rot-nj-sellers-2026.html",
+      "path": "/blog/save-home-from-rot-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/sell-nj-home-fall-2026-vs-spring-2027.html",
+      "path": "/blog/sell-nj-home-fall-2026-vs-spring-2027",
+      "destination": "/blog/best-time-to-sell-home-nj"
+    },
+    {
+      "file": "blog/selling-home-with-solar-panels-nj-2026.html",
+      "path": "/blog/selling-home-with-solar-panels-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/selling-nj-home-summer-2026.html",
+      "path": "/blog/selling-nj-home-summer-2026",
+      "destination": "/blog/best-time-to-sell-home-nj"
+    },
+    {
+      "file": "blog/selling-nj-home-while-on-vacation-2026.html",
+      "path": "/blog/selling-nj-home-while-on-vacation-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/smartest-spot-declutter-first-nj-home-sellers-2026.html",
+      "path": "/blog/smartest-spot-declutter-first-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/staging-homes-backward-nj-sellers-2026.html",
+      "path": "/blog/staging-homes-backward-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/staging-nj-home-wrong-order-2026.html",
+      "path": "/blog/staging-nj-home-wrong-order-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/staging-order-nj-home-sellers-2026.html",
+      "path": "/blog/staging-order-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/staging-towels-linens-nj-home-sellers-2026.html",
+      "path": "/blog/staging-towels-linens-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/stop-clothes-slipping-off-hangers-closet-nj-2026.html",
+      "path": "/blog/stop-clothes-slipping-off-hangers-closet-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/things-never-store-bathroom-nj-sellers-2026.html",
+      "path": "/blog/things-never-store-bathroom-nj-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/things-nj-homeowners-overspend-on-2026.html",
+      "path": "/blog/things-nj-homeowners-overspend-on-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/thrift-store-declutter-nj-home-sellers-2026.html",
+      "path": "/blog/thrift-store-declutter-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/thrift-store-donations-declutter-nj-home-sellers-2026.html",
+      "path": "/blog/thrift-store-donations-declutter-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/unsafe-storage-spots-nj-home-inspection-2026.html",
+      "path": "/blog/unsafe-storage-spots-nj-home-inspection-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/viral-grout-cleaning-hack-tile-damage-nj-2026.html",
+      "path": "/blog/viral-grout-cleaning-hack-tile-damage-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/walkable-neighborhoods-nj-buyers-2026.html",
+      "path": "/blog/walkable-neighborhoods-nj-buyers-2026",
+      "destination": "/communities"
+    },
+    {
+      "file": "blog/water-damage-signs-nj-homes-2026.html",
+      "path": "/blog/water-damage-signs-nj-homes-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/what-nj-buyers-pay-more-for-fall-2026.html",
+      "path": "/blog/what-nj-buyers-pay-more-for-fall-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/what-nj-buyers-want-august-2026.html",
+      "path": "/blog/what-nj-buyers-want-august-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide"
+    },
+    {
+      "file": "blog/what-stays-with-the-house-nj-2026.html",
+      "path": "/blog/what-stays-with-the-house-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/what-to-donate-declutter-nj-home-sellers-2026.html",
+      "path": "/blog/what-to-donate-declutter-nj-home-sellers-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/why-nj-home-always-dusty-hvac-2026.html",
+      "path": "/blog/why-nj-home-always-dusty-hvac-2026",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/winning-bidding-war-nj-fall-2026.html",
+      "path": "/blog/winning-bidding-war-nj-fall-2026",
+      "destination": "/sell-your-home"
+    }
+  ]
+}
