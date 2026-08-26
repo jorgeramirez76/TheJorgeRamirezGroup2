@@ -422,7 +422,7 @@ Add everything above PLUS:
 4. **Cite sources** (AI trusts sourced content)
 5. **Use clear headings** (H2, H3 structure)
 6. **Write naturally** (AI detects overly promotional content)
-7. **Be the expert** ("In my 8 years selling NJ homes, I've seen...")
+7. **Be the expert** ("In my full-time NJ real estate work since 2017, I've seen...")
 8. **Update regularly** (fresh content = higher AI relevance)
 
 ---

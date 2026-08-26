@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "lastVerified": "2026-08-25",
+  "business": {
+    "name": "The Jorge Ramirez Group",
+    "agentName": "Jorge Ramirez",
+    "directPhone": {
+      "display": "908-230-7844",
+      "e164": "+19082307844"
+    },
+    "email": "jorge.ramirez@kw.com",
+    "address": {
+      "street": "488 Springfield Ave",
+      "city": "Summit",
+      "region": "NJ",
+      "postalCode": "07901",
+      "country": "US"
+    },
+    "brokerage": {
+      "displayName": "Keller Williams Premier Properties",
+      "legalName": "Keller Williams Realty Premier Properties",
+      "officePhone": "908-273-2991"
+    },
+    "njRealEstateLicense": "1754604",
+    "fullTimeSince": 2017,
+    "approvedExperienceStatement": "Full-time Realtor with Keller Williams Premier Properties since 2017."
+  },
+  "serviceCounties": [
+    "Union",
+    "Essex",
+    "Morris",
+    "Hudson",
+    "Middlesex",
+    "Somerset"
+  ],
+  "canonicalTownInventory": {
+    "definition": "Unique English /towns/ URLs included in sitemap.xml. Noindex generated pages outside that canonical sitemap set are not counted on the communities hub.",
+    "total": 121,
+    "byCounty": {
+      "Union": [
+        "berkeley-heights",
+        "clark",
+        "cranford",
+        "elizabeth",
+        "fanwood",
+        "garwood",
+        "hillside",
+        "kenilworth",
+        "linden",
+        "mountainside",
+        "new-providence",
+        "plainfield",
+        "rahway",
+        "roselle",
+        "roselle-park",
+        "scotch-plains",
+        "springfield",
+        "summit",
+        "union",
+        "westfield",
+        "winfield"
+      ],
+      "Essex": [
+        "bloomfield",
+        "caldwell",
+        "glen-ridge",
+        "livingston",
+        "maplewood",
+        "millburn",
+        "montclair",
+        "newark",
+        "north-caldwell",
+        "nutley",
+        "orange",
+        "roseland",
+        "short-hills",
+        "south-orange",
+        "verona",
+        "west-caldwell",
+        "west-orange"
+      ],
+      "Morris": [
+        "boonton",
+        "boonton-township",
+        "butler",
+        "chatham",
+        "chatham-borough",
+        "chatham-township",
+        "chester-borough",
+        "chester-township",
+        "denville",
+        "dover",
+        "east-hanover",
+        "florham-park",
+        "hanover",
+        "harding",
+        "jefferson",
+        "kinnelon",
+        "lincoln-park",
+        "long-hill",
+        "madison",
+        "mendham-borough",
+        "mendham-township",
+        "mine-hill",
+        "montville",
+        "morris-plains",
+        "morris-township",
+        "morristown",
+        "mount-arlington",
+        "mount-olive",
+        "mountain-lakes",
+        "netcong",
+        "parsippany-troy-hills",
+        "pequannock-township",
+        "randolph",
+        "riverdale",
+        "rockaway-borough",
+        "rockaway-township",
+        "roxbury",
+        "victory-gardens",
+        "washington-township-morris",
+        "wharton"
+      ],
+      "Hudson": [
+        "bayonne",
+        "east-newark",
+        "guttenberg",
+        "harrison",
+        "hoboken",
+        "jersey-city",
+        "kearny",
+        "north-bergen",
+        "secaucus",
+        "union-city",
+        "weehawken",
+        "west-new-york"
+      ],
+      "Middlesex": [
+        "carteret",
+        "cranbury",
+        "dunellen",
+        "east-brunswick",
+        "edison",
+        "helmetta",
+        "highland-park",
+        "jamesburg",
+        "metuchen",
+        "middlesex",
+        "middlesex-borough",
+        "milltown",
+        "monroe-township",
+        "new-brunswick",
+        "north-brunswick",
+        "old-bridge",
+        "perth-amboy",
+        "piscataway",
+        "plainsboro",
+        "sayreville",
+        "south-amboy",
+        "south-brunswick",
+        "south-plainfield",
+        "south-river",
+        "spotswood",
+        "woodbridge"
+      ],
+      "Somerset": [
+        "basking-ridge",
+        "bernards-township",
+        "peapack-gladstone",
+        "warren-township",
+        "watchung"
+      ]
+    }
+  },
+  "placeRelationships": {
+    "basking-ridge": {
+      "displayName": "Basking Ridge",
+      "placeType": "unincorporated community",
+      "municipality": "bernards-township",
+      "county": "Somerset",
+      "source": "https://www.nj.gov/cgi-bin/infobank/localsearch.pl"
+    },
+    "bernards-township": {
+      "displayName": "Bernards Township",
+      "county": "Somerset",
+      "source": "https://www.nj.gov/njhighlands/region/local/bernards_township.shtml"
+    },
+    "summit": {
+      "displayName": "Summit",
+      "placeType": "city",
+      "county": "Union",
+      "source": "https://www.nj.gov/transportation/about/press/2013/091313.shtm"
+    }
+  },
+  "editorialQuarantine": [
+    {
+      "path": "es/blog/buying-home-millburn-nj-2026.html",
+      "reason": "Mechanically broken translation requires human editorial review.",
+      "searchHandling": "noindex, follow",
+      "reviewStatus": "pending-human-review"
+    }
+  ],
+  "verificationSources": [
+    {
+      "fact": "public direct phone, office address, and brokerage",
+      "url": "https://www.realtor.com/realestateagents/59b6cb023c54f70013ee2939"
+    },
+    {
+      "fact": "New Jersey real-estate-license lookup authority",
+      "url": "https://nj.gov/dobi/division_rec/licensing/online_Instructions/licSearch.html"
+    },
+    {
+      "fact": "current Gladstone Branch and Basking Ridge station service",
+      "url": "https://www.njtransit.com/"
+    },
+    {
+      "fact": "current Raritan Valley Line stations",
+      "url": "https://www.njtransit.com/"
+    }
+  ]
+}
