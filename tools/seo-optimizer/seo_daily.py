@@ -672,18 +672,20 @@ def main():
 
     log("=== SEO Doctor run ===")
 
-    # register blog posts other publishers dropped from sitemap.xml
-    if not args.dry_run:
-        try:
-            r = subprocess.run([sys.executable,
-                                os.path.join(REPO, "tools", "sync_sitemap.py")],
-                               capture_output=True, text=True)
-            if r.stdout.strip() and r.stdout.strip() != "sitemap in sync":
-                log(f"sitemap sync: {r.stdout.strip()}")
-                deploy(["sitemap.xml"], "seo: register missing blog posts in sitemap",
-                       push=not args.no_push)
-        except Exception as e:
-            log(f"sitemap sync failed: {e}")
+    # Report newly published blog pages for editorial review. Sitemap inclusion
+    # is intentionally not automatic: a self-canonical page can still be thin,
+    # off-topic, duplicated, or factually unsafe. A reviewed page is registered
+    # separately with ``tools/sync_sitemap.py --apply``.
+    try:
+        r = subprocess.run(
+            [sys.executable, os.path.join(REPO, "tools", "sync_sitemap.py"), "--check"],
+            capture_output=True,
+            text=True,
+        )
+        if r.stdout.strip() and r.stdout.strip() != "sitemap in sync":
+            log(f"sitemap review queue: {r.stdout.strip()}")
+    except Exception as e:
+        log(f"sitemap review check failed: {e}")
     try:
         gsc = gsc_pull(c)
     except Exception as e:

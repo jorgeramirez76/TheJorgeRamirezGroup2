@@ -20,14 +20,18 @@ again for `cooldown_days` so the change can be measured first.
 3. **Audits every page** for missing meta description / canonical / viewport /
    Open Graph / Twitter card / JSON-LD. **Redirect stubs and `noindex` pages
    are skipped** (they're intentional — 1,000+ on this site).
-4. **Auto-fixes the safe class** (additive only), capped at
+4. **Queues new blog pages for sitemap review** — self-canonical pages are not
+   automatically submitted because canonical markup alone does not establish
+   editorial quality, topical fit, or factual accuracy. After review, run
+   `python3 tools/sync_sitemap.py --apply` from the repository root.
+5. **Auto-fixes the safe class** (additive only), capped at
    `max_auto_edits_per_day`, each committed with a clear diff, then pushed →
    Vercel deploys.
-5. **Queues risky proposals** — high-impression / low-CTR pages get a suggested
+6. **Queues risky proposals** — high-impression / low-CTR pages get a suggested
    better title (Claude-written when the token is set; otherwise only
    high-confidence changes like refreshing a stale year). These are **never
    auto-applied**.
-6. **Emails the report**: what Google shows, what was fixed, what needs your
+7. **Emails the report**: what Google shows, what was fixed, what needs your
    call, and the biggest CTR opportunities.
 
 ## What it can and can't see
