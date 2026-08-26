@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "accessed": "2026-08-26",
+  "pages": {
+    "tools/mortgage-calculator.html": [
+      {
+        "url": "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "A Loan Estimate contains the requested loan terms, estimated total monthly payment, mortgage insurance, taxes, insurance, closing costs, and cash-to-close information that should replace planning assumptions.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-mortgage-interest-rate-and-an-apr-en-135/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "The mortgage interest rate and APR are different measures; APR includes the interest rate and certain additional charges, while the amortization payment uses the note interest rate.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "PMI cancellation rules depend on the mortgage and borrower circumstances, and FHA or VA mortgage insurance follows different requirements; the consumer should check the disclosure and servicer.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.hud.gov/hud-partners/single-family-about-housing-counseling",
+        "publisher": "U.S. Department of Housing and Urban Development",
+        "fact_supported": "HUD-participating housing counseling agencies offer pre-purchase, budget, credit, and other housing counseling, with an official search and multilingual telephone assistance.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/",
+        "publisher": "New Jersey Housing and Mortgage Finance Agency",
+        "fact_supported": "NJHMFA publishes its current homebuyer roadmap, program materials, eligibility resources, participating-lender process, and counseling information.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://nj.gov/treasury/taxation/lpt/genlpt.shtml",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "New Jersey provides official general property-tax and assessment information; a property-specific annual amount should be verified with current municipal records.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/realty.shtml",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "The State publishes current Realty Transfer Fee rates, exemptions, forms, and Graduated Percent Fee information; transaction treatment should be confirmed from the current official material and professional advice.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dobi/division_consumers/insurance/homeowner.htm",
+        "publisher": "New Jersey Department of Banking and Insurance",
+        "fact_supported": "NJDOBI publishes consumer resources for homeowners, condominium, and flood insurance and directs consumers to compare property-specific coverage and quotes.",
+        "accessed": "2026-08-26"
+      }
+    ],
+    "es/tools/mortgage-calculator.html": [
+      {
+        "url": "https://www.consumerfinance.gov/es/obtener-respuestas/recibire-las-divulgaciones-de-informese-antes-de-deber-cuando-busque-una-hipoteca-es-2009/",
+        "publisher": "Oficina para la Protección Financiera del Consumidor",
+        "fact_supported": "La CFPB explica en español que el consumidor recibe una Estimación del Préstamo y una Divulgación de Cierre, documentos que deben revisarse para conocer los términos y costos de la hipoteca.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/es/obtener-respuestas/que-debo-hacer-si-la-tasa-de-interes-o-las-tarifas-en-mi-declaracion-de-cierre-son-diferentes-a-las-de-mi-estimacion-del-prestamo-es-184/",
+        "publisher": "Oficina para la Protección Financiera del Consumidor",
+        "fact_supported": "La CFPB recomienda pedir al prestamista una explicación cuando la tasa o los cargos de la Divulgación de Cierre difieren de la Estimación del Préstamo.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-mortgage-interest-rate-and-an-apr-en-135/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "La fuente oficial distingue la tasa de interés de la APR; la APR incorpora ciertos cargos adicionales y no se usa como la tasa del cálculo de amortización.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "Las reglas para cancelar PMI dependen del préstamo y las circunstancias, y los préstamos FHA o VA siguen requisitos distintos; se debe consultar la divulgación y al administrador del préstamo.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.hud.gov/hud-partners/single-family-about-housing-counseling",
+        "publisher": "U.S. Department of Housing and Urban Development",
+        "fact_supported": "Las agencias participantes de HUD ofrecen orientación de precompra, presupuesto y crédito; HUD ofrece búsqueda oficial y asistencia telefónica en varios idiomas.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/",
+        "publisher": "New Jersey Housing and Mortgage Finance Agency",
+        "fact_supported": "NJHMFA publica su proceso, materiales vigentes, criterios de programas, prestamistas participantes y recursos de orientación para compradores.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://nj.gov/treasury/taxation/lpt/genlpt.shtml",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "Nueva Jersey publica información oficial sobre el impuesto y la tasación de propiedades; el monto anual de una propiedad debe confirmarse con registros municipales vigentes.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/treasury/taxation/realty.shtml",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "El Estado publica las tasas, exenciones, formularios y reglas vigentes de cargos por transferencias; el tratamiento de una operación debe verificarse con la fuente actual y profesionales.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dobi/division_consumers/insurance/homeowner.htm",
+        "publisher": "New Jersey Department of Banking and Insurance",
+        "fact_supported": "NJDOBI ofrece recursos sobre seguros de vivienda, condominio e inundación y recomienda comparar coberturas y cotizaciones específicas para la propiedad.",
+        "accessed": "2026-08-26"
+      }
+    ]
+  }
+}

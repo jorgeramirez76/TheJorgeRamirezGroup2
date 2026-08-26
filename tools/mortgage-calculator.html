@@ -1,407 +1,497 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMS6H85LB0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-KMS6H85LB0');
-    </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1A1A1A">
-  <title>NJ Mortgage Calculator 2026 | How Much Can I Afford?</title>
-    <meta name="robots" content="index, follow">
-  <meta name="description" content="Estimate a New Jersey home budget with principal, interest, property tax, insurance, PMI and HOA inputs in one mortgage calculator.">
-  <meta name="llm-context" content="Free NJ mortgage calculator tool by Jorge Ramirez, licensed real estate agent. Calculate monthly payments with property taxes, homeowners insurance, PMI, and HOA. Contact: 908-230-7844.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0A0A0A">
+  <title>NJ Mortgage Payment Calculator | Enter Your Costs</title>
+  <meta name="description" content="Estimate a New Jersey mortgage payment using the price, down payment, note rate, taxes, insurance, mortgage insurance, and HOA costs you enter.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="llm-context" content="User-input New Jersey mortgage payment calculator. It does not determine what you can afford and is not a loan offer or loan approval. Verify all terms and costs with official documents and qualified professionals.">
   <link rel="canonical" href="https://thejorgeramirezgroup.com/tools/mortgage-calculator">
-    <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
-
-    <link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/tools/mortgage-calculator">
-    <link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/tools/mortgage-calculator">
-    <link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/tools/mortgage-calculator">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
+  <link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/tools/mortgage-calculator">
+  <link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/tools/mortgage-calculator">
+  <link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/tools/mortgage-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NJ Mortgage Payment Calculator | Enter Your Costs">
+  <meta property="og:description" content="Estimate a New Jersey mortgage payment using the price, down payment, note rate, taxes, insurance, mortgage insurance, and HOA costs you enter.">
+  <meta property="og:url" content="https://thejorgeramirezgroup.com/tools/mortgage-calculator">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NJ Mortgage Payment Calculator | Enter Your Costs">
+  <meta name="twitter:description" content="Estimate a New Jersey mortgage payment using the price, down payment, note rate, taxes, insurance, mortgage insurance, and HOA costs you enter.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMS6H85LB0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMS6H85LB0');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <style>
-    body { font-family:'Inter',sans-serif; background: #FAFAF8; }
-    .calc-wrapper { max-width: 800px; margin: 60px auto; padding: 0 20px 60px; }
-    .calc-header { text-align: center; margin-bottom: 40px; }
-    .calc-header h1 { font-family:'Playfair Display',Georgia,serif; font-size: 2rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 10px; }
-    .calc-header p { color: #666; font-size: 1rem; }
-    .calc-card { background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 40px; }
-    .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
-    @media(max-width:600px){ .input-grid { grid-template-columns: 1fr; } }
-    .input-group label { display: block; font-weight: 600; color: #333; margin-bottom: 6px; font-size: 0.9rem; }
-    .input-group input, .input-group select {
-      width: 100%; padding: 12px 16px; border: 2px solid #e0e0e0;
-      border-radius: 8px; font-size: 1rem; font-family: inherit;
-      transition: border-color 0.2s; box-sizing: border-box;
+    :root {
+      --calc-black: #0A0A0A;
+      --calc-black-soft: #1A1A1A;
+      --calc-red: #C41230;
+      --calc-red-dark: #8B0D22;
+      --calc-gold: #B8962E;
+      --calc-ivory: #FAFAF8;
+      --calc-white: #FFFFFF;
+      --calc-text: #2C2C2C;
+      --calc-muted: #5E5E5E;
+      --calc-border: #E3DED3;
     }
-    .input-group input:focus, .input-group select:focus { outline: none; border-color: #B8962E; }
-    .calc-btn {
-      width: 100%; padding: 16px; background: linear-gradient(135deg, #C41230 0%, #8B0D22 100%);
-      color: white; border: none; border-radius: 8px; font-size: 1.1rem;
-      font-weight: 700; cursor: pointer; font-family: inherit; transition: opacity 0.2s;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--calc-ivory); color: var(--calc-text); font-family: "Inter", sans-serif; line-height: 1.65; }
+    a { color: var(--calc-red-dark); text-underline-offset: 3px; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--calc-gold); outline-offset: 3px; }
+    .skip-link { position: fixed; left: -9999px; top: 8px; z-index: 1000; padding: 12px 18px; background: var(--calc-white); color: var(--calc-black); font-weight: 700; }
+    .skip-link:focus { left: 8px; }
+    .calculator-nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 70px; padding: 12px 40px; background: var(--calc-black); border-bottom: 2px solid var(--calc-gold); }
+    .calculator-logo { color: var(--calc-white); font-family: "Playfair Display", Georgia, serif; font-size: 1.18rem; font-weight: 700; text-decoration: none; }
+    .calculator-logo span { color: var(--calc-gold); }
+    .calculator-links { display: flex; align-items: center; gap: 26px; }
+    .calculator-links a { color: var(--calc-white); font-size: .78rem; font-weight: 700; letter-spacing: .07em; text-decoration: none; text-transform: uppercase; }
+    .calculator-links .nav-cta { min-height: 44px; padding: 11px 17px; background: var(--calc-red); border-radius: 3px; }
+    .calculator-hero { padding: 72px 24px 64px; background: linear-gradient(135deg, var(--calc-black) 0%, var(--calc-black-soft) 74%, #270A10 100%); color: var(--calc-white); }
+    .hero-inner, .page-shell { width: min(100%, 1080px); margin: 0 auto; }
+    .eyebrow { margin: 0 0 12px; color: var(--calc-gold); font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; line-height: 1.2; }
+    h1 { max-width: 820px; margin: 0 0 18px; font-size: clamp(2.35rem, 5.5vw, 4.2rem); }
+    h1 span { color: var(--calc-gold); }
+    .hero-copy { max-width: 760px; margin: 0; color: rgba(255,255,255,.82); font-size: 1.08rem; }
+    .page-shell { padding: 46px 24px 72px; }
+    .scope-note { margin: 0 0 28px; padding: 21px 24px; background: var(--calc-white); border: 1px solid var(--calc-border); border-left: 5px solid var(--calc-red); }
+    .scope-note p { margin: 0; }
+    .calculator-card, .guide-card { background: var(--calc-white); border: 1px solid var(--calc-border); box-shadow: 0 14px 34px rgba(10,10,10,.07); }
+    .calculator-card { padding: 36px; }
+    .section-heading { margin: 0 0 8px; color: var(--calc-black-soft); font-size: clamp(1.55rem, 3vw, 2rem); }
+    .section-lede { margin: 0 0 26px; color: var(--calc-muted); }
+    .input-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .input-group label { display: block; margin-bottom: 6px; color: var(--calc-black-soft); font-size: .9rem; font-weight: 700; }
+    .input-group input, .input-group select { width: 100%; min-height: 48px; padding: 11px 13px; background: var(--calc-white); border: 2px solid #D8D4CB; border-radius: 4px; color: var(--calc-black-soft); font: inherit; }
+    .input-group input:focus, .input-group select:focus { border-color: var(--calc-gold); }
+    .field-note { display: block; margin-top: 6px; color: var(--calc-muted); font-size: .76rem; line-height: 1.45; }
+    .calc-error { display: none; margin: 18px 0 0; padding: 13px 15px; background: #FFF1F2; border-left: 4px solid var(--calc-red); color: #68101F; }
+    .primary-button, .send-button { width: 100%; min-height: 50px; margin-top: 26px; padding: 13px 20px; background: linear-gradient(135deg, var(--calc-red), var(--calc-red-dark)); border: 0; border-radius: 4px; color: var(--calc-white); cursor: pointer; font: 700 .9rem "Inter", sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+    .primary-button:hover, .send-button:hover { filter: brightness(.95); }
+    .primary-button:disabled, .send-button:disabled { cursor: wait; opacity: .7; }
+    .results { display: none; margin-top: 30px; padding: 28px; background: var(--calc-ivory); border: 1px solid var(--calc-border); }
+    .results h2 { margin: 0 0 8px; color: var(--calc-black-soft); }
+    .results-note { margin: 0 0 22px; color: var(--calc-muted); }
+    .results-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .result-item { min-width: 0; padding: 17px; background: var(--calc-white); border: 1px solid var(--calc-border); text-align: center; }
+    .result-item .amount { color: var(--calc-black-soft); font-size: 1.55rem; font-weight: 700; overflow-wrap: anywhere; }
+    .result-item .label { margin-top: 4px; color: var(--calc-muted); font-size: .78rem; }
+    .result-total { grid-column: 1 / -1; background: var(--calc-black-soft); border-top: 3px solid var(--calc-gold); }
+    .result-total .amount, .result-total .label { color: var(--calc-white); }
+    .result-warning { margin: 18px 0 0; font-size: .82rem; color: var(--calc-muted); }
+    .follow-up-box { margin-top: 28px; padding: 25px; background: var(--calc-black-soft); color: var(--calc-white); }
+    .follow-up-box h3 { margin: 0 0 8px; color: var(--calc-white); }
+    .follow-up-box p { margin: 0 0 18px; color: rgba(255,255,255,.8); }
+    .lead-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .lead-field label { display: block; margin-bottom: 5px; color: var(--calc-white); font-size: .8rem; font-weight: 700; }
+    .lead-field input { width: 100%; min-height: 46px; padding: 10px 12px; border: 2px solid transparent; border-radius: 3px; font: inherit; }
+    .lead-field-full { grid-column: 1 / -1; }
+    .consent-note { margin: 10px 0 0 !important; font-size: .76rem; }
+    .delivery-status { display: none; margin-top: 13px; padding: 13px; background: var(--calc-white); color: var(--calc-black-soft); }
+    .delivery-status.error { border-left: 4px solid var(--calc-red); }
+    .content-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 32px; }
+    .guide-card { padding: 28px; box-shadow: none; }
+    .guide-card h2 { margin: 0 0 13px; color: var(--calc-black-soft); font-size: 1.5rem; }
+    .guide-card h3 { margin: 22px 0 7px; color: var(--calc-black-soft); font-size: 1.05rem; font-family: "Inter", sans-serif; }
+    .guide-card p, .guide-card li { color: var(--calc-muted); }
+    .guide-card p:last-child { margin-bottom: 0; }
+    .guide-card ul { margin: 0; padding-left: 21px; }
+    .guide-card-wide { grid-column: 1 / -1; }
+    .faq-list { display: grid; gap: 14px; }
+    .faq-item { padding: 18px; background: var(--calc-ivory); border-left: 3px solid var(--calc-gold); }
+    .faq-item h3 { margin-top: 0; }
+    .source-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px; margin: 0; padding: 0; list-style: none; }
+    .source-list li { padding: 10px 0; border-bottom: 1px solid var(--calc-border); }
+    .source-list a { font-weight: 700; }
+    .source-date, .legal-note { color: var(--calc-muted); font-size: .82rem; }
+    .related-tools { margin-top: 26px; padding: 20px 22px; background: var(--calc-white); border: 1px solid var(--calc-border); }
+    .calculator-footer { padding: 38px 24px; background: var(--calc-black); border-top: 2px solid var(--calc-gold); color: rgba(255,255,255,.72); text-align: center; }
+    .calculator-footer p { margin: 5px 0; }
+    .calculator-footer strong { color: var(--calc-white); }
+    .calculator-footer a { color: var(--calc-gold); }
+    @media (max-width: 760px) {
+      .calculator-nav { padding-inline: 20px; }
+      .calculator-links a:not(.nav-cta) { display: none; }
+      .content-grid { grid-template-columns: 1fr; }
+      .guide-card-wide { grid-column: auto; }
     }
-    .calc-btn:hover { opacity: 0.9; }
-    .results { display: none; margin-top: 30px; padding: 30px; background: #F8F6F2; border-radius: 10px; }
-    .results h2 { font-size: 1.3rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 20px; }
-    .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    @media(max-width:500px){ .results-grid { grid-template-columns: 1fr; } }
-    .result-item { background: white; padding: 16px; border-radius: 8px; text-align: center; }
-    .result-item .amount { font-size: 1.6rem; font-weight: 700; color: #2C2C2C; }
-    .result-item .label { font-size: 0.8rem; color: #666; margin-top: 4px; }
-    .result-total { background: linear-gradient(135deg,#2C2C2C,#1A1A1A); color: white; }
-    .result-total .amount, .result-total .label { color: white; }
-    .cta-box { margin-top: 30px; padding: 25px; background: var(--dark-gray, #1A1A1A); border-radius: 10px; text-align: center; color: white; }
-    .cta-box h3 { margin: 0 0 8px; font-size: 1.1rem; }
-    .cta-box p { margin: 0 0 16px; font-size: 0.9rem; opacity: 0.85; }
-    .cta-box a { display: inline-block; padding: 12px 28px; background: #2C2C2C; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
-    .lead-section { margin-top: 30px; border-top: 2px solid #e0e0e0; padding-top: 25px; }
-    .lead-section h3 { font-size: 1rem; color: #333; margin-bottom: 16px; }
-    .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    @media(max-width:500px){ .lead-grid { grid-template-columns: 1fr; } }
-    .lead-grid input { width: 100%; padding: 10px 14px; border: 2px solid #e0e0e0; border-radius: 8px; font-family: inherit; font-size: 0.95rem; box-sizing: border-box; }
-    .send-btn { margin-top: 12px; width: 100%; padding: 13px; background: #C41230; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit; }
-    .send-btn:hover { background: #8B0D22; }
-    .success-msg { display: none; padding: 16px; background: #F8F6F2; border: 1px solid #B8962E; border-radius: 8px; color: #2C2C2C; text-align: center; margin-top: 12px; font-weight: 600; }
-    .error-msg { display: none; padding: 16px; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; color: #721c24; text-align: center; margin-top: 12px; }
+    @media (max-width: 600px) {
+      .calculator-hero { padding: 56px 20px 50px; }
+      .page-shell { padding: 30px 15px 58px; }
+      .calculator-card, .guide-card { padding: 22px; }
+      .input-grid, .results-grid, .lead-grid, .source-list { grid-template-columns: 1fr; }
+      .lead-field-full, .result-total { grid-column: auto; }
+      .results { padding: 20px; }
+      .calculator-logo { max-width: 185px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="NJ Mortgage Calculator 2026 | How Much Can I Afford? | Jorge Ramirez">
-    <meta name="twitter:description" content="Estimate a New Jersey home budget with principal, interest, property tax, insurance, PMI and HOA inputs in one mortgage calculator.">
-    <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebPage",
-          "@id": "https://thejorgeramirezgroup.com/tools/mortgage-calculator",
-          "url": "https://thejorgeramirezgroup.com/tools/mortgage-calculator",
-          "name": "Mortgage Calculator",
-          "isPartOf": {
-            "@type": "WebSite",
-            "name": "The Jorge Ramirez Group",
-            "url": "https://thejorgeramirezgroup.com/"
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://thejorgeramirezgroup.com/tools/mortgage-calculator#webpage",
+        "url": "https://thejorgeramirezgroup.com/tools/mortgage-calculator",
+        "name": "NJ Mortgage Payment Calculator | Enter Your Costs",
+        "description": "A user-input calculator for a monthly mortgage planning estimate; it does not determine affordability or loan approval.",
+        "inLanguage": "en-US",
+        "dateModified": "2026-08-26",
+        "isPartOf": {"@type": "WebSite", "name": "The Jorge Ramirez Group", "url": "https://thejorgeramirezgroup.com/"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://thejorgeramirezgroup.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Mortgage Payment Calculator", "item": "https://thejorgeramirezgroup.com/tools/mortgage-calculator"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does this calculator determine what I can afford or whether a lender will approve me?",
+            "acceptedAnswer": {"@type": "Answer", "text": "No. It uses only the values entered and does not evaluate income, debts, credit, reserves, loan-program rules, underwriting, or property eligibility. It is not a loan offer or loan approval."}
           },
-          "author": {
-            "@type": "Person",
-            "name": "Jorge Ramirez",
-            "url": "https://thejorgeramirezgroup.com/",
-            "telephone": "+1-908-230-7844"
+          {
+            "@type": "Question",
+            "name": "Should I enter the mortgage interest rate or the APR?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Enter the note interest rate quoted by the lender for the principal-and-interest calculation. The Consumer Financial Protection Bureau explains that APR is a broader cost measure that includes the interest rate and certain additional charges."}
+          },
+          {
+            "@type": "Question",
+            "name": "How should I enter mortgage insurance?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Enter the monthly amount shown by the lender or on a Loan Estimate. The calculator does not assume that mortgage insurance applies or select a rate. Requirements and cancellation rules depend on the mortgage and circumstances."}
+          },
+          {
+            "@type": "Question",
+            "name": "Does the estimate include closing costs or cash to close?",
+            "acceptedAnswer": {"@type": "Answer", "text": "No. Closing costs, lender charges, points, title and settlement charges, inspections, appraisal costs, prepaid items, initial escrow, transfer-related charges, and other cash-to-close items are outside this monthly estimate. Review current lender and transaction documents."}
           }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://thejorgeramirezgroup.com/"},
-            {"@type": "ListItem", "position": 2, "name": "Mortgage Calculator", "item": "https://thejorgeramirezgroup.com/tools/mortgage-calculator"}
-          ]
-        }
-      ]
-    }
-    </script>
-    <meta property="og:title" content="NJ Mortgage Calculator 2026 | How Much Can I Afford? | Jorge Ramirez">
-    <meta property="og:description" content="Estimate a New Jersey home budget with principal, interest, property tax, insurance, PMI and HOA inputs in one mortgage calculator.">
-    <meta property="og:url" content="https://thejorgeramirezgroup.com/tools/mortgage-calculator">
-    <meta property="og:type" content="website">
-    <meta name="ai-content-declaration" content="human-authored">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is PMI and how do I get rid of it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Private mortgage insurance protects the lender if you default. On a conventional loan, it kicks in whenever your down payment is under 20 percent. You can request PMI removal once your loan-to-value ratio hits 80 percent (either through payments or appreciation), and lenders are required to auto-cancel it at 78 percent LTV based on original value. FHA mortgage insurance follows different rules and often stays for the life of the loan unless you refinance."
+        ]
       }
-    },
-    {
-      "@type": "Question",
-      "name": "How do NJ property taxes compare to other states?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "New Jersey consistently ranks in the top three nationally for effective property tax rate. Rates are set at the town level, so two homes across a border street can have very different tax bills. When you compare Zillow listings, always check the tax number — a home listed $50,000 cheaper can cost more per month if the taxes are $4,000 higher per year."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I really need 20 percent down?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Most NJ buyers today put down 5 to 15 percent. Twenty percent avoids PMI and can improve your rate, but waiting years to hit 20 percent while home prices climb often costs more than the PMI you were trying to avoid. Run the math both ways — sometimes buying sooner with less down and paying PMI for a few years is the financially smarter move."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I pick a 15-year or 30-year mortgage?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A 15-year loan saves enormous interest but roughly doubles the monthly payment. A 30-year gives flexibility — you can always pay extra principal, but you are not required to. Most NJ buyers pick a 30-year for cash-flow safety and prepay when they can."
-      }
-    }
-  ]
-}
-    </script>
+    ]
+  }
+  </script>
 </head>
 <body>
-  <nav class="site-nav">
-    <div class="nav-container">
-      <a href="/" class="nav-logo">The Jorge Ramirez Group</a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/#communities">Towns</a>
-        <a href="/blog">Blog</a>
-        <a href="/#contact">Contact</a>
-      </div>
+  <a class="skip-link" href="#main">Skip to calculator</a>
+  <nav class="calculator-nav" aria-label="Primary navigation">
+    <a class="calculator-logo" href="/">The Jorge Ramirez <span>Group</span></a>
+    <div class="calculator-links">
+      <a href="/">Home</a>
+      <a href="/#communities">Communities</a>
+      <a href="/blog">Blog</a>
+      <a class="nav-cta" href="/contact">Contact</a>
     </div>
   </nav>
 
   <main id="main">
-  <div class="calc-wrapper">
-    <div class="calc-header">
-      <h1>How Much House Can You Afford in NJ?</h1>
-      <p>Most people have no idea how much the real number is — property taxes in NJ change everything. This calculator factors them in.</p>
-    </div>
+    <header class="calculator-hero">
+      <div class="hero-inner">
+        <p class="eyebrow">New Jersey planning tool</p>
+        <h1>Mortgage payment <span>calculator</span></h1>
+        <p class="hero-copy">Enter a property price, down payment, note interest rate, term, and property-specific costs to build a monthly planning estimate. No market rate, tax bill, insurance premium, mortgage-insurance amount, or HOA charge is supplied for you.</p>
+      </div>
+    </header>
 
-    <div class="calc-card">
-      <div class="input-grid">
-        <div class="input-group">
-          <label>Home Price ($)</label>
-          <input type="number" id="homePrice" value="500000" min="50000" step="10000">
+    <div class="page-shell">
+      <aside class="scope-note" aria-label="Important calculator limits">
+        <p><strong>This calculator does not determine what you can afford.</strong> It does not review income, debts, credit, reserves, loan-program rules, underwriting, property eligibility, closing costs, or future changes. The result is not a loan offer or loan approval and is not legal, tax, financial, or insurance advice. Verify every input with current lender, municipal, insurance, association, and transaction documents.</p>
+      </aside>
+
+      <section class="calculator-card" aria-labelledby="calculator-heading">
+        <h2 class="section-heading" id="calculator-heading">Enter your own figures</h2>
+        <p class="section-lede">Required fields are marked. Optional fields are treated as zero when left blank. Enter the monthly mortgage-insurance amount directly rather than relying on a generalized rate.</p>
+
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="homePrice">Property price ($) <span aria-hidden="true">*</span></label>
+            <input type="number" id="homePrice" min="0" step="1000" inputmode="decimal" required aria-describedby="homePrice-note">
+            <span class="field-note" id="homePrice-note">Use the negotiated or scenario price you want to test.</span>
+          </div>
+          <div class="input-group">
+            <label for="downPayment">Down payment ($)</label>
+            <input type="number" id="downPayment" min="0" step="1000" inputmode="decimal" aria-describedby="downPayment-note">
+            <span class="field-note" id="downPayment-note">Enter cash applied to price, excluding closing funds.</span>
+          </div>
+          <div class="input-group">
+            <label for="interestRate">Mortgage note interest rate (%) <span aria-hidden="true">*</span></label>
+            <input type="number" id="interestRate" min="0" step="0.001" inputmode="decimal" required aria-describedby="interestRate-note">
+            <span class="field-note" id="interestRate-note">Use a lender quote or page 1 of a Loan Estimate—not APR.</span>
+          </div>
+          <div class="input-group">
+            <label for="loanTerm">Loan term</label>
+            <select id="loanTerm">
+              <option value="30" selected>30 years</option>
+              <option value="20">20 years</option>
+              <option value="15">15 years</option>
+              <option value="10">10 years</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="propertyTax">Annual property tax ($)</label>
+            <input type="number" id="propertyTax" min="0" step="1" inputmode="decimal" aria-describedby="propertyTax-note">
+            <span class="field-note" id="propertyTax-note">Verify the current property bill with the municipality.</span>
+          </div>
+          <div class="input-group">
+            <label for="insurance">Annual homeowners or condo insurance ($)</label>
+            <input type="number" id="insurance" min="0" step="1" inputmode="decimal" aria-describedby="insurance-note">
+            <span class="field-note" id="insurance-note">Use a property-specific quote; separate flood coverage may apply.</span>
+          </div>
+          <div class="input-group">
+            <label for="mortgageInsurance">Monthly mortgage insurance ($)</label>
+            <input type="number" id="mortgageInsurance" min="0" step="1" inputmode="decimal" aria-describedby="mortgageInsurance-note">
+            <span class="field-note" id="mortgageInsurance-note">Enter the lender or Loan Estimate amount, if any.</span>
+          </div>
+          <div class="input-group">
+            <label for="hoa">Monthly HOA or condominium charge ($)</label>
+            <input type="number" id="hoa" min="0" step="1" inputmode="decimal" aria-describedby="hoa-note">
+            <span class="field-note" id="hoa-note">Verify current dues and any separate assessments.</span>
+          </div>
         </div>
-        <div class="input-group">
-          <label>Down Payment ($)</label>
-          <input type="number" id="downPayment" value="100000" min="0" step="5000">
-        </div>
-        <div class="input-group">
-          <label>Interest Rate (%)</label>
-          <input type="number" id="interestRate" value="7.0" min="1" max="20" step="0.05">
-        </div>
-        <div class="input-group">
-          <label>Loan Term</label>
-          <select id="loanTerm">
-            <option value="30" selected>30 Years</option>
-            <option value="20">20 Years</option>
-            <option value="15">15 Years</option>
-            <option value="10">10 Years</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label>Annual Property Tax ($)</label>
-          <input type="number" id="propertyTax" value="12000" min="0" step="500">
-        </div>
-        <div class="input-group">
-          <label>Annual Homeowners Insurance ($)</label>
-          <input type="number" id="insurance" value="1800" min="0" step="100">
-        </div>
-        <div class="input-group">
-          <label>HOA / Monthly ($)</label>
-          <input type="number" id="hoa" value="0" min="0" step="50">
-        </div>
+
+        <button class="primary-button" id="calculate-button" type="button">Calculate planning estimate</button>
+        <p class="calc-error" id="calc-error" role="alert"></p>
+
+        <section class="results" id="results" aria-labelledby="results-heading" aria-live="polite">
+          <h2 id="results-heading">Monthly planning estimate</h2>
+          <p class="results-note">Calculated only from the entries above and rounded to the nearest dollar.</p>
+          <div class="results-grid">
+            <div class="result-item"><div class="amount" id="res-principal">$0</div><div class="label">Principal and interest</div></div>
+            <div class="result-item"><div class="amount" id="res-tax">$0</div><div class="label">Property tax entered (monthly)</div></div>
+            <div class="result-item"><div class="amount" id="res-insurance">$0</div><div class="label">Property insurance entered (monthly)</div></div>
+            <div class="result-item"><div class="amount" id="res-mortgage-insurance">$0</div><div class="label">Mortgage insurance entered (monthly)</div></div>
+            <div class="result-item"><div class="amount" id="res-hoa">$0</div><div class="label">HOA or condominium charge entered</div></div>
+            <div class="result-item result-total"><div class="amount" id="res-total">$0</div><div class="label">Entered-cost monthly planning total</div></div>
+          </div>
+          <p class="result-warning">Not included: closing costs, cash to close, points, lender fees, title or settlement charges, appraisal, inspections, prepaid items, initial escrow funding, maintenance, utilities, special assessments, or costs not entered above.</p>
+
+          <div class="follow-up-box">
+            <h3>Want to discuss the property side of this estimate?</h3>
+            <p>Request a real-estate follow-up. Jorge is not acting as a mortgage lender, tax adviser, attorney, or insurance producer through this calculator.</p>
+            <div class="lead-grid">
+              <div class="lead-field"><label for="lead-name">Name *</label><input type="text" id="lead-name" autocomplete="name" required></div>
+              <div class="lead-field"><label for="lead-phone">Phone (optional)</label><input type="tel" id="lead-phone" autocomplete="tel"></div>
+              <div class="lead-field lead-field-full"><label for="lead-email">Email *</label><input type="email" id="lead-email" autocomplete="email" required></div>
+            </div>
+            <button class="send-button" id="send-button" type="button">Request a follow-up</button>
+            <p class="consent-note">Phone is optional. This request does not opt you into automated text messages.</p>
+            <div class="delivery-status" id="success-msg" role="status" aria-live="polite">Your request was accepted by this site's first-party system. This is not a lender response or loan approval.</div>
+            <div class="delivery-status error" id="error-msg" role="alert">The request was not confirmed. No follow-up delivery should be assumed. Please call Jorge at 908-230-7844 if you want to reach him directly.</div>
+          </div>
+        </section>
+      </section>
+
+      <div class="content-grid">
+        <section class="guide-card">
+          <h2>Where each input should come from</h2>
+          <h3>Interest rate, not APR</h3>
+          <p>The amortization formula uses the mortgage note interest rate. The <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-mortgage-interest-rate-and-an-apr-en-135/">Consumer Financial Protection Bureau’s interest-rate and APR explanation</a> says APR is a broader measure that includes the interest rate and certain additional charges. Use the lender’s note rate here and compare APR separately.</p>
+          <h3>Taxes and association charges</h3>
+          <p>Use the current property bill or municipal record rather than a statewide percentage. The <a href="https://nj.gov/treasury/taxation/lpt/genlpt.shtml">New Jersey Division of Taxation property-tax overview</a> explains the State framework, but the property-specific amount must be verified. For a condominium or association, review current governing and financial documents for dues and assessments.</p>
+          <h3>Insurance amounts</h3>
+          <p>Use a quote for the actual property and requested coverage. <a href="https://www.nj.gov/dobi/division_consumers/insurance/homeowner.htm">NJDOBI’s homeowners-insurance resources</a> cover homeowners, condominium, and flood-insurance research. Do not assume one policy includes every type of water or flood loss.</p>
+        </section>
+
+        <section class="guide-card">
+          <h2>Replace the estimate with lender documents</h2>
+          <p>The <a href="https://www.consumerfinance.gov/owning-a-home/loan-estimate/">CFPB Loan Estimate explainer</a> shows where to review loan terms, principal and interest, mortgage insurance, estimated taxes and insurance, lender charges, services, prepaid items, initial escrow, closing costs, and cash to close. Compare the calculator with the document instead of treating the calculator as an offer.</p>
+          <h3>Mortgage insurance</h3>
+          <p>This tool supplies no automatic mortgage-insurance rate. Enter the monthly amount from a lender or Loan Estimate. If you already have a loan, review the disclosure and ask the servicer about the rules that apply. The <a href="https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/">CFPB’s PMI cancellation resource</a> explains that requirements vary and that FHA and VA loans follow different rules.</p>
+          <h3>Independent counseling</h3>
+          <p><a href="https://www.hud.gov/hud-partners/single-family-about-housing-counseling">HUD’s housing-counseling directory</a> can connect consumers with participating agencies for pre-purchase, budget, credit, and other housing counseling. HUD also provides multilingual telephone assistance through the contact information on that page.</p>
+        </section>
+
+        <section class="guide-card guide-card-wide">
+          <h2>New Jersey programs and transfer-related costs</h2>
+          <p><a href="https://www.nj.gov/dca/hmfa/homebuyers-and-renters/">NJHMFA’s official homebuyer site</a> lists the agency’s current roadmap, program materials, eligibility resources, participating-lender process, and counseling information. Program names, assistance, limits, rates, and eligibility can change; use the current agency materials and an authorized participating lender instead of relying on a summary here.</p>
+          <p>This monthly calculator does not calculate deed-transfer charges or decide who owes them. The <a href="https://www.nj.gov/treasury/taxation/realty.shtml">New Jersey Division of Taxation’s current Realty Transfer Fee page</a> publishes rates, forms, exemptions, and supplemental fee information. Confirm the current legal and transaction treatment with the official source and qualified closing professionals.</p>
+        </section>
+
+        <section class="guide-card guide-card-wide" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">Frequently asked questions</h2>
+          <div class="faq-list">
+            <article class="faq-item"><h3>Does this calculator determine what I can afford or whether a lender will approve me?</h3><p>No. It uses only the values entered and does not evaluate income, debts, credit, reserves, loan-program rules, underwriting, or property eligibility. It is not a loan offer or loan approval.</p></article>
+            <article class="faq-item"><h3>Should I enter the mortgage interest rate or the APR?</h3><p>Enter the note interest rate quoted by the lender for the principal-and-interest calculation. The CFPB explains that APR is a broader cost measure that includes the interest rate and certain additional charges.</p></article>
+            <article class="faq-item"><h3>How should I enter mortgage insurance?</h3><p>Enter the monthly amount shown by the lender or on a Loan Estimate. The calculator does not assume that mortgage insurance applies or select a rate. Requirements and cancellation rules depend on the mortgage and circumstances.</p></article>
+            <article class="faq-item"><h3>Does the estimate include closing costs or cash to close?</h3><p>No. Closing costs, lender charges, points, title and settlement charges, inspections, appraisal costs, prepaid items, initial escrow, transfer-related charges, and other cash-to-close items are outside this monthly estimate. Review current lender and transaction documents.</p></article>
+          </div>
+        </section>
+
+        <section class="guide-card guide-card-wide" aria-labelledby="sources-heading">
+          <h2 id="sources-heading">Official sources</h2>
+          <ul class="source-list">
+            <li><a href="https://www.consumerfinance.gov/owning-a-home/loan-estimate/">CFPB Loan Estimate explainer</a></li>
+            <li><a href="https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-mortgage-interest-rate-and-an-apr-en-135/">CFPB: interest rate versus APR</a></li>
+            <li><a href="https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/">CFPB: PMI cancellation and loan differences</a></li>
+            <li><a href="https://www.hud.gov/hud-partners/single-family-about-housing-counseling">HUD housing counseling</a></li>
+            <li><a href="https://www.nj.gov/dca/hmfa/homebuyers-and-renters/">NJHMFA homebuyer resources</a></li>
+            <li><a href="https://nj.gov/treasury/taxation/lpt/genlpt.shtml">NJ Division of Taxation: property tax</a></li>
+            <li><a href="https://www.nj.gov/treasury/taxation/realty.shtml">NJ Division of Taxation: transfer fees</a></li>
+            <li><a href="https://www.nj.gov/dobi/division_consumers/insurance/homeowner.htm">NJDOBI homeowners-insurance resources</a></li>
+          </ul>
+          <p class="source-date">Sources reviewed August 26, 2026. Recheck the linked agency page and document date before relying on any program, rule, form, or cost.</p>
+          <p class="legal-note">This page provides a general calculation and official research links. It is not legal, tax, financial, lending, accounting, insurance, or housing-counseling advice.</p>
+        </section>
       </div>
 
-      <button class="calc-btn" onclick="calculate()">Calculate My Monthly Payment</button>
-
-      <div class="results" id="results">
-        <h2>Your Estimated Monthly Payment Breakdown</h2>
-        <div class="results-grid">
-          <div class="result-item">
-            <div class="amount" id="res-principal">$0</div>
-            <div class="label">Principal & Interest</div>
-          </div>
-          <div class="result-item">
-            <div class="amount" id="res-tax">$0</div>
-            <div class="label">Property Tax (monthly)</div>
-          </div>
-          <div class="result-item">
-            <div class="amount" id="res-insurance">$0</div>
-            <div class="label">Homeowners Insurance (monthly)</div>
-          </div>
-          <div class="result-item">
-            <div class="amount" id="res-pmi">$0</div>
-            <div class="label">PMI (if &lt;20% down)</div>
-          </div>
-          <div class="result-item" style="grid-column: span 2">
-            <div class="amount" id="res-hoa">$0</div>
-            <div class="label">HOA</div>
-          </div>
-          <div class="result-item result-total" style="grid-column: span 2">
-            <div class="amount" id="res-total">$0</div>
-            <div class="label">Total Monthly Payment</div>
-          </div>
-        </div>
-
-        <div class="cta-box">
-          <h3>Out of curiosity — do these numbers work for your situation?</h3>
-          <p>Use this estimate as a planning prompt, then confirm financing terms with a licensed lender and property-specific costs with the appropriate professionals.</p>
-          <a href="tel:908-230-7844">Call Jorge: 908-230-7844</a>
-        </div>
-
-        <div class="lead-section">
-          <h3>Want Jorge to review this estimate with you?</h3>
-          <div class="lead-grid">
-            <input type="text" id="lead-name" placeholder="Your Name">
-            <input type="tel" id="lead-phone" placeholder="Phone Number">
-            <input type="email" id="lead-email" placeholder="Email Address" style="grid-column: span 2">
-          </div>
-          <button class="send-btn" onclick="sendLead()">Request a Follow-Up</button>
-          <p style="font-size:.78rem;color:#777;margin:.75rem 0 0;">Phone is optional. This request does not opt you into automated text messages.</p>
-          <div class="success-msg" id="success-msg">Request confirmed through the site's first-party delivery system.</div>
-          <div class="error-msg" id="error-msg">Something went wrong. Please call Jorge directly at 908-230-7844.</div>
-        </div>
-      </div>
+      <div class="related-tools"><strong>Other first-party planning tools:</strong> <a href="/closing-costs-calculator">buyer closing-cost calculator</a> · <a href="/net-proceeds-calculator">seller net-proceeds calculator</a> · <a href="/nj-realty-transfer-fee-calculator">Realty Transfer Fee calculator</a></div>
     </div>
+  </main>
 
-    <section class="calc-card" style="margin-top: 40px; padding: 40px;">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #1A1A1A; margin: 0 0 12px;">How Mortgage Payments Work in NJ</h2>
-      <p style="color: #444; line-height: 1.7; margin: 0 0 16px;">Your monthly mortgage payment is almost never just principal and interest. In New Jersey, four numbers ride together every single month: P&amp;I (the loan itself), property taxes, homeowners insurance, and — if you put down less than 20 percent — private mortgage insurance (PMI). Add HOA or condo dues if you buy in a community with shared amenities.</p>
-      <p style="color: #444; line-height: 1.7; margin: 0 0 16px;">Property taxes are the piece most buyers underestimate. Typical NJ effective property tax rates run roughly 2.0 to 2.5 percent of assessed value per year — some of the highest in the country. On a $600,000 home, that can mean $12,000 to $15,000 annually, or roughly $1,000 to $1,250 tacked on to your monthly payment before the loan even touches it. Rates vary meaningfully by county and by town: Essex, Union, and parts of Bergen tend to run higher, while some Morris and Somerset communities land closer to the low end. Homeowners insurance in NJ typically runs $1,200 to $2,500 a year for a single-family home. PMI on a conventional loan usually adds about 0.3 to 1.0 percent of the loan amount annually — the calculator above estimates it at roughly 0.5 percent, which is a fair middle ground.</p>
-
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #1A1A1A; margin: 30px 0 12px;">NJ-Specific Closing Costs to Remember</h2>
-      <p style="color: #444; line-height: 1.7; margin: 0 0 16px;">A mortgage payment is only half the story. New Jersey buyers should also budget for closing costs that are not shared by every state:</p>
-      <ul style="color: #444; line-height: 1.7; padding-left: 22px; margin: 0 0 16px;">
-        <li><strong>Realty Transfer Fee (RTF):</strong> Paid by the seller in most cases, but it affects negotiation leverage. Buyers no longer pay the <em>Mansion Tax</em>: since July 10, 2025 the fee on sales above $1,000,000 is a seller-paid <em>Graduated Percent Fee</em> of 1 to 3.5 percent of the entire price, so a buyer above $1M owes none of it.</li>
-        <li><strong>Attorney fees:</strong> New Jersey is an attorney-state. Most buyers and sellers hire a real estate attorney for contract review, title work, and closing. Typical fees run $1,500 to $2,500.</li>
-        <li><strong>Home inspection:</strong> Plan on $500 to $900 for a standard single-family inspection, more if you add radon, termite, oil tank, or sewer scope.</li>
-        <li><strong>Title insurance and settlement fees:</strong> Owner's title insurance is usually a one-time charge based on purchase price. Lender's title, recording, and settlement fees are added on top.</li>
-        <li><strong>Prepaid escrow:</strong> Lenders typically require several months of property taxes and insurance up front to seed your escrow account at closing.</li>
-      </ul>
-
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #1A1A1A; margin: 30px 0 12px;">How Much House Can I Actually Afford?</h2>
-      <p style="color: #444; line-height: 1.7; margin: 0 0 16px;">Most lenders lean on the <strong>28/36 rule</strong>: keep housing costs under 28 percent of your gross monthly income, and total debt (housing plus car loans, student loans, credit cards) under 36 percent. Those are ceilings, not targets. Because NJ property taxes are so heavy, the number the bank says you qualify for and the number that lets you sleep at night are often thousands of dollars apart per month.</p>
-      <p style="color: #444; line-height: 1.7; margin: 0 0 16px;">Down payment strategy matters as much as price. Conventional loans allow as little as 3 to 5 percent down, FHA goes to 3.5 percent, and VA loans (for eligible veterans) can go to zero. Twenty percent removes PMI and usually unlocks better rates. First-time buyers in NJ should look at the <strong>NJHMFA</strong> (New Jersey Housing and Mortgage Finance Agency) programs — including down payment assistance (DPA) grants and forgivable second mortgages — plus municipal and county-level programs that stack on top.</p>
-
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #1A1A1A; margin: 30px 0 16px;">Frequently Asked Questions</h2>
-
-      <h3 style="font-size: 1.05rem; color: #1A1A1A; margin: 0 0 6px;">What is PMI and how do I get rid of it?</h3>
-      <p style="color: #444; line-height: 1.7; margin: 0 0 16px;">Private mortgage insurance protects the lender if you default. On a conventional loan, it kicks in whenever your down payment is under 20 percent. You can request PMI removal once your loan-to-value ratio hits 80 percent (either through payments or appreciation), and lenders are required to auto-cancel it at 78 percent LTV based on original value. FHA mortgage insurance follows different rules and often stays for the life of the loan unless you refinance.</p>
-
-      <h3 style="font-size: 1.05rem; color: #1A1A1A; margin: 0 0 6px;">How do NJ property taxes compare to other states?</h3>
-      <p style="color: #444; line-height: 1.7; margin: 0 0 16px;">New Jersey consistently ranks in the top three nationally for effective property tax rate. Rates are set at the town level, so two homes across a border street can have very different tax bills. When you compare Zillow listings, always check the tax number — a home listed $50,000 cheaper can cost more per month if the taxes are $4,000 higher per year.</p>
-
-      <h3 style="font-size: 1.05rem; color: #1A1A1A; margin: 0 0 6px;">Do I really need 20 percent down?</h3>
-      <p style="color: #444; line-height: 1.7; margin: 0 0 16px;">No. Most NJ buyers today put down 5 to 15 percent. Twenty percent avoids PMI and can improve your rate, but waiting years to hit 20 percent while home prices climb often costs more than the PMI you were trying to avoid. Run the math both ways — sometimes buying sooner with less down and paying PMI for a few years is the financially smarter move.</p>
-
-      <h3 style="font-size: 1.05rem; color: #1A1A1A; margin: 0 0 6px;">Should I pick a 15-year or 30-year mortgage?</h3>
-      <p style="color: #444; line-height: 1.7; margin: 0 0 16px;">A 15-year loan saves enormous interest but roughly doubles the monthly payment. A 30-year gives flexibility — you can always pay extra principal, but you are not <em>required</em> to. Most NJ buyers pick a 30-year for cash-flow safety and prepay when they can.</p>
-    </section>
-  </div>
-
-  
-<div style="max-width:880px;margin:0 auto 34px;padding:20px 24px;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08);font-family:var(--font-body,inherit);line-height:1.7;"><strong>Other NJ calculators:</strong><br><a href="/closing-costs-calculator">NJ Buyer Closing Costs Calculator</a> · <a href="/net-proceeds-calculator">NJ Seller Net Proceeds Calculator</a> · <a href="/nj-realty-transfer-fee-calculator">NJ Realty Transfer Fee Calculator</a> · <a href="/tools/home-value-estimator">NJ Home Value Estimator</a></div>
-
-<div class="related"><strong>Related:</strong> <a href="/blog/how-much-money-to-buy-a-house-nj">How much cash you actually need to buy in NJ</a></div>
-</main>
-<footer class="site-footer">
-    <div class="container">
-      <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · <a href="tel:908-230-7844">908-230-7844</a> · Website by <a href="https://clickmingo.com" target="_blank" rel="noopener" style="color:inherit !important;text-decoration:inherit !important;">ClickMingo</a></p>
-    </div>
+  <footer class="calculator-footer">
+    <p><strong>The Jorge Ramirez Group</strong> — Keller Williams Premier Properties</p>
+    <p><a href="tel:9082307844">(908) 230-7844</a> · Licensed NJ Real Estate Agent #1754604</p>
+    <p>© 2026 The Jorge Ramirez Group.</p>
   </footer>
 
   <script>
-    function fmt(n) {
-      return '$' + Math.round(n).toLocaleString();
+    function formatCurrency(amount) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0
+      }).format(Math.round(amount));
+    }
+
+    function readOptionalAmount(id) {
+      const value = document.getElementById(id).value.trim();
+      if (value === '') return 0;
+      const number = Number(value);
+      return Number.isFinite(number) && number >= 0 ? number : NaN;
+    }
+
+    function showCalculationError(message) {
+      const error = document.getElementById('calc-error');
+      error.textContent = message;
+      error.style.display = 'block';
+      document.getElementById('results').style.display = 'none';
     }
 
     function calculate() {
-      const homePrice    = parseFloat(document.getElementById('homePrice').value) || 0;
-      const downPayment  = parseFloat(document.getElementById('downPayment').value) || 0;
-      const annualRate   = parseFloat(document.getElementById('interestRate').value) || 0;
-      const termYears    = parseInt(document.getElementById('loanTerm').value) || 30;
-      const annualTax    = parseFloat(document.getElementById('propertyTax').value) || 0;
-      const monthlyHOA   = parseFloat(document.getElementById('hoa').value) || 0;
+      const priceValue = document.getElementById('homePrice').value.trim();
+      const rateValue = document.getElementById('interestRate').value.trim();
+      const homePrice = Number(priceValue);
+      const downPayment = readOptionalAmount('downPayment');
+      const annualRate = Number(rateValue);
+      const termYears = Number(document.getElementById('loanTerm').value);
+      const annualTax = readOptionalAmount('propertyTax');
+      const annualInsurance = readOptionalAmount('insurance');
+      const monthlyMortgageInsurance = readOptionalAmount('mortgageInsurance');
+      const monthlyHOA = readOptionalAmount('hoa');
 
-      if (homePrice <= 0) {
-        document.getElementById('results').style.display = 'none';
+      const values = [downPayment, annualTax, annualInsurance, monthlyMortgageInsurance, monthlyHOA];
+      if (priceValue === '' || !Number.isFinite(homePrice) || homePrice <= 0) {
+        showCalculationError('Enter a property price greater than zero.');
+        return;
+      }
+      if (rateValue === '' || !Number.isFinite(annualRate) || annualRate < 0) {
+        showCalculationError('Enter a non-negative mortgage note interest rate.');
+        return;
+      }
+      if (!Number.isFinite(termYears) || termYears <= 0) {
+        showCalculationError('Select a valid loan term.');
+        return;
+      }
+      if (values.some(value => !Number.isFinite(value))) {
+        showCalculationError('Enter non-negative numbers for each optional cost.');
+        return;
+      }
+      if (downPayment > homePrice) {
+        showCalculationError('The down payment cannot exceed the property price.');
         return;
       }
 
-      const loanAmount   = Math.max(0, homePrice - downPayment);
-      const monthlyRate  = (annualRate / 100) / 12;
-      const numPayments  = termYears * 12;
-
-      // Principal & Interest
+      const loanAmount = Math.max(0, homePrice - downPayment);
+      const monthlyRate = (annualRate / 100) / 12;
+      const numPayments = termYears * 12;
       let pi = 0;
       if (monthlyRate === 0) {
         pi = loanAmount / numPayments;
       } else {
         pi = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
       }
-
-      // Property tax monthly
+      if (!Number.isFinite(pi)) {
+        showCalculationError('The entered combination did not produce a valid estimate. Review the inputs.');
+        return;
+      }
       const taxMonthly = annualTax / 12;
+      const insMonthly = annualInsurance / 12;
+      const total = pi + taxMonthly + insMonthly + monthlyMortgageInsurance + monthlyHOA;
 
-      // PMI: ~0.5% annually if down < 20%
-      const downPct = homePrice > 0 ? (downPayment / homePrice) : 0;
-      const pmi = downPct < 0.20 ? (loanAmount * 0.005) / 12 : 0;
+      document.getElementById('res-principal').textContent = formatCurrency(pi);
+      document.getElementById('res-tax').textContent = formatCurrency(taxMonthly);
+      document.getElementById('res-insurance').textContent = formatCurrency(insMonthly);
+      document.getElementById('res-mortgage-insurance').textContent = formatCurrency(monthlyMortgageInsurance);
+      document.getElementById('res-hoa').textContent = formatCurrency(monthlyHOA);
+      document.getElementById('res-total').textContent = formatCurrency(total);
+      document.getElementById('calc-error').style.display = 'none';
 
-      // Homeowners insurance monthly
-      const insMonthly = (parseFloat(document.getElementById('insurance').value) || 0) / 12;
-
-      const total = pi + taxMonthly + insMonthly + pmi + monthlyHOA;
-
-      document.getElementById('res-principal').textContent = fmt(pi);
-      document.getElementById('res-tax').textContent       = fmt(taxMonthly);
-      document.getElementById('res-insurance').textContent  = fmt(insMonthly);
-      document.getElementById('res-pmi').textContent       = fmt(pmi);
-      document.getElementById('res-hoa').textContent       = fmt(monthlyHOA);
-      document.getElementById('res-total').textContent     = fmt(total);
-
-      // Store for lead submission
-      window._calcResults = { homePrice, downPayment, loanAmount, annualRate, termYears, pi, taxMonthly, insMonthly, pmi, monthlyHOA, total };
-
-      document.getElementById('results').style.display = 'block';
-      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window._calcResults = {
+        homePrice, downPayment, loanAmount, annualRate, termYears, pi,
+        taxMonthly, insMonthly, monthlyMortgageInsurance, monthlyHOA, total
+      };
+      const results = document.getElementById('results');
+      results.style.display = 'block';
+      results.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     async function sendLead() {
-      const name  = document.getElementById('lead-name').value.trim();
-      const email = document.getElementById('lead-email').value.trim();
-      const phone = document.getElementById('lead-phone').value.trim();
+      const nameInput = document.getElementById('lead-name');
+      const emailInput = document.getElementById('lead-email');
+      const phoneInput = document.getElementById('lead-phone');
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const phone = phoneInput.value.trim();
+      const success = document.getElementById('success-msg');
+      const error = document.getElementById('error-msg');
+      const deliveryErrorMessage = 'The request was not confirmed. No follow-up delivery should be assumed. Please call Jorge at 908-230-7844 if you want to reach him directly.';
 
-      if (!name || !email) {
-        alert('Please enter your name and email.');
+      success.style.display = 'none';
+      error.style.display = 'none';
+      if (!name || !email || !emailInput.validity.valid) {
+        error.textContent = 'Enter your name and a valid email address. No request has been sent.';
+        error.style.display = 'block';
         return;
       }
 
       const r = window._calcResults || {};
-      const body = {
-        access_key: 'WEB3FORMS_KEY',
-        subject: `New Mortgage Calculator Lead — ${name}`,
-        name,
-        email,
-        phone,
-        message: `
-Mortgage Calculator Lead
+      const message = `
+Mortgage calculator follow-up request
 
 Name: ${name}
 Email: ${email}
-Phone: ${phone}
+Phone: ${phone || 'Not provided'}
 
-Calculator Results:
-- Home Price: $${(r.homePrice||0).toLocaleString()}
-- Down Payment: $${(r.downPayment||0).toLocaleString()}
-- Loan Amount: $${(r.loanAmount||0).toLocaleString()}
-- Interest Rate: ${r.annualRate||0}%
-- Term: ${r.termYears||30} years
-- P&I: $${Math.round(r.pi||0).toLocaleString()}/mo
-- Property Tax: $${Math.round(r.taxMonthly||0).toLocaleString()}/mo
-- PMI: $${Math.round(r.pmi||0).toLocaleString()}/mo
-- Total Monthly: $${Math.round(r.total||0).toLocaleString()}/mo
-        `.trim()
-      };
+User-entered calculation:
+- Property price: $${(r.homePrice || 0).toLocaleString()}
+- Down payment: $${(r.downPayment || 0).toLocaleString()}
+- Loan amount: $${(r.loanAmount || 0).toLocaleString()}
+- Note interest rate entered: ${r.annualRate || 0}%
+- Term: ${r.termYears || 0} years
+- Principal and interest: $${Math.round(r.pi || 0).toLocaleString()}/month
+- Property tax entered: $${Math.round(r.taxMonthly || 0).toLocaleString()}/month
+- Insurance entered: $${Math.round(r.insMonthly || 0).toLocaleString()}/month
+- Mortgage insurance entered: $${Math.round(r.monthlyMortgageInsurance || 0).toLocaleString()}/month
+- HOA entered: $${Math.round(r.monthlyHOA || 0).toLocaleString()}/month
+- Planning total: $${Math.round(r.total || 0).toLocaleString()}/month
+      `.trim();
 
+      const sendButton = document.getElementById('send-button');
+      sendButton.disabled = true;
       try {
         const res = await fetch('/api/lead', {
           method: 'POST',
@@ -410,22 +500,28 @@ Calculator Results:
             leadType: 'mortgage-calculator',
             intent: 'Mortgage calculator follow-up request',
             _source: '/tools/mortgage-calculator',
-            name, email, phone,
-            message: body.message
+            name, email, phone, message
           })
         });
         const data = await res.json();
         if (res.ok && data.ok === true && data.accepted === true) {
-          document.getElementById('success-msg').style.display = 'block';
-          document.getElementById('error-msg').style.display = 'none';
+          success.style.display = 'block';
+          error.style.display = 'none';
         } else {
-          document.getElementById('error-msg').style.display = 'block';
+          error.textContent = deliveryErrorMessage;
+          error.style.display = 'block';
         }
-      } catch(e) {
-        document.getElementById('error-msg').style.display = 'block';
+      } catch (requestError) {
+        error.textContent = deliveryErrorMessage;
+        error.style.display = 'block';
+      } finally {
+        sendButton.disabled = false;
       }
     }
+
+    document.getElementById('calculate-button').addEventListener('click', calculate);
+    document.getElementById('send-button').addEventListener('click', sendLead);
   </script>
-<script defer src="/js/site-cta.js"></script>
+  <script defer src="/js/site-cta.js"></script>
 </body>
 </html>
