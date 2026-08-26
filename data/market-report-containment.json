@@ -1,0 +1,204 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-08-26",
+  "siteOrigin": "https://thejorgeramirezgroup.com",
+  "redirectPairs": [
+    {
+      "key": "chatham-legacy",
+      "source": {
+        "en": "/blog/chatham-nj-real-estate-market-2025",
+        "es": "/es/blog/chatham-nj-real-estate-market-2025"
+      },
+      "destination": {
+        "en": "/blog/market-report-chatham-nj-2026",
+        "es": "/es/blog/market-report-chatham-nj-2026"
+      }
+    },
+    {
+      "key": "westfield-legacy",
+      "source": {
+        "en": "/blog/westfield-nj-real-estate-market-2025",
+        "es": "/es/blog/westfield-nj-real-estate-market-2025"
+      },
+      "destination": {
+        "en": "/blog/market-report-westfield-nj-2026",
+        "es": "/es/blog/market-report-westfield-nj-2026"
+      }
+    },
+    {
+      "key": "essex-quarterly",
+      "source": {
+        "en": "/blog/essex-county-real-estate-market-q2-2026",
+        "es": "/es/blog/essex-county-real-estate-market-q2-2026"
+      },
+      "destination": {
+        "en": "/blog/essex-county-nj-real-estate-market-2026",
+        "es": "/es/blog/essex-county-nj-real-estate-market-2026"
+      }
+    },
+    {
+      "key": "morris-quarterly",
+      "source": {
+        "en": "/blog/morris-county-real-estate-market-q2-2026",
+        "es": "/es/blog/morris-county-real-estate-market-q2-2026"
+      },
+      "destination": {
+        "en": "/blog/morris-county-nj-real-estate-market-2026",
+        "es": "/es/blog/morris-county-nj-real-estate-market-2026"
+      }
+    },
+    {
+      "key": "millburn-short-hills",
+      "source": {
+        "en": "/blog/market-report-millburn-nj-2026",
+        "es": "/es/blog/market-report-millburn-nj-2026"
+      },
+      "destination": {
+        "en": "/blog/market-report-short-hills-nj-2026",
+        "es": "/es/blog/market-report-short-hills-nj-2026"
+      }
+    }
+  ],
+  "noindexTownReports": [
+    {
+      "slug": "basking-ridge",
+      "name": {"en": "Basking Ridge", "es": "Basking Ridge"},
+      "officialGeography": {
+        "en": "Bernards Township (Basking Ridge community)",
+        "es": "municipio de Bernards (comunidad de Basking Ridge)"
+      },
+      "county": {"en": "Somerset County", "es": "condado de Somerset"}
+    },
+    {
+      "slug": "bloomfield",
+      "name": {"en": "Bloomfield", "es": "Bloomfield"},
+      "officialGeography": {"en": "Bloomfield Township", "es": "municipio de Bloomfield"},
+      "county": {"en": "Essex County", "es": "condado de Essex"}
+    },
+    {
+      "slug": "clark",
+      "name": {"en": "Clark", "es": "Clark"},
+      "officialGeography": {"en": "Clark Township", "es": "municipio de Clark"},
+      "county": {"en": "Union County", "es": "condado de Union"}
+    },
+    {
+      "slug": "edison",
+      "name": {"en": "Edison", "es": "Edison"},
+      "officialGeography": {"en": "Edison Township", "es": "municipio de Edison"},
+      "county": {"en": "Middlesex County", "es": "condado de Middlesex"}
+    },
+    {
+      "slug": "fanwood",
+      "name": {"en": "Fanwood", "es": "Fanwood"},
+      "officialGeography": {"en": "Fanwood Borough", "es": "municipio de Fanwood"},
+      "county": {"en": "Union County", "es": "condado de Union"}
+    },
+    {
+      "slug": "florham-park",
+      "name": {"en": "Florham Park", "es": "Florham Park"},
+      "officialGeography": {"en": "Florham Park Borough", "es": "municipio de Florham Park"},
+      "county": {"en": "Morris County", "es": "condado de Morris"}
+    },
+    {
+      "slug": "highland-park",
+      "name": {"en": "Highland Park", "es": "Highland Park"},
+      "officialGeography": {"en": "Highland Park Borough", "es": "municipio de Highland Park"},
+      "county": {"en": "Middlesex County", "es": "condado de Middlesex"}
+    },
+    {
+      "slug": "mountain-lakes",
+      "name": {"en": "Mountain Lakes", "es": "Mountain Lakes"},
+      "officialGeography": {"en": "Mountain Lakes Borough", "es": "municipio de Mountain Lakes"},
+      "county": {"en": "Morris County", "es": "condado de Morris"}
+    },
+    {
+      "slug": "mountainside",
+      "name": {"en": "Mountainside", "es": "Mountainside"},
+      "officialGeography": {"en": "Mountainside Borough", "es": "municipio de Mountainside"},
+      "county": {"en": "Union County", "es": "condado de Union"}
+    },
+    {
+      "slug": "north-caldwell",
+      "name": {"en": "North Caldwell", "es": "North Caldwell"},
+      "officialGeography": {"en": "North Caldwell Borough", "es": "municipio de North Caldwell"},
+      "county": {"en": "Essex County", "es": "condado de Essex"}
+    },
+    {
+      "slug": "nutley",
+      "name": {"en": "Nutley", "es": "Nutley"},
+      "officialGeography": {"en": "Nutley Township", "es": "municipio de Nutley"},
+      "county": {"en": "Essex County", "es": "condado de Essex"}
+    },
+    {
+      "slug": "old-bridge",
+      "name": {"en": "Old Bridge", "es": "Old Bridge"},
+      "officialGeography": {"en": "Old Bridge Township", "es": "municipio de Old Bridge"},
+      "county": {"en": "Middlesex County", "es": "condado de Middlesex"}
+    },
+    {
+      "slug": "parsippany",
+      "name": {"en": "Parsippany", "es": "Parsippany"},
+      "officialGeography": {
+        "en": "Parsippany–Troy Hills Township",
+        "es": "municipio de Parsippany–Troy Hills"
+      },
+      "county": {"en": "Morris County", "es": "condado de Morris"}
+    },
+    {
+      "slug": "roseland",
+      "name": {"en": "Roseland", "es": "Roseland"},
+      "officialGeography": {"en": "Roseland Borough", "es": "municipio de Roseland"},
+      "county": {"en": "Essex County", "es": "condado de Essex"}
+    },
+    {
+      "slug": "springfield",
+      "name": {"en": "Springfield", "es": "Springfield"},
+      "officialGeography": {
+        "en": "Springfield Township, Union County",
+        "es": "municipio de Springfield, condado de Union"
+      },
+      "county": {"en": "Union County", "es": "condado de Union"}
+    },
+    {
+      "slug": "summit",
+      "name": {"en": "Summit", "es": "Summit"},
+      "officialGeography": {"en": "Summit City", "es": "ciudad de Summit"},
+      "county": {"en": "Union County", "es": "condado de Union"}
+    },
+    {
+      "slug": "verona",
+      "name": {"en": "Verona", "es": "Verona"},
+      "officialGeography": {"en": "Verona Township", "es": "municipio de Verona"},
+      "county": {"en": "Essex County", "es": "condado de Essex"}
+    }
+  ],
+  "rebuildPairs": [
+    "market-report-chatham-nj-2026",
+    "market-report-cranford-nj-2026",
+    "market-report-denville-nj-2026",
+    "market-report-glen-ridge-nj-2026",
+    "market-report-linden-nj-2026",
+    "market-report-livingston-nj-2026",
+    "market-report-madison-nj-2026",
+    "market-report-maplewood-nj-2026",
+    "market-report-metuchen-nj-2026",
+    "market-report-montclair-nj-2026",
+    "market-report-morristown-nj-2026",
+    "market-report-new-providence-nj-2026",
+    "market-report-rahway-nj-2026",
+    "market-report-randolph-nj-2026",
+    "market-report-scotch-plains-nj-2026",
+    "market-report-short-hills-nj-2026",
+    "market-report-south-brunswick-nj-2026",
+    "market-report-south-orange-nj-2026",
+    "market-report-warren-township-nj-2026",
+    "market-report-west-orange-nj-2026",
+    "market-report-westfield-nj-2026",
+    "market-report-woodbridge-nj-2026",
+    "essex-county-nj-real-estate-market-2026",
+    "hudson-county-real-estate-market-q2-2026",
+    "middlesex-county-real-estate-market-q2-2026",
+    "morris-county-nj-real-estate-market-2026",
+    "union-county-nj-real-estate-market-report-2026"
+  ]
+}

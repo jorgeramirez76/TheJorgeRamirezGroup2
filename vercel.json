@@ -4,6 +4,66 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/blog/chatham-nj-real-estate-market-2025.html",
+      "destination": "/blog/market-report-chatham-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/chatham-nj-real-estate-market-2025",
+      "destination": "/blog/market-report-chatham-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/chatham-nj-real-estate-market-2025.html",
+      "destination": "/es/blog/market-report-chatham-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/chatham-nj-real-estate-market-2025",
+      "destination": "/es/blog/market-report-chatham-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/westfield-nj-real-estate-market-2025.html",
+      "destination": "/blog/market-report-westfield-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/westfield-nj-real-estate-market-2025",
+      "destination": "/blog/market-report-westfield-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/westfield-nj-real-estate-market-2025.html",
+      "destination": "/es/blog/market-report-westfield-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/westfield-nj-real-estate-market-2025",
+      "destination": "/es/blog/market-report-westfield-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/market-report-millburn-nj-2026.html",
+      "destination": "/blog/market-report-short-hills-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/market-report-millburn-nj-2026",
+      "destination": "/blog/market-report-short-hills-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/market-report-millburn-nj-2026.html",
+      "destination": "/es/blog/market-report-short-hills-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/market-report-millburn-nj-2026",
+      "destination": "/es/blog/market-report-short-hills-nj-2026",
+      "permanent": true
+    },
+    {
       "source": "/blog/best-nj-towns-for-families",
       "destination": "/blog/best-nj-towns-for-families-2026",
       "permanent": true
