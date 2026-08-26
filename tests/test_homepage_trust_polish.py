@@ -34,6 +34,33 @@ class HomepageTrustPolishTests(unittest.TestCase):
             "bought and sold homes across nj as an investor",
             "known investor eye",
             "24–48 hours",
+            "only on this site",
+            "every nj commuter town",
+            "no other nj agent",
+            "42 sold homes",
+            "public record · verified",
+            "competitive-market win",
+            "priced right from day one",
+            "right school district",
+            "without overpaying",
+            "most sellers leave money on the table",
+            "most agents get at least one",
+            "almost always fixable",
+            "many fsbo sellers end up",
+            "the best homes in nj never",
+            "12 other offers",
+            "you won't overpay",
+            "the #1 reason sellers",
+            "many of my best results",
+            "5.2%",
+            "60–90 days",
+            "mandatory 3-business-day",
+            "2–3x faster",
+            "$1,095,000",
+            "10–20%",
+            "5–13% more",
+            "most nj real estate attorneys recommend",
+            "best nj towns for families",
         )
 
         homepage = self.source.lower()
@@ -41,6 +68,28 @@ class HomepageTrustPolishTests(unittest.TestCase):
         self.assertEqual([], present)
         self.assertIn("Here are the facts:", self.source)
         self.assertNotIn("What I can verify is", self.source)
+
+    def test_market_and_transaction_copy_is_durable_and_attributed(self) -> None:
+        self.assertIn("Third-Party Profile Snapshot", self.source)
+        self.assertIn("Third-party profile data can change", self.source)
+        self.assertIn("Reference tool · Not a live NJ Transit feed", self.source)
+        self.assertIn("There is no universal best month", self.source)
+        self.assertIn("brokerage compensation, which is negotiable and not set by law", self.source)
+        self.assertIn("https://www.nj.gov/treasury/taxation/realty.shtml", self.source)
+        self.assertNotIn("thejorgeramirezgroup.com/home-valuation.html", self.source)
+
+    def test_homepage_design_tokens_remain_unchanged(self) -> None:
+        for token in (
+            "--primary-red:#C41230",
+            "--dark-red:#8B0D22",
+            "--gold:#B8962E",
+            "--gold-light:#D4AF5A",
+            "--black:#000000",
+            "--light-gray:#F8F6F2",
+            "--font-display:'Playfair Display'",
+            "--font-body:'Inter'",
+        ):
+            self.assertIn(token, self.source)
 
     def test_town_guide_copy_uses_durable_six_county_language(self) -> None:
         self.assertNotRegex(self.source, r"\b112\b")
