@@ -17,6 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "nj-home-buyer-guide-sources.json"
 RENDERER = ROOT / "tools" / "render_nj_home_buyer_guides.py"
 STYLESHEET = ROOT / "css" / "nj-home-buyer-guide.css"
+PDF = ROOT / "guides" / "nj-home-buyer-guide.pdf"
+PDF_RENDERER = ROOT / "tools" / "render_nj_home_buyer_guide_pdf.py"
 
 PAGES = {
     "nj-home-buyer-guide.html": {
@@ -459,6 +461,67 @@ class NJHomeBuyerGuideRebuildTests(unittest.TestCase):
             self.assertIn(relative, source)
         self.assertIn("GENERATED: render_nj_home_buyer_guides.py", read("nj-home-buyer-guide.html"))
         self.assertIn("GENERATED: render_nj_home_buyer_guides.py", read("es/nj-home-buyer-guide.html"))
+
+    def test_downloadable_pdf_is_current_source_backed_and_deterministic(self) -> None:
+        self.assertTrue(PDF.exists(), "downloadable buyer guide is missing")
+        self.assertTrue(PDF_RENDERER.exists(), "dedicated PDF renderer is missing")
+        info = subprocess.run(
+            ["pdfinfo", str(PDF)],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(0, info.returncode, info.stdout + info.stderr)
+        self.assertRegex(info.stdout, r"(?m)^Pages:\s+6$")
+        extracted = subprocess.run(
+            ["pdftotext", "-layout", str(PDF), "-"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(0, extracted.returncode, extracted.stdout + extracted.stderr)
+        text_content = " ".join(extracted.stdout.split())
+        for required in (
+            "New Jersey does not require a home buyer to hire an attorney.",
+            "New Jersey Department of Banking and Insurance",
+            "New Jersey Housing and Mortgage Finance Agency",
+            "Consumer Financial Protection Bureau",
+            "U.S. Department of Housing and Urban Development",
+            "Loan Estimate",
+            "Closing Disclosure",
+            "Reviewed 2026-08-26",
+            "License #1754604",
+            "Keller Williams Premier Properties",
+            "Union, Essex, Morris, Hudson, Middlesex, and Somerset counties",
+            "Educational information only; not legal, tax, financial, mortgage, insurance, inspection, title, or engineering advice.",
+        ):
+            self.assertIn(required, text_content)
+        forbidden = re.compile(
+            r"(?:"
+            r"\$\s*(?:15,?000|15k|17,?000|22,?000)|"
+            r"\b(?:3\s*(?:-|–|to)\s*5|2\s*(?:-|–|to)\s*3)\s*%|"
+            r"\b\d+(?:\.\d+)?\s*%|"
+            r"\b(?:school selection|schools?|school districts?)\b|"
+            r"\b138\s+(?:NJ\s+)?communities\b|"
+            r"\b(?:hundreds|dozens)\s+of\s+(?:buyers|clients)\b|"
+            r"\b(?:attorney required|mandatory attorney review|NJ requires an attorney)\b|"
+            r"\b(?:guaranteed|guarantees?|avoid losing money|save money)\b|"
+            r"\b(?:thirty|30)\s*(?:-|–|to)\s*(?:sixty|60)\s+days\b"
+            r")",
+            re.IGNORECASE,
+        )
+        match = forbidden.search(text_content)
+        self.assertIsNone(match, match.group(0) if match else "")
+        check = subprocess.run(
+            [sys.executable, str(PDF_RENDERER), "--check"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(0, check.returncode, check.stdout + check.stderr)
 
 if __name__ == "__main__":
     unittest.main()
