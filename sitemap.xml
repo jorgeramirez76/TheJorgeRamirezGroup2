@@ -89,28 +89,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/nj-home-buyer-guide"/>
   </url>
   <url>
-    <loc>https://thejorgeramirezgroup.com/nj-real-estate-agent</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/nj-real-estate-agent"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/nj-real-estate-agent"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/nj-real-estate-agent"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/nj-real-estate-agent"/>
-  </url>
-  <url>
-    <loc>https://thejorgeramirezgroup.com/nj-real-estate-questions-answers</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/nj-real-estate-questions-answers"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/nj-real-estate-questions-answers"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/nj-real-estate-questions-answers"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/nj-real-estate-questions-answers"/>
-  </url>
-  <url>
     <loc>https://thejorgeramirezgroup.com/privacy-policy</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -139,26 +117,32 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/sell-your-home"/>
   </url>
   <url>
-    <loc>https://thejorgeramirezgroup.com/summit-nj-homes-for-sale</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://thejorgeramirezgroup.com/nj-realty-transfer-fee-calculator</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/summit-nj-homes-for-sale"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/summit-nj-homes-for-sale"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/summit-nj-homes-for-sale"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/summit-nj-homes-for-sale"/>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/nj-realty-transfer-fee-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/nj-realty-transfer-fee-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/nj-realty-transfer-fee-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/nj-realty-transfer-fee-calculator"/>
   </url>
   <url>
-    <loc>https://thejorgeramirezgroup.com/westfield-nj-homes-for-sale</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://thejorgeramirezgroup.com/nj-real-estate-questions-answers</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/westfield-nj-homes-for-sale"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/westfield-nj-homes-for-sale"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/westfield-nj-homes-for-sale"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/westfield-nj-homes-for-sale"/>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/nj-real-estate-questions-answers"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/nj-real-estate-questions-answers"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/nj-real-estate-questions-answers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/nj-real-estate-questions-answers"/>
+  </url>
+  <url>
+    <loc>https://thejorgeramirezgroup.com/blog/nj-housing-market-2026-buy-sell-or-wait</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/blog/nj-housing-market-2026-buy-sell-or-wait"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/blog/nj-housing-market-2026-buy-sell-or-wait"/>
   </url>
 <url>
     <loc>https://thejorgeramirezgroup.com/towns/basking-ridge</loc>
@@ -554,15 +538,6 @@
 
     <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/blog/moving-to-nj-checklist"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/blog/moving-to-nj-checklist"/>
-  </url>
-  <url>
-    <loc>https://thejorgeramirezgroup.com/blog/is-it-cheaper-to-live-in-nj-or-ny</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/blog/is-it-cheaper-to-live-in-nj-or-ny"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/blog/is-it-cheaper-to-live-in-nj-or-ny"/>
   </url>
   <url>
     <loc>https://thejorgeramirezgroup.com/blog/absentee-owner-nj-sell-rental-property</loc>
@@ -1293,29 +1268,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/rent-vs-buy-nj"/>
   </url>
 
-  <url>
-    <loc>https://thejorgeramirezgroup.com/nj-realty-transfer-fee-calculator</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
 
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/nj-realty-transfer-fee-calculator"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/nj-realty-transfer-fee-calculator"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/nj-realty-transfer-fee-calculator"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/nj-realty-transfer-fee-calculator"/>
-  </url>
-
-  <url>
-    <loc>https://thejorgeramirezgroup.com/nj-anchor-benefit-guide</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/nj-anchor-benefit-guide"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/nj-anchor-benefit-guide"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/nj-anchor-benefit-guide"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/nj-anchor-benefit-guide"/>
-  </url>
 
   <url>
     <loc>https://thejorgeramirezgroup.com/55-plus-communities-nj</loc>
@@ -1398,8 +1351,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/blog/nj-first-time-home-buyer-programs-2026"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/first-time-buyer-nj-programs"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/first-time-buyer-nj-programs"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/blog/nj-first-time-home-buyer-programs-2026"/>
   </url>
   <url>
@@ -1423,12 +1374,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thejorgeramirezgroup.com/blog/nj-housing-market-2026-buy-sell-or-wait</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://thejorgeramirezgroup.com/blog/nj-commute-cost-nyc-2026</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -1447,17 +1392,6 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/blog/how-to-appeal-nj-property-taxes-2026"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/blog/how-to-appeal-nj-property-taxes-2026"/>
-  </url>
-  <url>
-    <loc>https://thejorgeramirezgroup.com/why-jorge-ramirez</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/why-jorge-ramirez"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/why-jorge-ramirez"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/why-jorge-ramirez"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/why-jorge-ramirez"/>
   </url>
   <url>
     <loc>https://thejorgeramirezgroup.com/blog/nj-exit-tax-explained</loc>

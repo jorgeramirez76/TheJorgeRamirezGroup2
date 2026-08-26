@@ -61,11 +61,11 @@ class SpanishFairHousingInventoryTests(unittest.TestCase):
         self.assertEqual(reviewed | quarantined, set(discovered.pop("owned")))
         self.assertEqual(self.inventory["excluded"], discovered)
         self.assertEqual(expected_payload(), self.inventory)
-        self.assertEqual(68, len(reviewed))
-        self.assertEqual(105, len(quarantined))
-        self.assertEqual(10, len(self.inventory["excluded"]["rebuilt"]))
+        self.assertEqual(59, len(reviewed))
+        self.assertEqual(104, len(quarantined))
+        self.assertEqual(12, len(self.inventory["excluded"]["rebuilt"]))
         self.assertEqual(50, len(self.inventory["excluded"]["market_reports"]))
-        self.assertEqual(9, len(self.inventory["excluded"]["redirects"]))
+        self.assertEqual(17, len(self.inventory["excluded"]["redirects"]))
         self.assertEqual(138, len(self.inventory["excluded"]["directories"]))
 
     def test_public_pages_and_emitters_have_no_contextual_risk(self) -> None:
@@ -91,7 +91,7 @@ class SpanishFairHousingInventoryTests(unittest.TestCase):
         fixture = ROOT / "tests" / "fixtures" / "gsc-spanish-fair-housing-quarantine-pages.csv"
         self.assertNotIn(b"\r\n", fixture.read_bytes())
         pages = self.manifest["pages"]
-        self.assertEqual(105, len(pages))
+        self.assertEqual(104, len(pages))
         self.assertEqual(set(self.mapping), {page["file"] for page in pages})
         self.assertEqual(
             Counter(
@@ -100,13 +100,13 @@ class SpanishFairHousingInventoryTests(unittest.TestCase):
                     "scaled-town-selling": 44,
                     "scaled-neighborhood-profile": 11,
                     "subjective-school-ranking": 1,
-                    "unsafe-inherited-seller": 2,
+                    "unsafe-inherited-seller": 1,
                 }
             ),
             Counter(page["cluster"] for page in pages),
         )
         self.assertEqual(
-            Counter({"static-noindex-fallback": 104, "same-intent-redirect": 1}),
+            Counter({"static-noindex-fallback": 103, "same-intent-redirect": 1}),
             Counter(page["disposition"] for page in pages),
         )
 
@@ -125,12 +125,12 @@ class SpanishFairHousingInventoryTests(unittest.TestCase):
         )
         self.assertEqual(
             {
-                "routes": 104,
-                "routesWithRows": 55,
+                "routes": 103,
+                "routesWithRows": 54,
                 "lastThreeMonthsClicks": 0,
                 "previousThreeMonthsClicks": 0,
-                "lastThreeMonthsImpressions": 520,
-                "previousThreeMonthsImpressions": 112,
+                "lastThreeMonthsImpressions": 502,
+                "previousThreeMonthsImpressions": 102,
             },
             aggregate["staticNoindexFallback"],
         )

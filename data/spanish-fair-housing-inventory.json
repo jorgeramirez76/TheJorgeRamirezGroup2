@@ -35,7 +35,6 @@
     "es/divorce-home-sale-nj.html",
     "es/downsizing-nj.html",
     "es/expired-listing-help.html",
-    "es/first-time-buyer-nj-programs.html",
     "es/fsbo-help.html",
     "es/home-valuation.html",
     "es/how-we-sell-your-home.html",
@@ -48,11 +47,7 @@
     "es/montclair-vs-maplewood-nj.html",
     "es/net-proceeds-calculator.html",
     "es/new-providence-vs-berkeley-heights-nj.html",
-    "es/nj-anchor-benefit-guide.html",
     "es/nj-home-buyer-guide.html",
-    "es/nj-real-estate-agent.html",
-    "es/nj-real-estate-questions-answers.html",
-    "es/nj-realty-transfer-fee-calculator.html",
     "es/privacy-policy.html",
     "es/property-search.html",
     "es/relocating-from-nj.html",
@@ -61,14 +56,10 @@
     "es/sell-your-home.html",
     "es/short-hills-vs-chatham-nj.html",
     "es/short-hills-vs-westfield-nj.html",
-    "es/summit-nj-homes-for-sale.html",
     "es/summit-vs-new-providence-nj.html",
     "es/thank-you.html",
     "es/tools/commute-scorer.html",
-    "es/tools/home-value-estimator.html",
-    "es/tools/market-comparison-widget.html",
-    "es/westfield-nj-homes-for-sale.html",
-    "es/why-jorge-ramirez.html"
+    "es/tools/market-comparison-widget.html"
   ],
   "quarantined": [
     "es/blog/best-school-districts-in-union-county-nj-for-families-buying-2026.html",
@@ -174,8 +165,7 @@
     "es/blog/selling-home-west-orange-nj-2026.html",
     "es/blog/selling-home-westfield-nj-2026.html",
     "es/blog/selling-home-woodbridge-nj-2026.html",
-    "es/blog/selling-inherited-home-nj.html",
-    "es/inherited-home-nj.html"
+    "es/blog/selling-inherited-home-nj.html"
   ],
   "emitters": [
     "build_communities_page.py",
@@ -191,6 +181,7 @@
     "scripts/fix_spanish_internal_links.py",
     "scripts/sync_communities_from_facts.py",
     "tools/fix_spanish_copy_quality.py",
+    "tools/render_authority_tools.py",
     "translate_to_spanish.py"
   ],
   "guarded_emitters": {
@@ -198,6 +189,7 @@
     "generate_blog.py": "Retired fail-closed entry point; it cannot emit public town-report pages.",
     "scripts/apply_spanish_snippets.py": "Skips every Spanish fair-housing quarantine output.",
     "tools/fix_spanish_copy_quality.py": "Skips every Spanish fair-housing quarantine output.",
+    "tools/render_authority_tools.py": "Deterministic primary-source renderer owns the consolidated authority/tool Spanish outputs.",
     "translate_to_spanish.py": "Refuses every reviewed or quarantined Spanish output in the exact inventory."
   },
   "excluded": {
@@ -210,6 +202,8 @@
       "es/blog/midtown-direct-towns-nj.html",
       "es/blog/nj-property-tax-guide.html",
       "es/blog/top-nyc-commuter-towns-nj-2026.html",
+      "es/nj-real-estate-questions-answers.html",
+      "es/nj-realty-transfer-fee-calculator.html",
       "es/nj-train-map.html",
       "es/tools/mortgage-calculator.html"
     ],
@@ -272,9 +266,17 @@
       "es/blog/nj-property-tax-guide-homeowners.html",
       "es/blog/selling-your-home-summit-nj-guide.html",
       "es/blog/the-truth-about-fsbo-in-nj-2026.html",
+      "es/first-time-buyer-nj-programs.html",
+      "es/inherited-home-nj.html",
+      "es/nj-anchor-benefit-guide.html",
+      "es/nj-real-estate-agent.html",
       "es/nyc-to-nj-relocation.html",
       "es/sell-home-fast-nj.html",
-      "es/westfield-vs-summit-nj.html"
+      "es/summit-nj-homes-for-sale.html",
+      "es/tools/home-value-estimator.html",
+      "es/westfield-nj-homes-for-sale.html",
+      "es/westfield-vs-summit-nj.html",
+      "es/why-jorge-ramirez.html"
     ],
     "directories": [
       "es/towns/basking-ridge.html",

@@ -119,7 +119,7 @@ CONTENT = {
         "skip": "Skip to main content",
         "nav": [
             ("Roadmap", "#roadmap", "guide-nav__desktop-only"),
-            ("Programs", "/first-time-buyer-nj-programs", "guide-nav__desktop-only"),
+            ("Programs", "/blog/first-time-home-buyer-nj-guide", "guide-nav__desktop-only"),
             ("Calculators", "#resources", "guide-nav__desktop-only"),
         ],
         "call": "Call 908-230-7844",
@@ -230,7 +230,7 @@ CONTENT = {
                 "links": [
                     ("Open current NJHMFA program materials", "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/", True),
                     ("Read the NJHMFA homebuyer FAQs", "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/faqs/", True),
-                    ("Use the site's NJ program guide", "/first-time-buyer-nj-programs", False),
+                    ("Use the site's NJ program guide", "/blog/first-time-home-buyer-nj-guide", False),
                 ],
             },
             {
@@ -369,7 +369,7 @@ CONTENT = {
             "and property-specific documents remain controlling."
         ),
         "resources": [
-            ("NJHMFA program guide", "Understand the questions to take to NJHMFA and a participating lender without relying on frozen assistance amounts.", "/first-time-buyer-nj-programs", "Review programs"),
+            ("NJHMFA program guide", "Understand the questions to take to NJHMFA and a participating lender without relying on frozen assistance amounts.", "/blog/first-time-home-buyer-nj-guide", "Review programs"),
             ("Mortgage calculator", "Model payment components, then replace each assumption with the written loan and property figures you receive.", "/tools/mortgage-calculator", "Open calculator"),
             ("Closing-cost calculator", "Organize possible line items and compare the result with your Loan Estimate and Closing Disclosure.", "/closing-costs-calculator", "Plan closing items"),
             ("First-time buyer due-diligence guide", "Use the deeper document checklist for counseling, insurance, title, appraisal, inspection, and closing review.", "/blog/first-time-home-buyer-nj-guide", "Read the detailed guide"),
@@ -487,7 +487,7 @@ CONTENT = {
         "footer_buyer_links": [
             ("Buy a home", "/buy-a-home"),
             ("Property search", "/property-search"),
-            ("NJHMFA programs", "/first-time-buyer-nj-programs"),
+            ("NJHMFA programs", "/blog/first-time-home-buyer-nj-guide"),
             ("Mortgage calculator", "/tools/mortgage-calculator"),
             ("Closing planner", "/closing-costs-calculator"),
         ],
@@ -517,7 +517,7 @@ CONTENT = {
         "skip": "Saltar al contenido principal",
         "nav": [
             ("Ruta", "#roadmap", "guide-nav__desktop-only"),
-            ("Programas", "/es/first-time-buyer-nj-programs", "guide-nav__desktop-only"),
+            ("Programas", "/es/blog/first-time-home-buyer-nj-guide", "guide-nav__desktop-only"),
             ("Calculadoras", "#resources", "guide-nav__desktop-only"),
         ],
         "call": "Llamar al 908-230-7844",
@@ -577,7 +577,7 @@ CONTENT = {
                 "id": "programs", "number": "03", "title": "Verifica la asistencia en la fuente oficial",
                 "body": "NJHMFA publica programas hipotecarios y de asistencia con requisitos propios de elegibilidad, propiedad, ocupación, ingresos, precio, educación y prestamista participante. Esos términos pueden cambiar.",
                 "checkpoint": "Confirma la elegibilidad vigente directamente con NJHMFA y un prestamista participante. Guarda la hoja informativa y el documento de límites usados en tu solicitud, en vez de depender de una cifra de un artículo o archivo anterior.",
-                "links": [("Abrir materiales vigentes de NJHMFA", "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/", True), ("Leer preguntas frecuentes de NJHMFA", "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/faqs/", True), ("Usar la guía de programas del sitio", "/es/first-time-buyer-nj-programs", False)],
+                "links": [("Abrir materiales vigentes de NJHMFA", "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/", True), ("Leer preguntas frecuentes de NJHMFA", "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/faqs/", True), ("Usar la guía de programas del sitio", "/es/blog/first-time-home-buyer-nj-guide", False)],
             },
             {
                 "id": "representation", "number": "04", "title": "Deja por escrito la relación de corretaje",
@@ -629,7 +629,7 @@ CONTENT = {
         "resources_title": "Continúa con los recursos vigentes del sitio",
         "resources_intro": "Estas herramientas apoyan la planificación. El prestamista, contrato, materiales oficiales y documentos de la propiedad siguen controlando.",
         "resources": [
-            ("Guía de programas NJHMFA", "Prepara preguntas para NJHMFA y un prestamista participante sin depender de montos congelados.", "/es/first-time-buyer-nj-programs", "Revisar programas"),
+            ("Guía de programas NJHMFA", "Prepara preguntas para NJHMFA y un prestamista participante sin depender de montos congelados.", "/es/blog/first-time-home-buyer-nj-guide", "Revisar programas"),
             ("Calculadora hipotecaria", "Modela componentes del pago y sustituye cada supuesto por cifras escritas del préstamo y la propiedad.", "/es/tools/mortgage-calculator", "Abrir calculadora"),
             ("Calculadora de cierre", "Organiza posibles partidas y compara el resultado con tu Loan Estimate y Closing Disclosure.", "/es/closing-costs-calculator", "Planificar partidas"),
             ("Guía de diligencia para primer comprador", "Usa la lista detallada para asesoría, seguro, título, tasación, inspección y cierre.", "/es/blog/first-time-home-buyer-nj-guide", "Leer la guía detallada"),
@@ -691,7 +691,7 @@ CONTENT = {
         "footer_counties": "Condados atendidos",
         "footer_county_links": [("Union", "/es/counties/union-county"), ("Essex", "/es/counties/essex-county"), ("Morris", "/es/counties/morris-county"), ("Hudson", "/es/counties/hudson-county"), ("Middlesex", "/es/counties/middlesex-county"), ("Somerset", "/es/counties/somerset-county")],
         "footer_buyer": "Recursos del comprador",
-        "footer_buyer_links": [("Comprar vivienda", "/es/buy-a-home"), ("Buscar propiedades", "/property-search"), ("Programas NJHMFA", "/es/first-time-buyer-nj-programs"), ("Calculadora hipotecaria", "/es/tools/mortgage-calculator"), ("Planificador de cierre", "/es/closing-costs-calculator")],
+        "footer_buyer_links": [("Comprar vivienda", "/es/buy-a-home"), ("Buscar propiedades", "/property-search"), ("Programas NJHMFA", "/es/blog/first-time-home-buyer-nj-guide"), ("Calculadora hipotecaria", "/es/tools/mortgage-calculator"), ("Planificador de cierre", "/es/closing-costs-calculator")],
         "copyright": "© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties.",
         "license": "Licencia inmobiliaria de Nueva Jersey #1754604",
         "breadcrumb_home": "Inicio",

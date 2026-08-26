@@ -16,12 +16,12 @@
         "previousThreeMonthsImpressions": 0
       },
       "staticNoindexFallback": {
-        "routes": 104,
-        "routesWithRows": 55,
+        "routes": 103,
+        "routesWithRows": 54,
         "lastThreeMonthsClicks": 0,
         "previousThreeMonthsClicks": 0,
-        "lastThreeMonthsImpressions": 520,
-        "previousThreeMonthsImpressions": 112
+        "lastThreeMonthsImpressions": 502,
+        "previousThreeMonthsImpressions": 102
       }
     },
     "recordedLeads": {
@@ -1492,20 +1492,6 @@
         "previousThreeMonthsClicks": 0,
         "lastThreeMonthsImpressions": 0,
         "previousThreeMonthsImpressions": 0
-      }
-    },
-    {
-      "file": "es/inherited-home-nj.html",
-      "path": "/es/inherited-home-nj",
-      "destination": "/es/sell-your-home",
-      "cluster": "unsafe-inherited-seller",
-      "disposition": "static-noindex-fallback",
-      "gsc": {
-        "variantRows": 2,
-        "lastThreeMonthsClicks": 0,
-        "previousThreeMonthsClicks": 0,
-        "lastThreeMonthsImpressions": 18,
-        "previousThreeMonthsImpressions": 10
       }
     }
   ]

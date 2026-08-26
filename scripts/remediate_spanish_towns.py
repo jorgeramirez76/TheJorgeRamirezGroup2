@@ -955,7 +955,11 @@ def _sitemap_block(slug: str) -> str:
 
 
 def expected_sitemap(source: str, manifest: dict[str, object]) -> str:
-    blocks = re.findall(r"  <url>\n.*?  </url>\n", source, re.S)
+    blocks = re.findall(
+        r"^[ \t]*<url>\n.*?^[ \t]*</url>\n",
+        source,
+        re.MULTILINE | re.DOTALL,
+    )
     stripped = source
     for block in blocks:
         if f"{SITE}/es/towns/" in block:
@@ -966,7 +970,8 @@ def expected_sitemap(source: str, manifest: dict[str, object]) -> str:
         if item["action"] == "rebuild"
     ]
     insertion = "".join(_sitemap_block(slug) for slug in sorted(rebuilt))
-    return stripped.replace("</urlset>", insertion + "</urlset>")
+    body = stripped.rstrip().removesuffix("</urlset>").rstrip()
+    return body + "\n" + insertion + "</urlset>\n"
 
 
 def _write_if_changed(path: Path, value: str) -> bool:

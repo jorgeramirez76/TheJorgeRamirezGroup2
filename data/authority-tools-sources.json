@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-26",
+  "renderer": "tools/render_authority_tools.py",
+  "routeSync": "tools/sync_authority_tools_routes.py",
+  "sourceCheck": "tools/check_authority_tool_sources.py",
+  "scope": "Canonical consolidation and primary-source rebuild contract for New Jersey authority, homeowner, relocation, market, FAQ, and Realty Transfer Fee tool routes.",
+  "managedFiles": [
+    "best-real-estate-agents-union-county-nj-2026.html",
+    "blog/is-it-cheaper-to-live-in-nj-or-ny.html",
+    "blog/nj-housing-market-2026-buy-sell-or-wait.html",
+    "blog/nj-property-tax-guide-homeowners.html",
+    "es/blog/nj-property-tax-guide-homeowners.html",
+    "es/first-time-buyer-nj-programs.html",
+    "es/inherited-home-nj.html",
+    "es/nj-anchor-benefit-guide.html",
+    "es/nj-real-estate-agent.html",
+    "es/nj-real-estate-questions-answers.html",
+    "es/nj-realty-transfer-fee-calculator.html",
+    "es/nyc-to-nj-relocation.html",
+    "es/summit-nj-homes-for-sale.html",
+    "es/tools/home-value-estimator.html",
+    "es/westfield-nj-homes-for-sale.html",
+    "es/why-jorge-ramirez.html",
+    "first-time-buyer-nj-programs.html",
+    "inherited-home-nj.html",
+    "js/nj-rtf-calculator.js",
+    "nj-anchor-benefit-guide.html",
+    "nj-real-estate-agent.html",
+    "nj-real-estate-questions-answers.html",
+    "nj-realty-transfer-fee-calculator.html",
+    "nyc-to-nj-relocation.html",
+    "summit-nj-homes-for-sale.html",
+    "tools/home-value-estimator.html",
+    "westfield-nj-homes-for-sale.html",
+    "why-jorge-ramirez.html"
+  ],
+  "supportFiles": [
+    "css/authority-tools.css"
+  ],
+  "internalLinkFiles": [
+    "best-real-estate-agents-essex-county-nj-2026.html",
+    "best-real-estate-agents-morris-county-nj-2026.html",
+    "blog/documents-to-sell-inherited-property-nj.html",
+    "blog/how-much-are-closing-costs-nj.html",
+    "blog/most-affordable-nj-towns-near-nyc-2026.html",
+    "blog/moving-to-nj-checklist.html",
+    "blog/nj-commute-cost-nyc-2026.html",
+    "blog/nj-first-time-home-buyer-programs-2026.html",
+    "blog/nj-property-tax-rate-vs-what-you-actually-pay.html",
+    "blog/selling-a-house-as-executor-nj.html",
+    "blog/why-new-yorkers-moving-to-nj-2026.html",
+    "closing-costs-calculator.html",
+    "es/blog/how-much-are-closing-costs-nj.html",
+    "es/luxury-homes-nj.html",
+    "es/nj-home-buyer-guide.html",
+    "es/nj-train-map.html",
+    "index.html",
+    "investment-property-nj.html",
+    "luxury-homes-nj.html",
+    "net-proceeds-calculator.html",
+    "nj-home-buyer-guide.html"
+  ],
+  "hreflangRemovals": {
+    "blog/nj-first-time-home-buyer-programs-2026.html": [
+      "/es/first-time-buyer-nj-programs",
+      "/es/blog/first-time-home-buyer-nj-guide"
+    ]
+  },
+  "additionalLinkRewrites": {
+    "/blog/top-nyc-commuter-towns-nj-2026": "/blog/best-nj-suburbs-nyc-commuters",
+    "/es/towns/short-hills": "/es/towns/millburn",
+    "/towns/short-hills": "/towns/millburn"
+  },
+  "consolidations": [
+    {
+      "file": "nj-real-estate-agent.html",
+      "route": "/nj-real-estate-agent",
+      "destination": "/ai-authority",
+      "lang": "en",
+      "reason": "Duplicate professional-profile intent; the destination carries the verified license, brokerage, service-area, and contact record."
+    },
+    {
+      "file": "es/nj-real-estate-agent.html",
+      "route": "/es/nj-real-estate-agent",
+      "destination": "/es/ai-authority",
+      "lang": "es",
+      "reason": "Intención duplicada de perfil profesional; el destino conserva la licencia, correduría, zona de servicio y contacto verificados."
+    },
+    {
+      "file": "why-jorge-ramirez.html",
+      "route": "/why-jorge-ramirez",
+      "destination": "/ai-authority",
+      "lang": "en",
+      "reason": "Duplicate self-promotional profile content is consolidated into the source-safe authority profile."
+    },
+    {
+      "file": "es/why-jorge-ramirez.html",
+      "route": "/es/why-jorge-ramirez",
+      "destination": "/es/ai-authority",
+      "lang": "es",
+      "reason": "El contenido promocional duplicado se consolida en el perfil de autoridad respaldado por fuentes."
+    },
+    {
+      "file": "best-real-estate-agents-union-county-nj-2026.html",
+      "route": "/best-real-estate-agents-union-county-nj-2026",
+      "destination": "/ai-authority",
+      "lang": "en",
+      "reason": "A self-awarded best-agent list had ten impressions and no clicks; the verified profile is the defensible destination."
+    },
+    {
+      "file": "summit-nj-homes-for-sale.html",
+      "route": "/summit-nj-homes-for-sale",
+      "destination": "/towns/summit",
+      "lang": "en",
+      "reason": "Duplicate Summit listing-guide intent is consolidated into the maintained Summit town guide."
+    },
+    {
+      "file": "es/summit-nj-homes-for-sale.html",
+      "route": "/es/summit-nj-homes-for-sale",
+      "destination": "/es/towns/summit",
+      "lang": "es",
+      "reason": "La intención duplicada sobre Summit se consolida en la guía municipal mantenida."
+    },
+    {
+      "file": "westfield-nj-homes-for-sale.html",
+      "route": "/westfield-nj-homes-for-sale",
+      "destination": "/towns/westfield",
+      "lang": "en",
+      "reason": "Duplicate Westfield listing-guide intent is consolidated into the maintained Westfield town guide."
+    },
+    {
+      "file": "es/westfield-nj-homes-for-sale.html",
+      "route": "/es/westfield-nj-homes-for-sale",
+      "destination": "/es/towns/westfield",
+      "lang": "es",
+      "reason": "La intención duplicada sobre Westfield se consolida en la guía municipal mantenida."
+    },
+    {
+      "file": "tools/home-value-estimator.html",
+      "route": "/tools/home-value-estimator",
+      "destination": "/home-valuation",
+      "lang": "en",
+      "reason": "The duplicate estimator could imply an automated value; the first-party valuation request explains the property-specific review."
+    },
+    {
+      "file": "es/tools/home-value-estimator.html",
+      "route": "/es/tools/home-value-estimator",
+      "destination": "/es/home-valuation",
+      "lang": "es",
+      "reason": "El estimador duplicado podía sugerir un valor automático; la solicitud principal explica la revisión específica de la propiedad."
+    },
+    {
+      "file": "first-time-buyer-nj-programs.html",
+      "route": "/first-time-buyer-nj-programs",
+      "destination": "/blog/first-time-home-buyer-nj-guide",
+      "lang": "en",
+      "reason": "One click and 29 impressions are consolidated into the source-backed buyer guide with 35 clicks and 9,523 impressions across clean and .html URLs."
+    },
+    {
+      "file": "es/first-time-buyer-nj-programs.html",
+      "route": "/es/first-time-buyer-nj-programs",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "lang": "es",
+      "reason": "La guía principal en español ya explica cómo verificar los programas vigentes de NJHMFA sin congelar montos variables."
+    },
+    {
+      "file": "nyc-to-nj-relocation.html",
+      "route": "/nyc-to-nj-relocation",
+      "destination": "/blog/moving-from-nyc-to-nj-guide",
+      "lang": "en",
+      "reason": "The duplicate relocation alias is consolidated into the maintained practical relocation guide."
+    },
+    {
+      "file": "es/nyc-to-nj-relocation.html",
+      "route": "/es/nyc-to-nj-relocation",
+      "destination": "/es/blog/moving-from-nyc-to-nj-guide",
+      "lang": "es",
+      "reason": "El alias de reubicación se consolida en la guía práctica mantenida en español."
+    },
+    {
+      "file": "inherited-home-nj.html",
+      "route": "/inherited-home-nj",
+      "destination": "/blog/selling-inherited-home-nj",
+      "lang": "en",
+      "reason": "The alias is consolidated into the established inherited-home guide with ten clicks and 1,314 impressions across clean and .html URLs."
+    },
+    {
+      "file": "es/inherited-home-nj.html",
+      "route": "/es/inherited-home-nj",
+      "destination": "/es/blog/probate-real-estate-nj-guide",
+      "lang": "es",
+      "reason": "El alias archivado se dirige a la guía sucesoria en español respaldada por fuentes estatales y federales."
+    },
+    {
+      "file": "nj-anchor-benefit-guide.html",
+      "route": "/nj-anchor-benefit-guide",
+      "destination": "/blog/nj-property-tax-guide",
+      "lang": "en",
+      "reason": "Zero measured search value and fast-changing appropriation-dependent rules make the current state portal and maintained property-tax guide safer than a frozen benefits article."
+    },
+    {
+      "file": "es/nj-anchor-benefit-guide.html",
+      "route": "/es/nj-anchor-benefit-guide",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "lang": "es",
+      "reason": "Sin valor medido en búsqueda y con reglas sujetas al presupuesto, se consolida en la guía tributaria mantenida que enlaza al portal estatal vigente."
+    },
+    {
+      "file": "blog/nj-property-tax-guide-homeowners.html",
+      "route": "/blog/nj-property-tax-guide-homeowners",
+      "destination": "/blog/nj-property-tax-guide",
+      "lang": "en",
+      "reason": "A 28-impression duplicate is consolidated into the official-source guide with 53 clicks and 19,011 impressions across clean and .html URLs."
+    },
+    {
+      "file": "es/blog/nj-property-tax-guide-homeowners.html",
+      "route": "/es/blog/nj-property-tax-guide-homeowners",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "lang": "es",
+      "reason": "La variante duplicada se consolida en la guía principal en español respaldada por fuentes oficiales."
+    },
+    {
+      "file": "blog/is-it-cheaper-to-live-in-nj-or-ny.html",
+      "route": "/blog/is-it-cheaper-to-live-in-nj-or-ny",
+      "destination": "/blog/moving-from-nyc-to-nj-guide",
+      "lang": "en",
+      "reason": "No measured search value and tax-sensitive comparison claims are consolidated into the maintained relocation planning guide."
+    }
+  ],
+  "indexablePages": {
+    "nj-realty-transfer-fee-calculator.html": {
+      "route": "/nj-realty-transfer-fee-calculator",
+      "lang": "en",
+      "cluster": "rtf"
+    },
+    "es/nj-realty-transfer-fee-calculator.html": {
+      "route": "/es/nj-realty-transfer-fee-calculator",
+      "lang": "es",
+      "cluster": "rtf"
+    },
+    "nj-real-estate-questions-answers.html": {
+      "route": "/nj-real-estate-questions-answers",
+      "lang": "en",
+      "cluster": "faq"
+    },
+    "es/nj-real-estate-questions-answers.html": {
+      "route": "/es/nj-real-estate-questions-answers",
+      "lang": "es",
+      "cluster": "faq"
+    },
+    "blog/nj-housing-market-2026-buy-sell-or-wait.html": {
+      "route": "/blog/nj-housing-market-2026-buy-sell-or-wait",
+      "lang": "en",
+      "cluster": "market-decision"
+    }
+  },
+  "sources": [
+    {
+      "id": "nj-rtf-current",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Realty Transfer Fee",
+      "url": "https://www.nj.gov/treasury/taxation/realty.shtml",
+      "clusters": ["rtf", "faq"],
+      "use": "Current standard and partial-exemption schedules, covered property classes, statutory responsibility, and graduated percentage bands.",
+      "limit": "The page cannot determine a deed's consideration, classification, exemption, recording date, or transaction-specific amount.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-rtf-graduated-notice",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Amendments to Graduated Percent Fee on Realty Transfers over $1 Million",
+      "url": "https://www.nj.gov/treasury/taxation/pdf/lpt/GraduatedPercentFeeNotice.pdf",
+      "clusters": ["rtf"],
+      "use": "Confirms the July 10, 2025 effective date, seller responsibility, straight percentage of total consideration, and five current percentage bands.",
+      "limit": "The transition refund provision described in the notice is historical and is not calculated by this tool.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njdobi-bulletin-24-11",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "title": "Bulletin 24-11: Real Estate Brokerage Business Relationships",
+      "url": "https://www.nj.gov/dobi/bulletins/blt24_11.pdf",
+      "clusters": ["faq"],
+      "use": "Current state guidance on written brokerage services agreements, compensation negotiability, permitted payors, and agency disclosures.",
+      "limit": "It does not replace a consumer's signed agreement or transaction-specific legal advice.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njrec-faq",
+      "publisher": "New Jersey Real Estate Commission",
+      "title": "Real Estate Frequently Asked Questions",
+      "url": "https://www.nj.gov/dobi/division_rec/recfaqs.htm",
+      "clusters": ["faq"],
+      "use": "Supports the distinction between the Consumer Information Statement and a separate agreement establishing an agency relationship.",
+      "limit": "The regulator FAQ is general guidance and does not decide a consumer's contract terms.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njdobi-consumer-real-estate",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "title": "Consumer Information: Real Estate",
+      "url": "https://www.nj.gov/dobi/division_consumers/realestate/re_menu.htm",
+      "clusters": ["faq"],
+      "use": "Official state directory for real-estate consumer guidance and Commission materials.",
+      "limit": "The directory does not determine contract, inspection, title, lending, or closing outcomes.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njdobi-buying-home",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "title": "Everything You Wanted to Know About Buying a Home",
+      "url": "https://www.nj.gov/dobi/division_consumers/pdf/buyingahome.pdf",
+      "clusters": ["faq"],
+      "use": "Supports the limited New Jersey statement that many buyers retain attorneys although doing so is not required, plus general contract, inspection, and title concepts.",
+      "limit": "The publication contains legacy federal-form references, so current mortgage disclosures are sourced separately from CFPB.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "cfpb-loan-estimate",
+      "publisher": "Consumer Financial Protection Bureau",
+      "title": "Loan Estimate Explainer",
+      "url": "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+      "clusters": ["faq"],
+      "use": "Current federal consumer guidance for comparing estimated loan terms and closing costs in covered mortgage transactions.",
+      "limit": "A Loan Estimate is not final approval, a title report, or a promise that a transaction will close.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "cfpb-closing-disclosure",
+      "publisher": "Consumer Financial Protection Bureau",
+      "title": "Closing Disclosure Explainer",
+      "url": "https://www.consumerfinance.gov/owning-a-home/closing-disclosure/",
+      "clusters": ["faq"],
+      "use": "Current federal guidance for reviewing final loan terms and costs in the Closing Disclosure for covered mortgages.",
+      "limit": "The disclosure does not establish a universal New Jersey closing timetable or resolve contract and title issues.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-property-tax",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Local Property Tax",
+      "url": "https://www.nj.gov/treasury/taxation/lpt/genlpt.shtml",
+      "clusters": ["faq"],
+      "use": "Official starting point for New Jersey assessment, billing, county-board, and property-tax resources.",
+      "limit": "A statewide page cannot state a parcel's assessment, rate, bill, appeal result, or relief eligibility.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-fair-housing",
+      "publisher": "New Jersey Department of Community Affairs",
+      "title": "Housing Discrimination",
+      "url": "https://www.nj.gov/dca/home/discrimination.shtml",
+      "clusters": ["faq"],
+      "use": "Official New Jersey fair-housing information and complaint resources.",
+      "limit": "The page is general public information and does not decide whether particular conduct violated the law.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njrealtors-monthly-reports",
+      "publisher": "New Jersey Realtors",
+      "title": "Monthly Housing Market Statistics",
+      "url": "https://www.njrealtor.com/research/10k/",
+      "clusters": ["market-decision"],
+      "use": "Current public statewide and county housing-market reports and their monthly update cadence.",
+      "limit": "Municipality reports require member access; this guide does not copy or invent local figures or predict future prices.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-tax-statistics",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Statistical Information",
+      "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+      "clusters": ["market-decision"],
+      "use": "Official annual assessment, property-tax, and residential-sales files with year-specific columns and completion limits.",
+      "limit": "Annual statewide files are not live listing data and an incomplete year's blank columns must not be treated as current sales results.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "cfpb-right-time",
+      "publisher": "Consumer Financial Protection Bureau",
+      "title": "Consider whether it is the right time for you to buy",
+      "url": "https://www.consumerfinance.gov/owning-a-home/prepare/consider-whether-its-the-right-time-for-you-to-buy/",
+      "clusters": ["market-decision"],
+      "use": "Consumer framework for testing target-area prices, rent-versus-buy assumptions, moving horizon, income stability, ownership risks, and repairs.",
+      "limit": "The guidance does not forecast the New Jersey market or decide whether an individual should buy, sell, rent, or wait.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "cfpb-affordability",
+      "publisher": "Consumer Financial Protection Bureau",
+      "title": "How can I figure out if I can afford to buy a home and take out a mortgage?",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/how-can-i-figure-out-if-i-can-afford-to-buy-a-home-and-take-out-a-mortgage-en-118/",
+      "clusters": ["market-decision"],
+      "use": "Supports a personal-budget test based on income, expenses, savings priorities, insurance, and ownership costs rather than only a lender qualification amount.",
+      "limit": "It is general consumer education, not mortgage approval, financial advice, or a property-specific affordability conclusion.",
+      "accessedOn": "2026-08-26"
+    }
+  ],
+  "gscEvidence": {
+    "period": "Last 3 months in the exported Pages comparison reviewed 2026-08-26",
+    "propertyTaxDestination": {"clicks": 53, "impressions": 19011},
+    "propertyTaxEnglishAlias": {"clicks": 0, "impressions": 28},
+    "firstTimeBuyerDestination": {"clicks": 35, "impressions": 9523},
+    "firstTimeBuyerAlias": {"clicks": 1, "impressions": 29},
+    "inheritedHomeDestination": {"clicks": 10, "impressions": 1314},
+    "questionsAnswersEnglish": {"clicks": 0, "impressions": 49},
+    "bestAgentUnionCounty": {"clicks": 0, "impressions": 11},
+    "anchorGuide": {"clicks": 0, "impressions": 0},
+    "njNyCostComparison": {"clicks": 0, "impressions": 0},
+    "housingMarketDecision": {"clicks": 0, "impressions": 0}
+  }
+}

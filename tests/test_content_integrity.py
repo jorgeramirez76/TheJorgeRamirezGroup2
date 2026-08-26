@@ -325,11 +325,19 @@ class ContentIntegrityTests(unittest.TestCase):
                 source,
                 r'<meta\s+name=["\']robots["\']\s+content=["\'][^"\']*\bnoindex\b',
             )
-            self.assertIn("first-party marketing content", visible_text(source))
-            self.assertRegex(
-                source,
-                rf'<link\s+rel=["\']canonical["\']\s+href=["\']https://thejorgeramirezgroup\.com/{re.escape(relative.removesuffix(".html"))}(?:\.html)?["\']',
-            )
+            if county == "union":
+                self.assertIn("This resource has moved", visible_text(source))
+                self.assertIn(
+                    '<link rel="canonical" href="https://thejorgeramirezgroup.com/ai-authority">',
+                    source,
+                )
+                self.assertIn('href="/ai-authority"', source)
+            else:
+                self.assertIn("first-party marketing content", visible_text(source))
+                self.assertRegex(
+                    source,
+                    rf'<link\s+rel=["\']canonical["\']\s+href=["\']https://thejorgeramirezgroup\.com/{re.escape(relative.removesuffix(".html"))}(?:\.html)?["\']',
+                )
 
     def test_spanish_millburn_buyer_article_is_quarantined(self) -> None:
         relative = "es/blog/buying-home-millburn-nj-2026.html"

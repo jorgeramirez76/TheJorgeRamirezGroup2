@@ -412,17 +412,22 @@ class RemediationContractTests(unittest.TestCase):
             if node_type in {"LocalBusiness", "RealEstateAgent"}:
                 self.assertNotIn("aggregateRating", node)
 
-    def test_town_listing_guides_use_real_filtered_search_without_feed_claims(self):
-        for filename, town in (
-            ("summit-nj-homes-for-sale.html", "Summit"),
-            ("westfield-nj-homes-for-sale.html", "Westfield"),
+    def test_retired_town_listing_guides_point_to_the_maintained_town_pages(self):
+        for filename, slug in (
+            ("summit-nj-homes-for-sale.html", "summit"),
+            ("westfield-nj-homes-for-sale.html", "westfield"),
         ):
             text = read(ROOT / filename)
             self.assertNotRegex(text, r"current\s+(?:MLS\s+)?listings", filename)
-            expected_search = (
-                "https://thejorgeramirezgroup.kw.com/listings-search/?city=" + town
+            self.assertRegex(
+                text,
+                r'<meta\s+name=["\']robots["\']\s+content=["\'][^"\']*\bnoindex\b',
             )
-            self.assertIn(expected_search, text, filename)
+            self.assertIn(
+                f'<link rel="canonical" href="https://thejorgeramirezgroup.com/towns/{slug}">',
+                text,
+            )
+            self.assertIn(f'href="/towns/{slug}"', text)
             self.assertEqual(
                 1,
                 len(re.findall(r'<main\b[^>]*\bid=["\']main["\']', text, re.I)),

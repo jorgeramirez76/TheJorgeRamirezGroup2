@@ -27,7 +27,6 @@ SCHOOL_RANKING_PAGE = (
 )
 UNSAFE_INHERITED_SELLER_PAGES = {
     "es/blog/selling-inherited-home-nj.html",
-    "es/inherited-home-nj.html",
 }
 CLICKED_REDIRECTS = {
     "/es/blog/selling-home-woodbridge-nj-2026": "/es/sell-your-home",
@@ -63,8 +62,8 @@ def quarantine_mapping() -> dict[str, str]:
     mapping[SCHOOL_RANKING_PAGE] = "/es/counties/union-county"
     for relative in UNSAFE_INHERITED_SELLER_PAGES:
         mapping[relative] = "/es/sell-your-home"
-    if len(mapping) != 105:
-        raise RuntimeError(f"expected 105 Spanish quarantine pages, found {len(mapping)}")
+    if len(mapping) != 104:
+        raise RuntimeError(f"expected 104 Spanish quarantine pages, found {len(mapping)}")
     return dict(sorted(mapping.items()))
 
 

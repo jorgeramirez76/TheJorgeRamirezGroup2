@@ -34,6 +34,8 @@ REBUILT_EXCLUSIONS = {
     "es/blog/nj-property-tax-guide.html",
     "es/blog/top-nyc-commuter-towns-nj-2026.html",
     "es/nj-train-map.html",
+    "es/nj-real-estate-questions-answers.html",
+    "es/nj-realty-transfer-fee-calculator.html",
     "es/tools/mortgage-calculator.html",
 }
 
@@ -51,6 +53,7 @@ SOURCE_EMITTERS = {
     "scripts/fix_spanish_internal_links.py",
     "scripts/sync_communities_from_facts.py",
     "tools/fix_spanish_copy_quality.py",
+    "tools/render_authority_tools.py",
     "translate_to_spanish.py",
 }
 
@@ -59,6 +62,7 @@ GUARDED_EMITTERS = {
     "generate_blog.py": "Retired fail-closed entry point; it cannot emit public town-report pages.",
     "scripts/apply_spanish_snippets.py": "Skips every Spanish fair-housing quarantine output.",
     "tools/fix_spanish_copy_quality.py": "Skips every Spanish fair-housing quarantine output.",
+    "tools/render_authority_tools.py": "Deterministic primary-source renderer owns the consolidated authority/tool Spanish outputs.",
     "translate_to_spanish.py": "Refuses every reviewed or quarantined Spanish output in the exact inventory.",
 }
 

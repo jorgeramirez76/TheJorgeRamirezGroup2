@@ -4,6 +4,226 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/nj-real-estate-agent",
+      "destination": "/ai-authority",
+      "permanent": true
+    },
+    {
+      "source": "/nj-real-estate-agent.html",
+      "destination": "/ai-authority",
+      "permanent": true
+    },
+    {
+      "source": "/es/nj-real-estate-agent",
+      "destination": "/es/ai-authority",
+      "permanent": true
+    },
+    {
+      "source": "/es/nj-real-estate-agent.html",
+      "destination": "/es/ai-authority",
+      "permanent": true
+    },
+    {
+      "source": "/why-jorge-ramirez",
+      "destination": "/ai-authority",
+      "permanent": true
+    },
+    {
+      "source": "/why-jorge-ramirez.html",
+      "destination": "/ai-authority",
+      "permanent": true
+    },
+    {
+      "source": "/es/why-jorge-ramirez",
+      "destination": "/es/ai-authority",
+      "permanent": true
+    },
+    {
+      "source": "/es/why-jorge-ramirez.html",
+      "destination": "/es/ai-authority",
+      "permanent": true
+    },
+    {
+      "source": "/best-real-estate-agents-union-county-nj-2026",
+      "destination": "/ai-authority",
+      "permanent": true
+    },
+    {
+      "source": "/best-real-estate-agents-union-county-nj-2026.html",
+      "destination": "/ai-authority",
+      "permanent": true
+    },
+    {
+      "source": "/summit-nj-homes-for-sale",
+      "destination": "/towns/summit",
+      "permanent": true
+    },
+    {
+      "source": "/summit-nj-homes-for-sale.html",
+      "destination": "/towns/summit",
+      "permanent": true
+    },
+    {
+      "source": "/es/summit-nj-homes-for-sale",
+      "destination": "/es/towns/summit",
+      "permanent": true
+    },
+    {
+      "source": "/es/summit-nj-homes-for-sale.html",
+      "destination": "/es/towns/summit",
+      "permanent": true
+    },
+    {
+      "source": "/westfield-nj-homes-for-sale",
+      "destination": "/towns/westfield",
+      "permanent": true
+    },
+    {
+      "source": "/westfield-nj-homes-for-sale.html",
+      "destination": "/towns/westfield",
+      "permanent": true
+    },
+    {
+      "source": "/es/westfield-nj-homes-for-sale",
+      "destination": "/es/towns/westfield",
+      "permanent": true
+    },
+    {
+      "source": "/es/westfield-nj-homes-for-sale.html",
+      "destination": "/es/towns/westfield",
+      "permanent": true
+    },
+    {
+      "source": "/tools/home-value-estimator",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/tools/home-value-estimator.html",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/es/tools/home-value-estimator",
+      "destination": "/es/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/es/tools/home-value-estimator.html",
+      "destination": "/es/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/first-time-buyer-nj-programs",
+      "destination": "/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/first-time-buyer-nj-programs.html",
+      "destination": "/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/first-time-buyer-nj-programs",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/first-time-buyer-nj-programs.html",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/nyc-to-nj-relocation",
+      "destination": "/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/nyc-to-nj-relocation.html",
+      "destination": "/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/nyc-to-nj-relocation",
+      "destination": "/es/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/nyc-to-nj-relocation.html",
+      "destination": "/es/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/inherited-home-nj",
+      "destination": "/blog/selling-inherited-home-nj",
+      "permanent": true
+    },
+    {
+      "source": "/inherited-home-nj.html",
+      "destination": "/blog/selling-inherited-home-nj",
+      "permanent": true
+    },
+    {
+      "source": "/es/inherited-home-nj",
+      "destination": "/es/blog/probate-real-estate-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/inherited-home-nj.html",
+      "destination": "/es/blog/probate-real-estate-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/nj-anchor-benefit-guide",
+      "destination": "/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/nj-anchor-benefit-guide.html",
+      "destination": "/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/nj-anchor-benefit-guide",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/nj-anchor-benefit-guide.html",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nj-property-tax-guide-homeowners",
+      "destination": "/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nj-property-tax-guide-homeowners.html",
+      "destination": "/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/nj-property-tax-guide-homeowners",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/nj-property-tax-guide-homeowners.html",
+      "destination": "/es/blog/nj-property-tax-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-it-cheaper-to-live-in-nj-or-ny",
+      "destination": "/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-it-cheaper-to-live-in-nj-or-ny.html",
+      "destination": "/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
       "source": "/sell-home-fast-nj",
       "destination": "/sell-your-home",
       "permanent": true
@@ -830,16 +1050,6 @@
       "permanent": true
     },
     {
-      "source": "/blog/nj-property-tax-guide-homeowners.html",
-      "destination": "/blog/nj-property-tax-guide",
-      "permanent": true
-    },
-    {
-      "source": "/blog/nj-property-tax-guide-homeowners",
-      "destination": "/blog/nj-property-tax-guide",
-      "permanent": true
-    },
-    {
       "source": "/es/westfield-vs-summit-nj.html",
       "destination": "/es/blog/summit-vs-westfield-nj",
       "permanent": true
@@ -887,36 +1097,6 @@
     {
       "source": "/es/blog/essex-county-real-estate-market-q2-2026",
       "destination": "/es/blog/essex-county-nj-real-estate-market-2026",
-      "permanent": true
-    },
-    {
-      "source": "/es/blog/nj-property-tax-guide-homeowners.html",
-      "destination": "/es/blog/nj-property-tax-guide",
-      "permanent": true
-    },
-    {
-      "source": "/es/blog/nj-property-tax-guide-homeowners",
-      "destination": "/es/blog/nj-property-tax-guide",
-      "permanent": true
-    },
-    {
-      "source": "/nyc-to-nj-relocation.html",
-      "destination": "/blog/moving-from-nyc-to-nj-guide",
-      "permanent": true
-    },
-    {
-      "source": "/nyc-to-nj-relocation",
-      "destination": "/blog/moving-from-nyc-to-nj-guide",
-      "permanent": true
-    },
-    {
-      "source": "/es/nyc-to-nj-relocation.html",
-      "destination": "/es/blog/moving-from-nyc-to-nj-guide",
-      "permanent": true
-    },
-    {
-      "source": "/es/nyc-to-nj-relocation",
-      "destination": "/es/blog/moving-from-nyc-to-nj-guide",
       "permanent": true
     },
     {
