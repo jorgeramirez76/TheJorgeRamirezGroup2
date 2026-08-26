@@ -1,0 +1,125 @@
+{
+  "source": {
+    "checker": "check_everything.py",
+    "baseline_commit": "eceb2d5e86450af74825ce76d738f15f2334e5de",
+    "reviewed_on": "2026-08-25",
+    "scope": "Spanish pages reported by the baseline title-length and description-length checks"
+  },
+  "expected_pages": 36,
+  "expected_title_updates": 15,
+  "expected_description_updates": 25,
+  "pages": {
+    "es/55-plus-communities-nj.html": {
+      "description": "Conoce comunidades 55+ de Nueva Jersey, sus reglas de edad, cuotas de la asociación, servicios y aspectos fiscales al planificar una mudanza."
+    },
+    "es/blog/absentee-owner-nj-sell-rental-property.html": {
+      "description": "Guía para vender una propiedad de alquiler en NJ: ocupación, contratos, impuestos, preparación y opciones para propietarios que viven lejos."
+    },
+    "es/blog/best-nj-suburbs-nyc-commuters.html": {
+      "title": "Pueblos de NJ con tren a NYC: tiempos y presupuestos",
+      "description": "Compara pueblos de NJ con servicio ferroviario a Nueva York según línea, tiempo habitual de viaje, precios de vivienda y presupuesto."
+    },
+    "es/blog/best-nj-towns-to-sell-home.html": {
+      "title": "Mercados de NJ para vender casa: guía 2026"
+    },
+    "es/blog/buying-home-montclair-nj-2026.html": {
+      "description": "Guía para comprar casa en Montclair, NJ: zonas, tipos de vivienda, escuelas, transporte a Nueva York y pasos para preparar una oferta."
+    },
+    "es/blog/buying-home-morristown-nj-2026.html": {
+      "description": "Explora cómo comprar casa en Morristown, NJ: zonas, tipos de vivienda, escuelas, transporte a Nueva York y preparación de la oferta."
+    },
+    "es/blog/buying-home-randolph-nj-2026.html": {
+      "description": "Conoce el proceso de compra en Randolph, NJ: zonas, tipos de vivienda, escuelas, transporte y pasos para preparar una oferta."
+    },
+    "es/blog/how-much-are-closing-costs-nj.html": {
+      "title": "Costos de cierre en NJ para compradores y vendedores",
+      "description": "Consulta los costos de cierre que pueden pagar compradores y vendedores en NJ, incluidos préstamo, título, abogado e impuesto de transferencia."
+    },
+    "es/blog/how-to-sell-house-fast-nj.html": {
+      "description": "Conoce cómo el precio, la preparación, las fotos, la promoción y la negociación pueden influir en el tiempo de venta de una casa en NJ."
+    },
+    "es/blog/hudson-county-real-estate-market-q2-2026.html": {
+      "description": "Revisa el mercado inmobiliario del condado de Hudson en el segundo trimestre de 2026: precios, inventario, días en el mercado y segmentos."
+    },
+    "es/blog/index.html": {
+      "description": "Guías de bienes raíces de Nueva Jersey sobre mercados locales, compra, venta, impuestos, transporte y comparación de municipios."
+    },
+    "es/blog/maplewood-vs-south-orange-nj.html": {
+      "description": "Compara Maplewood y South Orange, NJ, en precios de vivienda, impuestos, transporte, escuelas, centros urbanos y vida cotidiana."
+    },
+    "es/blog/market-report-bloomfield-nj-2026.html": {
+      "description": "Consulta el informe inmobiliario de Bloomfield, NJ, con precios de vivienda, inventario, días en el mercado y contexto para compradores y vendedores."
+    },
+    "es/blog/market-report-clark-nj-2026.html": {
+      "title": "Mercado inmobiliario de Clark, NJ: informe 2026"
+    },
+    "es/blog/market-report-cranford-nj-2026.html": {
+      "title": "Mercado inmobiliario de Cranford, NJ: informe 2026"
+    },
+    "es/blog/market-report-denville-nj-2026.html": {
+      "title": "Mercado inmobiliario de Denville, NJ: informe 2026"
+    },
+    "es/blog/market-report-millburn-nj-2026.html": {
+      "title": "Mercado inmobiliario de Millburn, NJ: informe 2026"
+    },
+    "es/blog/market-report-morristown-nj-2026.html": {
+      "description": "Consulta el informe inmobiliario de Morristown, NJ, con precios, inventario, días en el mercado y contexto para compradores y vendedores."
+    },
+    "es/blog/market-report-rahway-nj-2026.html": {
+      "title": "Mercado inmobiliario de Rahway, NJ: informe 2026"
+    },
+    "es/blog/midtown-direct-towns-nj.html": {
+      "description": "Compara las paradas Midtown Direct de NJ Transit según tiempos habituales a Penn Station, precios de vivienda, escuelas y conexiones."
+    },
+    "es/blog/moving-from-nyc-to-nj-guide.html": {
+      "description": "Planifica una mudanza de NYC a Nueva Jersey: compara municipios, transporte, vivienda, impuestos y pasos del proceso de compra."
+    },
+    "es/blog/nj-property-tax-guide.html": {
+      "title": "Impuestos a la propiedad en NJ: guía por municipio",
+      "description": "Consulta facturas y tasas de impuestos a la propiedad por municipio de Nueva Jersey, cómo se calculan y cuándo considerar una apelación."
+    },
+    "es/blog/top-nyc-commuter-towns-nj-2026.html": {
+      "title": "Pueblos de NJ con trayectos rápidos a NYC: guía 2026"
+    },
+    "es/buy-a-home.html": {
+      "description": "Guía para comprar casa en Nueva Jersey: presupuesto, pago inicial, financiamiento con ITIN, búsqueda, oferta, inspección y cierre."
+    },
+    "es/counties/middlesex-county.html": {
+      "description": "Guía de bienes raíces del condado de Middlesex, NJ, con información sobre sus municipios y orientación para comprar o vender una casa."
+    },
+    "es/investment-property-nj.html": {
+      "title": "Propiedades de inversión en NJ: compra, renovación y alquiler"
+    },
+    "es/luxury-homes-nj.html": {
+      "title": "Casas de lujo en NJ: asesoría para comprar o vender"
+    },
+    "es/nj-train-map.html": {
+      "title": "Mapa de trenes de NJ: estaciones y viajes a Nueva York"
+    },
+    "es/short-hills-vs-westfield-nj.html": {
+      "description": "Compara Short Hills y Westfield, NJ, en precios de vivienda, impuestos, transporte a Nueva York, escuelas y estilo de vida."
+    },
+    "es/tools/mortgage-calculator.html": {
+      "description": "Estima cuánto podrías pagar por una casa en NJ con capital, intereses, impuestos, seguro, PMI y cuotas de la asociación."
+    },
+    "es/towns/florham-park.html": {
+      "description": "Guía inmobiliaria de Florham Park, NJ, con información sobre vivienda, escuelas, transporte y opciones para comprar o vender."
+    },
+    "es/towns/highland-park.html": {
+      "description": "Guía inmobiliaria de Highland Park, NJ, con vivienda, escuelas, transporte y orientación para quienes desean comprar o vender."
+    },
+    "es/towns/montclair.html": {
+      "description": "Explora casas y bienes raíces en Montclair, NJ, con información sobre zonas, vivienda, escuelas y transporte para compradores y vendedores."
+    },
+    "es/towns/roseland.html": {
+      "title": "Vender una casa en Roseland, NJ: guía inmobiliaria",
+      "description": "Guía para vender una casa en Roseland, NJ: preparación, precio, promoción, negociación y factores del mercado local."
+    },
+    "es/towns/wharton.html": {
+      "title": "Vender una casa en Wharton, NJ: guía inmobiliaria"
+    },
+    "es/towns/winfield.html": {
+      "description": "Guía para vender una casa en Winfield, NJ: preparación, precio, promoción, negociación y factores del mercado local."
+    }
+  }
+}
