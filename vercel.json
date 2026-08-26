@@ -690,6 +690,16 @@
       "permanent": true
     },
     {
+      "source": "/maplewood-vs-montclair-nj.html",
+      "destination": "/montclair-vs-maplewood-nj",
+      "permanent": true
+    },
+    {
+      "source": "/maplewood-vs-montclair-nj",
+      "destination": "/montclair-vs-maplewood-nj",
+      "permanent": true
+    },
+    {
       "source": "/blog/morris-county-real-estate-market-q2-2026.html",
       "destination": "/blog/morris-county-nj-real-estate-market-2026",
       "permanent": true

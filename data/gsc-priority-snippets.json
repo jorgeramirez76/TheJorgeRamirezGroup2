@@ -405,8 +405,8 @@
         "description": "Cranford vs. Westfield NJ in 2026 — compare median home prices, NYC commute times, property taxes, and schools side by side to find the Union County town."
       },
       "after": {
-        "title": "Cranford vs Westfield NJ: Prices, Commute and Schools",
-        "description": "Compare Cranford and Westfield on home prices, property taxes, NYC rail service, schools and downtown character to see which Union County fit suits you."
+        "title": "Cranford vs Westfield NJ | Official Records Guide",
+        "description": "Research Cranford and Westfield properties through current municipal, NJ Transit, NJDOE, and New Jersey tax records with a neutral address-first method."
       },
       "sync_fields": []
     },
@@ -649,8 +649,8 @@
         "description": "Montclair (median ~$895K) vs Maplewood (~$775K): the two most common NYC-transplant landings in Essex County, compared on commute, schools and daily feel."
       },
       "after": {
-        "title": "Montclair vs Maplewood NJ: Prices, Commute and Lifestyle",
-        "description": "Compare Montclair and Maplewood on home prices, Midtown Direct travel, schools, downtowns and daily feel before choosing an Essex County suburb."
+        "title": "Montclair vs Maplewood NJ | Official Records Guide",
+        "description": "Compare Montclair and Maplewood properties through current municipal, NJ Transit, NJDOE, and New Jersey tax records with an address-specific method."
       },
       "sync_fields": [
         "property:og:title",

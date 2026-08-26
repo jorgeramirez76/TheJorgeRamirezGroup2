@@ -61,7 +61,7 @@ class SpanishFairHousingInventoryTests(unittest.TestCase):
         self.assertEqual(reviewed | quarantined, set(discovered.pop("owned")))
         self.assertEqual(self.inventory["excluded"], discovered)
         self.assertEqual(expected_payload(), self.inventory)
-        self.assertEqual(64, len(reviewed))
+        self.assertEqual(71, len(reviewed))
         self.assertEqual(105, len(quarantined))
         self.assertEqual(10, len(self.inventory["excluded"]["rebuilt"]))
         self.assertEqual(50, len(self.inventory["excluded"]["market_reports"]))

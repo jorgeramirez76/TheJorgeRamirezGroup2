@@ -1,0 +1,723 @@
+{
+  "version": 1,
+  "reviewed": "2026-08-26",
+  "scope": "Top-level bilingual New Jersey municipality-comparison guides that retain a canonical search purpose after fair-housing and duplicate-route review.",
+  "methodology": "Use current municipal records, NJ Transit trip tools, NJDOE School Performance Reports, and New Jersey property-tax records. Compare specific addresses and documents; do not rank municipalities or infer a property conclusion from a place name.",
+  "shared_sources": [
+    {
+      "id": "njdoe-performance-reports",
+      "publisher": "New Jersey Department of Education — School Performance Reports",
+      "url": "https://www.nj.gov/education/schoolperformance/",
+      "fact_supported": "Official report portal, reporting-period context, and address-specific education-record research starting point.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "nj-transit-trip-planner",
+      "publisher": "NJ Transit — Trip Planner",
+      "url": "https://www.njtransit.com/trip-planner-to",
+      "fact_supported": "Current trip planning by origin, destination, service date, mode, and transfer pattern rather than a fixed commute promise.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "nj-property-tax-statistics",
+      "publisher": "New Jersey Division of Taxation — Property Tax Statistics",
+      "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+      "fact_supported": "Official property-tax tables and definitions used together with the current assessment and bill for a specific parcel.",
+      "accessed": "2026-08-26"
+    }
+  ],
+  "places": {
+    "cranford": {
+      "copy": {
+        "en": {
+          "label": "Cranford",
+          "county": "Union County",
+          "identity": "Cranford is a township in Union County. Its municipal website is the record desk for departments, planning materials, permits, and public notices.",
+          "records": "Confirm the parcel, current assessment, open permits, zoning constraints, and the route from that address.",
+          "transit": "The Cranford Station page and NJ Transit trip planner provide the current service starting points."
+        },
+        "es": {
+          "label": "Cranford",
+          "county": "condado de Union",
+          "identity": "Cranford es un township del condado de Union. El sitio municipal reúne departamentos, materiales de planificación, permisos y avisos públicos.",
+          "records": "Confirma la parcela, la tasación vigente, los permisos abiertos, las restricciones de zonificación y la ruta desde esa dirección.",
+          "transit": "La página de Cranford Station y el planificador de NJ Transit son los puntos de partida vigentes."
+        }
+      },
+      "sources": [
+        {
+          "id": "cranford-municipality",
+          "publisher": "Township of Cranford",
+          "url": "https://www.cranfordnj.org/",
+          "fact_supported": "Official municipal departments, planning information, public notices, and local record contacts for Cranford properties.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "cranford-station",
+          "publisher": "NJ Transit — Cranford Station",
+          "url": "https://www.njtransit.com/station/cranford-station",
+          "fact_supported": "Official station page used to verify current facilities and connect a specific trip to the NJ Transit planner.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "garwood": {
+      "copy": {
+        "en": {
+          "label": "Garwood",
+          "county": "Union County",
+          "identity": "Garwood is a borough in Union County. Its official site identifies municipal services and the planning and zoning record desk.",
+          "records": "Confirm the parcel, borough zoning, permit history, tax record, and available routes from the property.",
+          "transit": "Use the NJ Transit trip planner from the exact property; a municipality name alone does not establish a route."
+        },
+        "es": {
+          "label": "Garwood",
+          "county": "condado de Union",
+          "identity": "Garwood es un borough del condado de Union. Su sitio oficial identifica los servicios municipales y la oficina de planificación y zonificación.",
+          "records": "Confirma la parcela, la zonificación, el historial de permisos, el registro fiscal y las rutas disponibles desde la propiedad.",
+          "transit": "Usa el planificador de NJ Transit desde la propiedad exacta; el nombre del municipio no establece una ruta."
+        }
+      },
+      "sources": [
+        {
+          "id": "garwood-municipality",
+          "publisher": "Borough of Garwood",
+          "url": "https://garwood.org/",
+          "fact_supported": "Official borough services, departments, public notices, and local government contacts for Garwood property research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "garwood-planning-zoning",
+          "publisher": "Borough of Garwood — Planning and Zoning",
+          "url": "https://garwood.org/planning-zoning",
+          "fact_supported": "Official planning and zoning resources and contacts used to investigate address-specific land-use questions.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "westfield": {
+      "copy": {
+        "en": {
+          "label": "Westfield",
+          "county": "Union County",
+          "identity": "Westfield is a town in Union County. Municipal records are organized through the town's official departments and public resources.",
+          "records": "Confirm assessment, tax bill, zoning, permits, property condition, and station access for the address under review.",
+          "transit": "The Westfield Station page and NJ Transit trip planner provide current, trip-specific research."
+        },
+        "es": {
+          "label": "Westfield",
+          "county": "condado de Union",
+          "identity": "Westfield es un town del condado de Union. Los registros municipales se organizan mediante los departamentos y recursos públicos oficiales.",
+          "records": "Confirma la tasación, la factura fiscal, la zonificación, los permisos, la condición y el acceso a la estación de la dirección analizada.",
+          "transit": "La página de Westfield Station y el planificador de NJ Transit permiten una investigación vigente y específica."
+        }
+      },
+      "sources": [
+        {
+          "id": "westfield-municipality",
+          "publisher": "Town of Westfield",
+          "url": "https://www.westfieldnj.gov/",
+          "fact_supported": "Official municipal departments, planning resources, notices, and record contacts for Westfield property due diligence.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "westfield-station",
+          "publisher": "NJ Transit — Westfield Station",
+          "url": "https://www.njtransit.com/station/westfield-station",
+          "fact_supported": "Official station information used with the trip planner to check a specific origin, destination, and service date.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "jersey-city": {
+      "copy": {
+        "en": {
+          "label": "Jersey City",
+          "county": "Hudson County",
+          "identity": "Jersey City is a city in Hudson County. City Planning and the Tax Assessor maintain different parts of the property record.",
+          "records": "Confirm zoning, parcel and assessment records, approvals, building documents, and the route from the exact address.",
+          "transit": "Use NJ Transit's trip planner by address, mode, destination, and service date; the city contains multiple travel patterns."
+        },
+        "es": {
+          "label": "Jersey City",
+          "county": "condado de Hudson",
+          "identity": "Jersey City es una ciudad del condado de Hudson. City Planning y el Tax Assessor mantienen distintas partes del registro inmobiliario.",
+          "records": "Confirma la zonificación, la parcela, la tasación, las aprobaciones, los documentos del edificio y la ruta desde la dirección exacta.",
+          "transit": "Usa el planificador de NJ Transit por dirección, modo, destino y fecha de servicio; la ciudad contiene diversos patrones de viaje."
+        }
+      },
+      "sources": [
+        {
+          "id": "jersey-city-planning",
+          "publisher": "City of Jersey City — City Planning",
+          "url": "https://www.jerseycitynj.gov/CityHall/HousingAndDevelopment/cityplanning",
+          "fact_supported": "Official planning, land-development, mapping, and municipal review resources for address-specific Jersey City research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "jersey-city-assessor",
+          "publisher": "City of Jersey City — Tax Assessor",
+          "url": "https://www.jerseycitynj.gov/residentresources/TaxAssessor",
+          "fact_supported": "Official municipal assessor information and parcel-record contacts for checking a specific Jersey City property.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "hoboken": {
+      "copy": {
+        "en": {
+          "label": "Hoboken",
+          "county": "Hudson County",
+          "identity": "Hoboken is a city in Hudson County. Its assessor and zoning resources support parcel-specific research.",
+          "records": "Confirm the assessment, zoning district, building documents, association records when applicable, and current route details.",
+          "transit": "The Hoboken Terminal page and NJ Transit trip planner provide official starting points for a dated trip query."
+        },
+        "es": {
+          "label": "Hoboken",
+          "county": "condado de Hudson",
+          "identity": "Hoboken es una ciudad del condado de Hudson. Sus recursos del tasador y de zonificación permiten investigar una parcela específica.",
+          "records": "Confirma la tasación, el distrito de zonificación, los documentos del edificio, los registros de la asociación cuando correspondan y la ruta vigente.",
+          "transit": "La página de Hoboken Terminal y el planificador de NJ Transit permiten iniciar una consulta oficial con fecha."
+        }
+      },
+      "sources": [
+        {
+          "id": "hoboken-assessor",
+          "publisher": "City of Hoboken — Tax Assessor",
+          "url": "https://hobokennj.gov/resources/tax-assessor",
+          "fact_supported": "Official assessor responsibilities and municipal contact path for property-specific Hoboken assessment research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "hoboken-zoning",
+          "publisher": "City of Hoboken — Zoning Resources",
+          "url": "https://www.hobokennj.gov/faqs/how-do-i-find-out-what-zoning-district-my-property-is-in",
+          "fact_supported": "Official instructions for identifying the zoning district associated with a specific Hoboken property.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "hoboken-terminal",
+          "publisher": "NJ Transit — Hoboken Terminal",
+          "url": "https://www.njtransit.com/station/hoboken-terminal",
+          "fact_supported": "Official terminal page used with the trip planner to verify current facilities and a dated route query.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "millburn-short-hills": {
+      "copy": {
+        "en": {
+          "label": "Millburn / Short Hills",
+          "county": "Essex County",
+          "identity": "Short Hills is a section of Millburn Township in Essex County, not a separate municipality. Parcel and municipal records are filed under Millburn Township.",
+          "records": "Confirm the legal address, assessment, tax bill, zoning, permits, property condition, and the station relevant to the property.",
+          "transit": "NJ Transit publishes separate station pages for Millburn and Short Hills; run the trip from the property under review."
+        },
+        "es": {
+          "label": "Millburn / Short Hills",
+          "county": "condado de Essex",
+          "identity": "Short Hills es una sección de Millburn Township en el condado de Essex, no un municipio separado. Los registros se archivan bajo Millburn Township.",
+          "records": "Confirma la dirección legal, la tasación, la factura fiscal, la zonificación, los permisos, la condición y la estación pertinente.",
+          "transit": "NJ Transit publica páginas separadas para Millburn y Short Hills; consulta el viaje desde la propiedad analizada."
+        }
+      },
+      "sources": [
+        {
+          "id": "millburn-municipality",
+          "publisher": "Township of Millburn",
+          "url": "https://www.twp.millburn.nj.us/",
+          "fact_supported": "Official township departments, planning resources, permits, notices, and municipal contacts for Millburn and Short Hills.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "millburn-station",
+          "publisher": "NJ Transit — Millburn Station",
+          "url": "https://www.njtransit.com/station/millburn-station",
+          "fact_supported": "Official Millburn Station information used with the trip planner for a property-specific, dated route check.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "short-hills-station",
+          "publisher": "NJ Transit — Short Hills Station",
+          "url": "https://www.njtransit.com/station/short-hills-station",
+          "fact_supported": "Official Short Hills Station information used with the trip planner for a property-specific, dated route check.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "summit": {
+      "copy": {
+        "en": {
+          "label": "Summit",
+          "county": "Union County",
+          "identity": "Summit is a city in Union County. Its official site organizes municipal departments, land-use records, permits, and public notices.",
+          "records": "Confirm the parcel, assessment, tax bill, zoning, approvals, condition, and travel route for the address.",
+          "transit": "The Summit Station page and NJ Transit trip planner provide current, address-specific research inputs."
+        },
+        "es": {
+          "label": "Summit",
+          "county": "condado de Union",
+          "identity": "Summit es una ciudad del condado de Union. Su sitio oficial organiza departamentos, registros de uso del suelo, permisos y avisos públicos.",
+          "records": "Confirma la parcela, la tasación, la factura fiscal, la zonificación, las aprobaciones, la condición y la ruta de la dirección.",
+          "transit": "La página de Summit Station y el planificador de NJ Transit ofrecen datos vigentes y específicos."
+        }
+      },
+      "sources": [
+        {
+          "id": "summit-municipality",
+          "publisher": "City of Summit",
+          "url": "https://www.cityofsummit.org/",
+          "fact_supported": "Official city departments, land-use resources, permit information, public notices, and Summit municipal contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "summit-station",
+          "publisher": "NJ Transit — Summit Station",
+          "url": "https://www.njtransit.com/station/summit-station",
+          "fact_supported": "Official station page used with the trip planner to check current service details for a dated trip query.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "montclair": {
+      "copy": {
+        "en": {
+          "label": "Montclair",
+          "county": "Essex County",
+          "identity": "Montclair is a township in Essex County. Planning and assessor offices maintain different parts of the property record.",
+          "records": "Confirm the parcel, assessment, zoning, approvals, building documents, condition, and route from the exact address.",
+          "transit": "Bay Street is one official station reference; use the trip planner because a township address may have a different route."
+        },
+        "es": {
+          "label": "Montclair",
+          "county": "condado de Essex",
+          "identity": "Montclair es un township del condado de Essex. Las oficinas de planificación y tasación conservan distintas partes del registro inmobiliario.",
+          "records": "Confirma la parcela, la tasación, la zonificación, las aprobaciones, los documentos del edificio, la condición y la ruta desde la dirección exacta.",
+          "transit": "Bay Street es una referencia oficial; usa el planificador porque otra dirección del township puede tener una ruta distinta."
+        }
+      },
+      "sources": [
+        {
+          "id": "montclair-planning",
+          "publisher": "Township of Montclair — Planning and Community Development",
+          "url": "https://www.montclairnjusa.org/Government/Departments/Planning-Community-Development",
+          "fact_supported": "Official planning, land-use, development-review, and municipal contact resources for Montclair properties.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "montclair-assessor",
+          "publisher": "Township of Montclair — Municipal Assessor",
+          "url": "https://www.montclairnjusa.org/Government/Departments/Finance-and-Taxes/Municipal-Assessor",
+          "fact_supported": "Official assessor information and municipal contact path for checking an address-specific Montclair assessment.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "bay-street-station",
+          "publisher": "NJ Transit — Bay Street Station",
+          "url": "https://www.njtransit.com/station/bay-street-station",
+          "fact_supported": "Official station reference used with a property origin and dated trip query rather than a township-wide commute claim.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "glen-ridge": {
+      "copy": {
+        "en": {
+          "label": "Glen Ridge",
+          "county": "Essex County",
+          "identity": "Glen Ridge is a borough in Essex County. Its official website is the starting point for local departments and public records.",
+          "records": "Confirm parcel and assessment data, zoning, permits, property condition, and the route from the specific address.",
+          "transit": "The Glen Ridge Station page and NJ Transit trip planner provide current trip-research inputs."
+        },
+        "es": {
+          "label": "Glen Ridge",
+          "county": "condado de Essex",
+          "identity": "Glen Ridge es un borough del condado de Essex. Su sitio oficial es el punto de partida para departamentos y registros públicos locales.",
+          "records": "Confirma la parcela, la tasación, la zonificación, los permisos, la condición y la ruta desde la dirección específica.",
+          "transit": "La página de Glen Ridge Station y el planificador de NJ Transit ofrecen datos vigentes para investigar el viaje."
+        }
+      },
+      "sources": [
+        {
+          "id": "glen-ridge-municipality",
+          "publisher": "Borough of Glen Ridge",
+          "url": "https://www.glenridgenj.org/",
+          "fact_supported": "Official borough departments, public notices, forms, and municipal contacts for Glen Ridge property research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "glen-ridge-station",
+          "publisher": "NJ Transit — Glen Ridge Station",
+          "url": "https://www.njtransit.com/station/glen-ridge-station",
+          "fact_supported": "Official station page used with a specific origin, destination, and service date in the NJ Transit planner.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "maplewood": {
+      "copy": {
+        "en": {
+          "label": "Maplewood",
+          "county": "Essex County",
+          "identity": "Maplewood is a township in Essex County. Its municipal website provides local departments, planning resources, and public notices.",
+          "records": "Confirm the parcel, assessment, tax bill, zoning, permits, condition, and route from the property.",
+          "transit": "The Maplewood Station page and NJ Transit trip planner support a current, property-specific trip query."
+        },
+        "es": {
+          "label": "Maplewood",
+          "county": "condado de Essex",
+          "identity": "Maplewood es un township del condado de Essex. Su sitio municipal publica departamentos, recursos de planificación y avisos públicos.",
+          "records": "Confirma la parcela, la tasación, la factura fiscal, la zonificación, los permisos, la condición y la ruta desde la propiedad.",
+          "transit": "La página de Maplewood Station y el planificador de NJ Transit permiten una consulta vigente y específica."
+        }
+      },
+      "sources": [
+        {
+          "id": "maplewood-municipality",
+          "publisher": "Township of Maplewood",
+          "url": "https://www.maplewoodnj.gov/",
+          "fact_supported": "Official township departments, planning resources, public notices, and local contacts for Maplewood property research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "maplewood-station",
+          "publisher": "NJ Transit — Maplewood Station",
+          "url": "https://www.njtransit.com/station/maplewood-station",
+          "fact_supported": "Official station information used with the trip planner to research a specific address and service date.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "new-providence": {
+      "copy": {
+        "en": {
+          "label": "New Providence",
+          "county": "Union County",
+          "identity": "New Providence is a borough in Union County. Its official site provides municipal services and Planning Board records.",
+          "records": "Confirm parcel and assessment records, land-use approvals, permits, condition, and the route from the exact property.",
+          "transit": "The New Providence Station page and NJ Transit trip planner provide current trip-research inputs."
+        },
+        "es": {
+          "label": "New Providence",
+          "county": "condado de Union",
+          "identity": "New Providence es un borough del condado de Union. Su sitio oficial publica servicios municipales y registros de la Planning Board.",
+          "records": "Confirma la parcela, la tasación, las aprobaciones de uso del suelo, los permisos, la condición y la ruta desde la propiedad exacta.",
+          "transit": "La página de New Providence Station y el planificador de NJ Transit ofrecen datos vigentes para el viaje."
+        }
+      },
+      "sources": [
+        {
+          "id": "new-providence-municipality",
+          "publisher": "Borough of New Providence",
+          "url": "https://www.newprov.us/",
+          "fact_supported": "Official borough departments, services, public notices, and municipal contacts for New Providence records.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "new-providence-planning",
+          "publisher": "Borough of New Providence — Planning Board",
+          "url": "https://www.newprov.us/316/Planning-Board",
+          "fact_supported": "Official Planning Board materials and land-use review contacts for address-specific New Providence research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "new-providence-station",
+          "publisher": "NJ Transit — New Providence Station",
+          "url": "https://www.njtransit.com/station/new-providence-station",
+          "fact_supported": "Official station page used with the trip planner to investigate a specific origin and dated service query.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "berkeley-heights": {
+      "copy": {
+        "en": {
+          "label": "Berkeley Heights",
+          "county": "Union County",
+          "identity": "Berkeley Heights is a township in Union County. Its official site identifies departments responsible for tax, zoning, and local records.",
+          "records": "Confirm the parcel, assessment, tax bill, zoning, permits, condition, and route from the exact address.",
+          "transit": "The Berkeley Heights Station page and NJ Transit trip planner provide current trip-research inputs."
+        },
+        "es": {
+          "label": "Berkeley Heights",
+          "county": "condado de Union",
+          "identity": "Berkeley Heights es un township del condado de Union. Su sitio oficial identifica los departamentos responsables de impuestos, zonificación y registros.",
+          "records": "Confirma la parcela, la tasación, la factura fiscal, la zonificación, los permisos, la condición y la ruta desde la dirección exacta.",
+          "transit": "La página de Berkeley Heights Station y el planificador de NJ Transit ofrecen datos vigentes para el viaje."
+        }
+      },
+      "sources": [
+        {
+          "id": "berkeley-heights-municipality",
+          "publisher": "Township of Berkeley Heights",
+          "url": "https://www.berkeleyheights.gov/",
+          "fact_supported": "Official township departments, services, notices, and municipal contacts for Berkeley Heights property research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "berkeley-heights-record-desk",
+          "publisher": "Township of Berkeley Heights — Responsible Department",
+          "url": "https://www.berkeleyheights.gov/265/Responsible-Department",
+          "fact_supported": "Official directory for tax, zoning, construction, and other departments responsible for local property records.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "berkeley-heights-station",
+          "publisher": "NJ Transit — Berkeley Heights Station",
+          "url": "https://www.njtransit.com/station/berkeley-heights-station",
+          "fact_supported": "Official station page used with the trip planner for an address-specific origin and dated route query.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "chatham": {
+      "copy": {
+        "en": {
+          "label": "Chatham borough or township",
+          "county": "Morris County",
+          "identity": "“Chatham” can refer to Chatham Borough or Chatham Township, which are separate Morris County municipalities. Confirm the legal municipality before comparing records.",
+          "records": "Start with the address, then use the correct municipality for assessment, tax, zoning, permits, and public documents.",
+          "transit": "The Chatham Station page and NJ Transit trip planner support a dated route query from the exact property."
+        },
+        "es": {
+          "label": "Chatham borough o township",
+          "county": "condado de Morris",
+          "identity": "“Chatham” puede referirse a Chatham Borough o Chatham Township, municipios distintos del condado de Morris. Confirma el municipio legal antes de comparar registros.",
+          "records": "Empieza con la dirección y usa el municipio correcto para tasación, impuestos, zonificación, permisos y documentos públicos.",
+          "transit": "La página de Chatham Station y el planificador de NJ Transit permiten consultar una ruta con fecha desde la propiedad exacta."
+        }
+      },
+      "sources": [
+        {
+          "id": "chatham-borough",
+          "publisher": "Borough of Chatham",
+          "url": "https://www.chathamborough.org/",
+          "fact_supported": "Official borough departments, notices, forms, and municipal contacts for properties located in Chatham Borough.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "chatham-township",
+          "publisher": "Township of Chatham",
+          "url": "https://chathamtownship.org/",
+          "fact_supported": "Official township departments, notices, forms, and municipal contacts for properties in Chatham Township.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "chatham-station",
+          "publisher": "NJ Transit — Chatham Station",
+          "url": "https://www.njtransit.com/station/chatham-station",
+          "fact_supported": "Official station reference used with a property origin, destination, and dated NJ Transit trip query.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    }
+  },
+  "comparisons": {
+    "cranford-vs-garwood-nj": {
+      "left": "cranford",
+      "right": "garwood",
+      "copy": {
+        "en": {
+          "query_names": "Cranford vs. Garwood",
+          "title": "Cranford vs Garwood NJ | Official-Source Comparison",
+          "description": "Compare a Cranford and Garwood property with current municipal, NJ Transit, NJDOE, and New Jersey tax records in an address-first research guide.",
+          "h1": "Cranford vs. Garwood: an official-record comparison",
+          "lede": "These neighboring Union County municipalities keep separate tax, zoning, permit, and public records. This guide organizes the official sources for comparing two specific properties without turning a place label into a verdict."
+        },
+        "es": {
+          "query_names": "Cranford vs. Garwood",
+          "title": "Cranford vs Garwood NJ | Comparación con fuentes oficiales",
+          "description": "Compara propiedades en Cranford y Garwood con registros municipales, de NJ Transit, NJDOE y de impuestos de Nueva Jersey, empezando por la dirección.",
+          "h1": "Cranford vs. Garwood: comparación con registros oficiales",
+          "lede": "Estos municipios vecinos del condado de Union mantienen registros separados de impuestos, zonificación, permisos y documentos públicos. La guía organiza fuentes oficiales para comparar dos propiedades específicas sin convertir el nombre del lugar en un veredicto."
+        }
+      }
+    },
+    "cranford-vs-westfield-nj": {
+      "left": "cranford",
+      "right": "westfield",
+      "copy": {
+        "en": {
+          "query_names": "Cranford vs. Westfield",
+          "title": "Cranford vs Westfield NJ | Official Records Guide",
+          "description": "Research Cranford and Westfield properties through current municipal, NJ Transit, NJDOE, and New Jersey tax records with a neutral address-first method.",
+          "h1": "Cranford vs. Westfield: compare official records",
+          "lede": "Cranford Township and the Town of Westfield are separate Union County municipalities. Compare like-for-like properties through current parcel documents, municipal records, dated transit queries, and address-specific public records."
+        },
+        "es": {
+          "query_names": "Cranford vs. Westfield",
+          "title": "Cranford vs Westfield NJ | Guía de registros oficiales",
+          "description": "Investiga propiedades en Cranford y Westfield con registros municipales, de NJ Transit, NJDOE e impuestos de Nueva Jersey mediante un método neutral.",
+          "h1": "Cranford vs. Westfield: compara registros oficiales",
+          "lede": "Cranford Township y Town of Westfield son municipios separados del condado de Union. Compara propiedades equivalentes con documentos de la parcela, registros municipales, consultas de transporte con fecha y datos públicos de la dirección."
+        }
+      }
+    },
+    "jersey-city-vs-hoboken-nj": {
+      "left": "jersey-city",
+      "right": "hoboken",
+      "copy": {
+        "en": {
+          "query_names": "Jersey City vs. Hoboken",
+          "title": "Jersey City vs Hoboken NJ | Official Records Guide",
+          "description": "Compare Jersey City and Hoboken properties using current city planning, assessor, NJ Transit, NJDOE, and New Jersey tax records by specific address.",
+          "h1": "Jersey City vs. Hoboken: compare official records",
+          "lede": "These Hudson County cities maintain separate zoning, assessor, building, and public records. Start with the parcel and building documents, then run a current trip query from each exact address."
+        },
+        "es": {
+          "query_names": "Jersey City vs. Hoboken",
+          "title": "Jersey City vs Hoboken NJ | Registros oficiales",
+          "description": "Compara propiedades en Jersey City y Hoboken con registros de planificación, tasación, NJ Transit, NJDOE e impuestos de Nueva Jersey por dirección.",
+          "h1": "Jersey City vs. Hoboken: compara registros oficiales",
+          "lede": "Estas ciudades del condado de Hudson mantienen registros separados de zonificación, tasación, edificios y documentos públicos. Empieza con la parcela y el edificio; después consulta el viaje vigente desde cada dirección exacta."
+        }
+      }
+    },
+    "millburn-vs-summit-nj": {
+      "left": "millburn-short-hills",
+      "right": "summit",
+      "copy": {
+        "en": {
+          "query_names": "Millburn vs. Summit",
+          "title": "Millburn vs Summit NJ | Official-Source Comparison",
+          "description": "Compare a Millburn Township and Summit property with current municipal, NJ Transit, NJDOE, and New Jersey tax records using an address-first guide.",
+          "h1": "Millburn vs. Summit: an official-record comparison",
+          "lede": "Millburn Township and the City of Summit cross county and municipal boundaries, so their property files belong to different record systems. This guide keeps the comparison at the parcel and document level."
+        },
+        "es": {
+          "query_names": "Millburn vs. Summit",
+          "title": "Millburn vs Summit NJ | Comparación con fuentes oficiales",
+          "description": "Compara propiedades en Millburn Township y Summit con registros municipales, de NJ Transit, NJDOE e impuestos de Nueva Jersey por dirección.",
+          "h1": "Millburn vs. Summit: comparación con registros oficiales",
+          "lede": "Millburn Township y City of Summit cruzan límites municipales y de condado, por lo que sus expedientes pertenecen a sistemas distintos. Esta guía mantiene la comparación en la parcela y los documentos."
+        }
+      }
+    },
+    "montclair-vs-glen-ridge-nj": {
+      "left": "montclair",
+      "right": "glen-ridge",
+      "copy": {
+        "en": {
+          "query_names": "Montclair vs. Glen Ridge",
+          "title": "Montclair vs Glen Ridge NJ | Official Records Guide",
+          "description": "Research Montclair and Glen Ridge properties with current municipal, NJ Transit, NJDOE, and New Jersey tax records through a specific-address method.",
+          "h1": "Montclair vs. Glen Ridge: compare official records",
+          "lede": "Montclair Township and Glen Ridge Borough are distinct Essex County municipalities with separate assessor, zoning, permit, and public records. Verify the exact address before comparing any property documents."
+        },
+        "es": {
+          "query_names": "Montclair vs. Glen Ridge",
+          "title": "Montclair vs Glen Ridge NJ | Registros oficiales",
+          "description": "Investiga propiedades en Montclair y Glen Ridge con registros municipales, de NJ Transit, NJDOE e impuestos de Nueva Jersey por dirección específica.",
+          "h1": "Montclair vs. Glen Ridge: compara registros oficiales",
+          "lede": "Montclair Township y Glen Ridge Borough son municipios distintos del condado de Essex, con registros separados de tasación, zonificación, permisos y documentos públicos. Verifica la dirección exacta antes de comparar expedientes."
+        }
+      }
+    },
+    "montclair-vs-maplewood-nj": {
+      "left": "montclair",
+      "right": "maplewood",
+      "copy": {
+        "en": {
+          "query_names": "Montclair vs. Maplewood",
+          "title": "Montclair vs Maplewood NJ | Official Records Guide",
+          "description": "Compare Montclair and Maplewood properties through current municipal, NJ Transit, NJDOE, and New Jersey tax records with an address-specific method.",
+          "h1": "Montclair vs. Maplewood: compare official records",
+          "lede": "These Essex County townships keep separate parcel, assessment, zoning, permit, and public records. Use this guide to compare two addresses through the same document checklist rather than broad place descriptions."
+        },
+        "es": {
+          "query_names": "Montclair vs. Maplewood",
+          "title": "Montclair vs Maplewood NJ | Registros oficiales",
+          "description": "Compara propiedades en Montclair y Maplewood con registros municipales, de NJ Transit, NJDOE e impuestos de Nueva Jersey por dirección específica.",
+          "h1": "Montclair vs. Maplewood: compara registros oficiales",
+          "lede": "Estos townships del condado de Essex mantienen registros separados de parcela, tasación, zonificación, permisos y documentos públicos. Compara dos direcciones con la misma lista documental, sin depender de descripciones generales."
+        }
+      }
+    },
+    "new-providence-vs-berkeley-heights-nj": {
+      "left": "new-providence",
+      "right": "berkeley-heights",
+      "copy": {
+        "en": {
+          "query_names": "New Providence vs. Berkeley Heights",
+          "title": "New Providence vs Berkeley Heights NJ | Records Guide",
+          "description": "Compare New Providence and Berkeley Heights properties using current municipal, NJ Transit, NJDOE, and New Jersey tax records for each exact address.",
+          "h1": "New Providence vs. Berkeley Heights: official records",
+          "lede": "New Providence Borough and Berkeley Heights Township are separate Union County municipalities. Their land-use, assessor, permit, and public records must be checked through the office responsible for each parcel."
+        },
+        "es": {
+          "query_names": "New Providence vs. Berkeley Heights",
+          "title": "New Providence vs Berkeley Heights NJ | Registros oficiales",
+          "description": "Compara propiedades en New Providence y Berkeley Heights con registros municipales, de NJ Transit, NJDOE e impuestos estatales para cada dirección.",
+          "h1": "New Providence vs. Berkeley Heights: registros oficiales",
+          "lede": "New Providence Borough y Berkeley Heights Township son municipios separados del condado de Union. Sus registros de uso del suelo, tasación, permisos y documentos públicos se consultan en la oficina responsable de cada parcela."
+        }
+      }
+    },
+    "short-hills-vs-chatham-nj": {
+      "left": "millburn-short-hills",
+      "right": "chatham",
+      "copy": {
+        "en": {
+          "query_names": "Short Hills vs. Chatham",
+          "title": "Short Hills vs Chatham NJ | Official Records Guide",
+          "description": "Compare Short Hills and Chatham properties with current municipal, NJ Transit, NJDOE, and New Jersey tax records after confirming each legal municipality.",
+          "h1": "Short Hills vs. Chatham: compare official records",
+          "lede": "Short Hills is part of Millburn Township, while “Chatham” may mean Chatham Borough or Chatham Township. Resolve those legal geographies first, then compare the parcel and public documents for each address."
+        },
+        "es": {
+          "query_names": "Short Hills vs. Chatham",
+          "title": "Short Hills vs Chatham NJ | Registros oficiales",
+          "description": "Compara propiedades en Short Hills y Chatham con registros municipales, de NJ Transit, NJDOE e impuestos estatales tras confirmar cada municipio legal.",
+          "h1": "Short Hills vs. Chatham: compara registros oficiales",
+          "lede": "Short Hills forma parte de Millburn Township, mientras que “Chatham” puede significar Chatham Borough o Chatham Township. Aclara primero esas geografías legales y luego compara los documentos de cada dirección."
+        }
+      }
+    },
+    "short-hills-vs-westfield-nj": {
+      "left": "millburn-short-hills",
+      "right": "westfield",
+      "copy": {
+        "en": {
+          "query_names": "Short Hills vs. Westfield",
+          "title": "Short Hills vs Westfield NJ | Official Records Guide",
+          "description": "Compare Short Hills and Westfield properties through current municipal, NJ Transit, NJDOE, and New Jersey tax records with an address-first method.",
+          "h1": "Short Hills vs. Westfield: compare official records",
+          "lede": "A Short Hills address belongs to Millburn Township in Essex County; Westfield is a town in Union County. Compare the properties through their correct municipal files and a consistent document checklist."
+        },
+        "es": {
+          "query_names": "Short Hills vs. Westfield",
+          "title": "Short Hills vs Westfield NJ | Registros oficiales",
+          "description": "Compara propiedades en Short Hills y Westfield con registros municipales, de NJ Transit, NJDOE e impuestos de Nueva Jersey mediante la dirección.",
+          "h1": "Short Hills vs. Westfield: compara registros oficiales",
+          "lede": "Una dirección de Short Hills pertenece a Millburn Township en el condado de Essex; Westfield es un town del condado de Union. Compara las propiedades mediante sus archivos municipales correctos y la misma lista documental."
+        }
+      }
+    },
+    "summit-vs-new-providence-nj": {
+      "left": "summit",
+      "right": "new-providence",
+      "copy": {
+        "en": {
+          "query_names": "Summit vs. New Providence",
+          "title": "Summit vs New Providence NJ | Official Records Guide",
+          "description": "Compare Summit and New Providence properties through current municipal, NJ Transit, NJDOE, and New Jersey tax records using each specific address.",
+          "h1": "Summit vs. New Providence: compare official records",
+          "lede": "The City of Summit and New Providence Borough are separate Union County municipalities. Their tax, zoning, permit, and public records belong to different local offices even when properties are nearby."
+        },
+        "es": {
+          "query_names": "Summit vs. New Providence",
+          "title": "Summit vs New Providence NJ | Registros oficiales",
+          "description": "Compara propiedades en Summit y New Providence con registros municipales, de NJ Transit, NJDOE e impuestos de Nueva Jersey para cada dirección.",
+          "h1": "Summit vs. New Providence: compara registros oficiales",
+          "lede": "City of Summit y New Providence Borough son municipios separados del condado de Union. Sus registros fiscales, de zonificación, permisos y documentos públicos pertenecen a oficinas locales distintas."
+        }
+      }
+    }
+  },
+  "redirects": {
+    "maplewood-vs-montclair-nj": "montclair-vs-maplewood-nj"
+  },
+  "retained_noindex": [
+    "livingston-vs-west-orange-nj.html"
+  ]
+}

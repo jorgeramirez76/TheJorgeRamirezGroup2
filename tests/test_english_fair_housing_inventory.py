@@ -53,7 +53,7 @@ class EnglishFairHousingInventoryTests(unittest.TestCase):
         self.assertEqual(expected_owned, set(discovered.pop("owned")))
         self.assertEqual(self.inventory["excluded"], discovered)
         self.assertEqual(139, len(self.inventory["excluded"]["retired"]))
-        self.assertEqual(139, len(self.inventory["excluded"]["redirects"]))
+        self.assertEqual(140, len(self.inventory["excluded"]["redirects"]))
         self.assertEqual(
             {item["file"] for item in self.doorway_manifest["pages"]},
             set(self.inventory["excluded"]["retired_programmatic_doorways"]),
