@@ -1,14 +1,9 @@
 #!/usr/bin/env python3
-"""
-Fix translation quality issues across all 341 Spanish pages.
+"""Archived legacy token-level Spanish translator.
 
-Strategy:
-- Apply targeted regex replacements with word boundaries
-- Avoid breaking URLs, schema @id values, and href attributes
-- Skip lines that contain URL patterns (https://, .html, /paths)
-- Process line by line so we don't munge multi-line JSON-LD blocks
-
-Safe to run repeatedly (idempotent — fixes only catch English text).
+This broad, line-oriented rewriter is retained only for provenance. It is not a
+publication source and must not be run against the reviewed Spanish inventory;
+use ``tools/fix_spanish_copy_quality.py`` for conservative maintenance.
 """
 import re
 from pathlib import Path
@@ -108,9 +103,9 @@ REPLACEMENTS = [
     (r'\bexperienced\b', 'experimentado'),
 
     # ============ Marketing phrases ============
-    (r'\btop[- ]rated\b', 'mejor calificado'),
-    (r'\bTop[- ]Rated\b', 'Mejor Calificado'),
-    (r'\bTop Rated\b', 'Mejor Calificado'),
+    (r'\btop[- ]rated\b', 'agente con licencia en Nueva Jersey'),
+    (r'\bTop[- ]Rated\b', 'Agente con Licencia en Nueva Jersey'),
+    (r'\bTop Rated\b', 'Agente con Licencia en Nueva Jersey'),
     (r'\bfull[- ]time\b', 'tiempo completo'),
     (r'\bFull[- ]Time\b', 'Tiempo Completo'),
     (r'\bFull[- ]time\b', 'Tiempo Completo'),
@@ -190,6 +185,9 @@ def fix_file(path: Path) -> int:
 
 
 def main():
+    raise SystemExit(
+        "Archived: this legacy bulk translator is not permitted to modify the reviewed Spanish inventory."
+    )
     print("🔧 Fixing translation quality issues across all Spanish pages")
     print("=" * 60)
 

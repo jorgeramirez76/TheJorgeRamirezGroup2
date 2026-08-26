@@ -16,16 +16,24 @@ will translate the high-frequency UI elements, headings, and CTAs that appear
 across all pages. For SEO purposes, this is enough to get pages indexed in
 Spanish search results.
 """
+import json
 import re
 import shutil
 from pathlib import Path
 
 from scripts.remediate_spanish_towns import spanish_managed_slugs
 
-ROOT = Path('/Users/teddy/TheJorgeRamirezGroup2')
+ROOT = Path(__file__).resolve().parent
 ES = ROOT / 'es'
 BASE_URL = 'https://thejorgeramirezgroup.com'
 MANAGED_SPANISH_TOWN_SLUGS = spanish_managed_slugs()
+MANAGED_INVENTORY = ROOT / 'data' / 'spanish-fair-housing-inventory.json'
+
+
+def managed_spanish_outputs() -> set[str]:
+    """Return reviewed outputs that the legacy bulk translator must not replace."""
+    payload = json.loads(MANAGED_INVENTORY.read_text(encoding='utf-8'))
+    return set(payload['reviewed']) | set(payload.get('quarantined', []))
 
 # ===== TRANSLATION DICTIONARY =====
 # Order matters — longer phrases first to prevent partial matches
@@ -167,8 +175,8 @@ TRANSLATIONS = [
     ('Years Experience', 'Años de Experiencia'),
     ('Licensed Real Estate Agent', 'Agente de Bienes Raíces Licenciado'),
     ('Licensed Realtor', 'Realtor Licenciado'),
-    ('Top Rated', 'Mejor Calificado'),
-    ('5-Star Rated', 'Calificado con 5 Estrellas'),
+    ('Top Rated', 'Agente con Licencia en Nueva Jersey'),
+    ('5-Star Rated', 'Agente con Licencia en Nueva Jersey'),
     ('Customer Reviews', 'Reseñas de Clientes'),
     ('Client Reviews', 'Reseñas de Clientes'),
     ('Why Choose Us', 'Por Qué Elegirnos'),
@@ -292,6 +300,8 @@ def fix_internal_links(html: str) -> str:
         # Skip external, anchor, mailto, tel, etc.
         if href.startswith(('http', '#', 'mailto:', 'tel:', '/es/', 'es/')):
             return match.group(0)
+        if href.rstrip('/') == '/contact':
+            return f'{match.group(1)}"/es/#contact"'
         # Skip non-html assets
         if any(href.endswith(ext) for ext in ['.css', '.js', '.jpg', '.jpeg', '.png',
                                                 '.gif', '.svg', '.webp', '.ico', '.xml',
@@ -305,6 +315,16 @@ def fix_internal_links(html: str) -> str:
         return match.group(0)
 
     return re.sub(r'(href=)"([^"]+)"', replace_link, html)
+
+
+def remove_missing_spanish_policy_links(html: str) -> str:
+    """Do not translate a Terms URL that has no Spanish public destination."""
+    return re.sub(
+        r'\s*(?:·\s*)?<a\s+href="/es/terms-of-service"[^>]*>.*?</a>',
+        '',
+        html,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
 
 
 def translate_page(en_path: Path) -> bool:
@@ -321,6 +341,10 @@ def translate_page(en_path: Path) -> bool:
         return False
 
     es_path = ES / relative
+    es_relative = es_path.relative_to(ROOT).as_posix()
+    if es_relative in managed_spanish_outputs():
+        print(f"  Protected reviewed Spanish output, skipped: {es_relative}")
+        return False
     es_path.parent.mkdir(parents=True, exist_ok=True)
 
     try:
@@ -335,6 +359,7 @@ def translate_page(en_path: Path) -> bool:
     html = update_canonical_to_es(html, relative_str)
     html = add_hreflang_tags(html, relative_str)
     html = fix_internal_links(html)
+    html = remove_missing_spanish_policy_links(html)
     html = translate_text(html)
 
     # Add a comment marking this as auto-translated

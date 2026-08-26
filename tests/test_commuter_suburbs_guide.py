@@ -90,7 +90,7 @@ class CommuterSuburbsGuideTests(unittest.TestCase):
                 self.assertIn("/communities", source)
                 self.assertIn("/property-search", source)
                 self.assertIn("/home-valuation", source)
-                self.assertIn("/contact", source)
+                self.assertIn("/es/#contact" if language == "es" else "/contact", source)
 
     def test_official_sources_and_methodology_are_manifested(self) -> None:
         manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))

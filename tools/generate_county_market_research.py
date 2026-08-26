@@ -354,6 +354,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
     en_url = SITE + report["routes"]["en"]
     es_url = SITE + report["routes"]["es"]
     prefix = "/es" if language == "es" else ""
+    contact_route = "/es/#contact" if language == "es" else "/contact"
     html_lang = "es" if language == "es" else "en"
     in_language = "es-US" if language == "es" else "en-US"
     directory = report["countyDirectory"]
@@ -559,7 +560,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
         <a href="{prefix or '/'}">{esc(copy["home"])}</a>
         <a href="{prefix}/counties/{county_slug}-county">{esc(copy["counties"])}</a>
         <a href="{prefix}/blog">{esc(copy["blog"])}</a>
-        <a href="{prefix}/contact">{esc(copy["contact"])}</a>
+        <a href="{contact_route}">{esc(copy["contact"])}</a>
         <a class="lang-link" href="{other_route}" lang="{'es' if language == 'en' else 'en'}">{esc(copy["lang_label"])}</a>
         <a class="nav-cta" href="{prefix}/home-valuation">{esc(copy["nav_cta"])}</a>
       </div>
@@ -670,7 +671,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
             <div class="next-card"><a href="{prefix}/counties/{county_slug}-county">{esc(copy["county_cta"])}</a></div>
             <div class="next-card"><a href="{prefix}/home-valuation">{esc(copy["value_cta"])}</a></div>
             <div class="next-card"><a href="{prefix}/sell-your-home">{esc(copy["sell_cta"])}</a></div>
-            <div class="next-card"><a href="{prefix}/contact">{esc(copy["contact_cta"])}</a></div>
+            <div class="next-card"><a href="{contact_route}">{esc(copy["contact_cta"])}</a></div>
           </div>
         </section>
 
@@ -686,7 +687,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
   <footer>
     <div class="footer-inner">
       <div><strong>{esc(copy["footer_text"])}</strong><p>{esc(copy["footer_note"])}</p></div>
-      <a href="{prefix}/contact">{esc(copy["contact_cta"])}</a>
+      <a href="{contact_route}">{esc(copy["contact_cta"])}</a>
     </div>
   </footer>
   <script>

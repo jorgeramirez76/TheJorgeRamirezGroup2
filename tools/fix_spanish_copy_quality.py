@@ -9,11 +9,13 @@ Rules:
 """
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ES_DIR = ROOT / "es"
+QUARANTINE = ROOT / "data" / "spanish-fair-housing-quarantine.json"
 
 LINE_SKIP = re.compile(r"(href=|src=|canonical|https?://|@id|\"url\"|<script\b|</script>)", re.I)
 LINE_KEEP = re.compile(r"(<title\b|<meta\b|\"description\"|\"jobTitle\"|\"knowsAbout\")", re.I)
@@ -138,7 +140,13 @@ def fix_text(text: str) -> str:
 
 def main() -> int:
     changed: list[str] = []
+    protected = {
+        item["file"]
+        for item in json.loads(QUARANTINE.read_text(encoding="utf-8"))["pages"]
+    }
     for path in sorted(ES_DIR.rglob("*.html")):
+        if path.relative_to(ROOT).as_posix() in protected:
+            continue
         original = path.read_text(encoding="utf-8", errors="ignore")
         fixed = fix_text(original)
         if fixed != original:

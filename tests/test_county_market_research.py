@@ -404,7 +404,7 @@ class CountyPageContractTests(unittest.TestCase):
                 f"{prefix}/counties/{county_slug}-county",
                 f"{prefix}/home-valuation",
                 f"{prefix}/sell-your-home",
-                f"{prefix}/contact",
+                "/es/#contact" if spanish else "/contact",
             }
             with self.subTest(path=path.relative_to(ROOT)):
                 self.assertLess(len(source.encode("utf-8")), 36_000)

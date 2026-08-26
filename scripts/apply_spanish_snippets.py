@@ -18,6 +18,7 @@ if str(ROOT) not in sys.path:
 from scripts.remediate_spanish_towns import spanish_managed_slugs  # noqa: E402
 
 MAPPING = ROOT / "data" / "spanish-snippet-backlog.json"
+QUARANTINE = ROOT / "data" / "spanish-fair-housing-quarantine.json"
 META_TAG = re.compile(r"<meta\b[^>]*>", re.IGNORECASE | re.DOTALL)
 MANAGED_SPANISH_TOWN_PATHS = {
     f"es/towns/{slug}.html" for slug in spanish_managed_slugs()
@@ -125,6 +126,11 @@ def render(document: str, metadata: dict[str, str]) -> str:
 def load_pages() -> dict[str, dict[str, str]]:
     mapping = json.loads(MAPPING.read_text(encoding="utf-8"))
     pages: dict[str, dict[str, str]] = mapping["pages"]
+    protected = {
+        item["file"]
+        for item in json.loads(QUARANTINE.read_text(encoding="utf-8"))["pages"]
+    }
+    pages = {relative: metadata for relative, metadata in pages.items() if relative not in protected}
     for relative, metadata in pages.items():
         if not relative.startswith("es/"):
             raise ValueError(f"Spanish mapping cannot modify non-es page: {relative}")

@@ -241,12 +241,12 @@
     },
     {
       "source": "/es/blog/selling-your-home-summit-nj-guide.html",
-      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "destination": "/es/sell-your-home",
       "permanent": true
     },
     {
       "source": "/es/blog/selling-your-home-summit-nj-guide",
-      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "destination": "/es/sell-your-home",
       "permanent": true
     },
     {
@@ -1732,22 +1732,22 @@
     },
     {
       "source": "/blog/es/summit-nj-comunidad-guia.html",
-      "destination": "/es/blog/neighborhoods-summit-nj",
+      "destination": "/es/communities",
       "permanent": true
     },
     {
       "source": "/blog/es/summit-nj-comunidad-guia",
-      "destination": "/es/blog/neighborhoods-summit-nj",
+      "destination": "/es/communities",
       "permanent": true
     },
     {
       "source": "/es/blog/es/summit-nj-comunidad-guia.html",
-      "destination": "/es/blog/neighborhoods-summit-nj",
+      "destination": "/es/communities",
       "permanent": true
     },
     {
       "source": "/es/blog/es/summit-nj-comunidad-guia",
-      "destination": "/es/blog/neighborhoods-summit-nj",
+      "destination": "/es/communities",
       "permanent": true
     },
     {
@@ -1912,22 +1912,22 @@
     },
     {
       "source": "/blog/es/guia-vender-casa-summit-nj.html",
-      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "destination": "/es/sell-your-home",
       "permanent": true
     },
     {
       "source": "/blog/es/guia-vender-casa-summit-nj",
-      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "destination": "/es/sell-your-home",
       "permanent": true
     },
     {
       "source": "/es/blog/es/guia-vender-casa-summit-nj.html",
-      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "destination": "/es/sell-your-home",
       "permanent": true
     },
     {
       "source": "/es/blog/es/guia-vender-casa-summit-nj",
-      "destination": "/es/blog/selling-home-summit-nj-2026",
+      "destination": "/es/sell-your-home",
       "permanent": true
     },
     {
@@ -1987,22 +1987,22 @@
     },
     {
       "source": "/es/buying-home-montclair-nj-2026.html",
-      "destination": "/es/blog/buying-home-montclair-nj-2026",
+      "destination": "/es/buy-a-home",
       "permanent": true
     },
     {
       "source": "/es/buying-home-montclair-nj-2026",
-      "destination": "/es/blog/buying-home-montclair-nj-2026",
+      "destination": "/es/buy-a-home",
       "permanent": true
     },
     {
       "source": "/es/selling-home-roseland-nj-2026.html",
-      "destination": "/es/blog/selling-home-roseland-nj-2026",
+      "destination": "/es/sell-your-home",
       "permanent": true
     },
     {
       "source": "/es/selling-home-roseland-nj-2026",
-      "destination": "/es/blog/selling-home-roseland-nj-2026",
+      "destination": "/es/sell-your-home",
       "permanent": true
     },
     {

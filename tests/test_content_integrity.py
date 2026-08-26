@@ -340,7 +340,7 @@ class ContentIntegrityTests(unittest.TestCase):
         )
         self.assertRegex(
             source,
-            r'<link\s+rel=["\']canonical["\']\s+href=["\']https://thejorgeramirezgroup\.com/es/blog/buying-home-millburn-nj-2026(?:\.html)?["\']',
+            r'<link\s+rel=["\']canonical["\']\s+href=["\']https://thejorgeramirezgroup\.com/es/buy-a-home["\']',
         )
 
     def test_spanish_pages_have_no_fatal_mechanical_breakage(self) -> None:

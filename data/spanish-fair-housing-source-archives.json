@@ -1,0 +1,13 @@
+{
+  "base": "91e46ee81037336421a0457cc307736f44d5d8a8",
+  "reviewed_on": "2026-08-26",
+  "unpublished_spanish_content_sources": [],
+  "archived_legacy_emitters": [
+    {
+      "file": "fix_spanish_translations.py",
+      "status": "archived-in-place",
+      "reason": "The token-level bulk rewriter could create unreviewed Spanish and now exits before any write."
+    }
+  ],
+  "note": "No unpublished Spanish Markdown, Jinja, template, or draft content source was discovered outside the documented generators. Active emitters are guarded by the exact Spanish fair-housing inventory."
+}
