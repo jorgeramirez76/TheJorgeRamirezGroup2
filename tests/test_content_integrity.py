@@ -47,10 +47,10 @@ class ContentIntegrityTests(unittest.TestCase):
         cls.facts = json.loads(FACTS_PATH.read_text(encoding="utf-8"))
         cls.inventory = cls.facts["canonicalTownInventory"]
 
-    def test_inventory_is_unique_and_totals_121(self) -> None:
+    def test_inventory_is_unique_and_totals_112(self) -> None:
         by_county = self.inventory["byCounty"]
         slugs = [slug for towns in by_county.values() for slug in towns]
-        self.assertEqual(121, self.inventory["total"])
+        self.assertEqual(112, self.inventory["total"])
         self.assertEqual(self.inventory["total"], len(slugs))
         self.assertEqual(len(slugs), len(set(slugs)), "town appears in more than one county")
         self.assertEqual(
@@ -97,7 +97,7 @@ class ContentIntegrityTests(unittest.TestCase):
             self.assertEqual(set(expected), actual, f"wrong {county} membership")
             self.assertRegex(section, rf'class=["\']count["\']>{len(expected)} towns<')
 
-        self.assertIn("121 NJ Communities We Serve", source)
+        self.assertIn("112 NJ Communities We Serve", source)
         self.assertNotRegex(source, r"\b138\s+(?:NJ\s+)?(?:communities|towns)\b")
         schemas = json_ld_objects(source)
         item_lists = []
@@ -107,7 +107,7 @@ class ContentIntegrityTests(unittest.TestCase):
                 if isinstance(entity, dict) and entity.get("@type") == "ItemList":
                     item_lists.append(entity)
         self.assertTrue(item_lists, "communities page is missing ItemList data")
-        self.assertEqual([121], [item["numberOfItems"] for item in item_lists])
+        self.assertEqual([112], [item["numberOfItems"] for item in item_lists])
 
     def test_basking_ridge_relationship_is_somerset_not_morris(self) -> None:
         relationship = self.facts["placeRelationships"]["basking-ridge"]
