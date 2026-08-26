@@ -53,8 +53,11 @@ body.seller-service-page summary:focus-visible {
   position: fixed;
   inset: 0 0 auto;
   z-index: 1000;
+  width: 100%;
+  padding: 0;
   border-bottom: 1px solid rgba(184, 150, 46, .25);
   background: rgba(10, 10, 10, .97);
+  backdrop-filter: none;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
 }
 .seller-nav__inner {

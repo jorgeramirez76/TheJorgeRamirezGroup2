@@ -163,9 +163,9 @@
 }
   </script>
 </head>
-<body>
+<body class="seller-editorial-page">
   <a class="skip-link" href="#main">Skip to main content</a>
-  <nav class="comparison-nav" aria-label="Primary navigation"><div class="comparison-nav__inner"><a class="comparison-brand" href="/">Jorge Ramirez <span>Group</span></a><div class="comparison-nav__links"><a href="/#communities">Communities</a><a href="/blog">Guides</a><a class="comparison-language" href="/es/blog/downsizing-your-nj-home" lang="es">Español</a><a href="/contact">Contact</a><a class="comparison-nav__cta" href="/home-valuation">Home Value</a></div></div></nav>
+  <nav class="comparison-nav" aria-label="Primary navigation"><div class="comparison-nav__inner"><a class="comparison-brand" href="/" aria-label="The Jorge Ramirez Group"><picture><source srcset="/images/jorge-logo.webp" type="image/webp"><img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="250" height="100"></picture></a><button class="comparison-menu" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="seller-editorial-navigation">☰</button><div class="comparison-nav__links" id="seller-editorial-navigation"><a href="/#communities">Communities</a><a href="/blog">Guides</a><a class="comparison-language" href="/es/blog/downsizing-your-nj-home" lang="es">Español</a><a href="/contact">Contact</a><a class="comparison-nav__cta" href="/home-valuation">Home Value</a></div></div></nav>
   <div class="comparison-breadcrumb" aria-label="Breadcrumb"><div class="comparison-breadcrumb__inner"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/blog">Seller guides</a><span aria-hidden="true">/</span>A smaller housing footprint starts with a written use-and-move plan</div></div>
   <main id="main">
     <header class="comparison-hero seller-editorial-hero"><div class="comparison-container comparison-hero__copy"><p class="comparison-eyebrow">Housing-footprint and move planning · New Jersey</p><h1>A smaller housing footprint starts with a written use-and-move plan</h1><p class="comparison-hero__lede">A move to a different housing footprint works better as a use, cost, sequence and possessions plan. Start with how the current and proposed properties function rather than assumptions about age or household profile.</p><p class="comparison-hero__stamp">Sources checked August 26, 2026 · Verify current property and transaction facts</p></div></header>
@@ -212,5 +212,20 @@
     <section class="comparison-cta" aria-labelledby="seller-cta-title"><h2 id="seller-cta-title">Build the move around use, documents and sequence</h2><p>Jorge can organize the current property review and housing criteria while your lending, legal and tax professionals address their parts of the move.</p><div class="comparison-buttons"><a class="comparison-button comparison-button--gold" href="/home-valuation">Request a property review</a><a class="comparison-button comparison-button--outline" href="/contact">Discuss the plan</a></div></section>
   </main>
   <footer class="comparison-footer"><p><strong>The Jorge Ramirez Group</strong> · Keller Williams Premier Properties</p><p><a href="tel:+19082307844">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a></p><p>Equal Housing Opportunity · Sources accessed August 26, 2026 · Confirm current details directly.</p></footer>
+  <script>
+    (() => {
+      const button = document.querySelector('.comparison-menu');
+      const menu = document.getElementById('seller-editorial-navigation');
+      if (!button || !menu) return;
+      button.addEventListener('click', () => {
+        const open = menu.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', String(open));
+      });
+      menu.addEventListener('click', event => {
+        if (event.target.closest('a')) { menu.classList.remove('is-open'); button.setAttribute('aria-expanded', 'false'); }
+      });
+    })();
+  </script>
+  <script defer src="/js/site-cta.js"></script>
 </body>
 </html>

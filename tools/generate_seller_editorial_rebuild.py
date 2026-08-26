@@ -970,9 +970,9 @@ def render_page(
 {schema(page, en_route, es_route, lang, citations)}
   </script>
 </head>
-<body>
+<body class="seller-editorial-page">
   <a class="skip-link" href="#main">{skip}</a>
-  <nav class="comparison-nav" aria-label="Primary navigation"><div class="comparison-nav__inner"><a class="comparison-brand" href="{'/' if lang == 'en' else '/es/'}">Jorge Ramirez <span>Group</span></a><div class="comparison-nav__links"><a href="{'/#communities' if lang == 'en' else '/es/#communities'}">{nav_communities}</a><a href="{'/blog' if lang == 'en' else '/es/blog'}">{nav_guides}</a><a class="comparison-language" href="{other_route}" lang="{other_lang_attr}">{language_link}</a><a href="{'/contact' if lang == 'en' else '/es/#contact'}">{nav_contact}</a><a class="comparison-nav__cta" href="{'/home-valuation' if lang == 'en' else '/es/home-valuation'}">{nav_cta}</a></div></div></nav>
+  <nav class="comparison-nav" aria-label="Primary navigation"><div class="comparison-nav__inner"><a class="comparison-brand" href="{'/' if lang == 'en' else '/es/'}" aria-label="The Jorge Ramirez Group"><picture><source srcset="/images/jorge-logo.webp" type="image/webp"><img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="250" height="100"></picture></a><button class="comparison-menu" type="button" aria-label="{'Toggle navigation menu' if lang == 'en' else 'Abrir o cerrar el menú'}" aria-expanded="false" aria-controls="seller-editorial-navigation">☰</button><div class="comparison-nav__links" id="seller-editorial-navigation"><a href="{'/#communities' if lang == 'en' else '/es/#communities'}">{nav_communities}</a><a href="{'/blog' if lang == 'en' else '/es/blog'}">{nav_guides}</a><a class="comparison-language" href="{other_route}" lang="{other_lang_attr}">{language_link}</a><a href="{'/contact' if lang == 'en' else '/es/#contact'}">{nav_contact}</a><a class="comparison-nav__cta" href="{'/home-valuation' if lang == 'en' else '/es/home-valuation'}">{nav_cta}</a></div></div></nav>
   <div class="comparison-breadcrumb" aria-label="Breadcrumb"><div class="comparison-breadcrumb__inner"><a href="{'/' if lang == 'en' else '/es/'}">{home_label}</a><span aria-hidden="true">/</span><a href="{'/blog' if lang == 'en' else '/es/blog'}">{guide_label}</a><span aria-hidden="true">/</span>{esc(breadcrumb_current)}</div></div>
   <main id="main">
     <header class="comparison-hero seller-editorial-hero"><div class="comparison-container comparison-hero__copy"><p class="comparison-eyebrow">{esc(copy["eyebrow"])}</p><h1>{esc(page["headline"])}</h1><p class="comparison-hero__lede">{esc(copy["lede"])}</p><p class="comparison-hero__stamp">{source_stamp}</p></div></header>
@@ -992,6 +992,21 @@ def render_page(
     <section class="comparison-cta" aria-labelledby="seller-cta-title"><h2 id="seller-cta-title">{esc(copy["cta_heading"])}</h2><p>{esc(copy["cta_text"])}</p><div class="comparison-buttons"><a class="comparison-button comparison-button--gold" href="{'/home-valuation' if lang == 'en' else '/es/home-valuation'}">{cta_primary}</a><a class="comparison-button comparison-button--outline" href="{'/contact' if lang == 'en' else '/es/#contact'}">{cta_secondary}</a></div></section>
   </main>
   <footer class="comparison-footer"><p><strong>The Jorge Ramirez Group</strong> · Keller Williams Premier Properties</p><p><a href="tel:+19082307844">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a></p><p>{footer_note}</p></footer>
+  <script>
+    (() => {{
+      const button = document.querySelector('.comparison-menu');
+      const menu = document.getElementById('seller-editorial-navigation');
+      if (!button || !menu) return;
+      button.addEventListener('click', () => {{
+        const open = menu.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', String(open));
+      }});
+      menu.addEventListener('click', event => {{
+        if (event.target.closest('a')) {{ menu.classList.remove('is-open'); button.setAttribute('aria-expanded', 'false'); }}
+      }});
+    }})();
+  </script>
+  <script defer src="/js/site-cta.js"></script>
 </body>
 </html>
 '''
@@ -1022,15 +1037,24 @@ def render_fallback(source: str, destination: str) -> str:
   <meta name="description" content="{esc(body)}">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="{canonical}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <style>
     :root {{ --ink:#0A0A0A; --red:#C41230; --deep-red:#8B0D22; --gold:#B8962E; --gold-light:#D4AF5A; --ivory:#FAFAF8; }}
-    * {{ box-sizing:border-box; }} body {{ margin:0; background:var(--ink); color:#fff; font-family:Inter,Arial,sans-serif; }}
-    main {{ min-height:100vh; display:grid; place-items:center; padding:2rem; }} article {{ width:min(720px,100%); padding:clamp(2rem,6vw,4rem); border-top:5px solid var(--gold); background:#1A1A1A; box-shadow:0 20px 70px rgba(0,0,0,.35); }}
-    h1 {{ margin:0 0 1rem; font:700 clamp(2rem,7vw,3.5rem)/1.08 'Playfair Display',Georgia,serif; }} p {{ color:#e8e8e8; line-height:1.75; }} a {{ min-height:44px; display:inline-flex; align-items:center; margin-top:1rem; padding:.8rem 1rem; background:var(--red); color:#fff; font-weight:700; text-decoration:none; }} a:hover {{ background:var(--deep-red); }} a:focus-visible {{ outline:3px solid var(--gold-light); outline-offset:3px; }} .home {{ background:transparent; border:1px solid var(--gold); margin-left:.5rem; }}
+    * {{ box-sizing:border-box; }} body {{ min-height:100vh; margin:0; display:flex; flex-direction:column; background:var(--ink); color:#fff; font-family:Inter,Arial,sans-serif; }}
+    .archive-skip {{ position:fixed; top:-6rem; left:1rem; z-index:1000; padding:.75rem 1rem; background:var(--gold); color:var(--ink); font-weight:700; text-decoration:none; }} .archive-skip:focus {{ top:0; }}
+    .archive-header {{ position:sticky; top:0; z-index:100; border-bottom:2px solid var(--gold); background:rgba(10,10,10,.97); }} .archive-header__inner {{ width:min(1180px,calc(100% - 2rem)); min-height:76px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:1rem; }}
+    .archive-logo {{ min-height:44px; display:flex; align-items:center; margin:0; padding:0; background:transparent; }} .archive-logo img {{ width:185px; height:54px; padding:6px 10px; border-radius:4px; background:#fff; object-fit:contain; }} .archive-home {{ min-height:44px; display:inline-flex; align-items:center; padding:.65rem .85rem; border:1px solid var(--gold); color:#fff; font-weight:700; text-decoration:none; }}
+    main {{ flex:1; min-height:calc(100vh - 180px); display:grid; place-items:center; padding:clamp(2rem,6vw,5rem) 2rem; }} article {{ width:min(720px,100%); padding:clamp(2rem,6vw,4rem); border-top:5px solid var(--gold); background:#1A1A1A; box-shadow:0 20px 70px rgba(0,0,0,.35); }}
+    h1 {{ margin:0 0 1rem; font:700 clamp(2rem,7vw,3.5rem)/1.08 'Playfair Display',Georgia,serif; }} p {{ color:#e8e8e8; line-height:1.75; }} .archive-action {{ min-height:44px; display:inline-flex; align-items:center; margin-top:1rem; padding:.8rem 1rem; background:var(--red); color:#fff; font-weight:700; text-decoration:none; }} .archive-action:hover {{ background:var(--deep-red); }} a:focus-visible {{ outline:3px solid var(--gold-light); outline-offset:3px; }}
+    .archive-footer {{ padding:1.5rem 1rem; border-top:1px solid rgba(184,150,46,.42); background:#050505; color:#bdbdbd; text-align:center; }} .archive-footer p {{ margin:.35rem 0; font-size:.86rem; }} .archive-footer a {{ color:var(--gold-light); }}
+    #jrg-prefer-google {{ display:none; }}
+    @media (max-width:600px) {{ .archive-header__inner {{ min-height:68px; }} .archive-logo img {{ width:142px; height:48px; padding:5px 8px; }} main {{ padding:2rem; }} .archive-action {{ width:100%; justify-content:center; text-align:center; }} }}
   </style>
 </head>
-<body><main><article><h1>{esc(heading)}</h1><p>{esc(body)}</p><a href="{esc(destination)}">{esc(link_text)}</a><a class="home" href="{'/' if lang == 'en' else '/es/'}">{home}</a></article></main></body>
+<body><a class="archive-skip" href="#main">{'Skip to main content' if lang == 'en' else 'Saltar al contenido principal'}</a><header class="archive-header"><div class="archive-header__inner"><a class="archive-logo" href="{'/' if lang == 'en' else '/es/'}" aria-label="The Jorge Ramirez Group"><picture><source srcset="/images/jorge-logo.webp" type="image/webp"><img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="250" height="100"></picture></a><a class="archive-home" href="{'/' if lang == 'en' else '/es/'}">{home}</a></div></header><main id="main"><article><h1>{esc(heading)}</h1><p>{esc(body)}</p><a class="archive-action" href="{esc(destination)}">{esc(link_text)}</a></article></main><footer class="archive-footer"><p><strong>The Jorge Ramirez Group</strong> · Keller Williams Premier Properties</p><p><a href="tel:+19082307844">908-230-7844</a> · 488 Springfield Avenue, Summit, NJ 07901 · NJ License #1754604</p></footer><script defer src="/js/site-cta.js"></script></body>
 </html>
 '''
 

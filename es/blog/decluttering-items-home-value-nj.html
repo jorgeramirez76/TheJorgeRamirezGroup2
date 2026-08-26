@@ -161,9 +161,9 @@
 }
   </script>
 </head>
-<body>
+<body class="seller-editorial-page">
   <a class="skip-link" href="#main">Saltar al contenido principal</a>
-  <nav class="comparison-nav" aria-label="Primary navigation"><div class="comparison-nav__inner"><a class="comparison-brand" href="/es/">Jorge Ramirez <span>Group</span></a><div class="comparison-nav__links"><a href="/es/#communities">Comunidades</a><a href="/es/blog">Guías</a><a class="comparison-language" href="/blog/decluttering-items-home-value-nj" lang="en">English</a><a href="/es/#contact">Contacto</a><a class="comparison-nav__cta" href="/es/home-valuation">Valor de Casa</a></div></div></nav>
+  <nav class="comparison-nav" aria-label="Primary navigation"><div class="comparison-nav__inner"><a class="comparison-brand" href="/es/" aria-label="The Jorge Ramirez Group"><picture><source srcset="/images/jorge-logo.webp" type="image/webp"><img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="250" height="100"></picture></a><button class="comparison-menu" type="button" aria-label="Abrir o cerrar el menú" aria-expanded="false" aria-controls="seller-editorial-navigation">☰</button><div class="comparison-nav__links" id="seller-editorial-navigation"><a href="/es/#communities">Comunidades</a><a href="/es/blog">Guías</a><a class="comparison-language" href="/blog/decluttering-items-home-value-nj" lang="en">English</a><a href="/es/#contact">Contacto</a><a class="comparison-nav__cta" href="/es/home-valuation">Valor de Casa</a></div></div></nav>
   <div class="comparison-breadcrumb" aria-label="Breadcrumb"><div class="comparison-breadcrumb__inner"><a href="/es/">Inicio</a><span aria-hidden="true">/</span><a href="/es/blog">Guías para vender</a><span aria-hidden="true">/</span>Ordene para facilitar acceso y documentación, sin promesas</div></div>
   <main id="main">
     <header class="comparison-hero seller-editorial-hero"><div class="comparison-container comparison-hero__copy"><p class="comparison-eyebrow">Plan de orden y acceso antes de publicar · Nueva Jersey</p><h1>Ordene para facilitar acceso y documentación, sin promesas</h1><p class="comparison-hero__lede">Ordenar puede facilitar revisión de registros, superficies, sistemas y acceso. No demuestra aumento de precio ni respuesta. Clasifique por seguridad, documentos, movimiento y próximo destino.</p><p class="comparison-hero__stamp">Fuentes verificadas el 26 de agosto de 2026 · Confirme los hechos actuales</p></div></header>
@@ -208,5 +208,20 @@
     <section class="comparison-cta" aria-labelledby="seller-cta-title"><h2 id="seller-cta-title">Convierta el orden en un plan de acceso y registros</h2><p>Jorge puede identificar áreas y registros útiles para una revisión previa. Use profesionales calificados para condición, ambiente, derecho e impuestos.</p><div class="comparison-buttons"><a class="comparison-button comparison-button--gold" href="/es/home-valuation">Solicitar revisión de propiedad</a><a class="comparison-button comparison-button--outline" href="/es/#contact">Hablar del plan</a></div></section>
   </main>
   <footer class="comparison-footer"><p><strong>The Jorge Ramirez Group</strong> · Keller Williams Premier Properties</p><p><a href="tel:+19082307844">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a></p><p>Igualdad de Oportunidades de Vivienda · Fuentes consultadas el 26 de agosto de 2026 · Confirme detalles actuales.</p></footer>
+  <script>
+    (() => {
+      const button = document.querySelector('.comparison-menu');
+      const menu = document.getElementById('seller-editorial-navigation');
+      if (!button || !menu) return;
+      button.addEventListener('click', () => {
+        const open = menu.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', String(open));
+      });
+      menu.addEventListener('click', event => {
+        if (event.target.closest('a')) { menu.classList.remove('is-open'); button.setAttribute('aria-expanded', 'false'); }
+      });
+    })();
+  </script>
+  <script defer src="/js/site-cta.js"></script>
 </body>
 </html>

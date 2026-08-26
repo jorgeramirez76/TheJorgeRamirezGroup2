@@ -188,6 +188,15 @@ class SellerServiceClusterTests(unittest.TestCase):
         self.assertRegex(stylesheet, r"@media\s*\(max-width:\s*820px\)")
         self.assertRegex(stylesheet, r"min-height:\s*44px")
         self.assertIn(":focus-visible", stylesheet)
+        nav_rule = re.search(r"\.seller-nav\s*\{(?P<body>.*?)\}", stylesheet, re.DOTALL)
+        self.assertIsNotNone(nav_rule)
+        for declaration in (
+            "position: fixed",
+            "width: 100%",
+            "padding: 0",
+            "backdrop-filter: none",
+        ):
+            self.assertIn(declaration, nav_rule.group("body"))
 
         routes = {item["slug"]: item for item in manifest()["routes"]}
         sources = {item["id"]: item for item in manifest()["sources"]}

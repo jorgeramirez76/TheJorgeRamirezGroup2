@@ -70,6 +70,8 @@ summary:focus-visible {
   gap: 1.25rem;
 }
 .comparison-brand {
+  display: flex;
+  align-items: center;
   color: #FFFFFF;
   font-family: 'Playfair Display', serif;
   font-size: 1.18rem;
@@ -78,6 +80,29 @@ summary:focus-visible {
   white-space: nowrap;
 }
 .comparison-brand span { color: var(--comparison-gold-light); }
+.comparison-brand picture { display: flex; align-items: center; }
+.comparison-brand img {
+  width: 175px;
+  height: 52px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #FFFFFF;
+  object-fit: contain;
+}
+.comparison-menu {
+  width: 44px;
+  height: 44px;
+  display: none;
+  place-items: center;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.42);
+  border-radius: 8px;
+  background: transparent;
+  color: #FFFFFF;
+  font: 700 1.25rem/1 'Inter', sans-serif;
+  cursor: pointer;
+}
 .comparison-nav__links {
   display: flex;
   align-items: center;
@@ -332,6 +357,40 @@ h3 {
   .town-card,
   .decision-card,
   .source-card { padding: 1.1rem; }
+
+  .seller-editorial-page .comparison-nav__inner {
+    position: relative;
+    min-height: 68px;
+    padding: 0;
+  }
+  .seller-editorial-page .comparison-brand img {
+    width: 142px;
+    height: 48px;
+    padding: 5px 8px;
+  }
+  .seller-editorial-page .comparison-menu { display: grid; }
+  .seller-editorial-page .comparison-nav__links {
+    position: absolute;
+    top: 100%;
+    left: -.625rem;
+    right: -.625rem;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .35rem;
+    padding: 1rem 1.25rem 1.25rem;
+    border-top: 1px solid rgba(184,150,46,.28);
+    background: var(--comparison-ink-soft);
+    box-shadow: 0 16px 30px rgba(0,0,0,.32);
+  }
+  .seller-editorial-page .comparison-nav__links.is-open { display: flex; }
+  .seller-editorial-page .comparison-nav__links a,
+  .seller-editorial-page .comparison-nav__links a:not(.comparison-nav__cta):not(.comparison-language) {
+    min-height: 48px;
+    display: flex;
+    justify-content: center;
+    font-size: .82rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
