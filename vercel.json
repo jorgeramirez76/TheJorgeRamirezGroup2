@@ -24,6 +24,76 @@
       "permanent": true
     },
     {
+      "source": "/blog/how-to-sell-house-fast-nj",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-sell-house-fast-nj.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/how-to-sell-house-fast-nj",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/how-to-sell-house-fast-nj.html",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-to-sell-a-house-nj",
+      "destination": "/blog/nj-home-selling-timeline",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-to-sell-a-house-nj.html",
+      "destination": "/blog/nj-home-selling-timeline",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nj-real-estate-market-2025-sellers-guide",
+      "destination": "/blog/best-nj-towns-to-sell-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nj-real-estate-market-2025-sellers-guide.html",
+      "destination": "/blog/best-nj-towns-to-sell-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "destination": "/es/blog/best-nj-towns-to-sell-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/nj-real-estate-market-2025-sellers-guide.html",
+      "destination": "/es/blog/best-nj-towns-to-sell-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-truth-about-fsbo-in-nj-2026",
+      "destination": "/blog/fsbo-vs-realtor-new-jersey",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-truth-about-fsbo-in-nj-2026.html",
+      "destination": "/blog/fsbo-vs-realtor-new-jersey",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/the-truth-about-fsbo-in-nj-2026",
+      "destination": "/es/blog/fsbo-vs-realtor-new-jersey",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/the-truth-about-fsbo-in-nj-2026.html",
+      "destination": "/es/blog/fsbo-vs-realtor-new-jersey",
+      "permanent": true
+    },
+    {
       "source": "/blog/selling-inherited-house-multiple-heirs-nj",
       "destination": "/blog/selling-inherited-home-nj",
       "permanent": true
@@ -741,12 +811,12 @@
     },
     {
       "source": "/blog/selling-your-home-summit-nj-guide.html",
-      "destination": "/blog/selling-home-summit-nj-2026",
+      "destination": "/sell-your-home",
       "permanent": true
     },
     {
       "source": "/blog/selling-your-home-summit-nj-guide",
-      "destination": "/blog/selling-home-summit-nj-2026",
+      "destination": "/sell-your-home",
       "permanent": true
     },
     {
@@ -2272,22 +2342,22 @@
     },
     {
       "source": "/blog/es/guia-vender-casa-nj-2025.html",
-      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "destination": "/es/blog/best-nj-towns-to-sell-home",
       "permanent": true
     },
     {
       "source": "/blog/es/guia-vender-casa-nj-2025",
-      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "destination": "/es/blog/best-nj-towns-to-sell-home",
       "permanent": true
     },
     {
       "source": "/es/blog/es/guia-vender-casa-nj-2025.html",
-      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "destination": "/es/blog/best-nj-towns-to-sell-home",
       "permanent": true
     },
     {
       "source": "/es/blog/es/guia-vender-casa-nj-2025",
-      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "destination": "/es/blog/best-nj-towns-to-sell-home",
       "permanent": true
     },
     {
@@ -2312,22 +2382,22 @@
     },
     {
       "source": "/blog/es/mercado-inmobiliario-nj-2025.html",
-      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "destination": "/es/blog/best-nj-towns-to-sell-home",
       "permanent": true
     },
     {
       "source": "/blog/es/mercado-inmobiliario-nj-2025",
-      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "destination": "/es/blog/best-nj-towns-to-sell-home",
       "permanent": true
     },
     {
       "source": "/es/blog/es/mercado-inmobiliario-nj-2025.html",
-      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "destination": "/es/blog/best-nj-towns-to-sell-home",
       "permanent": true
     },
     {
       "source": "/es/blog/es/mercado-inmobiliario-nj-2025",
-      "destination": "/es/blog/nj-real-estate-market-2025-sellers-guide",
+      "destination": "/es/blog/best-nj-towns-to-sell-home",
       "permanent": true
     },
     {

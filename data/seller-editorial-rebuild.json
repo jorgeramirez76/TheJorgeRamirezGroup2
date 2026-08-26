@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-26",
+  "renderer": "tools/generate_seller_editorial_rebuild.py",
+  "scope": "Bilingual New Jersey seller-education articles reviewed against the last-three-month Search Console export. Distinct educational intent is retained; overlapping, stale, or zero-value routes are consolidated one hop. No source supports a promised price, timing, savings, audience profile, legal outcome, tax outcome, or market forecast.",
+  "gscEvidence": {
+    "file": "work/gsc_compare/Pages.csv",
+    "exportColumns": "Last 3 months Clicks and Last 3 months Impressions",
+    "normalization": "Clean and .html variants were summed by language and path stem.",
+    "reviewedOn": "2026-08-26"
+  },
+  "managedFiles": [
+    "blog/expired-listing-nj-what-to-do.html",
+    "es/blog/expired-listing-nj-what-to-do.html",
+    "blog/absentee-owner-nj-sell-rental-property.html",
+    "es/blog/absentee-owner-nj-sell-rental-property.html",
+    "blog/nj-home-selling-costs.html",
+    "es/blog/nj-home-selling-costs.html",
+    "blog/how-to-sell-your-home-in-new-jersey-without-an-agent-2026.html",
+    "es/blog/how-to-sell-your-home-in-new-jersey-without-an-agent-2026.html",
+    "blog/fsbo-vs-realtor-new-jersey.html",
+    "es/blog/fsbo-vs-realtor-new-jersey.html",
+    "blog/downsizing-your-nj-home.html",
+    "es/blog/downsizing-your-nj-home.html",
+    "blog/decluttering-items-home-value-nj.html",
+    "es/blog/decluttering-items-home-value-nj.html",
+    "blog/how-to-sell-house-fast-nj.html",
+    "es/blog/how-to-sell-house-fast-nj.html",
+    "blog/how-long-to-sell-a-house-nj.html",
+    "blog/selling-your-home-summit-nj-guide.html",
+    "es/blog/selling-your-home-summit-nj-guide.html",
+    "blog/nj-real-estate-market-2025-sellers-guide.html",
+    "es/blog/nj-real-estate-market-2025-sellers-guide.html",
+    "blog/the-truth-about-fsbo-in-nj-2026.html",
+    "es/blog/the-truth-about-fsbo-in-nj-2026.html"
+  ],
+  "sources": [
+    {
+      "id": "njdobi-24-11",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "title": "Bulletin 24-11: Brokerage relationships, agreements, disclosures and compensation",
+      "url": "https://www.nj.gov/dobi/bulletins/blt24_11.pdf",
+      "kind": "state regulatory guidance",
+      "use": "Supports current written brokerage-services-agreement, seller-disclosure, business-relationship, and negotiable-compensation context.",
+      "limit": "It does not set a commission, choose a representation model, interpret a contract, or predict a transaction result.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-rtf",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Realty Transfer Fee",
+      "url": "https://nj.gov/treasury/taxation/realty.shtml",
+      "kind": "state tax guidance",
+      "use": "Supports the current Realty Transfer Fee framework, seller responsibility, graduated percent fee, forms, and exemption resources.",
+      "limit": "It does not calculate a property-specific closing statement or determine whether a seller qualifies for any exemption.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-property-disclosure",
+      "publisher": "New Jersey Division of Consumer Affairs",
+      "title": "Seller's Property Condition Disclosure Statement",
+      "url": "https://www.njconsumeraffairs.gov/Documents/Sellers-Property-Condition-Disclosure-Statement.pdf",
+      "kind": "official state form",
+      "use": "Supports organizing known property condition, occupancy, system, environmental, and flood information for a residential sale.",
+      "limit": "The form is not a substitute for legal advice, inspections, repairs, or a property-specific review of disclosure duties.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-flood-disclosure",
+      "publisher": "New Jersey Department of Environmental Protection",
+      "title": "Flood Risk Notification",
+      "url": "https://dep.nj.gov/flooddisclosure/",
+      "kind": "state disclosure guidance and lookup tool",
+      "use": "Supports address-specific flood-risk research and the current seller and landlord flood-notification framework in New Jersey.",
+      "limit": "The screening resource does not replace a survey, insurance review, engineering opinion, or transaction-specific legal advice.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "epa-lead-disclosure",
+      "publisher": "United States Environmental Protection Agency",
+      "title": "Lead-Based Paint Disclosure Rule",
+      "url": "https://www.epa.gov/lead/lead-based-paint-disclosure-rule-section-1018-title-x",
+      "kind": "federal regulatory guidance",
+      "use": "Supports the federal lead-information, records, pamphlet, warning-statement, and buyer-opportunity framework for most pre-1978 housing.",
+      "limit": "It does not determine whether a particular property is covered, exempt, lead-safe, or compliant without a fact-specific review.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "irs-pub-523",
+      "publisher": "Internal Revenue Service",
+      "title": "Publication 523: Selling Your Home",
+      "url": "https://www.irs.gov/forms-pubs/about-publication-523",
+      "kind": "federal tax publication",
+      "use": "Supports the tax-record and worksheet framework for basis, gain, main-home use, exclusions, business or rental use, and reporting questions.",
+      "limit": "It does not establish a seller's eligibility or taxable gain; those conclusions depend on records, facts, elections, and current tax advice.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "irs-pub-544",
+      "publisher": "Internal Revenue Service",
+      "title": "Publication 544: Sales and Other Dispositions of Assets",
+      "url": "https://www.irs.gov/publications/p544",
+      "kind": "federal tax publication",
+      "use": "Supports a records-first review when a property was used for business, rental, investment, or mixed personal and income-producing purposes.",
+      "limit": "It does not calculate basis, depreciation treatment, gain, loss, filing position, or the tax effect of a proposed sale.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-landlord-tenant",
+      "publisher": "New Jersey Department of Community Affairs",
+      "title": "Landlord-Tenant Information",
+      "url": "https://www.nj.gov/dca/home/landlord-tenant.shtml",
+      "kind": "state landlord-tenant resource hub",
+      "use": "Supports checking current landlord, tenant, lease, flood-notice, eviction, protected-tenancy, and Truth in Renting resources before a sale.",
+      "limit": "The hub is general information and does not decide lease rights, possession, notice, access, security-deposit, or closing questions.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-security-deposit",
+      "publisher": "New Jersey Department of Community Affairs",
+      "title": "New Jersey Security Deposit Law",
+      "url": "https://www.nj.gov/dca/divisions/codes/publications/pdf_lti/sdepsit_law.pdf",
+      "kind": "state statutory resource",
+      "use": "Supports flagging security-deposit records, accrued interest, transfer, and tenant-notice questions when ownership of rental property changes.",
+      "limit": "It does not resolve disputed balances, lease interpretation, exemptions, closing instructions, or duties for a particular property.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-fire-portal",
+      "publisher": "New Jersey Department of Community Affairs, Division of Fire Safety",
+      "title": "Fire Safety Service Portal: Smoke Certification Guide",
+      "url": "https://firesolutions.dca.nj.gov/ultra-fire-home/first-time-user-guide/",
+      "kind": "state administrative portal guidance",
+      "use": "Supports checking the current smoke-alarm, carbon-monoxide-alarm, and portable-fire-extinguisher certificate process where applicable.",
+      "limit": "It does not replace the enforcing agency or municipality, which controls the application, inspection, timing, and property-specific requirements.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njrealtor-reports",
+      "publisher": "New Jersey REALTORS®",
+      "title": "Public State and County Housing Market Reports",
+      "url": "https://www.njrealtor.com/research/10k/",
+      "kind": "association market-report directory",
+      "use": "Supports using dated state and county reports as broad context while retaining the report period, property type, definitions, and publication lag.",
+      "limit": "A state or county report is not a valuation, a municipality report, a current comparable-sale analysis, or a forecast for one property.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njdep-recycling",
+      "publisher": "New Jersey Department of Environmental Protection",
+      "title": "County and Municipal Recycling Coordinator Locator",
+      "url": "https://dep.nj.gov/dshw/rhwm/recycoor/",
+      "kind": "state waste-management directory",
+      "use": "Supports checking current county and municipal instructions before recycling, donating, or disposing of electronics and other controlled materials.",
+      "limit": "It does not establish what a particular program accepts, its hours, residency rules, fees, or safe handling instructions on a given date.",
+      "accessedOn": "2026-08-26"
+    }
+  ],
+  "retainedClusters": {
+    "expired-listing": {
+      "decision": "retain-rebuild",
+      "intent": "Audit an expired listing and prepare a fact-specific relisting decision without blaming one cause or promising a result.",
+      "sourceIds": ["njdobi-24-11", "nj-property-disclosure", "nj-flood-disclosure", "njrealtor-reports"],
+      "en": {
+        "file": "blog/expired-listing-nj-what-to-do.html",
+        "route": "/blog/expired-listing-nj-what-to-do",
+        "title": "Expired Listing in NJ: A Source-Led Relisting Review",
+        "description": "Review an expired New Jersey listing using showing access, property condition, pricing evidence, disclosures, marketing records and a written relisting scope.",
+        "headline": "An expired NJ listing is a record to review, not a verdict",
+        "publishedOn": "2025-03-23",
+        "searchConsole": {"clicks": 3, "impressions": 71}
+      },
+      "es": {
+        "file": "es/blog/expired-listing-nj-what-to-do.html",
+        "route": "/es/blog/expired-listing-nj-what-to-do",
+        "title": "Publicación Vencida en NJ: Revisión para Relistar",
+        "description": "Revise una publicación vencida en NJ con acceso, condición, evidencia de precio, divulgaciones, historial de mercadeo y un alcance escrito para relistar.",
+        "headline": "Una publicación vencida en NJ es un registro para revisar",
+        "publishedOn": "2025-03-23",
+        "searchConsole": {"clicks": 0, "impressions": 1}
+      }
+    },
+    "rental-property": {
+      "decision": "retain-rebuild",
+      "intent": "Plan a New Jersey rental-property sale with occupancy, records, access, security-deposit, condition, and tax questions separated.",
+      "sourceIds": ["nj-landlord-tenant", "nj-security-deposit", "nj-property-disclosure", "nj-flood-disclosure", "irs-pub-523", "irs-pub-544", "nj-rtf"],
+      "en": {
+        "file": "blog/absentee-owner-nj-sell-rental-property.html",
+        "route": "/blog/absentee-owner-nj-sell-rental-property",
+        "title": "Selling Rental Property in NJ: Owner Planning Guide",
+        "description": "Plan an NJ rental-property sale with lease, access, security-deposit, condition, tax-record, transfer-fee and occupancy questions organized before listing.",
+        "headline": "Selling an NJ rental starts with the occupancy and record file",
+        "publishedOn": "2025-03-23",
+        "searchConsole": {"clicks": 2, "impressions": 248}
+      },
+      "es": {
+        "file": "es/blog/absentee-owner-nj-sell-rental-property.html",
+        "route": "/es/blog/absentee-owner-nj-sell-rental-property",
+        "title": "Vender Propiedad de Alquiler en NJ: Guía del Dueño",
+        "description": "Organice una venta de alquiler en NJ con contrato, acceso, depósito, condición, registros fiscales, tarifas de transferencia y ocupación antes de publicar.",
+        "headline": "La venta de un alquiler en NJ comienza con sus registros",
+        "publishedOn": "2025-03-23",
+        "searchConsole": {"clicks": 0, "impressions": 12}
+      }
+    },
+    "selling-costs": {
+      "decision": "retain-rebuild",
+      "intent": "Build a property-specific seller net worksheet without generic total-cost percentages, fixed commissions, or invented fee ranges.",
+      "sourceIds": ["nj-rtf", "njdobi-24-11", "irs-pub-523", "nj-property-disclosure", "nj-fire-portal"],
+      "en": {
+        "file": "blog/nj-home-selling-costs.html",
+        "route": "/blog/nj-home-selling-costs",
+        "title": "NJ Home-Selling Costs: Build a Property-Specific Net",
+        "description": "Build an NJ seller net worksheet from the proposed price, payoff, transfer fees, negotiated services, repairs, credits, legal items and moving costs.",
+        "headline": "NJ selling costs belong in a property-specific net sheet",
+        "publishedOn": "2026-03-17",
+        "searchConsole": {"clicks": 0, "impressions": 497}
+      },
+      "es": {
+        "file": "es/blog/nj-home-selling-costs.html",
+        "route": "/es/blog/nj-home-selling-costs",
+        "title": "Costos de Vender Casa en NJ: Prepare su Neto",
+        "description": "Prepare un neto de venta en NJ con precio propuesto, saldo hipotecario, tarifas, servicios negociados, reparaciones, créditos y mudanza.",
+        "headline": "Los costos de vender en NJ necesitan una hoja de neto",
+        "publishedOn": "2026-03-17",
+        "searchConsole": {"clicks": 3, "impressions": 90}
+      }
+    },
+    "fsbo-process": {
+      "decision": "retain-rebuild",
+      "intent": "Explain the operational sequence of selling without a listing agent while separating brokerage, legal, tax, inspection, and title roles.",
+      "sourceIds": ["njdobi-24-11", "nj-property-disclosure", "nj-flood-disclosure", "epa-lead-disclosure", "nj-rtf", "nj-fire-portal"],
+      "en": {
+        "file": "blog/how-to-sell-your-home-in-new-jersey-without-an-agent-2026.html",
+        "route": "/blog/how-to-sell-your-home-in-new-jersey-without-an-agent-2026",
+        "title": "How to Sell a House Without an Agent in NJ: FSBO Guide",
+        "description": "Use a neutral NJ FSBO sequence for records, pricing evidence, disclosures, access, offers, due diligence, municipal items, title and closing coordination.",
+        "headline": "A New Jersey FSBO sale is a sequence of documented decisions",
+        "publishedOn": "2025-03-01",
+        "searchConsole": {"clicks": 0, "impressions": 261}
+      },
+      "es": {
+        "file": "es/blog/how-to-sell-your-home-in-new-jersey-without-an-agent-2026.html",
+        "route": "/es/blog/how-to-sell-your-home-in-new-jersey-without-an-agent-2026",
+        "title": "Cómo Vender Casa sin Agente en NJ: Guía FSBO",
+        "description": "Use una secuencia FSBO neutral en NJ para registros, precio, divulgaciones, acceso, ofertas, diligencia, municipio, título y coordinación del cierre.",
+        "headline": "Una venta FSBO en NJ requiere decisiones documentadas",
+        "publishedOn": "2025-03-01",
+        "searchConsole": {"clicks": 0, "impressions": 57}
+      }
+    },
+    "fsbo-comparison": {
+      "decision": "retain-rebuild",
+      "intent": "Compare seller-retained work and brokerage scope without claiming that either path automatically yields a price, savings, or timing result.",
+      "sourceIds": ["njdobi-24-11", "nj-property-disclosure", "nj-flood-disclosure", "epa-lead-disclosure", "nj-rtf"],
+      "en": {
+        "file": "blog/fsbo-vs-realtor-new-jersey.html",
+        "route": "/blog/fsbo-vs-realtor-new-jersey",
+        "title": "FSBO vs. Agent in NJ: Compare Scope, Cost and Risk",
+        "description": "Compare NJ FSBO and listing-broker paths by written scope, seller workload, pricing evidence, access, disclosures, offer review and property-specific net.",
+        "headline": "Compare NJ FSBO and agent service by scope, not slogans",
+        "publishedOn": "2025-03-23",
+        "searchConsole": {"clicks": 0, "impressions": 49}
+      },
+      "es": {
+        "file": "es/blog/fsbo-vs-realtor-new-jersey.html",
+        "route": "/es/blog/fsbo-vs-realtor-new-jersey",
+        "title": "FSBO vs. Agente en NJ: Alcance, Costo y Riesgo",
+        "description": "Compare FSBO y corredor en NJ por alcance escrito, trabajo del dueño, evidencia de precio, acceso, divulgaciones, ofertas y neto específico.",
+        "headline": "Compare FSBO y servicio de agente por alcance escrito",
+        "publishedOn": "2025-03-23",
+        "searchConsole": {"clicks": 0, "impressions": 8}
+      }
+    },
+    "downsizing": {
+      "decision": "retain-rebuild",
+      "intent": "Plan a move to a different housing footprint around property use, carrying work, transaction order, records, and budget without age targeting.",
+      "sourceIds": ["irs-pub-523", "nj-rtf", "nj-property-disclosure", "nj-fire-portal", "njdep-recycling"],
+      "en": {
+        "file": "blog/downsizing-your-nj-home.html",
+        "route": "/blog/downsizing-your-nj-home",
+        "title": "Downsizing a NJ Home: Property and Move Planning",
+        "description": "Plan an NJ move to a different housing footprint by comparing space use, upkeep, transaction order, tax records, possessions and property-specific costs.",
+        "headline": "A smaller housing footprint starts with a written use-and-move plan",
+        "publishedOn": "2026-03-17",
+        "searchConsole": {"clicks": 0, "impressions": 41}
+      },
+      "es": {
+        "file": "es/blog/downsizing-your-nj-home.html",
+        "route": "/es/blog/downsizing-your-nj-home",
+        "title": "Mudarse a Menos Espacio en NJ: Plan de Vivienda",
+        "description": "Planifique un espacio distinto en NJ comparando uso, mantenimiento, orden de transacciones, registros fiscales, pertenencias y costos de la propiedad.",
+        "headline": "Un espacio distinto comienza con un plan de uso y mudanza",
+        "publishedOn": "2026-03-17",
+        "searchConsole": {"clicks": 0, "impressions": 0}
+      }
+    },
+    "decluttering": {
+      "decision": "retain-rebuild",
+      "intent": "Create a room-by-room sorting and documentation plan without claiming that removing particular belongings raises price or guarantees buyer response.",
+      "sourceIds": ["njdep-recycling", "nj-property-disclosure", "epa-lead-disclosure"],
+      "en": {
+        "file": "blog/decluttering-items-home-value-nj.html",
+        "route": "/blog/decluttering-items-home-value-nj",
+        "title": "Decluttering Before Selling a NJ Home: Practical Plan",
+        "description": "Use a room-by-room NJ pre-listing plan for personal records, access, storage, disposal, condition notes and items that should remain available for review.",
+        "headline": "Declutter for access and documentation, not a promised price",
+        "publishedOn": "2026-04-05",
+        "searchConsole": {"clicks": 0, "impressions": 3}
+      },
+      "es": {
+        "file": "es/blog/decluttering-items-home-value-nj.html",
+        "route": "/es/blog/decluttering-items-home-value-nj",
+        "title": "Ordenar Antes de Vender Casa en NJ: Plan Práctico",
+        "description": "Use un plan por habitación en NJ para documentos, acceso, almacenamiento, descarte, notas de condición y artículos que deben quedar para revisión.",
+        "headline": "Ordene para facilitar acceso y documentación, sin promesas",
+        "publishedOn": "2026-04-05",
+        "searchConsole": {"clicks": 0, "impressions": 1}
+      }
+    }
+  },
+  "consolidations": {
+    "/blog/how-to-sell-house-fast-nj": "/sell-your-home",
+    "/es/blog/how-to-sell-house-fast-nj": "/es/sell-your-home",
+    "/blog/how-long-to-sell-a-house-nj": "/blog/nj-home-selling-timeline",
+    "/blog/selling-your-home-summit-nj-guide": "/sell-your-home",
+    "/es/blog/selling-your-home-summit-nj-guide": "/es/sell-your-home",
+    "/blog/nj-real-estate-market-2025-sellers-guide": "/blog/best-nj-towns-to-sell-home",
+    "/es/blog/nj-real-estate-market-2025-sellers-guide": "/es/blog/best-nj-towns-to-sell-home",
+    "/blog/the-truth-about-fsbo-in-nj-2026": "/blog/fsbo-vs-realtor-new-jersey",
+    "/es/blog/the-truth-about-fsbo-in-nj-2026": "/es/blog/fsbo-vs-realtor-new-jersey"
+  },
+  "consolidationEvidence": {
+    "/blog/how-to-sell-house-fast-nj": {"clicks": 0, "impressions": 26, "reason": "Commercial urgency intent duplicates the primary seller service; a one-hop consolidation avoids a second competing article."},
+    "/es/blog/how-to-sell-house-fast-nj": {"clicks": 0, "impressions": 85, "reason": "Commercial urgency intent duplicates the localized primary seller service; equity is preserved with one permanent hop."},
+    "/blog/how-long-to-sell-a-house-nj": {"clicks": 0, "impressions": 0, "reason": "The rebuilt bilingual home-selling timeline already owns the source-led sequence and avoids fixed duration claims."},
+    "/blog/selling-your-home-summit-nj-guide": {"clicks": 0, "impressions": 6, "reason": "A thin local seller doorway is consolidated to the primary seller service rather than retained as location promotional copy."},
+    "/es/blog/selling-your-home-summit-nj-guide": {"clicks": 0, "impressions": 2, "reason": "A thin localized seller doorway is consolidated to the localized primary seller service."},
+    "/blog/nj-real-estate-market-2025-sellers-guide": {"clicks": 0, "impressions": 2, "reason": "The year-stale market article duplicates the current source-led seller market research guide."},
+    "/es/blog/nj-real-estate-market-2025-sellers-guide": {"clicks": 0, "impressions": 1, "reason": "The year-stale Spanish market article duplicates the current bilingual seller market research guide."},
+    "/blog/the-truth-about-fsbo-in-nj-2026": {"clicks": 0, "impressions": 35, "reason": "The promotional truth-versus-myth angle duplicates the retained neutral FSBO-versus-agent comparison."},
+    "/es/blog/the-truth-about-fsbo-in-nj-2026": {"clicks": 0, "impressions": 0, "reason": "The promotional Spanish duplicate is consolidated to the localized neutral comparison."}
+  }
+}

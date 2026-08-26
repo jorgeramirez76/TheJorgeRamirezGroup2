@@ -38,6 +38,29 @@ def escaped_attribute(value: str) -> str:
     return html.escape(value, quote=False).replace('"', "&quot;")
 
 
+def is_noindex(document: str) -> bool:
+    """Return whether a document explicitly opts out of indexing.
+
+    Consolidated archive fallbacks may remain in the snippet inventory for
+    historical accountability.  The snippet updater must never turn those
+    neutral fallbacks back into indexable-looking landing pages.
+    """
+    for match in META_TAG.finditer(document):
+        tag = match.group(0)
+        name = attribute_value(tag, "name")
+        content = attribute_value(tag, "content")
+        if not name or name.casefold() != "robots" or not content:
+            continue
+        directives = {
+            directive.casefold()
+            for directive in re.split(r"[\s,]+", content)
+            if directive
+        }
+        if "noindex" in directives:
+            return True
+    return False
+
+
 def replace_meta(
     document: str,
     selector_attribute: str,
@@ -157,6 +180,8 @@ def main() -> int:
             continue
         path = ROOT / relative
         before = path.read_text(encoding="utf-8")
+        if is_noindex(before):
+            continue
         try:
             after = render(before, metadata)
         except ValueError as error:

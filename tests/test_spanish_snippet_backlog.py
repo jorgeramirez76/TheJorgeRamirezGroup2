@@ -202,6 +202,17 @@ class SpanishSnippetBacklogTests(unittest.TestCase):
         assert spec and spec.loader
         spec.loader.exec_module(module)
 
+        self.assertTrue(
+            module.is_noindex(
+                "<meta content='follow, NOINDEX' name='robots'>"
+            )
+        )
+        self.assertFalse(
+            module.is_noindex(
+                '<meta name="robots" content="index, follow">'
+            )
+        )
+
         sample = """<!doctype html><html><head>
 <title>Título anterior</title>
 <meta content='Descripción anterior' name='description'>

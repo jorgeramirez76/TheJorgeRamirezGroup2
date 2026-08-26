@@ -49,10 +49,16 @@ summary:focus-visible {
 
 .comparison-nav {
   position: sticky;
+  width: 100%;
   top: 0;
   z-index: 100;
+  padding: 0;
   background: var(--comparison-ink);
+  backdrop-filter: none;
   border-bottom: 2px solid var(--comparison-gold);
+  box-shadow: none;
+  font-family: 'Inter', sans-serif;
+  transition: none;
 }
 .comparison-nav__inner {
   width: min(1180px, calc(100% - 2rem));
@@ -84,6 +90,7 @@ summary:focus-visible {
   display: inline-flex;
   align-items: center;
   color: #EEEEEE;
+  font-family: 'Inter', sans-serif;
   font-size: .78rem;
   font-weight: 700;
   letter-spacing: .05em;
