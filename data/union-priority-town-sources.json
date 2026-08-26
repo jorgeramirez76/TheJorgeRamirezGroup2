@@ -1,0 +1,344 @@
+{
+  "accessed": "2026-08-25",
+  "methodology": "Only municipal, county, state, public-school-district, and NJ TRANSIT sources were used. The pages intentionally omit market estimates, rankings, commute-duration promises, and subjective neighborhood claims. Readers are directed to verify time-sensitive details with the responsible public agency.",
+  "towns": {
+    "berkeley-heights": {
+      "name": "Berkeley Heights",
+      "sources": [
+        {
+          "category": "municipal",
+          "publisher": "Township of Berkeley Heights",
+          "url": "https://www.berkeleyheights.gov/DocumentCenter/View/6577/Master-Plan-2022_Exist-Conditions-Vol-1",
+          "fact_supported": "The township's official existing-conditions plan identifies Berkeley Heights as a Union County municipality and describes its municipal government and local planning context.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/berkeley-heights-station",
+          "fact_supported": "Berkeley Heights Station is at Sherman and Plainfield avenues and serves the Morris & Essex rail system; current station, parking, and accessibility details are maintained by NJ TRANSIT.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "Berkeley Heights Public Schools",
+          "url": "https://www.bhpsnj.org/page/district-home",
+          "fact_supported": "The district lists its early-childhood, elementary, middle, and high-school campuses and notes the high-school sending relationship with Mountainside.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "NJDOE publishes official school and district performance reports and advises readers to use them as one part of broader school research.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "parks_civic",
+          "publisher": "Township of Berkeley Heights",
+          "url": "https://www.berkeleyheights.gov/Facilities/Facility/Details/Snyder-Avenue-Park-9",
+          "fact_supported": "The township facility page identifies Snyder Avenue Park, its listed recreation facilities, county ownership, and local maintenance responsibilities.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Township of Berkeley Heights",
+          "url": "https://www.berkeleyheights.gov/203/Zoning-Tree-Inspections",
+          "fact_supported": "The Zoning and Tree Inspections office publishes the zoning map, permit materials, land-use links, and tree-removal requirements.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Township of Berkeley Heights",
+          "url": "https://www.berkeleyheights.gov/265/Responsible-Department",
+          "fact_supported": "The township directory routes block-and-lot, zoning, flood-map, wetlands-map, permit, and tax questions to the responsible municipal offices.",
+          "accessed": "2026-08-25"
+        }
+      ]
+    },
+    "cranford": {
+      "name": "Cranford",
+      "sources": [
+        {
+          "category": "municipal",
+          "publisher": "Township of Cranford",
+          "url": "https://www.cranfordnj.org/1952/Township-Committee",
+          "fact_supported": "Cranford's Township Committee has five elected commissioners and annually appoints the mayor and deputy mayor; official agendas and minutes are linked there.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/cranford-station",
+          "fact_supported": "Cranford Station is on the Raritan Valley Line; NJ TRANSIT maintains the current station, schedule, alert, ticketing, bicycle, and parking information.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "Cranford Public Schools",
+          "url": "https://www.cranfordschools.org/",
+          "fact_supported": "The district's official site provides its school directory, registration information, reports, calendars, and district notices.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "NJDOE publishes official school and district performance reports and advises readers to use them as one part of broader school research.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "parks_civic",
+          "publisher": "County of Union",
+          "url": "https://ucnj.org/parks-activities/",
+          "fact_supported": "Union County's official parks directory lists Cranford locations including Nomahegan, Sperry, and Unami and identifies available facilities by park.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Township of Cranford",
+          "url": "https://www.cranfordnj.org/2479/Applications-Maps-and-Resources",
+          "fact_supported": "The township planning office publishes land-development applications, zoning resources, an interactive zoning map, and floodplain research links.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Township of Cranford",
+          "url": "https://www.cranfordnj.org/2600/Flood-Maps",
+          "fact_supported": "The township directs prospective buyers and owners to review current flood exposure using official mapping and to ask township staff about a specific property.",
+          "accessed": "2026-08-25"
+        }
+      ]
+    },
+    "fanwood": {
+      "name": "Fanwood",
+      "sources": [
+        {
+          "category": "municipal",
+          "publisher": "Borough of Fanwood",
+          "url": "https://fanwoodnj.org/government/",
+          "fact_supported": "Fanwood's official government page describes an elected mayor and six-member council and links public meeting information.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/fanwood-station",
+          "fact_supported": "Fanwood Station is on the Raritan Valley Line at the North/South Avenue and Martine Avenue area; NJ TRANSIT maintains current station and parking details.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "Scotch Plains-Fanwood Public Schools",
+          "url": "https://www.spfk12.org/our-district/our-schools",
+          "fact_supported": "The regional district publishes its school list and an address-based street index for assignment research, including La Grande Elementary in Fanwood.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "NJDOE publishes official school and district performance reports and advises readers to use them as one part of broader school research.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "parks_civic",
+          "publisher": "Borough of Fanwood",
+          "url": "https://fanwoodnj.org/departments/recreation-info/",
+          "fact_supported": "Fanwood Recreation oversees borough parks and recreation facilities, reservations, programs, and civic events.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Borough of Fanwood",
+          "url": "https://fanwoodnj.org/departments/zoning/",
+          "fact_supported": "The borough zoning office publishes the zoning map, land-use materials, project guidance, and permit forms and advises parcel-specific review.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Borough of Fanwood",
+          "url": "https://fanwoodnj.org/departments/taxes/",
+          "fact_supported": "The borough tax page identifies the assessor's responsibilities and provides access to tax-map, assessment, and appeal information.",
+          "accessed": "2026-08-25"
+        }
+      ]
+    },
+    "new-providence": {
+      "name": "New Providence",
+      "sources": [
+        {
+          "category": "municipal",
+          "publisher": "Borough of New Providence",
+          "url": "https://www.newprov.us/404/Mayor-Borough-Council",
+          "fact_supported": "The official page explains New Providence's mayor-and-council government and provides meeting, agenda, and contact links.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/new-providence-station",
+          "fact_supported": "New Providence Station is at Springfield Avenue and Pittsford Way on the Morris & Essex rail system; current details are maintained by NJ TRANSIT.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/murray-hill-station",
+          "fact_supported": "Murray Hill Station is at Foley Place between Floral Avenue and Southgate Road in New Providence and serves the Morris & Essex rail system.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "New Providence School District",
+          "url": "https://www.npsd.k12.nj.us/schools",
+          "fact_supported": "The district lists Allen W. Roberts and Salt Brook elementary schools, New Providence Middle School, and New Providence High School.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "NJDOE publishes official school and district performance reports and advises readers to use them as one part of broader school research.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "parks_civic",
+          "publisher": "Borough of New Providence",
+          "url": "https://www.newprov.us/Facilities",
+          "fact_supported": "The borough facilities directory lists public spaces including Centennial Park, the Municipal Center gym, and borough fields.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Borough of New Providence",
+          "url": "https://www.newprov.us/239/Tax-Assessor",
+          "fact_supported": "The assessor page provides parcel research, assessment appeal, tax-map, ownership, and property-tax guidance links.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Borough of New Providence",
+          "url": "https://www.newprov.us/260/Borough-Ordinances",
+          "fact_supported": "The borough maintains adopted ordinances and directs readers to recent zoning and land-use changes.",
+          "accessed": "2026-08-25"
+        }
+      ]
+    },
+    "roselle-park": {
+      "name": "Roselle Park",
+      "sources": [
+        {
+          "category": "municipal",
+          "publisher": "Borough of Roselle Park",
+          "url": "https://www.rosellepark.net/27/Government",
+          "fact_supported": "The borough's official government page describes its government structure and identifies the combined Municipal Land Use Board.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/roselle-park-station",
+          "fact_supported": "Roselle Park Station is at Lincoln and Chestnut streets on the Raritan Valley Line; current station advisories and access details are maintained by NJ TRANSIT.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "Roselle Park School District",
+          "url": "https://www.rpsd.org/registration-for-the-roselle-park-2",
+          "fact_supported": "The district registration page identifies three elementary schools, one middle school, and one high school and publishes current registration requirements.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "NJDOE publishes official school and district performance reports and advises readers to use them as one part of broader school research.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "parks_civic",
+          "publisher": "Borough of Roselle Park",
+          "url": "https://www.rosellepark.net/257/Township-Profile",
+          "fact_supported": "The borough profile identifies municipal recreation locations including Herm Shaw Field and Acker Park.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Borough of Roselle Park",
+          "url": "https://www.rosellepark.net/186/Planning-and-Zoning",
+          "fact_supported": "The Planning and Zoning page provides the borough zoning map and current land-use planning resources.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Borough of Roselle Park",
+          "url": "https://www.rosellepark.net/231/Tax-Assessor",
+          "fact_supported": "The assessor page links tax maps and assessment-appeal research and provides the responsible office's contact information.",
+          "accessed": "2026-08-25"
+        }
+      ]
+    },
+    "springfield": {
+      "name": "Springfield",
+      "sources": [
+        {
+          "category": "municipal",
+          "publisher": "Township of Springfield",
+          "url": "https://springfield-nj.us/meetings/",
+          "fact_supported": "The official municipal page publishes Township Committee, Planning Board, and Board of Adjustment meeting records.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://content.njtransit.com/sites/default/files/bus_schedules/T1114.pdf",
+          "fact_supported": "The official Route 114 timetable identifies a Springfield stop at Morris Avenue and Morris Road and must be checked for current trip times and service notes.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "transit",
+          "publisher": "Township of Springfield",
+          "url": "https://springfield-nj.us/jitney/",
+          "fact_supported": "The township publishes its local park-and-ride jitney connection between the community pool lot and Short Hills Station, with service updates on the official page.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "Springfield Public Schools",
+          "url": "https://www.springfieldschools.com/schools",
+          "fact_supported": "The district lists its early-childhood, elementary, middle, and Jonathan Dayton High School campuses.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "schools",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "NJDOE publishes official school and district performance reports and advises readers to use them as one part of broader school research.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "parks_civic",
+          "publisher": "County of Union",
+          "url": "https://ucnj.org/parks-activities/",
+          "fact_supported": "Union County's official parks directory identifies Washington Avenue Park in Springfield and the municipalities connected to Watchung Reservation.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Township of Springfield",
+          "url": "https://springfield-nj.us/wp-content/uploads/2023/08/zoning-permit-application-form-FINAL-2023.pdf",
+          "fact_supported": "The municipal zoning application directs applicants to provide parcel, survey, scope, and prior land-use-board information for official review.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "category": "property_due_diligence",
+          "publisher": "Township of Springfield",
+          "url": "https://springfield-nj.us/wp-content/uploads/2026/01/2026-DPW-Services-Brochure-Google-Docs.pdf",
+          "fact_supported": "The current municipal services guide identifies the offices responsible for zoning, engineering, building permits, tax assessment, tax collection, and public works questions.",
+          "accessed": "2026-08-25"
+        }
+      ]
+    }
+  }
+}
