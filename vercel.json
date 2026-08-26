@@ -1771,6 +1771,26 @@
       "permanent": true
     },
     {
+      "source": "/blog/top-nyc-commuter-towns-nj-2026.html",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
+      "source": "/blog/top-nyc-commuter-towns-nj-2026",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/top-nyc-commuter-towns-nj-2026.html",
+      "destination": "/es/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/top-nyc-commuter-towns-nj-2026",
+      "destination": "/es/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
       "source": "/blog/es/guia-vender-casa-summit-nj.html",
       "destination": "/es/blog/selling-home-summit-nj-2026",
       "permanent": true

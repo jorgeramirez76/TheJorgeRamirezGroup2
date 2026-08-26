@@ -835,6 +835,58 @@ def render(language: str) -> str:
 '''
 
 
+def redirect_stub(language: str) -> str:
+    """Return a minimal fallback for a URL consolidated into the main guide."""
+    destination = (
+        "/blog/best-nj-suburbs-nyc-commuters"
+        if language == "en"
+        else "/es/blog/best-nj-suburbs-nyc-commuters"
+    )
+    canonical = f"https://thejorgeramirezgroup.com{destination}"
+    if language == "en":
+        title = "NJ Commuter Guide Moved | Jorge Ramirez"
+        heading = "The NJ commuter guide has moved"
+        body = "Continue to the source-backed comparison of selected New Jersey station areas and official transit planning tools."
+        label = "Open the current commuter guide"
+    else:
+        title = "La Guía de Transporte se Trasladó | Jorge Ramirez"
+        heading = "La guía de transporte de NJ se trasladó"
+        body = "Continúe a la comparación respaldada por fuentes de estaciones seleccionadas y herramientas oficiales de transporte."
+        label = "Abrir la guía vigente"
+    return f'''<!doctype html>
+<html lang="{language}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1A1A1A">
+  <title>{esc(title)}</title>
+  <meta name="description" content="{esc(body)}">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{canonical}">
+  <meta http-equiv="refresh" content="0; url={destination}">
+  <style>
+    :root {{ --ink:#1A1A1A; --red:#C41230; --gold:#B8962E; --ivory:#FAFAF8; }}
+    * {{ box-sizing:border-box; }}
+    body {{ margin:0; min-height:100vh; display:grid; place-items:center; padding:24px; background:var(--ink); color:var(--ivory); font-family:Inter,Arial,sans-serif; }}
+    main {{ width:min(680px,100%); padding:clamp(28px,7vw,58px); background:#0A0A0A; border:1px solid var(--gold); border-top:5px solid var(--red); text-align:center; }}
+    h1 {{ margin:0 0 16px; font-family:'Playfair Display',Georgia,serif; font-size:clamp(2rem,7vw,3.4rem); line-height:1.12; }}
+    p {{ color:#D8D2C8; line-height:1.7; }}
+    a {{ min-height:48px; display:inline-flex; align-items:center; justify-content:center; margin-top:12px; padding:12px 20px; background:var(--red); color:#fff; font-weight:700; text-decoration:none; border:2px solid transparent; }}
+    a:focus-visible {{ outline:3px solid var(--gold); outline-offset:3px; }}
+  </style>
+  <script>window.location.replace('{destination}');</script>
+</head>
+<body>
+  <main id="main">
+    <h1>{esc(heading)}</h1>
+    <p>{esc(body)}</p>
+    <a href="{destination}">{esc(label)}</a>
+  </main>
+</body>
+</html>
+'''
+
+
 def main() -> None:
     targets = {
         "en": ROOT / "blog" / "best-nj-suburbs-nyc-commuters.html",
@@ -843,6 +895,13 @@ def main() -> None:
     for language, target in targets.items():
         target.write_text(render(language), encoding="utf-8")
         print(f"wrote {target.relative_to(ROOT)}")
+    legacy_targets = {
+        "en": ROOT / "blog" / "top-nyc-commuter-towns-nj-2026.html",
+        "es": ROOT / "es" / "blog" / "top-nyc-commuter-towns-nj-2026.html",
+    }
+    for language, target in legacy_targets.items():
+        target.write_text(redirect_stub(language), encoding="utf-8")
+        print(f"wrote {target.relative_to(ROOT)} redirect fallback")
 
 
 if __name__ == "__main__":
