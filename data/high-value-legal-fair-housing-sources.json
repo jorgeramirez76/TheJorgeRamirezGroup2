@@ -1,0 +1,578 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-26",
+  "renderer": "tools/generate_high_value_legal_fair_housing.py",
+  "scope": "Primary-source record and exact route contract for high-value New Jersey buyer-agreement, selling-timeline, probate, assessment-appeal, and neutral municipal-comparison pages.",
+  "managedFiles": [
+    "blog/how-to-appeal-nj-property-taxes-2026.html",
+    "blog/maplewood-vs-south-orange-nj.html",
+    "blog/nj-home-selling-timeline.html",
+    "blog/probate-real-estate-nj-guide.html",
+    "blog/selling-inherited-house-multiple-heirs-nj.html",
+    "blog/summit-vs-westfield-nj.html",
+    "buyer-agency-agreement-nj.html",
+    "es/blog/maplewood-vs-south-orange-nj.html",
+    "es/blog/nj-home-selling-timeline.html",
+    "es/blog/probate-real-estate-nj-guide.html",
+    "es/blog/summit-vs-westfield-nj.html",
+    "es/buyer-agency-agreement-nj.html",
+    "westfield-vs-scotch-plains-nj.html"
+  ],
+  "clusters": {
+    "buyer-agency": {
+      "files": [
+        "buyer-agency-agreement-nj.html",
+        "es/buyer-agency-agreement-nj.html"
+      ],
+      "sourceIds": [
+        "njdobi-bulletin-24-11",
+        "njrec-compliance-faq",
+        "nar-written-buyer-agreements",
+        "nar-open-house-guide"
+      ]
+    },
+    "maplewood-south-orange": {
+      "files": [
+        "blog/maplewood-vs-south-orange-nj.html",
+        "es/blog/maplewood-vs-south-orange-nj.html"
+      ],
+      "sourceIds": [
+        "maplewood-municipality",
+        "south-orange-municipality",
+        "somsd",
+        "njdoe-school-performance-2024-25",
+        "maplewood-census-profile",
+        "south-orange-census-profile",
+        "maplewood-station",
+        "south-orange-station",
+        "njtransit-trip-planner",
+        "nj-property-tax-statistics",
+        "nj-dca-fair-housing",
+        "nj-oag-fair-housing"
+      ]
+    },
+    "summit-westfield": {
+      "files": [
+        "blog/summit-vs-westfield-nj.html",
+        "es/blog/summit-vs-westfield-nj.html"
+      ],
+      "sourceIds": [
+        "summit-municipality",
+        "westfield-municipality",
+        "summit-school-district",
+        "westfield-school-district",
+        "njdoe-school-performance-2024-25",
+        "summit-census-profile",
+        "westfield-census-profile",
+        "summit-station",
+        "westfield-station",
+        "njtransit-trip-planner",
+        "nj-property-tax-statistics",
+        "nj-dca-fair-housing",
+        "nj-oag-fair-housing"
+      ]
+    },
+    "selling-timeline": {
+      "files": [
+        "blog/nj-home-selling-timeline.html",
+        "es/blog/nj-home-selling-timeline.html"
+      ],
+      "sourceIds": [
+        "njdobi-real-estate-consumer-topics",
+        "njdobi-buying-a-home",
+        "njdobi-bulletin-24-11",
+        "cfpb-closing-disclosure",
+        "cfpb-loan-estimate"
+      ]
+    },
+    "probate": {
+      "files": [
+        "blog/probate-real-estate-nj-guide.html",
+        "es/blog/probate-real-estate-nj-guide.html"
+      ],
+      "sourceIds": [
+        "irs-publication-559-2025",
+        "nj-inheritance-estate-tax",
+        "nj-tax-waiver-requirements",
+        "nj-inheritance-tax-forms",
+        "njcourts-county-surrogate",
+        "nj-treasury-surrogate-directory"
+      ]
+    },
+    "tax-appeal": {
+      "files": [
+        "blog/how-to-appeal-nj-property-taxes-2026.html"
+      ],
+      "sourceIds": [
+        "nj-assessment-appeals",
+        "nj-property-tax-appeal-form-a1",
+        "nj-tax-appeal-hearing-guide",
+        "nj-county-tax-boards",
+        "nj-property-taxpayer-bill-of-rights"
+      ]
+    },
+    "westfield-scotch-plains": {
+      "files": [
+        "westfield-vs-scotch-plains-nj.html"
+      ],
+      "sourceIds": [
+        "westfield-municipality",
+        "scotch-plains-municipality",
+        "westfield-school-district",
+        "scotch-plains-fanwood-school-district",
+        "njdoe-school-performance-2024-25",
+        "westfield-census-profile",
+        "scotch-plains-census-profile",
+        "westfield-station",
+        "njtransit-station-search",
+        "njtransit-trip-planner",
+        "nj-property-tax-statistics",
+        "nj-dca-fair-housing",
+        "nj-oag-fair-housing"
+      ]
+    },
+    "multiple-heirs-alias": {
+      "files": [
+        "blog/selling-inherited-house-multiple-heirs-nj.html"
+      ],
+      "sourceIds": [
+        "irs-publication-559-2025",
+        "nj-tax-waiver-requirements",
+        "njcourts-county-surrogate"
+      ],
+      "destination": "/blog/selling-inherited-home-nj"
+    }
+  },
+  "sources": [
+    {
+      "id": "njdobi-bulletin-24-11",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "title": "Bulletin 24-11: Real Estate Brokerage Business Relationships, Including Designated Agency",
+      "url": "https://www.nj.gov/dobi/bulletins/blt24_11.pdf",
+      "kind": "state regulatory bulletin",
+      "use": "Supports New Jersey brokerage-services-agreement timing, required terms, negotiable compensation, permitted payors, and agency disclosures.",
+      "limit": "The bulletin summarizes P.L. 2024, c.32 and does not supply a consumer's negotiated contract terms or individual legal advice.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njrec-compliance-faq",
+      "publisher": "New Jersey Real Estate Commission",
+      "title": "Real Estate Frequently Asked Questions",
+      "url": "https://www.nj.gov/dobi/division_rec/recfaqs.htm",
+      "kind": "state regulator FAQ",
+      "use": "Supports the distinction between the Consumer Information Statement and the separate written agreement that establishes a buyer-agency relationship.",
+      "limit": "The FAQ does not replace the signed brokerage services agreement or advice from a New Jersey attorney about a particular contract.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nar-written-buyer-agreements",
+      "publisher": "National Association of REALTORS",
+      "title": "Written Buyer Agreements 101",
+      "url": "https://www.nar.realtor/the-facts/written-buyer-agreements-101",
+      "kind": "MLS policy guidance",
+      "use": "Supports the MLS-participant before-touring policy, objectively ascertainable compensation, negotiability disclosure, and consumer contract questions.",
+      "limit": "This is trade-association and MLS policy guidance, not New Jersey legislation and not a substitute for state law or a signed agreement.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nar-open-house-guide",
+      "publisher": "National Association of REALTORS",
+      "title": "Consumer Guide to Open Houses and Written Agreements",
+      "url": "https://www.nar.realtor/the-facts/consumer-guide-to-open-houses-and-written-agreements",
+      "kind": "consumer MLS policy guidance",
+      "use": "Supports the open-house exception when a consumer attends without their own agent and distinguishes marketing conversations from working with a buyer.",
+      "limit": "The guide expressly notes that practices vary with state and local law and that the consumer guide itself does not change NAR policy.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njdobi-real-estate-consumer-topics",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "title": "Consumer Information: Real Estate",
+      "url": "https://www.nj.gov/dobi/division_consumers/realestate/re_menu.htm",
+      "kind": "state consumer guidance hub",
+      "use": "Identifies the Real Estate Commission's regulatory role and provides current access to New Jersey consumer real-estate materials.",
+      "limit": "The landing page is a source directory and does not determine any transaction's deadlines, contract terms, title issues, or closing date.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njdobi-buying-a-home",
+      "publisher": "New Jersey Department of Banking and Insurance",
+      "title": "Everything You Wanted to Know About Buying a Home",
+      "url": "https://www.nj.gov/dobi/division_consumers/pdf/buyingahome.pdf",
+      "kind": "state consumer guide",
+      "use": "Supports the limited statement that many New Jersey buyers retain attorneys although doing so is not required, plus contract-led inspection and title concepts.",
+      "limit": "The guide contains legacy federal-form references, so the rebuilt pages use it only for the narrow New Jersey statements identified and defer current loan forms to CFPB.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "cfpb-closing-disclosure",
+      "publisher": "Consumer Financial Protection Bureau",
+      "title": "Closing Disclosure Explainer",
+      "url": "https://www.consumerfinance.gov/owning-a-home/closing-disclosure/",
+      "kind": "federal mortgage consumer guidance",
+      "use": "Supports the lender-provided Closing Disclosure and its three-business-day review period for covered mortgage transactions.",
+      "limit": "The disclosure rule is a borrower-lender requirement for covered loans, not a universal New Jersey contract or attorney-review timetable.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "cfpb-loan-estimate",
+      "publisher": "Consumer Financial Protection Bureau",
+      "title": "Loan Estimate Explainer",
+      "url": "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+      "kind": "federal mortgage consumer guidance",
+      "use": "Supports comparison and review of loan terms and estimated closing costs for a covered mortgage before a transaction reaches closing.",
+      "limit": "A Loan Estimate is not a commitment to lend, a title report, a property valuation, or a prediction of the closing date.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "irs-publication-559-2025",
+      "publisher": "Internal Revenue Service",
+      "title": "Publication 559 (2025), Survivors, Executors, and Administrators",
+      "url": "https://www.irs.gov/publications/p559",
+      "kind": "federal tax publication",
+      "use": "Supports general federal inherited-property basis concepts, including the usual date-of-death fair-market-value rule and listed exceptions.",
+      "limit": "Publication 559 is general federal tax information; ownership, valuation elections, reporting, improvements, depreciation, and individual facts require professional review.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-inheritance-estate-tax",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Inheritance and Estate Tax",
+      "url": "https://www.nj.gov/treasury/taxation/inheritance-estate/inheritance.shtml",
+      "kind": "state tax guidance",
+      "use": "Supports the continued New Jersey inheritance-tax framework and the end of New Jersey estate tax for decedents dying on or after January 1, 2018.",
+      "limit": "Tax treatment depends on domicile, date of death, asset location, beneficiary class, title, and filings; the page is not an estate-specific conclusion.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-tax-waiver-requirements",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Tax Waiver Requirements for a Decedent's Property",
+      "url": "https://www.nj.gov/treasury/taxation/inheritance-estate/estatetax.shtml",
+      "kind": "state tax and transfer guidance",
+      "use": "Supports the need to determine whether a New Jersey tax waiver applies before transferring property held in a decedent's name.",
+      "limit": "The source lists exceptions and fact-specific routes; a webpage cannot determine waiver status, title authority, or filing obligations for an estate.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-inheritance-tax-forms",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Inheritance and Estate Tax Forms",
+      "url": "https://www.nj.gov/treasury/taxation/prntinh.shtml",
+      "kind": "state tax forms directory",
+      "use": "Provides the current state directory for inheritance-tax returns and waiver-related forms, including real-property waiver request forms.",
+      "limit": "The appropriate form and filing depend on the estate; the directory does not authorize a sale or determine whether a filing is complete.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njcourts-county-surrogate",
+      "publisher": "New Jersey Courts",
+      "title": "County Surrogate",
+      "url": "https://www.njcourts.gov/glossary/county-surrogate?language_content_entity=en",
+      "kind": "state judiciary definition",
+      "use": "Supports the county surrogate's role in uncontested probate and estate matters and the Surrogate's Court relationship to the Probate Part.",
+      "limit": "The glossary defines the court role; it does not determine who has authority in a particular estate or resolve a contested matter.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-treasury-surrogate-directory",
+      "publisher": "New Jersey Department of the Treasury",
+      "title": "Surrogate Court Documentation and County Contacts",
+      "url": "https://www.nj.gov/treasury/unclaimed-property/claimdocumentation.shtml",
+      "kind": "state county-contact and probate-document guidance",
+      "use": "Explains that each New Jersey county has a Surrogate Court and provides statewide office contacts for probate-document questions.",
+      "limit": "The page is framed around unclaimed-property documentation and should be used as a contact path, not as legal advice for selling real estate.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-assessment-appeals",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Assessment and Appeals",
+      "url": "https://www.nj.gov/treasury/taxation/lpt/lpt-appeal.shtml",
+      "kind": "state assessment-appeal guidance",
+      "use": "Supports April 1 and May 1 filing language, alternative-calendar counties, assessment standards, forms, and county-board paths.",
+      "limit": "Deadlines and procedures can turn on notices, calendar rules, property type, value, and county practice; users must verify the current route directly.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-property-tax-appeal-form-a1",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Petition of Appeal Form A-1 and Instructions (6-26)",
+      "url": "https://www.nj.gov/treasury/taxation/pdf/other_forms/lpt/petappl.pdf",
+      "kind": "state appeal form and instructions",
+      "use": "Supports filed-and-received language, the 45-day bulk-mailing alternative, May 1 revaluation treatment, January 15 counties, and valuation evidence rules.",
+      "limit": "The form instructions must be read in full and checked with the applicable county; this page does not complete a filing or evaluate evidence.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-tax-appeal-hearing-guide",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "A Guide to Tax Appeal Hearings",
+      "url": "https://www.nj.gov/treasury/taxation/pdf/lpt/ptappeal.pdf",
+      "kind": "state hearing guide",
+      "use": "Supports the distinction between appealing an assessment and appealing the amount of taxes, plus the State's general evidence framework.",
+      "limit": "The guide is general and not all-inclusive; it does not promise a reduction, select comparable sales, or replace legal or appraisal advice.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-county-tax-boards",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "County Tax Administrators and County Assessor",
+      "url": "https://www.nj.gov/treasury/taxation/pdf/lpt/cb/ctb-statewide.pdf",
+      "kind": "state county-board directory",
+      "use": "Provides the current statewide contact list for county boards of taxation and county tax administrators.",
+      "limit": "Contact details can change; users should confirm the current county office, delivery method, hearing option, and deadline before filing.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-property-taxpayer-bill-of-rights",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Property Taxpayer Bill of Rights",
+      "url": "https://www.nj.gov/treasury/taxation/lpt/lpt-tpbors.shtml",
+      "kind": "state taxpayer guidance",
+      "use": "Supports access to understandable assessment information, appeal procedures, time limits, and property-record information.",
+      "limit": "The page states taxpayer information rights and does not decide the value, evidence, timeliness, or outcome of an individual appeal.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njdoe-school-performance-2024-25",
+      "publisher": "New Jersey Department of Education",
+      "title": "2024-2025 School Performance Reports",
+      "url": "https://www.nj.gov/education/spr/",
+      "kind": "state education data portal",
+      "use": "Provides current 2024-25 report-year records, definitions, and methodology for an address-specific review of official public-school data.",
+      "limit": "The reports are time-bound public records, not a recommendation, rating, prediction, or substitute for confirming assignment with the district.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njtransit-trip-planner",
+      "publisher": "NJ TRANSIT",
+      "title": "Trip Planner",
+      "url": "https://www.njtransit.com/trip-planner-to",
+      "kind": "official transit planning tool",
+      "use": "Provides date-, time-, origin-, and destination-specific itinerary research instead of an unsupported fixed commute promise.",
+      "limit": "Schedules, transfers, service patterns, parking, and travel conditions change; users must run a current itinerary for the exact address and time.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "njtransit-station-search",
+      "publisher": "NJ TRANSIT",
+      "title": "Station and Park-and-Ride Search",
+      "url": "https://www.njtransit.com/station-park-ride-to/",
+      "kind": "official transit station directory",
+      "use": "Provides current station and park-and-ride research paths for an address-specific transportation comparison.",
+      "limit": "The directory does not establish door-to-door time, parking availability, accessibility for every trip, or future service.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-property-tax-statistics",
+      "publisher": "New Jersey Division of Taxation",
+      "title": "Statistical Information: Local Property Tax",
+      "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+      "kind": "state property-tax data library",
+      "use": "Provides year-labeled assessment, equalization, tax-rate, and average-residential files for municipal research.",
+      "limit": "Municipal aggregates are not a parcel's tax bill, current market value, future assessment, listing price, or appraisal.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-dca-fair-housing",
+      "publisher": "New Jersey Department of Community Affairs",
+      "title": "Housing Discrimination",
+      "url": "https://www.nj.gov/dca/home/discrimination.shtml",
+      "kind": "state fair-housing guidance",
+      "use": "Provides New Jersey housing-discrimination resources and official complaint and assistance paths.",
+      "limit": "The page provides public guidance and contacts; it does not decide whether a particular act violates state or federal law.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "nj-oag-fair-housing",
+      "publisher": "New Jersey Division on Civil Rights",
+      "title": "Discrimination in Housing",
+      "url": "https://www.njoag.gov/about/divisions-and-offices/division-on-civil-rights-home/know-the-law/njlad/discrimination-in-housing/",
+      "kind": "state civil-rights guidance",
+      "use": "Supports a neutral comparison process that avoids steering or recommendations based on protected characteristics and demographic proxies.",
+      "limit": "The page is public civil-rights information and not a legal opinion about a specific interaction, advertisement, or transaction.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "maplewood-municipality",
+      "publisher": "Township of Maplewood",
+      "title": "Official Municipal Website",
+      "url": "https://www.maplewoodnj.gov/",
+      "kind": "municipal primary source",
+      "use": "Provides current Maplewood departments, assessor, planning, notices, maps, and local-service research paths.",
+      "limit": "Municipal information can change and does not establish the facts, condition, assignment, or value of a particular property.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "south-orange-municipality",
+      "publisher": "South Orange Village",
+      "title": "Official Municipal Website",
+      "url": "https://www.southorange.org/",
+      "kind": "municipal primary source",
+      "use": "Provides current South Orange departments, assessor, planning, notices, maps, and local-service research paths.",
+      "limit": "Municipal information can change and does not establish the facts, condition, assignment, or value of a particular property.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "somsd",
+      "publisher": "South Orange and Maplewood School District",
+      "title": "Official District Website",
+      "url": "https://www.somsdk12.org/",
+      "kind": "public-school district primary source",
+      "use": "Provides current district registration, school, calendar, policy, and contact paths for both municipalities.",
+      "limit": "Confirm address-specific assignment and current information with the district; the link does not rank schools or predict an experience.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "maplewood-census-profile",
+      "publisher": "U.S. Census Bureau",
+      "title": "Maplewood Township Census Profile",
+      "url": "https://data.census.gov/profile/Maplewood_township%2C_Essex_County%2C_New_Jersey?g=060XX00US3401343800",
+      "kind": "federal geographic profile",
+      "use": "Identifies Maplewood Township as a specific Census geography and provides release-labeled public estimates.",
+      "limit": "Survey estimates have periods and margins of error; demographic data must not be used to steer a housing choice.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "south-orange-census-profile",
+      "publisher": "U.S. Census Bureau",
+      "title": "South Orange Village Township Census Profile",
+      "url": "https://data.census.gov/profile/South_Orange_Village_township%2C_Essex_County%2C_New_Jersey?g=060XX00US3401369274",
+      "kind": "federal geographic profile",
+      "use": "Identifies South Orange Village Township as a specific Census geography and provides release-labeled public estimates.",
+      "limit": "Survey estimates have periods and margins of error; demographic data must not be used to steer a housing choice.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "maplewood-station",
+      "publisher": "NJ TRANSIT",
+      "title": "Maplewood Station",
+      "url": "https://www.njtransit.com/station/maplewood-station",
+      "kind": "official station page",
+      "use": "Provides current station information for Maplewood Station to use with a date-specific trip-planner query.",
+      "limit": "The station page does not promise a travel time, transfer pattern, parking space, or service level for a future trip.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "south-orange-station",
+      "publisher": "NJ TRANSIT",
+      "title": "South Orange Station",
+      "url": "https://www.njtransit.com/station/south-orange-station",
+      "kind": "official station page",
+      "use": "Provides current station information for South Orange Station to use with a date-specific trip-planner query.",
+      "limit": "The station page does not promise a travel time, transfer pattern, parking space, or service level for a future trip.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "summit-municipality",
+      "publisher": "City of Summit",
+      "title": "Official Municipal Website",
+      "url": "https://www.cityofsummit.org/",
+      "kind": "municipal primary source",
+      "use": "Provides current Summit departments, assessor, planning, notices, maps, and local-service research paths.",
+      "limit": "Municipal information can change and does not establish the facts, condition, assignment, or value of a particular property.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "westfield-municipality",
+      "publisher": "Town of Westfield",
+      "title": "Official Municipal Website",
+      "url": "https://www.westfieldnj.gov/",
+      "kind": "municipal primary source",
+      "use": "Provides current Westfield departments, assessor, planning, notices, maps, and local-service research paths.",
+      "limit": "Municipal information can change and does not establish the facts, condition, assignment, or value of a particular property.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "summit-school-district",
+      "publisher": "Summit Public Schools",
+      "title": "Official District Website",
+      "url": "https://www.summit.k12.nj.us/",
+      "kind": "public-school district primary source",
+      "use": "Provides current Summit district registration, school, calendar, policy, and contact paths.",
+      "limit": "Confirm address-specific assignment and current information with the district; the link does not rank schools or predict an experience.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "westfield-school-district",
+      "publisher": "Westfield Public Schools",
+      "title": "Official District Website",
+      "url": "https://www.westfieldnjk12.org/",
+      "kind": "public-school district primary source",
+      "use": "Provides current Westfield district registration, school, calendar, policy, and contact paths.",
+      "limit": "Confirm address-specific assignment and current information with the district; the link does not rank schools or predict an experience.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "summit-census-profile",
+      "publisher": "U.S. Census Bureau",
+      "title": "Summit City Census Profile",
+      "url": "https://data.census.gov/profile/Summit_city%2C_New_Jersey?g=160XX00US3471430",
+      "kind": "federal geographic profile",
+      "use": "Identifies Summit city as a specific Census geography and provides release-labeled public estimates.",
+      "limit": "Survey estimates have periods and margins of error; demographic data must not be used to steer a housing choice.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "westfield-census-profile",
+      "publisher": "U.S. Census Bureau",
+      "title": "Westfield Town Census Profile",
+      "url": "https://data.census.gov/profile/Westfield_town%2C_New_Jersey?g=160XX00US3479040",
+      "kind": "federal geographic profile",
+      "use": "Identifies Westfield town as a specific Census geography and provides release-labeled public estimates.",
+      "limit": "Survey estimates have periods and margins of error; demographic data must not be used to steer a housing choice.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "summit-station",
+      "publisher": "NJ TRANSIT",
+      "title": "Summit Station",
+      "url": "https://www.njtransit.com/station/summit-station",
+      "kind": "official station page",
+      "use": "Provides current station information for Summit Station to use with a date-specific trip-planner query.",
+      "limit": "The station page does not promise a travel time, transfer pattern, parking space, or service level for a future trip.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "westfield-station",
+      "publisher": "NJ TRANSIT",
+      "title": "Westfield Station",
+      "url": "https://www.njtransit.com/station/westfield-station",
+      "kind": "official station page",
+      "use": "Provides current station information for Westfield Station to use with a date-specific trip-planner query.",
+      "limit": "The station page does not promise a travel time, transfer pattern, parking space, or service level for a future trip.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "scotch-plains-municipality",
+      "publisher": "Township of Scotch Plains",
+      "title": "Official Municipal Website",
+      "url": "https://scotchplainsnj.gov/",
+      "kind": "municipal primary source",
+      "use": "Provides current Scotch Plains departments, assessor, planning, notices, maps, and local-service research paths.",
+      "limit": "Municipal information can change and does not establish the facts, condition, assignment, or value of a particular property.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "scotch-plains-fanwood-school-district",
+      "publisher": "Scotch Plains-Fanwood Public Schools",
+      "title": "Official District Website",
+      "url": "https://www.spfk12.org/",
+      "kind": "public-school district primary source",
+      "use": "Provides current district registration, school, calendar, policy, and contact paths for Scotch Plains and Fanwood.",
+      "limit": "Confirm address-specific assignment and current information with the district; the link does not rank schools or predict an experience.",
+      "accessedOn": "2026-08-26"
+    },
+    {
+      "id": "scotch-plains-census-profile",
+      "publisher": "U.S. Census Bureau",
+      "title": "Scotch Plains Township Census Profile",
+      "url": "https://data.census.gov/profile/Scotch_Plains_township%2C_Union_County%2C_New_Jersey?g=060XX00US3403966060",
+      "kind": "federal geographic profile",
+      "use": "Identifies Scotch Plains Township as a specific Census geography and provides release-labeled public estimates.",
+      "limit": "Survey estimates have periods and margins of error; demographic data must not be used to steer a housing choice.",
+      "accessedOn": "2026-08-26"
+    }
+  ]
+}

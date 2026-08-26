@@ -4,6 +4,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/blog/selling-inherited-house-multiple-heirs-nj",
+      "destination": "/blog/selling-inherited-home-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/selling-inherited-house-multiple-heirs-nj.html",
+      "destination": "/blog/selling-inherited-home-nj",
+      "permanent": true
+    },
+    {
       "source": "/towns/bernards-township",
       "destination": "/towns/basking-ridge",
       "permanent": true
