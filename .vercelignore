@@ -2,6 +2,7 @@
 # (These are currently publicly downloadable on GitHub Pages — this fixes that.)
 .git
 .claude
+.DS_Store
 __pycache__
 *.py
 *.pyc
