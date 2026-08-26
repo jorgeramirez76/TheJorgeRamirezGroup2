@@ -1,0 +1,128 @@
+{
+  "reviewed": "2026-08-26",
+  "scope": "English and Spanish planning guide for selected station areas on the NJ TRANSIT Morris & Essex Lines and Gladstone Branch",
+  "methodology": {
+    "timetable_effective": "2026-05-31",
+    "gtfs_snapshot_date": "2026-08-19",
+    "gtfs_archive_sha256": "9b7e6bcb33e5c5c34a48b0d452f10a7085cd25337ccf8ef542827809409b471e",
+    "selection": "The station areas are an illustrative, unranked set chosen to explain service-pattern and municipality-name checks. The set is not an exhaustive station list or a recommendation of one municipality over another.",
+    "service_interpretation": "The NJ TRANSIT Morris & Essex Lines timetable effective 2026-05-31 uses an MD marker for individual trains serving New York Penn Station. Route or station membership alone is not treated as proof that every train is a one-seat New York Penn trip.",
+    "included_fields": [
+      "official timetable station names and individual-train Midtown Direct marker methodology",
+      "official GTFS route and station-name reference",
+      "official municipality and station-area naming distinctions",
+      "official trip-planning, alert, parking, and accessibility research links"
+    ],
+    "excluded_fields": [
+      "scheduled or estimated travel duration",
+      "fare or parking amount",
+      "home price, premium, appreciation, or market forecast",
+      "property-tax amount",
+      "school rating or ranking",
+      "crime or safety characterization",
+      "demographic or protected-class targeting",
+      "subjective station or municipality ranking"
+    ],
+    "refresh_rule": "Readers must use NJ TRANSIT's date-specific trip planner, current timetable, alerts, station information, and the relevant parking operator before travel or a housing decision. Municipality identity should be confirmed for the property parcel rather than inferred from a station or mailing label."
+  },
+  "sources": [
+    {
+      "id": "njt-mne-timetable",
+      "publisher": "NJ TRANSIT",
+      "url": "https://content.njtransit.com/pdf/schedules/rail/mne",
+      "fact_supported": "Official Morris & Essex Lines timetable, effective 2026-05-31, including station sequences, terminals, individual train columns, and the Midtown Direct marker legend.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-gtfs-rail",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/rail_data.zip",
+      "fact_supported": "Official GTFS rail route, trip, stop-time, and station-name data used as a second route and station reference.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-gtfs-documentation",
+      "publisher": "NJ TRANSIT",
+      "url": "https://developer.njtransit.com/registration/appdoc?app=GTFS-RAIL",
+      "fact_supported": "NJ TRANSIT identifies GTFS-RAIL as its rail schedule-data product.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-system-map",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/accessibility/System-Map",
+      "fact_supported": "Official rail-system orientation and route relationship reference.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-trip-planner",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/trip-planner-to",
+      "fact_supported": "Official date- and time-specific itinerary planning destination.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-station-information",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/station-park-ride-to",
+      "fact_supported": "Official starting point for station-specific parking, access, and facility research.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-travel-alerts",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/travel-alerts-to",
+      "fact_supported": "Official current service and station alert destination.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-rail-rider-information",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/ride-rail",
+      "fact_supported": "Official rail rider-information starting point for tickets, accessibility, policies, and travel tools.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "nj-municipalities",
+      "publisher": "State of New Jersey",
+      "url": "https://www.nj.gov/infobank/muni.htm",
+      "fact_supported": "Official county and municipality lookup used to distinguish legal municipalities from station or mailing-area names.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "south-orange-stations",
+      "publisher": "South Orange Village",
+      "url": "https://www.southorange.org/534/Commuter-Parking",
+      "fact_supported": "The Village's current commuter-parking page identifies South Orange station and Mountain Station facilities within South Orange Village.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "millburn-short-hills-identity",
+      "publisher": "Township of Millburn",
+      "url": "https://www.twp.millburn.nj.us/DocumentCenter/View/17170/CSC-Report-2026-04-15---FINAL-SIGNED-to-transmit?bidId=",
+      "fact_supported": "The Township's 2026 Charter Study Commission report identifies Short Hills as an unincorporated community within Millburn Township.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "new-providence-stations",
+      "publisher": "Borough of New Providence",
+      "url": "https://www.newprov.us/101/Services",
+      "fact_supported": "The Borough states that its commuter parking lots serve New Providence Train Station and Murray Hill Train Station.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "chatham-borough-station",
+      "publisher": "Borough of Chatham",
+      "url": "https://chathamborough.org/agenda-library/mayor-council-meeting/2021-mayor-council-meeting-documents/2021-agendas-mayor-council/1142-02-08-2021-agenda/file",
+      "fact_supported": "An official Borough resolution identifies the Chatham Train Station and the Borough's agreement with NJ TRANSIT; the state municipality lookup separately lists Chatham Borough and Chatham Township.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "morris-township-convent-station",
+      "publisher": "Morris Township",
+      "url": "https://www.morristwp.com/214/Convent-Station",
+      "fact_supported": "Morris Township's official history page identifies Convent Station and shows the distinction between its mailing address and physical municipality context.",
+      "accessed": "2026-08-26"
+    }
+  ]
+}

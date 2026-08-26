@@ -267,10 +267,15 @@
         "description": "Every NJ Transit Midtown Direct town — express commute times to Penn Station, median home prices & school ratings. Find the fastest one-seat ride to Manhattan."
       },
       "after": {
-        "title": "NJ Midtown Direct Towns: Stops, Times and Home Prices",
-        "description": "Compare Midtown Direct stops with typical Penn Station travel times, home-price context and school information to narrow your New Jersey town search."
+        "title": "NJ Midtown Direct Stations: Official Planning Guide",
+        "description": "Plan around selected NJ Midtown Direct station areas using the current NJ TRANSIT timetable, GTFS route data, station checks, and municipal boundaries."
       },
-      "sync_fields": []
+      "sync_fields": [
+        "property:og:title",
+        "name:twitter:title",
+        "property:og:description",
+        "name:twitter:description"
+      ]
     },
     {
       "file": "blog/moving-from-nyc-to-nj-guide.html",
