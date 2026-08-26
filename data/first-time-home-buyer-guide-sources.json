@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "reviewed": "2026-08-26",
+  "scope": "English and Spanish New Jersey first-time home buyer due-diligence guides",
+  "methodology": {
+    "principle": "Use the public agency responsible for each step, avoid market forecasts and generalized dollar assumptions, and send readers back to current program, contract, property, loan, insurance, title, appraisal, and closing documents.",
+    "volatile_values_excluded": [
+      "interest rates and APR examples",
+      "down-payment percentages and minimum credit scores",
+      "assistance award amounts and county income or purchase-price limits",
+      "closing-cost percentages and vendor price ranges",
+      "property-tax estimates",
+      "transaction-duration promises",
+      "home-price forecasts and town affordability rankings"
+    ]
+  },
+  "pages": {
+    "blog/first-time-home-buyer-nj-guide.html": [
+      {
+        "url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/index.shtml",
+        "publisher": "New Jersey Housing and Mortgage Finance Agency",
+        "fact_supported": "NJHMFA publishes the current first-mortgage and down-payment-assistance product pages, fact sheets, participating-lender path, and program-limit resources.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/faqs/",
+        "publisher": "New Jersey Housing and Mortgage Finance Agency",
+        "fact_supported": "NJHMFA states that its FAQs are general information rather than final requirements and directs applicants to current program materials and participating lenders.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.hud.gov/fha",
+        "publisher": "U.S. Department of Housing and Urban Development",
+        "fact_supported": "HUD provides the official FHA homebuyer resource center and contact path for loan-program questions.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.hud.gov/stat/sfh/housing-counseling",
+        "publisher": "U.S. Department of Housing and Urban Development",
+        "fact_supported": "HUD maintains the official search and telephone path for participating housing-counseling agencies.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/consumer-tools/mortgages/shopping-for-a-mortgage/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "CFPB recommends comparing written mortgage offers and identifies loan terms, payment structure, program type, costs, points, and other fields to evaluate.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/owning-a-home/compare/compare-loan-estimates/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "CFPB explains how to compare Loan Estimates, including loan amount, rate, monthly payment, mortgage insurance, cash to close, origination charges, points, and credits.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dobi/bulletins/blt24_11.pdf",
+        "publisher": "New Jersey Department of Banking and Insurance",
+        "fact_supported": "NJDOBI explains New Jersey brokerage relationships, written brokerage service agreements, required agreement terms, and the rule that broker compensation is negotiable and not set by law.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://nj.gov/dobi/division_consumers/pdf/buyingahome.pdf",
+        "publisher": "New Jersey Department of Banking and Insurance",
+        "fact_supported": "The State consumer guide explains attorney review for licensee-prepared contracts, contract-controlled deadlines, independent inspection, title review, insurance, and settlement preparation.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/owning-a-home/close/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "CFPB organizes underwriting, inspection, insurance, title, document review, closing, and post-closing checkpoints for covered mortgage transactions.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-are-appraisals-and-why-do-i-need-to-look-at-them-en-167/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "CFPB defines an appraisal as an independent opinion of value and explains the borrower's right to a copy for a typical covered home loan.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-owners-title-insurance-en-164/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "CFPB distinguishes lender and owner's title insurance and explains that consumers can generally shop for title providers.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dobi/division_consumers/insurance/homepolicysummaries.htm",
+        "publisher": "New Jersey Department of Banking and Insurance",
+        "fact_supported": "NJDOBI publishes model policy summaries to help consumers review homeowners and condominium coverage and exclusions.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/owning-a-home/closing-disclosure/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "CFPB provides the official Closing Disclosure explainer and directs borrowers to compare final loan terms and costs before closing.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://nj.gov/treasury/taxation/lpt/genlpt.shtml",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "The State provides official property-tax and assessment information; a buyer must confirm the current record for the specific parcel and municipality.",
+        "accessed": "2026-08-26"
+      }
+    ],
+    "es/blog/first-time-home-buyer-nj-guide.html": [
+      {
+        "url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/index.shtml",
+        "publisher": "New Jersey Housing and Mortgage Finance Agency",
+        "fact_supported": "NJHMFA publica las páginas vigentes de hipotecas, asistencia, hojas informativas, prestamistas participantes y límites de los programas.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/faqs/",
+        "publisher": "New Jersey Housing and Mortgage Finance Agency",
+        "fact_supported": "NJHMFA aclara que sus preguntas frecuentes son información general y remite a los materiales vigentes y a prestamistas participantes para los requisitos finales.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.hud.gov/fha",
+        "publisher": "U.S. Department of Housing and Urban Development",
+        "fact_supported": "HUD mantiene el recurso oficial de FHA y el canal de contacto para preguntas sobre préstamos asegurados por FHA.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.hud.gov/stat/sfh/housing-counseling",
+        "publisher": "U.S. Department of Housing and Urban Development",
+        "fact_supported": "HUD mantiene la búsqueda oficial y el teléfono para encontrar agencias participantes de asesoría de vivienda.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/es/obtener-respuestas/recibire-las-divulgaciones-de-informese-antes-de-deber-cuando-busque-una-hipoteca-es-2009/",
+        "publisher": "Oficina para la Protección Financiera del Consumidor",
+        "fact_supported": "La CFPB explica en español la Estimación del Préstamo, la Divulgación del Cierre y las excepciones de ciertos productos hipotecarios.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/es/comprar-una-casa/cierre/este-atento-a-las-estimaciones-de-prestamos-revisadas/",
+        "publisher": "Oficina para la Protección Financiera del Consumidor",
+        "fact_supported": "La CFPB indica cómo comparar una Estimación del Préstamo revisada y qué preguntas hacer sobre cambios en el préstamo y el efectivo para el cierre.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dobi/bulletins/blt24_11.pdf",
+        "publisher": "New Jersey Department of Banking and Insurance",
+        "fact_supported": "NJDOBI explica las relaciones de corretaje, los acuerdos escritos, sus términos obligatorios y que la compensación del corredor es negociable y no está fijada por ley.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://nj.gov/dobi/division_consumers/pdf/buyingahome.pdf",
+        "publisher": "New Jersey Department of Banking and Insurance",
+        "fact_supported": "La guía estatal explica la revisión por abogado de contratos preparados por licenciatarios, los plazos del contrato, la inspección independiente, el título, el seguro y el cierre.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/owning-a-home/close/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "La CFPB organiza las verificaciones de suscripción, inspección, seguro, título, documentos y cierre para hipotecas cubiertas.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-are-appraisals-and-why-do-i-need-to-look-at-them-en-167/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "La CFPB define la tasación como una opinión independiente de valor y explica el derecho a recibir una copia en un préstamo típico cubierto.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-owners-title-insurance-en-164/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "fact_supported": "La CFPB distingue el seguro de título del prestamista del seguro de título del propietario y explica la posibilidad general de comparar proveedores.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.nj.gov/dobi/division_consumers/insurance/homepolicysummaries.htm",
+        "publisher": "New Jersey Department of Banking and Insurance",
+        "fact_supported": "NJDOBI publica resúmenes modelo para revisar coberturas y exclusiones de pólizas de vivienda y condominio.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://www.consumerfinance.gov/es/obtener-respuestas/puedo-negociar-los-terminos-y-costos-de-mi-hipoteca-en-el-momento-del-cierre-es-1919/",
+        "publisher": "Oficina para la Protección Financiera del Consumidor",
+        "fact_supported": "La CFPB recomienda preguntar por cargos y tasas, comparar opciones antes del cierre y resolver diferencias con el prestamista o agente de cierre.",
+        "accessed": "2026-08-26"
+      },
+      {
+        "url": "https://nj.gov/treasury/taxation/lpt/genlpt.shtml",
+        "publisher": "New Jersey Division of Taxation",
+        "fact_supported": "El Estado publica información oficial sobre impuestos y tasaciones; el comprador debe verificar el registro vigente de la parcela y el municipio específicos.",
+        "accessed": "2026-08-26"
+      }
+    ]
+  }
+}
