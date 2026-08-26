@@ -1,0 +1,342 @@
+{
+  "version": 1,
+  "accessed": "2026-08-25",
+  "municipalities": {
+    "east-brunswick": {
+      "name": "East Brunswick Township",
+      "county": "Middlesex County",
+      "sources": [
+        {
+          "url": "https://www.eastbrunswick.org/",
+          "publisher": "Township of East Brunswick",
+          "fact_supported": "Official municipal government and department directory for East Brunswick Township.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.eastbrunswick.org/224/Division-of-Planning",
+          "publisher": "Township of East Brunswick, Division of Planning",
+          "fact_supported": "Planning applications, master-plan materials, and municipal land-use resources are maintained by the Division of Planning.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.eastbrunswick.org/193/Parking-Utility",
+          "publisher": "Township of East Brunswick, Parking Utility",
+          "fact_supported": "The Township operates the Transportation and Commerce Center and Neilson Plaza park-and-ride facilities and publishes current parking and service details.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://content.njtransit.com/sites/default/files/bus_schedules/T0138.pdf",
+          "publisher": "NJ TRANSIT",
+          "fact_supported": "NJ TRANSIT Route 138 serves named East Brunswick stops and New York Port Authority Bus Terminal; riders must check the current timetable.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.ebnet.org/schools",
+          "publisher": "East Brunswick Public Schools",
+          "fact_supported": "Official district school list and district contact information.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "publisher": "New Jersey Department of Education",
+          "fact_supported": "Official School Performance Reports search for current district and school-level information.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.eastbrunswick.org/Parks",
+          "publisher": "Township of East Brunswick, Recreation and Parks",
+          "fact_supported": "Official park inventory, facilities, rules, and reservation resources, including Bicentennial Park and Heavenly Farms.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://eastbrunswick.org/218/Tax-Maps",
+          "publisher": "Township of East Brunswick",
+          "fact_supported": "Official municipal tax-map index and sheets for parcel research.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "publisher": "New Jersey Department of Environmental Protection",
+          "fact_supported": "Official flood-risk notification law, disclosure guidance, and address-based flood screening tools.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.census.gov/quickfacts/fact/table/eastbrunswicktownshipmiddlesexcountynewjersey/POP060220",
+          "publisher": "U.S. Census Bureau",
+          "fact_supported": "Official demographic, housing, and geography profile for East Brunswick Township.",
+          "accessed": "2026-08-25"
+        }
+      ]
+    },
+    "south-brunswick": {
+      "name": "South Brunswick Township",
+      "county": "Middlesex County",
+      "sources": [
+        {
+          "url": "https://southbrunswicknj.gov/",
+          "publisher": "Township of South Brunswick",
+          "fact_supported": "Official municipal website identifies Dayton, Deans, Kendall Park, Kingston, and Monmouth Junction as the Township's five communities.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://southbrunswicknj.gov/planning/",
+          "publisher": "Township of South Brunswick, Planning Department",
+          "fact_supported": "Planning and Zoning administers the land-use code, GIS, applications, and support for municipal land-use boards.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://southbrunswicknj.gov/planning/transportation/",
+          "publisher": "Township of South Brunswick, Transportation Advisory Committee",
+          "fact_supported": "Official municipal resource for transportation facilities, roads, traffic, mass transit, and bikeway issues.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://southbrunswicknj.gov/about-us/",
+          "publisher": "Township of South Brunswick",
+          "fact_supported": "The Township identifies the Route 32 and Route 130 park-and-ride and major state and interstate road corridors; service details must be checked before travel.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.sbschools.org/",
+          "publisher": "South Brunswick School District",
+          "fact_supported": "Official district source for schools, registration, calendars, and attendance information.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "publisher": "New Jersey Department of Education",
+          "fact_supported": "Official School Performance Reports search for current district and school-level information.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://southbrunswicknj.gov/park-facilities/",
+          "publisher": "Township of South Brunswick, Parks and Recreation",
+          "fact_supported": "Official inventory distinguishes Township parks and open space from county and state facilities.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://southbrunswicknj.gov/tax-assessor/tax-maps/",
+          "publisher": "Township of South Brunswick, Tax Assessor",
+          "fact_supported": "Official municipal tax maps and assessor contact information for parcel research.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.middlesexcountynj.gov/Home/Components/FacilityDirectory/FacilityDirectory/97/36",
+          "publisher": "Middlesex County",
+          "fact_supported": "Official county location and access information for Davidson's Mill Pond Park in South Brunswick.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "publisher": "New Jersey Department of Environmental Protection",
+          "fact_supported": "Official flood-risk notification law, disclosure guidance, and address-based flood screening tools.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.census.gov/quickfacts/fact/table/southbrunswicktownshipmiddlesexcountynewjersey/POP815223",
+          "publisher": "U.S. Census Bureau",
+          "fact_supported": "Official demographic, housing, and geography profile for South Brunswick Township.",
+          "accessed": "2026-08-25"
+        }
+      ]
+    },
+    "west-new-york": {
+      "name": "Town of West New York",
+      "county": "Hudson County",
+      "sources": [
+        {
+          "url": "https://www.westnewyorknj.org/",
+          "publisher": "Town of West New York",
+          "fact_supported": "Official municipal government, public notices, meetings, and department access.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.westnewyorknj.org/departments/office-of-the-planning-board-and-zoning-board-of-adjustment/",
+          "publisher": "Town of West New York, Planning Board and Zoning Board of Adjustment",
+          "fact_supported": "Official master-plan, subdivision, site-plan, resolution, and land-use board resources.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.westnewyorknj.org/Departments/building-department/",
+          "publisher": "Town of West New York, Building Department",
+          "fact_supported": "Official building, zoning, code-enforcement, housing, permit, and certificate resources.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.westnewyorknj.org/Departments/tax/",
+          "publisher": "Town of West New York, Tax Department",
+          "fact_supported": "Official Tax Collector and Tax Assessor contacts, payment links, and tax-map access.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.westnewyorknj.org/Departments/parks-and-public-property/",
+          "publisher": "Town of West New York, Parks and Public Property",
+          "fact_supported": "Official municipal park and facility list, including Donnelly Park and named fields and parks.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://content.njtransit.com/sites/default/files/bus_schedules/T0156.pdf",
+          "publisher": "NJ TRANSIT",
+          "fact_supported": "NJ TRANSIT Route 156 timetable identifies West New York stops including Bergenline Avenue at 60th Street; riders must confirm current schedules and variants.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.wnyschools.net/",
+          "publisher": "West New York School District",
+          "fact_supported": "Official district source for registration, schools, calendars, and district updates.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "publisher": "New Jersey Department of Education",
+          "fact_supported": "Official School Performance Reports search for current district and school-level information.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "publisher": "New Jersey Department of Environmental Protection",
+          "fact_supported": "Official flood-risk notification law, disclosure guidance, and address-based flood screening tools.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.census.gov/quickfacts/fact/table/westnewyorktownnewjersey/PST045224",
+          "publisher": "U.S. Census Bureau",
+          "fact_supported": "Official demographic, housing, and geography profile for the Town of West New York.",
+          "accessed": "2026-08-25"
+        }
+      ]
+    },
+    "guttenberg": {
+      "name": "Town of Guttenberg",
+      "county": "Hudson County",
+      "sources": [
+        {
+          "url": "https://www.guttenbergnj.org/",
+          "publisher": "Town of Guttenberg",
+          "fact_supported": "Official municipal government, meeting, department, and public-notice access.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.guttenbergnj.org/departments/joint-planning-zoning-board",
+          "publisher": "Town of Guttenberg, Joint Planning and Zoning Board",
+          "fact_supported": "Official master plan, zoning map, board applications, meeting notices, and land-use records.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.guttenbergnj.org/departments/building-department",
+          "publisher": "Town of Guttenberg, Building Department",
+          "fact_supported": "Official construction, inspection, zoning-map, certificate, and short-term-rental resources.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.guttenbergnj.org/Departments/tax-assessor",
+          "publisher": "Town of Guttenberg, Tax Assessor",
+          "fact_supported": "Official assessment-record, ownership, lot-data, exemption, and appeal resources.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.guttenbergnj.org/departments/recreation",
+          "publisher": "Town of Guttenberg, Recreation Department",
+          "fact_supported": "Official recreation information and municipal references to Waterfront Park, Monument Park, Veterans Park, and the Drasheff Community Center.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://content.njtransit.com/sites/default/files/bus_schedules/T0188.pdf",
+          "publisher": "NJ TRANSIT",
+          "fact_supported": "NJ TRANSIT Route 188 timetable identifies Guttenberg stops and service toward the George Washington Bridge Bus Station; riders must check current schedules.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.alkschool.org/",
+          "publisher": "Guttenberg School District, Anna L. Klein School",
+          "fact_supported": "Official district source identifies Anna L. Klein School as the district's preschool-through-eighth-grade school and provides registration information.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "publisher": "New Jersey Department of Education",
+          "fact_supported": "Official School Performance Reports search for current district and school-level information.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "publisher": "New Jersey Department of Environmental Protection",
+          "fact_supported": "Official flood-risk notification law, disclosure guidance, and address-based flood screening tools.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.census.gov/quickfacts/fact/table/guttenbergtownnewjersey/INT100223",
+          "publisher": "U.S. Census Bureau",
+          "fact_supported": "Official demographic, housing, and geography profile for the Town of Guttenberg.",
+          "accessed": "2026-08-25"
+        }
+      ]
+    },
+    "bloomfield": {
+      "name": "Township of Bloomfield",
+      "county": "Essex County",
+      "sources": [
+        {
+          "url": "https://www.bloomfieldtwpnj.com/",
+          "publisher": "Township of Bloomfield",
+          "fact_supported": "Official municipal government, department, meeting, alert, and public-record access.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.bloomfieldtwpnj.com/359/Master-Plan",
+          "publisher": "Township of Bloomfield",
+          "fact_supported": "Official adopted master-plan, land-use, circulation, and parks/open-space maps and documents.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.bloomfieldtwpnj.com/214/Tax-Assessors-Office",
+          "publisher": "Township of Bloomfield, Tax Assessor's Office",
+          "fact_supported": "Official assessment, ownership, lot-size, square-footage, sales-record, and appeal resources.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.bloomfieldtwpnj.com/213/Facilities-Civic-Center-Oakeside-Parks",
+          "publisher": "Township of Bloomfield, Parks and Recreation",
+          "fact_supported": "Official municipal facility list distinguishes Township parks from Essex County's Brookdale and Watsessing parks.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://content.njtransit.com/pdf/schedules/rail/bntn",
+          "publisher": "NJ TRANSIT",
+          "fact_supported": "Current Montclair-Boonton Line timetable lists Bloomfield and Watsessing Avenue stations; riders must verify train-specific service and transfers.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.bloomfield.k12.nj.us/",
+          "publisher": "Bloomfield School District",
+          "fact_supported": "Official district source for the school list, registration, calendars, and district notices.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "publisher": "New Jersey Department of Education",
+          "fact_supported": "Official School Performance Reports search for current district and school-level information.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "publisher": "New Jersey Department of Environmental Protection",
+          "fact_supported": "Official flood-risk notification law, disclosure guidance, and address-based flood screening tools.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://www.census.gov/quickfacts/fact/table/bloomfieldtownshipessexcountynewjersey/COM100224",
+          "publisher": "U.S. Census Bureau",
+          "fact_supported": "Official demographic, housing, and geography profile for Bloomfield Township.",
+          "accessed": "2026-08-25"
+        },
+        {
+          "url": "https://essexcountyparks.org/parks/watsessing-park/about",
+          "publisher": "Essex County Parks",
+          "fact_supported": "Official county history and facility information for Watsessing Park in Bloomfield and East Orange.",
+          "accessed": "2026-08-25"
+        }
+      ]
+    }
+  }
+}
