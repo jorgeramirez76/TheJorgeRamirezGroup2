@@ -91,6 +91,16 @@ class HomepageTrustPolishTests(unittest.TestCase):
         ):
             self.assertIn(token, self.source)
 
+    def test_search_and_social_titles_are_brand_first_and_consistent(self) -> None:
+        expected = "Jorge Ramirez, NJ Realtor | The Jorge Ramirez Group"
+        self.assertIn(f"<title>{expected}</title>", self.source)
+        self.assertIn(f'<meta name="title" content="{expected}">', self.source)
+        self.assertIn(f'<meta property="og:title" content="{expected}">', self.source)
+        self.assertIn(f'<meta property="twitter:title" content="{expected}">', self.source)
+        self.assertLessEqual(len(expected), 60)
+        for county in ("Union", "Essex", "Morris", "Hudson", "Middlesex", "Somerset"):
+            self.assertIn(county, self.source.split('<meta name="description"', 1)[1].split(">", 1)[0])
+
     def test_town_guide_copy_uses_durable_six_county_language(self) -> None:
         self.assertNotRegex(self.source, r"\b112\b")
         self.assertIn("Local Guides Across Six New Jersey Counties", self.source)
