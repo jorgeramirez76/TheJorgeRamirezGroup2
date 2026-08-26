@@ -14,7 +14,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FACTS = json.loads((ROOT / "data" / "site-facts.json").read_text(encoding="utf-8"))
-OUT = ROOT / "communities.html"
+# `/communities` resolves to this directory index in production. Keep the
+# generator attached to the deployed page, rather than the legacy root-level
+# `communities.html` file that is no longer canonical.
+OUT = ROOT / "communities" / "index.html"
 
 SPECIAL_NAMES = {
     "boonton-township": "Boonton Township",

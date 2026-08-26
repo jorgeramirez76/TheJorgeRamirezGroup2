@@ -72,8 +72,11 @@ class ContentIntegrityTests(unittest.TestCase):
         }
         self.assertEqual(registered, sitemap_slugs)
 
-    def test_communities_hub_matches_inventory_and_county_membership(self) -> None:
-        source = read("communities.html")
+    def test_deployed_communities_hub_matches_inventory_and_county_membership(self) -> None:
+        # The clean `/communities` URL resolves to this directory index. Testing
+        # the legacy root-level HTML file would allow the production hub to
+        # drift away from the registry without failing CI.
+        source = read("communities/index.html")
         registered = {
             slug
             for towns in self.inventory["byCounty"].values()

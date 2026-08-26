@@ -220,6 +220,26 @@ class RemediationContractTests(unittest.TestCase):
                 bad.append((url, f"canonical is {canonical}"))
         self.assertEqual([], bad)
 
+    def test_sitemap_hreflang_alternates_only_reference_indexable_canonicals(self):
+        bad = []
+        for document in sitemap_documents():
+            root = ET.parse(document).getroot()
+            for link in root.findall("{*}url/{*}link"):
+                url = (link.attrib.get("href") or "").strip()
+                language = (link.attrib.get("hreflang") or "").strip()
+                local = url_to_local_file(url)
+                if not url or not local:
+                    bad.append((document.name, language, url, "missing local destination"))
+                    continue
+                text = read(local)
+                if robots_noindex(text) or is_redirect_stub(text):
+                    bad.append((document.name, language, url, "noindex/redirect destination"))
+                    continue
+                canonical = canonical_url(text)
+                if canonical and canonical.rstrip("/") != url.rstrip("/"):
+                    bad.append((document.name, language, url, f"canonical is {canonical}"))
+        self.assertEqual([], bad)
+
     def test_hreflang_targets_exist_and_are_reciprocal(self):
         bad = []
         submitted = {url.rstrip("/") for url in sitemap_urls()}
