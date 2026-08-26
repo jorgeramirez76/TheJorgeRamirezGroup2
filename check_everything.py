@@ -8,6 +8,7 @@ AI-SEO stack (llm-context, JSON-LD validity), content regressions (flip-count
 credential, merge-conflict markers), and local image existence.
 """
 import json
+import html
 import os
 import re
 import sys
@@ -57,10 +58,20 @@ def check(path):
     m = re.search(r"<title>([^<]*)</title>", t)
     if not m:
         add("no-title", path)
-    elif not (10 <= len(m.group(1)) <= 68):
+    elif not noindex and not (10 <= len(m.group(1)) <= 68):
         add("title-length", path, f"{len(m.group(1))}ch")
-    if not re.search(r'<meta name="description" content="[^"]{40,}"', t):
+    description_tag = re.search(r'<meta\s+[^>]*name=["\']description["\'][^>]*>', t, re.I)
+    description_content = (
+        re.search(r'content=(["\'])(.*?)\1', description_tag.group(0), re.I | re.S)
+        if description_tag
+        else None
+    )
+    if not description_content:
         add("weak-description", path)
+    else:
+        description_text = html.unescape(description_content.group(2).strip())
+        if not noindex and not (40 <= len(description_text) <= 165):
+            add("description-length", path, f"{len(description_text)}ch")
     if '<link rel="canonical"' not in t:
         add("no-canonical", path)
     if '<meta name="robots"' not in t:
