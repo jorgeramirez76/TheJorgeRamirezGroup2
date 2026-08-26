@@ -14,7 +14,9 @@ import sys
 from collections import defaultdict
 
 BANNED_COLORS = re.compile(r'#(c9a84c|e8c97a|1a4b8c|0f3460|1a2a4a|f6a623|0f1117|1a1f2e|2d3347)\b', re.I)
-BANNED_FONTS = re.compile(r'family=(Montserrat|Cormorant)|Cormorant Garamond', re.I)
+# The homepage intentionally uses Montserrat as an accent alongside Inter and
+# Playfair Display. Only flag the legacy Cormorant stack as brand drift.
+BANNED_FONTS = re.compile(r'family=Cormorant|Cormorant Garamond', re.I)
 FLIP = re.compile(r'(60\+|sixty[ -]plus|over 60) (house |home |personal )*(flip|homes|houses|properties)', re.I)
 CONFLICT = re.compile(r'^(<<<<<<<|>>>>>>>|=======$)', re.M)
 
