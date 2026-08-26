@@ -1,0 +1,642 @@
+{
+  "accessed": "2026-08-26",
+  "scope": "Official-source comparison framework for twelve New Jersey municipal or community entries. Sources support jurisdiction, public-school research, transit research, and parcel-level tax or assessment checks; they do not support rankings or neighborhood recommendations.",
+  "guidance": [
+    {
+      "category": "fair-housing",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "url": "https://www.hud.gov/stat/fheo/rights-obligations",
+      "fact_supported": "Federal fair-housing protections apply to housing advertising and related real-estate activity.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "category": "fair-housing",
+      "publisher": "New Jersey Division on Civil Rights",
+      "url": "https://www.njoag.gov/about/divisions-and-offices/division-on-civil-rights-home/know-the-law/njlad/discrimination-in-housing/",
+      "fact_supported": "New Jersey housing-discrimination guidance explains unlawful steering and protected-class protections.",
+      "accessed": "2026-08-26"
+    }
+  ],
+  "shared_sources": [
+    {
+      "category": "transit-planning",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/trip-planner-to",
+      "fact_supported": "The official trip planner provides current itinerary research rather than a fixed commute promise.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "category": "transit-planning",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/station-park-ride-to/",
+      "fact_supported": "The official station search provides current station, accessibility, and parking research paths.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "category": "property-research",
+      "publisher": "New Jersey Division of Taxation",
+      "url": "https://nj.gov/treasury/taxation/lpt/genlpt.shtml",
+      "fact_supported": "New Jersey explains the local property-tax system and the role of municipal assessment records.",
+      "accessed": "2026-08-26"
+    }
+  ],
+  "towns": {
+    "basking-ridge-bernards-township": {
+      "display_name": "Basking Ridge / Bernards Township",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Bernards Township",
+          "url": "https://www.bernards.org/",
+          "fact_supported": "Basking Ridge is researched through Bernards Township government, departments, and land-use resources.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/bernardstownshipsomersetcountynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Bernards Township as the official Census geography for municipal comparisons.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Bernards Township School District",
+          "url": "https://www.bernardsboe.com/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and district contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://content.njtransit.com/station/basking-ridge-station",
+          "fact_supported": "The official station page identifies Basking Ridge Station and its Bernards Township setting.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "bernardsville": {
+      "display_name": "Bernardsville",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Borough of Bernardsville",
+          "url": "https://www.bernardsville.gov/",
+          "fact_supported": "The borough site is the official directory for government, planning, assessor, and local services.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/bernardsvilleboroughnewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Bernardsville Borough as a distinct official Census geography.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Somerset Hills School District",
+          "url": "https://www.shsd.org/",
+          "fact_supported": "The regional district site is the direct source for registration, schools, and district contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/bernardsville-station",
+          "fact_supported": "The official station page identifies Bernardsville Station and current station information.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "chatham-borough-and-township": {
+      "display_name": "Chatham Borough and Chatham Township",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Borough of Chatham",
+          "url": "https://www.chathamborough.org/",
+          "fact_supported": "Chatham Borough maintains its own government, departments, assessment, and land-use resources.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "municipality",
+          "publisher": "Chatham Township",
+          "url": "https://chathamtownship.org/",
+          "fact_supported": "Chatham Township maintains a separate government, assessment, zoning, and local-service system.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/chathamboroughnewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Chatham Borough as a distinct official Census geography.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/chathamtownshipmorriscountynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Chatham Township as a distinct official Census geography.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "School District of the Chathams",
+          "url": "https://www.chatham-nj.org/",
+          "fact_supported": "The shared district site provides registration, school, calendar, and contact information.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/chatham-station",
+          "fact_supported": "The station page locates Chatham Station in Chatham Borough and provides current station details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "cranford": {
+      "display_name": "Cranford",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Township of Cranford",
+          "url": "https://www.cranfordnj.org/",
+          "fact_supported": "The township site is the official directory for departments, assessor, planning, and recreation.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/cranfordtownshipunioncountynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Cranford Township as the official Census geography for comparison.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Cranford Public Schools",
+          "url": "https://www.cranfordschools.org/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/cranford-station",
+          "fact_supported": "The official Cranford Station page provides current rail, station, and parking research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "glen-ridge": {
+      "display_name": "Glen Ridge",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Borough of Glen Ridge",
+          "url": "https://www.glenridgenj.org/",
+          "fact_supported": "The borough site is the official directory for municipal departments and land-use research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/glenridgeboroughnewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Glen Ridge Borough as a distinct official Census geography.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Glen Ridge Public Schools",
+          "url": "https://www.glenridge.org/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/glen-ridge-station",
+          "fact_supported": "The official Glen Ridge Station page provides current rail and station research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "madison": {
+      "display_name": "Madison",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Borough of Madison",
+          "url": "https://www.rosenet.org/",
+          "fact_supported": "The borough site is the official directory for government, assessor, planning, and services.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/madisonboroughnewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Madison Borough as a distinct official Census geography.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Madison Public Schools",
+          "url": "https://www.madisonpublicschools.org/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/madison-station",
+          "fact_supported": "The official Madison Station page provides current rail, station, and parking research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "maplewood": {
+      "display_name": "Maplewood",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Township of Maplewood",
+          "url": "https://www.maplewoodnj.gov/",
+          "fact_supported": "The township site is the official directory for departments, assessor, planning, and services.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/maplewoodtownshipessexcountynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Maplewood Township as the official Census geography for comparison.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "South Orange–Maplewood School District",
+          "url": "https://www.somsdk12.org/",
+          "fact_supported": "The shared district site provides registration, schools, calendar, and contact information.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/maplewood-station",
+          "fact_supported": "The official Maplewood Station page provides current rail and station research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "millburn-short-hills": {
+      "display_name": "Millburn / Short Hills",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Township of Millburn",
+          "url": "https://www.twp.millburn.nj.us/",
+          "fact_supported": "Millburn Township government covers municipal, assessment, and land-use research for Short Hills addresses.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/millburntownshipessexcountynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Millburn Township as the official municipal Census geography.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Millburn Township Public Schools",
+          "url": "https://www.millburn.org/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/millburn-station",
+          "fact_supported": "The official Millburn Station page provides current rail and station research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/short-hills-station",
+          "fact_supported": "The Short Hills Station page identifies Millburn Township and current station information.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "ridgewood": {
+      "display_name": "Ridgewood",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Village of Ridgewood",
+          "url": "https://www.ridgewoodnj.net/",
+          "fact_supported": "The village site is the official directory for government, assessment, land use, and services.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/ridgewoodvillagenewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Ridgewood Village as the official Census geography for comparison.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Ridgewood Public Schools",
+          "url": "https://www.rpsnj.us/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/ridgewood-station",
+          "fact_supported": "The official Ridgewood Station page provides current rail and station research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "south-orange": {
+      "display_name": "South Orange",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "South Orange Village",
+          "url": "https://www.southorange.org/",
+          "fact_supported": "The municipal site is the official directory for departments, assessor, planning, and services.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/southorangevillagetownshipessexcountynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies South Orange Village Township as the official Census geography.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "South Orange–Maplewood School District",
+          "url": "https://www.somsdk12.org/",
+          "fact_supported": "The shared district site provides registration, schools, calendar, and contact information.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/south-orange-station",
+          "fact_supported": "The official South Orange Station page provides current rail and station research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "summit": {
+      "display_name": "Summit",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "City of Summit",
+          "url": "https://www.cityofsummit.org/",
+          "fact_supported": "The city site is the official directory for government, assessment, planning, and services.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/summitcitynewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Summit city as the official Census geography for comparison.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Summit Public Schools",
+          "url": "https://www.summit.k12.nj.us/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/summit-station",
+          "fact_supported": "The official Summit Station page provides current rail, station, and parking research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    },
+    "westfield": {
+      "display_name": "Westfield",
+      "accessed": "2026-08-26",
+      "sources": [
+        {
+          "category": "municipality",
+          "publisher": "Town of Westfield",
+          "url": "https://www.westfieldnj.gov/",
+          "fact_supported": "The town site is the official directory for government, assessment, planning, and services.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "census",
+          "publisher": "U.S. Census Bureau",
+          "url": "https://www.census.gov/quickfacts/fact/table/westfieldtownnewjersey/PST045225",
+          "fact_supported": "QuickFacts identifies Westfield town as the official Census geography for comparison.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "school-district",
+          "publisher": "Westfield Public Schools",
+          "url": "https://www.westfieldnjk12.org/",
+          "fact_supported": "The district site is the direct source for registration, schools, calendars, and contacts.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "njdoe",
+          "publisher": "New Jersey Department of Education",
+          "url": "https://www.nj.gov/education/schoolperformance/",
+          "fact_supported": "The state publishes School Performance Reports with methodology and reporting-period context.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "transit",
+          "publisher": "NJ TRANSIT",
+          "url": "https://www.njtransit.com/station/westfield-station",
+          "fact_supported": "The official Westfield Station page provides current rail, station, and parking research details.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "category": "property",
+          "publisher": "New Jersey Division of Taxation",
+          "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+          "fact_supported": "The state publishes local property-tax statistics and assessment files with year-specific context.",
+          "accessed": "2026-08-26"
+        }
+      ]
+    }
+  }
+}

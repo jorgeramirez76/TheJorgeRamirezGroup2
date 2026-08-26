@@ -117,11 +117,14 @@
         "description": "The 12 best NJ towns for families in 2026 — ranked by school ratings, NYC commute time, median home prices, and safety. Data-driven picks from Jorge Ramirez, KW agent."
       },
       "after": {
-        "title": "Best NJ Towns for Families in 2026: Data and Trade-Offs",
-        "description": "Compare 12 New Jersey towns using school data, home prices, safety and NYC commute times, plus a disclosed weighted family score."
+        "title": "Compare New Jersey Towns: Schools, Transit, Taxes & Records",
+        "description": "Compare twelve New Jersey communities with official sources for municipal records, public schools, transit, taxes, zoning and property due diligence."
       },
       "sync_fields": [
-        "property:og:description"
+        "property:og:title",
+        "name:twitter:title",
+        "property:og:description",
+        "name:twitter:description"
       ]
     },
     {
