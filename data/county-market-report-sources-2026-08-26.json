@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-26",
+  "renderer": "tools/generate_county_market_research.py",
+  "publicationPolicy": {
+    "status": "reviewed-source-links-only",
+    "scope": "Five retained English and Spanish county research routes",
+    "rule": "Publish the research method and direct primary-source links, not copied market tables or unsourced market values.",
+    "countyRule": "County sources do not answer municipality-level or property-specific questions.",
+    "propertyRule": "A property-specific CMA requires current comparable properties and property details.",
+    "corrections": "Source-link or labeling corrections may be sent through the site contact page."
+  },
+  "sharedSources": [
+    {
+      "id": "njr-market-data",
+      "publisher": "New Jersey Realtors",
+      "title": "10K Market Data",
+      "url": "https://www.njrealtor.com/research/10k/",
+      "geography": "New Jersey and county",
+      "period": "Monthly publication page",
+      "accessedOn": "2026-08-26",
+      "use": "Confirm the official route to public state and county reports and the publication cadence described by New Jersey Realtors.",
+      "limit": "The page states that municipality reports are a member resource; this guide does not represent county data as municipality data."
+    },
+    {
+      "id": "njr-public-county-portal",
+      "publisher": "New Jersey Realtors / ShowingTime Plus",
+      "title": "Public State and County Reports",
+      "url": "https://njar-public.stats.10kresearch.com/reports",
+      "geography": "New Jersey and county",
+      "period": "User-selected reporting period",
+      "accessedOn": "2026-08-26",
+      "use": "Let readers select the county, report period, and available property category at the source.",
+      "limit": "Values can change with the selected report and period. This site links to the portal and does not copy its tables.",
+      "publicationHandling": "direct public county-report portal linked by NJ Realtors; tables are viewed at the source and are not reproduced"
+    },
+    {
+      "id": "nj-treasury-property-tax-statistics",
+      "publisher": "New Jersey Department of the Treasury, Division of Taxation",
+      "title": "Property Tax Statistics",
+      "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+      "geography": "New Jersey, county, and taxing district depending on table",
+      "period": "Annual statistical tables",
+      "accessedOn": "2026-08-26",
+      "use": "Find the Division of Taxation's property-tax statistical tables and definitions.",
+      "limit": "Assessment and tax statistics are not listing-service market statistics or a valuation of a particular property."
+    },
+    {
+      "id": "nj-treasury-average-residential-2025",
+      "publisher": "New Jersey Department of the Treasury, Division of Taxation",
+      "title": "2025 Average Residential Statistics",
+      "url": "https://www.nj.gov/treasury/taxation/pdf/lpt/class4/2025AvgResStat.pdf",
+      "geography": "New Jersey taxing district",
+      "period": "2025",
+      "accessedOn": "2026-08-26",
+      "use": "Read the table using its exact labels: # of Line Items, Avg Assessment, Avg Tax Bill, # of Sales, and Avg Sales Price.",
+      "limit": "The published values are averages, not medians; district rows should not be presented as one countywide value or as a current CMA."
+    },
+    {
+      "id": "nj-treasury-equalization-tables",
+      "publisher": "New Jersey Department of the Treasury, Division of Taxation",
+      "title": "County Equalization Tables",
+      "url": "https://www.nj.gov/treasury/taxation/lpt/county_equalized.shtml",
+      "geography": "New Jersey county and taxing district",
+      "period": "Annual tables",
+      "accessedOn": "2026-08-26",
+      "use": "Review county equalization tables in their tax-administration context.",
+      "limit": "Equalized valuation concepts are not a listing price, appraisal, or prediction of a future sale."
+    },
+    {
+      "id": "nj-dca-construction-reporter",
+      "publisher": "New Jersey Department of Community Affairs",
+      "title": "Construction Reporter",
+      "url": "https://www.nj.gov/dca/codes/reporter/",
+      "geography": "New Jersey and local jurisdictions",
+      "period": "Permit and certificate reporting periods",
+      "accessedOn": "2026-08-26",
+      "use": "Research building-permit and certificate-of-occupancy activity reported by local officials.",
+      "limit": "Permits and certificates are development activity indicators, not a count of homes for sale and not a market prediction."
+    },
+    {
+      "id": "census-acs-data-profiles",
+      "publisher": "United States Census Bureau",
+      "title": "American Community Survey Data Profiles",
+      "url": "https://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/",
+      "geography": "United States geographic areas including counties",
+      "period": "ACS profile release selected by the user",
+      "accessedOn": "2026-08-26",
+      "use": "Confirm the purpose of ACS data profiles and use Selected Housing Characteristics profile DP04 for county context.",
+      "limit": "ACS values are survey estimates for the stated release and geography, not current transactions, listings, or appraisals."
+    }
+  ],
+  "reports": [
+    {
+      "slug": "essex-county-nj-real-estate-market-2026",
+      "county": "Essex",
+      "countyFips": "34013",
+      "periodLabel": "2026 research path",
+      "publishedOn": "2026-03-08",
+      "routes": {
+        "en": "/blog/essex-county-nj-real-estate-market-2026",
+        "es": "/es/blog/essex-county-nj-real-estate-market-2026"
+      },
+      "countyDirectory": {
+        "title": "Essex County official website",
+        "url": "https://essexcountynj.org/",
+        "accessedOn": "2026-08-26"
+      },
+      "acsHousingProfile": "https://data.census.gov/table/ACSDP5Y2024.DP04?g=050XX00US34013"
+    },
+    {
+      "slug": "morris-county-nj-real-estate-market-2026",
+      "county": "Morris",
+      "countyFips": "34027",
+      "periodLabel": "2026 research path",
+      "publishedOn": "2026-03-08",
+      "routes": {
+        "en": "/blog/morris-county-nj-real-estate-market-2026",
+        "es": "/es/blog/morris-county-nj-real-estate-market-2026"
+      },
+      "countyDirectory": {
+        "title": "Morris County Cities and Towns",
+        "url": "https://www.morriscountynj.gov/Residents/Community-Information/Cities-and-Towns",
+        "accessedOn": "2026-08-26"
+      },
+      "acsHousingProfile": "https://data.census.gov/table/ACSDP5Y2024.DP04?g=050XX00US34027"
+    },
+    {
+      "slug": "hudson-county-real-estate-market-q2-2026",
+      "county": "Hudson",
+      "countyFips": "34017",
+      "periodLabel": "Q2 2026 research path",
+      "publishedOn": "2026-04-16",
+      "routes": {
+        "en": "/blog/hudson-county-real-estate-market-q2-2026",
+        "es": "/es/blog/hudson-county-real-estate-market-q2-2026"
+      },
+      "countyDirectory": {
+        "title": "Hudson County official website",
+        "url": "https://www.hudsoncountynj.org/",
+        "accessedOn": "2026-08-26"
+      },
+      "acsHousingProfile": "https://data.census.gov/table/ACSDP5Y2024.DP04?g=050XX00US34017"
+    },
+    {
+      "slug": "middlesex-county-real-estate-market-q2-2026",
+      "county": "Middlesex",
+      "countyFips": "34023",
+      "periodLabel": "Q2 2026 research path",
+      "publishedOn": "2026-04-16",
+      "routes": {
+        "en": "/blog/middlesex-county-real-estate-market-q2-2026",
+        "es": "/es/blog/middlesex-county-real-estate-market-q2-2026"
+      },
+      "countyDirectory": {
+        "title": "Middlesex County Municipalities",
+        "url": "https://www.middlesexcountynj.gov/government/municipalities",
+        "accessedOn": "2026-08-26"
+      },
+      "acsHousingProfile": "https://data.census.gov/table/ACSDP5Y2024.DP04?g=050XX00US34023"
+    },
+    {
+      "slug": "union-county-nj-real-estate-market-report-2026",
+      "county": "Union",
+      "countyFips": "34039",
+      "periodLabel": "2026 research path",
+      "publishedOn": "2026-03-08",
+      "routes": {
+        "en": "/blog/union-county-nj-real-estate-market-report-2026",
+        "es": "/es/blog/union-county-nj-real-estate-market-report-2026"
+      },
+      "countyDirectory": {
+        "title": "Union County Municipalities",
+        "url": "https://ucnj.org/municipalities/",
+        "accessedOn": "2026-08-26"
+      },
+      "acsHousingProfile": "https://data.census.gov/table/ACSDP5Y2024.DP04?g=050XX00US34039"
+    }
+  ]
+}
