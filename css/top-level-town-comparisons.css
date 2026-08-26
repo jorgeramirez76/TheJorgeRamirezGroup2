@@ -94,11 +94,19 @@ body.tc-page {
   text-decoration: none;
 }
 
+.tc-brand picture {
+  display: block;
+  line-height: 0;
+}
+
 .tc-brand img {
   display: block;
   width: 190px;
   height: auto;
   max-height: 64px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: #FFFFFF;
   object-fit: contain;
 }
 

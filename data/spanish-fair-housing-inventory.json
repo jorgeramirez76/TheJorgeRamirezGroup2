@@ -4,7 +4,6 @@
     "es/55-plus-communities-nj.html",
     "es/ai-authority.html",
     "es/blog/absentee-owner-nj-sell-rental-property.html",
-    "es/blog/chatham-vs-madison-nj.html",
     "es/blog/decluttering-items-home-value-nj.html",
     "es/blog/downsizing-your-nj-home.html",
     "es/blog/expired-listing-nj-what-to-do.html",
@@ -23,6 +22,7 @@
     "es/buy-a-home.html",
     "es/buyer-agency-agreement-nj.html",
     "es/cash-offer-nj.html",
+    "es/chatham-vs-madison-nj.html",
     "es/closing-costs-calculator.html",
     "es/communities.html",
     "es/communities/index.html",
@@ -269,10 +269,10 @@
       "es/blog/westfield-nj-real-estate-market-2025.html"
     ],
     "redirects": [
+      "es/blog/chatham-vs-madison-nj.html",
       "es/blog/first-time-home-buyer-guide-new-jersey.html",
       "es/blog/nj-property-tax-guide-homeowners.html",
       "es/blog/selling-your-home-summit-nj-guide.html",
-      "es/chatham-vs-madison-nj.html",
       "es/nyc-to-nj-relocation.html",
       "es/westfield-vs-summit-nj.html"
     ],

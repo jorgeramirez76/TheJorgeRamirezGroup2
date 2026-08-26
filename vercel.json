@@ -690,13 +690,13 @@
       "permanent": true
     },
     {
-      "source": "/chatham-vs-madison-nj.html",
-      "destination": "/blog/chatham-vs-madison-nj",
+      "source": "/blog/chatham-vs-madison-nj.html",
+      "destination": "/chatham-vs-madison-nj",
       "permanent": true
     },
     {
-      "source": "/chatham-vs-madison-nj",
-      "destination": "/blog/chatham-vs-madison-nj",
+      "source": "/blog/chatham-vs-madison-nj",
+      "destination": "/chatham-vs-madison-nj",
       "permanent": true
     },
     {
@@ -760,13 +760,13 @@
       "permanent": true
     },
     {
-      "source": "/es/chatham-vs-madison-nj.html",
-      "destination": "/es/blog/chatham-vs-madison-nj",
+      "source": "/es/blog/chatham-vs-madison-nj.html",
+      "destination": "/es/chatham-vs-madison-nj",
       "permanent": true
     },
     {
-      "source": "/es/chatham-vs-madison-nj",
-      "destination": "/es/blog/chatham-vs-madison-nj",
+      "source": "/es/blog/chatham-vs-madison-nj",
+      "destination": "/es/chatham-vs-madison-nj",
       "permanent": true
     },
     {

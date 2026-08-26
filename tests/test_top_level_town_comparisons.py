@@ -22,6 +22,7 @@ SOURCE_CHECKER = ROOT / "tools" / "check_top_level_comparison_sources.py"
 STYLESHEET = ROOT / "css" / "top-level-town-comparisons.css"
 
 SLUGS = (
+    "chatham-vs-madison-nj",
     "cranford-vs-garwood-nj",
     "cranford-vs-westfield-nj",
     "jersey-city-vs-hoboken-nj",
@@ -55,6 +56,7 @@ OFFICIAL_HOSTS = {
     "www.newprov.us",
     "www.nj.gov",
     "www.njtransit.com",
+    "www.rosenet.org",
     "www.twp.millburn.nj.us",
     "www.westfieldnj.gov",
     "chathamtownship.org",
@@ -192,7 +194,7 @@ class TopLevelTownComparisonTests(unittest.TestCase):
             {"maplewood-vs-montclair-nj": "montclair-vs-maplewood-nj"},
             self.manifest["redirects"],
         )
-        self.assertEqual(13, len(self.manifest["places"]))
+        self.assertEqual(14, len(self.manifest["places"]))
         source_records = [*self.manifest["shared_sources"]]
         for key, place in self.manifest["places"].items():
             with self.subTest(place=key):
@@ -400,6 +402,35 @@ class TopLevelTownComparisonTests(unittest.TestCase):
                 self.assertIn(f'hreflang="es-US" href="{es_url}"', combined_sitemaps)
         retained = read("livingston-vs-west-orange-nj.html")
         self.assertRegex(retained, r'<meta\s+name="robots"\s+content="noindex, follow"')
+
+    def test_chatham_madison_legacy_routes_consolidate_without_a_loop(self) -> None:
+        redirects = json.loads(read("vercel.json"))["redirects"]
+        expected = {
+            "/blog/chatham-vs-madison-nj": "/chatham-vs-madison-nj",
+            "/blog/chatham-vs-madison-nj.html": "/chatham-vs-madison-nj",
+            "/es/blog/chatham-vs-madison-nj": "/es/chatham-vs-madison-nj",
+            "/es/blog/chatham-vs-madison-nj.html": "/es/chatham-vs-madison-nj",
+        }
+        for source, destination in expected.items():
+            with self.subTest(source=source):
+                matches = [item for item in redirects if item.get("source") == source]
+                self.assertEqual(
+                    [{"source": source, "destination": destination, "permanent": True}],
+                    matches,
+                )
+
+        for relative, canonical in (
+            ("blog/chatham-vs-madison-nj.html", "https://thejorgeramirezgroup.com/chatham-vs-madison-nj"),
+            ("es/blog/chatham-vs-madison-nj.html", "https://thejorgeramirezgroup.com/es/chatham-vs-madison-nj"),
+        ):
+            with self.subTest(relative=relative):
+                raw = read(relative)
+                self.assertRegex(raw, r'<meta\s+name="robots"\s+content="noindex, follow"')
+                self.assertIn(f'<link rel="canonical" href="{canonical}">', raw)
+
+        combined_sitemaps = read("sitemap.xml") + read("sitemap-es.xml")
+        self.assertNotIn("/blog/chatham-vs-madison-nj</loc>", combined_sitemaps)
+        self.assertNotIn("/es/blog/chatham-vs-madison-nj</loc>", combined_sitemaps)
 
     def test_renderer_owns_exact_output_and_is_idempotent(self) -> None:
         self.assertTrue(RENDERER.exists())

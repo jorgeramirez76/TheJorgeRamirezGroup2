@@ -510,9 +510,70 @@
           "accessed": "2026-08-26"
         }
       ]
+    },
+    "madison": {
+      "copy": {
+        "en": {
+          "label": "Madison",
+          "county": "Morris County",
+          "identity": "Madison is a borough in Morris County. Its official municipal site organizes departments, public notices, permits, and land-use records.",
+          "records": "Confirm the parcel, assessment, tax bill, zoning, permits, property condition, and route from the address under review.",
+          "transit": "The Madison Station page and NJ Transit trip planner provide current starting points for a dated route query."
+        },
+        "es": {
+          "label": "Madison",
+          "county": "condado de Morris",
+          "identity": "Madison es un borough del condado de Morris. Su sitio municipal oficial organiza departamentos, avisos públicos, permisos y registros de uso del suelo.",
+          "records": "Confirma la parcela, la tasación, la factura fiscal, la zonificación, los permisos, la condición y la ruta desde la dirección analizada.",
+          "transit": "La página de Madison Station y el planificador de NJ Transit ofrecen puntos de partida vigentes para una consulta con fecha."
+        }
+      },
+      "sources": [
+        {
+          "id": "madison-municipality",
+          "publisher": "Borough of Madison",
+          "url": "https://www.rosenet.org/",
+          "fact_supported": "Official borough departments, services, public notices, permits, and municipal contacts for Madison property research.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "madison-planning-zoning",
+          "publisher": "Borough of Madison — Planning and Zoning Office",
+          "url": "https://www.rosenet.org/425/Planning-and-Zoning-Office",
+          "fact_supported": "Official zoning, subdivision, site-plan, permit, ordinance, and department-contact resources for a specific Madison property.",
+          "accessed": "2026-08-26"
+        },
+        {
+          "id": "madison-station",
+          "publisher": "NJ Transit — Madison Station",
+          "url": "https://www.njtransit.com/station/madison-station",
+          "fact_supported": "Official station reference used with a property origin, destination, service date, and current NJ Transit trip query.",
+          "accessed": "2026-08-26"
+        }
+      ]
     }
   },
   "comparisons": {
+    "chatham-vs-madison-nj": {
+      "left": "chatham",
+      "right": "madison",
+      "copy": {
+        "en": {
+          "query_names": "Chatham vs. Madison",
+          "title": "Chatham vs Madison NJ | Official Records Guide",
+          "description": "Compare Chatham and Madison properties through current municipal, NJ Transit, NJDOE, and New Jersey tax records using each specific address.",
+          "h1": "Chatham vs. Madison: compare official records",
+          "lede": "A Chatham address may belong to Chatham Borough or Chatham Township, while Madison is a separate Morris County borough. Confirm the legal municipality first, then compare both properties through the same document checklist."
+        },
+        "es": {
+          "query_names": "Chatham vs. Madison",
+          "title": "Chatham vs Madison NJ | Guía de registros oficiales",
+          "description": "Compara propiedades en Chatham y Madison con registros municipales, de NJ Transit, NJDOE e impuestos de Nueva Jersey para cada dirección.",
+          "h1": "Chatham vs. Madison: compara registros oficiales",
+          "lede": "Una dirección de Chatham puede pertenecer a Chatham Borough o Chatham Township, mientras que Madison es un borough distinto del condado de Morris. Confirma primero el municipio legal y después compara ambas propiedades con la misma lista documental."
+        }
+      }
+    },
     "cranford-vs-garwood-nj": {
       "left": "cranford",
       "right": "garwood",

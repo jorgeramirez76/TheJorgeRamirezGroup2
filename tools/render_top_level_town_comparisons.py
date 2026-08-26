@@ -355,7 +355,10 @@ def render_page(
   <header class="tc-site-header">
     <div class="tc-header-inner">
       <a class="tc-brand" href="{esc(home)}" aria-label="The Jorge Ramirez Group">
-        <img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="190" height="80">
+        <picture>
+          <source srcset="/images/jorge-logo.webp" type="image/webp">
+          <img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="190" height="80">
+        </picture>
       </a>
       <nav class="tc-header-nav" aria-label="{'Navegación principal' if language == 'es' else 'Primary navigation'}">
         <a href="#overview">{esc(str(ui['nav_overview']))}</a>
@@ -496,7 +499,7 @@ def render_alias(target: str) -> str:
 <body class="tc-page">
   <!-- Generated redirect fallback. The server configuration owns the permanent redirect. -->
   <a class="tc-skip-link" href="#main-content">Skip to main content</a>
-  <header class="tc-site-header"><div class="tc-header-inner"><a class="tc-brand" href="/" aria-label="The Jorge Ramirez Group"><img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="190" height="80"></a></div></header>
+  <header class="tc-site-header"><div class="tc-header-inner"><a class="tc-brand" href="/" aria-label="The Jorge Ramirez Group"><picture><source srcset="/images/jorge-logo.webp" type="image/webp"><img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="190" height="80"></picture></a></div></header>
   <main id="main-content" class="tc-main">
     <section class="tc-section"><div class="tc-shell"><p class="tc-section-label">Canonical comparison</p><h1 class="tc-section-heading">This comparison has one current home</h1><p class="tc-section-intro">The reverse-order page has been consolidated so search engines and readers use one official-record guide.</p><p><a class="tc-resource-link" href="/{target}">Continue to Montclair vs. Maplewood</a></p></div></section>
   </main>
