@@ -224,7 +224,11 @@ def schema_graph(
                 "inLanguage": ui["lang"],
                 "dateModified": "2026-08-26",
                 "image": f"{SITE}/images/hero.jpg",
-                "author": {"@type": "Person", "name": "Jorge Ramirez"},
+                "author": {
+                    "@type": "Person",
+                    "@id": f"{SITE}/#jorge-ramirez",
+                    "name": "Jorge Ramirez",
+                },
                 "publisher": {"@type": "Organization", "name": "The Jorge Ramirez Group"},
             },
             {

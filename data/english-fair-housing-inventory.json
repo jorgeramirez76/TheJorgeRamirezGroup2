@@ -112,7 +112,6 @@
     "tools/market-comparison-widget.html",
     "westfield-nj-homes-for-sale.html",
     "westfield-vs-scotch-plains-nj.html",
-    "westfield-vs-summit-nj.html",
     "why-jorge-ramirez.html"
   ],
   "quarantined": [
@@ -658,7 +657,8 @@
       "communities/winfield/index.html",
       "communities/woodbridge/index.html",
       "maplewood-vs-montclair-nj.html",
-      "sell-home-fast-nj.html"
+      "sell-home-fast-nj.html",
+      "westfield-vs-summit-nj.html"
     ],
     "directories": [
       "es/55-plus-communities-nj.html",

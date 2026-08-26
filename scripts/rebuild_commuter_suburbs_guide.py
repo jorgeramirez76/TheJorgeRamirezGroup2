@@ -493,7 +493,7 @@ def schema_blocks(language: str, copy: dict) -> str:
         "mainEntityOfPage": {"@type": "WebPage", "@id": canonical},
         "author": {
             "@type": "Person",
-            "@id": "https://thejorgeramirezgroup.com/#agent",
+            "@id": "https://thejorgeramirezgroup.com/#jorge-ramirez",
             "name": "Jorge Ramirez",
             "url": "https://thejorgeramirezgroup.com/ai-authority",
         },

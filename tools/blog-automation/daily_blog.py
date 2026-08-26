@@ -330,7 +330,7 @@ def build_graph_jsonld(post, slug, today):
                 "@type": "Article",
                 "headline": post["h1"],
                 "description": post["meta_description"],
-                "author": {"@type": "Person", "name": "Jorge Ramirez",
+                "author": {"@type": "Person", "@id": f"{SITE}/#jorge-ramirez", "name": "Jorge Ramirez",
                            "telephone": "+1-908-230-7844", "url": SITE},
                 "publisher": {"@type": "Organization",
                               "name": "The Jorge Ramirez Group at Keller Williams Premier Properties",

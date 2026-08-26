@@ -519,7 +519,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
         "dateModified": REVIEWED_ON,
         "author": {
             "@type": "Person",
-            "@id": f"{SITE}/#agent",
+            "@id": f"{SITE}/#jorge-ramirez",
             "name": "Jorge Ramirez",
         },
         "publisher": {

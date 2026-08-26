@@ -669,6 +669,26 @@
       "permanent": true
     },
     {
+      "source": "/blog/first-time-home-buyer-guide-new-jersey",
+      "destination": "/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/first-time-home-buyer-guide-new-jersey",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/westfield-vs-summit-nj",
+      "destination": "/es/blog/summit-vs-westfield-nj",
+      "permanent": true
+    },
+    {
+      "source": "/westfield-vs-summit-nj",
+      "destination": "/blog/summit-vs-westfield-nj",
+      "permanent": true
+    },
+    {
       "source": "/features/buyer-workflows",
       "destination": "https://aisalespipeline.com/features/buyer-workflows-real-estate.html",
       "permanent": true
@@ -1390,16 +1410,6 @@
       "permanent": true
     },
     {
-      "source": "/westfield-vs-summit-nj.html",
-      "destination": "/blog/summit-vs-westfield-nj",
-      "permanent": true
-    },
-    {
-      "source": "/westfield-vs-summit-nj",
-      "destination": "/blog/summit-vs-westfield-nj",
-      "permanent": true
-    },
-    {
       "source": "/blog/chatham-vs-madison-nj.html",
       "destination": "/chatham-vs-madison-nj",
       "permanent": true
@@ -1447,16 +1457,6 @@
     {
       "source": "/blog/essex-county-real-estate-market-q2-2026",
       "destination": "/blog/essex-county-nj-real-estate-market-2026",
-      "permanent": true
-    },
-    {
-      "source": "/es/westfield-vs-summit-nj.html",
-      "destination": "/es/blog/summit-vs-westfield-nj",
-      "permanent": true
-    },
-    {
-      "source": "/es/westfield-vs-summit-nj",
-      "destination": "/es/blog/summit-vs-westfield-nj",
       "permanent": true
     },
     {

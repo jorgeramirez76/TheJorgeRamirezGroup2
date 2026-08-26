@@ -767,7 +767,7 @@ def schema(
             },
             {
                 "@type": "Person",
-                "@id": SITE + "/#agent",
+                "@id": SITE + "/#jorge-ramirez",
                 "name": "Jorge Ramirez",
                 "url": SITE + ("/ai-authority" if lang == "en" else "/es/ai-authority"),
                 "jobTitle": "New Jersey real estate salesperson",
@@ -800,7 +800,7 @@ def schema(
                 "datePublished": page["publishedOn"],
                 "dateModified": REVIEWED_ON,
                 "mainEntityOfPage": {"@id": canonical + "#webpage"},
-                "author": {"@id": SITE + "/#agent"},
+                "author": {"@id": SITE + "/#jorge-ramirez"},
                 "publisher": {"@id": SITE + "/#organization"},
                 "citation": list(citations),
             },

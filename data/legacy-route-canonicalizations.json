@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-08-26",
+  "source": "Combined release cross-review of historical Google Search Console performance rows and existing noindex/meta-refresh retirement fallbacks.",
+  "policy": "A retired address receives one clean permanent server redirect only when the existing canonical, visible fallback link, and topic intent all agree on a current indexable destination. Vercel cleanUrls covers the matching .html request. The local file remains a compact noindex fallback without hreflang or structured-data signals.",
+  "routes": [
+    {
+      "source": "/westfield-vs-summit-nj",
+      "fallbackFile": "westfield-vs-summit-nj.html",
+      "destination": "/blog/summit-vs-westfield-nj",
+      "language": "en",
+      "buttonLabel": "Open the current Summit and Westfield comparison",
+      "evidence": "The English clean and .html variants recorded 7 clicks and 621 impressions in the saved 16-month Search Console page export; the legacy file already canonicalized to this destination."
+    },
+    {
+      "source": "/es/westfield-vs-summit-nj",
+      "fallbackFile": "es/westfield-vs-summit-nj.html",
+      "destination": "/es/blog/summit-vs-westfield-nj",
+      "language": "es",
+      "buttonLabel": "Abrir la comparación actual de Summit y Westfield",
+      "evidence": "The Spanish .html variant recorded 26 impressions in the saved 16-month Search Console page export; its legacy file already canonicalized to this Spanish destination."
+    },
+    {
+      "source": "/blog/first-time-home-buyer-guide-new-jersey",
+      "fallbackFile": "blog/first-time-home-buyer-guide-new-jersey.html",
+      "destination": "/blog/first-time-home-buyer-nj-guide",
+      "language": "en",
+      "buttonLabel": "Open the current first-time buyer guide",
+      "evidence": "The existing retired file was a noindex meta-refresh whose canonical and visible moved-page link already agreed on this destination."
+    },
+    {
+      "source": "/es/blog/first-time-home-buyer-guide-new-jersey",
+      "fallbackFile": "es/blog/first-time-home-buyer-guide-new-jersey.html",
+      "destination": "/es/blog/first-time-home-buyer-nj-guide",
+      "language": "es",
+      "buttonLabel": "Abrir la guía actual para compradores primerizos",
+      "evidence": "The existing retired Spanish file was a noindex meta-refresh whose canonical already agreed on this Spanish destination."
+    }
+  ]
+}

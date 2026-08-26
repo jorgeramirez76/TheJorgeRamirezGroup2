@@ -892,6 +892,7 @@ TEMPLATE = r"""<!DOCTYPE html>
     {{
       "@context": "https://schema.org",
       "@type": "RealEstateAgent",
+      "@id": "https://thejorgeramirezgroup.com/#jorge-ramirez",
       "name": "Jorge Ramirez",
       "telephone": "+1-908-230-7844",
       "email": "jorge.ramirez@kw.com",

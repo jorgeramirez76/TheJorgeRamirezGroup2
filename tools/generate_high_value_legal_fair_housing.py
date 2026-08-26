@@ -1008,7 +1008,7 @@ def schema_graph(
     home = SITE + ("/es/" if lang == "es" else "/")
     in_language = "es-US" if lang == "es" else "en-US"
     org_id = SITE + "/#organization"
-    agent_id = SITE + "/#agent"
+    agent_id = SITE + "/#jorge-ramirez"
     webpage_id = canonical + "#webpage"
     breadcrumb_id = canonical + "#breadcrumbs"
     address = business["address"]

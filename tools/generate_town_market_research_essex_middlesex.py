@@ -357,7 +357,7 @@ def schema_graph(
     in_language = "es-US" if language == "es" else "en-US"
     address = business["address"]
     org_id = f"{SITE}/#organization"
-    agent_id = f"{SITE}/#agent"
+    agent_id = f"{SITE}/#jorge-ramirez"
     webpage_id = canonical + "#webpage"
     article_id = canonical + "#article"
     breadcrumb_id = canonical + "#breadcrumbs"
