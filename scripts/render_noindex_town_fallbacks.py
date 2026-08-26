@@ -19,6 +19,8 @@ from typing import Iterable, Optional
 ROOT = Path(__file__).resolve().parents[1]
 POLICY_PATH = ROOT / "data" / "english-noindex-town-fallbacks.json"
 SITE = "https://thejorgeramirezgroup.com"
+SHARE_IMAGE = f"{SITE}/images/hero.jpg"
+SHARE_IMAGE_ALT = "Residential property image from The Jorge Ramirez Group website"
 
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -99,6 +101,8 @@ def render_page(slug: str, policy: Optional[dict[str, object]] = None) -> str:
         "county_href": html.escape(county_guide["href"], quote=True),
         "county_label": html.escape(county_guide["label"]),
         "description": html.escape(description, quote=True),
+        "share_image": html.escape(SHARE_IMAGE, quote=True),
+        "share_image_alt": html.escape(SHARE_IMAGE_ALT, quote=True),
         "title": html.escape(title),
         "town": html.escape(town),
     }
@@ -113,6 +117,28 @@ def render_page(slug: str, policy: Optional[dict[str, object]] = None) -> str:
   <meta name="description" content="{escaped["description"]}">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="{escaped["canonical"]}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Jorge Ramirez Group">
+  <meta property="og:url" content="{escaped["canonical"]}">
+  <meta property="og:title" content="{escaped["title"]}">
+  <meta property="og:description" content="{escaped["description"]}">
+  <meta property="og:image" content="{escaped["share_image"]}">
+  <meta property="og:image:width" content="1400">
+  <meta property="og:image:height" content="933">
+  <meta property="og:image:alt" content="{escaped["share_image_alt"]}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{escaped["canonical"]}">
+  <meta name="twitter:title" content="{escaped["title"]}">
+  <meta name="twitter:description" content="{escaped["description"]}">
+  <meta name="twitter:image" content="{escaped["share_image"]}">
+  <meta name="twitter:image:alt" content="{escaped["share_image_alt"]}">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMS6H85LB0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', 'G-KMS6H85LB0');
+  </script>
   <link rel="icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

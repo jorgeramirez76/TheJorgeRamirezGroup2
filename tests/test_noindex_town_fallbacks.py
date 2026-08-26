@@ -7,6 +7,7 @@ import html
 import importlib.util
 import json
 import re
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -257,6 +258,59 @@ class NoindexTownFallbackTests(unittest.TestCase):
                 failures.append(f"{relative}: county destination does not exist")
 
         self.assertEqual([], failures)
+
+    def test_fallbacks_publish_self_canonical_share_metadata_and_site_ga4(self) -> None:
+        failures: list[str] = []
+        share_image = f"{SITE}/images/hero.jpg"
+
+        for slug in sorted(EXPECTED_SLUGS):
+            relative = f"towns/{slug}.html"
+            source = read(relative)
+            canonical = f"{SITE}/towns/{slug}"
+            title_match = re.search(r"<title>([^<]+)</title>", source)
+            description_match = re.search(
+                r'<meta name="description" content="([^"]+)">', source
+            )
+            title = title_match.group(1) if title_match else ""
+            description = description_match.group(1) if description_match else ""
+
+            expected_tags = (
+                '<meta property="og:type" content="website">',
+                f'<meta property="og:url" content="{canonical}">',
+                f'<meta property="og:title" content="{title}">',
+                f'<meta property="og:description" content="{description}">',
+                f'<meta property="og:image" content="{share_image}">',
+                '<meta property="og:image:alt" content="Residential property image from The Jorge Ramirez Group website">',
+                '<meta name="twitter:card" content="summary_large_image">',
+                f'<meta name="twitter:url" content="{canonical}">',
+                f'<meta name="twitter:title" content="{title}">',
+                f'<meta name="twitter:description" content="{description}">',
+                f'<meta name="twitter:image" content="{share_image}">',
+                '<meta name="twitter:image:alt" content="Residential property image from The Jorge Ramirez Group website">',
+            )
+            for tag in expected_tags:
+                if tag not in source:
+                    failures.append(f"{relative}: missing {tag}")
+
+            if source.count(
+                'https://www.googletagmanager.com/gtag/js?id=G-KMS6H85LB0'
+            ) != 1:
+                failures.append(f"{relative}: expected one GA4 loader")
+            if source.count("gtag('config', 'G-KMS6H85LB0');") != 1:
+                failures.append(f"{relative}: expected one GA4 configuration")
+
+        self.assertEqual([], failures)
+
+    def test_sitewide_page_audit_reports_zero_issues(self) -> None:
+        result = subprocess.run(
+            [sys.executable, "check_everything.py"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        self.assertIn("ZERO ISSUES", result.stdout)
+        self.assertNotIn("## ", result.stdout)
 
     def test_fallbacks_publish_no_rich_results_or_risky_local_claims(self) -> None:
         failures: list[str] = []
