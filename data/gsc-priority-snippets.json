@@ -146,8 +146,8 @@
         "description": "Interactive map of NJ Transit lines to NYC — commute times, median home prices & school ratings by station. Compare towns side by side and find yours."
       },
       "after": {
-        "title": "NJ Transit Train Map: NYC Commute Times by Station (2026)",
-        "description": "Use the interactive NJ Transit map to compare rail lines, station-to-NYC times, town home-price context and school data before choosing a commute."
+        "title": "NJ Train Map: Compare Selected NJ TRANSIT Stations",
+        "description": "Explore selected NJ TRANSIT stations by rail line, search the map, and open official schedules, trip planning, parking, accessibility, and alert resources."
       },
       "sync_fields": [
         "name:title",

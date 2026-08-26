@@ -1,0 +1,92 @@
+{
+  "reviewed": "2026-08-26",
+  "scope": "English and Spanish NJ commuter-rail station comparison pages",
+  "methodology": {
+    "gtfs_snapshot_date": "2026-08-19",
+    "gtfs_archive_sha256": "9b7e6bcb33e5c5c34a48b0d452f10a7085cd25337ccf8ef542827809409b471e",
+    "gtfs_snapshot_note": "The official NJ TRANSIT rail_data.zip archive downloaded on 2026-08-26 contained route, trip, stop-time, shape, and stop files timestamped 2026-08-19 17:12.",
+    "included_fields": [
+      "official GTFS stop identifier",
+      "official GTFS station name",
+      "official GTFS route membership within the four displayed route groups",
+      "official GTFS station latitude and longitude",
+      "curated internal town-guide destination when a matching local guide exists"
+    ],
+    "excluded_fields": [
+      "fares",
+      "scheduled or estimated travel duration",
+      "service frequency",
+      "real-estate prices or trends",
+      "property taxes",
+      "school ratings or rankings",
+      "crime or safety comparisons",
+      "subjective town or route recommendations"
+    ],
+    "selection_note": "The interface presents a documented station selection across four route groups and does not represent the complete NJ TRANSIT rail system. Riders are directed to NJ TRANSIT for date-specific itineraries, transfers, fares, alerts, parking, and accessibility information."
+  },
+  "sources": [
+    {
+      "id": "njt-gtfs-rail",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/rail_data.zip",
+      "fact_supported": "Official GTFS rail route names, route membership, station names, stop identifiers, and station coordinates used in the interactive dataset.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-gtfs-documentation",
+      "publisher": "NJ TRANSIT",
+      "url": "https://developer.njtransit.com/registration/appdoc?app=GTFS-RAIL",
+      "fact_supported": "NJ TRANSIT identifies the GTFS-RAIL feed as its rail schedule data product.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-system-map",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/accessibility/System-Map",
+      "fact_supported": "Official rail-system map reference for route and transfer orientation beyond the selected station view.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-new-york-routing",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/getting-new-york-train",
+      "fact_supported": "Official description of route-dependent New York service and transfer patterns, including current Raritan Valley and Morris & Essex guidance.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-ride-rail",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/ride-rail",
+      "fact_supported": "Riders should use official trip planning, schedules, alerts, station parking information, and accessibility information before travel.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-timetables",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/printables",
+      "fact_supported": "Official printer-friendly rail timetables and special-service schedule resources.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-trip-planner",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/trip-planner-to",
+      "fact_supported": "Official date- and time-specific itinerary planning destination.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-station-information",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/station-park-ride-to",
+      "fact_supported": "Official source for station-specific parking and accessibility research.",
+      "accessed": "2026-08-26"
+    },
+    {
+      "id": "njt-travel-alerts",
+      "publisher": "NJ TRANSIT",
+      "url": "https://www.njtransit.com/travel-alerts-to",
+      "fact_supported": "Official source for current rail alerts and station advisories.",
+      "accessed": "2026-08-26"
+    }
+  ]
+}
