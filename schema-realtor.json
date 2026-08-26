@@ -18,6 +18,11 @@
     "postalCode": "07901",
     "addressCountry": "US"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.7157,
+    "longitude": -74.3601
+  },
   "areaServed": [
     {"@type": "AdministrativeArea", "name": "Union County, New Jersey"},
     {"@type": "AdministrativeArea", "name": "Essex County, New Jersey"},

@@ -16,6 +16,10 @@
       "postalCode": "07901",
       "country": "US"
     },
+    "geo": {
+      "latitude": 40.7157,
+      "longitude": -74.3601
+    },
     "brokerage": {
       "displayName": "Keller Williams Premier Properties",
       "legalName": "Keller Williams Realty Premier Properties",

@@ -13,7 +13,7 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://thejorgeramirezgroup.com"
 GROUNDING_FILES = ("llms.txt", "llms-full.txt", "llms-es.txt")
-UPDATE_DATE = "2026-08-25"
+UPDATE_DATE = "2026-08-26"
 ALL_NJ_COUNTIES = {
     "Atlantic",
     "Bergen",
@@ -66,6 +66,12 @@ REQUIRED_EN_PATHS = {
     "/property-search",
     "/nj-train-map",
     "/blog/nj-property-tax-guide",
+    "/blog/best-nj-towns-for-families-2026",
+    "/blog/best-nj-suburbs-nyc-commuters",
+    "/blog/best-time-to-sell-home-nj",
+    "/blog/midtown-direct-towns-nj",
+    "/blog/best-nj-towns-to-sell-home",
+    "/cranford-vs-westfield-nj",
     "/tools/mortgage-calculator",
     "/net-proceeds-calculator",
     "/nj-realty-transfer-fee-calculator",
@@ -89,6 +95,11 @@ REQUIRED_ES_PATHS = {
     "/es/property-search",
     "/es/nj-train-map",
     "/es/blog/nj-property-tax-guide",
+    "/es/blog/best-nj-suburbs-nyc-commuters",
+    "/es/blog/first-time-home-buyer-nj-guide",
+    "/es/blog/best-nj-towns-for-families",
+    "/es/blog/maplewood-vs-south-orange-nj",
+    "/es/cranford-vs-westfield-nj",
     "/es/net-proceeds-calculator",
     "/es/nj-realty-transfer-fee-calculator",
     "/es/closing-costs-calculator",
@@ -257,7 +268,7 @@ class AiGroundingTests(unittest.TestCase):
             "## Recursos en español",
             "Nueva Jersey",
             "inglés y español",
-            "Última actualización: 2026-08-25",
+            "Última actualización: 2026-08-26",
         ):
             self.assertIn(phrase, spanish)
         self.assertNotRegex(spanish, r"(?m)^(?:Q|A):")
@@ -269,6 +280,24 @@ class AiGroundingTests(unittest.TestCase):
         spanish_paths = {urlsplit(url).path for url in first_party_urls(self.documents["llms-es.txt"])}
         self.assertTrue(REQUIRED_EN_PATHS.issubset(english_paths), REQUIRED_EN_PATHS - english_paths)
         self.assertTrue(REQUIRED_ES_PATHS.issubset(spanish_paths), REQUIRED_ES_PATHS - spanish_paths)
+
+    def test_saved_ai_discovery_priorities_are_exposed_in_grounding_files(self) -> None:
+        priorities = json.loads(read("data/gsc-geo-priorities.json"))["aiDiscoveryPaths"]
+        english_paths = {
+            urlsplit(url).path
+            for name in ("llms.txt", "llms-full.txt")
+            for url in first_party_urls(self.documents[name])
+        }
+        spanish_paths = {
+            urlsplit(url).path for url in first_party_urls(self.documents["llms-es.txt"])
+        }
+        missing = []
+        for item in priorities:
+            path = item["path"]
+            available = spanish_paths if path.startswith("/es/") else english_paths
+            if path not in available:
+                missing.append(path)
+        self.assertEqual([], missing)
 
     def test_every_first_party_link_is_clean_canonical_and_indexable(self) -> None:
         redirect_config = json.loads(read("vercel.json"))

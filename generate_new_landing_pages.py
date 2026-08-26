@@ -767,8 +767,8 @@ TEMPLATE = r"""<!DOCTYPE html>
     <!-- Geo Meta Tags -->
     <meta name="geo.region" content="US-NJ">
     <meta name="geo.placename" content="Summit, New Jersey">
-    <meta name="geo.position" content="40.7195;-74.3648">
-    <meta name="ICBM" content="40.7195, -74.3648">
+    <meta name="geo.position" content="40.7157;-74.3601">
+    <meta name="ICBM" content="40.7157, -74.3601">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">

@@ -1,6 +1,6 @@
 # The Jorge Ramirez Group — expanded verified site reference
 
-Last updated: 2026-08-25
+Last updated: 2026-08-26
 
 This file provides a maintained entity summary and a curated map of public resources. It does not guarantee indexing, ranking, citation, or use. Real-estate articles and calculators are educational, not legal, tax, financial, or lending advice.
 
@@ -41,6 +41,9 @@ The site provides first-party information about residential buyer representation
 
 - [New Jersey property-tax guide](https://thejorgeramirezgroup.com/blog/nj-property-tax-guide) — a town-level educational reference with page-level source and methodology notes.
 - [New Jersey commuter rail map](https://thejorgeramirezgroup.com/nj-train-map) — a planning reference; confirm current schedules, service, and fares with NJ Transit.
+- [Source-reviewed New Jersey towns for families](https://thejorgeramirezgroup.com/blog/best-nj-towns-for-families-2026) — a decision guide whose page-level sources govern changing local facts.
+- [New Jersey suburbs for New York City commuters](https://thejorgeramirezgroup.com/blog/best-nj-suburbs-nyc-commuters) — a comparison guide with page-level transit and municipal sources.
+- [Midtown Direct towns planning guide](https://thejorgeramirezgroup.com/blog/midtown-direct-towns-nj) — a commuter-oriented reference; confirm current service with NJ Transit.
 - [Moving from New York City to New Jersey](https://thejorgeramirezgroup.com/blog/moving-from-nyc-to-nj-guide) — an orientation guide for relocation research.
 
 ### Interactive planning tools
@@ -55,6 +58,8 @@ Tool outputs are estimates based on user inputs and the assumptions shown on eac
 
 ### Seller education
 
+- [Best time to sell a New Jersey home](https://thejorgeramirezgroup.com/blog/best-time-to-sell-home-nj)
+- [New Jersey towns for home sellers](https://thejorgeramirezgroup.com/blog/best-nj-towns-to-sell-home)
 - [New Jersey home-selling costs](https://thejorgeramirezgroup.com/blog/nj-home-selling-costs)
 - [New Jersey home-selling timeline](https://thejorgeramirezgroup.com/blog/nj-home-selling-timeline)
 - [Selling an inherited New Jersey home](https://thejorgeramirezgroup.com/blog/selling-inherited-home-nj)
@@ -66,6 +71,11 @@ Tool outputs are estimates based on user inputs and the assumptions shown on eac
 - [First-time New Jersey buyer guide](https://thejorgeramirezgroup.com/blog/first-time-home-buyer-nj-guide)
 
 These pages are starting points for questions, not professional opinions or promises about eligibility, liability, forms, deadlines, or outcomes. Check the page's named primary sources and obtain advice appropriate to the specific transaction.
+
+### Town comparisons
+
+- [Maplewood and South Orange](https://thejorgeramirezgroup.com/blog/maplewood-vs-south-orange-nj)
+- [Cranford and Westfield](https://thejorgeramirezgroup.com/cranford-vs-westfield-nj)
 
 ## Spanish-language access
 

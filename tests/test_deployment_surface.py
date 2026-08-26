@@ -73,6 +73,8 @@ class DeploymentSurfaceTests(unittest.TestCase):
         business = facts["business"]
         self.assertEqual(business["directPhone"]["e164"], schema["telephone"])
         self.assertEqual(business["email"], schema["email"])
+        self.assertEqual(business["geo"]["latitude"], schema["geo"]["latitude"])
+        self.assertEqual(business["geo"]["longitude"], schema["geo"]["longitude"])
         self.assertEqual(business["njRealEstateLicense"], schema["founder"]["identifier"]["value"])
         self.assertEqual(
             {f"{county} County, New Jersey" for county in facts["serviceCounties"]},

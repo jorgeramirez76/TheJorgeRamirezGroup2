@@ -1,6 +1,6 @@
 # The Jorge Ramirez Group — verified site reference
 
-Last updated: 2026-08-25
+Last updated: 2026-08-26
 
 This file is a concise navigation and factual reference for the public website. It does not guarantee indexing, ranking, citation, or use. Real-estate articles and calculators are educational, not legal, tax, financial, or lending advice.
 
@@ -37,6 +37,12 @@ Use the [communities hub](https://thejorgeramirezgroup.com/communities) for the 
 
 - [New Jersey property-tax guide](https://thejorgeramirezgroup.com/blog/nj-property-tax-guide)
 - [New Jersey commuter rail map](https://thejorgeramirezgroup.com/nj-train-map)
+- [Source-reviewed New Jersey towns for families](https://thejorgeramirezgroup.com/blog/best-nj-towns-for-families-2026)
+- [New Jersey suburbs for New York City commuters](https://thejorgeramirezgroup.com/blog/best-nj-suburbs-nyc-commuters)
+- [First-time New Jersey home-buyer guide](https://thejorgeramirezgroup.com/blog/first-time-home-buyer-nj-guide)
+- [Best time to sell a New Jersey home](https://thejorgeramirezgroup.com/blog/best-time-to-sell-home-nj)
+- [Midtown Direct towns planning guide](https://thejorgeramirezgroup.com/blog/midtown-direct-towns-nj)
+- [New Jersey towns for home sellers](https://thejorgeramirezgroup.com/blog/best-nj-towns-to-sell-home)
 - [Mortgage calculator](https://thejorgeramirezgroup.com/tools/mortgage-calculator)
 - [Seller net-proceeds calculator](https://thejorgeramirezgroup.com/net-proceeds-calculator)
 - [New Jersey realty transfer fee calculator](https://thejorgeramirezgroup.com/nj-realty-transfer-fee-calculator)
@@ -51,6 +57,7 @@ Use the [communities hub](https://thejorgeramirezgroup.com/communities) for the 
 - [Comparación de Maplewood y South Orange](https://thejorgeramirezgroup.com/es/blog/maplewood-vs-south-orange-nj)
 - [Summit and Westfield official-source comparison](https://thejorgeramirezgroup.com/blog/summit-vs-westfield-nj)
 - [Comparación de Summit y Westfield](https://thejorgeramirezgroup.com/es/blog/summit-vs-westfield-nj)
+- [Cranford and Westfield comparison](https://thejorgeramirezgroup.com/cranford-vs-westfield-nj)
 - [Westfield and Scotch Plains official-source comparison](https://thejorgeramirezgroup.com/westfield-vs-scotch-plains-nj)
 - [New Jersey home-sale timeline](https://thejorgeramirezgroup.com/blog/nj-home-selling-timeline)
 - [Cronograma para vender una casa en Nueva Jersey](https://thejorgeramirezgroup.com/es/blog/nj-home-selling-timeline)
