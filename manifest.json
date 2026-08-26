@@ -1,12 +1,12 @@
 {
   "name": "The Jorge Ramirez Group — NJ Real Estate",
   "short_name": "Jorge Ramirez Group",
-  "description": "Licensed NJ real estate agent serving NJ towns. Buy or sell with Jorge Ramirez — Keller Williams Premier Properties.",
+  "description": "Licensed New Jersey real estate agent serving buyers and sellers across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties.",
   "start_url": "/",
   "scope": "/",
-  "display": "browser",
-  "background_color": "#ffffff",
-  "theme_color": "#0f3460",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#1A1A1A",
   "lang": "en-US",
   "icons": [
     {

@@ -1,15 +1,29 @@
 # Keep internal source / build / report files OFF the public web.
 # (These are currently publicly downloadable on GitHub Pages — this fixes that.)
 .git
+.gitignore
 .claude
 .DS_Store
 __pycache__
+node_modules
 *.py
 *.pyc
 _posts
+tests
+scripts
+data
+crm
+docs
+lead-research
+property-leads-system
+tools/blog-automation
+tools/seo-optimizer
+office-status.json
+schema-realtor.json
 *.md
 .design-screens
 *.pdf
 !guides/*.pdf
 *.db
 *.backup
+*.log

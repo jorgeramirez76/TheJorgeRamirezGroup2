@@ -1,144 +1,44 @@
 {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  "name": "Jorge Ramirez",
-  "alternateName": "The Jorge Ramirez Group",
-  "url": "https://thejorgeramirezgroup.com",
-  "logo": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
+  "@id": "https://thejorgeramirezgroup.com/#agent",
+  "name": "The Jorge Ramirez Group",
+  "alternateName": "Jorge Ramirez",
+  "url": "https://thejorgeramirezgroup.com/",
+  "logo": "https://thejorgeramirezgroup.com/images/jorge-logo.jpg",
   "image": "https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg",
-  "description": "Licensed NJ real estate agent serving communities across Union, Essex, Morris, Middlesex, and Hudson County in Northern New Jersey. Specializing in luxury homes, NYC commuter properties, and first-time home buyers since 2017.",
-  "priceRange": "$$-$$$",
+  "description": "Licensed New Jersey real estate agent serving buyers and sellers across Union, Essex, Morris, Hudson, Middlesex, and Somerset counties.",
   "telephone": "+19082307844",
-  "email": "info@thejorgeramirezgroup.com",
+  "email": "jorge.ramirez@kw.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "488 Springfield Avenue",
+    "streetAddress": "488 Springfield Ave",
     "addressLocality": "Summit",
     "addressRegion": "NJ",
     "postalCode": "07901",
     "addressCountry": "US"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "40.7158",
-    "longitude": "-74.3643"
-  },
   "areaServed": [
-    {
-      "@type": "AdministrativeArea",
-      "name": "Union County, New Jersey"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Essex County, New Jersey"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Morris County, New Jersey"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Middlesex County, New Jersey"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Hudson County, New Jersey"
+    {"@type": "AdministrativeArea", "name": "Union County, New Jersey"},
+    {"@type": "AdministrativeArea", "name": "Essex County, New Jersey"},
+    {"@type": "AdministrativeArea", "name": "Morris County, New Jersey"},
+    {"@type": "AdministrativeArea", "name": "Hudson County, New Jersey"},
+    {"@type": "AdministrativeArea", "name": "Middlesex County, New Jersey"},
+    {"@type": "AdministrativeArea", "name": "Somerset County, New Jersey"}
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Jorge Ramirez",
+    "jobTitle": "New Jersey Real Estate Agent",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "New Jersey Real Estate License",
+      "value": "1754604"
     }
-  ],
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Home Buying Services",
-        "description": "Exclusive access to off-market listings, targeted property search, and expert negotiation for home buyers across Northern NJ"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Home Selling Services",
-        "description": "Data-driven pricing, professional marketing, AI-powered buyer targeting, and intelligent lead generation for home sellers"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "NYC Commuter Property Specialist",
-        "description": "Expert guidance on homes near Midtown Direct train lines and top commuter towns in NJ"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "First-Time Home Buyer Services",
-        "description": "Complete guidance through the home buying process for first-time buyers in New Jersey"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Servicios de Compra de Vivienda",
-        "description": "Asesoría experta en bienes raíces para compradores en español. Acceso a propiedades en todo Norte de Nueva Jersey."
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Servicios de Venta de Vivienda",
-        "description": "Estrategia de precios, marketing digital, y negociación experta para vendedores hispanos en NJ."
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Agente Inmobiliario Bilingüe",
-        "description": "Jorge Ramirez es un agente inmobiliario bilingüe (inglés/español) sirviendo más de comunidades en New Jersey."
-      }
-    }
-  ],
-  "knowsAbout": [
-    "Real Estate Sales",
-    "Home Buying",
-    "Home Selling",
-    "Luxury Real Estate",
-    "Investment Properties",
-    "NYC Commuter Properties",
-    "First-Time Home Buyers",
-    "Property Valuation",
-    "Market Analysis",
-    "Real Estate Negotiation"
-  ],
-  "memberOf": [
-    {
-      "@type": "Organization",
-      "name": "Keller Williams Realty Premier Properties"
-    },
-    {
-      "@type": "Organization",
-      "name": "NAHREP",
-      "description": "National Association of Hispanic Real Estate Professionals"
-    }
-  ],
-  "sameAs": [
-    "https://www.zillow.com/profile/jorgeramirez",
-    "https://www.realtor.com/realestateagents/jorge-ramirez",
-    "https://www.zillow.com/profile/TheJorgeRamirezGroup",
-    "https://www.linkedin.com/in/jorgeramirez1213",
-    "https://www.facebook.com/thejorgeramirezgroup",
-    "https://www.instagram.com/jorgesellsnjhomes",
-    "https://www.youtube.com/@JorgeRamirezRealEstate",
-    "https://www.google.com/maps/place/Jorge+Ramirez+Realtor+-+Keller+Williams+Premier+Properties/@40.7176144,-74.3613942,16z",
-    "https://thejorgeramirezgroup.kw.com/agent/Jorge-Ramirez/520237"
-  ],
-  "knowsLanguage": [
-    "en-US",
-    "es"
-  ]
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Keller Williams Premier Properties"
+  },
+  "knowsLanguage": ["en-US", "es-US"]
 }
