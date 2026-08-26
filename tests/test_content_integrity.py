@@ -109,6 +109,34 @@ class ContentIntegrityTests(unittest.TestCase):
         self.assertTrue(item_lists, "communities page is missing ItemList data")
         self.assertEqual([64], [item["numberOfItems"] for item in item_lists])
 
+    def test_spanish_communities_hub_matches_indexable_inventory(self) -> None:
+        source = read("es/communities/index.html")
+        self.assertEqual(source, read("es/communities.html"))
+        registered = {
+            slug
+            for towns in self.inventory["byCounty"].values()
+            for slug in towns
+        }
+        hub_slugs = set(
+            re.findall(r'class=["\']town-card["\'][^>]*href=["\']/es/towns/([^"\']+)', source)
+        )
+        self.assertEqual(registered, hub_slugs)
+        self.assertNotRegex(source, r' class=["\']town-card["\'][^>]*href=["\']/towns/')
+        self.assertIn("64 guías de comunidades de NJ", source)
+
+        item_lists = []
+        for obj in json_ld_objects(source):
+            if isinstance(obj, dict):
+                entity = obj.get("mainEntity")
+                if isinstance(entity, dict) and entity.get("@type") == "ItemList":
+                    item_lists.append(entity)
+        self.assertEqual([64], [item["numberOfItems"] for item in item_lists])
+        schema_urls = {
+            item["url"].removeprefix("https://thejorgeramirezgroup.com/es/towns/")
+            for item in item_lists[0]["itemListElement"]
+        }
+        self.assertEqual(registered, schema_urls)
+
     def test_basking_ridge_relationship_is_somerset_not_morris(self) -> None:
         relationship = self.facts["placeRelationships"]["basking-ridge"]
         self.assertEqual("Somerset", relationship["county"])

@@ -20,6 +20,8 @@ FACTS = json.loads((ROOT / "data" / "site-facts.json").read_text(encoding="utf-8
 # and production cannot publish different inventories.
 OUT = ROOT / "communities" / "index.html"
 ROUTE_ALIASES = (ROOT / "communities.html",)
+SPANISH_OUT = ROOT / "es" / "communities" / "index.html"
+SPANISH_ROUTE_ALIASES = (ROOT / "es" / "communities.html",)
 
 SPECIAL_NAMES = {
     "boonton-township": "Boonton Township",
@@ -50,6 +52,14 @@ COUNTY_BLURBS = {
     "Hudson": "Browse the supported Hudson County community guides, including local housing, transportation, and municipal resources.",
     "Middlesex": "Browse the supported Middlesex County community guides, including local housing, transportation, and municipal resources.",
     "Somerset": "Browse the supported Somerset County community guides, including Basking Ridge within Bernards Township.",
+}
+
+SPANISH_COUNTY_BLURBS = {
+    county: (
+        f"Explora las guías disponibles del condado de {county}, con recursos "
+        "sobre vivienda, transporte y servicios municipales."
+    )
+    for county in COUNTY_BLURBS
 }
 
 
@@ -132,6 +142,31 @@ def section_html(county: str) -> str:
         <span class="count">{len(by_county[county])} towns</span>
       </div>
       <p class="county-blurb">{COUNTY_BLURBS[county]}</p>
+      <div class="town-grid">
+{chr(10).join(cards)}
+      </div>
+    </div>
+  </section>'''
+
+
+def spanish_section_html(county: str) -> str:
+    cards = []
+    for slug in by_county[county]:
+        name = display_name(slug)
+        cards.append(
+            f'''        <a class="town-card" href="/es/towns/{slug}" data-name="{name.lower()}">
+          <h3>{name}</h3>
+          <p>Abre la guía de {name} en el condado de {county}.</p>
+          <span class="arrow">Ver {name} →</span>
+        </a>'''
+        )
+    return f'''  <section class="county-section" data-county="{county}" id="{county.lower()}">
+    <div class="container">
+      <div class="county-header">
+        <h2>Condado de {county}</h2>
+        <span class="count">{len(by_county[county])} pueblos</span>
+      </div>
+      <p class="county-blurb">{SPANISH_COUNTY_BLURBS[county]}</p>
       <div class="town-grid">
 {chr(10).join(cards)}
       </div>
@@ -232,7 +267,155 @@ source = source.replace(
 OUT.write_text(source, encoding="utf-8")
 for alias in ROUTE_ALIASES:
     alias.write_text(source, encoding="utf-8")
+
+spanish_schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Guías de comunidades de Nueva Jersey",
+    "description": (
+        f"Directorio de {total} guías de comunidades de Nueva Jersey en los "
+        "condados de Union, Essex, Morris, Hudson, Middlesex y Somerset."
+    ),
+    "url": "https://thejorgeramirezgroup.com/es/communities",
+    "inLanguage": "es-US",
+    "isPartOf": {
+        "@type": "WebSite",
+        "name": "The Jorge Ramirez Group",
+        "url": "https://thejorgeramirezgroup.com/es",
+    },
+    "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": total,
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": index,
+                "url": f"https://thejorgeramirezgroup.com/es/towns/{slug}",
+                "name": f"{display_name(slug)}, condado de {county}",
+            }
+            for index, (county, slug) in enumerate(
+                (
+                    (county, slug)
+                    for county in counties
+                    for slug in by_county[county]
+                ),
+                start=1,
+            )
+        ],
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://thejorgeramirezgroup.com/es",
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Comunidades",
+                "item": "https://thejorgeramirezgroup.com/es/communities",
+            },
+        ],
+    },
+}
+
+spanish = SPANISH_OUT.read_text(encoding="utf-8")
+spanish_replacements = (
+    (
+        r"<title>.*?</title>",
+        f"<title>Comunidades de NJ — {total} guías | The Jorge Ramirez Group</title>",
+    ),
+    (
+        r'<meta name="description" content="[^"]*">',
+        f'<meta name="description" content="Directorio de {total} guías de comunidades de NJ en seis condados.">',
+    ),
+    (
+        r'<meta name="llm-context" content="[^"]*">',
+        (
+            f'<meta name="llm-context" content="Directorio de {total} guías de comunidades '
+            'de Nueva Jersey en los condados de Union, Essex, Morris, Hudson, Middlesex y '
+            'Somerset. Contacto: 908-230-7844, jorge.ramirez@kw.com.">'
+        ),
+    ),
+    (
+        r'<meta property="og:title" content="[^"]*">',
+        f'<meta property="og:title" content="Comunidades de NJ — {total} guías | The Jorge Ramirez Group">',
+    ),
+    (
+        r'<meta property="og:description" content="[^"]*">',
+        f'<meta property="og:description" content="Directorio de {total} guías de comunidades de NJ en seis condados.">',
+    ),
+    (
+        r'<meta name="twitter:title" content="[^"]*">',
+        f'<meta name="twitter:title" content="Comunidades de NJ — {total} guías | Jorge Ramirez">',
+    ),
+    (
+        r'<meta name="twitter:description" content="[^"]*">',
+        f'<meta name="twitter:description" content="Directorio de {total} guías de comunidades de NJ en seis condados.">',
+    ),
+)
+for pattern, replacement in spanish_replacements:
+    spanish, replacements = re.subn(
+        pattern, replacement, spanish, count=1, flags=re.S
+    )
+    if replacements != 1:
+        raise RuntimeError(f"Spanish communities hub did not match: {pattern}")
+
+spanish, replacements = re.subn(
+    r'  <script type="application/ld\+json">\s*\{.*?\}\s*</script>',
+    '  <script type="application/ld+json">\n'
+    + json.dumps(spanish_schema, indent=2, ensure_ascii=False)
+    + "\n  </script>",
+    spanish,
+    count=1,
+    flags=re.S,
+)
+if replacements != 1:
+    raise RuntimeError("Spanish communities hub is missing its JSON-LD block")
+
+spanish, replacements = re.subn(
+    r"<h1>\d+ Comunidades de NJ que Atendemos</h1>",
+    f"<h1>{total} guías de comunidades de NJ</h1>",
+    spanish,
+    count=1,
+)
+if replacements != 1:
+    raise RuntimeError("Spanish communities hub is missing its numeric heading")
+spanish = re.sub(
+    r'(<section class="communities-hero">\s*<h1>.*?</h1>)\s*<p>.*?</p>',
+    r"\1\n  <p>Guías de comunidades en los condados de Union, Essex, Morris, Hudson, Middlesex y Somerset.</p>",
+    spanish,
+    count=1,
+    flags=re.S,
+)
+for county in counties:
+    spanish = re.sub(
+        rf'(<button class="county-filter" data-county="{county}">{county} \()\d+(\)</button>)',
+        rf"\g<1>{len(by_county[county])}\g<2>",
+        spanish,
+        count=1,
+    )
+    spanish, replacements = re.subn(
+        rf'  <section\b[^>]*data-county="{county}"[^>]*>.*?</section>',
+        spanish_section_html(county),
+        spanish,
+        count=1,
+        flags=re.S,
+    )
+    if replacements != 1:
+        raise RuntimeError(f"Spanish communities hub is missing {county}")
+spanish = spanish.replace(
+    "<p>Jorge atiende todo el norte y centro de Nueva Jersey. Llámalo directamente para cualquier pueblo.</p>",
+    "<p>¿Buscas ayuda en otro pueblo? Llama a Jorge para confirmar la cobertura actual.</p>",
+)
+
+SPANISH_OUT.write_text(spanish, encoding="utf-8")
+for alias in SPANISH_ROUTE_ALIASES:
+    alias.write_text(spanish, encoding="utf-8")
 print(
     f"Synchronized /communities route candidates: {total} towns across "
-    f"{len(counties)} counties"
+    f"{len(counties)} counties in English and Spanish"
 )
