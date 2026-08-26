@@ -289,12 +289,13 @@ class MarketReportNoindexFallbackTests(unittest.TestCase):
         inventory = load_inventory(MANIFEST_PATH)
         for item in inventory["noindexTownReports"]:
             slug = item["slug"]
+            town_guide_slug = item.get("townGuideSlug", slug)
             for language, prefix in (("en", ""), ("es", "es/")):
                 relative = f"{prefix}blog/market-report-{slug}-nj-2026.html"
                 path = ROOT / relative
                 source, parser = parsed_page(path)
                 deployed = "/" + relative.removesuffix(".html")
-                town_route = f"/{prefix}towns/{slug}"
+                town_route = f"/{prefix}towns/{town_guide_slug}"
                 valuation_route = f"/{prefix}home-valuation"
                 home_route = "/" if language == "en" else "/es/"
                 switch_route = "/es/" if language == "en" else "/"

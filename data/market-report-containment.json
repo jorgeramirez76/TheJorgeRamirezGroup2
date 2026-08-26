@@ -137,6 +137,7 @@
     },
     {
       "slug": "parsippany",
+      "townGuideSlug": "parsippany-troy-hills",
       "name": {"en": "Parsippany", "es": "Parsippany"},
       "officialGeography": {
         "en": "Parsippany–Troy Hills Township",

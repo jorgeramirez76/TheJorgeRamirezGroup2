@@ -196,9 +196,10 @@ def render_redirect(source_route: str, destination: str, language: str) -> str:
 
 def render_research_fallback(item: Mapping[str, Any], language: str) -> str:
     slug = item["slug"]
+    town_guide_slug = item.get("townGuideSlug", slug)
     prefix = "" if language == "en" else "/es"
     route = f"{prefix}/blog/market-report-{slug}-nj-2026"
-    town_route = f"{prefix}/towns/{slug}"
+    town_route = f"{prefix}/towns/{town_guide_slug}"
     valuation_route = "/home-valuation" if language == "en" else "/es/home-valuation"
     name = html.escape(item["name"][language])
     geography = html.escape(item["officialGeography"][language])
