@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 """
-Daily SEO Blog Automation — The Jorge Ramirez Group
-====================================================
-Every day this: picks the next NJ real-estate topic -> generates a ~1,000-word
-post in Jorge's reverse-selling (Mulrenin) voice -> runs an AI quality gate
-that REJECTS weak copy -> assembles a fully SEO-structured HTML page (canonical,
-OG, geo, Article + FAQ + Breadcrumb JSON-LD) matching the site template ->
-wires it into blog/index.html + sitemap.xml -> commits & pushes (Vercel
-auto-deploys).
+Daily SEO Blog Draft Automation — The Jorge Ramirez Group
+==========================================================
+Every day this creates an AI-assisted draft and saves a rendered review copy.
+Scheduled runs never alter the public site, sitemap, git history, or deployment.
+Publication requires an explicitly reviewed JSON file together with
+``--publish-reviewed``.
 
 Engines (config.json -> "engine"):
   "claude" : uses the authenticated `claude` CLI (best quality). Needs a
@@ -18,12 +16,14 @@ Engines (config.json -> "engine"):
   "auto"   : try claude, fall back to ollama.
 
 Usage:
-  python3 daily_blog.py                 # normal scheduled run
-  python3 daily_blog.py --dry-run       # generate+gate, do NOT write/commit
+  python3 daily_blog.py                 # normal scheduled review-draft run
+  python3 daily_blog.py --dry-run       # same safe review-only behavior
   python3 daily_blog.py --pick          # print what topic it would write, exit
-  python3 daily_blog.py --no-push       # write & commit locally, skip push
-  python3 daily_blog.py --content-file X.json   # publish a pre-written post
-                                        # (skips generation + gate; for seeding)
+  python3 daily_blog.py --content-file X.json   # render reviewed-file preview
+  python3 daily_blog.py --content-file X.json --publish-reviewed
+                                        # explicit reviewed publication
+  python3 daily_blog.py --content-file X.json --publish-reviewed --no-push
+                                        # reviewed local commit, no remote push
 """
 
 import os, re, sys, json, html, argparse, subprocess, datetime
@@ -472,11 +472,15 @@ def publish(post, topic, cfg, args):
         log("ABORT: banned number in assembled HTML")
         return False
 
-    if args.dry_run:
-        out = os.path.join(LOG_DIR, f"DRYRUN-{slug}.html")
+    # Generated content and content-file previews stop here. The launch agent
+    # invokes the script without --publish-reviewed, so unattended runs cannot
+    # modify indexable pages, sitemaps, commits, or production deployments.
+    if args.dry_run or not args.publish_reviewed:
+        os.makedirs(LOG_DIR, exist_ok=True)
+        out = os.path.join(LOG_DIR, f"REVIEW-{slug}.html")
         with open(out, "w", encoding="utf-8") as f:
             f.write(html_out)
-        log(f"DRY RUN ok -> {out} ({len(html_out)} bytes)")
+        log(f"QUEUED FOR EDITORIAL REVIEW -> {out} ({len(html_out)} bytes)")
         return True
 
     with open(os.path.join(BLOG_DIR, f"{slug}.html"), "w", encoding="utf-8") as f:
@@ -495,14 +499,26 @@ def publish(post, topic, cfg, args):
     return True
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--pick", action="store_true")
     ap.add_argument("--no-push", action="store_true")
-    ap.add_argument("--content-file", help="publish a pre-written post JSON (skip gen+gate)")
+    ap.add_argument(
+        "--content-file",
+        help="render an editor-reviewed post JSON; publication still requires --publish-reviewed",
+    )
+    ap.add_argument(
+        "--publish-reviewed",
+        action="store_true",
+        help="publish the supplied, editor-reviewed --content-file",
+    )
     ap.add_argument("--slug", help="override slug (with --content-file)")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
+    if args.publish_reviewed and not args.content_file:
+        ap.error("--publish-reviewed requires an editor-reviewed --content-file")
+    if args.no_push and not args.publish_reviewed:
+        ap.error("--no-push is only meaningful with --publish-reviewed")
     cfg = load_json(CONFIG_FILE, {"engine": "auto", "ollama_model": "qwen3.6:35b",
                                   "quality_threshold": 80, "max_attempts": 2})
 
