@@ -36,11 +36,15 @@ class SearchConsoleRouteRecoveryTests(unittest.TestCase):
         self.assertEqual("2026-08-26", self.manifest["reviewedOn"])
         self.assertIn("Read-only Google Search Console", self.manifest["source"])
         self.assertIn("same-language", self.manifest["policy"])
-        self.assertEqual(36, len(self.recovery))
+        self.assertEqual(37, len(self.recovery))
         self.assertEqual(13, len(self.retired))
-        self.assertEqual(49, len(self.expected))
+        self.assertEqual(50, len(self.expected))
         self.assertEqual("/counties/essex-county", self.retired["/blog/neighborhoods-maplewood-nj"])
         self.assertEqual("/es/ai-authority", self.recovery["/blog/es/como-elegir-agente-inmobiliario-nj"])
+        self.assertEqual(
+            "/blog/best-nj-suburbs-nyc-commuters",
+            self.recovery["/blog/nyc-to-nj-commute-guide-2026"],
+        )
         for source, destination in self.expected.items():
             with self.subTest(source=source):
                 self.assertTrue(source.startswith("/"))

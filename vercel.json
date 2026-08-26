@@ -664,6 +664,11 @@
       "permanent": true
     },
     {
+      "source": "/blog/nyc-to-nj-commute-guide-2026",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
       "source": "/features/buyer-workflows",
       "destination": "https://aisalespipeline.com/features/buyer-workflows-real-estate.html",
       "permanent": true
