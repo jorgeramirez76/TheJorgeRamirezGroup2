@@ -106,6 +106,11 @@ CONTENT = {
             "Use a source-backed New Jersey home buyer roadmap for budgeting, Loan "
             "Estimates, offers, inspections, NJHMFA programs, and closing documents."
         ),
+        "llm_context": (
+            "Primary-source New Jersey home buyer guide covering budgeting, Loan Estimates, "
+            "NJHMFA programs, brokerage agreements, offers, inspections, Closing Disclosures, "
+            "and fair housing. Reviewed 2026-08-26."
+        ),
         "og_title": "A Document-First New Jersey Home Buyer Guide",
         "home_href": "/",
         "language_href": "/es/nj-home-buyer-guide",
@@ -499,6 +504,11 @@ CONTENT = {
             "Usa una guía de Nueva Jersey con fuentes oficiales para presupuesto, Loan Estimate, "
             "ofertas, inspección, programas NJHMFA y documentos de cierre."
         ),
+        "llm_context": (
+            "Guía de compra de vivienda en Nueva Jersey basada en fuentes primarias sobre "
+            "presupuesto, Loan Estimate, programas NJHMFA, corretaje, ofertas, inspecciones, "
+            "Closing Disclosure y vivienda justa. Revisada el 2026-08-26."
+        ),
         "og_title": "Guía Documental para Comprar Vivienda en Nueva Jersey",
         "home_href": "/es",
         "language_href": "/nj-home-buyer-guide",
@@ -874,6 +884,7 @@ def render_page(relative: str, language: str, manifest: dict[str, object]) -> st
   <meta name="theme-color" content="#0A0A0A">
   <title>{esc(c["title"])}</title>
   <meta name="description" content="{esc(c["description"])}">
+  <meta name="llm-context" content="{esc(c["llm_context"])}">
   <meta name="author" content="Jorge Ramirez">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="{esc(c["canonical"])}">
@@ -894,6 +905,7 @@ def render_page(relative: str, language: str, manifest: dict[str, object]) -> st
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=20260826">
   <link rel="stylesheet" href="/css/nj-home-buyer-guide.css?v=20260826">
   <script type="application/ld+json">
 {json_ld(c)}

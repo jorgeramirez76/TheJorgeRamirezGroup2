@@ -246,7 +246,13 @@ class NJHomeBuyerGuideRebuildTests(unittest.TestCase):
         for relative in PAGES:
             with self.subTest(relative=relative):
                 raw = read(relative)
+                self.assertIn('href="/css/styles.css', raw)
                 self.assertIn('href="/css/nj-home-buyer-guide.css', raw)
+                self.assertLess(
+                    raw.index('href="/css/styles.css'),
+                    raw.index('href="/css/nj-home-buyer-guide.css'),
+                    "page-specific CSS must load after the shared homepage stylesheet",
+                )
                 self.assertNotIn("<style", raw.lower())
                 for banned in BANNED_LEGACY_STYLE:
                     self.assertNotIn(banned, raw.lower())
@@ -274,6 +280,15 @@ class NJHomeBuyerGuideRebuildTests(unittest.TestCase):
                 self.assertEqual(1, len(descriptions))
                 self.assertGreaterEqual(len(descriptions[0]), 120)
                 self.assertLessEqual(len(descriptions[0]), 165)
+                llm_context = [
+                    item.get("content", "")
+                    for item in page.attrs("meta")
+                    if item.get("name") == "llm-context"
+                ]
+                self.assertEqual(1, len(llm_context))
+                self.assertIn("2026-08-26", llm_context[0])
+                self.assertIn("NJHMFA", llm_context[0])
+                self.assertIn("Loan Estimate", llm_context[0])
                 self.assertEqual(
                     [expected["canonical"]],
                     [
