@@ -369,9 +369,41 @@ class RemediationContractTests(unittest.TestCase):
 
     def test_homepage_schema_has_unique_entities_and_no_false_breadcrumb(self):
         text = read(ROOT / "index.html")
+        blocks = re.findall(
+            r'<script\s+type=["\']application/ld\+json["\']>(.*?)</script>',
+            text,
+            re.I | re.S,
+        )
+        self.assertEqual(1, len(blocks))
+        payload = json.loads(blocks[0])
+        self.assertIsInstance(payload.get("@graph"), list)
         ids = [node["@id"] for node in jsonld_nodes(text) if isinstance(node.get("@id"), str)]
         duplicates = sorted({value for value in ids if ids.count(value) > 1})
         self.assertEqual([], duplicates)
+        agents = [node for node in jsonld_nodes(text) if node.get("@type") == "RealEstateAgent"]
+        self.assertEqual(1, len(agents))
+        agent = agents[0]
+        self.assertEqual("+19082307844", agent.get("telephone"))
+        self.assertEqual("jorge.ramirez@kw.com", agent.get("email"))
+        self.assertEqual(
+            {
+                "Union County, New Jersey",
+                "Essex County, New Jersey",
+                "Morris County, New Jersey",
+                "Hudson County, New Jersey",
+                "Middlesex County, New Jersey",
+                "Somerset County, New Jersey",
+            },
+            {area.get("name") for area in agent.get("areaServed", [])},
+        )
+        license_values = {
+            node.get("value")
+            for node in jsonld_nodes(text)
+            if node.get("@type") == "PropertyValue"
+            and node.get("propertyID") == "New Jersey Real Estate License"
+        }
+        self.assertEqual({"1754604"}, license_values)
+        self.assertNotRegex(blocks[0], r"(?i)top[- ]rated|\b138\b|aggregateRating")
         for node in jsonld_nodes(text):
             node_type = node.get("@type")
             if node_type == "BreadcrumbList":
@@ -380,13 +412,32 @@ class RemediationContractTests(unittest.TestCase):
             if node_type in {"LocalBusiness", "RealEstateAgent"}:
                 self.assertNotIn("aggregateRating", node)
 
-    def test_summit_current_listings_claim_is_backed_by_listings(self):
-        path = ROOT / "summit-nj-homes-for-sale.html"
-        text = read(path)
-        title = re.search(r'<title>(.*?)</title>', text, re.I | re.S)
-        claims_current = bool(title and "current listings" in title.group(1).lower())
-        has_feed = bool(re.search(r'\b(?:idx|mls-listing|listing-feed)\b|<iframe\b', text, re.I))
-        self.assertFalse(claims_current and not has_feed)
+    def test_town_listing_guides_use_real_filtered_search_without_feed_claims(self):
+        for filename, town in (
+            ("summit-nj-homes-for-sale.html", "Summit"),
+            ("westfield-nj-homes-for-sale.html", "Westfield"),
+        ):
+            text = read(ROOT / filename)
+            self.assertNotRegex(text, r"current\s+(?:MLS\s+)?listings", filename)
+            expected_search = (
+                "https://thejorgeramirezgroup.kw.com/listings-search/?city=" + town
+            )
+            self.assertIn(expected_search, text, filename)
+            self.assertEqual(
+                1,
+                len(re.findall(r'<main\b[^>]*\bid=["\']main["\']', text, re.I)),
+                filename,
+            )
+
+    def test_property_search_uses_one_main_and_truthful_external_destinations(self):
+        text = read(ROOT / "property-search.html")
+        self.assertEqual(1, len(re.findall(r'<main\b[^>]*\bid=["\']main["\']', text, re.I)))
+        self.assertNotRegex(text, r"\b138\s+(?:NJ\s+)?(?:communities|towns)\b")
+        for town in ("Summit", "Westfield"):
+            self.assertIn(
+                "https://thejorgeramirezgroup.kw.com/listings-search/?city=" + town,
+                text,
+            )
 
     def test_homepage_has_no_off_topic_civic_project_link(self):
         self.assertNotIn("bongholeo.com", read(ROOT / "index.html").lower())
