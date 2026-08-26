@@ -23,6 +23,12 @@ RENDERER = ROOT / "tools" / "render_authority_tools.py"
 ROUTE_SYNC = ROOT / "tools" / "sync_authority_tools_routes.py"
 STYLESHEET = ROOT / "css" / "authority-tools.css"
 REVIEWED_ON = "2026-08-26"
+LEGAL_TAX_DIRECTIVE = re.compile(
+    r"\b(?:must|required to|legally required to) (?:hire|use|retain|sign|file|pay)\b|"
+    r"\b(?:executor|administrator) (?:must|can) sign\b|\bpartition action\b|"
+    r"\bstepped[- ]up basis\b|\bthree[- ]business[- ]day attorney[- ]review\b",
+    re.I,
+)
 
 INDEXABLE = {
     "nj-realty-transfer-fee-calculator.html": (
@@ -372,6 +378,11 @@ console.log(JSON.stringify(values.map(value => [value, globalThis.JRG_RTF_CALCUL
             self.assertIn(phrase, spanish)
         for visible in (english, spanish):
             self.assertNotRegex(visible, r"(?i)mandatory attorney|abogado obligatorio|commission is fixed|comisión fija|best neighborhood|mejor vecindario")
+
+    def test_indexable_pages_avoid_unsupported_legal_or_tax_directives(self) -> None:
+        for relative in INDEXABLE:
+            with self.subTest(relative=relative):
+                self.assertNotRegex(source(relative), LEGAL_TAX_DIRECTIVE)
 
     def test_market_page_is_a_dated_decision_framework_not_a_forecast(self) -> None:
         visible = parsed("blog/nj-housing-market-2026-buy-sell-or-wait.html").visible_text.lower()

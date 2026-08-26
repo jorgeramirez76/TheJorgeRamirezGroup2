@@ -582,7 +582,7 @@ FAQ_EN = [
         "No. New Jersey's Bulletin 24-11 says the amount and rate are fully negotiable and not set by law. The agreement must state how compensation is calculated and can identify payment by a seller, buyer, third party, or compensation shared between brokerage firms.",
     ),
     (
-        "Is a New Jersey buyer required to hire an attorney?",
+        "Do New Jersey buyers generally retain attorneys?",
         "State consumer guidance says many New Jersey buyers retain attorneys, but doing so is not required. Contract language and deadlines are transaction specific, so a licensed attorney—not a general webpage—should explain legal rights and obligations.",
     ),
     (
