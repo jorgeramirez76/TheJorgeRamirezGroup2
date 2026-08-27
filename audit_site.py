@@ -1,238 +1,426 @@
 #!/usr/bin/env python3
-"""Comprehensive audit of thejorgeramirezgroup.com.
+"""Audit the public, indexable surface of thejorgeramirezgroup.com.
+
+The repository intentionally contains redirect fallbacks, noindex pages, and
+internal publishing templates. Those files still matter operationally, but they
+must not be graded as indexable landing pages or treated as sitemap omissions.
 
 Checks:
-  1. Broken internal links (every <a href="..."> resolves to a real file)
-  2. Missing meta tags (title/description/canonical) on every page
-  3. Missing OG/Twitter meta
-  4. Missing structured data (JSON-LD)
-  5. Missing alt attributes on <img>
-  6. Sitemap completeness — every HTML in repo is in sitemap (and vice versa)
-  7. AI SEO — llm-context, llms.txt referenced
-  8. Lighthouse-like checks (lazy-load on imgs below the fold, missing favicons)
-  9. Broken-image refs (src="" or 404 on internal images)
+  1. Indexable-page title, description, canonical, social metadata and JSON-LD
+  2. Internal links and image references on indexable pages
+  3. Image alt attributes
+  4. Exact EN/ES sitemap coverage for self-canonical indexable pages
+  5. Redirect/noindex/canonicalized-file classification
+  6. AI/GEO context metadata on indexable pages
 
-Outputs a structured report at AUDIT_REPORT.md.
+The Markdown report is written to ``AUDIT_REPORT.md`` by default. Use
+``--check`` to return a non-zero status when actionable defects remain.
 """
 from __future__ import annotations
-import re
-import sys
-from pathlib import Path
-from collections import defaultdict
-from urllib.parse import urlparse, unquote
 
-ROOT = Path(__file__).parent
+import argparse
+import json
+import re
+from collections import defaultdict
+from pathlib import Path
+from urllib.parse import unquote, urlparse
+
+ROOT = Path(__file__).parent.resolve()
 SITE_ORIGIN = "https://thejorgeramirezgroup.com"
+
+# These directories are excluded from the Vercel deployment or contain source
+# material rather than public pages. Public redirect files under ``tools/`` are
+# intentionally not excluded.
+INTERNAL_SOURCE_PREFIXES = (
+    "tests/",
+    "scripts/",
+    "data/",
+    "crm/",
+    "docs/",
+    "lead-research/",
+    "property-leads-system/",
+    "tools/blog-automation/",
+    "tools/seo-optimizer/",
+    "tmp/",
+)
+
+HREF_RE = re.compile(r"""href\s*=\s*["']([^"']+)["']""", re.I)
+TITLE_RE = re.compile(r"<title>([^<]*)</title>", re.I)
+META_RE = re.compile(r"""<meta\s+([^>]+)>""", re.I)
+LINK_RE = re.compile(r"""<link\s+([^>]+)>""", re.I)
+SCRIPT_LD_RE = re.compile(
+    r"""<script\s+type=["']application/ld\+json["'][^>]*>(.+?)</script>""",
+    re.I | re.S,
+)
+IMG_RE = re.compile(r"<img\s+([^>]+)/?>", re.I)
+ATTR_RE = re.compile(r"""([:\w-]+)\s*=\s*["']([^"']*)["']""", re.I)
+
+
+def parse_meta_attrs(source: str) -> dict[str, str]:
+    return {key.lower(): value for key, value in ATTR_RE.findall(source)}
+
+
+def is_internal_source(path: Path) -> bool:
+    rel = path.relative_to(ROOT).as_posix()
+    return rel.startswith(INTERNAL_SOURCE_PREFIXES) or any(
+        token in rel for token in ("node_modules/", "/.git/", "_backup", "/staging/")
+    )
 
 
 def all_html_files() -> list[Path]:
-    out = []
-    for p in ROOT.rglob("*.html"):
-        s = str(p)
-        # skip node_modules, drafts, backups
-        if any(x in s for x in ["node_modules", "/.git/", "_backup", "/staging/"]):
-            continue
-        # skip redirect stubs (noindex meta-refresh forwarders)
-        try:
-            head = p.read_text(encoding="utf-8", errors="replace")[:1200]
-            if 'http-equiv="refresh"' in head:
-                continue
-        except OSError:
-            pass
-        out.append(p)
-    return sorted(out)
+    return sorted(path for path in ROOT.rglob("*.html") if not is_internal_source(path))
 
 
-def page_url(path: Path) -> str:
+def clean_route(path: Path) -> str:
+    """Return the Vercel clean-URL route for a repository HTML file."""
     rel = path.relative_to(ROOT).as_posix()
     if rel == "index.html":
         return "/"
     if rel.endswith("/index.html"):
-        return "/" + rel[:-len("index.html")]
+        return "/" + rel[: -len("/index.html")]
+    if rel.endswith(".html"):
+        rel = rel[:-5]
     return "/" + rel
 
 
+def normalize_route(url_or_path: str) -> str:
+    """Normalize a same-site URL or path to its clean route."""
+    parsed = urlparse(url_or_path)
+    path = parsed.path if parsed.scheme or parsed.netloc else url_or_path.split("#", 1)[0].split("?", 1)[0]
+    path = unquote(path or "/")
+    if not path.startswith("/"):
+        path = "/" + path
+    if path.endswith("/index.html"):
+        path = path[: -len("/index.html")]
+    elif path.endswith(".html"):
+        path = path[:-5]
+    if len(path) > 1:
+        path = path.rstrip("/")
+    return path or "/"
+
+
+def load_redirect_sources() -> set[str]:
+    config_path = ROOT / "vercel.json"
+    if not config_path.exists():
+        return set()
+    config = json.loads(config_path.read_text(encoding="utf-8"))
+    routes: set[str] = set()
+    for entry in config.get("redirects", []):
+        source = entry.get("source", "")
+        # Dynamic patterns cannot correspond to a single checked HTML file.
+        if source and not any(char in source for char in (":", "*", "(", ")")):
+            routes.add(normalize_route(source))
+    return routes
+
+
 def resolve_link(src_path: Path, href: str) -> Path | None:
-    """Resolve a relative href against the source file's directory.
-    Returns None if href is external or fragment-only.
-    """
-    if href.startswith(("http://", "https://", "//", "mailto:", "tel:", "sms:", "javascript:")):
+    """Resolve a relative href; return None for external or script-only URLs."""
+    if href.startswith(("http://", "https://", "//", "mailto:", "tel:", "sms:", "javascript:", "data:")):
         return None
-    # Skip JS template literals (found when HREF_RE grabs backtick-string hrefs from <script> blocks).
-    if "${" in href:
+    if "${" in href or "{{" in href:
         return None
     if href.startswith("#"):
-        return src_path  # anchor on same page
-    # Strip fragment / query
-    href_clean = href.split("#")[0].split("?")[0]
-    if not href_clean:
         return src_path
-    href_clean = unquote(href_clean)
-    if href_clean.startswith("/"):
-        return ROOT / href_clean.lstrip("/")
-    return (src_path.parent / href_clean).resolve()
+    clean = unquote(href.split("#", 1)[0].split("?", 1)[0])
+    if not clean:
+        return src_path
+    if clean.startswith("/"):
+        return ROOT / clean.lstrip("/")
+    return (src_path.parent / clean).resolve()
 
 
-def check_link_target(target: Path | None) -> str:
-    """Return 'ok', 'missing', or 'external'."""
+def route_for_target(target: Path) -> str | None:
+    try:
+        rel = target.relative_to(ROOT).as_posix()
+    except ValueError:
+        return None
+    if not rel:
+        return "/"
+    return normalize_route("/" + rel)
+
+
+def check_link_target(target: Path | None, redirect_sources: set[str]) -> str:
+    """Return ``ok``, ``missing`` or ``external`` for an internal target."""
     if target is None:
         return "external"
     if target.exists():
         return "ok"
-    # Try with .html appended (clean URL)
-    for variant in [
-        target.with_suffix(".html"),
-        target / "index.html",
-    ]:
-        if variant.exists():
-            return "ok"
+    variants = (target.with_suffix(".html"), target / "index.html")
+    if any(variant.exists() for variant in variants):
+        return "ok"
+    route = route_for_target(target)
+    if route and route in redirect_sources:
+        return "ok"
     return "missing"
 
 
-HREF_RE = re.compile(r"""href\s*=\s*["']([^"']+)["']""", re.I)
-SRC_RE = re.compile(r"""src\s*=\s*["']([^"']+)["']""", re.I)
-TITLE_RE = re.compile(r"<title>([^<]*)</title>", re.I)
-META_RE = re.compile(r"""<meta\s+([^>]+)>""", re.I)
-SCRIPT_LD_RE = re.compile(
-    r"""<script\s+type=["']application/ld\+json["'][^>]*>(.+?)</script>""", re.I | re.S
-)
-IMG_RE = re.compile(r"<img\s+([^>]+)/?>", re.I)
+def canonical_href(text: str) -> str:
+    for match in LINK_RE.finditer(text):
+        attrs = parse_meta_attrs(match.group(1))
+        if "canonical" in attrs.get("rel", "").lower().split():
+            return attrs.get("href", "")
+    return ""
 
 
-def parse_meta_attrs(s: str) -> dict[str, str]:
-    return {k.lower(): v for k, v in re.findall(r"""(\w+)\s*=\s*["']([^"']*)["']""", s)}
+def meta_values(text: str) -> list[dict[str, str]]:
+    return [parse_meta_attrs(match.group(1)) for match in META_RE.finditer(text)]
 
 
-def audit_page(path: Path) -> dict:
-    text = path.read_text(errors="ignore")
-    rep: dict = {"path": str(path.relative_to(ROOT)), "url": page_url(path), "issues": []}
+def has_noindex(metas: list[dict[str, str]]) -> bool:
+    return any(
+        meta.get("name", "").lower() in {"robots", "googlebot"}
+        and "noindex" in meta.get("content", "").lower()
+        for meta in metas
+    )
 
-    # title
-    m = TITLE_RE.search(text)
-    rep["title"] = m.group(1).strip() if m else ""
-    if not rep["title"]:
-        rep["issues"].append("missing-title")
-    elif len(rep["title"]) > 70:
-        rep["issues"].append(f"title-too-long-{len(rep['title'])}")
-    elif len(rep["title"]) < 20:
-        rep["issues"].append(f"title-too-short-{len(rep['title'])}")
 
-    # meta tags
-    metas = []
-    for m in META_RE.finditer(text):
-        metas.append(parse_meta_attrs(m.group(1)))
+def has_meta_refresh(metas: list[dict[str, str]]) -> bool:
+    return any(meta.get("http-equiv", "").lower() == "refresh" for meta in metas)
 
-    has_desc = any(m.get("name", "").lower() == "description" and m.get("content") for m in metas)
-    has_og_title = any(m.get("property") == "og:title" for m in metas)
-    has_og_desc = any(m.get("property") == "og:description" for m in metas)
-    has_og_image = any(m.get("property") == "og:image" for m in metas)
-    has_twitter_card = any(m.get("name") == "twitter:card" for m in metas)
-    has_canonical = "rel=\"canonical\"" in text or "rel='canonical'" in text
-    has_viewport = any(m.get("name") == "viewport" for m in metas)
-    has_robots = any(m.get("name") == "robots" for m in metas)
-    has_llm_context = any(m.get("name") == "llm-context" for m in metas)
 
-    if not has_desc: rep["issues"].append("missing-meta-description")
-    if not has_canonical: rep["issues"].append("missing-canonical")
-    if not has_viewport: rep["issues"].append("missing-viewport")
-    if not has_og_title: rep["issues"].append("missing-og:title")
-    if not has_og_desc: rep["issues"].append("missing-og:description")
-    if not has_og_image: rep["issues"].append("missing-og:image")
-    if not has_twitter_card: rep["issues"].append("missing-twitter:card")
-    if not has_llm_context: rep["issues"].append("missing-llm-context")
+def audit_page(path: Path, redirect_sources: set[str]) -> dict:
+    text = path.read_text(encoding="utf-8", errors="replace")
+    route = clean_route(path)
+    metas = meta_values(text)
+    canonical = canonical_href(text)
+    canonical_route = normalize_route(canonical) if canonical else ""
+    redirected = route in redirect_sources or has_meta_refresh(metas)
+    noindex = has_noindex(metas)
+    canonicalized = bool(canonical_route and canonical_route != route)
+    indexable = not redirected and not noindex and not canonicalized and path.name != "404.html"
 
-    # JSON-LD structured data
+    if redirected:
+        classification = "redirect"
+    elif noindex or path.name == "404.html":
+        classification = "noindex"
+    elif canonicalized:
+        classification = "canonicalized"
+    else:
+        classification = "indexable"
+
+    report: dict = {
+        "path": str(path.relative_to(ROOT)),
+        "url": route,
+        "canonical": canonical,
+        "classification": classification,
+        "indexable": indexable,
+        "issues": [],
+        "broken_links": [],
+        "broken_images": [],
+        "images_no_alt": 0,
+    }
+
+    title_match = TITLE_RE.search(text)
+    report["title"] = title_match.group(1).strip() if title_match else ""
     jsonld_blocks = SCRIPT_LD_RE.findall(text)
-    if not jsonld_blocks:
-        rep["issues"].append("missing-jsonld")
-    rep["jsonld_count"] = len(jsonld_blocks)
+    report["jsonld_count"] = len(jsonld_blocks)
 
-    # Internal links
-    rep["broken_links"] = []
-    for href in HREF_RE.findall(text):
-        target = resolve_link(path, href)
-        if target is path:  # anchor / self
-            continue
-        status = check_link_target(target)
-        if status == "missing":
-            rep["broken_links"].append(href)
+    # Full SEO/GEO requirements apply only to pages intended for indexing.
+    if indexable:
+        if not report["title"]:
+            report["issues"].append("missing-title")
+        elif len(report["title"]) > 70:
+            report["issues"].append(f"title-too-long-{len(report['title'])}")
+        elif len(report["title"]) < 20:
+            report["issues"].append(f"title-too-short-{len(report['title'])}")
 
-    # Images without alt
-    rep["images_no_alt"] = 0
-    for img_m in IMG_RE.finditer(text):
-        attrs = parse_meta_attrs(img_m.group(1))
-        if "alt" not in attrs:
-            rep["images_no_alt"] += 1
+        def has_meta(key: str, value: str) -> bool:
+            return any(meta.get(key, "").lower() == value and meta.get("content") for meta in metas)
 
-    return rep
+        if not has_meta("name", "description"):
+            report["issues"].append("missing-meta-description")
+        if not canonical:
+            report["issues"].append("missing-canonical")
+        elif canonical_route != route:
+            report["issues"].append("non-self-canonical")
+        if not has_meta("name", "viewport"):
+            report["issues"].append("missing-viewport")
+        if not has_meta("property", "og:title"):
+            report["issues"].append("missing-og:title")
+        if not has_meta("property", "og:description"):
+            report["issues"].append("missing-og:description")
+        if not has_meta("property", "og:image"):
+            report["issues"].append("missing-og:image")
+        if not has_meta("name", "twitter:card"):
+            report["issues"].append("missing-twitter:card")
+        if not has_meta("name", "llm-context"):
+            report["issues"].append("missing-llm-context")
+        if not jsonld_blocks:
+            report["issues"].append("missing-jsonld")
+        else:
+            for block in jsonld_blocks:
+                try:
+                    json.loads(block)
+                except json.JSONDecodeError:
+                    report["issues"].append("invalid-jsonld")
+                    break
+
+        for href in HREF_RE.findall(text):
+            target = resolve_link(path, href)
+            if target == path:
+                continue
+            if check_link_target(target, redirect_sources) == "missing":
+                report["broken_links"].append(href)
+
+        for image_match in IMG_RE.finditer(text):
+            attrs = parse_meta_attrs(image_match.group(1))
+            if "alt" not in attrs:
+                report["images_no_alt"] += 1
+            source = attrs.get("src", "")
+            if source:
+                target = resolve_link(path, source)
+                if target is not None and not target.exists():
+                    report["broken_images"].append(source)
+
+    return report
 
 
-def main():
+def issue_key(issue: str) -> str:
+    return re.sub(r"-(\d+)$", "", issue)
+
+
+def read_sitemap(path: Path) -> list[str]:
+    if not path.exists():
+        return []
+    return [normalize_route(value) for value in re.findall(r"<loc>([^<]+)</loc>", path.read_text(encoding="utf-8"))]
+
+
+def build_audit() -> dict:
+    redirect_sources = load_redirect_sources()
     pages = all_html_files()
-    print(f"Auditing {len(pages)} pages...")
+    reports = [audit_page(path, redirect_sources) for path in pages]
 
-    reports = [audit_page(p) for p in pages]
-
-    # Aggregate
     issue_counts: dict[str, int] = defaultdict(int)
-    pages_by_issue: dict[str, list[str]] = defaultdict(list)
     broken_link_targets: dict[str, list[str]] = defaultdict(list)
+    broken_image_targets: dict[str, list[str]] = defaultdict(list)
+    for report in reports:
+        for issue in report["issues"]:
+            issue_counts[issue_key(issue)] += 1
+        for href in report["broken_links"]:
+            broken_link_targets[href].append(report["path"])
+        for source in report["broken_images"]:
+            broken_image_targets[source].append(report["path"])
 
-    for r in reports:
-        for iss in r["issues"]:
-            base = iss.split("-")[0] + "-" + iss.split("-", 2)[1] if iss.count("-") >= 2 and iss.split("-")[-1].isdigit() else iss
-            issue_counts[base] += 1
-            pages_by_issue[base].append(r["path"])
-        for bl in r["broken_links"]:
-            broken_link_targets[bl].append(r["path"])
+    en_sitemap = read_sitemap(ROOT / "sitemap.xml")
+    es_sitemap = read_sitemap(ROOT / "sitemap-es.xml")
+    sitemap_routes = set(en_sitemap) | set(es_sitemap)
+    expected_routes = {report["url"] for report in reports if report["indexable"]}
+    missing_from_sitemap = expected_routes - sitemap_routes
+    stale_in_sitemap = sitemap_routes - expected_routes
+    duplicate_sitemap_routes = sorted(
+        route for route in sitemap_routes if en_sitemap.count(route) + es_sitemap.count(route) > 1
+    )
+    wrong_locale_sitemap = sorted(
+        {route for route in en_sitemap if route.startswith("/es/") or route == "/es"}
+        | {route for route in es_sitemap if not (route.startswith("/es/") or route == "/es")}
+    )
 
-    # Sitemap completeness
-    sitemap_text = (ROOT / "sitemap.xml").read_text() if (ROOT / "sitemap.xml").exists() else ""
-    sitemap_urls = set(re.findall(r"<loc>([^<]+)</loc>", sitemap_text))
-    pages_in_sitemap = {u.replace(SITE_ORIGIN, "") for u in sitemap_urls}
-    # cleanUrls (Vercel): sitemap holds extensionless URLs; map them back to .html files
-    pages_in_sitemap |= {u + ".html" for u in pages_in_sitemap if not u.endswith((".html", "/"))}
-    pages_in_sitemap |= {u + "index.html" for u in pages_in_sitemap if u.endswith("/")}
-    pages_in_repo = {r["url"] for r in reports if not r["url"].startswith("/es/")}
-    missing_from_sitemap = pages_in_repo - pages_in_sitemap - {"/404.html"}
+    classifications: dict[str, int] = defaultdict(int)
+    for report in reports:
+        classifications[report["classification"]] += 1
 
-    # Write report
-    out = ROOT / "AUDIT_REPORT.md"
-    with out.open("w") as f:
-        f.write(f"# Site Audit Report — {len(pages)} pages\n\n")
-        f.write("## Issue summary (issue → page count)\n\n")
-        f.write("| Issue | Pages affected |\n|-------|----------------|\n")
-        for iss in sorted(issue_counts, key=lambda k: -issue_counts[k]):
-            f.write(f"| {iss} | {issue_counts[iss]} |\n")
+    actionable_count = (
+        sum(issue_counts.values())
+        + sum(len(refs) for refs in broken_link_targets.values())
+        + sum(len(refs) for refs in broken_image_targets.values())
+        + len(missing_from_sitemap)
+        + len(stale_in_sitemap)
+        + len(duplicate_sitemap_routes)
+        + len(wrong_locale_sitemap)
+    )
+    return {
+        "pages": pages,
+        "reports": reports,
+        "classifications": dict(classifications),
+        "issue_counts": dict(issue_counts),
+        "broken_link_targets": broken_link_targets,
+        "broken_image_targets": broken_image_targets,
+        "missing_from_sitemap": missing_from_sitemap,
+        "stale_in_sitemap": stale_in_sitemap,
+        "duplicate_sitemap_routes": duplicate_sitemap_routes,
+        "wrong_locale_sitemap": wrong_locale_sitemap,
+        "actionable_count": actionable_count,
+    }
 
-        f.write("\n## Broken internal links — top 30\n\n")
-        f.write("| Broken href | Times referenced | Sample referrer |\n|---|---|---|\n")
-        sorted_broken = sorted(broken_link_targets.items(), key=lambda kv: -len(kv[1]))[:30]
-        for href, refs in sorted_broken:
-            f.write(f"| `{href}` | {len(refs)} | `{refs[0]}` |\n")
 
-        f.write(f"\n## Sitemap gaps — {len(missing_from_sitemap)} pages NOT in sitemap.xml\n\n")
-        for u in sorted(missing_from_sitemap)[:60]:
-            f.write(f"- `{u}`\n")
+def write_report(audit: dict, output: Path) -> None:
+    reports = audit["reports"]
+    indexable_count = audit["classifications"].get("indexable", 0)
+    with output.open("w", encoding="utf-8") as handle:
+        handle.write(f"# Site Audit Report — {indexable_count} indexable pages\n\n")
+        handle.write(f"Public HTML files classified: {len(audit['pages'])}.\n\n")
+        handle.write("## Surface classification\n\n")
+        handle.write("| Classification | Files |\n|---|---:|\n")
+        for label in ("indexable", "redirect", "noindex", "canonicalized"):
+            handle.write(f"| {label} | {audit['classifications'].get(label, 0)} |\n")
 
-        f.write("\n## Per-page detail (first 30 worst pages)\n\n")
-        worst = sorted(reports, key=lambda r: -(len(r["issues"]) + len(r["broken_links"])))[:30]
-        for r in worst:
-            f.write(f"\n### `{r['path']}` ({r['url']})\n")
-            f.write(f"- title: \"{r['title']}\"\n")
-            f.write(f"- jsonld blocks: {r['jsonld_count']}\n")
-            f.write(f"- images without alt: {r['images_no_alt']}\n")
-            if r["issues"]:
-                f.write(f"- issues: {', '.join(r['issues'])}\n")
-            if r["broken_links"]:
-                f.write(f"- broken links: {', '.join(r['broken_links'][:5])}\n")
+        handle.write("\n## Actionable issue summary\n\n")
+        handle.write("| Issue | Pages affected |\n|---|---:|\n")
+        if not audit["issue_counts"]:
+            handle.write("| None | 0 |\n")
+        else:
+            for issue in sorted(audit["issue_counts"], key=lambda item: (-audit["issue_counts"][item], item)):
+                handle.write(f"| {issue} | {audit['issue_counts'][issue]} |\n")
 
-    print(f"\nWrote {out}")
-    print(f"Total pages: {len(pages)}")
-    print(f"Total issues: {sum(issue_counts.values())}")
-    print(f"Total broken links: {sum(len(v) for v in broken_link_targets.values())}")
-    print(f"Missing from sitemap: {len(missing_from_sitemap)}")
+        handle.write("\n## Broken internal links\n\n")
+        if not audit["broken_link_targets"]:
+            handle.write("None.\n")
+        else:
+            handle.write("| Broken href | References | Sample referrer |\n|---|---:|---|\n")
+            for href, refs in sorted(audit["broken_link_targets"].items(), key=lambda item: (-len(item[1]), item[0])):
+                handle.write(f"| `{href}` | {len(refs)} | `{refs[0]}` |\n")
+
+        handle.write("\n## Broken internal images\n\n")
+        if not audit["broken_image_targets"]:
+            handle.write("None.\n")
+        else:
+            handle.write("| Broken src | References | Sample referrer |\n|---|---:|---|\n")
+            for source, refs in sorted(audit["broken_image_targets"].items(), key=lambda item: (-len(item[1]), item[0])):
+                handle.write(f"| `{source}` | {len(refs)} | `{refs[0]}` |\n")
+
+        for heading, key in (
+            ("Missing from sitemap", "missing_from_sitemap"),
+            ("Stale or non-indexable sitemap routes", "stale_in_sitemap"),
+            ("Duplicate sitemap routes", "duplicate_sitemap_routes"),
+            ("Routes in the wrong language sitemap", "wrong_locale_sitemap"),
+        ):
+            values = sorted(audit[key])
+            handle.write(f"\n## {heading} — {len(values)}\n\n")
+            handle.write("None.\n" if not values else "".join(f"- `{value}`\n" for value in values))
+
+        handle.write("\n## Per-page detail\n\n")
+        worst = sorted(
+            (report for report in reports if report["issues"] or report["broken_links"] or report["broken_images"]),
+            key=lambda report: (-(len(report["issues"]) + len(report["broken_links"]) + len(report["broken_images"])), report["path"]),
+        )
+        if not worst:
+            handle.write("No actionable page-level defects.\n")
+        for report in worst:
+            handle.write(f"\n### `{report['path']}` ({report['url']})\n")
+            handle.write(f"- classification: {report['classification']}\n")
+            handle.write(f"- title: \"{report['title']}\"\n")
+            if report["issues"]:
+                handle.write(f"- issues: {', '.join(report['issues'])}\n")
+            if report["broken_links"]:
+                handle.write(f"- broken links: {', '.join(report['broken_links'])}\n")
+            if report["broken_images"]:
+                handle.write(f"- broken images: {', '.join(report['broken_images'])}\n")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--check", action="store_true", help="exit 1 when actionable defects remain")
+    parser.add_argument("--output", type=Path, default=ROOT / "AUDIT_REPORT.md")
+    args = parser.parse_args()
+
+    audit = build_audit()
+    write_report(audit, args.output)
+    print(f"Audited {len(audit['pages'])} public HTML files")
+    print(f"Indexable pages: {audit['classifications'].get('indexable', 0)}")
+    print(f"Actionable defects: {audit['actionable_count']}")
+    print(f"Wrote {args.output}")
+    return 1 if args.check and audit["actionable_count"] else 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
