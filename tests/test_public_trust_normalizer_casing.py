@@ -81,7 +81,7 @@ class PublicTrustNormalizerCasingTests(unittest.TestCase):
             (
                 DOWNSIZING,
                 '<a href="/es/55-plus-communities-nj">'
-                'comunidades para mayores de 55</a>',
+                'guía de comunidades 55+</a>',
             ),
             (
                 MOVING_GUIDE,

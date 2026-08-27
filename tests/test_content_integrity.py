@@ -333,11 +333,14 @@ class ContentIntegrityTests(unittest.TestCase):
                 )
                 self.assertIn('href="/ai-authority"', source)
             else:
-                self.assertIn("first-party marketing content", visible_text(source))
-                self.assertRegex(
+                destination = f"/counties/{county}-county"
+                self.assertIn(f"The {county.title()} County guide has moved", visible_text(source))
+                self.assertIn(
+                    f'<link rel="canonical" href="https://thejorgeramirezgroup.com{destination}">',
                     source,
-                    rf'<link\s+rel=["\']canonical["\']\s+href=["\']https://thejorgeramirezgroup\.com/{re.escape(relative.removesuffix(".html"))}(?:\.html)?["\']',
                 )
+                self.assertIn(f'href="{destination}"', source)
+                self.assertNotIn("first-party marketing content", visible_text(source))
 
     def test_spanish_millburn_buyer_article_is_quarantined(self) -> None:
         relative = "es/blog/buying-home-millburn-nj-2026.html"

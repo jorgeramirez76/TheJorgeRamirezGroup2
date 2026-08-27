@@ -288,18 +288,49 @@ class FinalServiceContentTests(unittest.TestCase):
     def test_lead_paths_remain_contextual(self) -> None:
         expected = {
             "luxury-homes-nj.html": ("/home-valuation", "/buy-a-home"),
-            "es/luxury-homes-nj.html": ("/home-valuation", "/es/buy-a-home"),
+            "es/luxury-homes-nj.html": ("/es/home-valuation", "/es/buy-a-home"),
             "55-plus-communities-nj.html": ("/home-valuation", "/downsizing-nj"),
-            "es/55-plus-communities-nj.html": ("/home-valuation", "/es/downsizing-nj"),
+            "es/55-plus-communities-nj.html": ("/es/home-valuation", "/es/downsizing-nj"),
             "downsizing-nj.html": ("/home-valuation", "/net-proceeds-calculator"),
-            "es/downsizing-nj.html": ("/home-valuation", "/net-proceeds-calculator"),
+            "es/downsizing-nj.html": ("/es/home-valuation", "/es/net-proceeds-calculator"),
             "blog/moving-from-jersey-city-hoboken-to-suburbs.html": ("/buy-a-home", "/#contact"),
         }
         for relative, paths in expected.items():
             source = read(relative)
             with self.subTest(page=relative):
-                for route in paths:
-                    self.assertIn(f'href="{route}"', source)
+                if relative == "downsizing-nj.html":
+                    planning_match = re.search(
+                        r"<p>Use separate worksheets .*?</p>", source, flags=re.I | re.S
+                    )
+                    self.assertIsNotNone(
+                        planning_match, "expected the source-led planning paragraph"
+                    )
+                    for route in paths:
+                        self.assertIn(f'href="{route}"', planning_match.group(0))
+                else:
+                    cta_match = re.search(
+                        r'<section\b[^>]*class=["\'][^"\']*\bcta\b[^"\']*["\'][^>]*>(.*?)</section>',
+                        source,
+                        flags=re.I | re.S,
+                    )
+                    self.assertIsNotNone(cta_match, "expected one contextual CTA section")
+                    cta_hrefs = tuple(
+                        href
+                        for href in re.findall(
+                            r'href=["\']([^"\']+)["\']', cta_match.group(1)
+                        )
+                        if href.startswith("/")
+                    )
+                    self.assertEqual(paths, cta_hrefs)
+
+                if relative.startswith("es/"):
+                    nav_match = re.search(r"<nav\b[^>]*>(.*?)</nav>", source, flags=re.I | re.S)
+                    self.assertIsNotNone(nav_match, "expected Spanish primary navigation")
+                    nav_source = nav_match.group(1)
+                    self.assertIn('<a class="brand" href="/es">', nav_source)
+                    self.assertIn('href="/es#contact"', nav_source)
+                    self.assertNotIn('href="/es/#contact"', nav_source)
+                    self.assertNotIn('href="/sell-your-home"', nav_source)
 
     def test_55_plus_social_metadata_is_synced_to_current_snippet(self) -> None:
         for relative in ("55-plus-communities-nj.html", "es/55-plus-communities-nj.html"):
