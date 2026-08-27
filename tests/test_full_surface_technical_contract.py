@@ -18,6 +18,10 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
 SITEMAPS = ("sitemap.xml", "sitemap-es.xml")
 IGNORED_SCHEMES = {"mailto", "tel", "sms", "data"}
+VOID_ELEMENTS = {
+    "area", "base", "br", "col", "embed", "hr", "img", "input", "link",
+    "meta", "param", "source", "track", "wbr",
+}
 
 
 def sitemap_urls() -> list[str]:
@@ -51,7 +55,11 @@ class SurfaceParser(HTMLParser):
         self.images: list[dict[str, str]] = []
         self.assets: list[tuple[str, str]] = []
         self.headings: list[int] = []
+        self.h1_in_main: list[bool] = []
         self.landmarks = 0
+        self.main_ids: list[str] = []
+        self._main_depth = 0
+        self._element_stack: list[tuple[str, bool]] = []
         self.skip_hrefs: list[str] = []
         self.iframes: list[dict[str, str]] = []
         self.title_count = 0
@@ -93,10 +101,19 @@ class SurfaceParser(HTMLParser):
             self.images.append(values)
         if tag == "iframe":
             self.iframes.append(values)
-        if tag == "main" or values.get("role", "").casefold() == "main":
+        is_main_landmark = tag == "main" or values.get("role", "").casefold() == "main"
+        if is_main_landmark:
             self.landmarks += 1
+            if values.get("id"):
+                self.main_ids.append(values["id"])
+        if tag not in VOID_ELEMENTS:
+            self._element_stack.append((tag, is_main_landmark))
+            if is_main_landmark:
+                self._main_depth += 1
         if re.fullmatch(r"h[1-6]", tag):
             self.headings.append(int(tag[1]))
+            if tag == "h1":
+                self.h1_in_main.append(self._main_depth > 0)
         if tag in {"img", "script", "source", "video", "audio", "iframe"}:
             if values.get("src"):
                 self.assets.append((tag, values["src"]))
@@ -111,6 +128,15 @@ class SurfaceParser(HTMLParser):
     def handle_endtag(self, tag: str) -> None:
         if tag == "title":
             self._in_title = False
+        for index in range(len(self._element_stack) - 1, -1, -1):
+            if self._element_stack[index][0] == tag:
+                popped = self._element_stack[index:]
+                del self._element_stack[index:]
+                self._main_depth = max(
+                    0,
+                    self._main_depth - sum(is_main for _, is_main in popped),
+                )
+                break
 
     def handle_data(self, data: str) -> None:
         if self._in_title:
@@ -200,6 +226,8 @@ class FullSurfaceTechnicalContractTests(unittest.TestCase):
                 failures.append(f"{relative}: viewport count {parser.viewport_count}")
             if parser.headings.count(1) != 1:
                 failures.append(f"{relative}: h1 count {parser.headings.count(1)}")
+            elif parser.h1_in_main != [True]:
+                failures.append(f"{relative}: h1 is outside main landmark")
             for previous, current in zip(parser.headings, parser.headings[1:]):
                 if current > previous + 1:
                     failures.append(f"{relative}: heading skip h{previous} to h{current}")
@@ -213,6 +241,8 @@ class FullSurfaceTechnicalContractTests(unittest.TestCase):
                 fragment = unquote(urlsplit(href).fragment)
                 if not fragment or fragment not in parser.ids:
                     failures.append(f"{relative}: unresolved skip link {href}")
+                elif fragment not in parser.main_ids:
+                    failures.append(f"{relative}: skip link bypasses main landmark {href}")
             for iframe in parser.iframes:
                 if not iframe.get("title", "").strip():
                     failures.append(f"{relative}: iframe lacks title {iframe.get('src')}")
@@ -331,12 +361,54 @@ class FullSurfaceTechnicalContractTests(unittest.TestCase):
         self.assertIn("county-hero-photo[data-bg]", main_js)
         self.assertIn(".reveal-tile[data-reveal-img]", main_js)
         self.assertIn(".listing-img[data-listing-img]", main_js)
+        self.assertIn('<button type="button" class="county-hero-card"', main_js)
+        self.assertIn('<button type="button" class="county-back-btn"', main_js)
+        self.assertNotIn('<div class="county-hero-card"', main_js)
+        self.assertNotIn('<div class="county-back-btn"', main_js)
+        self.assertIn("const townGuideCount = (communitiesData[county] || []).length", main_js)
+        self.assertIn("${communityUi.guideCount(townGuideCount)}", main_js)
+        self.assertIn('townPath: slug => `/towns/${slug}`', main_js)
+        self.assertIn('townPath: slug => `/es/towns/${slug}`', main_js)
+        self.assertIn('href="${communityUi.townPath(slug)}"', main_js)
+        self.assertNotIn('href="communities/${slug}"', main_js)
+        self.assertIn('aria-label="${communityUi.searchLabel(county)}"', main_js)
+        self.assertIn('aria-describedby="town-search-status"', main_js)
+        self.assertIn('<span class="search-icon" aria-hidden="true">', main_js)
+        self.assertIn('role="status" aria-live="polite"', main_js)
+        self.assertIn("communityUi.resultStatus(filtered.length)", main_js)
+        self.assertIn('class="community-empty-state"', main_js)
+        styles = (ROOT / "css" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn(".community-empty-state", styles)
+        self.assertIn("grid-column: 1 / -1", styles)
+        self.assertIn("backButton.focus({ preventScroll: true })", main_js)
+        self.assertIn("returningCard.focus({ preventScroll: true })", main_js)
+        self.assertIn("a[href^=\"#\"]:not(.skip-link)", main_js)
         self.assertNotRegex(main_js, r"slides\.forEach\([^)]*loadSlide")
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        spanish_homepage = (ROOT / "es" / "index.html").read_text(encoding="utf-8")
         self.assertNotIn("lenis.min.js", homepage)
         self.assertNotIn("enhance.js", homepage)
         self.assertNotIn("--reveal-img: url(", homepage)
         self.assertNotIn('class="listing-img" style="background-image:', homepage)
+        for document in (homepage, spanish_homepage):
+            self.assertIn('/css/styles.css?v=20260826b', document)
+            self.assertIn('/js/communities-data.js?v=20260826b', document)
+            self.assertIn('/js/main.js?v=20260826b', document)
+        self.assertNotIn("20260417-v4", homepage)
+        self.assertNotIn("20260701b", homepage)
+        self.assertIn('<button type="button" class="hero-scroll-indicator"', spanish_homepage)
+        self.assertIn('aria-label="Desplazarse a las credenciales de Jorge"', spanish_homepage)
+        self.assertNotIn('<div class="hero-scroll-indicator"', spanish_homepage)
+
+        community_data = (ROOT / "js" / "communities-data.js").read_text(encoding="utf-8")
+        card_slugs = set(re.findall(r'"url_slug"\s*:\s*"([a-z0-9-]+)"', community_data))
+        self.assertGreater(len(card_slugs), 0)
+        submitted = {public_path(url) for url in self.urls}
+        for slug in card_slugs:
+            route = f"/towns/{slug}"
+            with self.subTest(homepage_town_card=route):
+                self.assertIn(route, submitted)
+                self.assertNotIn(route, self.redirects)
 
     def test_baseline_security_and_cache_headers_remain_enabled(self) -> None:
         global_rule = next(item for item in self.config["headers"] if item["source"] == "/(.*)")

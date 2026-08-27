@@ -1315,6 +1315,8 @@ footer {
 }
 
 .county-hero-card {
+    appearance: none;
+    width: 100%;
     background: var(--white);
     border: 1px solid var(--border-light);
     border-top: 3px solid var(--gold);
@@ -1326,6 +1328,9 @@ footer {
     text-align: center;
     min-width: 0;
     overflow: hidden;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
 }
 
 .county-hero-card:hover {
@@ -1335,6 +1340,7 @@ footer {
 }
 
 .county-hero-photo {
+    display: block;
     width: 100%;
     height: 180px;
     background-size: cover;
@@ -1351,10 +1357,12 @@ footer {
 }
 
 .county-hero-body {
+    display: block;
     padding-top: 0.5rem;
 }
 
 .county-hero-name {
+    display: block;
     font-family: var(--font-display);
     font-size: 1.9rem;
     font-weight: 600;
@@ -1363,6 +1371,7 @@ footer {
 }
 
 .county-hero-towns {
+    display: block;
     color: var(--gold);
     font-weight: 700;
     font-size: 0.85rem;
@@ -1372,6 +1381,7 @@ footer {
 }
 
 .county-hero-highlight {
+    display: block;
     font-size: 0.9rem;
     color: var(--text-light);
     margin-bottom: 0.8rem;
@@ -1379,6 +1389,7 @@ footer {
 }
 
 .county-hero-desc {
+    display: block;
     font-size: 0.95rem;
     color: var(--text-gray);
     line-height: 1.65;
@@ -1386,6 +1397,7 @@ footer {
 }
 
 .county-hero-cta {
+    display: block;
     color: var(--primary-red);
     font-weight: 700;
     font-size: 0.9rem;
@@ -1399,7 +1411,9 @@ footer {
 
 /* Back button + county open state */
 .county-back-btn {
+    appearance: none;
     display: inline-block;
+    background: transparent;
     color: var(--primary-red);
     font-weight: 700;
     cursor: pointer;
@@ -1407,12 +1421,24 @@ footer {
     font-size: 0.95rem;
     letter-spacing: 0.5px;
     padding: 0.5rem 0;
+    border: 0;
     border-bottom: 2px solid transparent;
+    font: inherit;
     transition: border-color 0.2s;
 }
 
 .county-back-btn:hover {
     border-bottom-color: var(--primary-red);
+}
+
+.community-empty-state {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--border-light);
+    background: var(--light-gray);
+    color: var(--text-gray);
+    text-align: center;
 }
 
 .county-open-header {

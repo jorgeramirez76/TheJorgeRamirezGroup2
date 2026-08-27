@@ -67,6 +67,25 @@ def display_name(slug: str) -> str:
     return SPECIAL_NAMES.get(slug, slug.replace("-", " ").title())
 
 
+def normalize_main_landmark(source: str) -> str:
+    """Keep the hero, filters, and directory inside the skip-link target."""
+    preferred = '<main id="main" role="main" tabindex="-1">'
+    hero = '<section class="communities-hero">'
+    legacy = '<main id="main" role="main">'
+    if preferred not in source:
+        source, hero_replacements = re.subn(
+            re.escape(hero), f"{preferred}\n{hero}", source, count=1
+        )
+        source, legacy_replacements = re.subn(
+            rf"\n{re.escape(legacy)}\s*\n", "\n", source, count=1
+        )
+        if hero_replacements != 1 or legacy_replacements != 1:
+            raise RuntimeError("communities hub main landmark could not be normalized")
+    if source.count(preferred) != 1 or source.index(preferred) > source.index(hero):
+        raise RuntimeError("communities hub hero is outside the main landmark")
+    return source
+
+
 inventory = FACTS["canonicalTownInventory"]
 by_county = inventory["byCounty"]
 total = inventory["total"]
@@ -176,7 +195,7 @@ def spanish_section_html(county: str) -> str:
   </section>'''
 
 
-source = OUT.read_text(encoding="utf-8")
+source = normalize_main_landmark(OUT.read_text(encoding="utf-8"))
 source = re.sub(
     r"<title>.*?</title>",
     f"<title>NJ Community Guides — {total} Towns | The Jorge Ramirez Group</title>",
@@ -342,7 +361,7 @@ spanish_schema = {
     },
 }
 
-spanish = SPANISH_OUT.read_text(encoding="utf-8")
+spanish = normalize_main_landmark(SPANISH_OUT.read_text(encoding="utf-8"))
 spanish_replacements = (
     (
         r"<title>.*?</title>",

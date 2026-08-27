@@ -80,7 +80,7 @@
     <!-- Preload the first local carousel image for faster LCP. -->
     <link rel="preload" as="image" href="/images/properties/04-brick-stone.webp" type="image/webp">
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css?v=20260826b">
     <!-- AI Context File — helps ChatGPT, Perplexity, Claude, Gemini understand this site -->
     <link rel="llms" href="/llms.txt" type="text/plain" title="AI Context">
 
@@ -241,7 +241,7 @@
     
 </head>
 <body>
-<a href="#home" class="skip-link" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Saltar al contenido principal</a>
+<a href="#main" class="skip-link" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Saltar al contenido principal</a>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -292,9 +292,9 @@
                 <a href="#contact" class="btn-secondary">Habla Primero con Jorge</a>
             </div>
         </div>
-        <div class="hero-scroll-indicator" onclick="document.querySelector('.stats-bar').scrollIntoView({behavior:'smooth'})">
+        <button type="button" class="hero-scroll-indicator" aria-label="Desplazarse a las credenciales de Jorge" onclick="document.querySelector('.stats-bar').scrollIntoView({behavior:'smooth'})">
             <span class="scroll-arrow"></span>
-        </div>
+        </button>
     </section>
     
     <!-- Stats Bar -->
@@ -873,8 +873,8 @@
         </div>
     </footer>
     
-    <script src="/js/communities-data.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/js/communities-data.js?v=20260826b"></script>
+    <script src="/js/main.js?v=20260826b"></script>
 
 <script defer src="/js/site-cta.js"></script>
 <script defer src="/js/lead-attribution.js"></script>
