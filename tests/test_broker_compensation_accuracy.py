@@ -14,6 +14,14 @@ from scripts.normalize_spanish_fair_housing import normalize as normalize_spanis
 
 ROOT = Path(__file__).resolve().parents[1]
 NJDOBI_BULLETIN = "https://www.nj.gov/dobi/bulletins/blt24_11.pdf"
+NJ_RTF = "https://www.nj.gov/treasury/taxation/realty.shtml"
+CFPB_SELLER_ADJUSTMENTS = (
+    "https://www.consumerfinance.gov/rules-policy/regulations/1026/38/"
+)
+NJ_GPF_GUIDANCE = (
+    "https://www.nj.gov/treasury/taxation/pdf/other_forms/"
+    "graduated-percent-fee-exemptions.pdf"
+)
 
 ENGLISH = (
     "net-proceeds-calculator.html",
@@ -183,12 +191,14 @@ class BrokerCompensationAccuracyTests(unittest.TestCase):
     def test_calculator_result_copy_separates_user_entries_from_statutory_estimates(self) -> None:
         expectations = {
             "net-proceeds-calculator.html": (
-                "All nonstatutory deductions shown above came from your entries.",
-                "The RTF and Graduated Percent Fee lines are calculator estimates",
+                "All nonstatutory figures shown above came from your entries.",
+                "The RTF, possible fee and any confirmed Graduated Percent Fee line are calculator estimates",
+                "A possible fee marked not deducted is excluded from the displayed net.",
             ),
             "es/net-proceeds-calculator.html": (
-                "Todas las deducciones no estatutarias mostradas provienen de tus datos.",
-                "Las líneas RTF y Graduated Percent Fee son estimaciones de la calculadora",
+                "Todas las cifras no estatutarias mostradas provienen de tus datos.",
+                "La línea RTF, la posible tarifa y cualquier línea confirmada de Graduated Percent Fee son estimaciones de la calculadora",
+                "Una posible tarifa marcada como no deducida queda excluida del neto mostrado.",
             ),
         }
         for relative, phrases in expectations.items():
@@ -197,8 +207,19 @@ class BrokerCompensationAccuracyTests(unittest.TestCase):
                 self.assertNotIn("annualTax * (3 / 12)", source)
                 self.assertNotIn("closingMisc = 800", source)
                 self.assertIn('id="propertyTaxAdjustment"', source)
+                self.assertIn('id="propertyTaxAdjustmentDirection"', source)
+                self.assertIn('value="debit"', source)
+                self.assertIn('value="credit"', source)
+                self.assertIn('id="graduatedPercentFeeApplicability"', source)
                 self.assertIn('id="otherCosts"', source)
                 self.assertIn('id="estimatedTaxPayment"', source)
+                self.assertIn(NJ_RTF, source)
+                self.assertIn(NJ_GPF_GUIDANCE, source)
+                self.assertIn(CFPB_SELLER_ADJUSTMENTS, source)
+                self.assertIn("if (!Number.isFinite(price) || price < 100) return 0;", source)
+                self.assertIn("input.step = '0.01';", source)
+                self.assertNotIn("input.step = isFlat ? '100'", source)
+                self.assertIn("function roundCurrency(n)", source)
                 for phrase in phrases:
                     self.assertIn(phrase, source)
 

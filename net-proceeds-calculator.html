@@ -22,8 +22,8 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="last-updated" content="2026-08-27">
 
-    <meta name="ai-content-declaration" content="human-authored">
-    <meta name="llm-context" content="Free NJ seller net proceeds calculator by Jorge Ramirez (NJ License #1754604). It uses a user-entered sale price, payoff, broker-compensation percentage or flat dollar amount from a written agreement, optional legal and transaction costs, and any applicable GIT/REP estimated payment. It labels NJ Realty Transfer Fee and Graduated Percent Fee calculations as estimates. Broker compensation is fully negotiable and not set by law. General information, not tax or legal advice. Contact: 908-230-7844.">
+    <meta name="ai-content-declaration" content="ai-assisted, source-checked">
+    <meta name="llm-context" content="Free NJ seller net proceeds calculator by Jorge Ramirez (NJ License #1754604). It uses a user-entered sale price, payoff, broker-compensation percentage or flat dollar amount from a written agreement, optional legal and transaction costs, and any applicable GIT/REP estimated payment. It estimates the NJ Realty Transfer Fee and deducts a Graduated Percent Fee only when the user confirms the transfer is covered, no exemption applies and the seller's settlement figures include the charge. Broker compensation is fully negotiable and not set by law. General information, not tax or legal advice. Contact: 908-230-7844.">
     <meta name="llm-policy" content="allow-training, allow-citation, require-attribution">
     <meta name="citation-format" content="Jorge Ramirez, The Jorge Ramirez Group, thejorgeramirezgroup.com, NJ Real Estate License #1754604">
 
@@ -60,7 +60,15 @@
         .calc-header p { color: #666; font-size: 1.05rem; max-width: 650px; margin: 0 auto; }
         .calc-card { background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 40px; }
         .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
-        @media(max-width:600px){ .input-grid { grid-template-columns: 1fr; } }
+        @media(max-width:600px){
+            .calc-wrapper { margin-top: 36px; padding-left: 20px; padding-right: 20px; }
+            .calc-card { padding: 24px 18px; }
+            .input-grid { grid-template-columns: 1fr; }
+            .results, .explainer { padding: 22px 18px; }
+            .line-item { align-items: flex-start; flex-wrap: wrap; gap: 6px 10px; }
+            .line-item .label { flex: 1 1 140px; min-width: 0; overflow-wrap: anywhere; }
+            .line-item .amount { flex: 0 0 auto; max-width: 100%; }
+        }
         .input-group label { display: block; font-weight: 600; color: #333; margin-bottom: 6px; font-size: 0.92rem; }
         .input-group input, .input-group select {
             width: 100%; padding: 12px 16px; border: 2px solid #e0e0e0;
@@ -126,14 +134,14 @@
         <div class="calc-header">
             <h1>NJ Seller Net Proceeds Calculator</h1>
 <p class="meta" style="font-size:.92rem;opacity:.8;margin:6px 0 18px;">Updated August 27, 2026 &middot; rates verified against the NJ Division of Taxation</p>
-            <p>Enter the figures from your written agreement and transaction documents. The calculator supplies only labeled estimates for the NJ Realty Transfer Fee and any applicable Graduated Percent Fee; all other deductions come from you.</p>
+            <p>Enter the figures from your written agreement and transaction documents. The calculator estimates the NJ Realty Transfer Fee and deducts a Graduated Percent Fee only after you confirm it applies and is charged against seller proceeds; all other figures come from you.</p>
         </div>
 
         <div class="calc-card">
             <div class="input-grid">
                 <div class="input-group">
                     <label for="salePrice">Expected Sale Price ($)</label>
-                    <input type="number" id="salePrice" min="1" step="0.01" inputmode="decimal" required>
+                    <input type="number" id="salePrice" min="0.01" step="0.01" inputmode="decimal" required>
                 </div>
                 <div class="input-group">
                     <label for="payoff">Mortgage Payoff ($)</label>
@@ -157,9 +165,17 @@
                     <small class="input-help" id="attorneyHelp">Enter a quote or agreed amount; leave blank if it does not apply.</small>
                 </div>
                 <div class="input-group">
-                    <label for="propertyTaxAdjustment">Property-Tax Adjustment/Debit ($)</label>
+                    <label for="propertyTaxAdjustmentDirection">Property-Tax Adjustment Direction</label>
+                    <select id="propertyTaxAdjustmentDirection" aria-describedby="propertyTaxHelp" onchange="this.setCustomValidity('')">
+                        <option value="">Choose debit or credit</option>
+                        <option value="debit">Debit due from seller</option>
+                        <option value="credit">Credit/reimbursement due to seller</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="propertyTaxAdjustment">Property-Tax Adjustment Amount ($)</label>
                     <input type="number" id="propertyTaxAdjustment" min="0" step="0.01" inputmode="decimal" aria-describedby="propertyTaxHelp">
-                    <small class="input-help" id="propertyTaxHelp">Enter the seller debit shown in the settlement figures; no proration period is assumed.</small>
+                    <small class="input-help" id="propertyTaxHelp">Copy the amount and direction from the settlement figures; no proration period is assumed.</small>
                 </div>
                 <div class="input-group">
                     <label for="concessions">Seller Credits / Concessions ($)</label>
@@ -179,6 +195,15 @@
 
             <label style="display:flex;align-items:center;gap:10px;font-weight:500;color:#333;margin:0 0 8px;font-size:0.94rem;"><input type="checkbox" id="reducedRate" style="width:auto;margin:0;" aria-describedby="reducedRateHelp">Use the reduced RTF schedule confirmed for this transfer</label>
             <small class="input-help" id="reducedRateHelp" style="margin:0 0 20px;">Select only if your settlement professional confirms the transaction qualifies under the NJ rules.</small>
+            <div class="input-group" style="margin:0 0 20px;">
+                <label for="graduatedPercentFeeApplicability">Graduated Percent Fee Applicability</label>
+                <select id="graduatedPercentFeeApplicability" aria-describedby="graduatedPercentFeeHelp">
+                    <option value="unknown">Not confirmed — show possible fee without deducting</option>
+                    <option value="applies">Confirmed applicable and charged to seller — deduct estimate</option>
+                    <option value="not-applicable">Confirmed not charged to seller — do not deduct</option>
+                </select>
+                <small class="input-help" id="graduatedPercentFeeHelp">Use the settlement professional's confirmed status and seller-side figures. A seller charge requires consideration above $1,000,000, a covered property class, no exemption and no different contractual allocation reflected at closing.</small>
+            </div>
                         <button type="button" class="calc-btn" onclick="calcNet()">Calculate My Net Proceeds</button>
 
             <div class="results" id="results" aria-live="polite" aria-labelledby="results-heading">
@@ -201,7 +226,7 @@
             <p>In New Jersey, <strong>broker compensation is fully negotiable and not set by law</strong>. It may be paid by the seller, buyer, a third party, or through compensation shared between brokerage firms; the applicable written brokerage services agreement controls the amount and method. See <a href="https://www.nj.gov/dobi/bulletins/blt24_11.pdf" target="_blank" rel="noopener noreferrer">NJDOBI Bulletin 24-11</a>. This calculator accepts either a percentage or flat dollar amount and does not insert one for you.</p>
 
             <h3>Estimated NJ Realty Transfer Fee</h3>
-            <p>The calculator applies the published <a href="https://www.nj.gov/treasury/taxation/realty.shtml" target="_blank" rel="noopener noreferrer">NJ Division of Taxation RTF schedule</a> to the sale price you enter. The final fee can depend on deed consideration, property classification and a full or partial exemption, so treat this line as an estimate and confirm it with the settlement professional.</p>
+            <p>The calculator applies the published <a href="https://www.nj.gov/treasury/taxation/realty.shtml" target="_blank" rel="noopener noreferrer">NJ Division of Taxation RTF schedule</a> to the sale price you enter. The State lists consideration below $100 as exempt. The final fee can depend on deed consideration, property classification and another full or partial exemption, so treat this line as an estimate and confirm it with the settlement professional.</p>
 
             <h3>Attorney Cost, If Retained</h3>
             <p><a href="https://www.nj.gov/dobi/division_consumers/pdf/buyingahome.pdf" target="_blank" rel="noopener noreferrer">NJDOBI's consumer guide</a> explains that a contract prepared by a real estate licensee contains an attorney-review clause and that, <strong>if you choose to consult an attorney</strong>, counsel may propose revisions or disapprove the contract during that period. The calculator supplies no attorney requirement or price; enter an agreed amount only if it applies.</p>
@@ -209,11 +234,11 @@
             <h3>Mortgage Payoff (Exact dollar amount)</h3>
             <p>Your loan balance at closing, plus a per-diem interest charge through the closing date. Request a payoff statement from your lender when you go under contract.</p>
 
-            <h3>Prorated Property Tax</h3>
-            <p>You pay NJ property taxes through the closing date. The buyer takes over from closing forward. This shows up as either a debit or credit depending on when your town's tax bills come due.</p>
+            <h3>Property-Tax Settlement Adjustment</h3>
+            <p>The <a href="https://www.consumerfinance.gov/rules-policy/regulations/1026/38/" target="_blank" rel="noopener noreferrer">CFPB Closing Disclosure rules</a> show seller-side adjustments both for items the seller paid in advance and items unpaid by the seller. Copy the amount and whether it is due from or due to the seller from the transaction's settlement figures; the contract and closing documents control.</p>
 
             <h3>Other Transaction Costs</h3>
-            <p>Property-tax adjustments, municipal or association charges, title-related items, credits and other costs depend on the transaction. Enter the seller debits shown in your documents; the calculator does not assume a proration period or miscellaneous amount.</p>
+            <p>Property-tax adjustments, municipal or association charges, title-related items, credits and other costs depend on the transaction. Enter the seller debits and credits shown in your documents; the calculator does not assume a proration period or miscellaneous amount.</p>
 
             <h3>GIT/REP Estimated Gross Income Tax Payment</h3>
             <p>The <a href="https://nj.gov/treasury/taxation/gitrepfaqs.shtml" target="_blank" rel="noopener noreferrer">NJ Division of Taxation's GIT/REP FAQ</a> states that a GIT/REP form is required to record a deed. A nonresident seller must make an estimated Gross Income Tax payment unless a seller's assurance applies. Which form or assurance applies depends on the seller and transaction. Enter only an amount confirmed for your closing. Any later credit or refund depends on the required filing, the seller's actual tax liability and Division review.</p>
@@ -227,7 +252,7 @@
               <li>Over $3,000,000 through $3,500,000 &mdash; 3%</li>
               <li>Over $3,500,000 &mdash; 3.5%</li>
             </ul>
-            <p>Property classification, deed consideration, exemptions and transaction timing can change the result. Confirm the final fee rather than relying on the calculator for a legal or tax conclusion.</p>
+            <p>Property classification, deed consideration, exemptions and transaction timing can change the result. The State identifies the seller as statutorily responsible, while its <a href="https://www.nj.gov/treasury/taxation/pdf/other_forms/graduated-percent-fee-exemptions.pdf" target="_blank" rel="noopener noreferrer">current Graduated Percent Fee guidance</a> notes that parties can apportion or shift the payment burden in contract negotiations. The calculator deducts the estimate only when you select “Confirmed applicable and charged to seller” above. Until then, it shows a possible fee without deducting it and labels the displayed net accordingly.</p>
 
             <h3>Limits of This Tool</h3>
             <p>This worksheet does not calculate capital gain, tax liability, GIT/REP eligibility, a refund, legal obligations or final closing figures. It provides general planning information, not tax or legal advice.</p>
@@ -249,13 +274,24 @@
     </footer>
 
     <script>
-        function fmt(n) { return (n < 0 ? '-$' : '$') + Math.abs(Math.round(n)).toLocaleString(); }
+        function fmt(n) {
+            return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+            });
+        }
+
+        function roundCurrency(n) {
+            const magnitude = Math.abs(n);
+            const rounded = Math.round((magnitude + Number.EPSILON * magnitude) * 100) / 100;
+            return n < 0 ? -rounded : rounded;
+        }
 
         // NJ Realty Transfer Fee — per-$500 statutory schedule (Division of Taxation).
         // The previous table mixed the under-$350K rates into the low bands, understating the
         // fee by $630 at a $1,000,000 sale. Verified: $9,575 at $1M, $27,725 at $2.5M.
         function calcRTF(price) {
-            if (price <= 0) return 0;
+            if (!Number.isFinite(price) || price < 100) return 0;
             const over350 = price > 350000;
             const reduced = !!(document.getElementById('reducedRate') || {}).checked;
             const tiers = reduced
@@ -285,12 +321,12 @@
         // says "in excess of" — so exactly $1,000,000 owes nothing. The senior/disabled
         // reduction applies to the base RTF only, never to this fee.
         function calcGraduatedPercentFee(price) {
-            if (price <= 1000000) return 0;
-            if (price <= 2000000) return price * 0.01;
-            if (price <= 2500000) return price * 0.02;
-            if (price <= 3000000) return price * 0.025;
-            if (price <= 3500000) return price * 0.03;
-            return price * 0.035;
+            if (!Number.isFinite(price) || price <= 1000000) return 0;
+            if (price <= 2000000) return roundCurrency(price * 0.01);
+            if (price <= 2500000) return roundCurrency(price * 0.02);
+            if (price <= 3000000) return roundCurrency(price * 0.025);
+            if (price <= 3500000) return roundCurrency(price * 0.03);
+            return roundCurrency(price * 0.035);
         }
 
         function updateBrokerCompensationField() {
@@ -304,7 +340,7 @@
                 ? 'Enter the flat dollar amount stated in your written agreement; the calculator does not supply one.'
                 : 'Enter the percentage stated in your written agreement; the calculator does not supply one.';
             input.placeholder = isFlat ? 'Enter agreed dollar amount' : 'Enter agreed percentage';
-            input.step = isFlat ? '100' : '0.01';
+            input.step = '0.01';
             if (isFlat) {
                 input.removeAttribute('max');
             } else {
@@ -316,9 +352,12 @@
         }
 
         function calcNet() {
-            const salePrice = parseFloat(document.getElementById('salePrice').value) || 0;
-            if (salePrice <= 0) {
+            const salePriceInput = document.getElementById('salePrice');
+            const salePrice = parseFloat(salePriceInput.value) || 0;
+            if (!salePriceInput.checkValidity() || salePrice <= 0) {
                 document.getElementById('results').style.display = 'none';
+                salePriceInput.reportValidity();
+                salePriceInput.focus();
                 return;
             }
             const brokerCompensationInput = document.getElementById('brokerCompensation');
@@ -335,24 +374,57 @@
                 brokerCompensationInput.reportValidity();
                 return;
             }
+            const nonNegativeInputIds = [
+                'payoff', 'attorney', 'propertyTaxAdjustment', 'concessions',
+                'otherCosts', 'estimatedTaxPayment',
+            ];
+            for (const id of nonNegativeInputIds) {
+                const input = document.getElementById(id);
+                input.setCustomValidity('');
+                if (input.value.trim() !== '' && !input.checkValidity()) {
+                    document.getElementById('results').style.display = 'none';
+                    input.reportValidity();
+                    input.focus();
+                    return;
+                }
+            }
             const payoff = parseFloat(document.getElementById('payoff').value) || 0;
             const brokerCompensationMethod = document.getElementById('brokerCompensationMethod').value;
             const brokerCompensationValue = brokerCompensationInput.valueAsNumber;
             const attorney = parseFloat(document.getElementById('attorney').value) || 0;
+            const propertyTaxAdjustmentDirection = document.getElementById('propertyTaxAdjustmentDirection').value;
             const propertyTaxAdjustment = parseFloat(document.getElementById('propertyTaxAdjustment').value) || 0;
+            const propertyTaxDirectionInput = document.getElementById('propertyTaxAdjustmentDirection');
+            propertyTaxDirectionInput.setCustomValidity('');
+            if (propertyTaxAdjustment > 0 && !['debit', 'credit'].includes(propertyTaxAdjustmentDirection)) {
+                document.getElementById('results').style.display = 'none';
+                propertyTaxDirectionInput.setCustomValidity('Select whether the property-tax adjustment is due from or due to the seller.');
+                propertyTaxDirectionInput.reportValidity();
+                propertyTaxDirectionInput.focus();
+                return;
+            }
             const concessions = parseFloat(document.getElementById('concessions').value) || 0;
             const otherCosts = parseFloat(document.getElementById('otherCosts').value) || 0;
             const estimatedTaxPayment = parseFloat(document.getElementById('estimatedTaxPayment').value) || 0;
 
-            const brokerCompensation = brokerCompensationMethod === 'flat'
+            const brokerCompensation = roundCurrency(brokerCompensationMethod === 'flat'
                 ? brokerCompensationValue
-                : salePrice * (brokerCompensationValue / 100);
+                : salePrice * (brokerCompensationValue / 100));
             const rtf = calcRTF(salePrice);
-            const gpf = calcGraduatedPercentFee(salePrice);
+            const gpfApplicabilityValue = document.getElementById('graduatedPercentFeeApplicability').value;
+            const gpfApplicability = ['applies', 'not-applicable'].includes(gpfApplicabilityValue)
+                ? gpfApplicabilityValue
+                : 'unknown';
+            const gpfConfirmed = gpfApplicability === 'applies';
+            const possibleGpf = calcGraduatedPercentFee(salePrice);
+            const gpf = gpfConfirmed ? possibleGpf : 0;
+            const propertyTaxDeduction = propertyTaxAdjustmentDirection === 'credit'
+                ? -propertyTaxAdjustment
+                : propertyTaxAdjustment;
 
-            const totalDeductions = payoff + brokerCompensation + rtf + gpf + attorney +
-                propertyTaxAdjustment + concessions + otherCosts + estimatedTaxPayment;
-            const net = salePrice - totalDeductions;
+            const totalDeductions = roundCurrency(payoff + brokerCompensation + rtf + gpf + attorney +
+                propertyTaxDeduction + concessions + otherCosts + estimatedTaxPayment);
+            const net = roundCurrency(salePrice - totalDeductions);
 
             const lineItems = [
                 ['Sale Price', salePrice, 'positive'],
@@ -362,26 +434,49 @@
                     : `Broker Compensation (${brokerCompensationValue}%)`, -brokerCompensation, 'negative'],
                 ['Estimated NJ Realty Transfer Fee', -rtf, 'negative'],
             ];
-            if (gpf > 0) {
-                const gpfPct = (gpf / salePrice * 100).toFixed(1).replace(/\.0$/, '');
-                lineItems.splice(4, 0,
-                    [`Estimated NJ Graduated Percent Fee (${gpfPct}% of full price)`, -gpf, 'negative']);
+            if (possibleGpf > 0) {
+                const gpfPct = (possibleGpf / salePrice * 100).toFixed(1).replace(/\.0$/, '');
+                if (gpfConfirmed) {
+                    lineItems.splice(4, 0,
+                        [`Estimated NJ Graduated Percent Fee (${gpfPct}% of full price)`, -gpf, 'negative']);
+                } else if (gpfApplicability === 'not-applicable') {
+                    lineItems.splice(4, 0,
+                        ['NJ Graduated Percent Fee (confirmed not deducted from seller proceeds)', 0, 'pending']);
+                } else {
+                    lineItems.splice(4, 0,
+                        ['Possible NJ Graduated Percent Fee (not deducted; confirmation required)', possibleGpf, 'pending']);
+                }
             }
             if (attorney > 0) lineItems.push(['Attorney Cost Entered', -attorney, 'negative']);
-            if (propertyTaxAdjustment > 0) lineItems.push(['Property-Tax Adjustment Entered', -propertyTaxAdjustment, 'negative']);
+            if (propertyTaxAdjustment > 0) {
+                const isCredit = propertyTaxAdjustmentDirection === 'credit';
+                lineItems.push([
+                    isCredit ? 'Property-Tax Credit/Reimbursement Entered' : 'Property-Tax Debit Entered',
+                    isCredit ? propertyTaxAdjustment : -propertyTaxAdjustment,
+                    isCredit ? 'positive' : 'negative',
+                ]);
+            }
             if (concessions > 0) lineItems.push(['Seller Concessions', -concessions, 'negative']);
             if (otherCosts > 0) lineItems.push(['Other Seller Costs Entered', -otherCosts, 'negative']);
             if (estimatedTaxPayment > 0) lineItems.push(['GIT/REP Estimated Tax Payment Entered', -estimatedTaxPayment, 'negative']);
 
+            const totalLabel = possibleGpf > 0 && gpfApplicability === 'unknown'
+                ? 'Estimated Net (Excludes Unconfirmed Possible Fee)'
+                : 'Estimated Net to You';
             const html = lineItems.map(([label, amt, cls]) =>
                 `<div class="line-item ${cls}"><span class="label">${label}</span><span class="amount">${fmt(amt)}</span></div>`
             ).join('') +
-            `<div class="line-item total"><span class="label">Estimated Net to You</span><span class="amount">${fmt(net)}</span></div>` +
-            `<div style="margin-top:8px; color:#666; font-size:0.85rem; text-align:center;">All nonstatutory deductions shown above came from your entries. The RTF and Graduated Percent Fee lines are calculator estimates, not final tax or legal determinations. Confirm every figure in your signed agreements and closing documents.</div>`;
+            `<div class="line-item total"><span class="label">${totalLabel}</span><span class="amount">${fmt(net)}</span></div>` +
+            `<div style="margin-top:8px; color:#666; font-size:0.85rem; text-align:center;">All nonstatutory figures shown above came from your entries. The RTF, possible fee and any confirmed Graduated Percent Fee line are calculator estimates, not final tax or legal determinations. A possible fee marked not deducted is excluded from the displayed net. Confirm every figure in your signed agreements and closing documents.</div>`;
 
             document.getElementById('lineItems').innerHTML = html;
             document.getElementById('results').style.display = 'block';
-            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const prefersReducedMotion = typeof window !== 'undefined' &&
+                window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+            document.getElementById('results').scrollIntoView({
+                behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                block: 'start'
+            });
         }
     </script>
 <script defer src="/js/site-cta.js"></script>
