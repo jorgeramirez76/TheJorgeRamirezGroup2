@@ -1,199 +1,80 @@
 #!/usr/bin/env python3
-"""Remove the flip-count credential ("60+ house flips" and all variants) site-wide.
+"""Fail-closed guard for the retired flip-count marketing scrubber.
 
-Jorge's rule (2026-04-27): never use a flip count in marketing copy. Keep the
-investor/renovation framing, drop the number. Run after any content generation
-or bulk import; safe to re-run (idempotent).
+This file used to replace an unverified numeric flip claim with other
+unverified investor and renovation claims. It intentionally performs no
+rewrites now. It only reports prohibited numeric flip-count language so an
+editor can replace the surrounding sentence with a fact approved in
+``data/site-facts.json``.
 
-Usage: python3 scrub_flip_count.py [file ...]   (no args = whole repo)
+Usage: python3 scrub_flip_count.py [file ...]
+       With no paths, scan public HTML and JSON files in the repository.
 """
-import os
+
+from __future__ import annotations
+
 import re
 import sys
-
-SUBS = [
-    # long/specific first
-    (r'personally bought, renovated, and sold 60\+ investment properties', 'personally bought, renovated, and sold investment properties'),
-    (r'has personally bought, renovated, and sold 60\+ homes', 'has personally bought, renovated, and sold homes as an investor'),
-    (r'bought, renovated, and sold 60\+ homes', 'bought, renovated, and sold homes as an investor'),
-    (r'bought, renovated, and sold over 60 homes', 'bought, renovated, and sold homes'),
-    (r'bought, renovated, and resold over 60 homes', 'bought, renovated, and resold homes'),
-    (r'bought, renovated, and sold over 60 NJ homes', 'bought, renovated, and sold NJ homes as an investor'),
-    (r'Jorge has bought, renovated, and sold over 60\.', 'Jorge has bought, renovated, and sold them himself.'),
-    (r'with 60\+ personal home flips', 'with hands-on renovation and investment experience'),
-    (r"who's personally flipped 60\+ homes across Northern NJ", 'who has personally renovated and sold homes across Northern NJ as an investor'),
-    (r"who's personally flipped 60\+ homes", 'who has personally renovated and sold homes as an investor'),
-    (r'<strong>60\+ personal house flips\.</strong>', '<strong>Hands-on investor experience.</strong>'),
-    (r', 60\+ personal house flips\.</p>', ', an investor with hands-on renovation experience.</p>'),
-    (r'with 60\+ personal investment property transactions', 'with extensive personal investment-property experience'),
-    (r'With 60\+ personal investment property transactions,', 'With deep hands-on investment-property experience,'),
-    (r'and 60\+ personal investment property transactions', 'and hands-on investment-property experience'),
-    (r'a track record of 60\+ personal investment property transactions', 'a hands-on track record of personal investment property transactions'),
-    (r'a track record that includes 60\+ personal investment property transactions', 'a track record that includes extensive personal investment property work'),
-    (r'has personally completed 60\+ investment property transactions', 'has extensive personal investment-property experience'),
-    (r'has personally flipped 60\+ NJ homes as an investor', 'has personally renovated and sold NJ homes as an investor'),
-    (r'who has flipped 60\+ NJ homes', 'who knows NJ construction costs'),
-    (r'As someone who has flipped 60\+ NJ homes', 'As an investor who knows NJ construction costs'),
-    (r'with 60\+ personal investment flips', 'with hands-on investment-renovation experience'),
-    (r'and 60\+ personal investment flips', 'and hands-on renovation experience'),
-    (r'60\+ personal investment property flips', 'hands-on renovation experience'),
-    (r'60\+ personal fix-and-flip investment properties in NJ', 'hands-on renovation and construction-cost experience in NJ'),
-    (r'60\+ personal NJ fix-and-flips give him', 'Hands-on NJ renovation experience gives him'),
-    (r'and 60\+ investment flips of experience', 'and hands-on renovation experience'),
-    (r'y 60\+ investment flips of experience', 'y hands-on renovation experience'),
-    (r'60\+ Homes Personally Flipped in NJ', 'Hands-On Renovation &amp; Investment Experience'),
-    (r'✓ 60\+ Casas Personally Flipped en NJ', '✓ Experiencia Práctica en Renovación e Inversión'),
-    (r'\| 60\+ House Flips ?\|', '|'),
-    (r' \| 60\+ House Flips', ''),
-    (r' — 60\+ house flips\.', '.'),
-    (r', 60\+ house flips\.', '.'),
-    (r', 60\+ flips\.', '.'),
-    (r'60\+ personal house flips — ', 'Works with investor buyers every week — '),
-    (r'He has flipped 60\+ homes and been', 'He has been a full-time agent since'),
-    (r'He has flipped 60\+ homes personally and speaks', 'He speaks'),
-    (r'He has flipped 60\+ houses personally', 'He works with investor buyers every week'),
-    (r'He has flipped 60\+ houses in NJ', 'He has built his own rental portfolio'),
-    (r'He has flipped 60\+ homes', 'He works with investor buyers every week'),
-    (r'Jorge personally flipped 60\+ houses', 'Jorge has worked these markets since 2017'),
-    (r'Jorge personally flipped 60\+ homes', 'Jorge has worked these markets since 2017'),
-    (r'Jorge personally bought and sold 60\+ houses', 'Jorge personally bought and sold houses as an investor'),
-    (r'Jorge Ramirez has flipped 60\+ houses personally in NJ', 'Jorge Ramirez has built his own rental portfolio'),
-    (r'Jorge has personally flipped 60\+ houses in NJ', 'Jorge knows NJ construction costs'),
-    (r'Jorge flipped 60\+ homes as an investor', 'Jorge has worked these markets since 2017'),
-    (r'Jorge Ramirez has 60\+ personal flips and', 'Jorge Ramirez is a hands-on investor and'),
-    (r"I've personally flipped 60\+ homes in NJ", "I've personally flipped homes across NJ"),
-    (r'personally flipped over 60 homes', 'hands-on renovation experience'),
-    (r'personally renovated over 60 homes', 'personally renovated many homes'),
-    (r'Having personally renovated 60\+ homes in NJ', 'Having personally renovated homes across NJ'),
-    (r'Having renovated 60\+ homes', 'Having renovated homes across NJ'),
-    (r'Having renovated 60\+ properties', 'Having renovated properties across NJ'),
-    (r'Having bought over 60 homes as an investor', 'Having bought homes as an investor'),
-    (r'Having personally flipped 60\+ NJ homes', 'With hands-on NJ renovation experience'),
-    (r'Having personally flipped 60\+ homes', 'With hands-on renovation experience'),
-    (r'Having flipped over 60 homes across', 'With hands-on renovation experience across'),
-    (r'having flipped 60\+ NJ homes', 'with hands-on NJ renovation experience'),
-    (r'having bought 60\+ as-is properties himself', 'having bought as-is properties himself'),
-    (r'has bought and sold 60\+ homes in NJ', 'has bought and sold homes across NJ as an investor'),
-    (r'bought and sold 60\+ NJ homes', 'bought and sold NJ homes as an investor'),
-    (r'with 60\+ personal investment properties', 'with extensive personal investment experience'),
-    (r', 60\+ personal investment properties\.', ', hands-on NJ investor.'),
-    (r'Jorge Ramirez — 60\+ personal NJ investment properties,', 'Jorge Ramirez — hands-on NJ investor,'),
-    (r'sold 60\+ New Jersey investment properties', 'sold New Jersey investment properties'),
-    (r'sold 60\+ Nueva Jersey investment properties', 'sold Nueva Jersey investment properties'),
-    (r'bought, renovated, and sold 60\+ NJ investment properties', 'bought, renovated, and sold NJ investment properties'),
-    (r'invested in, renovated, and sold over 60 properties', 'invested in, renovated, and sold properties'),
-    (r"who's owned and sold 60\+ properties in NJ", "who's owned and sold properties across NJ"),
-    (r"who's owned and sold 60\+ properties en NJ", "who's owned and sold properties across NJ"),
-    (r'who has personally renovated over 60 properties', 'who has personally renovated dozens of properties'),
-    (r'evaluation\. 60\+ homes flipped\. 138 communities\.', 'evaluation. Communities across six New Jersey counties.'),
-    (r'60\+ homes flipped means', 'Investor experience means'),
-    (r"Jorge's 60\+ Flip Advantage", "Jorge's Investor Advantage"),
-    (r'His 60\+ flip background', 'His investor background'),
-    (r'an investor with 60\+ flips', 'a hands-on investor'),
-    (r'60\+ homes flipped personally\.', 'Hands-on investor experience.'),
-    (r'<li>60\+ homes personally bought, renovated, and sold</li>', '<li>Homes personally bought, renovated, and sold as an investor</li>'),
-    (r'<li>60\+ homes personally renovated and sold</li>', '<li>Homes personally renovated and sold as an investor</li>'),
-    (r'<li>60\+ homes personally flipped in NJ', '<li>Hands-on NJ renovation experience'),
-    (r'<li>60\+ homes personally flipped', '<li>Hands-on renovation experience'),
-    (r'<h3>60\+ Homes Flipped</h3>', '<h3>Hands-On Investor</h3>'),
-    (r'<h3>60\+ Casas Flipped</h3>', '<h3>Inversionista Activo</h3>'),
-    (r'<h3>60\+ Inicios Flipped</h3>', '<h3>Inversionista Activo</h3>'),
-    (r'<h3>60\+ Flips = Unmatched Condition Expertise</h3>', '<h3>Condition Expertise</h3>'),
-    (r'<span>60\+ personal flips</span>', '<span>Hands-on investor experience</span>'),
-    (r'Backed by investor insight from 60\+ personally flipped homes', 'Backed by hands-on investor insight'),
-    (r'informed by 60\+ flip transactions', 'informed by his hands-on renovation experience'),
-    (r'done them himself on 60\+ properties', 'done them himself on his own investment properties'),
-    (r'based on flipping 60\+ homes', 'based on renovation-cost experience'),
-    (r'on top of 60\+ investment property transactions before that', 'on top of years of hands-on investment property work before that'),
-    (r'purchased and flipped 60\+ properties', 'purchased and renovated properties'),
-    (r'With 60\+ personal property flips', 'With extensive hands-on renovation experience'),
-    (r'flip 60\+ homes for profit', 'invest in NJ real estate'),
-    (r'As a former flipper \(60\+ homes pre-licensing\)', 'Before getting licensed'),
-    (r'my 60\+ flipped homes experience before licensing', 'my renovation experience before licensing'),
-    (r'60\+ personal home flips &middot;', 'Hands-on renovation experience &middot;'),
-    (r"I've done sixty-plus house flips across", "I've flipped houses across"),
-    (r'Sixty-plus house flips since 2017\. Nine of them in the towns on this list\.', "I've flipped houses since 2017 — nine of them in the towns on this list."),
-    (r'selling 60\+ NJ homes \[thread\]', 'selling NJ homes [thread]'),
-    (r'flipped 60\+ as an investor before that', 'invested in NJ real estate before that'),
-    (r'Sixty-plus house flips teaches you', 'Renovation experience teaches you'),
-    (r'has personally flipped 60\+ properties', 'knows construction costs firsthand'),
-    (r'his experience flipping 60\+ homes', 'his hands-on renovation experience'),
-    (r'brings 60\+ home flips worth of', 'brings years of hands-on renovation'),
-    (r'who has done it 60\+ times with his own money on the line', 'who has done it again and again with his own money on the line'),
-    (r'closed 60\+ fix-and-flip properties', 'worked on renovation projects'),
-    # generic catch-alls LAST
-    (r'flipped 60-plus houses', 'renovated and sold houses'),
-    (r'flipped 60\+ homes', 'renovated and sold homes'),
-    (r'flipped 60\+ houses', 'renovated and sold houses'),
-    (r'flipped 60\+ NJ homes', 'renovated and sold NJ homes'),
-    (r'sold 60\+ homes', 'sold homes'),
-    (r'sold 60\+ houses', 'sold houses'),
-    (r'sixty-plus house flips', 'renovation projects'),
-    (r'Sixty-plus house flips', 'Renovation projects'),
-    (r'60-plus house flips', 'renovation projects'),
-    (r'renovated 60\+ homes', 'renovated many homes'),
-    (r'\(60\+ personal flips\)', '(hands-on renovation experience)'),
-    (r'60\+ personal flips', 'extensive hands-on renovation experience'),
-    (r'60\+ personal house flips', 'hands-on renovation experience'),
-    (r'60\+ house flips', 'hands-on renovation experience'),
-    (r'60\+ homes flipped', 'hands-on renovation experience'),
-    (r'60\+ flips', 'hands-on renovation experience'),
-    (r'60\+ casas', 'amplia experiencia en casas'),
-    (r'con más de 60 casas renovadas personalmente', 'con experiencia práctica en renovación e inversión inmobiliaria'),
-    (r'más de 60 casas renovadas', 'numerosas casas renovadas'),
-    (r'más de 60 (?:casas|propiedades|viviendas)', 'numerosas propiedades'),
-    (r'as an investor in NJ as an investor', 'as an investor in NJ'),
-    (r'as an investor as an investor', 'as an investor'),
-    # capitalization repair for sentence-initial replacements
-    (r'([.!?]["”]?\s+)personal house-flipping experience', r'\1Personal house-flipping experience'),
-    (r'([.!?]["”]?\s+)hands-on flip experience', r'\1Hands-on flip experience'),
-    (r'([.!?]["”]?\s+)extensive personal flip experience', r'\1Extensive personal flip experience'),
-]
-
-EXTS = ('.html', '.txt', '.json', '.py', '.md')
-SELF = os.path.basename(__file__)
+from pathlib import Path
 
 
-def scrub(path):
-    try:
-        text = open(path, encoding='utf-8').read()
-    except (UnicodeDecodeError, OSError):
-        return False
-    orig = text
-    for pat, rep in SUBS:
-        text = re.sub(pat, rep, text)
-    if text != orig:
-        open(path, 'w', encoding='utf-8').write(text)
-        return True
-    return False
+ROOT = Path(__file__).resolve().parent
+PROHIBITED = re.compile(
+    r"(?:"
+    r"(?:60\+|60[ -]plus|sixty[ -]plus|over\s+60|m[aá]s\s+de\s+60)"
+    r"[^\n<>]{0,100}(?:flip|flipp|home|house|propert|cas|viviend)"
+    r"|"
+    r"(?:flip|flipp|home|house|propert|cas|viviend)"
+    r"[^\n<>]{0,100}(?:60\+|60[ -]plus|sixty[ -]plus|over\s+60|m[aá]s\s+de\s+60)"
+    r")",
+    re.IGNORECASE,
+)
 
 
-def main():
-    targets = sys.argv[1:]
-    if not targets:
-        for root, dirs, fs in os.walk('.'):
-            dirs[:] = [d for d in dirs if d not in ('.git', '__pycache__', 'node_modules')]
-            targets.extend(os.path.join(root, fn) for fn in fs
-                           if fn.endswith(EXTS) and fn != SELF)
-    changed = [p for p in targets if scrub(p)]
-    print(f"scrubbed {len(changed)} of {len(targets)} files")
-    # report leftovers
-    leftover_pat = re.compile(
-        r'.{0,60}(?:(?<!\d)60\+|sixty[ -]plus|60 plus|flipped (?:over )?60|sold (?:over )?60|over 60 (?:homes|houses|properties)|más de 60|(?<!\d)60 (?:casas|propiedades|viviendas)|done it 60).{0,60}', re.I)
-    ignore = re.compile(r'60\+ ?(minut|towns)|last 60|60-90|Age 60\+|60\+ (years|días|days)|walked 60\+ homes', re.I)
-    n = 0
-    for p in targets:
+def default_targets() -> list[Path]:
+    targets: list[Path] = []
+    for suffix in ("*.html", "*.json"):
+        targets.extend(ROOT.rglob(suffix))
+    return sorted(
+        path
+        for path in targets
+        if ".git" not in path.parts and "node_modules" not in path.parts
+    )
+
+
+def main() -> int:
+    supplied = [Path(value).resolve() for value in sys.argv[1:]]
+    targets = supplied or default_targets()
+    findings: list[tuple[Path, int, str]] = []
+
+    for path in targets:
+        if not path.is_file():
+            print(f"Missing file: {path}", file=sys.stderr)
+            return 2
+        source = path.read_text(encoding="utf-8", errors="replace")
+        for match in PROHIBITED.finditer(source):
+            line = source.count("\n", 0, match.start()) + 1
+            excerpt = " ".join(match.group(0).split())
+            findings.append((path, line, excerpt[:180]))
+
+    for path, line, excerpt in findings:
         try:
-            t = open(p, encoding='utf-8', errors='replace').read()
-        except OSError:
-            continue
-        for m in leftover_pat.findall(t):
-            if ignore.search(m):
-                continue
-            n += 1
-            print(f"LEFTOVER [{p}] {m.strip()[:120]}")
-    print(f"{n} leftovers need manual review" if n else "no leftovers")
+            display = path.relative_to(ROOT)
+        except ValueError:
+            display = path
+        print(f"{display}:{line}: {excerpt}")
+
+    if findings:
+        print(
+            "Refusing automatic substitutions. Replace each complete sentence "
+            "with an approved fact from data/site-facts.json.",
+            file=sys.stderr,
+        )
+        return 1
+
+    print(f"Verified {len(targets)} public files; no numeric flip-count claims found.")
+    return 0
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -472,159 +472,18 @@ def fix_c7_duplicate_hreflang():
 
 
 # ============================================================
-# C8: Add AggregateRating + Review schema to index.html
+# C8: Retired unverified AggregateRating + Review schema mutation
 # ============================================================
 def fix_c8_review_schema():
-    """Add AggregateRating to existing RealEstateAgent schema and add individual Review schema."""
-    filepath = BASE_DIR / "index.html"
-    if not filepath.exists():
-        return 0
+    """Do not create review markup without source records and consent.
 
-    content = read_file(filepath)
-
-    # The 6 reviews from the homepage testimonials
-    reviews = [
-        {
-            "author": "Michael T.",
-            "location": "Summit, NJ",
-            "date": "2025",
-            "text": "Jorge sold our Summit home in 9 days \u2014 $47,000 over asking. He priced it perfectly and the targeted marketing brought buyers we never would have reached through a traditional listing. He was straight with us from day one."
-        },
-        {
-            "author": "Diane R.",
-            "location": "Westfield, NJ",
-            "date": "2025",
-            "text": "We had an expired listing with another agent for 90 days. Jorge took over, changed the pricing strategy, and had a full-price offer in 3 weeks. Wish we had called him first."
-        },
-        {
-            "author": "David K.",
-            "location": "Chatham, NJ",
-            "date": "2025",
-            "text": "As first-time buyers relocating from NYC, we were completely lost. Jorge walked every property with us like he was the one buying it. His investor background meant he caught things the inspector even missed. Closed on our Chatham home in 6 weeks."
-        },
-        {
-            "author": "Patricia M.",
-            "location": "Cranford, NJ",
-            "date": "2026",
-            "text": "I inherited my mother\u2019s home and had no idea where to start. Jorge handled everything \u2014 estate coordination, light repairs, pricing, all of it. He never pushed me and got us $30K above what I thought was possible."
-        },
-        {
-            "author": "Robert H.",
-            "location": "Maplewood, NJ",
-            "date": "2026",
-            "text": "We tried to sell FSBO for 4 months. After we listed with Jorge, we had an accepted offer in 11 days. His buyer targeting system found people we never could have reached on our own. Should have called him first."
-        },
-        {
-            "author": "Tom F.",
-            "location": "Montclair, NJ",
-            "date": "2025",
-            "text": "Jorge told us the truth about our home\u2019s value even though it wasn\u2019t what we wanted to hear. We priced it his way, had 8 showings the first weekend, and closed for more than our original ask. His honesty saved us months."
-        }
-    ]
-
-    # 1. Add aggregateRating to existing RealEstateAgent JSON-LD
-    # Find the RealEstateAgent schema block and add aggregateRating before the closing brace
-    # The schema has "knowsAbout": [...] ] } as its ending structure
-
-    aggregate_rating_json = """,
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "6",
-        "bestRating": "5",
-        "worstRating": "1"
-    }"""
-
-    # Find the end of the knowsAbout array in the RealEstateAgent schema and add aggregateRating
-    # Pattern: "knowsAbout": [...] }  (end of the RealEstateAgent object)
-    # We need to insert the aggregateRating before the final closing brace of the RealEstateAgent schema
-
-    # The RealEstateAgent schema ends with:
-    #       "New Jersey Home Valuations"
-    #       ]
-    #     }
-    # We insert aggregateRating after the knowsAbout closing bracket
-
-    old_ending = """      "New Jersey Home Valuations"
-      ]
-    }"""
-    new_ending = """      "New Jersey Home Valuations"
-      ],
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "6",
-        "bestRating": "5",
-        "worstRating": "1"
-    }
-    }"""
-
-    if old_ending in content:
-        content = content.replace(old_ending, new_ending, 1)
-        changes["C8_review_schema_added"].append("index.html (AggregateRating added to RealEstateAgent schema)")
-    else:
-        print("  WARNING: Could not find expected ending in RealEstateAgent schema. Trying alternate pattern...")
-        # Try a regex approach
-        pattern = r'("New Jersey Home Valuations"\s*\]\s*)\}'
-        replacement = r'''\1,
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "6",
-        "bestRating": "5",
-        "worstRating": "1"
-    }
-    }'''
-        new_content = re.sub(pattern, replacement, content, count=1)
-        if new_content != content:
-            content = new_content
-            changes["C8_review_schema_added"].append("index.html (AggregateRating added via regex)")
-
-    # 2. Add individual Review schema as a separate JSON-LD block
-    review_items = []
-    for r in reviews:
-        review_items.append({
-            "@type": "Review",
-            "author": {
-                "@type": "Person",
-                "name": r["author"]
-            },
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "reviewBody": r["text"],
-            "datePublished": r["date"]
-        })
-
-    review_schema = {
-        "@context": "https://schema.org",
-        "@type": "RealEstateAgent",
-        "@id": "https://thejorgeramirezgroup.com/#agent",
-        "name": "Jorge Ramirez - The Jorge Ramirez Group",
-        "review": review_items
-    }
-
-    review_json = json.dumps(review_schema, indent=2, ensure_ascii=False)
-
-    # Insert the new schema block before </head>
-    review_block = f"""
-    <!-- JSON-LD Structured Data: Client Reviews -->
-    <script type="application/ld+json">
-    {review_json}
-    </script>
-"""
-
-    head_close = re.search(r'</head>', content, re.IGNORECASE)
-    if head_close:
-        insert_pos = head_close.start()
-        content = content[:insert_pos] + review_block + content[insert_pos:]
-        changes["C8_review_schema_added"].append("index.html (6 individual Review schemas added)")
-
-    write_file(filepath, content)
-    return 1
+    The former implementation embedded invented quotes, dates, outcome claims,
+    and an aggregate rating. Review markup must be generated only from a
+    separately verified review source; this legacy bulk fixer has no such
+    source and therefore fails closed by making no change.
+    """
+    print("  SKIPPED: review schema requires separately verified review records.")
+    return 0
 
 
 # ============================================================
@@ -666,9 +525,9 @@ def main():
     c7 = fix_c7_duplicate_hreflang()
     print(f"     -> Fixed {c7} pages\n")
 
-    print("[C8] Adding AggregateRating + Review schema to index.html...")
+    print("[C8] Checking retired unverified Review-schema mutation...")
     c8 = fix_c8_review_schema()
-    print(f"     -> Added to {c8} page(s)\n")
+    print(f"     -> Changed {c8} page(s)\n")
 
     # Print detailed summary
     print()
@@ -696,7 +555,7 @@ def main():
     print(f"  C5 Spanish og:url fixed:      {len(changes['C5_spanish_og_url_fixed'])}")
     print(f"  C6 Year updated:              {len(changes['C6_year_updated'])}")
     print(f"  C7 Duplicate hreflang fixed:  {len(changes['C7_duplicate_hreflang_fixed'])}")
-    print(f"  C8 Review schema added:       {len(changes['C8_review_schema_added'])}")
+    print(f"  C8 Review schema changes:     {len(changes['C8_review_schema_added'])}")
     print(f"{'=' * 70}")
 
 
