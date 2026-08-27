@@ -234,6 +234,26 @@
       "permanent": true
     },
     {
+      "source": "/interior-design-trends-2026-nj-sellers",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/interior-design-trends-2026-nj-sellers.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/affordable-upgrades-home-value-nj-2026",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/affordable-upgrades-home-value-nj-2026.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
       "source": "/es/sell-home-fast-nj",
       "destination": "/es/sell-your-home",
       "permanent": true
