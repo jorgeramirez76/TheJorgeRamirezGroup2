@@ -15,15 +15,15 @@
     <meta name="theme-color" content="#1A1A1A">
 
     <title>NJ Closing Costs Calculator 2026 | Buyer Costs</title>
-    <meta name="title" content="NJ Closing Costs Calculator 2026 — What Buyers Actually Pay | Jorge Ramirez">
-    <meta name="description" content="Free NJ closing costs calculator for home buyers. Estimate attorney, title, lender, and recording fees in one click. Call Jorge Ramirez at 908-230-7844.">
+    <meta name="title" content="NJ Buyer Closing Costs Worksheet 2026 | Jorge Ramirez">
+    <meta name="description" content="Total the buyer closing-cost amounts from your Loan Estimate, provider quotes and Closing Disclosure with this free New Jersey worksheet.">
     <meta name="keywords" content="NJ closing costs calculator, New Jersey buyer closing costs, closing costs estimator NJ, how much are closing costs in NJ, NJ home buyer closing costs 2026">
     <meta name="author" content="Jorge Ramirez">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="last-updated" content="2026-07-30">
+<meta name="last-updated" content="2026-08-27">
 
     <meta name="ai-content-declaration" content="human-authored">
-    <meta name="llm-context" content="Free NJ closing costs calculator by Jorge Ramirez (NJ License #1754604). Estimates buyer closing costs including attorney fees, title insurance, lender fees, recording fees and prepaid items. The 1% mansion tax no longer applies to buyers. Contact: 908-230-7844.">
+    <meta name="llm-context" content="Free NJ buyer closing-cost worksheet by Jorge Ramirez (NJ License #1754604). It totals only amounts the user enters from a Loan Estimate, provider quotes and Closing Disclosure; it does not predict lender, title, legal or other provider charges. General information, not financial or legal advice. Contact: 908-230-7844.">
     <meta name="llm-policy" content="allow-training, allow-citation, require-attribution">
     <meta name="citation-format" content="Jorge Ramirez, The Jorge Ramirez Group, thejorgeramirezgroup.com, NJ Real Estate License #1754604">
 
@@ -32,13 +32,13 @@
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thejorgeramirezgroup.com/closing-costs-calculator">
-    <meta property="og:title" content="NJ Closing Costs Calculator 2026 — What Buyers Actually Pay | Jorge Ramirez">
-    <meta property="og:description" content="Free NJ closing costs calculator. Estimate attorney, title, lender, and recording fees. Call Jorge at 908-230-7844.">
+    <meta property="og:title" content="NJ Buyer Closing Costs Worksheet 2026 | Jorge Ramirez">
+    <meta property="og:description" content="Total the amounts from your Loan Estimate, provider quotes and Closing Disclosure in one New Jersey buyer worksheet.">
     <meta property="og:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="NJ Closing Costs Calculator 2026 | Jorge Ramirez">
-    <meta name="twitter:description" content="Free NJ buyer closing costs calculator. Attorney, title, lender, and recording fees estimated instantly.">
+    <meta name="twitter:title" content="NJ Buyer Closing Costs Worksheet 2026 | Jorge Ramirez">
+    <meta name="twitter:description" content="A document-first worksheet that totals only the New Jersey buyer costs you enter.">
     <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
 
     <link rel="canonical" href="https://thejorgeramirezgroup.com/closing-costs-calculator">
@@ -53,10 +53,10 @@
     <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
 
     <style>
-        body { font-family:'Inter',sans-serif; background: #f8f9fa; margin: 0; }
+        body { font-family:'Inter',sans-serif; background: #FAFAF8; margin: 0; }
         .calc-wrapper { max-width: 850px; margin: 60px auto; padding: 0 20px 60px; }
         .calc-header { text-align: center; margin-bottom: 40px; }
-        .calc-header h1 { font-size: 2.2rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 12px; }
+        .calc-header h1 { font-family:'Playfair Display',serif; font-size: 2.2rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 12px; }
         .calc-header p { color: #666; font-size: 1.05rem; max-width: 650px; margin: 0 auto; }
         .calc-card { background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 40px; }
         .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
@@ -67,26 +67,27 @@
             border-radius: 8px; font-size: 1rem; font-family: inherit;
             transition: border-color 0.2s; box-sizing: border-box;
         }
-        .input-group input:focus, .input-group select:focus { outline: none; border-color: #2C2C2C; }
+        .input-group input:focus, .input-group select:focus { outline: 3px solid rgba(184,150,46,.28); outline-offset: 1px; border-color: #B8962E; }
+        .input-help { display:block; color:#666; font-size:.78rem; line-height:1.4; margin-top:6px; }
         .calc-btn {
-            width: 100%; padding: 16px; background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%);
+            width: 100%; min-height:44px; padding: 16px; background: linear-gradient(135deg, #C41230 0%, #8B0D22 100%);
             color: white; border: none; border-radius: 8px; font-size: 1.1rem;
             font-weight: 700; cursor: pointer; font-family: inherit; transition: opacity 0.2s;
         }
         .calc-btn:hover { opacity: 0.9; }
-        .results { display: none; margin-top: 30px; padding: 30px; background: #f0f4ff; border-radius: 10px; }
+        .results { display: none; margin-top: 30px; padding: 30px; background: #F8F6F2; border:1px solid rgba(184,150,46,.35); border-radius: 10px; }
         .results h2 { font-size: 1.25rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 20px; }
         .line-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e0e0e0; font-size: 0.98rem; }
         .line-item:last-child { border-bottom: none; }
         .line-item .label { color: #555; }
         .line-item .amount { font-weight: 600; color: var(--dark-gray, #1A1A1A); }
-        .line-item.total { margin-top: 15px; padding-top: 15px; border-top: 2px solid #2C2C2C; font-size: 1.15rem; }
+        .line-item.total { margin-top: 15px; padding-top: 15px; border-top: 2px solid #C41230; font-size: 1.15rem; }
         .line-item.total .label { color: var(--dark-gray, #1A1A1A); font-weight: 700; }
-        .line-item.total .amount { color: #2C2C2C; font-weight: 700; font-size: 1.3rem; }
+        .line-item.total .amount { color: #C41230; font-weight: 700; font-size: 1.3rem; }
         .cta-box { margin-top: 25px; padding: 22px; background: var(--dark-gray, #1A1A1A); border-radius: 10px; text-align: center; color: white; }
         .cta-box h3 { margin: 0 0 8px; font-size: 1.05rem; }
         .cta-box p { margin: 0 0 14px; font-size: 0.9rem; opacity: 0.85; }
-        .cta-box a { display: inline-block; padding: 12px 26px; background: #2C2C2C; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+        .cta-box a { display: inline-block; min-height:44px; box-sizing:border-box; padding: 12px 26px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
         .explainer { margin-top: 40px; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .explainer h2 { font-size: 1.4rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 16px; }
         .explainer h3 { font-size: 1.1rem; color: #333; margin-top: 18px; margin-bottom: 8px; }
@@ -96,7 +97,7 @@
         .nav-container .logo-img { max-width: 200px; height: auto; }
     </style>
 
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "NJ Closing Costs Calculator", "url": "https://thejorgeramirezgroup.com/closing-costs-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "creator": {"@type": "RealEstateAgent", "@id": "https://thejorgeramirezgroup.com/#jorge-ramirez", "name": "Jorge Ramirez", "telephone": "+1-908-230-7844", "email": "jorge.ramirez@kw.com"}, "dateModified": "2026-07-30", "datePublished": "2026-07-30"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"NJ Buyer Closing Costs Worksheet","url":"https://thejorgeramirezgroup.com/closing-costs-calculator","description":"Totals only user-entered buyer closing-cost amounts from transaction documents and provider quotes.","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"RealEstateAgent","@id":"https://thejorgeramirezgroup.com/#jorge-ramirez","name":"Jorge Ramirez","telephone":"+1-908-230-7844","email":"jorge.ramirez@kw.com"},"dateModified":"2026-08-27","datePublished":"2026-07-30"}</script>
 
     <script type="application/ld+json">
     {
@@ -121,153 +122,162 @@
         </div>
     </nav>
 
-    <div id="main" class="calc-wrapper" role="main">
+    <main id="main" class="calc-wrapper">
         <div class="calc-header">
-            <h1>NJ Buyer Closing Costs Calculator</h1>
-<p class="meta" style="font-size:.92rem;opacity:.8;margin:6px 0 18px;">Updated July 30, 2026 &middot; rates verified against the NJ Division of Taxation</p>
-            <p>New Jersey buyers typically pay 2-5% of the purchase price in closing costs. Enter your numbers below for a realistic estimate — attorney, title, lender and prepaids included. The 1% mansion tax no longer applies to buyers.</p>
+            <h1>NJ Buyer Closing Costs Worksheet</h1>
+            <p class="meta" style="font-size:.92rem;opacity:.8;margin:6px 0 18px;">Updated August 27, 2026 &middot; document-first planning tool</p>
+            <p>Copy the amounts from your Loan Estimate, provider quotes and, when available, your Closing Disclosure. This worksheet totals only what you enter; it does not supply provider charges, a loan rate or a legal-services assumption.</p>
         </div>
 
         <div class="calc-card">
-            <div class="input-grid">
-                <div class="input-group">
-                    <label for="price">Home Purchase Price ($)</label>
-                    <input type="number" id="price" value="600000" min="50000" step="10000">
+            <form id="closingCostsWorksheet">
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="loanCosts">Loan Costs From Loan Estimate ($)</label>
+                        <input type="number" id="loanCosts" min="0" step="0.01" inputmode="decimal" aria-describedby="loanCostsHelp">
+                        <small class="input-help" id="loanCostsHelp">Use the subtotal for lender and required-service costs shown on your current Loan Estimate.</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="titleSettlement">Title and Settlement Charges ($)</label>
+                        <input type="number" id="titleSettlement" min="0" step="0.01" inputmode="decimal">
+                    </div>
+                    <div class="input-group">
+                        <label for="governmentFees">Recording and Government Charges ($)</label>
+                        <input type="number" id="governmentFees" min="0" step="0.01" inputmode="decimal">
+                    </div>
+                    <div class="input-group">
+                        <label for="prepaids">Prepaids ($)</label>
+                        <input type="number" id="prepaids" min="0" step="0.01" inputmode="decimal" aria-describedby="prepaidsHelp">
+                        <small class="input-help" id="prepaidsHelp">For example, amounts shown for prepaid interest, insurance or taxes.</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="initialEscrow">Initial Escrow Payment at Closing ($)</label>
+                        <input type="number" id="initialEscrow" min="0" step="0.01" inputmode="decimal">
+                    </div>
+                    <div class="input-group">
+                        <label for="attorneyFee">Attorney Cost, If You Choose One ($)</label>
+                        <input type="number" id="attorneyFee" min="0" step="0.01" inputmode="decimal" aria-describedby="attorneyFeeHelp">
+                        <small class="input-help" id="attorneyFeeHelp">Enter a quote or agreed amount; leave blank if it does not apply.</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="inspectionAppraisal">Inspection, Appraisal and Other Pre-Closing Costs ($)</label>
+                        <input type="number" id="inspectionAppraisal" min="0" step="0.01" inputmode="decimal">
+                    </div>
+                    <div class="input-group">
+                        <label for="otherBuyerCosts">Other Buyer Costs ($)</label>
+                        <input type="number" id="otherBuyerCosts" min="0" step="0.01" inputmode="decimal">
+                    </div>
+                    <div class="input-group">
+                        <label for="credits">Lender, Seller and Other Credits ($)</label>
+                        <input type="number" id="credits" min="0" step="0.01" inputmode="decimal" aria-describedby="creditsHelp">
+                        <small class="input-help" id="creditsHelp">Credits reduce the total entered costs.</small>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="downPct">Down Payment (%)</label>
-                    <input type="number" id="downPct" value="20" min="0" max="100" step="1">
-                </div>
-                <div class="input-group">
-                    <label for="loanType">Loan Type</label>
-                    <select id="loanType">
-                        <option value="conventional" selected>Conventional</option>
-                        <option value="fha">FHA</option>
-                        <option value="va">VA</option>
-                        <option value="cash">Cash (No Loan)</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="propertyTax">Annual Property Tax ($)</label>
-                    <input type="number" id="propertyTax" value="14000" min="0" step="500">
-                </div>
-                <div class="input-group">
-                    <label for="insurance">Annual Home Insurance ($)</label>
-                    <input type="number" id="insurance" value="1800" min="0" step="100">
-                </div>
-                <div class="input-group">
-                    <label for="attorney">Attorney Fee ($)</label>
-                    <input type="number" id="attorney" value="2000" min="0" step="100">
-                </div>
-            </div>
 
-            <button class="calc-btn" onclick="calcClosing()">Calculate My Closing Costs</button>
+                <p id="worksheetStatus" class="input-help" role="status" aria-live="polite"></p>
+                <button type="submit" class="calc-btn">Total My Entered Costs</button>
+            </form>
 
-            <div class="results" id="results">
-                <h2>Your Estimated Closing Costs</h2>
+            <div class="results" id="results" aria-live="polite" aria-labelledby="results-heading">
+                <h2 id="results-heading">Your User-Entered Cost Worksheet</h2>
                 <div id="lineItems"></div>
 
                 <div class="cta-box">
-                    <h3>Want me to review these numbers for your specific deal?</h3>
-                    <p>Every NJ transaction has quirks — attorney-review negotiations, lender credits, seller concessions. I help buyers minimize closing costs in every offer I write. No pressure, just a real conversation.</p>
+                    <h3>Questions about a transaction line item?</h3>
+                    <p>I can help you identify which question belongs with your lender, settlement provider, attorney or tax professional. No pressure and no legal or financial advice.</p>
                     <a href="tel:908-230-7844">Call Jorge: 908-230-7844</a>
                 </div>
             </div>
         </div>
 
         <div class="explainer">
-            <h2>Understanding NJ Closing Costs (In Plain English)</h2>
-            <p style="margin:0 0 16px;">Want the full picture with worked tables at five price points, for both buyer and seller? Read <a href="/blog/how-much-are-closing-costs-nj">how much closing costs really are in NJ (2026)</a>.</p>
-            <p>New Jersey has higher closing costs than most states — largely because it's an attorney state, property taxes are high (and prepaid at closing), and prepaid taxes land at closing. The 1% mansion tax that used to hit buyers at $1M was moved to the seller in 2025. Here's what each line item actually means.</p>
+            <h2>Where to Get the Amounts</h2>
+            <p>The CFPB explains that a <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-loan-estimate-en-1995/" target="_blank" rel="noopener noreferrer">Loan Estimate</a> shows estimated loan terms and closing costs after you apply. Before closing, compare it with the <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-closing-disclosure-en-1983/" target="_blank" rel="noopener noreferrer">Closing Disclosure</a>, which provides the final mortgage terms and costs. Ask the lender or settlement agent to explain discrepancies.</p>
 
-            <h3>Attorney Fees ($1,500 – $3,500)</h3>
-            <p>NJ requires an attorney to review the contract, negotiate during attorney review, handle title, and represent you at closing. Flat fees are typical.</p>
+            <h3>Legal Review Is a Choice</h3>
+            <p>According to <a href="https://www.nj.gov/dobi/division_consumers/pdf/buyingahome.pdf" target="_blank" rel="noopener noreferrer">NJDOBI's home-buying guide</a>, a contract prepared by a real estate licensee contains an attorney-review clause. During that period, <strong>if you choose to consult an attorney</strong>, the attorney may propose revisions or disapprove the contract. Whether to retain counsel and what it costs are personal, provider-specific decisions, so this worksheet leaves that field blank.</p>
 
-            <h3>Title Insurance (~0.5% of price)</h3>
-            <p>Protects you and the lender against title defects. One-time premium paid at closing. Required by most lenders.</p>
+            <h3>Provider Charges and Prepaids Vary</h3>
+            <p>Title, settlement, lender, inspection, appraisal, recording, insurance, prepaid and escrow amounts depend on the property, loan and providers. Enter the actual estimates or quotes you receive rather than relying on a sitewide percentage.</p>
 
-            <h3>Lender Fees (0.5% – 1.5% of loan)</h3>
-            <p>Origination, underwriting, and application fees. Negotiable — always get a Loan Estimate from 2+ lenders and compare.</p>
+            <h3>What This Worksheet Does Not Do</h3>
+            <p>It does not determine cash to close, loan eligibility, tax treatment, legal obligations or final provider charges. Use the lender's current disclosures and signed transaction documents. This is general planning information, not financial, tax or legal advice.</p>
 
-            <h3>The 1% &ldquo;Mansion Tax&rdquo; No Longer Applies to You</h3>
-<p>Buyers used to pay 1% of the price on consideration in excess of $1,000,000. That fee was <strong>eliminated</strong> by P.L.&nbsp;2025, c.&nbsp;69, effective for deeds recorded on or after July&nbsp;10,&nbsp;2025 &mdash; the statute was amended to strike &ldquo;grantee&rdquo; and insert &ldquo;grantor.&rdquo; It was replaced by a seller-paid Graduated Percent Fee of 1% to 3.5%. If you are buying above $1M, you owe none of it; if you are also selling above $1M, see the <a href="/net-proceeds-calculator">seller net proceeds calculator</a>. Legal responsibility sits with the seller, though the Division of Taxation notes the parties may apportion the burden by contract.</p>
-
-            <h3>Recording & Transfer Fees</h3>
-            <p>County recording fees and, in some cases, a small buyer portion of transfer tax. Usually $300-$800 combined.</p>
-
-            <h3>Prepaids (Taxes + Insurance Escrow)</h3>
-            <p>Lenders require 2-6 months of property tax and insurance in escrow at closing. In high-tax NJ towns, this is often the single largest closing-cost line item.</p>
-
-            <h3>Inspection & Appraisal</h3>
-            <p>Inspection ~$500-$900. Appraisal ~$500-$800. Both paid before closing, not at the table, but count toward total cash needed to buy.</p>
+            <p style="margin:16px 0 0;">For buyer and seller context, read the <a href="/blog/how-much-are-closing-costs-nj">NJ closing-cost guide</a>.</p>
         </div>
-    </div>
+    </main>
 
     
 <div style="max-width:880px;margin:0 auto 34px;padding:20px 24px;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08);font-family:var(--font-body,inherit);line-height:1.7;"><strong>Other NJ calculators:</strong><br><a href="/net-proceeds-calculator">NJ Seller Net Proceeds Calculator</a> · <a href="/nj-realty-transfer-fee-calculator">NJ Realty Transfer Fee Calculator</a> · <a href="/tools/mortgage-calculator">NJ Mortgage Affordability Calculator</a> · <a href="/home-valuation">NJ Home Value Estimator</a></div>
 
 <div class="related"><strong>Related:</strong> <a href="/blog/how-much-money-to-buy-a-house-nj">How much cash you actually need to buy in NJ</a></div>
-<footer style="background: var(--dark-gray, #1A1A1A); color: #ccc; padding: 30px 20px; text-align: center; font-size: 0.9rem;">
+<footer style="background: var(--dark-gray, #1A1A1A); color: #F8F6F2; padding: 30px 20px; text-align: center; font-size: 0.9rem;">
         <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · 488 Springfield Ave, Summit NJ 07901 · Website by <a href="https://clickmingo.com" target="_blank" rel="noopener" style="color:inherit !important;text-decoration:inherit !important;">ClickMingo</a></p>
-        <p><a href="tel:908-230-7844" style="color: #a0b8ff;">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com" style="color: #a0b8ff;">jorge.ramirez@kw.com</a></p>
+        <p><a href="tel:908-230-7844" style="color: #FAFAF8;">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com" style="color: #FAFAF8;">jorge.ramirez@kw.com</a></p>
     </footer>
 
     <script>
-        function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+        const worksheetFields = [
+            ['loanCosts', 'Loan costs from Loan Estimate'],
+            ['titleSettlement', 'Title and settlement charges'],
+            ['governmentFees', 'Recording and government charges'],
+            ['prepaids', 'Prepaids'],
+            ['initialEscrow', 'Initial escrow payment at closing'],
+            ['attorneyFee', 'Attorney cost, if chosen'],
+            ['inspectionAppraisal', 'Inspection, appraisal and pre-closing costs'],
+            ['otherBuyerCosts', 'Other buyer costs']
+        ];
 
-        function calcClosing() {
-            const _p = parseFloat(document.getElementById('price').value) || 0;
-            if (_p <= 0) { document.getElementById('results').style.display='none'; return; }
-
-            const price = parseFloat(document.getElementById('price').value) || 0;
-            const downPct = parseFloat(document.getElementById('downPct').value) || 0;
-            const loanType = document.getElementById('loanType').value;
-            const annualTax = parseFloat(document.getElementById('propertyTax').value) || 0;
-            const annualIns = parseFloat(document.getElementById('insurance').value) || 0;
-            const attorney = parseFloat(document.getElementById('attorney').value) || 0;
-
-            const loanAmount = price * (1 - downPct / 100);
-            const items = [];
-
-            items.push(['Attorney Fees', attorney]);
-            items.push(['Title Insurance (~0.5%)', price * 0.005]);
-            items.push(['Title Search & Settlement', 450]);
-            if (loanType !== 'cash') {
-                items.push(['Lender Origination (~0.75% loan)', loanAmount * 0.0075]);
-                items.push(['Appraisal', 650]);
-                items.push(['Credit Report & Processing', 350]);
-            }
-            items.push(['Home Inspection', 700]);
-            items.push(['Recording Fees', 300]);
-            items.push(['Survey (if required)', 500]);
-            // The buyer-paid 1% "mansion tax" was ELIMINATED by P.L.2025 c.69, which struck
-            // "grantee" and inserted "grantor" in N.J.S.A. 46:15-7.2, effective for deeds
-            // recorded on or after 2025-07-10. A buyer owes $0 of it. The replacement
-            // Graduated Percent Fee (1%-3.5% of the entire price above $1M) is the SELLER's,
-            // and is computed in /net-proceeds-calculator instead.
-            if (loanType === 'fha') {
-                items.push(['FHA Upfront MIP (1.75%)', loanAmount * 0.0175]);
-            }
-            if (loanType === 'va') {
-                items.push(['VA Funding Fee (2.15%)', loanAmount * 0.0215]);
-            }
-            // Prepaids
-            items.push(['Property Tax Prepaid (3 months)', annualTax * 0.25]);
-            items.push(['Home Insurance Prepaid (1 year)', annualIns]);
-            items.push(['Interest Prepaid (15 days)', loanType !== 'cash' ? (loanAmount * 0.07 / 365 * 15) : 0]);
-
-            const total = items.reduce((s, [_, v]) => s + v, 0);
-
-            const html = items.map(([label, amt]) =>
-                `<div class="line-item"><span class="label">${label}</span><span class="amount">${fmt(amt)}</span></div>`
-            ).join('') +
-            `<div class="line-item total"><span class="label">Total Estimated Closing Costs</span><span class="amount">${fmt(total)}</span></div>` +
-            `<div style="margin-top:8px; color:#666; font-size:0.85rem; text-align:center;">That's ~${(total/price*100).toFixed(1)}% of the purchase price. Typical range for NJ: 2-5%.</div>`;
-
-            document.getElementById('lineItems').innerHTML = html;
-            document.getElementById('results').style.display = 'block';
-            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        function fmt(n) {
+            return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
         }
+
+        function enteredAmount(id) {
+            const value = document.getElementById(id).value.trim();
+            return value === '' ? 0 : Number(value);
+        }
+
+        function calculateWorksheet(event) {
+            if (event) event.preventDefault();
+            const results = document.getElementById('results');
+            const status = document.getElementById('worksheetStatus');
+            const allIds = worksheetFields.map(([id]) => id).concat('credits');
+            const invalid = allIds.map(id => document.getElementById(id)).find(input => !input.checkValidity());
+            if (invalid) {
+                results.style.display = 'none';
+                invalid.reportValidity();
+                invalid.focus();
+                return;
+            }
+
+            const hasEntry = allIds.some(id => document.getElementById(id).value.trim() !== '');
+            if (!hasEntry) {
+                results.style.display = 'none';
+                status.textContent = 'Enter at least one amount from your documents or quotes.';
+                document.getElementById('loanCosts').focus();
+                return;
+            }
+
+            status.textContent = '';
+            const items = worksheetFields.map(([id, label]) => [label, enteredAmount(id)]);
+            const credits = enteredAmount('credits');
+            const total = items.reduce((sum, [, value]) => sum + value, 0) - credits;
+            if (credits > 0) items.push(['Lender, seller and other credits', -credits]);
+
+            document.getElementById('lineItems').innerHTML = items
+                .filter(([, amount]) => amount !== 0)
+                .map(([label, amount]) => `<div class="line-item"><span class="label">${label}</span><span class="amount">${fmt(amount)}</span></div>`)
+                .join('') +
+                `<div class="line-item total"><span class="label">Total of Entered Costs After Credits</span><span class="amount">${fmt(total)}</span></div>` +
+                '<div style="margin-top:8px;color:#666;font-size:.85rem;text-align:center;">This is a total of your entries, not a lender or settlement estimate. Compare it with your current Loan Estimate and Closing Disclosure.</div>';
+            results.style.display = 'block';
+            results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        document.getElementById('closingCostsWorksheet').addEventListener('submit', calculateWorksheet);
     </script>
 <script defer src="/js/site-cta.js"></script>
 </body>

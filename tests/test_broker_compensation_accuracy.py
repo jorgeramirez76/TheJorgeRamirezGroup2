@@ -180,43 +180,47 @@ class BrokerCompensationAccuracyTests(unittest.TestCase):
                 self.assertIn('id="results-heading"', source)
                 self.assertIn("(n < 0 ? '-$' : '$')", source)
 
-    def test_calculator_result_copy_discloses_non_user_entered_estimates(self) -> None:
+    def test_calculator_result_copy_separates_user_entries_from_statutory_estimates(self) -> None:
         expectations = {
             "net-proceeds-calculator.html": (
-                r"three\s+months?\s+of\s+prorated\s+property\s+tax",
-                r"\$800\s+of\s+miscellaneous\s+closing\s+costs",
+                "All nonstatutory deductions shown above came from your entries.",
+                "The RTF and Graduated Percent Fee lines are calculator estimates",
             ),
             "es/net-proceeds-calculator.html": (
-                r"tres\s+meses?\s+de\s+impuestos\s+a\s+la\s+propiedad\s+prorrateados",
-                r"\$800\s+de\s+costos\s+varios\s+de\s+cierre",
+                "Todas las deducciones no estatutarias mostradas provienen de tus datos.",
+                "Las líneas RTF y Graduated Percent Fee son estimaciones de la calculadora",
             ),
         }
-        for relative, patterns in expectations.items():
+        for relative, phrases in expectations.items():
             source = html.unescape(self.pages[relative])
             with self.subTest(path=relative):
-                self.assertNotIn("uses only the values you entered", source)
-                self.assertNotIn("usa solo los valores que ingresaste", source)
-                for pattern in patterns:
-                    self.assertRegex(source, pattern)
+                self.assertNotIn("annualTax * (3 / 12)", source)
+                self.assertNotIn("closingMisc = 800", source)
+                self.assertIn('id="propertyTaxAdjustment"', source)
+                self.assertIn('id="otherCosts"', source)
+                self.assertIn('id="estimatedTaxPayment"', source)
+                for phrase in phrases:
+                    self.assertIn(phrase, source)
 
     def test_closing_cost_tables_exclude_assumed_compensation_and_state_scope(self) -> None:
         expectations = {
             "blog/how-much-are-closing-costs-nj.html": (
-                "Seller Cost Examples Before Negotiated Broker Compensation",
-                "Listed Seller Costs Before Broker Compensation, Repairs, Title &amp; Misc",
-                "$4,715 - $5,715",
-                "$32,625 - $33,125",
+                "before negotiated broker compensation",
+                "Combined statutory-fee estimate",
+                "$3,215",
+                "$30,625",
+                "It is not a seller total.",
             ),
             "es/blog/how-much-are-closing-costs-nj.html": (
-                "Ejemplos de Costos del Vendedor Antes de la Compensación Negociada del Corredor",
-                "Costos Indicados Antes de Compensación del Corredor, Reparaciones, Título y Otros",
-                "$4,715 - $5,715",
-                "$32,625 - $33,125",
+                "antes de la compensación negociada del corredor",
+                "Tarifas estatales combinadas",
+                "$3,215",
+                "$30,625",
+                "No es un total del vendedor.",
             ),
         }
         for relative, phrases in expectations.items():
             source = self.pages[relative]
-            schema_text = json.dumps(json_ld(source), ensure_ascii=False).casefold()
             with self.subTest(path=relative):
                 self.assertNotRegex(
                     source,
@@ -231,7 +235,7 @@ class BrokerCompensationAccuracyTests(unittest.TestCase):
                         if not relative.startswith("es/")
                         else "la compensación del corredor es totalmente negociable y no está fijada por ley"
                     ).casefold(),
-                    schema_text,
+                    visible_text(source).casefold(),
                 )
 
     def test_listing_agent_schema_and_llm_copy_do_not_restore_rate_assumptions(self) -> None:
@@ -241,11 +245,12 @@ class BrokerCompensationAccuracyTests(unittest.TestCase):
         llm = re.search(r'<meta name="llm-context" content="([^"]+)">', source)
         self.assertIsNotNone(llm)
         assert llm is not None
-        for candidate in (html.unescape(llm.group(1)).casefold(), schema_text):
+        for candidate in (html.unescape(llm.group(1)).casefold(), page_text.casefold()):
             self.assertIn(
                 "broker compensation is fully negotiable and not set by law", candidate
             )
             self.assertIn("written brokerage services agreement", candidate)
+        self.assertNotIn("faqpage", schema_text)
         self.assertNotRegex(page_text.casefold(), r"\b(?:owe|total) commission\b")
         self.assertIn("Updated August 27, 2026", page_text)
 

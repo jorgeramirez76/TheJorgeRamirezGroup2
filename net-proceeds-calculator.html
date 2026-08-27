@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#1A1A1A">
 
     <title>NJ Home Sale Net Proceeds Calculator (2026)</title>
-    <meta name="title" content="NJ Seller Net Proceeds Calculator 2026 — What You'll Actually Walk Away With | Jorge Ramirez">
+    <meta name="title" content="NJ Seller Net Proceeds Calculator 2026 | Jorge Ramirez">
     <meta name="description" content="Estimate NJ seller net proceeds using the broker compensation amount or percentage in your written agreement, payoff, transfer fees and other expenses.">
     <meta name="keywords" content="NJ seller net proceeds calculator, how much will I make selling my house NJ, seller net sheet NJ, NJ home sale calculator, what's my net after selling NJ, NJ realty transfer fee calculator">
     <meta name="author" content="Jorge Ramirez">
@@ -23,7 +23,7 @@
 <meta name="last-updated" content="2026-08-27">
 
     <meta name="ai-content-declaration" content="human-authored">
-    <meta name="llm-context" content="Free NJ seller net proceeds calculator by Jorge Ramirez (NJ License #1754604). It uses the broker-compensation percentage or flat dollar amount the seller enters from a written agreement plus the NJ Realty Transfer Fee, attorney costs, mortgage payoff and other entered expenses. Broker compensation is fully negotiable and not set by law. Contact: 908-230-7844.">
+    <meta name="llm-context" content="Free NJ seller net proceeds calculator by Jorge Ramirez (NJ License #1754604). It uses a user-entered sale price, payoff, broker-compensation percentage or flat dollar amount from a written agreement, optional legal and transaction costs, and any applicable GIT/REP estimated payment. It labels NJ Realty Transfer Fee and Graduated Percent Fee calculations as estimates. Broker compensation is fully negotiable and not set by law. General information, not tax or legal advice. Contact: 908-230-7844.">
     <meta name="llm-policy" content="allow-training, allow-citation, require-attribution">
     <meta name="citation-format" content="Jorge Ramirez, The Jorge Ramirez Group, thejorgeramirezgroup.com, NJ Real Estate License #1754604">
 
@@ -53,10 +53,10 @@
     <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
 
     <style>
-        body { font-family:'Inter',sans-serif; background: #f8f9fa; margin: 0; }
+        body { font-family:'Inter',sans-serif; background: #FAFAF8; margin: 0; }
         .calc-wrapper { max-width: 850px; margin: 60px auto; padding: 0 20px 60px; }
         .calc-header { text-align: center; margin-bottom: 40px; }
-        .calc-header h1 { font-size: 2.2rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 12px; }
+        .calc-header h1 { font-family:'Playfair Display',serif; font-size: 2.2rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 12px; }
         .calc-header p { color: #666; font-size: 1.05rem; max-width: 650px; margin: 0 auto; }
         .calc-card { background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 40px; }
         .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
@@ -66,28 +66,28 @@
             width: 100%; padding: 12px 16px; border: 2px solid #e0e0e0;
             border-radius: 8px; font-size: 1rem; font-family: inherit; box-sizing: border-box;
         }
-        .input-group input:focus, .input-group select:focus { outline: none; border-color: #2C2C2C; }
+        .input-group input:focus, .input-group select:focus { outline: 3px solid rgba(184,150,46,.28); outline-offset:1px; border-color: #B8962E; }
         .input-help { display: block; color: #666; font-size: 0.78rem; line-height: 1.4; margin-top: 6px; }
         .calc-btn {
-            width: 100%; padding: 16px; background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%);
+            width: 100%; min-height:44px; padding: 16px; background: linear-gradient(135deg, #C41230 0%, #8B0D22 100%);
             color: white; border: none; border-radius: 8px; font-size: 1.1rem;
             font-weight: 700; cursor: pointer; font-family: inherit;
         }
         .calc-btn:hover { opacity: 0.9; }
-        .results { display: none; margin-top: 30px; padding: 30px; background: #f0f4ff; border-radius: 10px; }
+        .results { display: none; margin-top: 30px; padding: 30px; background: #F8F6F2; border:1px solid rgba(184,150,46,.35); border-radius: 10px; }
         .results h2 { font-size: 1.25rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 20px; }
         .line-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e0e0e0; }
-        .line-item.positive .amount { color: #28a745; }
-        .line-item.negative .amount { color: #c0392b; }
-        .line-item.total { margin-top: 15px; padding-top: 15px; border-top: 2px solid #2C2C2C; font-size: 1.15rem; }
+        .line-item.positive .amount { color: #2C2C2C; }
+        .line-item.negative .amount { color: #8B0D22; }
+        .line-item.total { margin-top: 15px; padding-top: 15px; border-top: 2px solid #C41230; font-size: 1.15rem; }
         .line-item.total .label { color: var(--dark-gray, #1A1A1A); font-weight: 700; }
-        .line-item.total .amount { color: #28a745; font-weight: 700; font-size: 1.4rem; }
+        .line-item.total .amount { color: #C41230; font-weight: 700; font-size: 1.4rem; }
         .line-item .label { color: #555; }
         .line-item .amount { font-weight: 600; color: var(--dark-gray, #1A1A1A); }
         .cta-box { margin-top: 25px; padding: 22px; background: var(--dark-gray, #1A1A1A); border-radius: 10px; text-align: center; color: white; }
         .cta-box h3 { margin: 0 0 8px; font-size: 1.05rem; }
         .cta-box p { margin: 0 0 14px; font-size: 0.9rem; opacity: 0.85; }
-        .cta-box a { display: inline-block; padding: 12px 26px; background: #2C2C2C; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+        .cta-box a { display: inline-block; min-height:44px; box-sizing:border-box; padding: 12px 26px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
         .explainer { margin-top: 40px; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .explainer h2 { font-size: 1.4rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 16px; }
         .explainer h3 { font-size: 1.1rem; color: #333; margin-top: 18px; margin-bottom: 8px; }
@@ -97,7 +97,7 @@
         .nav-container .logo-img { max-width: 200px; height: auto; }
     </style>
 
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "NJ Seller Net Proceeds Calculator", "url": "https://thejorgeramirezgroup.com/net-proceeds-calculator", "description": "Estimates NJ seller net proceeds using a user-entered broker-compensation percentage or flat dollar amount and transaction costs.", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "creator": {"@type": "RealEstateAgent", "@id": "https://thejorgeramirezgroup.com/#jorge-ramirez", "name": "Jorge Ramirez", "telephone": "+1-908-230-7844", "email": "jorge.ramirez@kw.com"}, "dateModified": "2026-08-27", "datePublished": "2026-07-30"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"NJ Seller Net Proceeds Calculator","url":"https://thejorgeramirezgroup.com/net-proceeds-calculator","description":"Estimates NJ seller net proceeds from user-entered transaction costs and clearly labeled statutory fee estimates.","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"RealEstateAgent","@id":"https://thejorgeramirezgroup.com/#jorge-ramirez","name":"Jorge Ramirez","telephone":"+1-908-230-7844","email":"jorge.ramirez@kw.com"},"dateModified":"2026-08-27","datePublished":"2026-07-30"}</script>
 
     <script type="application/ld+json">
     {
@@ -122,22 +122,22 @@
         </div>
     </nav>
 
-    <div id="main" class="calc-wrapper" role="main">
+    <main id="main" class="calc-wrapper">
         <div class="calc-header">
             <h1>NJ Seller Net Proceeds Calculator</h1>
 <p class="meta" style="font-size:.92rem;opacity:.8;margin:6px 0 18px;">Updated August 27, 2026 &middot; rates verified against the NJ Division of Taxation</p>
-            <p>Enter the broker compensation amount or percentage from your written agreement with the NJ Realty Transfer Fee, attorney costs, mortgage payoff and other transaction expenses to estimate your net proceeds.</p>
+            <p>Enter the figures from your written agreement and transaction documents. The calculator supplies only labeled estimates for the NJ Realty Transfer Fee and any applicable Graduated Percent Fee; all other deductions come from you.</p>
         </div>
 
         <div class="calc-card">
             <div class="input-grid">
                 <div class="input-group">
                     <label for="salePrice">Expected Sale Price ($)</label>
-                    <input type="number" id="salePrice" value="650000" min="50000" step="10000">
+                    <input type="number" id="salePrice" min="1" step="0.01" inputmode="decimal" required>
                 </div>
                 <div class="input-group">
                     <label for="payoff">Mortgage Payoff ($)</label>
-                    <input type="number" id="payoff" value="280000" min="0" step="5000">
+                    <input type="number" id="payoff" min="0" step="0.01" inputmode="decimal">
                 </div>
                 <div class="input-group">
                     <label for="brokerCompensationMethod">Broker Compensation Method</label>
@@ -148,24 +148,37 @@
                 </div>
                 <div class="input-group">
                     <label for="brokerCompensation" id="brokerCompensationLabel">Broker Compensation From Written Agreement (%)</label>
-                    <input type="number" id="brokerCompensation" min="0" step="0.01" inputmode="decimal" placeholder="Enter agreed percentage" required aria-describedby="brokerCompensationHelp" oninput="this.setCustomValidity('')">
+                    <input type="number" id="brokerCompensation" min="0" max="100" step="0.01" inputmode="decimal" placeholder="Enter agreed percentage" required aria-describedby="brokerCompensationHelp" oninput="this.setCustomValidity('')">
                     <small class="input-help" id="brokerCompensationHelp">Enter the percentage stated in your written agreement; the calculator does not supply one.</small>
                 </div>
                 <div class="input-group">
-                    <label for="attorney">Attorney Fee ($)</label>
-                    <input type="number" id="attorney" value="2000" min="0" step="100">
+                    <label for="attorney">Attorney Cost, If Retained ($)</label>
+                    <input type="number" id="attorney" min="0" step="0.01" inputmode="decimal" aria-describedby="attorneyHelp">
+                    <small class="input-help" id="attorneyHelp">Enter a quote or agreed amount; leave blank if it does not apply.</small>
                 </div>
                 <div class="input-group">
-                    <label for="propertyTax">Annual Property Tax ($)</label>
-                    <input type="number" id="propertyTax" value="12000" min="0" step="500">
+                    <label for="propertyTaxAdjustment">Property-Tax Adjustment/Debit ($)</label>
+                    <input type="number" id="propertyTaxAdjustment" min="0" step="0.01" inputmode="decimal" aria-describedby="propertyTaxHelp">
+                    <small class="input-help" id="propertyTaxHelp">Enter the seller debit shown in the settlement figures; no proration period is assumed.</small>
                 </div>
                 <div class="input-group">
                     <label for="concessions">Seller Credits / Concessions ($)</label>
-                    <input type="number" id="concessions" value="0" min="0" step="500">
+                    <input type="number" id="concessions" min="0" step="0.01" inputmode="decimal">
+                </div>
+                <div class="input-group">
+                    <label for="otherCosts">Other Seller Closing Costs ($)</label>
+                    <input type="number" id="otherCosts" min="0" step="0.01" inputmode="decimal" aria-describedby="otherCostsHelp">
+                    <small class="input-help" id="otherCostsHelp">Enter title, municipal, HOA, recording or other transaction-specific charges shown in your documents.</small>
+                </div>
+                <div class="input-group">
+                    <label for="estimatedTaxPayment">GIT/REP Estimated Tax Payment, If Applicable ($)</label>
+                    <input type="number" id="estimatedTaxPayment" min="0" step="0.01" inputmode="decimal" aria-describedby="estimatedTaxHelp">
+                    <small class="input-help" id="estimatedTaxHelp">Enter only an amount confirmed for your transaction; the calculator does not determine filing status or assurances.</small>
                 </div>
             </div>
 
-            <label style="display:flex;align-items:center;gap:10px;font-weight:500;color:#333;margin:0 0 20px;font-size:0.94rem;"><input type="checkbox" id="reducedRate" style="width:auto;margin:0;">Seller is 62 or older, blind, disabled, or low-and-moderate income (reduced transfer fee)</label>
+            <label style="display:flex;align-items:center;gap:10px;font-weight:500;color:#333;margin:0 0 8px;font-size:0.94rem;"><input type="checkbox" id="reducedRate" style="width:auto;margin:0;" aria-describedby="reducedRateHelp">Use the reduced RTF schedule confirmed for this transfer</label>
+            <small class="input-help" id="reducedRateHelp" style="margin:0 0 20px;">Select only if your settlement professional confirms the transaction qualifies under the NJ rules.</small>
                         <button type="button" class="calc-btn" onclick="calcNet()">Calculate My Net Proceeds</button>
 
             <div class="results" id="results" aria-live="polite" aria-labelledby="results-heading">
@@ -173,8 +186,8 @@
                 <div id="lineItems"></div>
 
                 <div class="cta-box">
-                    <h3>Want a precise number for your specific home?</h3>
-                    <p>This calculator gets you close — but the real number depends on your exact market, timing, and negotiation. It is only as good as the sale price you put at the top, so if you are guessing at that figure, get a <a href="/home-valuation">free home valuation</a> first and run the numbers again. I'll run a full seller net sheet for your specific property. Free, no pressure.</p>
+                    <h3>Want to compare the worksheet with your documents?</h3>
+                    <p>I can help identify which questions belong with your broker, settlement provider, attorney or tax professional. The signed agreements and closing documents control. No pressure and no tax or legal advice.</p>
                     <a href="tel:908-230-7844">Call Jorge: 908-230-7844</a>
                 </div>
             </div>
@@ -182,16 +195,16 @@
 
         <div class="explainer">
             <h2>Understanding Your NJ Seller Costs</h2>
-            <p>Home sellers in New Jersey face specific costs that don't exist in other states. Here's what each line item is and what you can control.</p>
+            <p>This calculator separates user-entered transaction figures from two statutory fee estimates. Confirm every final amount on the signed agreements and closing documents.</p>
 
             <h3>Broker Compensation (use your written agreement)</h3>
             <p>In New Jersey, <strong>broker compensation is fully negotiable and not set by law</strong>. It may be paid by the seller, buyer, a third party, or through compensation shared between brokerage firms; the applicable written brokerage services agreement controls the amount and method. See <a href="https://www.nj.gov/dobi/bulletins/blt24_11.pdf" target="_blank" rel="noopener noreferrer">NJDOBI Bulletin 24-11</a>. This calculator accepts either a percentage or flat dollar amount and does not insert one for you.</p>
 
-            <h3>NJ Realty Transfer Fee (about 0.86% at $600K, 0.96% at $1M)</h3>
-            <p>State transfer tax paid at closing, charged in marginal bands. On a $500,000 sale it is <strong>$4,175</strong>; at $600,000, <strong>$5,185</strong>; at $1,000,000, <strong>$9,575</strong>. Sales above $350,000 use a higher schedule than sales below it, so the effective rate climbs with price rather than staying flat. Not negotiable. Senior, blind, disabled and low-and-moderate-income sellers qualify for a reduced rate on this fee.</p>
+            <h3>Estimated NJ Realty Transfer Fee</h3>
+            <p>The calculator applies the published <a href="https://www.nj.gov/treasury/taxation/realty.shtml" target="_blank" rel="noopener noreferrer">NJ Division of Taxation RTF schedule</a> to the sale price you enter. The final fee can depend on deed consideration, property classification and a full or partial exemption, so treat this line as an estimate and confirm it with the settlement professional.</p>
 
-            <h3>Attorney Fees ($1,500 – $3,500)</h3>
-            <p>NJ is an attorney state. Your lawyer handles contract review, attorney-review negotiation, title clearance, and closing. Flat fee is typical.</p>
+            <h3>Attorney Cost, If Retained</h3>
+            <p><a href="https://www.nj.gov/dobi/division_consumers/pdf/buyingahome.pdf" target="_blank" rel="noopener noreferrer">NJDOBI's consumer guide</a> explains that a contract prepared by a real estate licensee contains an attorney-review clause and that, <strong>if you choose to consult an attorney</strong>, counsel may propose revisions or disapprove the contract during that period. The calculator supplies no attorney requirement or price; enter an agreed amount only if it applies.</p>
 
             <h3>Mortgage Payoff (Exact dollar amount)</h3>
             <p>Your loan balance at closing, plus a per-diem interest charge through the closing date. Request a payoff statement from your lender when you go under contract.</p>
@@ -199,14 +212,14 @@
             <h3>Prorated Property Tax</h3>
             <p>You pay NJ property taxes through the closing date. The buyer takes over from closing forward. This shows up as either a debit or credit depending on when your town's tax bills come due.</p>
 
-            <h3>Closing Costs (Recording, title clearance, etc.)</h3>
-            <p>Typically $500-$1,500 in miscellaneous costs: deed recording, municipal smoke cert, title endorsements, overnight courier fees, etc.</p>
+            <h3>Other Transaction Costs</h3>
+            <p>Property-tax adjustments, municipal or association charges, title-related items, credits and other costs depend on the transaction. Enter the seller debits shown in your documents; the calculator does not assume a proration period or miscellaneous amount.</p>
 
-            <h3>The NJ <a href="/blog/nj-exit-tax-explained">&ldquo;Exit Tax&rdquo;</a> &mdash; Most Sellers Owe Nothing</h3>
-            <p>Not a separate tax, and probably not yours. New Jersey requires an estimated income tax payment at closing from some sellers &mdash; 2% of the price or 10.75% of the gain, whichever is greater. But the residency form (GIT/REP-3) carries sixteen numbered boxes &mdash; box 1 is a resident certification and boxes 2 through 16 are exemptions, which apply to residents <em>and</em> non-residents. Box 2 exempts a principal residence, so a homeowner selling the home they actually lived in usually has nothing withheld even when they are leaving the state. It bites mainly on rentals, second homes and inherited property never lived in. This calculator does not deduct it. Jorge coordinates the form with your attorney and CPA.</p>
-            <h3>NJ Graduated Percent Fee (Sellers Above $1,000,000)</h3>
-            <p>The big one, and new. Until July 2025 the <em>buyer</em> paid a flat 1% &ldquo;mansion tax&rdquo; on consideration in excess of $1,000,000. P.L.&nbsp;2025, c.&nbsp;69 moved that fee to the seller and made it graduated, for deeds submitted for recording on or after July&nbsp;10,&nbsp;2025. It is now a seller cost, and the calculator above includes it.</p>
-            <p><strong>It is a cliff, not a bracket.</strong> Each rate applies to the <em>entire</em> sale price, not just the portion above the threshold:</p>
+            <h3>GIT/REP Estimated Gross Income Tax Payment</h3>
+            <p>The <a href="https://nj.gov/treasury/taxation/gitrepfaqs.shtml" target="_blank" rel="noopener noreferrer">NJ Division of Taxation's GIT/REP FAQ</a> states that a GIT/REP form is required to record a deed. A nonresident seller must make an estimated Gross Income Tax payment unless a seller's assurance applies. Which form or assurance applies depends on the seller and transaction. Enter only an amount confirmed for your closing. Any later credit or refund depends on the required filing, the seller's actual tax liability and Division review.</p>
+
+            <h3>Estimated NJ Graduated Percent Fee</h3>
+            <p>The same Division of Taxation source states that this supplemental fee applies to certain property classes when consideration exceeds $1,000,000 and describes exemptions. The calculator applies the published rate to the sale price as an estimate:</p>
             <ul>
               <li>Over $1,000,000 through $2,000,000 &mdash; 1% of the full price</li>
               <li>Over $2,000,000 through $2,500,000 &mdash; 2%</li>
@@ -214,16 +227,13 @@
               <li>Over $3,000,000 through $3,500,000 &mdash; 3%</li>
               <li>Over $3,500,000 &mdash; 3.5%</li>
             </ul>
-            <p>That makes the boundaries unusually consequential. A $2,000,000 sale owes $20,000. A sale one dollar higher owes just over $40,000 &mdash; the same house, twice the fee. And because the statute applies to consideration <em>in excess of</em> $1,000,000, a sale at exactly $1,000,000 owes nothing at all, which is a real pricing consideration just under the line.</p>
-            <p>Stacked on the standard transfer fee, the state takes <strong>$30,625 on a $1.5M sale, $77,725 on $2.5M, and $167,035 on $3.6M</strong> &mdash; 2.0%, 3.1% and 4.6% of the price respectively, before broker compensation. The <a href="/nj-realty-transfer-fee-calculator">transfer fee calculator</a> breaks it out line by line.</p>
-            <p><strong>One trap worth knowing:</strong> the senior, blind, disabled and low-and-moderate-income reduction applies to the standard transfer fee only. It does not touch the Graduated Percent Fee. A 72-year-old selling at $1.5M gets a reduced base fee and still owes the full $15,000.</p>
-            <p>Legal responsibility sits with the seller, though the Division of Taxation notes the parties can apportion or shift the burden in contract negotiations. On a normal resale, expect it to be yours. Above $1,000,000 it is worth confirming the figure with your closing attorney or title company before you budget from it.</p>
+            <p>Property classification, deed consideration, exemptions and transaction timing can change the result. Confirm the final fee rather than relying on the calculator for a legal or tax conclusion.</p>
 
-            <h3>What This Calculator Leaves Out</h3>
-            <p>Deliberately, because these vary too much to estimate honestly: pre-listing repairs and staging, capital gains tax on any gain above the federal exclusion, payoff of a second mortgage or HELOC you have not entered, HOA transfer and document fees, municipal smoke and carbon-monoxide certification, and any credits you agree to after inspection. Inspection credits are the one sellers most often forget &mdash; they quietly give back 1&ndash;2% at a point in the deal when the price already feels settled.</p>
+            <h3>Limits of This Tool</h3>
+            <p>This worksheet does not calculate capital gain, tax liability, GIT/REP eligibility, a refund, legal obligations or final closing figures. It provides general planning information, not tax or legal advice.</p>
 
         </div>
-    </div>
+    </main>
 
     
 <div style="max-width:880px;margin:0 auto 34px;padding:20px 24px;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08);font-family:var(--font-body,inherit);line-height:1.7;"><strong>Other NJ calculators:</strong><br><a href="/closing-costs-calculator">NJ Buyer Closing Costs Calculator</a> · <a href="/nj-realty-transfer-fee-calculator">NJ Realty Transfer Fee Calculator</a> · <a href="/tools/mortgage-calculator">NJ Mortgage Affordability Calculator</a> · <a href="/home-valuation">NJ Home Value Estimator</a></div>
@@ -233,9 +243,9 @@
 
 <div class="related"><strong>Also worth reading:</strong>
 <p><a href="/blog/capital-gains-tax-selling-house-nj">Will you owe capital gains on the sale?</a></p></div>
-<footer style="background: var(--dark-gray, #1A1A1A); color: #ccc; padding: 30px 20px; text-align: center; font-size: 0.9rem;">
+<footer style="background: var(--dark-gray, #1A1A1A); color: #F8F6F2; padding: 30px 20px; text-align: center; font-size: 0.9rem;">
         <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · 488 Springfield Ave, Summit NJ 07901 · Website by <a href="https://clickmingo.com" target="_blank" rel="noopener" style="color:inherit !important;text-decoration:inherit !important;">ClickMingo</a></p>
-        <p><a href="tel:908-230-7844" style="color: #a0b8ff;">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com" style="color: #a0b8ff;">jorge.ramirez@kw.com</a></p>
+        <p><a href="tel:908-230-7844" style="color: #FAFAF8;">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com" style="color: #FAFAF8;">jorge.ramirez@kw.com</a></p>
     </footer>
 
     <script>
@@ -293,6 +303,11 @@
                 : 'Enter the percentage stated in your written agreement; the calculator does not supply one.';
             input.placeholder = isFlat ? 'Enter agreed dollar amount' : 'Enter agreed percentage';
             input.step = isFlat ? '100' : '0.01';
+            if (isFlat) {
+                input.removeAttribute('max');
+            } else {
+                input.max = '100';
+            }
             input.value = '';
             input.setCustomValidity('');
             document.getElementById('results').style.display = 'none';
@@ -322,18 +337,19 @@
             const brokerCompensationMethod = document.getElementById('brokerCompensationMethod').value;
             const brokerCompensationValue = brokerCompensationInput.valueAsNumber;
             const attorney = parseFloat(document.getElementById('attorney').value) || 0;
-            const annualTax = parseFloat(document.getElementById('propertyTax').value) || 0;
+            const propertyTaxAdjustment = parseFloat(document.getElementById('propertyTaxAdjustment').value) || 0;
             const concessions = parseFloat(document.getElementById('concessions').value) || 0;
+            const otherCosts = parseFloat(document.getElementById('otherCosts').value) || 0;
+            const estimatedTaxPayment = parseFloat(document.getElementById('estimatedTaxPayment').value) || 0;
 
             const brokerCompensation = brokerCompensationMethod === 'flat'
                 ? brokerCompensationValue
                 : salePrice * (brokerCompensationValue / 100);
             const rtf = calcRTF(salePrice);
             const gpf = calcGraduatedPercentFee(salePrice);
-            const propTaxProrate = annualTax * (3 / 12); // assume 3 months prorated
-            const closingMisc = 800;
 
-            const totalDeductions = payoff + brokerCompensation + rtf + gpf + attorney + propTaxProrate + closingMisc + concessions;
+            const totalDeductions = payoff + brokerCompensation + rtf + gpf + attorney +
+                propertyTaxAdjustment + concessions + otherCosts + estimatedTaxPayment;
             const net = salePrice - totalDeductions;
 
             const lineItems = [
@@ -342,23 +358,24 @@
                 [brokerCompensationMethod === 'flat'
                     ? 'Broker Compensation (flat amount)'
                     : `Broker Compensation (${brokerCompensationValue}%)`, -brokerCompensation, 'negative'],
-                ['NJ Realty Transfer Fee (tiered)', -rtf, 'negative'],
-                ['Attorney Fees', -attorney, 'negative'],
-                ['Prorated Property Tax (~3 mo)', -propTaxProrate, 'negative'],
-                ['Misc Closing Costs', -closingMisc, 'negative'],
+                ['Estimated NJ Realty Transfer Fee', -rtf, 'negative'],
             ];
             if (gpf > 0) {
                 const gpfPct = (gpf / salePrice * 100).toFixed(1).replace(/\.0$/, '');
                 lineItems.splice(4, 0,
-                    [`NJ Graduated Percent Fee (${gpfPct}% of full price, $1M+)`, -gpf, 'negative']);
+                    [`Estimated NJ Graduated Percent Fee (${gpfPct}% of full price)`, -gpf, 'negative']);
             }
+            if (attorney > 0) lineItems.push(['Attorney Cost Entered', -attorney, 'negative']);
+            if (propertyTaxAdjustment > 0) lineItems.push(['Property-Tax Adjustment Entered', -propertyTaxAdjustment, 'negative']);
             if (concessions > 0) lineItems.push(['Seller Concessions', -concessions, 'negative']);
+            if (otherCosts > 0) lineItems.push(['Other Seller Costs Entered', -otherCosts, 'negative']);
+            if (estimatedTaxPayment > 0) lineItems.push(['GIT/REP Estimated Tax Payment Entered', -estimatedTaxPayment, 'negative']);
 
             const html = lineItems.map(([label, amt, cls]) =>
                 `<div class="line-item ${cls}"><span class="label">${label}</span><span class="amount">${fmt(amt)}</span></div>`
             ).join('') +
             `<div class="line-item total"><span class="label">Estimated Net to You</span><span class="amount">${fmt(net)}</span></div>` +
-            `<div style="margin-top:8px; color:#666; font-size:0.85rem; text-align:center;">This estimate combines your entries with the labeled calculator estimates for three months of prorated property tax and $800 of miscellaneous closing costs. Confirm the final figures and payment terms in your written agreements and closing documents.</div>`;
+            `<div style="margin-top:8px; color:#666; font-size:0.85rem; text-align:center;">All nonstatutory deductions shown above came from your entries. The RTF and Graduated Percent Fee lines are calculator estimates, not final tax or legal determinations. Confirm every figure in your signed agreements and closing documents.</div>`;
 
             document.getElementById('lineItems').innerHTML = html;
             document.getElementById('results').style.display = 'block';

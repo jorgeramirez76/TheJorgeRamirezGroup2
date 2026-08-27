@@ -16,14 +16,15 @@
     <meta name="theme-color" content="#1A1A1A">
 
     <title>Calculadora de Costos de Cierre en NJ 2026 | Costos del Comprador</title>
-    <meta name="title" content="Calculadora de Costos de Cierre en NJ 2026 — Lo que Realmente Paga el Comprador | Jorge Ramirez">
-    <meta name="description" content="Calculadora gratuita de costos de cierre en NJ para compradores de casa. Estima honorarios de abogado, título, prestamista y registro en un solo clic.">
+    <meta name="title" content="Hoja de Costos de Cierre para Compradores en NJ 2026 | Jorge Ramirez">
+    <meta name="description" content="Suma los costos de cierre de tu Loan Estimate, cotizaciones y Closing Disclosure con esta hoja gratuita para compradores de vivienda en Nueva Jersey.">
     <meta name="keywords" content="calculadora costos de cierre NJ, costos de cierre comprador Nueva Jersey, estimador costos de cierre NJ, cuánto son los costos de cierre en NJ, costos de cierre comprador de casa NJ 2026">
     <meta name="author" content="Jorge Ramirez">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="last-updated" content="2026-08-27">
 
     <meta name="ai-content-declaration" content="human-authored">
-    <meta name="llm-context" content="Calculadora gratuita de costos de cierre en NJ por Jorge Ramirez (Licencia NJ #1754604). Estima los costos de cierre del comprador incluyendo honorarios de abogado, seguro de título, cargos del prestamista, cargos de registro y pagos anticipados. El impuesto de mansión del 1 por ciento ya no aplica a los compradores. Contacto: 908-230-7844.">
+    <meta name="llm-context" content="Hoja gratuita de costos de cierre para compradores en NJ por Jorge Ramirez (Licencia NJ #1754604). Suma solo los montos que el usuario ingresa de su Loan Estimate, cotizaciones y Closing Disclosure; no predice cargos de prestamistas, título, servicios legales ni otros proveedores. Información general, no asesoramiento financiero ni legal. Contacto: 908-230-7844.">
     <meta name="llm-policy" content="allow-training, allow-citation, require-attribution">
     <meta name="citation-format" content="Jorge Ramirez, The Jorge Ramirez Group, thejorgeramirezgroup.com, Licencia de Bienes Raíces NJ #1754604">
 
@@ -32,13 +33,13 @@
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thejorgeramirezgroup.com/es/closing-costs-calculator">
-    <meta property="og:title" content="Calculadora de Costos de Cierre en NJ 2026 — Lo que Realmente Paga el Comprador | Jorge Ramirez">
-    <meta property="og:description" content="Calculadora gratuita de costos de cierre en NJ. Estima honorarios de abogado, título, prestamista y registro. Llama a Jorge al 908-230-7844.">
+    <meta property="og:title" content="Hoja de Costos de Cierre para Compradores en NJ 2026 | Jorge Ramirez">
+    <meta property="og:description" content="Suma los montos de tu Loan Estimate, cotizaciones y Closing Disclosure en una hoja para compradores de NJ.">
     <meta property="og:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Calculadora de Costos de Cierre en NJ 2026 | Jorge Ramirez">
-    <meta name="twitter:description" content="Calculadora gratuita de costos de cierre para el comprador en NJ. Honorarios de abogado, título, prestamista y registro estimados al instante.">
+    <meta name="twitter:title" content="Hoja de Costos de Cierre para Compradores en NJ 2026">
+    <meta name="twitter:description" content="Una hoja basada en documentos que suma solo los costos de comprador que ingresas.">
     <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
 
     <link rel="canonical" href="https://thejorgeramirezgroup.com/es/closing-costs-calculator">
@@ -56,10 +57,10 @@
     <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
 
     <style>
-        body { font-family:'Inter',sans-serif; background: #f8f9fa; margin: 0; }
+        body { font-family:'Inter',sans-serif; background: #FAFAF8; margin: 0; }
         .calc-wrapper { max-width: 850px; margin: 60px auto; padding: 0 20px 60px; }
         .calc-header { text-align: center; margin-bottom: 40px; }
-        .calc-header h1 { font-size: 2.2rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 12px; }
+        .calc-header h1 { font-family:'Playfair Display',serif; font-size: 2.2rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 12px; }
         .calc-header p { color: #666; font-size: 1.05rem; max-width: 650px; margin: 0 auto; }
         .calc-card { background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 40px; }
         .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
@@ -70,26 +71,27 @@
             border-radius: 8px; font-size: 1rem; font-family: inherit;
             transition: border-color 0.2s; box-sizing: border-box;
         }
-        .input-group input:focus, .input-group select:focus { outline: none; border-color: #2C2C2C; }
+        .input-group input:focus, .input-group select:focus { outline: 3px solid rgba(184,150,46,.28); outline-offset: 1px; border-color: #B8962E; }
+        .input-help { display:block; color:#666; font-size:.78rem; line-height:1.4; margin-top:6px; }
         .calc-btn {
-            width: 100%; padding: 16px; background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%);
+            width: 100%; min-height:44px; padding: 16px; background: linear-gradient(135deg, #C41230 0%, #8B0D22 100%);
             color: white; border: none; border-radius: 8px; font-size: 1.1rem;
             font-weight: 700; cursor: pointer; font-family: inherit; transition: opacity 0.2s;
         }
         .calc-btn:hover { opacity: 0.9; }
-        .results { display: none; margin-top: 30px; padding: 30px; background: #f0f4ff; border-radius: 10px; }
+        .results { display: none; margin-top: 30px; padding: 30px; background: #F8F6F2; border:1px solid rgba(184,150,46,.35); border-radius: 10px; }
         .results h2 { font-size: 1.25rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 20px; }
         .line-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e0e0e0; font-size: 0.98rem; }
         .line-item:last-child { border-bottom: none; }
         .line-item .label { color: #555; }
         .line-item .amount { font-weight: 600; color: var(--dark-gray, #1A1A1A); }
-        .line-item.total { margin-top: 15px; padding-top: 15px; border-top: 2px solid #2C2C2C; font-size: 1.15rem; }
+        .line-item.total { margin-top: 15px; padding-top: 15px; border-top: 2px solid #C41230; font-size: 1.15rem; }
         .line-item.total .label { color: var(--dark-gray, #1A1A1A); font-weight: 700; }
-        .line-item.total .amount { color: #2C2C2C; font-weight: 700; font-size: 1.3rem; }
+        .line-item.total .amount { color: #C41230; font-weight: 700; font-size: 1.3rem; }
         .cta-box { margin-top: 25px; padding: 22px; background: var(--dark-gray, #1A1A1A); border-radius: 10px; text-align: center; color: white; }
         .cta-box h3 { margin: 0 0 8px; font-size: 1.05rem; }
         .cta-box p { margin: 0 0 14px; font-size: 0.9rem; opacity: 0.85; }
-        .cta-box a { display: inline-block; padding: 12px 26px; background: #2C2C2C; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+        .cta-box a { display: inline-block; min-height:44px; box-sizing:border-box; padding: 12px 26px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
         .explainer { margin-top: 40px; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .explainer h2 { font-size: 1.4rem; color: var(--dark-gray, #1A1A1A); margin-bottom: 16px; }
         .explainer h3 { font-size: 1.1rem; color: #333; margin-top: 18px; margin-bottom: 8px; }
@@ -103,8 +105,9 @@
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Calculadora de Costos de Cierre en NJ",
-      "url": "https://thejorgeramirezgroup.com/closing-costs-calculator",
+      "name": "Hoja de Costos de Cierre para Compradores en NJ",
+      "url": "https://thejorgeramirezgroup.com/es/closing-costs-calculator",
+      "description": "Suma solo los costos de cierre ingresados por el usuario desde documentos y cotizaciones de la transacción.",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Web",
       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
@@ -114,7 +117,9 @@
         "name": "Jorge Ramirez",
         "telephone": "+1-908-230-7844",
         "email": "jorge.ramirez@kw.com"
-      }
+      },
+      "dateModified": "2026-08-27",
+      "datePublished": "2026-07-30"
     }
     </script>
 
@@ -156,143 +161,158 @@
         </div>
     </nav>
 
-    <div id="main" class="calc-wrapper" role="main">
+    <main id="main" class="calc-wrapper">
         <div class="calc-header">
-            <h1>Calculadora de Costos de Cierre para Compradores en NJ</h1>
-            <p>Los compradores en Nueva Jersey suelen pagar entre 2 y 5 por ciento del precio de compra en costos de cierre. Ingresa tus números abajo para obtener un estimado realista — abogado, título, prestamista y pagos anticipados incluidos. El impuesto de mansión del 1 por ciento ya no aplica a los compradores.</p>
+            <h1>Hoja de Costos de Cierre para Compradores en NJ</h1>
+            <p class="meta" style="font-size:.92rem;opacity:.8;margin:6px 0 18px;">Actualizado el 27 de agosto de 2026 &middot; herramienta basada en documentos</p>
+            <p>Copia los montos de tu Loan Estimate, cotizaciones de proveedores y, cuando esté disponible, tu Closing Disclosure. Esta hoja suma solo lo que ingresas; no agrega cargos de proveedores, una tasa de préstamo ni un supuesto de servicios legales.</p>
         </div>
 
         <div class="calc-card">
-            <div class="input-grid">
-                <div class="input-group">
-                    <label for="price">Precio de Compra de la Casa ($)</label>
-                    <input type="number" id="price" value="600000" min="50000" step="10000">
+            <form id="closingCostsWorksheet">
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="loanCosts">Costos del Préstamo en el Loan Estimate ($)</label>
+                        <input type="number" id="loanCosts" min="0" step="0.01" inputmode="decimal" aria-describedby="loanCostsHelp">
+                        <small class="input-help" id="loanCostsHelp">Usa el subtotal de los cargos del prestamista y servicios requeridos en tu Loan Estimate vigente.</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="titleSettlement">Cargos de Título y Cierre ($)</label>
+                        <input type="number" id="titleSettlement" min="0" step="0.01" inputmode="decimal">
+                    </div>
+                    <div class="input-group">
+                        <label for="governmentFees">Registro y Cargos del Gobierno ($)</label>
+                        <input type="number" id="governmentFees" min="0" step="0.01" inputmode="decimal">
+                    </div>
+                    <div class="input-group">
+                        <label for="prepaids">Pagos Anticipados ($)</label>
+                        <input type="number" id="prepaids" min="0" step="0.01" inputmode="decimal" aria-describedby="prepaidsHelp">
+                        <small class="input-help" id="prepaidsHelp">Por ejemplo, los montos indicados para intereses, seguro o impuestos anticipados.</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="initialEscrow">Depósito Inicial de Escrow al Cierre ($)</label>
+                        <input type="number" id="initialEscrow" min="0" step="0.01" inputmode="decimal">
+                    </div>
+                    <div class="input-group">
+                        <label for="attorneyFee">Costo de Abogado, Si Eliges Uno ($)</label>
+                        <input type="number" id="attorneyFee" min="0" step="0.01" inputmode="decimal" aria-describedby="attorneyFeeHelp">
+                        <small class="input-help" id="attorneyFeeHelp">Ingresa una cotización o monto acordado; déjalo en blanco si no aplica.</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="inspectionAppraisal">Inspección, Tasación y Otros Costos Previos al Cierre ($)</label>
+                        <input type="number" id="inspectionAppraisal" min="0" step="0.01" inputmode="decimal">
+                    </div>
+                    <div class="input-group">
+                        <label for="otherBuyerCosts">Otros Costos del Comprador ($)</label>
+                        <input type="number" id="otherBuyerCosts" min="0" step="0.01" inputmode="decimal">
+                    </div>
+                    <div class="input-group">
+                        <label for="credits">Créditos del Prestamista, Vendedor u Otros ($)</label>
+                        <input type="number" id="credits" min="0" step="0.01" inputmode="decimal" aria-describedby="creditsHelp">
+                        <small class="input-help" id="creditsHelp">Los créditos reducen el total de costos ingresados.</small>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="downPct">Pago Inicial (%)</label>
-                    <input type="number" id="downPct" value="20" min="0" max="100" step="1">
-                </div>
-                <div class="input-group">
-                    <label for="loanType">Tipo de Préstamo</label>
-                    <select id="loanType">
-                        <option value="conventional" selected>Convencional</option>
-                        <option value="fha">FHA</option>
-                        <option value="va">VA</option>
-                        <option value="cash">Efectivo (Sin Préstamo)</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="propertyTax">Impuesto a la Propiedad Anual ($)</label>
-                    <input type="number" id="propertyTax" value="14000" min="0" step="500">
-                </div>
-                <div class="input-group">
-                    <label for="insurance">Seguro de Casa Anual ($)</label>
-                    <input type="number" id="insurance" value="1800" min="0" step="100">
-                </div>
-                <div class="input-group">
-                    <label for="attorney">Honorarios de Abogado ($)</label>
-                    <input type="number" id="attorney" value="2000" min="0" step="100">
-                </div>
-            </div>
 
-            <button class="calc-btn" onclick="calcCierre()">Calcular Mis Costos de Cierre</button>
+                <p id="worksheetStatus" class="input-help" role="status" aria-live="polite"></p>
+                <button type="submit" class="calc-btn">Sumar Mis Costos Ingresados</button>
+            </form>
 
-            <div class="results" id="results">
-                <h2>Tus Costos de Cierre Estimados</h2>
+            <div class="results" id="results" aria-live="polite" aria-labelledby="results-heading">
+                <h2 id="results-heading">Tu Hoja de Costos Ingresados</h2>
                 <div id="lineItems"></div>
 
                 <div class="cta-box">
-                    <h3>¿Quieres que revise estos números para tu trato específico?</h3>
-                    <p style="margin:0 0 16px;">¿Quieres el panorama completo con tablas calculadas en cinco precios, para comprador y vendedor? Lee <a href="/es/blog/how-much-are-closing-costs-nj">cuánto son realmente los costos de cierre en NJ (2026)</a>.</p>
-            <p>Cada transacción en NJ tiene sus particularidades — negociaciones durante la revisión de abogado, créditos del prestamista, concesiones del vendedor. Ayudo a los compradores a minimizar los costos de cierre en cada oferta que escribo. Sin presión, solo una conversación real.</p>
+                    <h3>¿Tienes preguntas sobre una partida?</h3>
+                    <p>Puedo ayudarte a identificar qué pregunta corresponde al prestamista, proveedor de cierre, abogado o profesional fiscal. Sin presión y sin asesoramiento legal ni financiero.</p>
                     <a href="tel:908-230-7844">Llama a Jorge: 908-230-7844</a>
                 </div>
             </div>
         </div>
 
         <div class="explainer">
-            <h2>Entendiendo los Costos de Cierre en NJ (En Palabras Sencillas)</h2>
-            <p>Nueva Jersey tiene costos de cierre más altos que la mayoría de los estados — en gran parte porque es un estado de abogado, y los impuestos a la propiedad son altos (y se pagan por adelantado al cierre). El impuesto de mansión del 1 por ciento que antes golpeaba a los compradores en $1 millón pasó al vendedor en 2025. Esto es lo que significa cada partida.</p>
+            <h2>Dónde Obtener los Montos</h2>
+            <p>El CFPB explica que el <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-loan-estimate-en-1995/" target="_blank" rel="noopener noreferrer">Loan Estimate</a> muestra los términos y costos estimados del préstamo después de solicitarlo. Antes del cierre, compáralo con el <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-closing-disclosure-en-1983/" target="_blank" rel="noopener noreferrer">Closing Disclosure</a>, que muestra los términos y costos finales de la hipoteca. Pide al prestamista o agente de cierre que explique cualquier diferencia.</p>
 
-            <h3>Honorarios de Abogado ($1,500 – $3,500)</h3>
-            <p>NJ requiere un abogado para revisar el contrato, negociar durante la revisión de abogado, manejar el título y representarte al cierre. Los honorarios fijos son lo típico.</p>
+            <h3>La Revisión Legal Es una Elección</h3>
+            <p>Según la <a href="https://www.nj.gov/dobi/division_consumers/pdf/buyingahome.pdf" target="_blank" rel="noopener noreferrer">guía de compra de vivienda de NJDOBI</a>, un contrato preparado por un profesional inmobiliario incluye una cláusula de revisión por abogado. Durante ese período, <strong>si eliges consultar a un abogado</strong>, puede proponer cambios o desaprobar el contrato. Contratar asesoría legal y su costo son decisiones personales y específicas del proveedor; por eso esta hoja deja el campo en blanco.</p>
 
-            <h3>Seguro de Título (~0.5% del precio)</h3>
-            <p>Te protege a ti y al prestamista contra defectos en el título. Prima única pagada al cierre. Requerido por la mayoría de los prestamistas.</p>
+            <h3>Los Cargos de Proveedores y Anticipos Varían</h3>
+            <p>Los montos de título, cierre, prestamista, inspección, tasación, registro, seguro, anticipos y escrow dependen de la propiedad, el préstamo y los proveedores. Ingresa las cotizaciones o estimaciones que recibas en lugar de usar un porcentaje general.</p>
 
-            <h3>Cargos del Prestamista (0.5% – 1.5% del préstamo)</h3>
-            <p>Cargos de originación, evaluación y solicitud. Negociables — siempre consigue una Estimación de Préstamo de 2 o más prestamistas y compara.</p>
+            <h3>Lo Que Esta Hoja No Hace</h3>
+            <p>No determina el efectivo final para cerrar, elegibilidad del préstamo, tratamiento fiscal, obligaciones legales ni cargos finales de proveedores. Usa los documentos vigentes del prestamista y los acuerdos firmados. Información general, no asesoramiento financiero, fiscal ni legal.</p>
 
-            <h3>El "Impuesto de Mansión" del 1 Por Ciento Ya No Te Aplica</h3>
-            <p>Antes los compradores pagaban el 1 por ciento del precio sobre la consideración en exceso de $1,000,000. Esa tarifa fue <strong>eliminada</strong> por la ley P.L.&nbsp;2025, c.&nbsp;69, con efecto para escrituras registradas a partir del 10 de julio de 2025 — el estatuto se modificó para quitar "grantee" (comprador) e insertar "grantor" (vendedor). Fue reemplazada por una Tarifa Porcentual Escalonada del 1 al 3.5 por ciento que paga el vendedor. Si estás comprando por encima de $1M, no debes nada de eso; si además estás vendiendo por encima de $1M, ve la <a href="/es/net-proceeds-calculator">calculadora de ganancias netas del vendedor</a>.</p>
-
-            <h3>Cargos de Registro y Transferencia</h3>
-            <p>Cargos de registro del condado y, en algunos casos, una pequeña porción del impuesto de transferencia por parte del comprador. Usualmente $300-$800 combinados.</p>
-
-            <h3>Pagos Anticipados (Impuestos + Custodia de Seguro)</h3>
-            <p>Los prestamistas requieren de 2 a 6 meses de impuestos a la propiedad y seguro en custodia al cierre. En pueblos de NJ con impuestos altos, esto suele ser la partida más grande de los costos de cierre.</p>
-
-            <h3>Inspección y Tasación</h3>
-            <p>Inspección ~$500-$900. Tasación ~$500-$800. Ambas se pagan antes del cierre, no en la mesa, pero cuentan hacia el efectivo total que necesitas para comprar.</p>
+            <p style="margin:16px 0 0;">Para más contexto, lee la <a href="/es/blog/how-much-are-closing-costs-nj">guía de costos de cierre en NJ</a>.</p>
         </div>
-    </div>
+    </main>
 
-    <footer style="background: var(--dark-gray, #1A1A1A); color: #ccc; padding: 30px 20px; text-align: center; font-size: 0.9rem;">
+    <footer style="background: var(--dark-gray, #1A1A1A); color: #F8F6F2; padding: 30px 20px; text-align: center; font-size: 0.9rem;">
         <p>© 2026 The Jorge Ramirez Group · Keller Williams Premier Properties · 488 Springfield Ave, Summit NJ 07901 · Website by <a href="https://clickmingo.com" target="_blank" rel="noopener" style="color:inherit !important;text-decoration:inherit !important;">ClickMingo</a></p>
-        <p><a href="tel:908-230-7844" style="color: #a0b8ff;">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com" style="color: #a0b8ff;">jorge.ramirez@kw.com</a></p>
+        <p><a href="tel:908-230-7844" style="color: #FAFAF8;">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com" style="color: #FAFAF8;">jorge.ramirez@kw.com</a></p>
     </footer>
 
     <script>
-        function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+        const worksheetFields = [
+            ['loanCosts', 'Costos del préstamo en el Loan Estimate'],
+            ['titleSettlement', 'Cargos de título y cierre'],
+            ['governmentFees', 'Registro y cargos del gobierno'],
+            ['prepaids', 'Pagos anticipados'],
+            ['initialEscrow', 'Depósito inicial de escrow al cierre'],
+            ['attorneyFee', 'Costo de abogado, si se elige'],
+            ['inspectionAppraisal', 'Inspección, tasación y costos previos al cierre'],
+            ['otherBuyerCosts', 'Otros costos del comprador']
+        ];
 
-        function calcCierre() {
-            const _p = parseFloat(document.getElementById('price').value) || 0;
-            if (_p <= 0) { document.getElementById('results').style.display='none'; return; }
-
-            const price = parseFloat(document.getElementById('price').value) || 0;
-            const downPct = parseFloat(document.getElementById('downPct').value) || 0;
-            const loanType = document.getElementById('loanType').value;
-            const annualTax = parseFloat(document.getElementById('propertyTax').value) || 0;
-            const annualIns = parseFloat(document.getElementById('insurance').value) || 0;
-            const attorney = parseFloat(document.getElementById('attorney').value) || 0;
-
-            const loanAmount = price * (1 - downPct / 100);
-            const items = [];
-
-            items.push(['Honorarios de Abogado', attorney]);
-            items.push(['Seguro de Título (~0.5%)', price * 0.005]);
-            items.push(['Búsqueda de Título y Liquidación', 450]);
-            if (loanType !== 'cash') {
-                items.push(['Originación del Prestamista (~0.75% del préstamo)', loanAmount * 0.0075]);
-                items.push(['Tasación', 650]);
-                items.push(['Reporte de Crédito y Procesamiento', 350]);
-            }
-            items.push(['Inspección de la Casa', 700]);
-            items.push(['Cargos de Registro', 300]);
-            items.push(['Estudio Topográfico (si se requiere)', 500]);
-            if (loanType === 'fha') {
-                items.push(['MIP Inicial FHA (1.75%)', loanAmount * 0.0175]);
-            }
-            if (loanType === 'va') {
-                items.push(['Cargo de Financiamiento VA (2.15%)', loanAmount * 0.0215]);
-            }
-            // Prepaids
-            items.push(['Impuesto a la Propiedad Anticipado (3 meses)', annualTax * 0.25]);
-            items.push(['Seguro de Casa Anticipado (1 año)', annualIns]);
-            items.push(['Intereses Anticipados (15 días)', loanType !== 'cash' ? (loanAmount * 0.07 / 365 * 15) : 0]);
-
-            const total = items.reduce((s, [_, v]) => s + v, 0);
-
-            const html = items.map(([label, amt]) =>
-                `<div class="line-item"><span class="label">${label}</span><span class="amount">${fmt(amt)}</span></div>`
-            ).join('') +
-            `<div class="line-item total"><span class="label">Total Estimado de Costos de Cierre</span><span class="amount">${fmt(total)}</span></div>` +
-            `<div style="margin-top:8px; color:#666; font-size:0.85rem; text-align:center;">Eso es ~${(total/price*100).toFixed(1)}% del precio de compra. Rango típico para NJ: 2-5%.</div>`;
-
-            document.getElementById('lineItems').innerHTML = html;
-            document.getElementById('results').style.display = 'block';
-            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        function fmt(n) {
+            return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('es-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
         }
+
+        function enteredAmount(id) {
+            const value = document.getElementById(id).value.trim();
+            return value === '' ? 0 : Number(value);
+        }
+
+        function calculateWorksheet(event) {
+            if (event) event.preventDefault();
+            const results = document.getElementById('results');
+            const status = document.getElementById('worksheetStatus');
+            const allIds = worksheetFields.map(([id]) => id).concat('credits');
+            const invalid = allIds.map(id => document.getElementById(id)).find(input => !input.checkValidity());
+            if (invalid) {
+                results.style.display = 'none';
+                invalid.reportValidity();
+                invalid.focus();
+                return;
+            }
+
+            const hasEntry = allIds.some(id => document.getElementById(id).value.trim() !== '');
+            if (!hasEntry) {
+                results.style.display = 'none';
+                status.textContent = 'Ingresa al menos un monto de tus documentos o cotizaciones.';
+                document.getElementById('loanCosts').focus();
+                return;
+            }
+
+            status.textContent = '';
+            const items = worksheetFields.map(([id, label]) => [label, enteredAmount(id)]);
+            const credits = enteredAmount('credits');
+            const total = items.reduce((sum, [, value]) => sum + value, 0) - credits;
+            if (credits > 0) items.push(['Créditos del prestamista, vendedor u otros', -credits]);
+
+            document.getElementById('lineItems').innerHTML = items
+                .filter(([, amount]) => amount !== 0)
+                .map(([label, amount]) => `<div class="line-item"><span class="label">${label}</span><span class="amount">${fmt(amount)}</span></div>`)
+                .join('') +
+                `<div class="line-item total"><span class="label">Total de Costos Ingresados Después de Créditos</span><span class="amount">${fmt(total)}</span></div>` +
+                '<div style="margin-top:8px;color:#666;font-size:.85rem;text-align:center;">Este es el total de tus datos, no una estimación del prestamista ni del agente de cierre. Compáralo con tu Loan Estimate y Closing Disclosure vigentes.</div>';
+            results.style.display = 'block';
+            results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        document.getElementById('closingCostsWorksheet').addEventListener('submit', calculateWorksheet);
     </script>
 <script defer src="/js/site-cta.js"></script>
 </body>
