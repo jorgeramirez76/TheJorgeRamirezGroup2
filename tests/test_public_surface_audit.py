@@ -32,6 +32,15 @@ class PublicSurfaceAuditTests(unittest.TestCase):
         self.assertEqual(audit_site.clean_route(Path(audit_site.ROOT / "blog/index.html")), "/blog")
         self.assertEqual(audit_site.normalize_route("https://thejorgeramirezgroup.com/es/rent-vs-buy-nj.html?x=1#result"), "/es/rent-vs-buy-nj")
 
+    def test_same_site_absolute_links_and_fragments_are_checked_locally(self):
+        homepage = audit_site.ROOT / "index.html"
+        self.assertEqual(
+            audit_site.resolve_link(homepage, "https://www.thejorgeramirezgroup.com/es/#contact"),
+            audit_site.ROOT / "es",
+        )
+        self.assertTrue(audit_site.fragment_exists(audit_site.ROOT / "es", "contact"))
+        self.assertFalse(audit_site.fragment_exists(audit_site.ROOT / "es", "not-a-real-section"))
+
 
 if __name__ == "__main__":
     unittest.main()

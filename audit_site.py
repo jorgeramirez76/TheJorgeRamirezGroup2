@@ -27,6 +27,7 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).parent.resolve()
 SITE_ORIGIN = "https://thejorgeramirezgroup.com"
+LOCAL_HOSTS = {"thejorgeramirezgroup.com", "www.thejorgeramirezgroup.com"}
 
 # These directories are excluded from the Vercel deployment or contain source
 # material rather than public pages. Public redirect files under ``tools/`` are
@@ -115,10 +116,16 @@ def load_redirect_sources() -> set[str]:
 
 def resolve_link(src_path: Path, href: str) -> Path | None:
     """Resolve a relative href; return None for external or script-only URLs."""
-    if href.startswith(("http://", "https://", "//", "mailto:", "tel:", "sms:", "javascript:", "data:")):
+    if href.startswith(("mailto:", "tel:", "sms:", "javascript:", "data:")):
         return None
     if "${" in href or "{{" in href:
         return None
+    parsed = urlparse(href if not href.startswith("//") else "https:" + href)
+    if parsed.scheme in {"http", "https"}:
+        if parsed.netloc.lower() not in LOCAL_HOSTS:
+            return None
+        clean = unquote(parsed.path or "/")
+        return ROOT / clean.lstrip("/")
     if href.startswith("#"):
         return src_path
     clean = unquote(href.split("#", 1)[0].split("?", 1)[0])
@@ -143,6 +150,10 @@ def check_link_target(target: Path | None, redirect_sources: set[str]) -> str:
     """Return ``ok``, ``missing`` or ``external`` for an internal target."""
     if target is None:
         return "external"
+    try:
+        target.relative_to(ROOT)
+    except ValueError:
+        return "missing"
     if target.exists():
         return "ok"
     variants = (target.with_suffix(".html"), target / "index.html")
@@ -152,6 +163,33 @@ def check_link_target(target: Path | None, redirect_sources: set[str]) -> str:
     if route and route in redirect_sources:
         return "ok"
     return "missing"
+
+
+def target_html_file(target: Path) -> Path | None:
+    """Return the repository HTML file represented by an internal clean URL."""
+    candidates = (target, target.with_suffix(".html"), target / "index.html")
+    for candidate in candidates:
+        if candidate.is_file() and candidate.suffix.lower() == ".html":
+            return candidate
+    return None
+
+
+def fragment_exists(target: Path, fragment: str) -> bool:
+    """Check a same-page or cross-page HTML fragment against id/name attributes."""
+    if not fragment:
+        return True
+    html_path = target_html_file(target)
+    if html_path is None:
+        return True
+    text = html_path.read_text(encoding="utf-8", errors="replace")
+    wanted = unquote(fragment)
+    return bool(
+        re.search(
+            rf"(?:id|name)\s*=\s*([\"']){re.escape(wanted)}\1",
+            text,
+            flags=re.I,
+        )
+    )
 
 
 def canonical_href(text: str) -> str:
@@ -257,10 +295,14 @@ def audit_page(path: Path, redirect_sources: set[str]) -> dict:
 
         for href in HREF_RE.findall(text):
             target = resolve_link(path, href)
-            if target == path:
-                continue
-            if check_link_target(target, redirect_sources) == "missing":
+            status = check_link_target(target, redirect_sources)
+            if status == "missing":
                 report["broken_links"].append(href)
+                continue
+            fragment = urlparse(href if not href.startswith("//") else "https:" + href).fragment
+            route = route_for_target(target) if target is not None else None
+            if target is not None and route not in redirect_sources and not fragment_exists(target, fragment):
+                report["broken_links"].append(f"{href} (missing fragment)")
 
         for image_match in IMG_RE.finditer(text):
             attrs = parse_meta_attrs(image_match.group(1))
