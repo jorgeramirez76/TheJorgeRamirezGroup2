@@ -104,16 +104,60 @@ FAIR_HOUSING_FORBIDDEN = (
 )
 
 # ---- Literals in the frozen template (template_source.html) to swap out ----
-OLD_TITLE = "Buying a Home in Cranford NJ 2026 | Jorge Ramirez"
-OLD_DESC = ("Buying a home in Cranford NJ in 2026? Median prices ~$510K, neighborhood overview, "
-            "Cranford School District, commute info, and expert t")
-OLD_TW_DESC = ("Buying a home in Cranford NJ in 2026? Median prices ~$510K, neighborhood overview, "
-               "Cranford School District (one of Union County")
-OLD_KEYWORDS = ("Cranford NJ homes for sale, buying home Cranford NJ, Cranford real estate 2026, "
-                "Cranford NJ neighborhoods, Cranford School District, "
-                "Union County real estate, Jorge Ramirez realtor NJ, Cranford home prices")
+OLD_TITLE = "New Jersey Home-Buying Research Guide | Jorge Ramirez"
+OLD_DESC = ("Research a New Jersey home purchase with current property records, official public "
+            "sources, and property-specific professional guidance.")
+OLD_TW_DESC = ("Research a New Jersey home purchase using current public sources and "
+               "property-specific information.")
+OLD_KEYWORDS = ("New Jersey home buying, NJ buyer guide, property records, NJ Transit schedules, "
+                "NJDOE School Performance Reports, home inspection")
 OLD_SLUG = "buying-a-home-in-new-jersey-2026"
-OLD_GEO = "Cranford, New Jersey"
+OLD_GEO = "New Jersey"
+
+# Immutable copies of the safe template placeholders.  Assembly checks these
+# independently from the replace constants above so an accidental constant or
+# template edit cannot silently leave stale metadata in a review draft.
+TEMPLATE_SENTINELS = {
+    "title": "New Jersey Home-Buying Research Guide | Jorge Ramirez",
+    "description": (
+        "Research a New Jersey home purchase with current property records, official public "
+        "sources, and property-specific professional guidance."
+    ),
+    "twitter description": (
+        "Research a New Jersey home purchase using current public sources and "
+        "property-specific information."
+    ),
+    "keywords": (
+        "New Jersey home buying, NJ buyer guide, property records, NJ Transit schedules, "
+        "NJDOE School Performance Reports, home inspection"
+    ),
+    "slug": "buying-a-home-in-new-jersey-2026",
+    "geo": "New Jersey",
+}
+
+UNVERIFIED_PERSONAL_CLAIMS = (
+    re.compile(
+        r"\b(?:jorge|i|he)\s+(?:(?:have|has|had|personally|also)\s+){0,3}"
+        r"(?:bought|owned|renovated|flipped|resold|rehabbed)\b",
+        re.I,
+    ),
+    re.compile(
+        r"\b(?:i\s+am|jorge\s+is|he\s+is|as)\s+(?:an?\s+)?"
+        r"(?:hands-on\s+|real\s+estate\s+)?(?:investor|flipper|landlord)\b",
+        re.I,
+    ),
+    re.compile(r"\b(?:his|my)\s+(?:own\s+)?rental\s+portfolio\b", re.I),
+    re.compile(
+        r"\b(?:i|jorge|he)\b[^.!?]{0,80}\b(?:managed|directed)\s+"
+        r"(?:construction\s+)?crews?\b",
+        re.I,
+    ),
+    re.compile(
+        r"\b(?:i|jorge|he)\b[^.!?]{0,80}\b(?:managed|handled|coordinated|helped)\s+"
+        r"(?:dozens|hundreds)\b",
+        re.I,
+    ),
+)
 
 HERO_IMG = "/images/blog-hero/decluttering-living-room-768.webp"
 
@@ -395,6 +439,79 @@ def build_article_html(post, month_year):
 <a href="../index.html#contact" class="cta-button">Schedule a Free Consultation</a></p>"""
 
 
+def assert_assembled_html(html_out, post, slug, title, geo):
+    """Fail closed if template metadata or unverified personal history survives."""
+
+    configured_sentinels = {
+        "title": OLD_TITLE,
+        "description": OLD_DESC,
+        "twitter description": OLD_TW_DESC,
+        "keywords": OLD_KEYWORDS,
+        "slug": OLD_SLUG,
+        "geo": OLD_GEO,
+    }
+    if configured_sentinels != TEMPLATE_SENTINELS:
+        raise RuntimeError("template replacement constants do not match audited sentinels")
+
+    expected = {
+        "title": [esc(title)],
+        "description": [esc(post["meta_description"])],
+        "keywords": [esc(post["keywords"])],
+        "ai-content-declaration": ["ai-assisted, source-checked"],
+        "twitter:title": [esc(title)],
+        "twitter:description": [esc(post["meta_description"])],
+        "geo.placename": [esc(geo)],
+        "og:title": [esc(title)],
+        "og:description": [esc(post["meta_description"])],
+        "og:url": [f"{SITE}/blog/{slug}"],
+        "canonical": [f"{SITE}/blog/{slug}"],
+    }
+    actual = {
+        "title": re.findall(r"<title>(.*?)</title>", html_out, flags=re.I | re.S),
+        "description": re.findall(
+            r'<meta\s+name="description"\s+content="([^"]*)"', html_out, flags=re.I
+        ),
+        "keywords": re.findall(
+            r'<meta\s+name="keywords"\s+content="([^"]*)"', html_out, flags=re.I
+        ),
+        "ai-content-declaration": re.findall(
+            r'<meta\s+name="ai-content-declaration"\s+content="([^"]*)"',
+            html_out,
+            flags=re.I,
+        ),
+        "twitter:title": re.findall(
+            r'<meta\s+name="twitter:title"\s+content="([^"]*)"', html_out, flags=re.I
+        ),
+        "twitter:description": re.findall(
+            r'<meta\s+name="twitter:description"\s+content="([^"]*)"', html_out, flags=re.I
+        ),
+        "geo.placename": re.findall(
+            r'<meta\s+name="geo\.placename"\s+content="([^"]*)"', html_out, flags=re.I
+        ),
+        "og:title": re.findall(
+            r'<meta\s+property="og:title"\s+content="([^"]*)"', html_out, flags=re.I
+        ),
+        "og:description": re.findall(
+            r'<meta\s+property="og:description"\s+content="([^"]*)"', html_out, flags=re.I
+        ),
+        "og:url": re.findall(
+            r'<meta\s+property="og:url"\s+content="([^"]*)"', html_out, flags=re.I
+        ),
+        "canonical": re.findall(
+            r'<link\s+rel="canonical"\s+href="([^"]*)"', html_out, flags=re.I
+        ),
+    }
+    mismatches = [label for label, value in actual.items() if value != expected[label]]
+    if mismatches:
+        raise RuntimeError(
+            "assembled template metadata mismatch: " + ", ".join(sorted(mismatches))
+        )
+
+    review_text = html.unescape(re.sub(r"<[^>]+>", " ", html_out))
+    if any(pattern.search(review_text) for pattern in UNVERIFIED_PERSONAL_CLAIMS):
+        raise RuntimeError("assembled content contains unverified personal-history claim")
+
+
 def assemble(post, slug, geo, today, month_year):
     with open(TEMPLATE, encoding="utf-8") as f:
         t = f.read()
@@ -427,9 +544,10 @@ def assemble(post, slug, geo, today, month_year):
     t = t.replace(OLD_KEYWORDS, esc(post["keywords"]))
     t = t.replace(OLD_SLUG, slug)
     t = t.replace(OLD_GEO, esc(geo))
-    t = t.replace('content="human-authored"', 'content="ai-assisted"')
+    t = t.replace('content="human-authored"', 'content="ai-assisted, source-checked"')
     t = re.sub(r'name="last-updated" content="[\d-]+"',
                f'name="last-updated" content="{today}"', t)
+    assert_assembled_html(t, post, slug, title, geo)
     return t
 
 
