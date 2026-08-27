@@ -630,6 +630,21 @@ FILE_REPLACEMENTS: dict[str, tuple[tuple[re.Pattern[str], str], ...]] = {
     ),
     "es/index.html": (
         (
+            re.compile(
+                r'<span class="hero-eyebrow">agente inmobiliario con licencia '
+                r'en Nueva Jersey en NJ</span>'
+            ),
+            '<span class="hero-eyebrow">Agente inmobiliario con licencia en Nueva Jersey</span>',
+        ),
+        (
+            re.compile(
+                r'alt="Jorge Ramirez - agente inmobiliario con licencia en Nueva Jersey '
+                r'en los Condados de Union, Essex y Morris en NJ"'
+            ),
+            'alt="Jorge Ramirez, agente inmobiliario con licencia en Nueva Jersey '
+            'para los condados de Union, Essex y Morris"',
+        ),
+        (
             re.compile(r'<span class="stat-number" data-target="138" data-suffix="">103</span>\s*<span class="stat-label">Comunidades de NJ</span>'),
             '<span class="stat-number" data-target="2017" data-suffix="">2017</span>\n                <span class="stat-label">Agente a Tiempo Completo Desde</span>',
         ),
