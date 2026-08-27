@@ -41,11 +41,6 @@ DECLARATION_PAGES = OWNED_PAGES + (
     "tools/blog-automation/template_source.html",
 )
 
-# TODO(residual-content-track): remove this path-exact allowlist when the
-# luxury EN/ES residual repair lands.  New sitemap-scoped offenders still fail
-# closed, and the test continues to pass once this path is repaired.
-KNOWN_RESIDUAL_PERSONAL_HISTORY = {"es/luxury-homes-nj.html"}
-
 def read(relative: str) -> str:
     return (ROOT / relative).read_text(encoding="utf-8")
 
@@ -316,12 +311,7 @@ class VerifiedServiceContentTests(unittest.TestCase):
         for label, pattern in patterns.items():
             if any(pattern.search(sentence) for sentence in template_sentences) or pattern.search(template_head):
                 offenders.append(f"tools/blog-automation/template_source.html: {label}")
-        unexpected = [
-            offender
-            for offender in offenders
-            if offender.split(":", 1)[0] not in KNOWN_RESIDUAL_PERSONAL_HISTORY
-        ]
-        self.assertEqual([], unexpected)
+        self.assertEqual([], offenders)
 
     def test_retired_landing_generator_cannot_overwrite_any_manual_page(self) -> None:
         generator = load_script("generate_new_landing_pages.py", "verified_landing_generator")
