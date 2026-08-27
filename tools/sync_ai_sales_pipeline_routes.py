@@ -18,6 +18,7 @@ VERCEL_PATH = ROOT / "vercel.json"
 PROGRAMMATIC_MANIFEST_PATH = ROOT / "data" / "programmatic-doorway-retirement.json"
 FEATURE_SOURCE = re.compile(r"^/(?:es/)?features/[^/:*()]+(?:\.html)?$")
 ALIAS = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+CANONICAL_ORIGIN = "https://thejorgeramirezgroup.com"
 
 
 class RouteMigrationError(RuntimeError):
@@ -113,6 +114,18 @@ def _programmatic_sources() -> set[str]:
     }
 
 
+def _is_canonical_host_rule(rule: dict[str, Any]) -> bool:
+    return (
+        str(rule.get("source", "")) == "/(.*)"
+        and str(rule.get("destination", "")) == CANONICAL_ORIGIN + "/$1"
+        and any(
+            condition.get("type") == "host"
+            for condition in rule.get("has", [])
+            if isinstance(condition, dict)
+        )
+    )
+
+
 def synchronized_vercel(manifest: dict[str, Any], current: str) -> str:
     """Return Vercel config with exactly the reviewed legacy feature redirects."""
 
@@ -146,11 +159,20 @@ def synchronized_vercel(manifest: dict[str, Any], current: str) -> str:
         raise RouteMigrationError(f"redirect destinations would chain: {sorted(chained)}")
 
     # Keep compatibility with the existing deterministic route synchronizers:
-    # authority routes stay first, and these exact migration routes stay immediately
-    # before the managed programmatic doorway block and all path patterns.
+    # the canonical-host guards stay first, authority routes follow, and these exact
+    # migrations stay before the managed programmatic block and all path patterns.
     programmatic = _programmatic_sources()
+    canonical_preamble_end = 0
+    while (
+        canonical_preamble_end < len(preserved)
+        and _is_canonical_host_rule(preserved[canonical_preamble_end])
+    ):
+        canonical_preamble_end += 1
+
     insertion_index = len(preserved)
-    for index, rule in enumerate(preserved):
+    for index, rule in enumerate(
+        preserved[canonical_preamble_end:], start=canonical_preamble_end
+    ):
         source = str(rule.get("source", ""))
         if source in programmatic or rule.get("has") or any(mark in source for mark in (":", "*", "(")):
             insertion_index = index

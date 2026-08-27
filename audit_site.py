@@ -109,6 +109,10 @@ def load_redirect_sources() -> set[str]:
     routes: set[str] = set()
     for entry in config.get("redirects", []):
         source = entry.get("source", "")
+        # Host-conditional canonicalization rules do not redirect the apex-host
+        # page represented by a local HTML file.
+        if entry.get("has") or entry.get("missing"):
+            continue
         # Dynamic patterns cannot correspond to a single checked HTML file.
         if source and not any(char in source for char in (":", "*", "(", ")")):
             routes.add(normalize_route(source))

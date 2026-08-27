@@ -148,8 +148,11 @@ class AiSalesPipelineRouteMigrationTests(unittest.TestCase):
         pattern_indexes = [
             index
             for index, rule in enumerate(redirects)
-            if any(mark in str(rule.get("source", "")) for mark in (":", "*", "("))
-            or rule.get("has")
+            if index >= 2
+            and (
+                any(mark in str(rule.get("source", "")) for mark in (":", "*", "("))
+                or rule.get("has")
+            )
         ]
         self.assertLess(max(feature_indexes), min(pattern_indexes))
 

@@ -77,13 +77,17 @@ class LiveRelativeCardRedirectRecoveryTests(unittest.TestCase):
                 self.assertNotIn("has", matches[0])
                 self.assertNotIn("missing", matches[0])
 
-    def test_exact_rules_win_first_match_and_precede_catchalls(self) -> None:
+    def test_exact_rules_win_the_first_apex_match_despite_host_catchalls(self) -> None:
         catchall_indexes = [
             index
             for index, rule in enumerate(self.redirects)
-            if rule.get("source") == "/:path*"
+            if rule.get("source") == "/(.*)"
         ]
         self.assertTrue(catchall_indexes, "expected the host canonicalization catchalls")
+        self.assertTrue(
+            all(self.redirects[index].get("has") for index in catchall_indexes),
+            "root catchalls must remain host-conditional on apex requests",
+        )
 
         for source in sorted(RECOVERY_ROUTES):
             result = self.first_apex_redirect(source)
@@ -92,7 +96,8 @@ class LiveRelativeCardRedirectRecoveryTests(unittest.TestCase):
                 index, rule, destination = result
                 self.assertEqual(source, rule["source"])
                 self.assertEqual(DESTINATION, destination)
-                self.assertLess(index, min(catchall_indexes))
+                self.assertNotIn("has", rule)
+                self.assertGreater(index, min(catchall_indexes))
 
     def test_clean_urls_and_raw_html_requests_both_resolve_one_hop(self) -> None:
         self.assertIs(True, self.config.get("cleanUrls"))

@@ -43,7 +43,28 @@ def redirect_config(data: dict, current: str) -> str:
         for record in data["consolidations"]
         for candidate in (record["route"], record["route"] + ".html")
     ]
-    config["redirects"] = desired + preserved
+    def is_canonical_host_rule(rule: dict) -> bool:
+        return (
+            str(rule.get("source", "")) == "/(.*)"
+            and str(rule.get("destination", "")) == SITE + "/$1"
+            and any(
+                condition.get("type") == "host"
+                for condition in rule.get("has", [])
+                if isinstance(condition, dict)
+            )
+        )
+
+    canonical_preamble_end = 0
+    while (
+        canonical_preamble_end < len(preserved)
+        and is_canonical_host_rule(preserved[canonical_preamble_end])
+    ):
+        canonical_preamble_end += 1
+    config["redirects"] = (
+        preserved[:canonical_preamble_end]
+        + desired
+        + preserved[canonical_preamble_end:]
+    )
     return json.dumps(config, ensure_ascii=False, indent=2) + "\n"
 
 

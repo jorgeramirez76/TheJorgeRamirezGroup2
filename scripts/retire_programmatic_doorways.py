@@ -374,8 +374,30 @@ def expected_vercel(source: str, mappings: dict[str, str]) -> str:
         if destination in unmanaged_sources:
             raise RetirementContractError(f"redirect destination would chain: {destination}")
 
+    def is_canonical_host_rule(item: dict[str, object]) -> bool:
+        return (
+            str(item.get("source", "")) == "/(.*)"
+            and str(item.get("destination", "")) == SITE + "/$1"
+            and any(
+                condition.get("type") == "host"
+                for condition in item.get("has", [])
+                if isinstance(condition, dict)
+            )
+        )
+
+    canonical_preamble_end = 0
+    while (
+        canonical_preamble_end < len(unmanaged)
+        and is_canonical_host_rule(unmanaged[canonical_preamble_end])
+    ):
+        canonical_preamble_end += 1
+
+    # Host canonicalization is a fail-closed preamble. Managed path redirects
+    # belong after it but before every other conditional or dynamic route.
     insertion_index = len(unmanaged)
-    for index, item in enumerate(unmanaged):
+    for index, item in enumerate(
+        unmanaged[canonical_preamble_end:], start=canonical_preamble_end
+    ):
         source_value = str(item.get("source", ""))
         if item.get("has") or ":" in source_value:
             insertion_index = index

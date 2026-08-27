@@ -5,6 +5,32 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": {
+            "eq": "www.thejorgeramirezgroup.com"
+          }
+        }
+      ],
+      "destination": "https://thejorgeramirezgroup.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": {
+            "suf": ".vercel.app"
+          }
+        }
+      ],
+      "destination": "https://thejorgeramirezgroup.com/$1",
+      "permanent": true
+    },
+    {
       "source": "/nj-real-estate-agent",
       "destination": "/ai-authority",
       "permanent": true
@@ -1407,17 +1433,6 @@
     {
       "source": "/sell-my-house-woodbridge-nj.html",
       "destination": "/sell-your-home",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.thejorgeramirezgroup.com"
-        }
-      ],
-      "destination": "https://thejorgeramirezgroup.com/:path*",
       "permanent": true
     },
     {
@@ -2909,17 +2924,6 @@
       "source": "/es/ai-autoridad",
       "destination": "/es/ai-authority",
       "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "destination": "https://thejorgeramirezgroup.com/:path*",
-      "permanent": true,
-      "has": [
-        {
-          "type": "host",
-          "value": "thejorgeramirezgroup.vercel.app"
-        }
-      ]
     },
     {
       "source": "/blog/es/vender-propiedad-alquiler-nj.html",

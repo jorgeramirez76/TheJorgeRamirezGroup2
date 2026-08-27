@@ -339,20 +339,47 @@ def main() -> int:
     # and an explicit one-hop route for legacy /realtor/*.html requests.
     if config.get("cleanUrls") is not True or config.get("trailingSlash") is not False:
         failures.append("vercel.json: cleanUrls must be true and trailingSlash false")
-    www_redirect = next(
-        (
-            item
-            for item in redirects
-            if any(
-                condition.get("type") == "host"
-                and condition.get("value") == "www.thejorgeramirezgroup.com"
-                for condition in item.get("has", [])
-            )
-        ),
-        None,
-    )
-    if not www_redirect or www_redirect.get("destination") != f"{ORIGIN}/:path*" or not www_redirect.get("permanent"):
-        failures.append("vercel.json: www must permanently redirect to the HTTPS apex")
+
+    def host_matches(item: dict, hostname: str) -> bool:
+        for condition in item.get("has", []):
+            if condition.get("type") != "host":
+                continue
+            value = condition.get("value")
+            if isinstance(value, str):
+                try:
+                    if re.fullmatch(value, hostname):
+                        return True
+                except re.error:
+                    continue
+            elif isinstance(value, dict):
+                if set(value) == {"eq"} and hostname == value["eq"]:
+                    return True
+                if set(value) == {"suf"} and hostname.endswith(str(value["suf"])):
+                    return True
+        return False
+
+    canonical_host_rules = [
+        item
+        for item in redirects
+        if item.get("source") == "/(.*)"
+        and item.get("destination") == f"{ORIGIN}/$1"
+        and item.get("permanent") is True
+        and item.get("has")
+    ]
+    expected_host_coverage = {
+        "www.thejorgeramirezgroup.com": 1,
+        "thejorgeramirezgroup-preview.vercel.app": 1,
+        "thejorgeramirezgroup.com": 0,
+        "preview.vercel.app.example.com": 0,
+    }
+    if canonical_host_rules != redirects[:2] or any(
+        sum(host_matches(item, hostname) for item in canonical_host_rules) != expected
+        for hostname, expected in expected_host_coverage.items()
+    ):
+        failures.append(
+            "vercel.json: leading root-safe 308 guards must canonicalize www and "
+            "every *.vercel.app host without matching the apex"
+        )
     for item in redirects:
         if not item.get("permanent"):
             failures.append(f"vercel.json: redirect is not permanent: {item.get('source')}")

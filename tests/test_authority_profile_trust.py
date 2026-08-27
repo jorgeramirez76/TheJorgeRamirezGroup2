@@ -42,7 +42,9 @@ class AuthorityProfileTrustTests(unittest.TestCase):
         cls.redirect_sources = {
             item["source"]
             for item in json.loads((ROOT / "vercel.json").read_text(encoding="utf-8")).get("redirects", [])
-            if not re.search(r"[:*]", item.get("source", ""))
+            if not item.get("has")
+            and not item.get("missing")
+            and not re.search(r"[:*]", item.get("source", ""))
         }
 
     def test_pages_use_verified_identity_copy_and_sources(self) -> None:
