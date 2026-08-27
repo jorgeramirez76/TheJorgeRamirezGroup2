@@ -1,4 +1,4 @@
-# Site Audit Report — 285 indexable pages
+# Site Audit Report — 284 indexable pages
 
 Public HTML files classified: 1273.
 
@@ -6,10 +6,10 @@ Public HTML files classified: 1273.
 
 | Classification | Files |
 |---|---:|
-| indexable | 285 |
+| indexable | 284 |
 | route-alias | 2 |
-| redirect | 544 |
-| noindex | 442 |
+| redirect | 547 |
+| noindex | 440 |
 | canonicalized | 0 |
 
 ## Actionable issue summary

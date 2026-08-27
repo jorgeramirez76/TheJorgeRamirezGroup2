@@ -196,8 +196,8 @@ class FullSurfaceTechnicalContractTests(unittest.TestCase):
             and not any(mark in str(item.get("source", "")) for mark in (":", "*", "("))
         }
 
-    def test_sitemaps_have_exactly_285_unique_resolvable_canonical_pages(self) -> None:
-        self.assertEqual(285, len(self.urls))
+    def test_sitemaps_have_exactly_284_unique_resolvable_canonical_pages(self) -> None:
+        self.assertEqual(284, len(self.urls))
         self.assertEqual(len(self.urls), len(set(self.urls)))
         self.assertEqual({public_path(url) for url in self.urls}, set(self.pages))
         for url in self.urls:

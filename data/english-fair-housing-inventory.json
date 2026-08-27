@@ -4,8 +4,6 @@
     "404.html",
     "55-plus-communities-nj.html",
     "ai-authority.html",
-    "best-real-estate-agents-essex-county-nj-2026.html",
-    "best-real-estate-agents-morris-county-nj-2026.html",
     "best-real-estate-agents-union-county-nj-2026.html",
     "blog/absentee-owner-nj-sell-rental-property.html",
     "blog/buying-a-home-in-new-jersey-2026.html",
@@ -44,7 +42,6 @@
     "blog/nj-seller-disclosure-requirements.html",
     "blog/oil-tank-sweep-nj-home-buyers-sellers.html",
     "blog/probate-real-estate-nj-guide.html",
-    "blog/renting-vs-buying-nj-2026.html",
     "blog/selling-a-house-as-executor-nj.html",
     "blog/selling-a-house-as-is-in-nj.html",
     "blog/selling-inherited-home-nj.html",
@@ -518,7 +515,10 @@
       "blog/westfield-nj-real-estate-market-2025.html"
     ],
     "redirects": [
+      "best-real-estate-agents-essex-county-nj-2026.html",
+      "best-real-estate-agents-morris-county-nj-2026.html",
       "blog/first-time-home-buyer-guide-new-jersey.html",
+      "blog/renting-vs-buying-nj-2026.html",
       "blog/selling-inherited-house-multiple-heirs-nj.html",
       "communities/basking-ridge/index.html",
       "communities/bayonne/index.html",
