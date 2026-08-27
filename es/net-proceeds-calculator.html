@@ -17,13 +17,14 @@
 
     <title>Calculadora de Ganancia Neta del Vendedor en NJ 2026</title>
     <meta name="title" content="Calculadora de Ganancia Neta del Vendedor en NJ 2026 — Lo que Realmente te Llevas | Jorge Ramirez">
-    <meta name="description" content="Calculadora gratuita de ganancia neta del vendedor en NJ. Mira exactamente cuánto te queda después de comisión, impuesto de transferencia, abogado, saldo.">
+    <meta name="description" content="Estima tu ganancia neta en NJ con el monto o porcentaje de compensación del corredor de tu acuerdo escrito y otros gastos de la venta.">
     <meta name="keywords" content="calculadora ganancia neta vendedor NJ, cuánto voy a ganar vendiendo mi casa NJ, hoja neta del vendedor NJ, calculadora venta de casa NJ, cuál es mi neto después de vender NJ, calculadora impuesto de transferencia inmobiliaria NJ">
     <meta name="author" content="Jorge Ramirez">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="last-updated" content="2026-08-27">
 
     <meta name="ai-content-declaration" content="human-authored">
-    <meta name="llm-context" content="Calculadora gratuita de ganancia neta del vendedor en NJ por Jorge Ramirez (Licencia NJ #1754604). Estima lo que un vendedor de casa en NJ se lleva después de comisión, impuesto de transferencia inmobiliaria (RTF), abogado, saldo de la hipoteca y costos de cierre. Contacto: 908-230-7844.">
+    <meta name="llm-context" content="Calculadora gratuita de ganancia neta del vendedor en NJ por Jorge Ramirez (Licencia NJ #1754604). Usa el porcentaje o monto fijo de compensación del corredor que el vendedor ingresa desde un acuerdo escrito, además del impuesto de transferencia, abogado, saldo hipotecario y otros gastos. La compensación del corredor es totalmente negociable y no está fijada por ley. Contacto: 908-230-7844.">
     <meta name="llm-policy" content="allow-training, allow-citation, require-attribution">
     <meta name="citation-format" content="Jorge Ramirez, The Jorge Ramirez Group, thejorgeramirezgroup.com, Licencia de Bienes Raíces NJ #1754604">
 
@@ -33,12 +34,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thejorgeramirezgroup.com/es/net-proceeds-calculator">
     <meta property="og:title" content="Calculadora de Ganancia Neta del Vendedor en NJ 2026 | Jorge Ramirez">
-    <meta property="og:description" content="Mira exactamente cuánto vas a ganar vendiendo tu casa en NJ. Comisión, impuesto de transferencia, abogado, saldo de la hipoteca — todo en una sola vista.">
+    <meta property="og:description" content="Estima tu ganancia neta en NJ con el monto o porcentaje de compensación de tu acuerdo escrito y otros gastos de la venta.">
     <meta property="og:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Calculadora de Ganancia Neta del Vendedor en NJ 2026 | Jorge Ramirez">
-    <meta name="twitter:description" content="Lo que realmente te llevas de la venta de tu casa en NJ. Impuesto de transferencia inmobiliaria, comisión, saldo de la hipoteca y costos de cierre incluidos.">
+    <meta name="twitter:description" content="Estima tu ganancia neta en NJ con el monto o porcentaje de compensación del corredor de tu acuerdo escrito.">
     <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
 
     <link rel="canonical" href="https://thejorgeramirezgroup.com/es/net-proceeds-calculator">
@@ -70,6 +71,7 @@
             border-radius: 8px; font-size: 1rem; font-family: inherit; box-sizing: border-box;
         }
         .input-group input:focus, .input-group select:focus { outline: none; border-color: #2C2C2C; }
+        .input-help { display: block; color: #666; font-size: 0.78rem; line-height: 1.4; margin-top: 6px; }
         .calc-btn {
             width: 100%; padding: 16px; background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%);
             color: white; border: none; border-radius: 8px; font-size: 1.1rem;
@@ -104,7 +106,8 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Calculadora de Ganancia Neta del Vendedor en NJ",
-      "url": "https://thejorgeramirezgroup.com/net-proceeds-calculator",
+      "url": "https://thejorgeramirezgroup.com/es/net-proceeds-calculator",
+      "description": "Estima la ganancia neta del vendedor en NJ con un porcentaje o monto fijo de compensación del corredor y los gastos ingresados por el usuario.",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Web",
       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
@@ -114,7 +117,8 @@
         "name": "Jorge Ramirez",
         "telephone": "+1-908-230-7844",
         "email": "jorge.ramirez@kw.com"
-      }
+      },
+      "dateModified": "2026-08-27"
     }
     </script>
 
@@ -159,7 +163,7 @@
     <div id="main" class="calc-wrapper" role="main">
         <div class="calc-header">
             <h1>Calculadora de Ganancia Neta del Vendedor en NJ</h1>
-            <p>Antes de listar, conoce el número real. Esta calculadora toma en cuenta la comisión, el Impuesto de Transferencia Inmobiliaria de NJ, honorarios de abogado, saldo de la hipoteca y costos de cierre — para que veas lo que realmente te llevas.</p>
+            <p>Ingresa el monto o porcentaje de compensación del corredor de tu acuerdo escrito junto con el Impuesto de Transferencia Inmobiliaria de NJ, honorarios de abogado, saldo hipotecario y otros gastos para estimar tu ganancia neta.</p>
         </div>
 
         <div class="calc-card">
@@ -173,8 +177,16 @@
                     <input type="number" id="payoff" value="280000" min="0" step="5000">
                 </div>
                 <div class="input-group">
-                    <label for="commission">Comisión Total (%)</label>
-                    <input type="number" id="commission" value="5" min="0" max="10" step="0.25">
+                    <label for="brokerCompensationMethod">Método de Compensación del Corredor</label>
+                    <select id="brokerCompensationMethod" onchange="updateBrokerCompensationField()">
+                        <option value="percentage">Porcentaje (%)</option>
+                        <option value="flat">Monto fijo en dólares ($)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="brokerCompensation" id="brokerCompensationLabel">Compensación del Corredor del Acuerdo Escrito (%)</label>
+                    <input type="number" id="brokerCompensation" min="0" step="0.01" inputmode="decimal" placeholder="Ingresa el porcentaje acordado" required aria-describedby="brokerCompensationHelp" oninput="this.setCustomValidity('')">
+                    <small class="input-help" id="brokerCompensationHelp">Ingresa el porcentaje indicado en tu acuerdo escrito; la calculadora no agrega uno.</small>
                 </div>
                 <div class="input-group">
                     <label for="attorney">Honorarios de Abogado ($)</label>
@@ -191,10 +203,10 @@
             </div>
 
             <label style="display:flex;align-items:center;gap:10px;font-weight:500;color:#333;margin:0 0 20px;font-size:0.94rem;"><input type="checkbox" id="reducedRate" style="width:auto;margin:0;">El vendedor tiene 62 años o más, es ciego, tiene discapacidad o ingresos bajos/moderados (tarifa reducida)</label>
-                        <button class="calc-btn" onclick="calcNet()">Calcular Mi Ganancia Neta</button>
+                        <button type="button" class="calc-btn" onclick="calcNet()">Calcular Mi Ganancia Neta</button>
 
-            <div class="results" id="results">
-                <h2>Desglose Estimado de Ganancia Neta</h2>
+            <div class="results" id="results" aria-live="polite" aria-labelledby="results-heading">
+                <h2 id="results-heading">Desglose Estimado de Ganancia Neta</h2>
                 <div id="lineItems"></div>
 
                 <div class="cta-box">
@@ -209,8 +221,8 @@
             <h2>Entendiendo Tus Costos como Vendedor en NJ</h2>
             <p>Los vendedores de casa en Nueva Jersey enfrentan costos específicos que no existen en otros estados. Esto es lo que es cada partida y lo que puedes controlar.</p>
 
-            <h3>Comisión del Agente (totalmente negociable — las encuestas de NJ promedian ≈5.2%)</h3>
-            <p>Después del acuerdo de la NAR de 2024, la comisión se negocia completamente en el acuerdo de listado. En la mayoría de los mercados de NJ, los vendedores pagan una comisión total que cubre tanto al agente de listado como al del comprador — típicamente entre 4.5 y 6 por ciento combinado.</p>
+            <h3>Compensación del Corredor (usa tu acuerdo escrito)</h3>
+            <p>En Nueva Jersey, <strong>la compensación del corredor es totalmente negociable y no está fijada por ley</strong>. Puede pagarla el vendedor, el comprador o un tercero, o puede distribuirse entre firmas de corretaje; el acuerdo escrito de servicios de corretaje aplicable controla el monto y el método. Consulta el <a href="https://www.nj.gov/dobi/bulletins/blt24_11.pdf" target="_blank" rel="noopener noreferrer">Boletín 24-11 de NJDOBI</a>. Esta calculadora acepta un porcentaje o monto fijo y no agrega uno por ti.</p>
 
             <h3>Impuesto de Transferencia Inmobiliaria de NJ (aprox. 0.86% en $600K, 0.96% en $1M)</h3>
             <p>Impuesto estatal de transferencia pagado al cierre. Escalonado según el precio de venta. En una venta de $500,000, son $4,175. En una venta de $1,000,000, son $9,575. No negociable.</p>
@@ -240,7 +252,7 @@
     </footer>
 
     <script>
-        function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+        function fmt(n) { return (n < 0 ? '-$' : '$') + Math.abs(Math.round(n)).toLocaleString(); }
 
         // NJ Realty Transfer Fee — tiered rate table (2026 rates for non-senior sellers)
         function calcRTF(price) {
@@ -280,31 +292,67 @@
             return price * r;
         }
 
+        function updateBrokerCompensationField() {
+            const method = document.getElementById('brokerCompensationMethod').value;
+            const input = document.getElementById('brokerCompensation');
+            const isFlat = method === 'flat';
+            document.getElementById('brokerCompensationLabel').textContent = isFlat
+                ? 'Compensación del Corredor del Acuerdo Escrito ($)'
+                : 'Compensación del Corredor del Acuerdo Escrito (%)';
+            document.getElementById('brokerCompensationHelp').textContent = isFlat
+                ? 'Ingresa el monto fijo indicado en tu acuerdo escrito; la calculadora no agrega uno.'
+                : 'Ingresa el porcentaje indicado en tu acuerdo escrito; la calculadora no agrega uno.';
+            input.placeholder = isFlat ? 'Ingresa el monto acordado' : 'Ingresa el porcentaje acordado';
+            input.step = isFlat ? '100' : '0.01';
+            input.value = '';
+            input.setCustomValidity('');
+            document.getElementById('results').style.display = 'none';
+        }
+
         function calcNet() {
             const salePrice = parseFloat(document.getElementById('salePrice').value) || 0;
             if (salePrice <= 0) {
                 document.getElementById('results').style.display = 'none';
                 return;
             }
+            const brokerCompensationInput = document.getElementById('brokerCompensation');
+            brokerCompensationInput.setCustomValidity('');
+            if (brokerCompensationInput.value.trim() === '') {
+                document.getElementById('results').style.display = 'none';
+                brokerCompensationInput.setCustomValidity('Ingresa la compensación del corredor de tu acuerdo escrito.');
+                brokerCompensationInput.reportValidity();
+                brokerCompensationInput.focus();
+                return;
+            }
+            if (!brokerCompensationInput.checkValidity()) {
+                document.getElementById('results').style.display = 'none';
+                brokerCompensationInput.reportValidity();
+                return;
+            }
             const payoff = parseFloat(document.getElementById('payoff').value) || 0;
-            const commPct = parseFloat(document.getElementById('commission').value) || 0;
+            const brokerCompensationMethod = document.getElementById('brokerCompensationMethod').value;
+            const brokerCompensationValue = brokerCompensationInput.valueAsNumber;
             const attorney = parseFloat(document.getElementById('attorney').value) || 0;
             const annualTax = parseFloat(document.getElementById('propertyTax').value) || 0;
             const concessions = parseFloat(document.getElementById('concessions').value) || 0;
 
-            const commission = salePrice * (commPct / 100);
+            const brokerCompensation = brokerCompensationMethod === 'flat'
+                ? brokerCompensationValue
+                : salePrice * (brokerCompensationValue / 100);
             const rtf = calcRTF(salePrice);
             const gpf = calcGPF(salePrice);
             const propTaxProrate = annualTax * (3 / 12); // assume 3 months prorated
             const closingMisc = 800;
 
-            const totalDeductions = payoff + commission + rtf + attorney + propTaxProrate + closingMisc + concessions + gpf;
+            const totalDeductions = payoff + brokerCompensation + rtf + attorney + propTaxProrate + closingMisc + concessions + gpf;
             const net = salePrice - totalDeductions;
 
             const lineItems = [
                 ['Precio de Venta', salePrice, 'positive'],
                 ['Saldo de la Hipoteca', -payoff, 'negative'],
-                [`Comisión del Agente (${commPct}%)`, -commission, 'negative'],
+                [brokerCompensationMethod === 'flat'
+                    ? 'Compensación del Corredor (monto fijo)'
+                    : `Compensación del Corredor (${brokerCompensationValue}%)`, -brokerCompensation, 'negative'],
                 ['Impuesto de Transferencia Inmobiliaria NJ (escalonado)', -rtf, 'negative'],
                 ['Honorarios de Abogado', -attorney, 'negative'],
                 ['Impuesto a la Propiedad Prorrateado (~3 meses)', -propTaxProrate, 'negative'],
@@ -321,7 +369,7 @@
                 `<div class="line-item ${cls}"><span class="label">${label}</span><span class="amount">${fmt(amt)}</span></div>`
             ).join('') +
             `<div class="line-item total"><span class="label">Neto Estimado para Ti</span><span class="amount">${fmt(net)}</span></div>` +
-            `<div style="margin-top:8px; color:#666; font-size:0.85rem; text-align:center;">Eso es ${(net/salePrice*100).toFixed(1)}% de tu precio de venta que te llevas. Rango neto típico de NJ: 78-92% dependiendo de la hipoteca y el nivel de precio.</div>`;
+            `<div style="margin-top:8px; color:#666; font-size:0.85rem; text-align:center;">Esta estimación combina tus datos con los cálculos indicados de tres meses de impuestos a la propiedad prorrateados y $800 de costos varios de cierre. Confirma las cifras y condiciones de pago finales en tus acuerdos escritos y documentos de cierre.</div>`;
 
             document.getElementById('lineItems').innerHTML = html;
             document.getElementById('results').style.display = 'block';

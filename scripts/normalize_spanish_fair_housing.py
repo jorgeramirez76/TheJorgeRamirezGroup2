@@ -292,7 +292,14 @@ FILE_REPLACEMENTS: dict[str, tuple[tuple[str, str], ...]] = {
     ),
     "es/blog/moving-from-nyc-to-nj-guide.html": (
         ("Todo lo que los profesionales y las familias de NYC necesitan saber para mudarse a Nueva Jersey", "Información práctica para mudarse de NYC a Nueva Jersey"),
-        ("pueblo que se ajuste a tu vida y luego negociar el mejor", "municipio que coincida con tus criterios y luego negociar una oferta fundamentada"),
+        (
+            "Su trabajo es ayudarte a encontrar el pueblo que se ajuste a tu vida y luego negociar el mejor trato posible en la casa que elijas.",
+            "Su trabajo es ayudarte a comparar información verificable de cada municipio y, cuando elijas una propiedad, preparar y negociar una oferta fundamentada.",
+        ),
+        (
+            "Su trabajo es ayudarte a encontrar el municipio que coincida con tus criterios y luego negociar una oferta fundamentada trato posible en la casa que elijas.",
+            "Su trabajo es ayudarte a comparar información verificable de cada municipio y, cuando elijas una propiedad, preparar y negociar una oferta fundamentada.",
+        ),
         ("vecindarios diversos", "vecindarios con distintos tipos de vivienda"),
         ("familias viajeras", "personas que viajan a NYC"),
         ("tus hijos se acercan a la edad escolar (o ya están ahí), y te diste cuenta de que el mismo dinero podría comprarte una casa de cuatro habitaciones con jardín, garaje para dos autos y algunas de las mejores escuelas públicas del país", "estás comparando cuánto espacio, transporte e impuestos puede cubrir el mismo presupuesto en Nueva Jersey"),

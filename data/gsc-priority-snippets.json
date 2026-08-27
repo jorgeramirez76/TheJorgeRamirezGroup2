@@ -538,7 +538,7 @@
       },
       "after": {
         "title": "NJ Home Sale Net Proceeds Calculator (2026)",
-        "description": "Estimate what you may keep after mortgage payoff, commission, New Jersey Realty Transfer Fee, attorney costs and other seller closing expenses."
+        "description": "Estimate NJ seller net proceeds using the broker compensation amount or percentage in your written agreement, payoff, transfer fees and other expenses."
       },
       "sync_fields": []
     },
