@@ -51,11 +51,11 @@ NEW_TAB_ATTRIBUTE = re.compile(r"\s+target\s*=\s*['\"]_blank['\"]", re.IGNORECAS
 VALUATION_PROMISE_REPLACEMENTS = (
     (
         "Start with the instant online estimate, or skip straight to a free in-person CMA — the number you can actually plan around.",
-        "Request a free CMA — a local, data-backed number you can actually plan around.",
+        "Request a free CMA — a reasoned range with its assumptions and limits.",
     ),
     (
         "Start with the instant online estimate, or go straight to a free in-person valuation — the number you can actually plan around.",
-        "Request a free valuation — a local, data-backed number you can actually plan around.",
+        "Request a free valuation — a reasoned range with its assumptions and limits.",
     ),
     ("Free instant estimate + expert CMA", "Free expert CMA"),
     ("Instant estimates at", "Free CMA requests at"),
@@ -74,37 +74,37 @@ VALUATION_PROMISE_REPLACEMENTS = (
     ),
     ("estimación instantánea", "estimación automatizada"),
     ("valoración instantánea", "valoración preparada por un agente local"),
-    ("under 60 seconds", "within 24 to 48 hours"),
-    ("less than 60 seconds", "within 24 to 48 hours"),
-    ("in under a minute", "within 24 to 48 hours"),
-    ("03 · Free · 60 Seconds", "03 · Free · 24–48 Hours"),
+    ("under 60 seconds", "after the property request is reviewed"),
+    ("less than 60 seconds", "after the property request is reviewed"),
+    ("in under a minute", "after the property request is reviewed"),
+    ("03 · Free · 60 Seconds", "03 · Free · Property Review"),
     (
         "Takes 60 seconds. No spam. No obligation.",
         "Request takes a few minutes. No spam. No obligation.",
     ),
     (
         "Opens our home valuation tool. Takes within 24 to 48 hours. No spam, no pressure.",
-        "Opens our home valuation request. Jorge follows up within 24 to 48 hours. No spam, no pressure.",
+        "Opens our home valuation request. Jorge confirms the scope and timing after reviewing it. No spam, no pressure.",
     ),
     ("free home valuation tool", "free home valuation page"),
     (
         "It's free, it takes 15 minutes, and there's zero obligation.",
-        "It's free, Jorge follows up within 24 to 48 hours, and there's zero obligation.",
+        "It's free, Jorge confirms the scope and timing after review, and there's zero obligation.",
     ),
     ("Toma 60 segundos. Sin spam. Sin compromiso.", "La solicitud toma unos minutos. Sin spam. Sin compromiso."),
     ("herramienta gratuita de valoración de casa", "página gratuita de valoración de casa"),
     ("para un estimado instantáneo", "para solicitar un CMA gratuito"),
     (
         "Es gratis, toma 15 minutos y no hay ningún compromiso.",
-        "Es gratis, Jorge da seguimiento dentro de 24 a 48 horas y no hay ningún compromiso.",
+        "Es gratis, Jorge confirma el alcance y el plazo después de revisar la solicitud y no hay ningún compromiso.",
     ),
     (
         "Jorge's free home valuation has two components: (1) an automated estimate at <a href=\"/home-valuation\">thejorgeramirezgroup.com/home-valuation</a>, and (2) a full Comparative Market Analysis (CMA) where Jorge personally reviews recent comparable sales in your neighborhood, current competition, and market trends to provide a precise value range.",
-        "Jorge's free home valuation is a full Comparative Market Analysis (CMA). Submit your property details at <a href=\"/home-valuation\">thejorgeramirezgroup.com/home-valuation</a>, then Jorge personally reviews recent comparable sales in your neighborhood, current competition, and market trends to provide a precise value range.",
+        "Jorge's free home valuation is a full Comparative Market Analysis (CMA). Submit your property details at <a href=\"/home-valuation\">thejorgeramirezgroup.com/home-valuation</a>, then Jorge reviews relevant comparable sales, current competition, property information, and market conditions to provide a reasoned range with its assumptions and limits.",
     ),
     (
         "La valoración de casa gratuita de Jorge tiene dos partes: (1) una estimación automatizada al instante en <a href=\"/home-valuation\">thejorgeramirezgroup.com/home-valuation</a>, y (2) un Análisis Comparativo de Mercado (CMA) completo en el que Jorge revisa personalmente las ventas comparables recientes en tu vecindario, la competencia actual y las tendencias del mercado para ofrecer un rango de valor preciso.",
-        "La valoración de casa gratuita de Jorge es un Análisis Comparativo de Mercado (CMA) completo. Envía los datos de tu propiedad en <a href=\"/home-valuation\">thejorgeramirezgroup.com/home-valuation</a> y Jorge revisará personalmente las ventas comparables recientes en tu vecindario, la competencia actual y las tendencias del mercado para ofrecer un rango de valor preciso.",
+        "La valoración de casa gratuita de Jorge es un Análisis Comparativo de Mercado (CMA). Envía los datos de tu propiedad en <a href=\"/home-valuation\">thejorgeramirezgroup.com/home-valuation</a> y Jorge revisará ventas comparables relevantes, la competencia actual, la información de la propiedad y las condiciones del mercado para ofrecer un rango razonado con sus supuestos y limitaciones.",
     ),
     (
         "Herramienta de valoración en línea: https://thejorgeramirezgroup.com/home-valuation.",
@@ -113,15 +113,15 @@ VALUATION_PROMISE_REPLACEMENTS = (
     ("Vea una estimación en línea del valor de su casa", "Solicite una valoración del valor de su casa"),
     (
         "La herramienta gratis le da una primera cifra del valor de mercado de su casa en New Jersey. Escriba su dirección y la ve en el momento.",
-        "La solicitud gratis reúne los datos que Jorge necesita para preparar el valor de mercado de su casa en New Jersey. Completarla toma unos minutos y Jorge da seguimiento dentro de 24 a 48 horas.",
+        "La solicitud gratis reúne los datos iniciales de la propiedad. Jorge confirma el alcance, la información adicional necesaria y el plazo después de revisarla.",
     ),
     (
         "Empiece con la herramienta en línea si quiere una cifra rápida, o responda unas preguntas por teléfono y Jorge le prepara el análisis completo con las ventas de su vecindario. En cualquiera de los dos casos no hay compromiso.",
-        "Empiece con la solicitud en línea o responda unas preguntas por teléfono. Jorge prepara el análisis completo con las ventas de su vecindario y da seguimiento dentro de 24 a 48 horas. En cualquiera de los dos casos no hay compromiso.",
+        "Empiece con la solicitud en línea o responda unas preguntas por teléfono. Jorge confirma el alcance y el plazo después de revisar los datos. En cualquiera de los dos casos no hay compromiso.",
     ),
     (
         "La herramienta en línea en <a href=\"/home-valuation\" style=\"color: #2C2C2C;\" rel=\"noopener\">thejorgeramirezgroup.com/home-valuation</a> le da una primera cifra en el momento, con solo escribir su dirección. El análisis comparativo completo, con los comparables que sostienen el número, Jorge lo prepara después de conocer los detalles de su propiedad y se lo repasa con usted por teléfono o en persona.",
-        "La solicitud en <a href=\"/home-valuation\" style=\"color: #2C2C2C;\" rel=\"noopener\">thejorgeramirezgroup.com/home-valuation</a> reúne los detalles de su propiedad en unos minutos. Jorge prepara el análisis comparativo completo con los comparables que sostienen el número y da seguimiento dentro de 24 a 48 horas por teléfono o en persona.",
+        "La solicitud en <a href=\"/home-valuation\" style=\"color: #2C2C2C;\" rel=\"noopener\">thejorgeramirezgroup.com/home-valuation</a> reúne los datos iniciales. Jorge confirma el alcance, la información adicional necesaria y el plazo después de revisarla.",
     ),
 )
 

@@ -245,6 +245,32 @@ test("keeps the non-JavaScript valuation fallback classified and truthful", asyn
   assert.equal(JSON.parse(calls[0].options.body).leadType, "home-valuation");
 });
 
+test("keeps the Spanish non-JavaScript valuation fallback on the localized page", async () => {
+  const calls = [];
+  globalThis.fetch = async (url, options) => {
+    calls.push({ url, options });
+    return { ok: true, text: async () => "" };
+  };
+  process.env.CRM_WEBHOOK_URL = "https://crm.invalid.test/leads";
+  const { state, response } = createResponse();
+
+  await handler(
+    request(validValuation({
+      _startedAt: "",
+      _next: "/es/home-valuation",
+      _source: "/es/home-valuation",
+      intent: "Solicitud de valoración de casa",
+    }), { json: false }),
+    response,
+  );
+
+  assert.equal(state.status, 303);
+  assert.equal(state.redirect, "/es/home-valuation?submitted=1#valuation-submitted");
+  const delivered = JSON.parse(calls[0].options.body);
+  assert.equal(delivered.leadType, "home-valuation");
+  assert.equal(delivered.source, "/es/home-valuation");
+});
+
 test("returns an error when no configured channel confirms delivery", async () => {
   const { state, response } = createResponse();
 

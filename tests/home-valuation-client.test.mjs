@@ -148,6 +148,24 @@ test("preserves API validation fields and maps actionable error messages", async
     /wait a few minutes/,
   );
   assert.match(client.valuationErrorMessage(), /could not confirm/);
+  assert.match(client.valuationErrorMessage({}, "es"), /No pudimos confirmar/);
+  assert.match(
+    client.valuationErrorMessage({ ok: false, code: "rate_limited" }, "es"),
+    /Espere unos minutos/,
+  );
+});
+
+test("preserves the localized valuation intent and source", () => {
+  const payload = client.buildValuationPayload({
+    name: "María López",
+    email: "maria@example.com",
+    address: "123 Main St, Summit, NJ",
+    intent: "Solicitud de valoración de casa",
+    _source: "/es/home-valuation",
+  });
+
+  assert.equal(payload.intent, "Solicitud de valoración de casa");
+  assert.equal(payload._source, "/es/home-valuation");
 });
 
 test("keeps a confirmed lead successful when analytics throws", async () => {

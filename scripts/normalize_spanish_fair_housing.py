@@ -11,6 +11,11 @@ import json
 import re
 from pathlib import Path
 
+try:
+    from scripts.normalize_public_trust_claims import normalize as normalize_public_trust
+except ModuleNotFoundError:  # Support direct execution as scripts/normalize_spanish_fair_housing.py.
+    from normalize_public_trust_claims import normalize as normalize_public_trust
+
 
 ROOT = Path(__file__).resolve().parents[1]
 INVENTORY = ROOT / "data" / "spanish-fair-housing-inventory.json"
@@ -553,6 +558,12 @@ def normalize(source: str, relative: str) -> str:
     # broad Spanish copy table must never rewrite their English data/templates.
     if not relative.endswith(".html"):
         return source
+    # The homepage trust rules are shared with the public-copy normalizer so
+    # running either migration independently cannot restore the retired hidden
+    # FAQ schema, personal-investor claims, fixed costs/timelines, stale counts,
+    # or unverified review-platform labels.
+    if relative == "es/index.html":
+        source, _ = normalize_public_trust(source, relative)
     for old, new in FILE_REPLACEMENTS.get(relative, ()):
         source = source.replace(old, new)
     for old, new in LITERAL_REPLACEMENTS:

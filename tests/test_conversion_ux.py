@@ -109,6 +109,18 @@ class ConversionUxStaticTests(unittest.TestCase):
         self.assertIn('id="valuationStatus"', text)
         self.assertIn('aria-live="polite"', text)
         self.assertIn('type="module" src="/js/home-valuation.js"', text)
+        self.assertRegex(
+            spanish_text,
+            r'<form[^>]+id="valuationForm"[^>]+action="/api/lead"',
+        )
+        self.assertIn('name="leadType" value="home-valuation"', spanish_text)
+        self.assertIn('name="intent" value="Solicitud de valoración de casa"', spanish_text)
+        self.assertIn('name="_source" value="/es/home-valuation"', spanish_text)
+        self.assertIn('name="_next" value="/es/home-valuation"', spanish_text)
+        self.assertIn('href="#solicitud-valoracion"', spanish_text)
+        self.assertIn('id="valuationStatus"', spanish_text)
+        self.assertIn('aria-live="polite"', spanish_text)
+        self.assertIn('type="module" src="/js/home-valuation.js"', spanish_text)
         for misleading_spanish_claim in (
             "la ve en el momento",
             "una primera cifra en el momento",

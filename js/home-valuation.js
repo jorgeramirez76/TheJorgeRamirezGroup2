@@ -40,12 +40,12 @@ export function buildValuationPayload(values) {
     town: trim(values.town),
     timeframe: trim(values.timeframe),
     message: trim(values.message),
-    intent: "Home valuation request",
+    intent: trim(values.intent) || "Home valuation request",
     smsConsent: Boolean(values.smsConsent && phone),
     consentLanguage: values.smsConsent && phone ? CONSENT_LANGUAGE : "",
     _honey: trim(values._honey),
     _startedAt: trim(values._startedAt),
-    _source: "/home-valuation",
+    _source: trim(values._source) || "/home-valuation",
   };
 }
 
@@ -98,17 +98,26 @@ export async function submitValuationLead(payload, options = {}) {
   return { ok: true };
 }
 
-export function valuationErrorMessage(result = {}) {
+export function valuationErrorMessage(result = {}, language = "en") {
+  const spanish = String(language).toLowerCase().startsWith("es");
   if (result.code === "rate_limited") {
-    return "Please wait a few minutes before trying again, or call Jorge at 908-230-7844.";
+    return spanish
+      ? "Espere unos minutos antes de intentarlo de nuevo o llame a Jorge al 908-230-7844."
+      : "Please wait a few minutes before trying again, or call Jorge at 908-230-7844.";
   }
   if (result.code === "invalid_lead") {
     if (Array.isArray(result.fields) && result.fields.includes("phone")) {
-      return "Enter a phone number with at least seven digits, or leave the phone field blank.";
+      return spanish
+        ? "Escriba un teléfono con al menos siete dígitos o deje el campo vacío."
+        : "Enter a phone number with at least seven digits, or leave the phone field blank.";
     }
-    return "Please check your name, email, and property address, then try again.";
+    return spanish
+      ? "Revise su nombre, correo electrónico y dirección de la propiedad."
+      : "Please check your name, email, and property address, then try again.";
   }
-  return "We could not confirm your request. Please try again, or call Jorge at 908-230-7844.";
+  return spanish
+    ? "No pudimos confirmar la solicitud. Inténtelo de nuevo o llame a Jorge al 908-230-7844."
+    : "We could not confirm your request. Please try again, or call Jorge at 908-230-7844.";
 }
 
 function formValues(form) {
@@ -121,9 +130,11 @@ function formValues(form) {
     town: data.get("town"),
     timeframe: data.get("timeframe"),
     message: data.get("message"),
+    intent: data.get("intent"),
     smsConsent: data.get("smsConsent") === "on",
     _honey: data.get("_honey"),
     _startedAt: data.get("_startedAt"),
+    _source: data.get("_source"),
   };
 }
 
@@ -140,6 +151,11 @@ function initializeValuationForm() {
   const form = document.getElementById("valuationForm");
   const status = document.getElementById("valuationStatus");
   if (!form || !status) return;
+  const language = document.documentElement.lang || "en";
+  const spanish = language.toLowerCase().startsWith("es");
+  const successMessage = spanish
+    ? "Solicitud recibida. Jorge revisará los datos de la propiedad y se comunicará con usted sobre los próximos pasos."
+    : "Request received. Jorge will review your property details and contact you about next steps.";
 
   const startedAt = form.elements.namedItem("_startedAt");
   if (startedAt) startedAt.value = String(Date.now());
@@ -150,16 +166,16 @@ function initializeValuationForm() {
     setStatus(
       status,
       "success",
-      "Request received. Jorge will review your property details and follow up about your free valuation within 24 to 48 hours.",
+      successMessage,
     );
     return;
   }
   if (query.has("err")) {
     const message = query.get("err") === "rate"
-      ? "Please wait a few minutes before trying again, or call Jorge at 908-230-7844."
+      ? valuationErrorMessage({ code: "rate_limited" }, language)
       : query.get("err") === "invalid"
-        ? "Please check your name, contact information, and property address, then try again."
-        : "We could not confirm your request. Please try again, or call Jorge at 908-230-7844.";
+        ? valuationErrorMessage({ code: "invalid_lead" }, language)
+        : valuationErrorMessage({}, language);
     setStatus(status, "error", message);
   }
 
@@ -175,7 +191,7 @@ function initializeValuationForm() {
       setStatus(status, "error", valuationErrorMessage({
         code: "invalid_lead",
         fields: validation.fields,
-      }));
+      }, language));
       return;
     }
 
@@ -183,7 +199,7 @@ function initializeValuationForm() {
     const defaultLabel = submitButton ? submitButton.textContent : "Request My Free Valuation";
     if (submitButton) {
       submitButton.disabled = true;
-      submitButton.textContent = "Sending request…";
+      submitButton.textContent = spanish ? "Enviando solicitud…" : "Sending request…";
     }
     form.setAttribute("aria-busy", "true");
     status.hidden = true;
@@ -196,7 +212,7 @@ function initializeValuationForm() {
         signal: controller ? controller.signal : undefined,
       });
       if (!result.ok) {
-        setStatus(status, "error", valuationErrorMessage(result));
+        setStatus(status, "error", valuationErrorMessage(result, language));
         if (submitButton) {
           submitButton.disabled = false;
           submitButton.textContent = defaultLabel;
@@ -208,13 +224,13 @@ function initializeValuationForm() {
       setStatus(
         status,
         "success",
-        "Request received. Jorge will review your property details and follow up about your free valuation within 24 to 48 hours.",
+        successMessage,
       );
     } catch (_error) {
       setStatus(
         status,
         "error",
-        valuationErrorMessage(),
+        valuationErrorMessage({}, language),
       );
       if (submitButton) {
         submitButton.disabled = false;

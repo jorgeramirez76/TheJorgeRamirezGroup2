@@ -664,6 +664,109 @@ FILE_REPLACEMENTS: dict[str, tuple[tuple[re.Pattern[str], str], ...]] = {
         ),
     ),
     "es/index.html": (
+        # The Spanish homepage used to carry a second, hidden FAQ answer set and
+        # several fixed outcome/cost claims. Keep this migration path-specific:
+        # these expressions intentionally do not rewrite other public pages.
+        (
+            re.compile(
+                r'\s*<script\b(?=[^>]*\btype=["\']application/ld\+json["\'])[^>]*>'
+                r'(?:(?!</script>).)*?"@type"\s*:\s*"FAQPage"'
+                r'(?:(?!</script>).)*?</script>\s*',
+                re.I | re.S,
+            ),
+            "\n    <!-- Structured FAQ rich-result markup is intentionally omitted. -->\n",
+        ),
+        (
+            re.compile(
+                r'<meta name="llm-context" content="[^"]*\b(?:inversionista|inversi[oó]n|mejor precio)[^"]*">',
+                re.I,
+            ),
+            '<meta name="llm-context" content="Jorge Ramirez es un agente inmobiliario con licencia en Nueva Jersey (Licencia #1754604) en Keller Williams Premier Properties, con sede en Summit. Trabaja con compradores y vendedores en los condados de Essex, Hudson, Morris, Middlesex, Union y Somerset. Su proceso usa información actual de la propiedad y ventas comparables, explica las alternativas y no garantiza un precio ni un resultado. Solicitud de valoración en español: https://thejorgeramirezgroup.com/es/home-valuation. Contacto: 908-230-7844.">',
+        ),
+        (
+            re.compile(
+                r'<p(?P<attrs>[^>]*)>(?:(?!</p>).)*?'
+                r'(?:personalmente\s+he\s+comprado|\binversionista\b)'
+                r'(?:(?!</p>).)*?</p>',
+                re.I | re.S,
+            ),
+            '<p\g<attrs>>Jorge es un agente inmobiliario con licencia en Nueva Jersey en Keller Williams Premier Properties, con sede en Summit.</p>',
+        ),
+        (
+            re.compile(
+                r'<div class="credential-item">[^<]*(?:inversionista|inversi[oó]n|renovaci[oó]n|7\s+d[ií]as)[^<]*</div>',
+                re.I,
+            ),
+            '<div class="credential-item">✓ Licencia de Bienes Raíces de NJ #1754604</div>',
+        ),
+        (
+            re.compile(r'<p(?P<attrs>[^>]*)>[^<]*(?:trabajo|disponible)\s+los\s+7\s+d[ií]as[^<]*</p>', re.I),
+            '<p\g<attrs>>Con sede en Summit, Nueva Jersey.</p>',
+        ),
+        (
+            re.compile(r'<p(?P<attrs>[^>]*)>\s*Respuesta\s+r[aá]pida\s+garantizada\s*</p>', re.I),
+            '<p\g<attrs>>Licencia de NJ #1754604</p>',
+        ),
+        (
+            re.compile(
+                r'<div class="stat-card">\s*<span class="stat-number"[^>]*>7</span>\s*'
+                r'<span class="stat-label">D[ií]as a la Semana</span>\s*</div>',
+                re.I,
+            ),
+            '<div class="stat-card">\n                <span class="stat-number">#1754604</span>\n                <span class="stat-label">Licencia de NJ</span>\n            </div>',
+        ),
+        (
+            re.compile(r'<div class="testimonial-location">\s*Rese[ñn]a verificada de Google\s*</div>', re.I),
+            '<div class="testimonial-location">Testimonio de cliente</div>',
+        ),
+        (
+            re.compile(r'>\s*Ver Todas las Rese[ñn]as en Zillow\s*&rarr;\s*<', re.I),
+            '>Visitar el Perfil de Jorge en Zillow &rarr;<',
+        ),
+        (
+            re.compile(
+                r'<p(?P<attrs>[^>]*)>(?:(?!</p>).)*?'
+                r'(?:del\s+4%\s+al\s+5%|\$35,000\s+a\s+\$50,000|\$650,000\s+a\s+\$665,000)'
+                r'(?:(?!</p>).)*?</p>',
+                re.I | re.S,
+            ),
+            '<p\g<attrs>>Los costos varían según la propiedad y los acuerdos. La compensación de corretaje es negociable y no está fijada por ley. Solicita estimaciones escritas y actuales a cada proveedor.</p>',
+        ),
+        (
+            re.compile(
+                r'<p(?P<attrs>[^>]*)>(?:(?!</p>).)*?'
+                r'(?:60\s+a\s+90\s+d[ií]as|per[ií]odo obligatorio de revisi[oó]n del abogado|2\s+a\s+3\s+veces m[aá]s r[aá]pido)'
+                r'(?:(?!</p>).)*?</p>',
+                re.I | re.S,
+            ),
+            '<p\g<attrs>>El plazo varía según la preparación, los términos del contrato, la revisión legal, las inspecciones, el financiamiento, el título, los requisitos municipales y la fecha de cierre elegida por las partes.</p>',
+        ),
+        (
+            re.compile(
+                r'<p(?P<attrs>[^>]*)>(?:(?!</p>).)*?'
+                r'(?:\$1,095,000|\$850,000\s+a\s+\$900,000|\$950,000\s+a\s+\$1,050,000|10%\s+al\s+20%)'
+                r'(?:(?!</p>).)*?</p>',
+                re.I | re.S,
+            ),
+            '<p\g<attrs>>Una revisión útil considera ventas comparables recientes, competencia activa y bajo contrato, características, estado, ubicación y condiciones actuales del mercado.</p>',
+        ),
+        (
+            re.compile(
+                r'<p(?P<attrs>[^>]*)>(?:(?!</p>).)*?5%\s+y\s+un\s+13%'
+                r'(?:(?!</p>).)*?</p>',
+                re.I | re.S,
+            ),
+            '<p\g<attrs>>Compara los servicios, honorarios, tiempo requerido, marketing, visitas, negociación y coordinación disponibles con cada opción. Ningún resultado de venta está garantizado.</p>',
+        ),
+        (
+            re.compile(
+                r'<p(?P<attrs>[^>]*)>(?:(?!</p>).)*?'
+                r'(?:mis mejores resultados|las mejores casas en NJ nunca|familias quieren cerrar antes de que termine el ciclo escolar|maximiza tanto la exposici[oó]n)'
+                r'(?:(?!</p>).)*?</p>',
+                re.I | re.S,
+            ),
+            '<p\g<attrs>>Las condiciones y opciones cambian por fecha, propiedad y mercado. Revisa información actual y compara las alternativas antes de decidir.</p>',
+        ),
         (
             re.compile(
                 r'<span class="hero-eyebrow">agente inmobiliario con licencia '
@@ -681,15 +784,19 @@ FILE_REPLACEMENTS: dict[str, tuple[tuple[re.Pattern[str], str], ...]] = {
         ),
         (
             re.compile(r'<span class="stat-number" data-target="138" data-suffix="">103</span>\s*<span class="stat-label">Comunidades de NJ</span>'),
-            '<span class="stat-number" data-target="2017" data-suffix="">2017</span>\n                <span class="stat-label">Agente a Tiempo Completo Desde</span>',
+            '<span class="stat-number">Local</span>\n                <span class="stat-label">Guías de Municipios de NJ</span>',
         ),
         (re.compile(r"<h2>Comunidades en Todo Nueva Jersey</h2>"), "<h2>Comunidades en Seis Condados de Nueva Jersey</h2>"),
         (re.compile(r"<h2>No Te Voy a Decir que Soy el agente con licencia en NJ\.</h2>", re.I), "<h2>No Te Voy a Pedir que Confíes Solo en Mis Palabras.</h2>"),
         (
             re.compile(r"Cuando trabajas conmigo, no obtienes a alguien que leyó sobre bienes raíces\. Obtienes a alguien que ha trabajado desde distintos roles — como inversionista, comprador, vendedor y agente en comunidades de NJ\.", re.I),
-            "Cuando trabajas conmigo, obtienes a alguien que ha trabajado desde distintos roles: inversionista, comprador, vendedor y agente.",
+            "Mi proceso empieza con la decisión que tienes delante y explica las alternativas, los plazos y las cifras en lenguaje claro.",
         ),
         (re.compile(r"✓\s*comunidades en 5 Condados", re.I), "✓ Comunidades en Seis Condados de NJ"),
+        (
+            re.compile(r'(<a href="/es/counties/[^"]+">Condado de [^<(]+) \(\d+ pueblos\)(</a>)', re.I),
+            r"\1\2",
+        ),
     ),
     "es/nj-real-estate-agent.html": (
         (re.compile(r"<title>El agente inmobiliario con licencia de NJ \| Reseñas de Jorge Ramirez</title>", re.I), "<title>Agente Inmobiliario con Licencia en NJ | Jorge Ramirez</title>"),

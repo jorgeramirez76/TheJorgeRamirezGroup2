@@ -260,7 +260,9 @@ export default async function handler(req, res) {
   }
   const leadType = clean(b.leadType, 40);
   const isValuation = leadType === "home-valuation";
-  const next = isValuation ? "/home-valuation" : safeNext(b._next);
+  const next = isValuation
+    ? safeNext(b._next, "/home-valuation")
+    : safeNext(b._next);
   const errorNext = isValuation
     ? ""
     : safeNext(b._errorNext, withState(next, "err=1"));
