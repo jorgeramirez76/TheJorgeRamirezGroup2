@@ -1,0 +1,184 @@
+#!/usr/bin/env python3
+"""Render the source-led Moving to New Jersey checklist."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+OUTPUT = ROOT / "blog" / "moving-to-nj-checklist.html"
+CANONICAL = "https://thejorgeramirezgroup.com/blog/moving-to-nj-checklist"
+
+SOURCES = {
+    "move": "https://www.nj.gov/mvc/drivertopics/movetonj.htm",
+    "id": "https://www.nj.gov/mvc/license/6pointid.htm",
+    "inspection": "https://www.nj.gov/mvc/inspection/inspecthow.htm",
+    "exemptions": "https://www.nj.gov/mvc/inspection/exemptinsp.htm",
+    "manual": "https://www.nj.gov/mvc/pdf/license/drivermanual.pdf",
+    "vote": "https://www.nj.gov/state/elections/voter-registration.shtml",
+}
+
+
+def jsonld() -> str:
+    payload = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "headline": "Moving to New Jersey Checklist: Current MVC and Voter Steps",
+                "description": "A dated checklist linking to current NJ MVC and Division of Elections requirements for a move to New Jersey.",
+                "datePublished": "2026-07-30",
+                "dateModified": "2026-08-27",
+                "mainEntityOfPage": {"@type": "WebPage", "@id": CANONICAL},
+                "author": {"@type": "Person", "@id": "https://thejorgeramirezgroup.com/#jorge-ramirez", "name": "Jorge Ramirez"},
+                "publisher": {"@type": "Organization", "name": "The Jorge Ramirez Group"},
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "When does a new New Jersey resident transfer an out-of-state license and vehicle title or registration?",
+                        "acceptedAnswer": {"@type": "Answer", "text": "The current NJ MVC Moving To New Jersey page says within 60 days of the move or before the current license and vehicle registration expire, whichever occurs first. Check that page for the current transaction and document rules."},
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does every vehicle brought into New Jersey use the same inspection rule?",
+                        "acceptedAnswer": {"@type": "Answer", "text": "No. The current NJ Driver Manual describes a 14-day post-registration inspection step for a passenger vehicle five model years or older, while the MVC publishes separate inspection and exemption rules by vehicle type, model year, fuel and use. Verify the specific vehicle with the MVC."},
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What identification should a new resident bring to the NJ MVC?",
+                        "acceptedAnswer": {"@type": "Answer", "text": "Use the current NJ MVC document selector. The MVC lists proof of age and identity under its 6 Points system, New Jersey residential-address proof, and Social Security number, ITIN, or an affidavit when applicable; Standard and REAL ID document sets differ."},
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is New Jersey's voter-registration deadline?",
+                        "acceptedAnswer": {"@type": "Answer", "text": "The current New Jersey Division of Elections page says the deadline is 21 days before an election. Eligibility and election-specific dates should be checked on that official page."},
+                    },
+                ],
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://thejorgeramirezgroup.com/"},
+                    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://thejorgeramirezgroup.com/blog"},
+                    {"@type": "ListItem", "position": 3, "name": "Moving to New Jersey checklist", "item": CANONICAL},
+                ],
+            },
+        ],
+    }
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+
+
+def render() -> str:
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#1A1A1A">
+  <title>Moving to New Jersey Checklist (2026) | Current MVC and Voter Steps</title>
+  <meta name="description" content="Use this dated New Jersey move checklist to verify license, vehicle title and registration, inspection, ID, and voter steps at current official sources.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="last-updated" content="2026-08-27">
+  <meta name="ai-content-declaration" content="human-authored">
+  <meta name="llm-context" content="Dated checklist for people moving to New Jersey. It links directly to current NJ MVC and Division of Elections pages and distinguishes a general checklist from transaction-specific requirements. General information, not legal, tax, insurance, or motor-vehicle advice.">
+  <link rel="canonical" href="{CANONICAL}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{CANONICAL}">
+  <meta property="og:title" content="Moving to New Jersey Checklist (2026)">
+  <meta property="og:description" content="Verify license, vehicle, inspection, ID, and voter steps at current New Jersey government sources.">
+  <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
+  <meta property="article:published_time" content="2026-07-30">
+  <meta property="article:modified_time" content="2026-08-27">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Moving to New Jersey Checklist (2026)">
+  <meta name="twitter:description" content="Verify license, vehicle, inspection, ID, and voter steps at current official sources.">
+  <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <style>
+  :root{{--ink:#1A1A1A;--black:#0A0A0A;--red:#C41230;--dark-red:#8B0D22;--gold:#B8962E;--gold-light:#D4AF5A;--paper:#FAFAF8;--soft:#F8F6F2;--white:#FFFFFF;--muted:#555;--line:#DDD8CF}}*{{box-sizing:border-box}}body{{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.72}}a{{color:var(--dark-red)}}a:focus,.button:focus{{outline:3px solid var(--gold-light);outline-offset:3px}}.skip{{position:absolute;left:-9999px;top:0;background:var(--white);padding:12px;z-index:10}}.skip:focus{{left:0}}.nav{{background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px max(20px,5vw)}}.nav a{{color:var(--white);text-decoration:none;font-weight:700}}.nav-links{{display:flex;gap:18px;align-items:center;flex-wrap:wrap}}.nav .call{{background:var(--red);border-radius:999px;padding:10px 16px}}.hero{{background:linear-gradient(135deg,var(--black),#282828);color:var(--white);padding:clamp(52px,8vw,88px) max(20px,5vw)}}.wrap{{width:min(880px,100%);margin:0 auto}}.eyebrow{{color:var(--gold-light);font-size:.76rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}}h1,h2,h3{{font-family:'Playfair Display',serif;line-height:1.18}}h1{{font-size:clamp(2.15rem,6vw,3.85rem);margin:12px 0 18px}}h2{{font-size:clamp(1.65rem,4vw,2.25rem);margin:42px 0 12px}}h3{{font-size:1.22rem;margin:28px 0 8px}}.hero p{{color:rgba(255,255,255,.82);max-width:760px}}.article{{padding:clamp(42px,7vw,72px) max(20px,5vw)}}.meta{{color:var(--muted);font-size:.92rem}}.answer,.note{{background:var(--white);border-left:5px solid var(--gold);box-shadow:0 12px 30px rgba(10,10,10,.07);padding:20px 22px;margin:28px 0}}.note{{border-color:var(--red)}}.checklist{{list-style:none;padding:0;display:grid;gap:16px}}.checklist li{{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:18px 20px}}.checklist strong{{display:block;font-family:'Playfair Display',serif;font-size:1.14rem;margin-bottom:5px}}.sources{{background:var(--soft);padding:24px;border-radius:12px;margin-top:40px}}.sources li{{margin:9px 0}}.cta{{background:var(--black);color:var(--white);padding:34px;text-align:center;border-radius:12px;margin:44px 0}}.cta h2{{margin-top:0;color:var(--white)}}.button{{display:inline-flex;min-height:48px;align-items:center;justify-content:center;background:var(--red);color:var(--white);border:2px solid var(--red);border-radius:999px;padding:10px 22px;text-decoration:none;font-weight:800;margin:6px}}.button.alt{{background:transparent;border-color:var(--gold-light)}}footer{{background:#050505;color:rgba(255,255,255,.65);text-align:center;padding:28px 20px;font-size:.88rem}}footer a{{color:var(--gold-light)}}@media(max-width:720px){{.nav-links a:not(.call){{display:none}}.article,.hero{{padding-left:18px;padding-right:18px}}.cta{{padding:28px 18px}}}}
+  </style>
+  <script type="application/ld+json">{jsonld()}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<nav class="nav" aria-label="Primary"><a href="/">The Jorge Ramirez Group</a><div class="nav-links"><a href="/buy-a-home">Buy</a><a href="/property-search">Search</a><a href="/communities">Communities</a><a class="call" href="tel:+19082307844">908-230-7844</a></div></nav>
+<header class="hero"><div class="wrap"><div class="eyebrow">New Jersey relocation checklist</div><h1>Moving to New Jersey: verify the current steps before your appointment.</h1><p>The official requirements depend on the person, license, vehicle, ownership, financing, and transaction. This dated checklist points to the current agencies and records the rules they publish; confirm the details for your situation before relying on them.</p></div></header>
+<main id="main" class="article"><article class="wrap">
+<p class="meta">Reviewed August 27, 2026 · By Jorge Ramirez, NJ real estate license #1754604</p>
+<div class="answer"><p><strong>The current NJ MVC “Moving To New Jersey” page says a recent resident must transfer an out-of-state license and vehicle title/registration within 60 days of the move or before the current license and vehicle registration expire, whichever occurs first.</strong> The same page says the two transfers may be handled in one out-of-state-transfer appointment and lists separate instructions for financed, leased, business-owned, and out-of-country vehicles or licenses. Start with the <a href="{SOURCES['move']}" target="_blank" rel="noopener noreferrer">current MVC page</a>, not a saved checklist.</p></div>
+
+<h2>Before booking the MVC visit</h2>
+<ol class="checklist">
+  <li><strong>1. Identify the exact transactions.</strong> Note whether the license is from another state or country and whether the vehicle is owned outright, financed, leased, or business-owned. The MVC publishes different documents and steps for those cases.</li>
+  <li><strong>2. Use the current document selector.</strong> The MVC’s <a href="{SOURCES['id']}" target="_blank" rel="noopener noreferrer">What to Bring page</a> separates Standard and REAL ID requirements. It lists identity documents under the 6 Points system, New Jersey address proof, and Social Security number, ITIN, or an affidavit when applicable.</li>
+  <li><strong>3. Assemble the vehicle records.</strong> The moving page currently lists proof of identification, original title, insurance information, the Universal Title Application (OS/SS-UTA), and Vehicle Registration Application (BA-49). It provides additional instructions for a lienholder, lease, or business owner.</li>
+  <li><strong>4. Make the transaction-specific appointment.</strong> Use the appointment link on the official MVC moving page. Save the confirmation and recheck the document list shortly before the visit.</li>
+</ol>
+
+<h2>After New Jersey registration: check the vehicle’s inspection status</h2>
+<p>The current NJ Driver Manual says a passenger vehicle five model years or older brought from another state must be inspected within 14 days after New Jersey registration. It also describes a new-vehicle period and separate commercial rules. Vehicle type, fuel, model year, weight, use, and special registration can change the requirement.</p>
+<p>Check the MVC’s <a href="{SOURCES['inspection']}" target="_blank" rel="noopener noreferrer">inspection instructions</a> and <a href="{SOURCES['exemptions']}" target="_blank" rel="noopener noreferrer">exemption list</a> for the actual vehicle. The inspection page lists the license, New Jersey registration, and New Jersey insurance identification card to bring. If the application of a rule is unclear, ask the MVC rather than inferring it from the vehicle’s age alone.</p>
+
+<h2>Voter registration is a separate process</h2>
+<p>The New Jersey Division of Elections currently states that voter registration closes 21 days before an election. Its <a href="{SOURCES['vote']}" target="_blank" rel="noopener noreferrer">registration page</a> provides online and paper options, eligibility details, election-specific dates, and a registration-status lookup. Confirm both eligibility and the date for the election involved.</p>
+
+<h2>Housing and municipal tasks do not share one statewide deadline</h2>
+<p>Utility accounts, school enrollment, parking permits, pet licenses, municipal registrations, mail forwarding, insurance updates, and association notices depend on the address and provider. Ask each responsible organization for its current documents, fees, processing time, and effective date.</p>
+<p>For a home search, keep the government checklist separate from the housing decision. Verify the listing, parcel tax, zoning, flood information, insurance indication, financing, association records, and actual commute for each address. The <a href="/property-search">property research page</a> and <a href="/tools/market-comparison-widget">two-town worksheet</a> organize those sources without ranking towns or inserting market assumptions.</p>
+
+<div class="note"><p><strong>Scope:</strong> This is general information based on the official pages linked here as reviewed August 27, 2026. It is not legal, tax, insurance, licensing, election, or motor-vehicle advice. Agency pages and individual facts control.</p></div>
+
+<h2>Frequently asked questions</h2>
+<h3>When does a new resident transfer an out-of-state license and vehicle title or registration?</h3>
+<p>The current MVC moving page says within 60 days of the move or before the current license and vehicle registration expire, whichever occurs first. Use the page’s separate instructions for the transaction involved.</p>
+<h3>Does every vehicle use the same inspection rule?</h3>
+<p>No. The Driver Manual describes the 14-day post-registration step for a passenger vehicle five model years or older, while the MVC publishes separate rules and exemptions based on the vehicle. Verify the specific vehicle.</p>
+<h3>What identification should a new resident bring?</h3>
+<p>Use the current MVC selector. Standard and REAL ID document sets differ, and the page explains identity, address, and Social Security number, ITIN, or affidavit requirements when applicable.</p>
+<h3>What is the voter-registration deadline?</h3>
+<p>The Division of Elections currently says 21 days before an election. Check eligibility and the election-specific calendar on the official page.</p>
+
+<section class="sources"><h2>Primary sources</h2><ul>
+  <li><a href="{SOURCES['move']}" target="_blank" rel="noopener noreferrer">NJ MVC: Moving To New Jersey</a></li>
+  <li><a href="{SOURCES['id']}" target="_blank" rel="noopener noreferrer">NJ MVC: What to Bring for a License/ID Transaction</a></li>
+  <li><a href="{SOURCES['manual']}" target="_blank" rel="noopener noreferrer">NJ MVC: New Jersey Driver Manual</a></li>
+  <li><a href="{SOURCES['inspection']}" target="_blank" rel="noopener noreferrer">NJ MVC: How Do I Get My Vehicle Inspected?</a></li>
+  <li><a href="{SOURCES['exemptions']}" target="_blank" rel="noopener noreferrer">NJ MVC: Vehicles Exempt From Inspection</a></li>
+  <li><a href="{SOURCES['vote']}" target="_blank" rel="noopener noreferrer">NJ Division of Elections: Register to Vote</a></li>
+</ul></section>
+
+<section class="cta"><h2>Planning the housing side of your move?</h2><p>Compare the specific property, complete budget, route, and public records before choosing.</p><a class="button" href="/property-search">Search and research properties</a><a class="button alt" href="tel:+19082307844">Call Jorge</a></section>
+</article></main>
+<footer>The Jorge Ramirez Group · Keller Williams Premier Properties · NJ License #1754604 · <a href="tel:+19082307844">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a></footer>
+<script defer src="/js/site-cta.js"></script>
+</body>
+</html>
+'''
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args()
+    expected = render()
+    current = OUTPUT.read_text(encoding="utf-8") if OUTPUT.is_file() else None
+    if args.check:
+        if current != expected:
+            print("moving-to-nj checklist drift")
+            return 1
+        print("moving-to-nj checklist current")
+        return 0
+    OUTPUT.write_text(expected, encoding="utf-8")
+    print("rendered moving-to-nj checklist")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
