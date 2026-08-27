@@ -77,6 +77,17 @@ REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
         re.compile(r"\b(?:103|109|120|138)\s+(?:NJ\s+|New Jersey\s+)?towns\b", re.I),
         "NJ towns",
     ),
+    # A removed numeric claim can leave "comunidades" at the start of a
+    # sentence or form/control label. Capitalize only those structural starts;
+    # inline links and generic styling wrappers must retain prose casing.
+    (
+        re.compile(
+            r"(<(?:p|h[1-6]|li|dt|dd|th|td|label|legend|button)\b[^>]*>)"
+            r"(\s*)(?:103|109|120|138)\s+comunidades\b",
+            re.I,
+        ),
+        r"\1\2Comunidades",
+    ),
     (re.compile(r"\b(?:103|109|120|138)\s+comunidades\b", re.I), "comunidades"),
     (re.compile(r"\b(?:103|109|120|138)\s+pueblos\b", re.I), "municipios"),
     # Generated English agent and group descriptions.
@@ -468,7 +479,6 @@ REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\.\s+communities served\b"), ". Communities served"),
     (re.compile(r"\.\s+atiende comunidades\b"), ". Atiende comunidades"),
     (re.compile(r">communities\b"), ">Communities"),
-    (re.compile(r">comunidades\b"), ">Comunidades"),
     (re.compile(r"\bcommunities mastered\b", re.I), "experience across local markets"),
     (re.compile(r"\bcomunidades dominadas\b", re.I), "experiencia en mercados locales"),
     (
