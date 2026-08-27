@@ -56,6 +56,15 @@ RETIRED_LEGACY_HTML = retired_legacy_html()
 REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
     # Avoid turning "all 138 communities" into the overbroad "all communities."
     (
+        re.compile(
+            r"(<(?:p|h[1-6]|li|dt|dd|th|td|label|legend|button)\b[^>]*>)"
+            r"(\s*)all\s+(?:103|109|120|138)\s+"
+            r"(?:(?:NJ|New Jersey)\s+)?communities\b",
+            re.I,
+        ),
+        r"\1\2Communities across six New Jersey counties",
+    ),
+    (
         re.compile(r"\ball\s+(?:103|109|120|138)\s+(?:(?:NJ|New Jersey)\s+)?communities\b", re.I),
         "communities across six New Jersey counties",
     ),
@@ -64,11 +73,30 @@ REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
         "towns across six New Jersey counties",
     ),
     (
+        re.compile(
+            r"(<(?:p|h[1-6]|li|dt|dd|th|td|label|legend|button)\b[^>]*>)"
+            r"(\s*)todas?\s+las\s+(?:103|109|120|138)\s+comunidades\b",
+            re.I,
+        ),
+        r"\1\2Comunidades en seis condados de Nueva Jersey",
+    ),
+    (
         re.compile(r"\btodas?\s+las\s+(?:103|109|120|138)\s+comunidades\b", re.I),
         "comunidades en seis condados de Nueva Jersey",
     ),
     # Service scope is intentionally nonnumeric. The separate 121-guide directory
     # count is verified inventory data and is not matched by these rules.
+    # Removed numeric claims at sentence or form/control-label starts need an
+    # initial capital. Inline links and generic styling wrappers retain prose
+    # casing, so they intentionally fall through to the lowercase rule below.
+    (
+        re.compile(
+            r"(<(?:p|h[1-6]|li|dt|dd|th|td|label|legend|button)\b[^>]*>)"
+            r"(\s*)(?:103|109|120|138)\s+(?:NJ\s+|New Jersey\s+)?communities\b",
+            re.I,
+        ),
+        r"\1\2Communities",
+    ),
     (
         re.compile(r"\b(?:103|109|120|138)\s+(?:NJ\s+|New Jersey\s+)?communities\b", re.I),
         "communities",
@@ -77,9 +105,7 @@ REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
         re.compile(r"\b(?:103|109|120|138)\s+(?:NJ\s+|New Jersey\s+)?towns\b", re.I),
         "NJ towns",
     ),
-    # A removed numeric claim can leave "comunidades" at the start of a
-    # sentence or form/control label. Capitalize only those structural starts;
-    # inline links and generic styling wrappers must retain prose casing.
+    # Apply the same structural treatment to Spanish numeric claims.
     (
         re.compile(
             r"(<(?:p|h[1-6]|li|dt|dd|th|td|label|legend|button)\b[^>]*>)"
@@ -478,7 +504,6 @@ REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\.\s+serving communities\b"), ". Serving communities"),
     (re.compile(r"\.\s+communities served\b"), ". Communities served"),
     (re.compile(r"\.\s+atiende comunidades\b"), ". Atiende comunidades"),
-    (re.compile(r">communities\b"), ">Communities"),
     (re.compile(r"\bcommunities mastered\b", re.I), "experience across local markets"),
     (re.compile(r"\bcomunidades dominadas\b", re.I), "experiencia en mercados locales"),
     (
