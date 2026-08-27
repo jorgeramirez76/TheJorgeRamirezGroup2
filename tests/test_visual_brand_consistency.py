@@ -10,6 +10,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BLOG_SOURCE = (ROOT / "blog" / "index.html").read_text(encoding="utf-8")
 VALUATION_SOURCE = (ROOT / "home-valuation.html").read_text(encoding="utf-8")
+FONT_STYLESHEET = (
+    "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700"
+    "&family=Montserrat:wght@300;400;500;600;700"
+    "&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400"
+    "&display=swap"
+)
 
 
 def css_rule(source: str, selector: str) -> str:
@@ -27,6 +33,22 @@ class VisualBrandConsistencyTests(unittest.TestCase):
         )
         title_rule = css_rule(BLOG_SOURCE, ".blog-index-title")
         self.assertRegex(title_rule, r"font-family\s*:\s*var\(--font-display\b")
+
+    def test_blog_index_loads_the_same_display_font_family_it_declares(self) -> None:
+        self.assertIn('<link rel="preconnect" href="https://fonts.googleapis.com">', BLOG_SOURCE)
+        self.assertIn(
+            '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+            BLOG_SOURCE,
+        )
+        self.assertIn(
+            f'<link href="{FONT_STYLESHEET}" rel="stylesheet" media="print" '
+            'onload="this.media=\'all\'">',
+            BLOG_SOURCE,
+        )
+        self.assertIn(
+            f'<noscript><link href="{FONT_STYLESHEET}" rel="stylesheet"></noscript>',
+            BLOG_SOURCE,
+        )
 
     def test_valuation_hero_title_uses_the_display_type_token(self) -> None:
         title_rule = css_rule(VALUATION_SOURCE, ".val-hero h1")
