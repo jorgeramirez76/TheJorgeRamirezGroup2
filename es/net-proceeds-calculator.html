@@ -290,7 +290,10 @@
             let fee = 0, prev = 0;
             for (const [cap, per500] of tiers) {
                 if (price <= prev) break;
-                fee += (Math.min(price, cap) - prev) / 500 * per500;
+                const amountInTier = Math.min(price, cap) - prev;
+                // N.J.S.A. 46:15-7 cobra cada tarifa por cada $500 o fracción
+                // de $500 dentro de la banda aplicable.
+                fee += Math.ceil(amountInTier / 500) * per500;
                 prev = cap;
             }
             return fee;

@@ -269,7 +269,9 @@
             for (const [cap, per500] of tiers) {
                 const top = Math.min(cap, price);
                 const amt = Math.max(0, top - prev);
-                fee += (amt / 500) * per500;
+                // N.J.S.A. 46:15-7 charges each rate for every $500 or fractional
+                // part of $500 within the applicable band.
+                if (amt > 0) fee += Math.ceil(amt / 500) * per500;
                 prev = top;
                 if (cap >= price) break;
             }

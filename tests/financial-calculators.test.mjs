@@ -108,6 +108,34 @@ for (const [relative, blankMessage] of [
   ['net-proceeds-calculator.html', 'Enter the broker compensation from your written agreement.'],
   ['es/net-proceeds-calculator.html', 'Ingresa la compensación del corredor de tu acuerdo escrito.'],
 ]) {
+  test(`${relative}: RTF uses each $500 or fraction at statutory boundaries`, () => {
+    const elements = netElements();
+    const context = contextFor(relative, 'calcNet', elements);
+    const assertFee = (price, expected, label) => {
+      assert.ok(
+        Math.abs(context.calcRTF(price) - expected) < 1e-9,
+        `${label}: expected ${expected}, got ${context.calcRTF(price)}`,
+      );
+    };
+
+    // Standard schedule: the total-consideration schedule changes above $350,000,
+    // and each started $500 interval within a band incurs the full published rate.
+    assertFee(350000, 2105, 'standard at $350,000');
+    assertFee(350000.01, 2739.80, 'standard one cent above $350,000');
+    assertFee(999500, 9569.20, 'standard at the last exact $500 interval below $1M');
+    assertFee(999500.01, 9575, 'standard fractional interval below $1M');
+    assertFee(1000000, 9575, 'standard at $1,000,000');
+    assertFee(1000000.01, 9581.05, 'standard one cent above $1,000,000');
+
+    elements.reducedRate.checked = true;
+    assertFee(350000, 650, 'reduced at $350,000');
+    assertFee(350000.01, 1282.15, 'reduced one cent above $350,000');
+    assertFee(999500, 4671.85, 'reduced at the last exact $500 interval below $1M');
+    assertFee(999500.01, 4675, 'reduced fractional interval below $1M');
+    assertFee(1000000, 4675, 'reduced at $1,000,000');
+    assertFee(1000000.01, 4678.40, 'reduced one cent above $1,000,000');
+  });
+
   test(`${relative}: percentage and flat compensation boundaries`, () => {
     const elements = netElements();
     const context = contextFor(relative, 'calcNet', elements);
