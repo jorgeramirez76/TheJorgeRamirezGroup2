@@ -14,6 +14,11 @@ class PublicSurfaceAuditTests(unittest.TestCase):
         self.assertEqual(self.by_path["best-real-estate-agents-union-county-nj-2026.html"]["classification"], "redirect")
         self.assertEqual(self.by_path["thank-you.html"]["classification"], "noindex")
         self.assertEqual(self.by_path["index.html"]["classification"], "indexable")
+        self.assertEqual(self.by_path["communities/index.html"]["classification"], "route-alias")
+        self.assertEqual(
+            self.audit["route_aliases"]["/communities"],
+            ["communities.html", "communities/index.html"],
+        )
 
     def test_public_indexable_surface_has_no_actionable_defects(self):
         self.assertEqual(self.audit["actionable_count"], 0)
@@ -21,6 +26,7 @@ class PublicSurfaceAuditTests(unittest.TestCase):
         self.assertFalse(self.audit["stale_in_sitemap"])
         self.assertFalse(self.audit["duplicate_sitemap_routes"])
         self.assertFalse(self.audit["wrong_locale_sitemap"])
+        self.assertFalse(self.audit["conflicting_route_files"])
 
     def test_internal_source_templates_are_not_public_pages(self):
         paths = {str(path.relative_to(audit_site.ROOT)) for path in self.audit["pages"]}

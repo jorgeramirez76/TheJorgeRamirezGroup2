@@ -19,6 +19,7 @@ The Markdown report is written to ``AUDIT_REPORT.md`` by default. Use
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from collections import defaultdict
@@ -332,6 +333,35 @@ def build_audit() -> dict:
     pages = all_html_files()
     reports = [audit_page(path, redirect_sources) for path in pages]
 
+    # Vercel clean URLs and conventional static previews can intentionally use
+    # two physical files for one route. Identical mirrors are counted once;
+    # divergent files are a deployment ambiguity and therefore actionable.
+    by_route: dict[str, list[dict]] = defaultdict(list)
+    for report in reports:
+        if report["indexable"]:
+            by_route[report["url"]].append(report)
+    route_aliases: dict[str, list[str]] = {}
+    conflicting_route_files: dict[str, list[str]] = {}
+    for route, group in by_route.items():
+        if len(group) < 2:
+            continue
+        paths = [ROOT / report["path"] for report in group]
+        digests = {hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}
+        names = sorted(report["path"] for report in group)
+        if len(digests) == 1:
+            route_aliases[route] = names
+            primary = min(group, key=lambda report: (report["path"].endswith("/index.html"), report["path"]))
+            for report in group:
+                if report is primary:
+                    continue
+                report["classification"] = "route-alias"
+                report["indexable"] = False
+                report["issues"] = []
+                report["broken_links"] = []
+                report["broken_images"] = []
+        else:
+            conflicting_route_files[route] = names
+
     issue_counts: dict[str, int] = defaultdict(int)
     broken_link_targets: dict[str, list[str]] = defaultdict(list)
     broken_image_targets: dict[str, list[str]] = defaultdict(list)
@@ -369,6 +399,7 @@ def build_audit() -> dict:
         + len(stale_in_sitemap)
         + len(duplicate_sitemap_routes)
         + len(wrong_locale_sitemap)
+        + len(conflicting_route_files)
     )
     return {
         "pages": pages,
@@ -381,6 +412,8 @@ def build_audit() -> dict:
         "stale_in_sitemap": stale_in_sitemap,
         "duplicate_sitemap_routes": duplicate_sitemap_routes,
         "wrong_locale_sitemap": wrong_locale_sitemap,
+        "route_aliases": route_aliases,
+        "conflicting_route_files": conflicting_route_files,
         "actionable_count": actionable_count,
     }
 
@@ -393,7 +426,7 @@ def write_report(audit: dict, output: Path) -> None:
         handle.write(f"Public HTML files classified: {len(audit['pages'])}.\n\n")
         handle.write("## Surface classification\n\n")
         handle.write("| Classification | Files |\n|---|---:|\n")
-        for label in ("indexable", "redirect", "noindex", "canonicalized"):
+        for label in ("indexable", "route-alias", "redirect", "noindex", "canonicalized"):
             handle.write(f"| {label} | {audit['classifications'].get(label, 0)} |\n")
 
         handle.write("\n## Actionable issue summary\n\n")
@@ -425,10 +458,18 @@ def write_report(audit: dict, output: Path) -> None:
             ("Stale or non-indexable sitemap routes", "stale_in_sitemap"),
             ("Duplicate sitemap routes", "duplicate_sitemap_routes"),
             ("Routes in the wrong language sitemap", "wrong_locale_sitemap"),
+            ("Conflicting physical files for one clean route", "conflicting_route_files"),
         ):
             values = sorted(audit[key])
             handle.write(f"\n## {heading} — {len(values)}\n\n")
             handle.write("None.\n" if not values else "".join(f"- `{value}`\n" for value in values))
+
+        handle.write(f"\n## Verified identical route aliases — {len(audit['route_aliases'])}\n\n")
+        if not audit["route_aliases"]:
+            handle.write("None.\n")
+        else:
+            for route, paths in sorted(audit["route_aliases"].items()):
+                handle.write(f"- `{route}`: " + ", ".join(f"`{path}`" for path in paths) + "\n")
 
         handle.write("\n## Per-page detail\n\n")
         worst = sorted(

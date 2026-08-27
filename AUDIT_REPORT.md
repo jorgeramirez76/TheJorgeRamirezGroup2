@@ -1,4 +1,4 @@
-# Site Audit Report — 287 indexable pages
+# Site Audit Report — 285 indexable pages
 
 Public HTML files classified: 1273.
 
@@ -6,7 +6,8 @@ Public HTML files classified: 1273.
 
 | Classification | Files |
 |---|---:|
-| indexable | 287 |
+| indexable | 285 |
+| route-alias | 2 |
 | redirect | 544 |
 | noindex | 442 |
 | canonicalized | 0 |
@@ -40,6 +41,15 @@ None.
 ## Routes in the wrong language sitemap — 0
 
 None.
+
+## Conflicting physical files for one clean route — 0
+
+None.
+
+## Verified identical route aliases — 2
+
+- `/communities`: `communities.html`, `communities/index.html`
+- `/es/communities`: `es/communities.html`, `es/communities/index.html`
 
 ## Per-page detail
 
