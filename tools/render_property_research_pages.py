@@ -83,7 +83,7 @@ def shell(*, lang: str, title: str, description: str, canonical: str, en_url: st
   <meta name="description" content="{esc(description)}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="last-updated" content="2026-08-27">
-  <meta name="ai-content-declaration" content="human-authored">
+  <meta name="ai-content-declaration" content="ai-assisted, source-checked">
   <meta name="llm-context" content="{esc(description)} No live inventory, ranking, score, forecast, or outcome guarantee is provided.">
   <link rel="canonical" href="{esc(canonical)}">
   <link rel="alternate" hreflang="en-US" href="{esc(en_url)}">

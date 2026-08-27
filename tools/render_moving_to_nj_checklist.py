@@ -85,7 +85,7 @@ def render() -> str:
   <meta name="description" content="Use this dated New Jersey move checklist to verify license, vehicle title and registration, inspection, ID, and voter steps at current official sources.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="last-updated" content="2026-08-27">
-  <meta name="ai-content-declaration" content="human-authored">
+  <meta name="ai-content-declaration" content="ai-assisted, source-checked">
   <meta name="llm-context" content="Dated checklist for people moving to New Jersey. It links directly to current NJ MVC and Division of Elections pages and distinguishes a general checklist from transaction-specific requirements. General information, not legal, tax, insurance, or motor-vehicle advice.">
   <link rel="canonical" href="{CANONICAL}">
   <meta property="og:type" content="article">
@@ -111,7 +111,7 @@ def render() -> str:
 <nav class="nav" aria-label="Primary"><a href="/">The Jorge Ramirez Group</a><div class="nav-links"><a href="/buy-a-home">Buy</a><a href="/property-search">Search</a><a href="/communities">Communities</a><a class="call" href="tel:+19082307844">908-230-7844</a></div></nav>
 <header class="hero"><div class="wrap"><div class="eyebrow">New Jersey relocation checklist</div><h1>Moving to New Jersey: verify the current steps before your appointment.</h1><p>The official requirements depend on the person, license, vehicle, ownership, financing, and transaction. This dated checklist points to the current agencies and records the rules they publish; confirm the details for your situation before relying on them.</p></div></header>
 <main id="main" class="article"><article class="wrap">
-<p class="meta">Reviewed August 27, 2026 · By Jorge Ramirez, NJ real estate license #1754604</p>
+<p class="meta">Sources checked August 27, 2026 · By Jorge Ramirez, NJ real estate license #1754604</p>
 <div class="answer"><p><strong>The current NJ MVC “Moving To New Jersey” page says a recent resident must transfer an out-of-state license and vehicle title/registration within 60 days of the move or before the current license and vehicle registration expire, whichever occurs first.</strong> The same page says the two transfers may be handled in one out-of-state-transfer appointment and lists separate instructions for financed, leased, business-owned, and out-of-country vehicles or licenses. Start with the <a href="{SOURCES['move']}" target="_blank" rel="noopener noreferrer">current MVC page</a>, not a saved checklist.</p></div>
 
 <h2>Before booking the MVC visit</h2>

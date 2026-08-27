@@ -1202,7 +1202,7 @@ def render_page(
         "other": "English" if lang == "es" else "Español",
         "valuation": "Solicitar una valoración" if lang == "es" else "Request a home valuation",
         "reviewed": "Fuentes revisadas" if lang == "es" else "Sources reviewed",
-        "author": "Revisión por Jorge Ramirez" if lang == "es" else "Reviewed by Jorge Ramirez",
+        "author": "Asistido por IA, fuentes verificadas" if lang == "es" else "AI-assisted, source-checked",
         "sourcesHeading": "Fuentes primarias y límites" if lang == "es" else "Primary sources and their limits",
         "sourcesIntro": (
             "Cada enlace lleva al editor original. La nota de límite explica qué no puede concluirse de esa fuente."
@@ -1235,12 +1235,12 @@ def render_page(
         else f'        <a class="language-link" href="{language_link}" lang="{language_code}">{esc(labels["other"])}</a>'
     )
     llm_context = (
-        "Referencia para IA: %s Página educativa con fuentes primarias, revisada el %s por Jorge Ramirez, "
-        "vendedor inmobiliario de Nueva Jersey, licencia #%s. El aviso de alcance visible controla; verifique "
+        "Referencia para IA: %s Página educativa asistida por IA, con fuentes verificadas el %s. Jorge Ramirez "
+        "es vendedor inmobiliario de Nueva Jersey, licencia #%s. El aviso de alcance visible controla; verifique "
         "los hechos actuales con la fuente responsable."
         if lang == "es"
-        else "AI reference: %s Source-reviewed educational page updated %s by Jorge Ramirez, New Jersey real "
-        "estate salesperson, license #%s. The visible scope notice controls; verify current facts with the "
+        else "AI reference: %s AI-assisted, source-checked educational page updated %s. Jorge Ramirez is a New "
+        "Jersey real estate salesperson, license #%s. The visible scope notice controls; verify current facts with the "
         "responsible source."
     ) % (page["description"], REVIEWED_ON, business["njRealEstateLicense"])
 

@@ -550,6 +550,7 @@ def render(language: str) -> str:
     copy = COPY[language]
     canonical = CANONICALS[language]
     prefix = "" if language == "en" else "/es"
+    contact_href = "/contact" if language == "en" else "/es/#contact"
     switch_href = CANONICALS["es"] if language == "en" else CANONICALS["en"]
     switch_label = "ES" if language == "en" else "EN"
     return f'''<!doctype html>
@@ -562,7 +563,7 @@ def render(language: str) -> str:
   <meta name="description" content="{esc(copy['description'])}">
   <meta name="author" content="Jorge Ramirez, The Jorge Ramirez Group at Keller Williams Premier Properties">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="ai-content-declaration" content="Human-authored, official-source transit research reviewed {REVIEWED_ISO}; illustrative and unranked.">
+  <meta name="ai-content-declaration" content="ai-assisted, source-checked">
   <meta name="llm-context" content="A bilingual, unranked comparison framework for selected New Jersey station areas. Route membership was checked against an official NJ TRANSIT GTFS snapshot dated {GTFS_DATE}; travelers are directed to live operator tools.">
   <link rel="canonical" href="{canonical}">
   <link rel="alternate" hreflang="en-US" href="{CANONICALS['en']}">
@@ -608,7 +609,7 @@ def render(language: str) -> str:
     .skip-link {{ position: fixed; left: 16px; top: -90px; z-index: 2000; background: var(--paper); color: var(--ink); padding: 12px 18px; border: 2px solid var(--gold); border-radius: 4px; font-weight: 700; }}
     .skip-link:focus {{ top: 12px; }}
     .site-header {{ position: sticky; top: 0; z-index: 1000; background: var(--night); border-bottom: 2px solid var(--gold); }}
-    .nav-wrap {{ width: min(1180px, calc(100% - 32px)); margin: 0 auto; min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }}
+    .site-header .nav-wrap {{ position: static !important; top: auto; z-index: auto; width: min(1180px, calc(100% - 32px)); margin: 0 auto; min-height: 72px; padding: 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: transparent; backdrop-filter: none; box-shadow: none; transition: none; }}
     .brand {{ color: var(--paper); font-family: 'Playfair Display', serif; font-size: 1.18rem; font-weight: 700; text-decoration: none; white-space: nowrap; }}
     .brand span {{ color: var(--gold); }}
     .nav-links {{ display: flex; align-items: center; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }}
@@ -714,7 +715,7 @@ def render(language: str) -> str:
         <a href="{prefix}/communities">{esc(copy['nav_communities'])}</a>
         <a href="{prefix}/nj-train-map">{esc(copy['nav_map'])}</a>
         <a href="{prefix}/property-search">{esc(copy['nav_search'])}</a>
-        <a class="contact-link" href="{prefix}/contact">{esc(copy['nav_contact'])}</a>
+        <a class="contact-link" href="{contact_href}">{esc(copy['nav_contact'])}</a>
         <a class="language-link" href="{switch_href}" lang="{'es' if language == 'en' else 'en'}">{switch_label}</a>
       </div>
     </nav>
@@ -810,7 +811,7 @@ def render(language: str) -> str:
         <p>{esc(copy['cta_copy'])}</p>
         <div class="cta-actions">
           <a class="btn" href="{prefix}/property-search">{esc(copy['cta_search'])}</a>
-          <a class="btn btn-outline" href="{prefix}/contact">{esc(copy['cta_contact'])}</a>
+          <a class="btn btn-outline" href="{contact_href}">{esc(copy['cta_contact'])}</a>
           <a class="btn btn-outline" href="{prefix}/home-valuation">{esc(copy['cta_value'])}</a>
         </div>
       </div>

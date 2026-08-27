@@ -165,7 +165,7 @@ def page_copy(report: Mapping[str, Any], language: str) -> dict[str, Any]:
                 "and a method that keeps geography, dates, and field definitions together."
             ),
             "reviewed": "Sources reviewed",
-            "prepared": "Source review by Jorge Ramirez",
+            "prepared": "AI-assisted, source-checked",
             "geography_heading": "Start with the exact geography",
             "geography_lead": report["identityEn"],
             "research_note": report["researchNoteEn"],
@@ -269,7 +269,7 @@ def page_copy(report: Mapping[str, Any], language: str) -> dict[str, Any]:
             "del condado y un método que mantiene juntos geografía, fechas y definiciones."
         ),
         "reviewed": "Fuentes revisadas",
-        "prepared": "Revisión de fuentes por Jorge Ramirez",
+        "prepared": "Asistido por IA, fuentes verificadas",
         "geography_heading": "Empiece por la geografía exacta",
         "geography_lead": report["identityEs"],
         "research_note": report["researchNoteEs"],

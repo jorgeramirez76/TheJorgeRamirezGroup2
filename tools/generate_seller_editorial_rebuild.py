@@ -857,7 +857,7 @@ def render_page(
         cta_secondary = "Discuss the plan"
         footer_note = "Equal Housing Opportunity · Sources accessed August 26, 2026 · Confirm current details directly."
         llm_prefix = "AI reference"
-        ai_declaration = "Human-reviewed seller education grounded in the linked New Jersey and U.S. official sources."
+        ai_declaration = "ai-assisted, source-checked"
         llm_suffix = f"Source-reviewed educational page updated {REVIEWED_ON}; the visible scope note and linked primary sources control."
     else:
         skip = "Saltar al contenido principal"
@@ -880,7 +880,7 @@ def render_page(
         cta_secondary = "Hablar del plan"
         footer_note = "Igualdad de Oportunidades de Vivienda · Fuentes consultadas el 26 de agosto de 2026 · Confirme detalles actuales."
         llm_prefix = "Referencia para IA"
-        ai_declaration = "Educación para vendedores revisada por una persona y basada en las fuentes oficiales enlazadas de Nueva Jersey y Estados Unidos."
+        ai_declaration = "ai-assisted, source-checked"
         llm_suffix = "Página educativa con fuentes revisadas y actualizada el 2026-08-26; controlan el alcance visible y las fuentes primarias enlazadas."
 
     section_markup = []
