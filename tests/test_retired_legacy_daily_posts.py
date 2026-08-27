@@ -12,8 +12,13 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "retired-legacy-daily-posts.json"
+SNIPPET_BACKLOG = ROOT / "data" / "english-snippet-backlog.json"
 SITE = "https://thejorgeramirezgroup.com"
 SKIP_DIRS = {".git", "crm", "node_modules", "property-leads-system"}
+NEWLY_RETIRED_ROUTES = {
+    "/blog/affordable-upgrades-home-value-nj-2026": "/sell-your-home",
+    "/blog/interior-design-trends-2026-nj-sellers": "/sell-your-home",
+}
 
 
 def normalized_path(url: str, *, source: Path) -> str | None:
@@ -44,8 +49,8 @@ class RetiredLegacyDailyPostTests(unittest.TestCase):
         cls.routes = {item["path"] for item in cls.pages}
 
     def test_manifest_is_complete_traceable_and_performance_grounded(self) -> None:
-        self.assertEqual(139, len(self.pages))
-        self.assertEqual(139, len(self.routes))
+        self.assertEqual(141, len(self.pages))
+        self.assertEqual(141, len(self.routes))
         self.assertEqual("legacy-house-outlook-daily", self.manifest["workflow_id"])
         self.assertEqual("2026-08-26", self.manifest["retired_on"])
         self.assertEqual(1, self.manifest["gsc_recent_3_months"]["clicks"])
@@ -60,6 +65,19 @@ class RetiredLegacyDailyPostTests(unittest.TestCase):
             "/blog/best-time-to-sell-home-nj",
         }
         self.assertTrue(all(item["destination"] in allowed for item in self.pages))
+
+    def test_new_remote_daily_posts_are_retired_to_the_seller_guide(self) -> None:
+        destinations = {item["path"]: item["destination"] for item in self.pages}
+        for route, destination in NEWLY_RETIRED_ROUTES.items():
+            with self.subTest(route=route):
+                self.assertEqual(destination, destinations.get(route))
+
+    def test_snippet_history_preserves_retirements_from_other_workflows(self) -> None:
+        backlog = json.loads(SNIPPET_BACKLOG.read_text(encoding="utf-8"))
+        self.assertIn(
+            "blog/is-it-cheaper-to-live-in-nj-or-ny.html",
+            backlog["retired_pages"],
+        )
 
     def test_every_retired_route_is_a_small_noindex_homepage_palette_fallback(self) -> None:
         for item in self.pages:

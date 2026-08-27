@@ -22,6 +22,7 @@ SITE = "https://thejorgeramirezgroup.com"
 MANIFEST = ROOT / "data" / "retired-legacy-daily-posts.json"
 SNIPPET_BACKLOG = ROOT / "data" / "english-snippet-backlog.json"
 SKIP_DIRS = {".git", "crm", "node_modules", "property-leads-system"}
+EXPECTED_LEGACY_PAGE_COUNT = 141
 
 
 DESTINATION_LABELS = {
@@ -265,14 +266,18 @@ def write_manifest(files: list[str], mapping: dict[str, str]) -> None:
 def update_snippet_history(files: list[str]) -> None:
     payload = json.loads(SNIPPET_BACKLOG.read_text(encoding="utf-8"))
     pages = payload.get("pages", {})
-    payload["retired_pages"] = sorted(file for file in files if file in pages)
+    prior_retirements = set(payload.get("retired_pages", []))
+    daily_retirements = {file for file in files if file in pages}
+    payload["retired_pages"] = sorted(prior_retirements | daily_retirements)
     SNIPPET_BACKLOG.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def main() -> int:
     files = legacy_files()
-    if len(files) != 139:
-        raise RuntimeError(f"expected 139 legacy HTML pages, found {len(files)}")
+    if len(files) != EXPECTED_LEGACY_PAGE_COUNT:
+        raise RuntimeError(
+            f"expected {EXPECTED_LEGACY_PAGE_COUNT} legacy HTML pages, found {len(files)}"
+        )
     mapping = {f"/blog/{Path(file).stem}": destination_for(Path(file).stem) for file in files}
     sitemap_removed = remove_sitemap_routes(mapping)
     cards_removed = remove_blog_index_cards(mapping)

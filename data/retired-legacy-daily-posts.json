@@ -15,6 +15,11 @@
       "destination": "/sell-your-home"
     },
     {
+      "file": "blog/affordable-upgrades-home-value-nj-2026.html",
+      "path": "/blog/affordable-upgrades-home-value-nj-2026",
+      "destination": "/sell-your-home"
+    },
+    {
       "file": "blog/affordable-upgrades-nj-home-sellers-2026.html",
       "path": "/blog/affordable-upgrades-nj-home-sellers-2026",
       "destination": "/sell-your-home"
@@ -377,6 +382,11 @@
     {
       "file": "blog/interior-design-trends-2026-nj-home-value.html",
       "path": "/blog/interior-design-trends-2026-nj-home-value",
+      "destination": "/sell-your-home"
+    },
+    {
+      "file": "blog/interior-design-trends-2026-nj-sellers.html",
+      "path": "/blog/interior-design-trends-2026-nj-sellers",
       "destination": "/sell-your-home"
     },
     {
