@@ -1,11 +1,9 @@
 {
-  "report_email": "jorgeramirez76@gmail.com",
-  "_note": "Thresholds for what counts as a CTR 'opportunity' worth proposing a title fix for.",
-  "proposal_min_impressions": 250,
-  "proposal_max_ctr": 0.02,
-  "proposal_max_position": 20.0,
-  "cooldown_days": 21,
-  "_cooldown_note": "Never re-touch a page we changed within this many days — lets a change be measured before the next one (no thrashing).",
-  "max_auto_edits_per_day": 40,
-  "url_inspect_per_day": 25
+  "mode": "read-only",
+  "network_enabled": false,
+  "external_writes_enabled": false,
+  "push_enabled": false,
+  "email_enabled": false,
+  "scheduled_run_enabled": false,
+  "note": "Local metadata inventory only. Any local apply requires a hash-pinned plan and the exact owner confirmation documented in README.md."
 }

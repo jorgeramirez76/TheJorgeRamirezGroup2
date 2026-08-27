@@ -1,104 +1,64 @@
-# Daily SEO Doctor
+# SEO Doctor: local metadata verifier
 
-Reads **Google Search Console** every morning, **auto-fixes the safe stuff**,
-**queues risky changes for your approval**, and **emails you a report** — for
-thejorgeramirezgroup.com.
-
-## Core principle
-
-Never blindly rewrite a page that already ranks. Additive, mechanical fixes are
-automatic. Anything that could *move* a ranking (title/meta/content on a page
-that ranks) is **proposed, not applied**, and a page we change is never touched
-again for `cooldown_days` so the change can be measured first.
-
-## What it does each morning (8:00 AM)
-
-1. **Pulls GSC** (auto-refreshes + writes back the token): 28-day clicks /
-   impressions / CTR / position, per-page + per-query, and day-over-day deltas.
-2. **Checks index health**: a rotating daily sample of URLs via the URL
-   Inspection API, plus sitemap submission status.
-3. **Audits every page** for missing meta description / canonical / viewport /
-   Open Graph / Twitter card / JSON-LD. **Redirect stubs and `noindex` pages
-   are skipped** (they're intentional — 1,000+ on this site).
-4. **Queues new blog pages for sitemap review** — self-canonical pages are not
-   automatically submitted because canonical markup alone does not establish
-   editorial quality, topical fit, or factual accuracy. After review, run
-   `python3 tools/sync_sitemap.py --apply` from the repository root.
-5. **Auto-fixes the safe class** (additive only), capped at
-   `max_auto_edits_per_day`, each committed with a clear diff, then pushed →
-   Vercel deploys.
-6. **Queues risky proposals** — high-impression / low-CTR pages get a suggested
-   better title (Claude-written when the token is set; otherwise only
-   high-confidence changes like refreshing a stale year). These are **never
-   auto-applied**.
-7. **Emails the report**: what Google shows, what was fixed, what needs your
-   call, and the biggest CTR opportunities.
-
-## What it can and can't see
-
-The public GSC API exposes **search performance, per-URL index status, and
-sitemaps** — all used here. It does **not** expose the web-UI "Page Indexing /
-Coverage", "Core Web Vitals", or "Enhancements" dashboards (Google offers no
-API for those). URL Inspection reproduces most coverage insight per-URL.
-
-## Approving risky changes
-
-The daily email lists each proposal. To apply:
+SEO Doctor is **read-only by default**. It inventories local HTML metadata and
+prints JSON to standard output. It does not contact Google Search Console or any
+other service, save a report, refresh credentials, alter the repository, or
+message anyone.
 
 ```bash
-python3 seo_daily.py --apply-proposals          # apply all queued
-python3 seo_daily.py --apply-proposals --id ID  # apply one
+python3 tools/seo-optimizer/seo_daily.py
+python3 tools/seo-optimizer/seo_daily.py --check
 ```
 
-…or just tell Claude "apply today's SEO proposals".
+Both commands perform the same local inventory. The output reports HTML-file,
+indexable-file, retired-file, and missing-metadata counts. Redirect and
+intentional `noindex` pages are classified separately and are never candidates
+for a metadata change.
 
-## Two one-time setup steps (both optional, both improve quality)
+## Explicit local apply mode
 
-1. **Email delivery** — needed for the morning report. Copy `mail.env.example`
-   to `mail.env` and add a Gmail **App Password**
-   (https://myaccount.google.com/apppasswords, 60 seconds). Until then the
-   report is saved to `reports/` each day but not emailed.
-2. **Claude-written titles** — set `claude_oauth_token` in
-   `../blog-automation/config.json` (via `claude setup-token`). Then proposed
-   title rewrites are AI-written instead of heuristic. Shared with the blog
-   automation — set it once.
+The only write path accepts an **explicit local metadata plan**. A plan must:
 
-## Schedule
+- use schema version `1`;
+- name each repository-relative `.html` target;
+- include the exact current SHA-256 for every target;
+- contain only allowlisted missing metadata fields; and
+- contain no more than ten files.
 
-`~/Library/LaunchAgents/com.jrg.seo-optimizer.plist` — 8:00 AM daily
-(staggered after the 7 AM blog job), reboot-proof.
+Example plan:
+
+```json
+{
+  "version": 1,
+  "changes": [
+    {
+      "path": "reviewed-page.html",
+      "sha256": "replace-with-the-exact-64-character-lowercase-hash",
+      "metadata": {
+        "description": "A reviewed description for this exact page.",
+        "twitter:card": "summary_large_image"
+      }
+    }
+  ]
+}
+```
+
+After an owner reviews that exact plan and current file hash, local application
+requires both flags and the exact confirmation phrase:
 
 ```bash
-launchctl load  ~/Library/LaunchAgents/com.jrg.seo-optimizer.plist
-launchctl start com.jrg.seo-optimizer          # run now
+python3 tools/seo-optimizer/seo_daily.py \
+  --apply-plan /absolute/path/to/reviewed-plan.json \
+  --owner-approval I_APPROVE_THIS_LOCAL_SEO_METADATA_PLAN
 ```
 
-## Manual controls
+The apply mode rejects changed hashes, existing fields, markup in values,
+non-HTML targets, paths outside the repository, fallback pages, redirects, and
+intentional `noindex` pages. It only adds the reviewed fields before `</head>`.
 
-```bash
-python3 seo_daily.py            # full run (what the 8am job does)
-python3 seo_daily.py --dry-run  # analyze + report, change/commit nothing
-python3 seo_daily.py --no-push  # apply safe fixes locally, don't push
-python3 seo_daily.py --no-email # skip the email
-```
+## Safety boundary
 
-## Files
-
-| file | purpose |
-|------|---------|
-| `seo_daily.py` | the automation |
-| `config.json` | thresholds, cooldown, caps, report email |
-| `mail.env` | SMTP app password (git-ignored; from `mail.env.example`) |
-| `state/` | daily snapshots, proposals, change cooldown (git-ignored) |
-| `reports/` | daily HTML reports (git-ignored) |
-
-## Safety
-
-- Only skips or **adds** tags — never rewrites an existing title/content
-  automatically.
-- Redirect/`noindex` pages are never modified.
-- `cooldown_days` prevents thrashing a page we already changed.
-- Every change goes through git (diff-reviewable, revertible); pushes use
-  `pull --rebase` so the two daily jobs never collide.
-- Banned personal number is stripped from any inserted tag; a repo GitHub
-  Action scrubs it on push as a backstop.
+This utility never commits, pulls, pushes, deploys, emails, or submits URLs or
+sitemaps. It has no network, mail, credential-refresh, Git, deployment, or
+scheduling code. Any resulting local diff must be reviewed and tested through
+the repository's normal human-controlled workflow.
