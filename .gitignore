@@ -5,6 +5,7 @@ __pycache__/
 .design-screens/
 .vercel
 .env*
+/tmp/
 # JRG-CRM local runtime/secrets
 crm/.env
 crm/.env.*
