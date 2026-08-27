@@ -2772,7 +2772,11 @@ a.hero-train-pill:focus-visible .htp-arrow {
 }
 .skip-link:focus,
 .skip-link:focus-visible {
-  left: 0;
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 /* ── .related-links — used by 292 pages, previously unstyled ───────────────── */

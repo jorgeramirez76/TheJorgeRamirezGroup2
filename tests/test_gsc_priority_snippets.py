@@ -142,7 +142,13 @@ class GscPrioritySnippetTests(unittest.TestCase):
 
         title_owners: dict[str, list[str]] = defaultdict(list)
         description_owners: dict[str, list[str]] = defaultdict(list)
-        skip_dirs = {".git", "crm", "node_modules", "property-leads-system"}
+        skip_dirs = {
+            ".git",
+            ".vercel",
+            "crm",
+            "node_modules",
+            "property-leads-system",
+        }
         for path in ROOT.rglob("*.html"):
             relative = path.relative_to(ROOT)
             if any(part in skip_dirs for part in relative.parts):

@@ -593,8 +593,8 @@
         "description": "Named 55+ communities in New Jersey by town and county, how the age restriction works, what the HOA covers, Stay NJ tax relief, and home downsizing timing."
       },
       "after": {
-        "title": "55+ Communities in New Jersey: Towns, HOAs and Costs",
-        "description": "Explore named 55+ communities by town and county, how age rules work, what HOA fees may cover, and how Stay NJ can affect a downsizing plan."
+        "title": "55+ Communities in NJ: Rules and Due Diligence",
+        "description": "A source-led guide to New Jersey 55+ communities: HUD HOPA requirements, association documents, PRED resources, Stay NJ, housing costs, and move timing."
       },
       "sync_fields": [
         "property:og:title",
@@ -620,8 +620,8 @@
         "description": "A NJ Transit peak monthly pass runs ~$400-450, or $5,000-$5,400 a year — before parking, PATH, and the value of your time."
       },
       "after": {
-        "title": "NJ to NYC Commute Cost 2026: Train, Parking and Time",
-        "description": "Compare 2026 NJ Transit pass estimates with parking, PATH or subway connections and commute time to budget the full cost of getting to New York City."
+        "title": "NJ to NYC Commute Cost Worksheet 2026 | Official Sources",
+        "description": "Build a current NJ-to-NYC commute budget from official fare, toll and municipal parking sources, then enter your own schedule, costs and travel time."
       },
       "sync_fields": [
         "property:og:title"

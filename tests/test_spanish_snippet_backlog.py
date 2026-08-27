@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MAPPING = ROOT / "data" / "spanish-snippet-backlog.json"
 SCRIPT = ROOT / "scripts" / "apply_spanish_snippets.py"
 SPANISH_TOWN_MANIFEST = ROOT / "data" / "spanish-town-risk-decisions.json"
-SKIP_DIRS = {".git", "crm", "node_modules", "property-leads-system"}
+SKIP_DIRS = {".git", ".vercel", "crm", "node_modules", "property-leads-system"}
 
 ENGLISH_BOILERPLATE = re.compile(
     r"\b(?:real estate|market report|buying (?:a )?home|selling (?:a )?home|"

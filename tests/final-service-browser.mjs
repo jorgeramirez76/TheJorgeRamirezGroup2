@@ -4,6 +4,10 @@ import { chromium } from "/Users/teddy/.cache/codex-runtimes/codex-primary-runti
 
 const ROOT = process.cwd();
 const SCREENSHOTS = "/private/tmp/final-service-browser-20260827";
+const hardTimeout = setTimeout(() => {
+  process.stderr.write("final service browser checks exceeded the 120-second hard timeout\n");
+  process.exit(2);
+}, 120_000);
 const routes = new Map([
   ["/luxury-homes-nj.html", "https://thejorgeramirezgroup.com/luxury-homes-nj"],
   ["/es/luxury-homes-nj.html", "https://thejorgeramirezgroup.com/es/luxury-homes-nj"],
@@ -80,6 +84,27 @@ for (const width of widths) {
       window.scrollTo(0, 0);
     });
     await page.waitForTimeout(80);
+    await page.locator(".skip-link").focus();
+    const skipLinkState = await page.evaluate(() => {
+      const active = document.activeElement;
+      const rect = active?.getBoundingClientRect();
+      return {
+        activeClass: active?.className || "",
+        focused: Boolean(active?.classList.contains("skip-link")),
+        rect: rect ? {
+          bottom: rect.bottom,
+          height: rect.height,
+          left: rect.left,
+          right: rect.right,
+          top: rect.top,
+          width: rect.width,
+        } : null,
+        visible: Boolean(
+          rect && rect.width > 0 && rect.height > 0 && rect.left >= -1 &&
+          rect.right <= document.documentElement.clientWidth + 1
+        ),
+      };
+    });
 
     const result = await page.evaluate(() => {
       const schemas = [...document.querySelectorAll('script[type="application/ld+json"]')];
@@ -101,7 +126,8 @@ for (const width of widths) {
       const actionable = [...document.querySelectorAll("a, button")]
         .filter((element) => {
           const style = getComputedStyle(element);
-          return style.display !== "none" && style.visibility !== "hidden";
+          return !element.classList.contains("skip-link") &&
+            style.display !== "none" && style.visibility !== "hidden";
         })
         .map((element) => {
           const rect = element.getBoundingClientRect();
@@ -141,6 +167,11 @@ for (const width of widths) {
       );
     }
     if (!result.navVisible) failures.push(`${route} @ ${width}: nav hidden`);
+    if (!skipLinkState.focused || !skipLinkState.visible) {
+      failures.push(
+        `${route} @ ${width}: skip link ${JSON.stringify(skipLinkState)}`,
+      );
+    }
     if (result.overflow) failures.push(`${route} @ ${width}: horizontal overflow`);
     if (result.outOfViewportActions.length) {
       failures.push(
@@ -181,6 +212,7 @@ for (const width of widths) {
 }
 
 await browser.close();
+clearTimeout(hardTimeout);
 if (failures.length) {
   process.stderr.write(`${failures.join("\n")}\n`);
   process.exit(1);

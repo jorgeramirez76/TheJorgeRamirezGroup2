@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MAPPING = ROOT / "data" / "english-snippet-backlog.json"
 QUARANTINE = ROOT / "data" / "english-fair-housing-quarantine.json"
-SKIP_DIRS = {".git", "crm", "node_modules", "property-leads-system"}
+SKIP_DIRS = {".git", ".vercel", "crm", "node_modules", "property-leads-system"}
 
 
 class HeadParser(HTMLParser):
