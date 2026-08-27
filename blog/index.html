@@ -114,6 +114,10 @@
       body > header > nav { position: static; width: 100%; top: auto; z-index: auto; padding: .75rem 0 0; background: transparent; backdrop-filter: none; box-shadow: none; transition: none; display: flex; flex-wrap: wrap; justify-content: center; gap: .3rem 1rem; }
       body > header > nav a { min-height: 44px; display: inline-flex; align-items: center; color: #FAFAF8; font-family: 'Inter', sans-serif; text-decoration: none; }
       body > header > nav a:hover { color: #D4AF5A; }
+      .blog-index-title { font-family: var(--font-display, 'Playfair Display', Georgia, serif); }
+      .related-links p { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
+      .related-links .related-resource-link { display: inline-flex; align-items: center; min-height: 44px; padding: .5rem 1rem; border: 1px solid var(--gold, #B8962E); border-radius: var(--radius-pill, 999px); background: var(--dark-red, #8B0D22); color: var(--white, #FFFFFF); font-weight: 700; text-decoration: none; }
+      .related-links .related-resource-link:hover { background: var(--primary-red, #C41230); color: var(--white, #FFFFFF); }
     </style>
 </head>
 <body>
@@ -137,7 +141,7 @@
     </header>
 
     <main id="main" style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
-        <h1>New Jersey Real Estate Blog</h1>
+        <h1 class="blog-index-title">New Jersey Real Estate Blog</h1>
         <p style="font-size: 1.1em; color: #666; margin-bottom: 40px;">
             Market insights, town guides, and practical guidance about buying and selling homes in New Jersey. Written by Jorge Ramirez, New Jersey real estate salesperson. <strong>Licensure does not imply endorsement.</strong>
         </p>
@@ -584,8 +588,8 @@
         <li><a href="/towns/morristown" style="color:#2C2C2C;">Morristown NJ Real Estate</a></li>
       </ul>
       <p>
-        <a href="/sell-your-home">→ Sell Your NJ Home</a>
-        <a href="/home-valuation">→ Free Home Valuation</a>
+        <a href="/sell-your-home" class="related-resource-link">→ Sell Your NJ Home</a>
+        <a href="/home-valuation" class="related-resource-link">→ Free Home Valuation</a>
       </p>
     </div>
   </section>
