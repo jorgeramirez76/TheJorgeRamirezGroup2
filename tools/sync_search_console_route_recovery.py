@@ -42,6 +42,18 @@ def is_pattern(rule: dict) -> bool:
     return bool(rule.get("has") or any(mark in source for mark in (":", "*", "(")))
 
 
+def is_canonical_host_rule(rule: dict) -> bool:
+    return (
+        str(rule.get("source", "")) == "/(.*)"
+        and str(rule.get("destination", "")) == SITE + "/$1"
+        and any(
+            condition.get("type") == "host"
+            for condition in rule.get("has", [])
+            if isinstance(condition, dict)
+        )
+    )
+
+
 def render_config(config: dict, mappings: dict[str, str]) -> str:
     redirects = config["redirects"]
     seen: set[str] = set()
@@ -64,8 +76,19 @@ def render_config(config: dict, mappings: dict[str, str]) -> str:
         for source, destination in mappings.items()
         if source not in seen
     ]
+    preamble_end = 0
+    while preamble_end < len(redirects) and is_canonical_host_rule(
+        redirects[preamble_end]
+    ):
+        preamble_end += 1
     insertion = next(
-        (index for index, rule in enumerate(redirects) if is_pattern(rule)),
+        (
+            index
+            for index, rule in enumerate(
+                redirects[preamble_end:], start=preamble_end
+            )
+            if is_pattern(rule)
+        ),
         len(redirects),
     )
     config["redirects"] = redirects[:insertion] + additions + redirects[insertion:]

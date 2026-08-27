@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from tools.generate_market_report_containment import (  # noqa: E402
+    _ensure_vercel_redirects,
     generated_page_paths,
     load_inventory,
 )
@@ -243,6 +244,57 @@ class MarketReportInventoryTests(unittest.TestCase):
 
 
 class MarketReportRedirectTests(unittest.TestCase):
+    def test_future_missing_redirects_follow_the_canonical_host_preamble(self) -> None:
+        live_config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
+        host_preamble = live_config["redirects"][:2]
+        unrelated = [
+            {
+                "source": "/unrelated-exact",
+                "destination": "/unrelated-target",
+                "permanent": True,
+            },
+            {
+                "source": "/realtor/:slug-nj",
+                "destination": "/towns/:slug",
+                "permanent": True,
+            },
+        ]
+        source = json.dumps(
+            {"redirects": host_preamble + unrelated}, indent=2
+        ) + "\n"
+        inventory = {
+            "redirectPairs": [
+                {
+                    "source": {
+                        "en": "/synthetic-market-report",
+                        "es": "/es/synthetic-market-report",
+                    },
+                    "destination": {
+                        "en": "/blog/current-market-report",
+                        "es": "/es/blog/current-market-report",
+                    },
+                }
+            ]
+        }
+
+        rendered = json.loads(_ensure_vercel_redirects(source, inventory))["redirects"]
+
+        self.assertEqual(host_preamble, rendered[:2])
+        managed_sources = {
+            "/synthetic-market-report",
+            "/synthetic-market-report.html",
+            "/es/synthetic-market-report",
+            "/es/synthetic-market-report.html",
+        }
+        self.assertEqual(
+            host_preamble + unrelated,
+            [rule for rule in rendered if rule["source"] not in managed_sources],
+        )
+        self.assertEqual(
+            managed_sources,
+            {rule["source"] for rule in rendered[2:6]},
+        )
+
     def test_ten_language_preserving_redirects_are_permanent_and_one_hop(self) -> None:
         config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
         redirects = {

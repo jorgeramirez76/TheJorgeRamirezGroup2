@@ -8,9 +8,10 @@ import re
 import subprocess
 import sys
 import unittest
+from copy import deepcopy
 from pathlib import Path
 
-from tools.sync_legacy_route_canonicalizations import render_fallback
+from tools.sync_legacy_route_canonicalizations import render_config, render_fallback
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -89,6 +90,45 @@ class LegacyRouteCanonicalizationTests(unittest.TestCase):
             if re.search(r'<meta\b[^>]*name=["\']robots["\'][^>]*noindex', source, re.I) and "hreflang=" in source:
                 offenders.append(relative)
         self.assertEqual([], offenders)
+
+    def test_anchorless_fallback_keeps_the_canonical_host_preamble_first(self) -> None:
+        host_preamble = deepcopy(self.config["redirects"][:2])
+        unrelated = [
+            {
+                "source": "/unrelated-exact",
+                "destination": "/unrelated-target",
+                "permanent": True,
+            },
+            {
+                "source": "/realtor/:slug-nj",
+                "destination": "/towns/:slug",
+                "permanent": True,
+            },
+            {
+                "source": "/unrelated-tail",
+                "destination": "/tail-target",
+                "permanent": True,
+            },
+        ]
+        config = {"redirects": host_preamble + deepcopy(unrelated)}
+        items = [
+            {
+                "source": "/synthetic-legacy-route",
+                "destination": "/synthetic-target",
+            }
+        ]
+
+        rendered = json.loads(render_config(config, items))["redirects"]
+
+        self.assertEqual(host_preamble, rendered[:2])
+        self.assertEqual(
+            host_preamble + unrelated,
+            [rule for rule in rendered if rule["source"] != "/synthetic-legacy-route"],
+        )
+        self.assertLess(
+            next(i for i, rule in enumerate(rendered) if rule["source"] == "/synthetic-legacy-route"),
+            next(i for i, rule in enumerate(rendered) if rule["source"] == "/realtor/:slug-nj"),
+        )
 
     def test_sync_is_deterministic(self) -> None:
         result = subprocess.run(

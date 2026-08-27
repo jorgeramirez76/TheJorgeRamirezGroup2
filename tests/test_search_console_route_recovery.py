@@ -7,7 +7,10 @@ import json
 import subprocess
 import sys
 import unittest
+from copy import deepcopy
 from pathlib import Path
+
+from tools.sync_search_console_route_recovery import render_config
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -93,6 +96,43 @@ class SearchConsoleRouteRecoveryTests(unittest.TestCase):
                     check=False,
                 )
                 self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+
+    def test_future_missing_route_is_inserted_after_the_canonical_host_preamble(self) -> None:
+        host_preamble = deepcopy(self.config["redirects"][:2])
+        unrelated = [
+            {
+                "source": "/already-managed",
+                "destination": "/existing-target",
+                "permanent": True,
+            },
+            {
+                "source": "/realtor/:slug-nj",
+                "destination": "/towns/:slug",
+                "permanent": True,
+            },
+            {
+                "source": "/unrelated-tail",
+                "destination": "/tail-target",
+                "permanent": True,
+            },
+        ]
+        config = {"redirects": host_preamble + deepcopy(unrelated)}
+        mappings = {
+            "/already-managed": "/existing-target",
+            "/synthetic-missing-route": "/synthetic-target",
+        }
+
+        rendered = json.loads(render_config(config, mappings))["redirects"]
+
+        self.assertEqual(host_preamble, rendered[:2])
+        self.assertEqual(
+            host_preamble + unrelated,
+            [rule for rule in rendered if rule["source"] != "/synthetic-missing-route"],
+        )
+        self.assertLess(
+            next(i for i, rule in enumerate(rendered) if rule["source"] == "/synthetic-missing-route"),
+            next(i for i, rule in enumerate(rendered) if rule["source"] == "/realtor/:slug-nj"),
+        )
 
 
 if __name__ == "__main__":

@@ -38,6 +38,18 @@ def is_pattern(rule: dict) -> bool:
     return bool(rule.get("has") or any(mark in source for mark in (":", "*", "(")))
 
 
+def is_canonical_host_rule(rule: dict) -> bool:
+    return (
+        str(rule.get("source", "")) == "/(.*)"
+        and str(rule.get("destination", "")) == SITE + "/$1"
+        and any(
+            condition.get("type") == "host"
+            for condition in rule.get("has", [])
+            if isinstance(condition, dict)
+        )
+    )
+
+
 def render_config(config: dict, items: list[dict[str, str]]) -> str:
     redirects = config.get("redirects")
     if not isinstance(redirects, list):
@@ -52,10 +64,17 @@ def render_config(config: dict, items: list[dict[str, str]]) -> str:
     # Keep the AI Pipeline and programmatic-doorway managed blocks after this
     # small exact-route block. Those independent generators remove and reinsert
     # their own routes in that order; this anchor keeps every tool idempotent.
+    preamble_end = 0
+    while preamble_end < len(retained) and is_canonical_host_rule(
+        retained[preamble_end]
+    ):
+        preamble_end += 1
     insertion = next(
         (
             index
-            for index, rule in enumerate(retained)
+            for index, rule in enumerate(
+                retained[preamble_end:], start=preamble_end
+            )
             if re.fullmatch(
                 r"/(?:es/)?features/[^/:*()]+",
                 str(rule.get("source", "")),
@@ -65,7 +84,13 @@ def render_config(config: dict, items: list[dict[str, str]]) -> str:
             )
         ),
         next(
-            (index for index, rule in enumerate(retained) if is_pattern(rule)),
+            (
+                index
+                for index, rule in enumerate(
+                    retained[preamble_end:], start=preamble_end
+                )
+                if is_pattern(rule)
+            ),
             len(retained),
         ),
     )

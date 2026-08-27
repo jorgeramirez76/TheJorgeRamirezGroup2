@@ -399,6 +399,36 @@ def _required_redirects(inventory: Mapping[str, Any]) -> list[dict[str, Any]]:
     return result
 
 
+def _is_canonical_host_rule(rule: Mapping[str, Any]) -> bool:
+    return (
+        str(rule.get("source", "")) == "/(.*)"
+        and str(rule.get("destination", "")) == SITE + "/$1"
+        and any(
+            condition.get("type") == "host"
+            for condition in rule.get("has", [])
+            if isinstance(condition, Mapping)
+        )
+    )
+
+
+def _redirect_insertion_offset(source: str, marker: str, preamble_count: int) -> int:
+    """Return the byte-safe text offset immediately after the host preamble."""
+
+    cursor = source.index(marker) + len(marker)
+    decoder = json.JSONDecoder()
+    for _ in range(preamble_count):
+        while cursor < len(source) and source[cursor] in " \t":
+            cursor += 1
+        _, cursor = decoder.raw_decode(source, cursor)
+        if source.startswith(",\r\n", cursor):
+            cursor += 3
+        elif source.startswith(",\n", cursor):
+            cursor += 2
+        else:
+            raise ValueError("vercel.json canonical host preamble format is unsupported")
+    return cursor
+
+
 def _ensure_vercel_redirects(
     source: str, inventory: Mapping[str, Any]
 ) -> str:
@@ -428,6 +458,12 @@ def _ensure_vercel_redirects(
     marker = '  "redirects": [\n'
     if marker not in source:
         raise ValueError("vercel.json redirects array format is unsupported")
+    redirects = document.get("redirects", [])
+    preamble_count = 0
+    while preamble_count < len(redirects) and _is_canonical_host_rule(
+        redirects[preamble_count]
+    ):
+        preamble_count += 1
     blocks = []
     for rule in missing:
         blocks.append(
@@ -437,7 +473,8 @@ def _ensure_vercel_redirects(
             "      \"permanent\": true\n"
             "    },\n"
         )
-    return source.replace(marker, marker + "".join(blocks), 1)
+    insertion = _redirect_insertion_offset(source, marker, preamble_count)
+    return source[:insertion] + "".join(blocks) + source[insertion:]
 
 
 def _is_indexable_html(source: str) -> bool:
