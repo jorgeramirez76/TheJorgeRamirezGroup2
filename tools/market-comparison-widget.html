@@ -1,115 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMS6H85LB0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-KMS6H85LB0');
-    </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1A1A1A">
-    <title>NJ Town Comparison Tool | Compare NJ Towns Side by Side</title>
-    <meta name="robots" content="index, follow">
-    <meta name="description" content="Compare NJ towns side by side — schools, commute, prices, and lifestyle. Free tool by Jorge Ramirez, NJ real estate agent. Call 908-230-7844.">
-    <meta name="llm-context" content="NJ town comparison tool by Jorge Ramirez, licensed NJ real estate agent. Compare towns by schools, commute, price, and lifestyle. Contact: 908-230-7844.">
-    <link rel="canonical" href="https://thejorgeramirezgroup.com/tools/market-comparison-widget">
-    <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
-
-    <link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/tools/market-comparison-widget">
-    <link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/tools/market-comparison-widget">
-    <link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/tools/market-comparison-widget">
-    <link rel="stylesheet" href="/css/styles.css">
-    <style>
-        .tool-page { max-width: 600px; margin: 100px auto; padding: 30px 20px; text-align: center; }
-        .tool-page h1 { font-size: 2em; margin-bottom: 15px; }
-        .tool-page p { color: #666; margin-bottom: 30px; }
-        .tool-cta { display: inline-block; padding: 18px 40px; background: #C41230; color: white; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1em; }
-        .compare-links { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        .compare-links a { padding: 10px 20px; background: white; color: #2C2C2C; text-decoration: none; border-radius: 8px; border: 1px solid #e0e0e0; }
-        .tool-info { max-width: 720px; margin: 60px auto 40px; padding: 0 20px; text-align: left; }
-        .tool-info h2 { font-size: 1.5em; margin: 35px 0 12px; color: #2C2C2C; }
-        .tool-info p { color: #444; line-height: 1.7; margin-bottom: 15px; }
-    </style>
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="NJ Town Comparison Tool | Compare NJ Towns Side by Side | Jorge Ramirez">
-    <meta name="twitter:description" content="Compare NJ towns side by side — schools, commute, prices, and lifestyle. Free tool by Jorge Ramirez, NJ real estate agent. Call 908-230-7844.">
-    <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/hero.jpg">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebPage",
-          "@id": "https://thejorgeramirezgroup.com/tools/market-comparison-widget",
-          "url": "https://thejorgeramirezgroup.com/tools/market-comparison-widget",
-          "name": "Market Comparison Widget",
-          "isPartOf": {
-            "@type": "WebSite",
-            "name": "The Jorge Ramirez Group",
-            "url": "https://thejorgeramirezgroup.com/"
-          },
-          "author": {
-            "@type": "Person",
-            "@id": "https://thejorgeramirezgroup.com/#jorge-ramirez",
-            "name": "Jorge Ramirez",
-            "url": "https://thejorgeramirezgroup.com/",
-            "telephone": "+1-908-230-7844"
-          }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://thejorgeramirezgroup.com/"},
-            {"@type": "ListItem", "position": 2, "name": "Market Comparison Widget", "item": "https://thejorgeramirezgroup.com/tools/market-comparison-widget"}
-          ]
-        }
-      ]
-    }
-    </script>
-    <meta property="og:title" content="NJ Town Comparison Tool | Compare NJ Towns Side by Side">
-    <meta property="og:description" content="Compare NJ towns side by side — schools, commute, prices, and lifestyle. Free tool by Jorge Ramirez, NJ real estate agent. Call 908-230-7844.">
-    <meta property="og:url" content="https://thejorgeramirezgroup.com/tools/market-comparison-widget">
-    <meta property="og:type" content="website">
-    <meta name="ai-content-declaration" content="human-authored">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Should you compare towns by median price or price per square foot?", "acceptedAnswer": {"@type": "Answer", "text": "Both — because each one lies a little on its own. A town's median sale price is skewed by what happened to sell that quarter: a run of large colonials pushes the median up even if nothing about the market changed. Price per square foot corrects for home size, so it's the better yardstick when two towns have very different housing stock — say, Cape Cods in one and center-hall colonials in the other. But price per square foot ignores lot size, condition, and renovation level, so use it to frame the comparison, then look at actual sold listings to see what the numbers are hiding."}}, {"@type": "Question", "name": "What does days on market actually tell you?", "acceptedAnswer": {"@type": "Answer", "text": "Days on market is a speed gauge. When well-priced homes in a town typically go under contract in a week or two, sellers have the leverage and buyers need to come prepared. When listings sit for a month or more, there's room to negotiate. Compare the figure by price band, not just by town — a starter home and a two-million-dollar listing in the same ZIP code often live in completely different markets."}}, {"@type": "Question", "name": "Why compare property-tax rates instead of tax bills?", "acceptedAnswer": {"@type": "Answer", "text": "New Jersey tax bills reflect both the local rate and the home's assessed value, so a big bill sometimes just means a big house. The effective tax rate — what you pay as a percentage of market value — is what lets you compare towns fairly. Two NJ towns can have similar average bills but meaningfully different rates, and at any given purchase price the lower-rate town leaves more room in your monthly payment. School information should be researched independently: districts are typically capitalized into home prices, so you're paying for them either way — the question is whether you'll use them."}}, {"@type": "Question", "name": "Do the seasons change what the numbers say?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. The NJ spring market typically brings the most inventory and the most competition; late fall and winter run slower, with fewer listings and softer stats. That means comparing this month's numbers to last month's mostly measures the calendar. Compare year over year instead, and if you're weighing two towns, pull the same period for both. When you want a second set of eyes on the data, Jorge walks through this with buyers every week."}}]}</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#1A1A1A">
+  <title>Compare New Jersey Towns | Source-Based Research Worksheet</title>
+  <meta name="description" content="Compare two New Jersey towns with your own property facts and official sources—no score, automatic winner, prefilled market figures, or forecast.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="last-updated" content="2026-08-27">
+  <meta name="ai-content-declaration" content="human-authored">
+  <meta name="llm-context" content="Compare two New Jersey towns with your own property facts and official sources—no score, automatic winner, prefilled market figures, or forecast. No live inventory, ranking, score, forecast, or outcome guarantee is provided.">
+  <link rel="canonical" href="https://thejorgeramirezgroup.com/tools/market-comparison-widget">
+  <link rel="alternate" hreflang="en-US" href="https://thejorgeramirezgroup.com/tools/market-comparison-widget">
+  <link rel="alternate" hreflang="es-US" href="https://thejorgeramirezgroup.com/es/tools/market-comparison-widget">
+  <link rel="alternate" hreflang="es" href="https://thejorgeramirezgroup.com/es/tools/market-comparison-widget">
+  <link rel="alternate" hreflang="x-default" href="https://thejorgeramirezgroup.com/tools/market-comparison-widget">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thejorgeramirezgroup.com/tools/market-comparison-widget">
+  <meta property="og:title" content="Compare New Jersey Towns | Source-Based Research Worksheet">
+  <meta property="og:description" content="Compare two New Jersey towns with your own property facts and official sources—no score, automatic winner, prefilled market figures, or forecast.">
+  <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Compare New Jersey Towns | Source-Based Research Worksheet">
+  <meta name="twitter:description" content="Compare two New Jersey towns with your own property facts and official sources—no score, automatic winner, prefilled market figures, or forecast.">
+  <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <style>
+:root{--ink:#1A1A1A;--black:#0A0A0A;--red:#C41230;--dark-red:#8B0D22;--gold:#B8962E;--gold-light:#D4AF5A;--paper:#FAFAF8;--soft:#F8F6F2;--white:#FFFFFF;--muted:#5A5A5A;--line:#DDD8CF}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65}a{color:var(--dark-red)}a:hover{text-decoration-thickness:2px}.skip{position:absolute;left:-9999px;top:0;background:var(--white);color:var(--ink);padding:12px 16px;z-index:100}.skip:focus{left:0}.site-nav{background:var(--black);color:var(--white);min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px max(20px,5vw)}.brand{display:flex;align-items:center;gap:12px;color:var(--white);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700}.brand img{width:112px;height:47px;object-fit:contain;background:var(--white);border-radius:4px}.nav-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.nav-links a{color:var(--white);text-decoration:none;font-weight:600}.nav-links .call{background:var(--red);border-radius:999px;padding:10px 18px}.hero{background:linear-gradient(135deg,rgba(10,10,10,.95),rgba(10,10,10,.8));color:var(--white);padding:clamp(54px,8vw,92px) max(20px,5vw)}.wrap{width:min(1120px,100%);margin:0 auto}.eyebrow{color:var(--gold-light);font-size:.76rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.hero h1,h2,h3{font-family:'Playfair Display',serif}.hero h1{font-size:clamp(2.15rem,6vw,4rem);line-height:1.06;max-width:880px;margin:12px 0 18px}.hero p{max-width:760px;color:rgba(255,255,255,.82);font-size:1.05rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;border:2px solid var(--red);border-radius:999px;background:var(--red);color:var(--white);padding:10px 22px;text-decoration:none;font-weight:800;cursor:pointer;font:inherit}.button:hover{background:var(--dark-red);border-color:var(--dark-red)}.button.secondary{background:transparent;border-color:var(--gold-light);color:var(--white)}.section{padding:clamp(48px,7vw,78px) max(20px,5vw)}.section.alt{background:var(--soft)}.section h2{font-size:clamp(1.75rem,4vw,2.55rem);line-height:1.16;margin:0 0 12px}.lede{max-width:780px;color:var(--muted);margin:0 0 30px}.notice{background:var(--white);border-left:5px solid var(--gold);box-shadow:0 12px 35px rgba(10,10,10,.07);padding:20px 22px;margin:0 0 30px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:22px}.card h3{font-size:1.25rem;margin:0 0 8px}.card p{color:var(--muted);margin:0 0 12px}.card a{font-weight:700}.town-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.town-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px}.town-card h3{margin:0 0 10px}.town-links{display:flex;gap:8px 14px;flex-wrap:wrap}.town-links a{font-weight:650}.source-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.source{background:var(--white);border:1px solid var(--line);padding:18px;border-radius:10px}.source strong{display:block}.source span{display:block;color:var(--muted);font-size:.93rem}.cta{background:var(--black);color:var(--white);text-align:center}.cta .lede{color:rgba(255,255,255,.75);margin-left:auto;margin-right:auto}.footer{background:#050505;color:rgba(255,255,255,.65);padding:28px max(20px,5vw);text-align:center;font-size:.88rem}.footer a{color:var(--gold-light)}
+.worksheet-head{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}.field{display:grid;gap:7px}.field label{font-weight:800}.field input,.field textarea{width:100%;min-height:48px;border:1px solid #9B958C;border-radius:8px;background:var(--white);color:var(--ink);padding:12px;font:inherit}.field textarea{min-height:112px;resize:vertical}.field input:focus,.field textarea:focus,.button:focus,a:focus{outline:3px solid var(--gold-light);outline-offset:3px}.compare-table{display:grid;gap:18px}.compare-row{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px}.compare-row h3{margin:0 0 5px}.compare-row>p{margin:0 0 16px;color:var(--muted)}.compare-inputs{display:grid;grid-template-columns:1fr 1fr;gap:16px}.print-note{font-size:.9rem;color:var(--muted)}
+@media(max-width:800px){.site-nav{align-items:flex-start}.nav-links a:not(.call){display:none}.grid,.town-grid,.source-list{grid-template-columns:1fr}.worksheet-head,.compare-inputs{grid-template-columns:1fr}.hero{padding-top:52px}}@media(max-width:380px){.brand span{display:none}.brand img{width:102px}.nav-links .call{padding:9px 12px;font-size:.85rem}.section,.hero{padding-left:16px;padding-right:16px}}
+@media print{.site-nav,.actions,.cta,.footer,.skip{display:none!important}.hero{background:none;color:#000;padding:20px 0}.hero p{color:#333}.section{padding:18px 0}.compare-row{break-inside:avoid}.field input,.field textarea{border-color:#777}.eyebrow{color:#333}}
+</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://thejorgeramirezgroup.com/tools/market-comparison-widget","url":"https://thejorgeramirezgroup.com/tools/market-comparison-widget","name":"Compare New Jersey Towns | Source-Based Research Worksheet","isPartOf":{"@type":"WebSite","name":"The Jorge Ramirez Group","url":"https://thejorgeramirezgroup.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thejorgeramirezgroup.com/"},{"@type":"ListItem","position":2,"name":"Town comparison worksheet","item":"https://thejorgeramirezgroup.com/tools/market-comparison-widget"}]}]}</script>
 </head>
 <body>
-<a href="#main" class="skip-link" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to main content</a>
-    <div id="main" class="tool-page" role="main">
-        <h1>Compare NJ Towns Side by Side</h1>
-        <p>Trying to decide between two NJ towns? Browse our detailed comparison guides or explore communities across six New Jersey counties Jorge serves.</p>
-        <a href="/#communities" class="tool-cta">Explore towns across six New Jersey counties</a>
-        <h2 style="margin-top: 40px; color: #333;">Town Comparisons</h2>
-        <div class="compare-links">
-            <a href="/blog/summit-vs-westfield-nj">Summit vs Westfield</a>
-            <a href="/westfield-vs-scotch-plains-nj">Westfield vs Scotch Plains</a>
-            <a href="/blog/maplewood-vs-south-orange-nj">Maplewood vs South Orange</a>
-            <a href="/chatham-vs-madison-nj">Chatham vs Madison</a>
-            <a href="/blog/moving-from-jersey-city-hoboken-to-suburbs">Jersey City / Hoboken to the Suburbs</a>
-            <a href="/blog/best-nj-towns-for-families-2026">Town Comparison Resources</a>
-            <a href="/blog/best-nj-towns-to-sell-home">Town Options to Sell</a>
-            <a href="/blog/best-nj-suburbs-nyc-commuters">NJ Suburbs by Budget</a>
-        </div>
-        <p style="margin-top: 30px;"><strong>Need help choosing? Call Jorge: <a href="tel:+19082307844" style="color:#2C2C2C;">908-230-7844</a></strong></p>
-    </div>
-
-    <div class="tool-info">
-        <h2>Should you compare towns by median price or price per square foot?</h2>
-        <p>Both — because each one lies a little on its own. A town's median sale price is skewed by what happened to sell that quarter: a run of large colonials pushes the median up even if nothing about the market changed. Price per square foot corrects for home size, so it's the better yardstick when two towns have very different housing stock — say, Cape Cods in one and center-hall colonials in the other. But price per square foot ignores lot size, condition, and renovation level, so use it to frame the comparison, then look at actual sold listings to see what the numbers are hiding.</p>
-        <h2>What does days on market actually tell you?</h2>
-        <p>Days on market is a speed gauge. When well-priced homes in a town typically go under contract in a week or two, sellers have the leverage and buyers need to come prepared. When listings sit for a month or more, there's room to negotiate. Compare the figure by price band, not just by town — a starter home and a two-million-dollar listing in the same ZIP code often live in completely different markets.</p>
-        <h2>Why compare property-tax rates instead of tax bills?</h2>
-        <p>New Jersey tax bills reflect both the local rate and the home's assessed value, so a big bill sometimes just means a big house. The effective tax rate — what you pay as a percentage of market value — is what lets you compare towns fairly. Two NJ towns can have similar average bills but meaningfully different rates, and at any given purchase price the lower-rate town leaves more room in your monthly payment. School information should be researched independently: districts are typically capitalized into home prices, so you're paying for them either way — the question is whether you'll use them.</p>
-        <h2>Do the seasons change what the numbers say?</h2>
-        <p>Absolutely. The NJ spring market typically brings the most inventory and the most competition; late fall and winter run slower, with fewer listings and softer stats. That means comparing this month's numbers to last month's mostly measures the calendar. Compare year over year instead, and if you're weighing two towns, pull the same period for both. When you want a second set of eyes on the data, Jorge walks through this with buyers every week.</p>
-    </div>
+<a class="skip" href="#main">Skip to main content</a>
+<nav class="site-nav" aria-label="Primary">
+  <a class="brand" href="/"><img src="/images/jorge-logo.jpg" alt="The Jorge Ramirez Group" width="200" height="84"><span>The Jorge Ramirez Group</span></a>
+  <div class="nav-links"><a href="/">Home</a><a href="/sell-your-home">Sell</a><a href="/buy-a-home">Buy</a><a href="/property-search">Search</a><a class="call" href="tel:+19082307844">Call 908-230-7844</a></div>
+</nav>
+<main id="main">
+<section class="hero"><div class="wrap"><div class="eyebrow">Town research worksheet</div><h1>Compare two towns without an automatic winner.</h1><p>Enter your own addresses, documents, quotes, and dated sources. The worksheet does not calculate a score, prefill market figures, or recommend a town.</p><div class="actions"><button class="button" type="button" onclick="window.print()">Print or save PDF</button><button class="button secondary" type="button" data-clear>Clear worksheet</button></div></div></section>
+<section class="section"><form class="wrap" id="comparison-form"><h2>Define the comparison</h2><div class="worksheet-head"><div class="field"><label for="town-a">Town or address A</label><input id="town-a" name="town-a" autocomplete="off"></div><div class="field"><label for="town-b">Town or address B</label><input id="town-b" name="town-b" autocomplete="off"></div><div class="field"><label for="as-of">Source as-of date</label><input id="as-of" name="as-of" type="date"></div><div class="field"><label for="decision">Decision question</label><input id="decision" name="decision" placeholder="Example: Which property fits our complete budget?"></div></div><div class="notice"><strong>Evidence rule:</strong> record the URL or document, its date, and what remains unconfirmed. Municipality averages do not automatically describe a property.</div><div class="compare-table"><section class="compare-row"><h3>1. Property sample and date</h3><p>Record the listings or closed sales reviewed, source, time period, property type, condition, and exclusions.</p><div class="compare-inputs"><div class="field"><label for="row-1-a">Town A</label><textarea id="row-1-a" name="row-1-a"></textarea></div><div class="field"><label for="row-1-b">Town B</label><textarea id="row-1-b" name="row-1-b"></textarea></div></div></section><section class="compare-row"><h3>2. Complete housing cost</h3><p>Use property-specific price, parcel tax, written financing, insurance indication, dues, utilities, maintenance, and reserves.</p><div class="compare-inputs"><div class="field"><label for="row-2-a">Town A</label><textarea id="row-2-a" name="row-2-a"></textarea></div><div class="field"><label for="row-2-b">Town B</label><textarea id="row-2-b" name="row-2-b"></textarea></div></div></section><section class="compare-row"><h3>3. Commute and transportation</h3><p>Test the actual origin, destination, day, time, transfers, parking, fares, alerts, and last return option.</p><div class="compare-inputs"><div class="field"><label for="row-3-a">Town A</label><textarea id="row-3-a" name="row-3-a"></textarea></div><div class="field"><label for="row-3-b">Town B</label><textarea id="row-3-b" name="row-3-b"></textarea></div></div></section><section class="compare-row"><h3>4. School and district records</h3><p>Confirm the assigned district and school with the responsible authority; review the current NJDOE report in context.</p><div class="compare-inputs"><div class="field"><label for="row-4-a">Town A</label><textarea id="row-4-a" name="row-4-a"></textarea></div><div class="field"><label for="row-4-b">Town B</label><textarea id="row-4-b" name="row-4-b"></textarea></div></div></section><section class="compare-row"><h3>5. Parcel, zoning, flood, and insurance</h3><p>Record block/lot, zoning source, municipal contacts, flood map date, insurer feedback, and unanswered questions.</p><div class="compare-inputs"><div class="field"><label for="row-5-a">Town A</label><textarea id="row-5-a" name="row-5-a"></textarea></div><div class="field"><label for="row-5-b">Town B</label><textarea id="row-5-b" name="row-5-b"></textarea></div></div></section><section class="compare-row"><h3>6. Condition and transaction documents</h3><p>Compare disclosures, permits, inspections, association records, title questions, contract terms, and planned work.</p><div class="compare-inputs"><div class="field"><label for="row-6-a">Town A</label><textarea id="row-6-a" name="row-6-a"></textarea></div><div class="field"><label for="row-6-b">Town B</label><textarea id="row-6-b" name="row-6-b"></textarea></div></div></section><section class="compare-row"><h3>7. Daily-life requirements</h3><p>Write measurable needs such as route, housing features, accessibility, parking, services, and maintenance capacity.</p><div class="compare-inputs"><div class="field"><label for="row-7-a">Town A</label><textarea id="row-7-a" name="row-7-a"></textarea></div><div class="field"><label for="row-7-b">Town B</label><textarea id="row-7-b" name="row-7-b"></textarea></div></div></section><section class="compare-row"><h3>8. Open questions and next evidence</h3><p>List what remains unverified, who can answer, the source to request, and the decision deadline.</p><div class="compare-inputs"><div class="field"><label for="row-8-a">Town A</label><textarea id="row-8-a" name="row-8-a"></textarea></div><div class="field"><label for="row-8-b">Town B</label><textarea id="row-8-b" name="row-8-b"></textarea></div></div></section></div><p class="print-note">Entries remain in this page and are not submitted to the site. Use Print to save a copy before leaving.</p></form></section>
+<section class="section alt"><div class="wrap"><h2>Official research sources</h2><p class="lede">Use the same date, definition, and property type on both sides. Confirm address facts with the responsible authority.</p><div class="source-list"><div class="source"><a href="https://www.njtransit.com/trip-planner-to" target="_blank" rel="noopener noreferrer"><strong>NJ TRANSIT trip planner</strong></a><span>Current schedules, transfers, alerts, and station records.</span></div><div class="source"><a href="https://www.nj.gov/education/schoolperformance/" target="_blank" rel="noopener noreferrer"><strong>NJDOE School Performance Reports</strong></a><span>Official school and district reports; confirm address assignment with the district.</span></div><div class="source"><a href="https://www.nj.gov/treasury/taxation/lpt/statdata.shtml" target="_blank" rel="noopener noreferrer"><strong>NJ Division of Taxation statistics</strong></a><span>Published statistics, rates, and files; distinguish averages from parcel facts.</span></div><div class="source"><a href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener noreferrer"><strong>FEMA Flood Map Service Center</strong></a><span>Federal map starting point; confirm insurance and risk with qualified professionals.</span></div></div></div></section>
+<section class="section cta"><div class="wrap"><h2>Want a second review?</h2><p class="lede">Jorge can help organize the housing and brokerage comparison. Direct legal, tax, inspection, engineering, insurance, and lending questions to the appropriate professional.</p><div class="actions" style="justify-content:center"><a class="button" href="/contact">Contact Jorge</a><a class="button secondary" href="/property-search">Open property search</a></div></div></section>
+<script>document.querySelector('[data-clear]').addEventListener('click',function(){if(window.confirm('Clear every field in this worksheet?'))document.getElementById('comparison-form').reset();});</script></main>
+<footer class="footer">The Jorge Ramirez Group · Keller Williams Premier Properties · NJ License #1754604 · <a href="tel:+19082307844">908-230-7844</a> · <a href="/privacy-policy">Privacy</a></footer>
 <script defer src="/js/site-cta.js"></script>
 </body>
 </html>
