@@ -54,6 +54,20 @@ class LegacyClaimGeneratorSafetyTests(unittest.TestCase):
         module = load_script("fix_critical_seo.py", "retired_review_schema_fixer")
         self.assertEqual(0, module.fix_c8_review_schema())
 
+    def test_retired_serp_generator_cannot_recreate_doorways(self) -> None:
+        source = (ROOT / "gen_serp_pages.py").read_text(encoding="utf-8")
+        self.assertNotIn("write_text(", source)
+        self.assertNotIn("open(", source)
+        self.assertIn("retire_programmatic_doorways.py", source)
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "gen_serp_pages.py")],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+        )
+        self.assertEqual(1, result.returncode)
+        self.assertIn("is retired and cannot write public pages", result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()
