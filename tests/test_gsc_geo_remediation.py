@@ -89,9 +89,13 @@ class GscGeoRemediationTests(unittest.TestCase):
         geo = self.facts["business"]["geo"]
         expected_position = f'{geo["latitude"]};{geo["longitude"]}'
         expected_icbm = f'{geo["latitude"]}, {geo["longitude"]}'
-        geo_meta_pages = 0
+        geo_meta_pages: set[str] = set()
 
-        public_sources = list(ROOT.rglob("*.html"))
+        public_sources = [
+            path
+            for path in ROOT.rglob("*.html")
+            if not ({".git", "node_modules", "tmp"} & set(path.relative_to(ROOT).parts))
+        ]
         for path in public_sources:
             source = path.read_text(encoding="utf-8")
             with self.subTest(path=path.relative_to(ROOT)):
@@ -109,11 +113,18 @@ class GscGeoRemediationTests(unittest.TestCase):
                     re.I,
                 )
                 if positions or icbm:
-                    geo_meta_pages += 1
+                    geo_meta_pages.add(path.relative_to(ROOT).as_posix())
                     self.assertEqual([expected_position], positions)
                     self.assertEqual([expected_icbm], icbm)
 
-        self.assertGreaterEqual(geo_meta_pages, 23)
+        self.assertTrue(
+            {
+                "index.html",
+                "es/index.html",
+                "home-valuation.html",
+                "es/home-valuation.html",
+            }.issubset(geo_meta_pages)
+        )
         emitter = read("generate_new_landing_pages.py")
         self.assertIn(expected_position, emitter)
         self.assertIn(expected_icbm, emitter)

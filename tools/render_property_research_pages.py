@@ -73,6 +73,11 @@ def shell(*, lang: str, title: str, description: str, canonical: str, en_url: st
     search = "/es/property-search" if spanish else "/property-search"
     skip = "Saltar al contenido principal" if spanish else "Skip to main content"
     nav = ("Inicio", "Vender", "Comprar", "Buscar", "Llamar") if spanish else ("Home", "Sell", "Buy", "Search", "Call")
+    llm_limit = (
+        "No se ofrece inventario en vivo, clasificación, puntuación, pronóstico ni garantía de resultados."
+        if spanish
+        else "No live inventory, ranking, score, forecast, or outcome guarantee is provided."
+    )
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -84,7 +89,7 @@ def shell(*, lang: str, title: str, description: str, canonical: str, en_url: st
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="last-updated" content="2026-08-27">
   <meta name="ai-content-declaration" content="ai-assisted, source-checked">
-  <meta name="llm-context" content="{esc(description)} No live inventory, ranking, score, forecast, or outcome guarantee is provided.">
+  <meta name="llm-context" content="{esc(description)} {esc(llm_limit)}">
   <link rel="canonical" href="{esc(canonical)}">
   <link rel="alternate" hreflang="en-US" href="{esc(en_url)}">
   <link rel="alternate" hreflang="es-US" href="{esc(es_url)}">
@@ -101,7 +106,15 @@ def shell(*, lang: str, title: str, description: str, canonical: str, en_url: st
   <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
   <style>{PALETTE_CSS}</style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMS6H85LB0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', 'G-KMS6H85LB0');
+  </script>
   <script type="application/ld+json">{schema(title, canonical, breadcrumb)}</script>
 </head>
 <body>
@@ -158,19 +171,19 @@ def source_cards(spanish: bool) -> str:
 
 def property_page(spanish: bool) -> str:
     if spanish:
-        title = "Buscar propiedades en Nueva Jersey | Enlaces de listados y guía de verificación"
+        title = "Buscar Propiedades en NJ | Listados y Verificación"
         description = "Abre la búsqueda externa de listados de Keller Williams y verifica tránsito, impuestos, distrito, inundación y datos municipales para cada dirección."
         canonical = "https://thejorgeramirezgroup.com/es/property-search"
         body = f'''
 <section class="hero"><div class="wrap"><div class="eyebrow">Búsqueda de propiedades en NJ</div><h1>Busca listados. Verifica cada dirección.</h1><p>Los enlaces abren el sitio externo de búsqueda de Keller Williams. Esta página no aloja un MLS ni afirma que un listado siga disponible. Usa los pasos siguientes para investigar la propiedad específica antes de decidir.</p><div class="actions"><a class="button" href="https://thejorgeramirezgroup.kw.com/listings-search/" target="_blank" rel="noopener noreferrer">Abrir búsqueda de listados</a><a class="button secondary" href="/es/tools/market-comparison-widget">Abrir hoja comparativa</a></div></div></section>
 <section class="section"><div class="wrap"><h2>Enlaces rápidos por municipio</h2><p class="lede">Cada enlace aplica un filtro de ciudad en el sitio externo. Confirma el municipio, la dirección, el estado del listado y los datos de la propiedad en la fuente original.</p><div class="grid">{listing_cards(True)}</div></div></section>
-<section class="section alt"><div class="wrap"><h2>Un proceso de verificación, no un ranking</h2><div class="notice"><strong>No existe un “mejor municipio” universal.</strong> Compara la vivienda, el presupuesto completo, la ruta real, los registros oficiales y tus prioridades. Los datos municipales o distritales no sustituyen los hechos de una dirección.</div><div class="grid"><article class="card"><h3>1. Identidad y condición</h3><p>Guarda dirección, bloque/lote, municipio, tipo de vivienda, divulgaciones, permisos, inspecciones y documentos de asociación aplicables.</p></article><article class="card"><h3>2. Costo completo</h3><p>Usa precio, préstamo escrito, impuestos de la parcela, seguro cotizado, cuotas, servicios, mantenimiento y reservas; no un promedio estatal.</p></article><article class="card"><h3>3. Ruta y registros</h3><p>Prueba el trayecto a la hora necesaria. Revisa distrito, zonificación, inundación y registros municipales con las autoridades correspondientes.</p></article></div></div></section>
+<section class="section alt"><div class="wrap"><h2>Un proceso de verificación, no un ranking</h2><div class="notice"><strong>Ningún municipio es universalmente adecuado para cada comprador.</strong> Compara la vivienda, el presupuesto completo, la ruta real, los registros oficiales y tus prioridades. Los datos municipales o distritales no sustituyen los hechos de una dirección.</div><div class="grid"><article class="card"><h3>1. Identidad y condición</h3><p>Guarda dirección, bloque/lote, municipio, tipo de vivienda, divulgaciones, permisos, inspecciones y documentos de asociación aplicables.</p></article><article class="card"><h3>2. Costo completo</h3><p>Usa precio, préstamo escrito, impuestos de la parcela, seguro cotizado, cuotas, servicios, mantenimiento y reservas; no un promedio estatal.</p></article><article class="card"><h3>3. Ruta y registros</h3><p>Prueba el trayecto a la hora necesaria. Revisa distrito, zonificación, inundación y registros municipales con las autoridades correspondientes.</p></article></div></div></section>
 <section class="section"><div class="wrap"><h2>Guías por condado</h2><p class="lede">Estas guías organizan fuentes públicas y preguntas de investigación; no sustituyen listados activos ni una revisión específica.</p><div class="town-grid">{town_cards(True)}</div></div></section>
 <section class="section alt"><div class="wrap"><h2>Fuentes oficiales para abrir junto al listado</h2><div class="source-list">{source_cards(True)}</div></div></section>
 <section class="section cta"><div class="wrap"><h2>¿Quieres revisar una propiedad específica?</h2><p class="lede">Comparte el enlace y tus prioridades. Jorge puede ayudarte a organizar preguntas de corretaje; los temas legales, fiscales, técnicos y de seguro deben dirigirse al profesional correspondiente.</p><div class="actions" style="justify-content:center"><a class="button" href="/es#contact">Contactar a Jorge</a></div></div></section>'''
         return shell(lang="es", title=title, description=description, canonical=canonical, en_url="https://thejorgeramirezgroup.com/property-search", es_url=canonical, breadcrumb="Buscar propiedades", body=body)
 
-    title = "Search New Jersey Properties | Listing Links and Address Research Guide"
+    title = "Search NJ Properties | Listings and Address Research"
     description = "Open the external Keller Williams listing search, then verify transit, parcel taxes, district, flood, and municipal records for each address."
     canonical = "https://thejorgeramirezgroup.com/property-search"
     body = f'''
@@ -223,7 +236,7 @@ def worksheet_rows(spanish: bool) -> str:
 
 def comparison_page(spanish: bool) -> str:
     if spanish:
-        title = "Comparar municipios de Nueva Jersey | Hoja bilingüe basada en fuentes"
+        title = "Comparar Municipios de NJ | Hoja Basada en Fuentes"
         description = "Compara dos municipios con tus propios datos y fuentes oficiales. Sin puntaje, ganador automático, cifras precargadas ni pronóstico."
         canonical = "https://thejorgeramirezgroup.com/es/tools/market-comparison-widget"
         body = f'''

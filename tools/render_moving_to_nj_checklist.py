@@ -91,26 +91,35 @@ def render() -> str:
   <meta property="og:type" content="article">
   <meta property="og:url" content="{CANONICAL}">
   <meta property="og:title" content="Moving to New Jersey Checklist (2026)">
-  <meta property="og:description" content="Verify license, vehicle, inspection, ID, and voter steps at current New Jersey government sources.">
+  <meta property="og:description" content="Use this dated New Jersey move checklist to verify license, vehicle title and registration, inspection, ID, and voter steps at current official sources.">
   <meta property="og:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
   <meta property="article:published_time" content="2026-07-30">
   <meta property="article:modified_time" content="2026-08-27">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Moving to New Jersey Checklist (2026)">
-  <meta name="twitter:description" content="Verify license, vehicle, inspection, ID, and voter steps at current official sources.">
+  <meta name="twitter:description" content="Use this dated New Jersey move checklist to verify license, vehicle title and registration, inspection, ID, and voter steps at current official sources.">
   <meta name="twitter:image" content="https://thejorgeramirezgroup.com/images/jorge-ramirez-headshot.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
   <style>
   :root{{--ink:#1A1A1A;--black:#0A0A0A;--red:#C41230;--dark-red:#8B0D22;--gold:#B8962E;--gold-light:#D4AF5A;--paper:#FAFAF8;--soft:#F8F6F2;--white:#FFFFFF;--muted:#555;--line:#DDD8CF}}*{{box-sizing:border-box}}body{{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.72}}a{{color:var(--dark-red)}}a:focus,.button:focus{{outline:3px solid var(--gold-light);outline-offset:3px}}.skip{{position:absolute;left:-9999px;top:0;background:var(--white);padding:12px;z-index:10}}.skip:focus{{left:0}}.nav{{background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px max(20px,5vw)}}.nav a{{color:var(--white);text-decoration:none;font-weight:700}}.nav-links{{display:flex;gap:18px;align-items:center;flex-wrap:wrap}}.nav .call{{background:var(--red);border-radius:999px;padding:10px 16px}}.hero{{background:linear-gradient(135deg,var(--black),#282828);color:var(--white);padding:clamp(52px,8vw,88px) max(20px,5vw)}}.wrap{{width:min(880px,100%);margin:0 auto}}.eyebrow{{color:var(--gold-light);font-size:.76rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}}h1,h2,h3{{font-family:'Playfair Display',serif;line-height:1.18}}h1{{font-size:clamp(2.15rem,6vw,3.85rem);margin:12px 0 18px}}h2{{font-size:clamp(1.65rem,4vw,2.25rem);margin:42px 0 12px}}h3{{font-size:1.22rem;margin:28px 0 8px}}.hero p{{color:rgba(255,255,255,.82);max-width:760px}}.article{{padding:clamp(42px,7vw,72px) max(20px,5vw)}}.meta{{color:var(--muted);font-size:.92rem}}.answer,.note{{background:var(--white);border-left:5px solid var(--gold);box-shadow:0 12px 30px rgba(10,10,10,.07);padding:20px 22px;margin:28px 0}}.note{{border-color:var(--red)}}.checklist{{list-style:none;padding:0;display:grid;gap:16px}}.checklist li{{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:18px 20px}}.checklist strong{{display:block;font-family:'Playfair Display',serif;font-size:1.14rem;margin-bottom:5px}}.sources{{background:var(--soft);padding:24px;border-radius:12px;margin-top:40px}}.sources li{{margin:9px 0}}.cta{{background:var(--black);color:var(--white);padding:34px;text-align:center;border-radius:12px;margin:44px 0}}.cta h2{{margin-top:0;color:var(--white)}}.button{{display:inline-flex;min-height:48px;align-items:center;justify-content:center;background:var(--red);color:var(--white);border:2px solid var(--red);border-radius:999px;padding:10px 22px;text-decoration:none;font-weight:800;margin:6px}}.button.alt{{background:transparent;border-color:var(--gold-light)}}footer{{background:#050505;color:rgba(255,255,255,.65);text-align:center;padding:28px 20px;font-size:.88rem}}footer a{{color:var(--gold-light)}}@media(max-width:720px){{.nav-links a:not(.call){{display:none}}.article,.hero{{padding-left:18px;padding-right:18px}}.cta{{padding:28px 18px}}}}
   </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMS6H85LB0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', 'G-KMS6H85LB0');
+  </script>
   <script type="application/ld+json">{jsonld()}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 <nav class="nav" aria-label="Primary"><a href="/">The Jorge Ramirez Group</a><div class="nav-links"><a href="/buy-a-home">Buy</a><a href="/property-search">Search</a><a href="/communities">Communities</a><a class="call" href="tel:+19082307844">908-230-7844</a></div></nav>
+<main id="main">
 <header class="hero"><div class="wrap"><div class="eyebrow">New Jersey relocation checklist</div><h1>Moving to New Jersey: verify the current steps before your appointment.</h1><p>The official requirements depend on the person, license, vehicle, ownership, financing, and transaction. This dated checklist points to the current agencies and records the rules they publish; confirm the details for your situation before relying on them.</p></div></header>
-<main id="main" class="article"><article class="wrap">
+<section class="article"><article class="wrap">
 <p class="meta">Sources checked August 27, 2026 · By Jorge Ramirez, NJ real estate license #1754604</p>
 <div class="answer"><p><strong>The current NJ MVC “Moving To New Jersey” page says a recent resident must transfer an out-of-state license and vehicle title/registration within 60 days of the move or before the current license and vehicle registration expire, whichever occurs first.</strong> The same page says the two transfers may be handled in one out-of-state-transfer appointment and lists separate instructions for financed, leased, business-owned, and out-of-country vehicles or licenses. Start with the <a href="{SOURCES['move']}" target="_blank" rel="noopener noreferrer">current MVC page</a>, not a saved checklist.</p></div>
 
@@ -155,7 +164,8 @@ def render() -> str:
 </ul></section>
 
 <section class="cta"><h2>Planning the housing side of your move?</h2><p>Compare the specific property, complete budget, route, and public records before choosing.</p><a class="button" href="/property-search">Search and research properties</a><a class="button alt" href="tel:+19082307844">Call Jorge</a></section>
-</article></main>
+</article></section>
+</main>
 <footer>The Jorge Ramirez Group · Keller Williams Premier Properties · NJ License #1754604 · <a href="tel:+19082307844">908-230-7844</a> · <a href="mailto:jorge.ramirez@kw.com">jorge.ramirez@kw.com</a></footer>
 <script defer src="/js/site-cta.js"></script>
 </body>

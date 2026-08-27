@@ -564,8 +564,8 @@
         "description": "NJ has the highest property taxes in America (~2.23%). But effective rates swing $3,000+ a year between commuter towns in the same price range."
       },
       "after": {
-        "title": "Lower-Tax NJ Commuter Towns: Rates and Bills Compared",
-        "description": "Compare selected NYC commuter towns using effective tax rates and typical bills, and learn why the same home budget can produce different annual taxes."
+        "title": "NJ Commuter-Town Property Taxes: Bills and Records",
+        "description": "Compare official average property-tax and sales statistics for selected NJ towns, then verify the current bill and assessment for a specific home."
       },
       "sync_fields": [
         "property:og:title"

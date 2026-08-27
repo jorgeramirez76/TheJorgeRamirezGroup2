@@ -76,7 +76,7 @@ class VisualBrandConsistencyTests(unittest.TestCase):
         )
         self.assertIsNotNone(disclosure)
         disclosure_body = disclosure.group("body")
-        self.assertIn("color:#1a4f8b", disclosure_body)
+        self.assertIn("color:#8B0D22", disclosure_body)
         self.assertNotIn("related-resource-link", disclosure_body)
 
 
