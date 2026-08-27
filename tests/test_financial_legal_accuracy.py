@@ -14,6 +14,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 NJDOBI_BUYING_GUIDE = "https://www.nj.gov/dobi/division_consumers/pdf/buyingahome.pdf"
 NJDOBI_COMPENSATION = "https://www.nj.gov/dobi/bulletins/blt24_11.pdf"
+NJDOBI_CONSUMER_INFORMATION_STATEMENT = (
+    "https://www.nj.gov/dobi/bulletins/blt24_11Info.pdf"
+)
 NJ_GIT_REP = "https://nj.gov/treasury/taxation/gitrepfaqs.shtml"
 NJ_GIT_REP_WWW = "https://www.nj.gov/treasury/taxation/gitrepfaqs.shtml"
 NJ_RTF = "https://www.nj.gov/treasury/taxation/realty.shtml"
@@ -179,6 +182,15 @@ class FinancialLegalAccuracyTests(unittest.TestCase):
                 else:
                     self.assertIn("if you choose to consult an attorney", text)
                 self.assertIsNone(FORBIDDEN.search(html.unescape(source)))
+
+    def test_disclosed_dual_agent_is_not_conflated_with_transaction_broker(self) -> None:
+        source = self.sources["blog/listing-agent-vs-selling-agent-nj.html"]
+        text = visible_text(source)
+        self.assertIn(NJDOBI_CONSUMER_INFORMATION_STATEMENT, source)
+        self.assertIn("a disclosed dual agent represents both parties", text)
+        self.assertIn("different from a transaction broker", text)
+        self.assertIn("A transaction broker is a separate relationship", text)
+        self.assertNotIn("you get is a facilitator rather than an advocate", text)
 
     def test_buyer_calculators_are_blank_user_entered_document_worksheets(self) -> None:
         input_ids = (
