@@ -169,6 +169,7 @@ class ContentIntegrityTests(unittest.TestCase):
         offenders = [
             str(path.relative_to(ROOT))
             for path in ROOT.rglob("*.html")
+            if ".vercel" not in path.relative_to(ROOT).parts
             if old_phone in path.read_text(encoding="utf-8", errors="ignore")
         ]
         self.assertEqual([], offenders, f"obsolete direct phone remains in {offenders}")

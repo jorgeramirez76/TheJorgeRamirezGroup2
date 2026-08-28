@@ -111,7 +111,7 @@ class FormAccessibilityParser(HTMLParser):
 
 def html_files():
     for path in ROOT.rglob("*.html"):
-        if any(part in {".git", "node_modules"} for part in path.parts):
+        if any(part in {".git", ".vercel", "node_modules"} for part in path.parts):
             continue
         yield path
 

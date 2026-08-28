@@ -376,7 +376,7 @@ def write_fixture(
 def link_evidence() -> dict[str, dict[str, object]]:
     inbound: dict[str, set[str]] = defaultdict(set)
     for path in ROOT.rglob("*.html"):
-        if any(part in {".git", "node_modules"} for part in path.parts):
+        if any(part in {".git", ".vercel", "node_modules"} for part in path.parts):
             continue
         parser = LinkParser()
         parser.feed(path.read_text(encoding="utf-8", errors="replace"))

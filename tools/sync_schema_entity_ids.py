@@ -20,7 +20,7 @@ ORIGIN = "https://thejorgeramirezgroup.com"
 BUSINESS_ID = f"{ORIGIN}/#agent"
 PERSON_ID = f"{ORIGIN}/#jorge-ramirez"
 
-SKIP_DIRS = {".git", "node_modules", "crm", "docs", "property-leads-system", "staging"}
+SKIP_DIRS = {".git", ".vercel", "node_modules", "crm", "docs", "property-leads-system", "staging"}
 PERSON_REFERENCE_KEYS = {"author", "creator", "founder", "mainEntity"}
 JSON_LD_RE = re.compile(
     r'(<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>)(.*?)(</script\s*>)',

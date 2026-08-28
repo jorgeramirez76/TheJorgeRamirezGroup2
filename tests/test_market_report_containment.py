@@ -35,6 +35,7 @@ SITE = "https://thejorgeramirezgroup.com"
 MANIFEST_PATH = ROOT / "data" / "market-report-containment.json"
 SKIP_DIRS = {
     ".git",
+    ".vercel",
     "crm",
     "docs",
     "node_modules",

@@ -38,7 +38,9 @@ def default_targets() -> list[Path]:
     return sorted(
         path
         for path in targets
-        if ".git" not in path.parts and "node_modules" not in path.parts
+        if ".git" not in path.parts
+        and ".vercel" not in path.parts
+        and "node_modules" not in path.parts
     )
 
 

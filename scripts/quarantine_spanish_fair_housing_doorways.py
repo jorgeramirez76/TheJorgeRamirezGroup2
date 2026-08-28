@@ -222,7 +222,7 @@ def remove_english_reciprocal_hreflang(routes: set[str]) -> int:
     changed = 0
     for path in sorted(ROOT.rglob("*.html")):
         relative = path.relative_to(ROOT)
-        if relative.parts and relative.parts[0] in {"es", "towns", "realtor", "crm", "node_modules", "property-leads-system"}:
+        if relative.parts and relative.parts[0] in {".vercel", "es", "towns", "realtor", "crm", "node_modules", "property-leads-system"}:
             continue
         source = path.read_text(encoding="utf-8", errors="replace")
 

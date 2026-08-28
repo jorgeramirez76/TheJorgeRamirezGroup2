@@ -862,6 +862,7 @@ def candidate_files() -> list[Path]:
         relative_name = relative.as_posix()
         if (
             relative_name in RETIRED_LEGACY_HTML
+            or ".vercel" in relative.parts
             or relative.parts[0] == "realtor"
             or "features" in relative.parts
         ):

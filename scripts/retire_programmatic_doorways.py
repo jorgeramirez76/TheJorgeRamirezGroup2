@@ -26,6 +26,7 @@ BASE_COMMIT = "5abf49e7ee2d35311504e740a2c1bc428736120c"
 MANAGED_LINK_FILES = {"home-valuation.html", "sell-your-home.html"}
 SKIP_INTERNAL_LINK_DIRS = {
     ".git",
+    ".vercel",
     "crm",
     "docs",
     "node_modules",

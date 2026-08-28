@@ -111,6 +111,22 @@ def write_output(root: Path) -> Path:
 
 
 class CompiledVercelRoutingTests(unittest.TestCase):
+    def test_repo_root_recursive_scanners_exclude_generated_build_output(self) -> None:
+        root_scan = re.compile(
+            r"\b(?:ROOT|REPO|BASE_DIR|root)\.rglob\(|"
+            r"\b(?:ROOT|REPO|BASE_DIR|root)\.glob\(\s*[\"'][^\"']*\*\*|"
+            r"\bos\.walk\("
+        )
+        offenders: list[str] = []
+        for path in ROOT.rglob("*.py"):
+            relative = path.relative_to(ROOT)
+            if {".git", ".vercel", "node_modules"}.intersection(relative.parts):
+                continue
+            source = path.read_text(encoding="utf-8", errors="replace")
+            if root_scan.search(source) and ".vercel" not in source:
+                offenders.append(relative.as_posix())
+        self.assertEqual([], offenders)
+
     def test_generated_build_output_is_excluded_from_source_audits(self) -> None:
         generated = ROOT / ".vercel" / "output" / "static" / "generated.html"
         self.assertTrue(audit_site.is_internal_source(generated))

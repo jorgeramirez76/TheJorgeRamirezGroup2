@@ -212,7 +212,7 @@ class AiSalesPipelineRouteMigrationTests(unittest.TestCase):
         href = re.compile(r'\bhref\s*=\s*["\']([^"\']+)', re.I)
         for path in ROOT.rglob("*.html"):
             relative = path.relative_to(ROOT).as_posix()
-            if relative.startswith((".git/", "node_modules/")):
+            if relative.startswith((".git/", ".vercel/", "node_modules/")):
                 continue
             for raw in href.findall(path.read_text(encoding="utf-8", errors="ignore")):
                 route = urlsplit(raw).path

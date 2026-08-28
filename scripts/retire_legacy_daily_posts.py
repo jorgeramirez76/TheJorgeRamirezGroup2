@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
 MANIFEST = ROOT / "data" / "retired-legacy-daily-posts.json"
 SNIPPET_BACKLOG = ROOT / "data" / "english-snippet-backlog.json"
-SKIP_DIRS = {".git", "crm", "node_modules", "property-leads-system"}
+SKIP_DIRS = {".git", ".vercel", "crm", "node_modules", "property-leads-system"}
 EXPECTED_LEGACY_PAGE_COUNT = 141
 
 

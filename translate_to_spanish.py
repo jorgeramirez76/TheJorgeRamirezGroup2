@@ -385,6 +385,7 @@ def main():
         if 'es/' not in str(p.relative_to(ROOT))
         and 'staging/' not in str(p.relative_to(ROOT))
         and '.git/' not in str(p.relative_to(ROOT))
+        and '.vercel/' not in str(p.relative_to(ROOT))
         and 'node_modules/' not in str(p.relative_to(ROOT))
         and '.backup' not in str(p)
     ]

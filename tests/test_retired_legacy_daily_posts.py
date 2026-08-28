@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "retired-legacy-daily-posts.json"
 SNIPPET_BACKLOG = ROOT / "data" / "english-snippet-backlog.json"
 SITE = "https://thejorgeramirezgroup.com"
-SKIP_DIRS = {".git", "crm", "node_modules", "property-leads-system"}
+SKIP_DIRS = {".git", ".vercel", "crm", "node_modules", "property-leads-system"}
 NEWLY_RETIRED_ROUTES = {
     "/blog/affordable-upgrades-home-value-nj-2026": "/sell-your-home",
     "/blog/interior-design-trends-2026-nj-sellers": "/sell-your-home",

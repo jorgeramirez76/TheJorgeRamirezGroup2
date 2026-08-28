@@ -135,7 +135,7 @@ def fix_c1_twitter_cards():
         # Actually, we should fix ALL pages including es/ per the instructions
         # Skip non-content directories
         rel = str(html_file.relative_to(BASE_DIR))
-        if rel.startswith(("docs/", "features/", "lead-research/", "data/")):
+        if rel.startswith((".vercel/", "docs/", "features/", "lead-research/", "data/")):
             continue
 
         content = read_file(html_file)
@@ -405,7 +405,7 @@ def fix_c7_duplicate_hreflang():
         if is_managed_town_artifact(html_file):
             continue
         rel = str(html_file.relative_to(BASE_DIR))
-        if rel.startswith(("docs/", "features/", "lead-research/", "data/")):
+        if rel.startswith((".vercel/", "docs/", "features/", "lead-research/", "data/")):
             continue
 
         content = read_file(html_file)

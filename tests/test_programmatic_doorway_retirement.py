@@ -97,7 +97,7 @@ PROTECTED_LINK_SOURCES = {
     "blog/market-report-west-orange-nj-2026.html",
     "towns/woodbridge.html",
 }
-SKIP_DIRS = {".git", "crm", "docs", "node_modules", "property-leads-system"}
+SKIP_DIRS = {".git", ".vercel", "crm", "docs", "node_modules", "property-leads-system"}
 
 
 class FallbackParser(HTMLParser):

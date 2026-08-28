@@ -450,7 +450,7 @@ class HighValueLegalFairHousingTests(unittest.TestCase):
 
         old_targets: list[str] = []
         for path in ROOT.rglob("*.html"):
-            if any(part in {".git", "node_modules"} for part in path.parts) or path.relative_to(ROOT).as_posix() == FALLBACK:
+            if any(part in {".git", ".vercel", "node_modules"} for part in path.parts) or path.relative_to(ROOT).as_posix() == FALLBACK:
                 continue
             source = path.read_text(encoding="utf-8", errors="replace")
             if re.search(r'href=["\']/blog/selling-inherited-house-multiple-heirs-nj(?:\.html)?["\']', source, re.I):

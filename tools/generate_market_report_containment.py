@@ -16,7 +16,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INVENTORY = ROOT / "data" / "market-report-containment.json"
 SITE = "https://thejorgeramirezgroup.com"
-SKIP_DIRS = {".git", "crm", "docs", "node_modules", "property-leads-system"}
+SKIP_DIRS = {".git", ".vercel", "crm", "docs", "node_modules", "property-leads-system"}
 QUARTERLY_LINK_REPLACEMENTS = {
     "/blog/essex-county-real-estate-market-q2-2026": (
         "/blog/essex-county-nj-real-estate-market-2026",

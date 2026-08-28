@@ -325,7 +325,7 @@ class SellerServiceClusterTests(unittest.TestCase):
         skipped = {"sell-home-fast-nj.html", "es/sell-home-fast-nj.html"}
         for path in ROOT.rglob("*.html"):
             relative = path.relative_to(ROOT).as_posix()
-            if relative in skipped or any(part in {".git", "node_modules", "docs"} for part in path.parts):
+            if relative in skipped or any(part in {".git", ".vercel", "node_modules", "docs"} for part in path.parts):
                 continue
             source = path.read_text(encoding="utf-8", errors="replace")
             if re.search(r'href=["\'][^"\']*/sell-home-fast-nj(?:\.html)?(?:[?#][^"\']*)?["\']', source):

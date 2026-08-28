@@ -227,7 +227,7 @@ class SpanishFairHousingInventoryTests(unittest.TestCase):
         )
         for path in sorted(ROOT.rglob("*.html")):
             relative = path.relative_to(ROOT)
-            if relative.parts and relative.parts[0] in {"es", "towns", "realtor", "node_modules"}:
+            if relative.parts and relative.parts[0] in {".vercel", "es", "towns", "realtor", "node_modules"}:
                 continue
             source = path.read_text(encoding="utf-8", errors="replace")
             for tag in alternate.findall(source):

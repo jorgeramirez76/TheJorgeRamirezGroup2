@@ -94,7 +94,7 @@ class GscGeoRemediationTests(unittest.TestCase):
         public_sources = [
             path
             for path in ROOT.rglob("*.html")
-            if not ({".git", "node_modules", "tmp"} & set(path.relative_to(ROOT).parts))
+            if not ({".git", ".vercel", "node_modules", "tmp"} & set(path.relative_to(ROOT).parts))
         ]
         for path in public_sources:
             source = path.read_text(encoding="utf-8")

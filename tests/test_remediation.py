@@ -19,7 +19,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://thejorgeramirezgroup.com"
-SKIP_DIRS = {".git", "crm", "node_modules", "property-leads-system"}
+SKIP_DIRS = {".git", ".vercel", "crm", "node_modules", "property-leads-system"}
 SUMMIT_LAT = 40.7157
 SUMMIT_LON = -74.3601
 
