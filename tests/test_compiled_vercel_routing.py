@@ -15,6 +15,7 @@ import check_everything
 from tools import check_technical_seo
 from tools.check_compiled_vercel_routes import (
     CANONICAL_ORIGIN,
+    DIRECTORY_INDEX_PREEMPTIONS,
     FORMER_BULK_REDIRECTS,
     compiled_contract_issues,
     source_contract_issues,
@@ -46,15 +47,28 @@ def compiled_fixture() -> dict:
             "status": 308,
             "has": [{"type": "host", "value": {"suf": ".vercel.app"}}],
         },
-        redirect("/api/lead.js", "/api/lead"),
-        redirect("/nj-real-estate-agent", "/ai-authority"),
-        redirect("/nj-real-estate-agent.html", "/ai-authority"),
-        redirect(
-            "/features/ai-email",
-            "https://aisalespipeline.com/features/ai-email-real-estate.html",
-        ),
-        redirect("/communities/basking-ridge", "/towns/basking-ridge"),
     ]
+    routes.extend(
+        redirect(rule["source"], rule["destination"])
+        for rule in DIRECTORY_INDEX_PREEMPTIONS
+    )
+    routes.extend(
+        [
+            redirect("/api/lead.js", "/api/lead"),
+            redirect("/nj-real-estate-agent", "/ai-authority"),
+            redirect("/nj-real-estate-agent.html", "/ai-authority"),
+            redirect(
+                "/features/ai-email",
+                "https://aisalespipeline.com/features/ai-email-real-estate.html",
+            ),
+            redirect("/communities/basking-ridge", "/towns/basking-ridge"),
+            {
+                "src": "^/communities(?:/([^/]+?))\\.html$",
+                "headers": {"Location": "/towns/$1"},
+                "status": 308,
+            },
+        ]
+    )
     routes.extend(redirect(source, destination) for source, destination in FORMER_BULK_REDIRECTS)
     routes.extend(
         [
@@ -100,6 +114,7 @@ def write_output(root: Path) -> Path:
         "index.html",
         "ai-authority.html",
         "blog/index.html",
+        "communities/index.html",
         "css/styles.css",
         "404.html",
     ):
@@ -158,6 +173,21 @@ class CompiledVercelRoutingTests(unittest.TestCase):
             issues = compiled_contract_issues(compiled, output)
             self.assertTrue(
                 any("host" in issue or "canonical" in issue for issue in issues),
+                issues,
+            )
+
+    def test_managed_wildcard_cannot_capture_a_directory_index(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = write_output(Path(directory))
+            compiled = compiled_fixture()
+            compiled["routes"] = [
+                route
+                for route in compiled["routes"]
+                if route.get("src") != "^/communities/index\\.html$"
+            ]
+            issues = compiled_contract_issues(compiled, output)
+            self.assertTrue(
+                any("directory-index" in issue for issue in issues),
                 issues,
             )
 

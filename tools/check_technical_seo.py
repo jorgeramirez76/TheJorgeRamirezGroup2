@@ -378,6 +378,37 @@ def main() -> int:
         failures.append(
             "vercel.json: /api/lead.js redirect must follow host guards and precede normalizers"
         )
+    directory_index_preemptions = [
+        {"source": "/communities/index.html/", "destination": "/communities", "permanent": True},
+        {"source": "/communities/index/", "destination": "/communities", "permanent": True},
+        {"source": "/communities/index.html", "destination": "/communities", "permanent": True},
+        {"source": "/communities/index", "destination": "/communities", "permanent": True},
+    ]
+    community_wildcard_index = next(
+        (
+            index
+            for index, item in enumerate(redirects)
+            if item.get("source") == "/communities/:slug.html"
+        ),
+        None,
+    )
+    preemption_indexes = [
+        redirects.index(item)
+        for item in directory_index_preemptions
+        if redirects.count(item) == 1
+    ]
+    if (
+        community_wildcard_index is None
+        or len(preemption_indexes) != len(directory_index_preemptions)
+        or preemption_indexes != list(
+            range(preemption_indexes[0], preemption_indexes[0] + len(preemption_indexes))
+        )
+        or preemption_indexes[0] < 2
+        or preemption_indexes[-1] >= community_wildcard_index
+    ):
+        failures.append(
+            "vercel.json: exact community directory-index redirects must precede its wildcard"
+        )
 
     def host_matches(item: dict, hostname: str) -> bool:
         for condition in item.get("has", []):

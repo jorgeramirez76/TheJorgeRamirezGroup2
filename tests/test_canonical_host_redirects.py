@@ -48,6 +48,12 @@ API_SOURCE_REDIRECT = {
     "destination": "/api/lead",
     "permanent": True,
 }
+DIRECTORY_INDEX_PREEMPTIONS = [
+    {"source": "/communities/index.html/", "destination": "/communities", "permanent": True},
+    {"source": "/communities/index/", "destination": "/communities", "permanent": True},
+    {"source": "/communities/index.html", "destination": "/communities", "permanent": True},
+    {"source": "/communities/index", "destination": "/communities", "permanent": True},
+]
 
 
 def condition_matches(condition: dict, hostname: str) -> bool:
@@ -155,10 +161,31 @@ class CanonicalHostRedirectTests(unittest.TestCase):
         self.assertGreaterEqual(index, 2)
         self.assertLess(index, len(self.redirects) - len(EXPLICIT_CLEAN_URL_REDIRECTS))
 
+    def test_community_directory_indexes_preempt_the_managed_wildcard(self) -> None:
+        wildcard_index = next(
+            index
+            for index, rule in enumerate(self.redirects)
+            if rule.get("source") == "/communities/:slug.html"
+        )
+        for rule in DIRECTORY_INDEX_PREEMPTIONS:
+            with self.subTest(source=rule["source"]):
+                self.assertEqual(1, self.redirects.count(rule))
+                result = self.first_redirect(CANONICAL_HOST, rule["source"])
+                self.assertIsNotNone(result)
+                index, _matched, destination = result
+                self.assertGreaterEqual(index, 2)
+                self.assertLess(index, wildcard_index)
+                self.assertEqual("/communities", destination)
+
     def test_root_nested_paths_and_queries_keep_the_same_public_address(self) -> None:
         query = "utm_source=canonical-test&lead=1"
         for hostname in (WWW_HOST, VERCEL_HOST, "preview.branch.vercel.app"):
-            for path in ("/", "/towns/summit", "/es/blog/nj-property-tax-guide"):
+            for path in (
+                "/",
+                "/towns/summit",
+                "/es/blog/nj-property-tax-guide",
+                "/communities/index.html",
+            ):
                 with self.subTest(hostname=hostname, path=path):
                     result = self.first_redirect(hostname, path)
                     self.assertIsNotNone(result)

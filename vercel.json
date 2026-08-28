@@ -748,6 +748,26 @@
       "permanent": true
     },
     {
+      "source": "/communities/index.html/",
+      "destination": "/communities",
+      "permanent": true
+    },
+    {
+      "source": "/communities/index/",
+      "destination": "/communities",
+      "permanent": true
+    },
+    {
+      "source": "/communities/index.html",
+      "destination": "/communities",
+      "permanent": true
+    },
+    {
+      "source": "/communities/index",
+      "destination": "/communities",
+      "permanent": true
+    },
+    {
       "source": "/blog/first-time-home-buyer-guide-new-jersey",
       "destination": "/blog/first-time-home-buyer-nj-guide",
       "permanent": true

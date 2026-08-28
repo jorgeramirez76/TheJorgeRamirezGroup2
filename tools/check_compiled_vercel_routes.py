@@ -47,6 +47,13 @@ API_SOURCE_REDIRECT = {
     "permanent": True,
 }
 
+DIRECTORY_INDEX_PREEMPTIONS = [
+    {"source": "/communities/index.html/", "destination": "/communities", "permanent": True},
+    {"source": "/communities/index/", "destination": "/communities", "permanent": True},
+    {"source": "/communities/index.html", "destination": "/communities", "permanent": True},
+    {"source": "/communities/index", "destination": "/communities", "permanent": True},
+]
+
 
 def source_contract_issues(config: dict[str, Any]) -> list[str]:
     issues: list[str] = []
@@ -64,6 +71,30 @@ def source_contract_issues(config: dict[str, Any]) -> list[str]:
         issues.append("vercel.json: /api/lead.js canonical redirect changed")
     elif not 2 <= redirects.index(API_SOURCE_REDIRECT) < len(redirects) - 7:
         issues.append("vercel.json: /api/lead.js redirect precedence changed")
+    preemption_indexes: list[int] = []
+    for rule in DIRECTORY_INDEX_PREEMPTIONS:
+        if redirects.count(rule) != 1:
+            issues.append(f"vercel.json: directory-index preemption mismatch: {rule['source']}")
+            continue
+        preemption_indexes.append(redirects.index(rule))
+    community_wildcard = next(
+        (
+            index
+            for index, rule in enumerate(redirects)
+            if rule.get("source") == "/communities/:slug.html"
+        ),
+        None,
+    )
+    if community_wildcard is None:
+        issues.append("vercel.json: managed community wildcard is missing")
+    elif len(preemption_indexes) == len(DIRECTORY_INDEX_PREEMPTIONS) and (
+        preemption_indexes != list(
+            range(preemption_indexes[0], preemption_indexes[0] + len(preemption_indexes))
+        )
+        or preemption_indexes[0] < 2
+        or preemption_indexes[-1] >= community_wildcard
+    ):
+        issues.append("vercel.json: directory-index preemptions must be contiguous before the community wildcard")
     expected_consolidations = [
         {"source": source, "destination": destination, "permanent": True}
         for source, destination in FORMER_BULK_REDIRECTS
@@ -257,6 +288,7 @@ def compiled_contract_issues(
             "/towns/summit/",
             "/ai-authority.html",
             "/blog/index.html",
+            "/communities/index.html",
         ):
             result = first_redirect(routes, hostname, path, query)
             expected = f"{CANONICAL_ORIGIN}{path}?{query}"
@@ -310,6 +342,27 @@ def compiled_contract_issues(
         actual = resolve_request(routes, CANONICAL_HOST, path, static, functions)
         if actual != expected:
             issues.append(f"compiled resolution failed: {path} -> {actual!r}")
+
+    directory_index_failures: list[tuple[str, str, Any]] = []
+    for raw in sorted(path for path in static if path.endswith("/index.html") or path == "/index.html"):
+        canonical = "/" if raw == "/index.html" else raw.removesuffix("/index.html")
+        prefix = "" if canonical == "/" else canonical
+        variants = (
+            f"{prefix}/index.html/",
+            f"{prefix}/index/",
+            f"{prefix}/index.html",
+            f"{prefix}/index",
+        )
+        expected = _preserve_query(canonical, query)
+        for variant in variants:
+            actual = first_redirect(routes, CANONICAL_HOST, variant, query)
+            if actual is None or actual[1:] != (308, expected):
+                directory_index_failures.append((variant, expected, actual))
+    if directory_index_failures:
+        issues.append(
+            "compiled directory-index canonicalization failed: "
+            f"{directory_index_failures[:5]}"
+        )
 
     raw_html_served: list[str] = []
     raw_index_served: list[str] = []
