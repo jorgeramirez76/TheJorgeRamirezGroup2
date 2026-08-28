@@ -361,7 +361,10 @@ class WaveTwoContractTests(unittest.TestCase):
             )
         }
         self.assertEqual(set(expected), set(feature_redirects))
-        self.assertIs(True, json.loads(read(ROOT / "vercel.json")).get("cleanUrls"))
+        self.assertIn(
+            {"source": "/(.*).html", "destination": "/$1", "permanent": True},
+            redirects,
+        )
         self.assertFalse(any(source.endswith(".html") for source in feature_redirects))
         all_sources = {str(rule.get("source", "")) for rule in redirects}
         for source, destination in expected.items():

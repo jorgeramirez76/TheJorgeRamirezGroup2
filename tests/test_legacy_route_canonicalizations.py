@@ -31,7 +31,7 @@ class LegacyRouteCanonicalizationTests(unittest.TestCase):
         self.assertEqual(1, self.manifest["schemaVersion"])
         self.assertEqual("2026-08-26", self.manifest["reviewedOn"])
         self.assertEqual(4, len(self.items))
-        self.assertIn("cleanUrls", self.manifest["policy"])
+        self.assertIn("clean URL normalizer", self.manifest["policy"])
         self.assertEqual(4, len({item["source"] for item in self.items}))
         self.assertEqual(4, len({item["fallbackFile"] for item in self.items}))
         westfield = next(item for item in self.items if item["source"] == "/westfield-vs-summit-nj")
@@ -42,8 +42,12 @@ class LegacyRouteCanonicalizationTests(unittest.TestCase):
                 self.assertTrue(item["evidence"])
 
     def test_clean_routes_are_permanent_one_hop_and_within_route_limit(self) -> None:
-        self.assertIs(True, self.config.get("cleanUrls"))
-        self.assertIs(False, self.config.get("trailingSlash"))
+        self.assertNotIn("cleanUrls", self.config)
+        self.assertNotIn("trailingSlash", self.config)
+        self.assertIn(
+            {"source": "/(.*).html", "destination": "/$1", "permanent": True},
+            self.config["redirects"],
+        )
         by_source: dict[str, list[dict]] = {}
         for rule in self.config["redirects"]:
             by_source.setdefault(str(rule.get("source", "")), []).append(rule)
@@ -84,6 +88,8 @@ class LegacyRouteCanonicalizationTests(unittest.TestCase):
         offenders: list[str] = []
         for path in ROOT.rglob("*.html"):
             relative = path.relative_to(ROOT).as_posix()
+            if ".vercel" in path.relative_to(ROOT).parts:
+                continue
             source = path.read_text(encoding="utf-8", errors="ignore")
             if relative in allowed:
                 continue

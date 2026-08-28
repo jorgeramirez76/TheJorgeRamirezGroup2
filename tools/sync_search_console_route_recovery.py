@@ -15,6 +15,16 @@ RECOVERY_MANIFEST = ROOT / "data" / "search-console-route-recovery.json"
 TOWN_MANIFEST = ROOT / "data" / "indexable-town-risk-decisions.json"
 VERCEL_CONFIG = ROOT / "vercel.json"
 SITE = "https://thejorgeramirezgroup.com"
+EXPLICIT_HTML_NORMALIZER = {
+    "source": "/(.*).html",
+    "destination": "/$1",
+    "permanent": True,
+}
+EXPLICIT_STATIC_REWRITES = [
+    {"source": "/", "destination": "/index.html"},
+    {"source": "/(.*)", "destination": "/$1.html"},
+    {"source": "/(.*)", "destination": "/$1/index.html"},
+]
 
 
 def load_json(path: Path) -> dict:
@@ -109,8 +119,12 @@ def issues() -> list[str]:
     mappings = expected_routes()
     config = load_json(VERCEL_CONFIG)
     problems: list[str] = []
-    if config.get("cleanUrls") is not True:
-        problems.append("vercel cleanUrls must remain enabled for .html normalization")
+    if any(key in config for key in ("cleanUrls", "trailingSlash", "bulkRedirectsPath")):
+        problems.append("platform-managed URL normalization must remain disabled")
+    if EXPLICIT_HTML_NORMALIZER not in config.get("redirects", []):
+        problems.append("repository-managed .html normalization is missing")
+    if config.get("rewrites") != EXPLICIT_STATIC_REWRITES:
+        problems.append("repository-managed extensionless static rewrites changed")
     by_source: dict[str, list[dict]] = {}
     for rule in config["redirects"]:
         by_source.setdefault(str(rule.get("source", "")), []).append(rule)

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "reviewedOn": "2026-08-26",
   "source": "Read-only Google Search Console coverage exports supplied for the 2026-08-26 release audit; raw owner exports remain outside the repository.",
-  "policy": "Redirect only an observed broken or retired address when a current, indexable, same-language destination preserves the address's apparent intent. Vercel cleanUrls normally covers the matching .html request before the exact clean-route redirect; a pre-existing explicit .html rule is retained only when another retirement contract already established it.",
+  "policy": "Redirect only an observed broken or retired address when a current, indexable, same-language destination preserves the address's apparent intent. The repository-managed clean URL normalizer covers the matching .html request after host canonicalization; a pre-existing explicit .html rule is retained only when another retirement contract already established it.",
   "routes": [
     {
       "source": "/towns/${s.slug}",

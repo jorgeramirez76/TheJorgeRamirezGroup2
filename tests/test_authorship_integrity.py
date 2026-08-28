@@ -97,7 +97,7 @@ class AuthorshipIntegrityTests(unittest.TestCase):
         offenders: list[str] = []
         for path in ROOT.rglob("*.html"):
             name = relative(path)
-            if name.startswith((".git/", "tmp/")) or name in OUT_OF_SCOPE:
+            if name.startswith((".git/", ".vercel/", "tmp/")) or name in OUT_OF_SCOPE:
                 continue
             source = path.read_text(encoding="utf-8")
             if is_indexable(source) and UNSUPPORTED.search(source):

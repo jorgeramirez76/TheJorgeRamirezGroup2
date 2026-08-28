@@ -22,7 +22,7 @@ from __future__ import annotations
 # this the thin-content and duplicate-title checks are dominated by node_modules, generator
 # templates and seo-optimizer report dumps, which drowns out real findings.
 SKIP_DIRS = ("/node_modules/", "/crm/", "/tools/blog-automation/", "/tools/seo-optimizer/",
-             "/lead-research/", "/property-leads-system/", "/.git/")
+             "/lead-research/", "/property-leads-system/", "/.git/", "/.vercel/")
 
 
 def _is_content(path_str: str) -> bool:
@@ -45,7 +45,7 @@ def all_html() -> list[Path]:
     out = []
     for p in ROOT.rglob("*.html"):
         s = str(p)
-        if "/.git/" in s or "_backup" in s or "/staging/" in s:
+        if not _is_content(s) or "_backup" in s or "/staging/" in s:
             continue
         # skip redirect stubs (noindex meta-refresh forwarders)
         try:
@@ -54,7 +54,7 @@ def all_html() -> list[Path]:
         except OSError:
             pass
         out.append(p)
-    return [p for p in sorted(out) if _is_content(p.relative_to(ROOT).as_posix())]
+    return sorted(out)
 
 
 def head_status(url: str) -> int:
@@ -174,8 +174,8 @@ def check_canonical() -> list[tuple[str, str]]:
             continue
         canonical_url = m.group(1)
         rel = p.relative_to(ROOT).as_posix()
-        # The site is served by Vercel with cleanUrls:true and trailingSlash:false, so the
-        # canonical form of every page is EXTENSIONLESS and a .html URL 308-redirects to it.
+        # Repository-managed Vercel redirects and checked rewrites make the canonical
+        # form of every page EXTENSIONLESS and 308-redirect a .html URL to it.
         # This check previously expected ".html" (correct under the old GitHub Pages setup)
         # and therefore reported every correctly-canonicalised page as drift — 1,069 false
         # positives, which made the canonical check useless after the migration.

@@ -391,6 +391,43 @@ class ProgrammaticDoorwayRetirementTests(unittest.TestCase):
             result.stdout,
         )
 
+    def test_future_missing_routes_stay_ahead_of_clean_url_normalizers(self) -> None:
+        generator = load_generator()
+        live_config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
+        host_preamble = copy.deepcopy(live_config["redirects"][:2])
+        normalizers = copy.deepcopy(live_config["redirects"][-7:])
+        unrelated = {
+            "source": "/unrelated-exact",
+            "destination": "/unrelated-target",
+            "permanent": True,
+        }
+        config = {
+            "redirects": host_preamble + [unrelated] + normalizers,
+            "rewrites": copy.deepcopy(live_config["rewrites"]),
+        }
+        rendered = json.loads(
+            generator.expected_vercel(
+                json.dumps(config),
+                {"/synthetic-doorway": "/synthetic-target"},
+            )
+        )
+        redirects = rendered["redirects"]
+
+        self.assertEqual(host_preamble, redirects[:2])
+        self.assertEqual(normalizers, redirects[-7:])
+        self.assertEqual(
+            [unrelated],
+            [
+                rule
+                for rule in redirects
+                if rule["source"] == "/unrelated-exact"
+            ],
+        )
+        self.assertLess(
+            next(i for i, rule in enumerate(redirects) if rule["source"] == "/synthetic-doorway"),
+            len(redirects) - 7,
+        )
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

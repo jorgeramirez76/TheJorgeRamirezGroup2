@@ -1,8 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true,
-  "bulkRedirectsPath": "vercel-bulk-redirects.json",
-  "trailingSlash": false,
   "redirects": [
     {
       "source": "/(.*)",
@@ -248,6 +245,41 @@
     {
       "source": "/blog/is-it-cheaper-to-live-in-nj-or-ny.html",
       "destination": "/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/api/lead.js",
+      "destination": "/api/lead",
+      "permanent": true
+    },
+    {
+      "source": "/blog/renting-vs-buying-nj-2026",
+      "destination": "/rent-vs-buy-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/renting-vs-buying-nj-2026.html",
+      "destination": "/rent-vs-buy-nj",
+      "permanent": true
+    },
+    {
+      "source": "/best-real-estate-agents-essex-county-nj-2026",
+      "destination": "/counties/essex-county",
+      "permanent": true
+    },
+    {
+      "source": "/best-real-estate-agents-essex-county-nj-2026.html",
+      "destination": "/counties/essex-county",
+      "permanent": true
+    },
+    {
+      "source": "/best-real-estate-agents-morris-county-nj-2026",
+      "destination": "/counties/morris-county",
+      "permanent": true
+    },
+    {
+      "source": "/best-real-estate-agents-morris-county-nj-2026.html",
+      "destination": "/counties/morris-county",
       "permanent": true
     },
     {
@@ -3284,6 +3316,55 @@
       "source": "/viral-grout-cleaning-hack-tile-damage-nj-2026",
       "destination": "/sell-your-home",
       "permanent": true
+    },
+    {
+      "source": "/:path*/index.html/",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/index/",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/index.html",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/index",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/(.*).html/",
+      "destination": "/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*).html",
+      "destination": "/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)/",
+      "destination": "/$1",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/$1.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/$1/index.html"
     }
   ],
   "headers": [

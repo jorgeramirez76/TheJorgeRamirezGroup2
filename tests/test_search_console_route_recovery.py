@@ -70,8 +70,12 @@ class SearchConsoleRouteRecoveryTests(unittest.TestCase):
                 self.assertNotIn(destination, redirect_sources)
 
     def test_html_variants_use_enabled_clean_url_normalization(self) -> None:
-        self.assertIs(True, self.config.get("cleanUrls"))
-        self.assertIs(False, self.config.get("trailingSlash"))
+        self.assertNotIn("cleanUrls", self.config)
+        self.assertNotIn("trailingSlash", self.config)
+        self.assertIn(
+            {"source": "/(.*).html", "destination": "/$1", "permanent": True},
+            self.config["redirects"],
+        )
         exact_sources = {str(item.get("source", "")) for item in self.config["redirects"]}
         for source, destination in self.expected.items():
             if source.endswith(".html"):

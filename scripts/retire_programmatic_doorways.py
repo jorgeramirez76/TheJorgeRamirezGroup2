@@ -399,7 +399,7 @@ def expected_vercel(source: str, mappings: dict[str, str]) -> str:
         unmanaged[canonical_preamble_end:], start=canonical_preamble_end
     ):
         source_value = str(item.get("source", ""))
-        if item.get("has") or ":" in source_value:
+        if item.get("has") or any(mark in source_value for mark in (":", "*", "(")):
             insertion_index = index
             break
     additions = [

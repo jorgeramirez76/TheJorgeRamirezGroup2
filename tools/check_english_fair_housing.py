@@ -17,6 +17,7 @@ INVENTORY_PATH = ROOT / "data" / "english-fair-housing-inventory.json"
 QUARANTINE_PATH = ROOT / "data" / "english-fair-housing-quarantine.json"
 PROGRAMMATIC_DOORWAY_PATH = ROOT / "data" / "programmatic-doorway-retirement.json"
 SKIP_PARTS = {".git", "crm", "es", "node_modules", "property-leads-system", "realtor", "towns"}
+BUILD_OUTPUT_PARTS = {".vercel"}
 MARKET_REPORT = re.compile(r"(?:market-report|real-estate-market|county-market)", re.I)
 REDIRECT_STUB = re.compile(r'<meta\b[^>]*http-equiv=["\']refresh["\']', re.I)
 ROBOTS_NOINDEX = re.compile(
@@ -229,6 +230,8 @@ def discover_inventory() -> dict[str, list[str]]:
     for path in sorted(ROOT.rglob("*.html")):
         relative = path.relative_to(ROOT).as_posix()
         parts = path.relative_to(ROOT).parts
+        if any(part in BUILD_OUTPUT_PARTS for part in parts):
+            continue
         if any(part in SKIP_PARTS for part in parts):
             excluded["directories"].append(relative)
         elif relative in REBUILT_EXCLUSIONS:

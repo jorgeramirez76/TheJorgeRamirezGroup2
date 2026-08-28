@@ -100,7 +100,10 @@ class LiveRelativeCardRedirectRecoveryTests(unittest.TestCase):
                 self.assertGreater(index, min(catchall_indexes))
 
     def test_clean_urls_and_raw_html_requests_both_resolve_one_hop(self) -> None:
-        self.assertIs(True, self.config.get("cleanUrls"))
+        self.assertIn(
+            {"source": "/(.*).html", "destination": "/$1", "permanent": True},
+            self.redirects,
+        )
         for html_source in sorted(route for route in RECOVERY_ROUTES if route.endswith(".html")):
             clean_source = html_source.removesuffix(".html")
             with self.subTest(source=html_source):

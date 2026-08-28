@@ -77,7 +77,8 @@ class AiSalesPipelineRouteMigrationTests(unittest.TestCase):
                 self.assertIn("outside this release repository", snapshot["provenance"])
                 self.assertIn("not committed", snapshot["provenance"])
         semantics = self.manifest["vercelRoutingSemantics"]
-        self.assertIs(True, semantics["cleanUrls"])
+        self.assertIs(False, semantics["platformCleanUrls"])
+        self.assertIs(True, semantics["repositoryManagedCleanUrls"])
         self.assertEqual(36, semantics["cleanRouteRedirects"])
         self.assertEqual(72, semantics["legacyAddressVariantsCovered"])
         self.assertEqual(1, semantics["cleanAddressHops"])
@@ -115,9 +116,13 @@ class AiSalesPipelineRouteMigrationTests(unittest.TestCase):
 
     def test_clean_routes_redirect_permanently_and_html_uses_clean_url_normalization(self) -> None:
         config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
-        self.assertIs(True, config.get("cleanUrls"))
-        self.assertIs(False, config.get("trailingSlash"))
+        self.assertNotIn("cleanUrls", config)
+        self.assertNotIn("trailingSlash", config)
         redirects = config["redirects"]
+        self.assertEqual(
+            {"source": "/(.*).html", "destination": "/$1", "permanent": True},
+            redirects[-2],
+        )
         feature_rules = [
             rule
             for rule in redirects

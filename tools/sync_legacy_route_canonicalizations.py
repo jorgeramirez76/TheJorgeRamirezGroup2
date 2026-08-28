@@ -15,6 +15,16 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "legacy-route-canonicalizations.json"
 VERCEL_CONFIG = ROOT / "vercel.json"
 SITE = "https://thejorgeramirezgroup.com"
+EXPLICIT_HTML_NORMALIZER = {
+    "source": "/(.*).html",
+    "destination": "/$1",
+    "permanent": True,
+}
+EXPLICIT_STATIC_REWRITES = [
+    {"source": "/", "destination": "/index.html"},
+    {"source": "/(.*)", "destination": "/$1.html"},
+    {"source": "/(.*)", "destination": "/$1/index.html"},
+]
 
 
 def load_json(path: Path) -> dict:
@@ -189,8 +199,12 @@ def local_path(route: str) -> Path:
 def issues(items: list[dict[str, str]], expected_config: str) -> list[str]:
     problems: list[str] = []
     config = load_json(VERCEL_CONFIG)
-    if config.get("cleanUrls") is not True or config.get("trailingSlash") is not False:
-        problems.append("cleanUrls/trailingSlash contract changed")
+    if any(key in config for key in ("cleanUrls", "trailingSlash", "bulkRedirectsPath")):
+        problems.append("platform-managed URL normalization must remain disabled")
+    if EXPLICIT_HTML_NORMALIZER not in config.get("redirects", []):
+        problems.append("repository-managed .html normalization is missing")
+    if config.get("rewrites") != EXPLICIT_STATIC_REWRITES:
+        problems.append("repository-managed extensionless static rewrites changed")
     if VERCEL_CONFIG.read_text(encoding="utf-8") != expected_config:
         problems.append("vercel.json differs from legacy canonicalization render")
     redirects: dict[str, list[dict]] = {}
@@ -205,7 +219,7 @@ def issues(items: list[dict[str, str]], expected_config: str) -> list[str]:
         if len(rules) != 1 or rules[0].get("destination") != destination or rules[0].get("permanent") is not True:
             problems.append(f"{source}: clean permanent redirect mismatch")
         if source + ".html" in redirects:
-            problems.append(f"{source}: redundant .html rule bypasses cleanUrls contract")
+            problems.append(f"{source}: redundant .html rule bypasses the shared normalizer")
         if f"<loc>{SITE}{source}</loc>" in sitemap:
             problems.append(f"{source}: retired source remains submitted")
         if f"<loc>{SITE}{destination}</loc>" not in sitemap:

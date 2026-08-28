@@ -8,7 +8,6 @@ import re
 import unittest
 import xml.etree.ElementTree as ET
 from collections import Counter
-from fnmatch import fnmatchcase
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -17,7 +16,6 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
 SITEMAPS = {"sitemap.xml": 157, "sitemap-es.xml": 127}
-BULK_REDIRECTS = "vercel-bulk-redirects.json"
 CONSOLIDATIONS = (
     (
         "/blog/renting-vs-buying-nj-2026",
@@ -101,66 +99,30 @@ class FinalUrlConsolidationTests(unittest.TestCase):
         cls.by_source: dict[str, list[dict[str, object]]] = {}
         for rule in cls.redirects:
             cls.by_source.setdefault(str(rule.get("source", "")), []).append(rule)
-        cls.bulk_redirects = json.loads((ROOT / BULK_REDIRECTS).read_text(encoding="utf-8"))
-        cls.bulk_by_source: dict[str, list[dict[str, object]]] = {}
-        for rule in cls.bulk_redirects:
-            cls.bulk_by_source.setdefault(str(rule.get("source", "")), []).append(rule)
         cls.urls_by_sitemap = {
             filename: sitemap_urls(ROOT / filename) for filename in SITEMAPS
         }
 
-    def test_bulk_clean_and_html_rules_precede_clean_url_normalization(self) -> None:
-        self.assertIs(True, self.config.get("cleanUrls"))
-        self.assertIs(False, self.config.get("trailingSlash"))
-        self.assertEqual(BULK_REDIRECTS, self.config.get("bulkRedirectsPath"))
-        self.assertEqual(6, len(self.bulk_redirects))
-        self.assertEqual(6, len(self.bulk_by_source))
-
-        # Vercel evaluates bulk redirects before deployment-config routes. That ordering
-        # is essential because cleanUrls would otherwise normalize .html first.
-        def first_redirect(path: str) -> str | None:
-            bulk = self.bulk_by_source.get(path, [])
-            if bulk:
-                return str(bulk[0]["destination"])
-            if self.config["cleanUrls"] and path.endswith(".html"):
-                return path[:-5]
-            configured = self.by_source.get(path, [])
-            return str(configured[0]["destination"]) if configured else None
-
+    def test_consolidation_rules_follow_host_guards_and_precede_normalization(self) -> None:
+        self.assertNotIn("bulkRedirectsPath", self.config)
+        self.assertFalse((ROOT / "vercel-bulk-redirects.json").exists())
+        expected = []
         for clean_source, _fallback, destination, _destination_file in CONSOLIDATIONS:
             for source in (clean_source, clean_source + ".html"):
+                rule = {
+                    "source": source,
+                    "destination": destination,
+                    "permanent": True,
+                }
+                expected.append(rule)
                 with self.subTest(source=source):
-                    self.assertNotIn(source, self.by_source)
-                    self.assertEqual(1, len(self.bulk_by_source.get(source, [])))
-                    self.assertEqual(
-                        {
-                            "source": source,
-                            "destination": destination,
-                            "permanent": True,
-                        },
-                        self.bulk_by_source[source][0],
-                    )
-                    self.assertEqual(destination, first_redirect(source))
+                    self.assertEqual([rule], self.by_source.get(source))
             with self.subTest(destination=destination):
-                self.assertNotIn(destination, self.bulk_by_source)
                 self.assertNotIn(destination, self.by_source)
-                self.assertIsNone(first_redirect(destination), "redirect destination must not chain")
-
-    def test_bulk_redirect_source_file_is_included_by_vercel(self) -> None:
-        ignored = False
-        for raw in (ROOT / ".vercelignore").read_text(encoding="utf-8").splitlines():
-            rule = raw.strip()
-            if not rule or rule.startswith("#"):
-                continue
-            negated = rule.startswith("!")
-            pattern = rule[1:] if negated else rule
-            pattern = pattern.rstrip("/")
-            matches = fnmatchcase(BULK_REDIRECTS, pattern) or BULK_REDIRECTS.startswith(
-                pattern + "/"
-            )
-            if matches:
-                ignored = not negated
-        self.assertFalse(ignored, f"{BULK_REDIRECTS} must be sent in source deployments")
+        indexes = [self.redirects.index(rule) for rule in expected]
+        self.assertEqual(sorted(indexes), indexes)
+        self.assertGreaterEqual(min(indexes), 2)
+        self.assertLess(max(indexes), len(self.redirects) - 7)
 
     def test_fallbacks_are_compact_neutral_noindex_documents(self) -> None:
         for _source, fallback, destination, _destination_file in CONSOLIDATIONS:

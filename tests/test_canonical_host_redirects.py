@@ -14,6 +14,40 @@ CANONICAL_HOST = "thejorgeramirezgroup.com"
 CANONICAL_ORIGIN = f"https://{CANONICAL_HOST}"
 WWW_HOST = "www.thejorgeramirezgroup.com"
 VERCEL_HOST = "thejorgeramirezgroup.vercel.app"
+FORMER_BULK_REDIRECTS = [
+    {
+        "source": source,
+        "destination": destination,
+        "permanent": True,
+    }
+    for source, destination in (
+        ("/blog/renting-vs-buying-nj-2026", "/rent-vs-buy-nj"),
+        ("/blog/renting-vs-buying-nj-2026.html", "/rent-vs-buy-nj"),
+        ("/best-real-estate-agents-essex-county-nj-2026", "/counties/essex-county"),
+        ("/best-real-estate-agents-essex-county-nj-2026.html", "/counties/essex-county"),
+        ("/best-real-estate-agents-morris-county-nj-2026", "/counties/morris-county"),
+        ("/best-real-estate-agents-morris-county-nj-2026.html", "/counties/morris-county"),
+    )
+]
+EXPLICIT_CLEAN_URL_REDIRECTS = [
+    {"source": "/:path*/index.html/", "destination": "/:path*", "permanent": True},
+    {"source": "/:path*/index/", "destination": "/:path*", "permanent": True},
+    {"source": "/:path*/index.html", "destination": "/:path*", "permanent": True},
+    {"source": "/:path*/index", "destination": "/:path*", "permanent": True},
+    {"source": "/(.*).html/", "destination": "/$1", "permanent": True},
+    {"source": "/(.*).html", "destination": "/$1", "permanent": True},
+    {"source": "/(.*)/", "destination": "/$1", "permanent": True},
+]
+EXPLICIT_CLEAN_URL_REWRITES = [
+    {"source": "/", "destination": "/index.html"},
+    {"source": "/(.*)", "destination": "/$1.html"},
+    {"source": "/(.*)", "destination": "/$1/index.html"},
+]
+API_SOURCE_REDIRECT = {
+    "source": "/api/lead.js",
+    "destination": "/api/lead",
+    "permanent": True,
+}
 
 
 def condition_matches(condition: dict, hostname: str) -> bool:
@@ -57,9 +91,8 @@ def apply_redirect(rule: dict, path: str) -> str | None:
 class CanonicalHostRedirectTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.redirects = json.loads(
-            (ROOT / "vercel.json").read_text(encoding="utf-8")
-        )["redirects"]
+        cls.config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
+        cls.redirects = cls.config["redirects"]
         cls.host_rules = [
             rule
             for rule in cls.redirects
@@ -103,6 +136,24 @@ class CanonicalHostRedirectTests(unittest.TestCase):
                     1,
                     sum(rule_matches_host(rule, hostname) for rule in self.host_rules),
                 )
+
+    def test_repo_controlled_clean_urls_cannot_preempt_the_host_guards(self) -> None:
+        for platform_managed_key in ("cleanUrls", "trailingSlash", "bulkRedirectsPath"):
+            self.assertNotIn(platform_managed_key, self.config)
+        self.assertEqual(EXPLICIT_CLEAN_URL_REDIRECTS, self.redirects[-7:])
+        self.assertEqual(EXPLICIT_CLEAN_URL_REWRITES, self.config.get("rewrites"))
+        consolidation_indexes = [
+            self.redirects.index(rule) for rule in FORMER_BULK_REDIRECTS
+        ]
+        self.assertEqual(sorted(consolidation_indexes), consolidation_indexes)
+        self.assertGreaterEqual(min(consolidation_indexes), 2)
+        self.assertLess(max(consolidation_indexes), len(self.redirects) - 7)
+
+    def test_api_source_filename_canonicalizes_after_the_host_guards(self) -> None:
+        self.assertEqual(1, self.redirects.count(API_SOURCE_REDIRECT))
+        index = self.redirects.index(API_SOURCE_REDIRECT)
+        self.assertGreaterEqual(index, 2)
+        self.assertLess(index, len(self.redirects) - len(EXPLICIT_CLEAN_URL_REDIRECTS))
 
     def test_root_nested_paths_and_queries_keep_the_same_public_address(self) -> None:
         query = "utm_source=canonical-test&lead=1"

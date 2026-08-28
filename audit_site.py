@@ -34,6 +34,7 @@ LOCAL_HOSTS = {"thejorgeramirezgroup.com", "www.thejorgeramirezgroup.com"}
 # material rather than public pages. Public redirect files under ``tools/`` are
 # intentionally not excluded.
 INTERNAL_SOURCE_PREFIXES = (
+    ".vercel/",
     "tests/",
     "scripts/",
     "data/",

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "reviewedOn": "2026-08-26",
   "source": "Combined release cross-review of historical Google Search Console performance rows and existing noindex/meta-refresh retirement fallbacks.",
-  "policy": "A retired address receives one clean permanent server redirect only when the existing canonical, visible fallback link, and topic intent all agree on a current indexable destination. Vercel cleanUrls covers the matching .html request. The local file remains a compact noindex fallback without hreflang or structured-data signals.",
+  "policy": "A retired address receives one clean permanent server redirect only when the existing canonical, visible fallback link, and topic intent all agree on a current indexable destination. The repository-managed clean URL normalizer covers the matching .html request after canonical-host routing. The local file remains a compact noindex fallback without hreflang or structured-data signals.",
   "routes": [
     {
       "source": "/westfield-vs-summit-nj",

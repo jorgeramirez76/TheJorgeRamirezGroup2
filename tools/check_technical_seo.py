@@ -22,6 +22,7 @@ ORIGIN = "https://thejorgeramirezgroup.com"
 EXPECTED_OFFICE_GEO = (40.7157, -74.3601)
 SKIP_DIRS = {
     ".git",
+    ".vercel",
     "node_modules",
     "crm",
     "docs",
@@ -335,10 +336,48 @@ def main() -> int:
                 f"{stub.relative_to(ROOT)}: redirect fallback targets a .html URL"
             )
 
-    # Redirect policy: clean public URLs, permanent migrations, no exact chains,
-    # and an explicit one-hop route for legacy /realtor/*.html requests.
-    if config.get("cleanUrls") is not True or config.get("trailingSlash") is not False:
-        failures.append("vercel.json: cleanUrls must be true and trailingSlash false")
+    # Redirect policy: host canonicalization must run before every path behavior.
+    # Clean URLs are therefore repository-managed rather than Vercel-managed;
+    # Vercel otherwise compiles its automatic normalizers ahead of redirects.
+    explicit_clean_redirects = [
+        {"source": "/:path*/index.html/", "destination": "/:path*", "permanent": True},
+        {"source": "/:path*/index/", "destination": "/:path*", "permanent": True},
+        {"source": "/:path*/index.html", "destination": "/:path*", "permanent": True},
+        {"source": "/:path*/index", "destination": "/:path*", "permanent": True},
+        {"source": "/(.*).html/", "destination": "/$1", "permanent": True},
+        {"source": "/(.*).html", "destination": "/$1", "permanent": True},
+        {"source": "/(.*)/", "destination": "/$1", "permanent": True},
+    ]
+    explicit_static_rewrites = [
+        {"source": "/", "destination": "/index.html"},
+        {"source": "/(.*)", "destination": "/$1.html"},
+        {"source": "/(.*)", "destination": "/$1/index.html"},
+    ]
+    if any(key in config for key in ("cleanUrls", "trailingSlash", "bulkRedirectsPath")):
+        failures.append(
+            "vercel.json: platform-managed URL normalization must remain disabled"
+        )
+    if redirects[-7:] != explicit_clean_redirects:
+        failures.append(
+            "vercel.json: repository-managed clean URL redirects must remain last"
+        )
+    if config.get("rewrites") != explicit_static_rewrites:
+        failures.append(
+            "vercel.json: extensionless static rewrites changed"
+        )
+    api_source_redirect = {
+        "source": "/api/lead.js",
+        "destination": "/api/lead",
+        "permanent": True,
+    }
+    if redirects.count(api_source_redirect) != 1:
+        failures.append(
+            "vercel.json: /api/lead.js must redirect once to the extensionless function"
+        )
+    elif not 2 <= redirects.index(api_source_redirect) < len(redirects) - 7:
+        failures.append(
+            "vercel.json: /api/lead.js redirect must follow host guards and precede normalizers"
+        )
 
     def host_matches(item: dict, hostname: str) -> bool:
         for condition in item.get("has", []):

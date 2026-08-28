@@ -43,7 +43,7 @@
       "clicks": 520,
       "impressions": 107597
     },
-    "cannibalizationFinding": "The supplied query export has no page dimension, so query-to-page cannibalization cannot be calculated. Separate .html and extensionless page rows show URL fragmentation, which the release cleanUrls and redirect contracts consolidate."
+    "cannibalizationFinding": "The supplied query export has no page dimension, so query-to-page cannibalization cannot be calculated. Separate .html and extensionless page rows show URL fragmentation, which the release clean URL and redirect contracts consolidate."
   },
   "snippetPriorityBaseline": {
     "manifest": "data/gsc-priority-snippets.json",
@@ -54,7 +54,7 @@
     "interpretation": "These historical rows predate the release metadata rewrites, so they are a monitoring baseline rather than evidence for another speculative rewrite."
   },
   "indexCoverageDisposition": {
-    "classification": "Saved coverage URLs were evaluated against the 2026-08-26 release surface with Vercel cleanUrls and exact redirect contracts applied. Search Console will take time to recrawl and reclassify historical rows.",
+    "classification": "Saved coverage URLs were evaluated against the 2026-08-26 release surface with repository-managed clean URL and exact redirect contracts applied. Search Console will take time to recrawl and reclassify historical rows.",
     "notFound": {
       "sourceRows": 52,
       "serverRedirectToIndexable": 52

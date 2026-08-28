@@ -20,6 +20,17 @@ BANNED_COLORS = re.compile(r'#(c9a84c|e8c97a|1a4b8c|0f3460|1a2a4a|f6a623|0f1117|
 BANNED_FONTS = re.compile(r'family=Cormorant|Cormorant Garamond', re.I)
 FLIP = re.compile(r'(60\+|sixty[ -]plus|over 60) (house |home |personal )*(flip|homes|houses|properties)', re.I)
 CONFLICT = re.compile(r'^(<<<<<<<|>>>>>>>|=======$)', re.M)
+SKIP_DIR_NAMES = {
+    ".git",
+    ".vercel",
+    "__pycache__",
+    ".design-screens",
+    "node_modules",
+    "lead-research",
+    "property-leads-system",
+    "docs",
+    "_posts",
+}
 
 issues = defaultdict(list)
 
@@ -140,9 +151,7 @@ def check(path):
 def main():
     n = 0
     for root, dirs, fs in os.walk("."):
-        dirs[:] = [d for d in dirs if d not in (".git", "__pycache__", ".design-screens",
-                                                "node_modules", "lead-research",
-                                                "property-leads-system", "docs", "_posts")]
+        dirs[:] = [d for d in dirs if d not in SKIP_DIR_NAMES]
         for fn in sorted(fs):
             if fn.endswith(".html"):
                 check(os.path.join(root, fn).lstrip("./"))
