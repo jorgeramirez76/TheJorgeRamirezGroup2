@@ -13,6 +13,7 @@ MANIFEST = json.loads(
     (ROOT / "data" / "union-priority-town-sources.json").read_text(encoding="utf-8")
 )
 ACCESSED = "2026-08-25"
+PAGE_MODIFIED_ON = "2026-08-27"
 
 
 TOWNS = {
@@ -22,7 +23,13 @@ TOWNS = {
         "title": "Cranford NJ Real Estate Research | Jorge Ramirez",
         "description": "Research Cranford, NJ real estate with official links for Raritan Valley rail, public schools, zoning, flood maps, parks, taxes, and parcel due diligence.",
         "hero": "A source-backed starting point for checking a Cranford address, from the Raritan Valley Line and public-school records to zoning and floodplain research.",
-        "image": ("/images/towns/cranford-1.webp", "1280", "960", "Cranford, New Jersey streetscape", "Cranford, New Jersey — photo: Adam Moss, CC BY-SA 2.0, Wikimedia Commons"),
+        "image": (
+            "/images/towns/cranford-1.webp", "1280", "960",
+            "Cranford NJ Transit station platform in Cranford, New Jersey",
+            "Cranford NJ Transit station", "Adam Moss",
+            "https://commons.wikimedia.org/wiki/File:Cranford_Station.jpg",
+            "CC BY-SA 2.0", "https://creativecommons.org/licenses/by-sa/2.0/",
+        ),
         "orientation_title": "Cranford research starts with the Rahway River, station, and parcel",
         "orientation": [
             "Cranford is governed by a five-member Township Committee, which appoints the mayor and deputy mayor each year. The official committee page is the direct place to review public agendas, approved minutes, appointments, and links to current municipal action instead of relying on a summary that can become stale.",
@@ -97,7 +104,13 @@ TOWNS = {
         "title": "Fanwood NJ Real Estate Research | Jorge Ramirez",
         "description": "Research Fanwood, NJ real estate with official links for its Raritan Valley station, regional public schools, zoning, recreation, taxes, and parcel checks.",
         "hero": "A practical guide to Fanwood's station-centered borough, shared public-school district, municipal zoning resources, and address-level property checks.",
-        "image": ("/images/towns/fanwood-1.webp", "1280", "720", "Fanwood, New Jersey streetscape", "Fanwood, New Jersey — photo: AtsushiJC, CC BY-SA 4.0, Wikimedia Commons"),
+        "image": (
+            "/images/towns/fanwood-1.webp", "1280", "720",
+            "Fanwood NJ Transit station and downtown Fanwood, New Jersey",
+            "Fanwood NJ Transit station", "AtsushiJC",
+            "https://commons.wikimedia.org/wiki/File:Fanwood_Station_View.jpg",
+            "CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/",
+        ),
         "orientation_title": "Fanwood is compact, but every address still needs its own review",
         "orientation": [
             "Fanwood's official government page describes an elected mayor and six council members, with the council acting as the borough's legislative body. The public meeting record is useful when a buyer or owner wants to trace an ordinance, capital item, or land-use decision beyond a headline.",
@@ -172,7 +185,13 @@ TOWNS = {
         "title": "Roselle Park NJ Real Estate Research | Jorge Ramirez",
         "description": "Research Roselle Park, NJ real estate with official links for Raritan Valley rail, public schools, land use, parks, tax maps, assessments, and permits.",
         "hero": "A verified starting point for Roselle Park station access, borough land-use records, public schools, civic spaces, and parcel-specific research.",
-        "image": ("/images/towns/roselle-park-1.webp", "1280", "960", "Roselle Park, New Jersey streetscape", "Roselle Park, New Jersey — photo: Adam Moss, CC BY-SA 2.0, Wikimedia Commons"),
+        "image": (
+            "/images/towns/roselle-park-1.webp", "1280", "960",
+            "Roselle Park NJ Transit station platform in Roselle Park, New Jersey",
+            "Roselle Park NJ Transit station", "Adam Moss",
+            "https://commons.wikimedia.org/wiki/File:Roselle_Park_Station_-_January_2015.jpg",
+            "CC BY-SA 2.0", "https://creativecommons.org/licenses/by-sa/2.0/",
+        ),
         "orientation_title": "Roselle Park decisions connect the station, borough record, and exact lot",
         "orientation": [
             "Roselle Park's official government page explains its borough structure and identifies a combined Municipal Land Use Board that performs both planning and zoning-board functions. That combined structure is useful to know when tracing an application, variance, redevelopment document, or public hearing affecting a property.",
@@ -247,7 +266,13 @@ TOWNS = {
         "title": "New Providence NJ Real Estate Research | Jorge Ramirez",
         "description": "Research New Providence, NJ real estate with official links for both rail stations, public schools, borough parks, ordinances, taxes, assessments, and parcel checks.",
         "hero": "A source-backed guide to New Providence's two NJ TRANSIT stations, borough government, four public-school campuses, civic facilities, and property records.",
-        "image": ("/images/towns/new-providence-1.webp", "1280", "854", "New Providence, New Jersey streetscape", "New Providence, New Jersey — photo: Kellerra, Wikimedia Commons"),
+        "image": (
+            "/images/towns/new-providence-1.webp", "1280", "854",
+            "New Providence NJ Transit station building in New Providence, New Jersey",
+            "New Providence NJ Transit station", "Kellerra",
+            "https://commons.wikimedia.org/wiki/File:New_Providence_Station_-_2024.jpg",
+            "CC0 1.0", "https://creativecommons.org/publicdomain/zero/1.0/",
+        ),
         "orientation_title": "New Providence has two station areas and one parcel-specific decision",
         "orientation": [
             "New Providence's official government page describes a mayor-and-council borough. The mayor serves as chief executive, while the six-member council acts as the legislative body. Meeting records, ordinances, and public notices are the appropriate sources for municipal action that could affect a property.",
@@ -322,7 +347,13 @@ TOWNS = {
         "title": "Berkeley Heights NJ Real Estate Research | Jorge Ramirez",
         "description": "Research Berkeley Heights, NJ real estate with official links for rail, schools, Snyder Park, zoning, tree permits, flood maps, wetlands, and parcel records.",
         "hero": "An official-source guide to Berkeley Heights Station, district campuses, Snyder Avenue Park, zoning and tree review, flood maps, wetlands, and block-and-lot research.",
-        "image": ("/images/towns/berkeley-heights-1.webp", "1280", "960", "Berkeley Heights, New Jersey streetscape", "Berkeley Heights, New Jersey — photo: SeichanGant, CC BY-SA 4.0, Wikimedia Commons"),
+        "image": (
+            "/images/towns/berkeley-heights-1.webp", "1280", "960",
+            "Berkeley Heights NJ Transit station platform in Berkeley Heights, New Jersey",
+            "Berkeley Heights NJ Transit station", "SeichanGant",
+            "https://commons.wikimedia.org/wiki/File:Berkeley_Heights_Train_Station,_2.jpg",
+            "CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/",
+        ),
         "orientation_title": "Berkeley Heights research crosses township, county, and school records",
         "orientation": [
             "The township's existing-conditions plan describes Berkeley Heights as a Union County municipality with a mayor-and-council form and local departments at Town Hall. Planning documents provide useful context, but parcel decisions still belong in current zoning, engineering, assessment, and permit records.",
@@ -397,7 +428,13 @@ TOWNS = {
         "title": "Springfield NJ Real Estate Research | Jorge Ramirez",
         "description": "Research Springfield, NJ real estate with official links for Route 114 and jitney transit, public schools, parks, zoning, surveys, permits, taxes, and parcel checks.",
         "hero": "A verified guide to Springfield's bus and jitney connections, public-school campuses, Township records, county parks, zoning submissions, and property research.",
-        "image": ("/images/towns/springfield-1.webp", "1280", "960", "Springfield, New Jersey streetscape", "Springfield, New Jersey — photo: Famartin, CC BY-SA 4.0, Wikimedia Commons"),
+        "image": (
+            "/images/towns/springfield-1.webp", "1280", "960",
+            "Interstate 78 in Springfield Township, Union County, New Jersey",
+            "Interstate 78 in Springfield Township", "Famartin",
+            "https://commons.wikimedia.org/wiki/File:2021-07-06_15_21_17_View_east_along_Interstate_78_(Phillipsburg-Newark_Expressway)_from_the_overpass_for_Union_County_Route_636_(Shunpike_Road)_in_Springfield_Township,_Union_County,_New_Jersey.jpg",
+            "CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/",
+        ),
         "orientation_title": "Springfield transportation research begins with bus and jitney sources",
         "orientation": [
             "Springfield publishes Township Committee, Planning Board, and Board of Adjustment meeting records on its municipal site. Those records are the place to trace ordinances, public applications, and official action that may affect a parcel or nearby corridor.",
@@ -479,7 +516,22 @@ def anchor(url: str, label: str) -> str:
 
 def render_main(slug: str, town: dict) -> str:
     name = town["name"]
-    image_url, width, height, image_alt, image_caption = town["image"]
+    (
+        image_url,
+        width,
+        height,
+        image_alt,
+        image_subject,
+        image_artist,
+        image_source_url,
+        image_license,
+        image_license_url,
+    ) = town["image"]
+    image_caption = (
+        f"{html.escape(image_subject)}. Photo: {html.escape(image_artist)} via "
+        f'{anchor(image_source_url, "Wikimedia Commons")}; '
+        f'{anchor(image_license_url, image_license)}, resized to WebP.'
+    )
     cards = "\n".join(
         f'''          <article class="neighborhood-card">
             <h3>{html.escape(title)}</h3>
@@ -554,7 +606,7 @@ def render_main(slug: str, town: dict) -> str:
 
   <section class="neighborhoods">
     <div class="container">
-      <figure class="article-figure"><img src="{image_url}" alt="{html.escape(image_alt)}" width="{width}" height="{height}" loading="lazy"><figcaption>{html.escape(image_caption)}</figcaption></figure>
+      <figure class="article-figure"><img src="{image_url}" alt="{html.escape(image_alt)}" width="{width}" height="{height}" loading="lazy" decoding="async"><figcaption>{image_caption}</figcaption></figure>
       <h2>{html.escape(town["orientation_title"])}</h2>
       {''.join(f'<p>{html.escape(paragraph)}</p>' for paragraph in town['orientation'])}
       <div class="neighborhoods-grid" style="margin-top:28px;">
@@ -666,7 +718,7 @@ def render_schema(slug: str, town: dict) -> str:
             "url": canonical,
             "name": town["title"],
             "description": town["description"],
-            "dateModified": ACCESSED,
+            "dateModified": PAGE_MODIFIED_ON,
             "inLanguage": "en-US",
             "isPartOf": {"@type": "WebSite", "@id": "https://thejorgeramirezgroup.com/#website"},
             "publisher": {"@id": "https://thejorgeramirezgroup.com/#agent"},
@@ -712,6 +764,21 @@ def replace_once(source: str, pattern: str, replacement: str, label: str, flags:
     return updated
 
 
+def preserve_local_search_pathway(rendered_main: str, source: str) -> str:
+    """Keep the separately managed local-search block across a page rebuild."""
+    pathway_match = re.search(
+        r"[ \t]*<!-- local-search-pathways:start -->.*?"
+        r"<!-- local-search-pathways:end -->\n?",
+        source,
+        flags=re.S,
+    )
+    if not pathway_match:
+        return rendered_main
+    return rendered_main.replace(
+        "</main>", pathway_match.group(0).rstrip() + "\n</main>", 1
+    )
+
+
 def rebuild(slug: str, town: dict) -> None:
     path = ROOT / "towns" / f"{slug}.html"
     source = path.read_text(encoding="utf-8")
@@ -733,7 +800,14 @@ def rebuild(slug: str, town: dict) -> None:
     source = re.sub(r'^\s*<meta name="geo\.(?:region|placename|position)"[^>]*>\s*$', "", source, flags=re.M)
     source = re.sub(r'^\s*<meta name="ICBM"[^>]*>\s*$', "", source, flags=re.M)
     source = replace_once(source, r'<script type="application/ld\+json">.*?</script>', f'<script type="application/ld+json">{render_schema(slug, town)}</script>', f"{slug} schema", re.S)
-    source = replace_once(source, r'<main id="main">.*?</main>', render_main(slug, town), f"{slug} main", re.S)
+    rendered_main = preserve_local_search_pathway(render_main(slug, town), source)
+    source = replace_once(
+        source,
+        r'<main id="main">.*?</main>',
+        rendered_main,
+        f"{slug} main",
+        re.S,
+    )
 
     related_items = "\n".join(
         f'        <li><a href="/towns/{nearby_slug}">{html.escape(nearby_name)} NJ Real Estate Research</a></li>'

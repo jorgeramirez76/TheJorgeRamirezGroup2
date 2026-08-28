@@ -6,9 +6,18 @@
     "status": "reviewed-source-links-only",
     "scope": "Five retained English and Spanish county research routes",
     "rule": "Publish the research method and direct primary-source links, not copied market tables or unsourced market values.",
+    "snapshotRule": "Do not present a monthly or quarterly market snapshot unless downstream republication rights and the exact geography, property category, reporting period, metric definitions, and source date are verified.",
+    "legacyQuarterRule": "The retained Hudson and Middlesex URLs include Q2 2026 for continuity only; their title, description, H1, and direct answer must describe a source guide and must not promise a Q2 report.",
     "countyRule": "County sources do not answer municipality-level or property-specific questions.",
     "propertyRule": "A property-specific CMA requires current comparable properties and property details.",
     "corrections": "Source-link or labeling corrections may be sent through the site contact page."
+  },
+  "publicationRightsReview": {
+    "reviewedOn": "2026-08-27",
+    "portalUrl": "https://njar-public.stats.10kresearch.com/reports",
+    "termsUrl": "https://www.njrealtor.com/terms-of-service/",
+    "finding": "The public portal identifies its reports as copyrighted by ShowingTime Plus, and the reviewed New Jersey Realtors terms do not grant express republication permission.",
+    "decision": "Link readers to the original report selector and do not reproduce a monthly or quarterly portal table."
   },
   "sharedSources": [
     {
@@ -33,6 +42,17 @@
       "use": "Let readers select the county, report period, and available property category at the source.",
       "limit": "Values can change with the selected report and period. This site links to the portal and does not copy its tables.",
       "publicationHandling": "direct public county-report portal linked by NJ Realtors; tables are viewed at the source and are not reproduced"
+    },
+    {
+      "id": "njr-terms-of-service",
+      "publisher": "New Jersey Realtors",
+      "title": "Terms of Service",
+      "url": "https://www.njrealtor.com/terms-of-service/",
+      "geography": "Publication and website use",
+      "period": "Terms reviewed 2026-08-27",
+      "accessedOn": "2026-08-27",
+      "use": "Check whether the publisher grants express permission to reproduce its service or report content.",
+      "limit": "This is a publication-rights check, not a housing-market data source."
     },
     {
       "id": "nj-treasury-property-tax-statistics",
@@ -95,7 +115,8 @@
       "slug": "essex-county-nj-real-estate-market-2026",
       "county": "Essex",
       "countyFips": "34013",
-      "periodLabel": "2026 research path",
+      "periodLabel": "2026 source guide",
+      "contentMode": "source-guide-no-market-snapshot",
       "publishedOn": "2026-03-08",
       "routes": {
         "en": "/blog/essex-county-nj-real-estate-market-2026",
@@ -112,7 +133,8 @@
       "slug": "morris-county-nj-real-estate-market-2026",
       "county": "Morris",
       "countyFips": "34027",
-      "periodLabel": "2026 research path",
+      "periodLabel": "2026 source guide",
+      "contentMode": "source-guide-no-market-snapshot",
       "publishedOn": "2026-03-08",
       "routes": {
         "en": "/blog/morris-county-nj-real-estate-market-2026",
@@ -129,7 +151,9 @@
       "slug": "hudson-county-real-estate-market-q2-2026",
       "county": "Hudson",
       "countyFips": "34017",
-      "periodLabel": "Q2 2026 research path",
+      "periodLabel": "2026 source guide",
+      "contentMode": "source-guide-no-market-snapshot",
+      "legacyRoutePeriod": "Q2 2026",
       "publishedOn": "2026-04-16",
       "routes": {
         "en": "/blog/hudson-county-real-estate-market-q2-2026",
@@ -146,7 +170,9 @@
       "slug": "middlesex-county-real-estate-market-q2-2026",
       "county": "Middlesex",
       "countyFips": "34023",
-      "periodLabel": "Q2 2026 research path",
+      "periodLabel": "2026 source guide",
+      "contentMode": "source-guide-no-market-snapshot",
+      "legacyRoutePeriod": "Q2 2026",
       "publishedOn": "2026-04-16",
       "routes": {
         "en": "/blog/middlesex-county-real-estate-market-q2-2026",
@@ -163,7 +189,8 @@
       "slug": "union-county-nj-real-estate-market-report-2026",
       "county": "Union",
       "countyFips": "34039",
-      "periodLabel": "2026 research path",
+      "periodLabel": "2026 source guide",
+      "contentMode": "source-guide-no-market-snapshot",
       "publishedOn": "2026-03-08",
       "routes": {
         "en": "/blog/union-county-nj-real-estate-market-report-2026",

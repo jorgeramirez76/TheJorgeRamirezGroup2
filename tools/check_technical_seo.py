@@ -29,6 +29,10 @@ SKIP_DIRS = {
     "property-leads-system",
     "staging",
 }
+SKIP_PATH_PREFIXES = (
+    ("tools", "blog-automation"),
+    ("tools", "seo-optimizer"),
+)
 SITEMAP_NS = {
     "s": "http://www.sitemaps.org/schemas/sitemap/0.9",
     "x": "http://www.w3.org/1999/xhtml",
@@ -172,6 +176,22 @@ def json_ld_blocks(text: str) -> list[dict]:
     return [json.loads(block) for block in blocks]
 
 
+def is_skipped_html(path: Path) -> bool:
+    """Return whether an HTML source is outside the deployable audit surface."""
+
+    try:
+        relative = path.relative_to(ROOT)
+    except ValueError:
+        return True
+    return (
+        any(part in SKIP_DIRS for part in relative.parts)
+        or any(
+            relative.parts[: len(prefix)] == prefix
+            for prefix in SKIP_PATH_PREFIXES
+        )
+    )
+
+
 def main() -> int:
     failures: list[str] = []
 
@@ -186,7 +206,7 @@ def main() -> int:
     pages: dict[str, dict] = {}
     pages_by_url: dict[str, list[dict]] = defaultdict(list)
     for path in ROOT.rglob("*.html"):
-        if any(part in SKIP_DIRS for part in path.parts):
+        if is_skipped_html(path):
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         parser = SeoParser()

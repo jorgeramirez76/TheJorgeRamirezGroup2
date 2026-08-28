@@ -21,6 +21,7 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
 REVIEWED_ON = "2026-08-26"
+PAGE_MODIFIED_ON = "2026-08-27"
 MANIFEST = ROOT / "data" / "union-morris-town-market-sources-2026-08-26.json"
 GENERATOR = ROOT / "tools" / "generate_union_morris_town_market_research.py"
 PALETTE = {
@@ -315,6 +316,11 @@ class TownMarketManifestTests(unittest.TestCase):
             "tools/generate_union_morris_town_market_research.py",
             document["renderer"],
         )
+        self.assertTrue(
+            document["publicationPolicy"]["directAnswerRule"].startswith(
+                "Lead with a 40-60-word"
+            )
+        )
         self.assertEqual(set(REPORTS), {item["slug"] for item in document["reports"]})
 
         sources = {item["url"]: item for item in document["sources"]}
@@ -409,21 +415,56 @@ class TownMarketPageTests(unittest.TestCase):
                     self.assertIn(SITE + deployed, submitted)
 
     def test_metadata_keeps_town_market_intent_without_volatile_claims(self) -> None:
+        from tools.audit_spanish_quality import PATTERNS, visibleish_text
+
         for path in paths():
             source, parser = parse(path)
             expected = REPORTS[path.stem]
             title = html.unescape(re.search(r"<title>(.*?)</title>", source, re.S).group(1))
+            h1 = html.unescape(re.search(r"<h1[^>]*>(.*?)</h1>", source, re.S).group(1))
             description = meta_value(parser, "name", "description")
+            llm_context = meta_value(parser, "name", "llm-context")
+            spanish = path.parts[-3:-1] == ("es", "blog")
+            schemas = [
+                json.loads(block)
+                for block in re.findall(
+                    r'<script type="application/ld\+json">(.*?)</script>',
+                    source,
+                    flags=re.I | re.S,
+                )
+            ]
+            article = next(item for item in schemas if item["@type"] == "BlogPosting")
             with self.subTest(path=path.relative_to(ROOT)):
                 self.assertEqual(1, len(description))
+                self.assertEqual(1, len(llm_context))
                 self.assertIn(expected["name"], title)
                 self.assertIn("2026", title)
-                self.assertRegex(title.lower(), r"market|mercado")
+                self.assertIn("2025", title)
+                self.assertIn("2026", h1)
+                self.assertIn("2025", h1)
+                self.assertRegex(title.lower(), r"market research|investigaci[oó]n")
+                self.assertRegex(h1.lower(), r"finalized 2025 public data|datos p[uú]blicos verificados de 2025")
+                self.assertNotRegex(title, r"(?:Real Estate Market|Mercado inmobiliario).*2026(?!.*2025)")
                 self.assertNotRegex(title.lower(), r"median|forecast|precio mediano|pron[oó]stico")
                 self.assertEqual([title], [html.unescape(x) for x in meta_value(parser, "property", "og:title")])
                 self.assertEqual(description, meta_value(parser, "property", "og:description"))
                 self.assertEqual([title], [html.unescape(x) for x in meta_value(parser, "name", "twitter:title")])
                 self.assertEqual(description, meta_value(parser, "name", "twitter:description"))
+                self.assertEqual(title, html.unescape(article["headline"]))
+                if spanish:
+                    self.assertRegex(llm_context[0], r"^Guía de investigación municipal para ")
+                    self.assertNotRegex(
+                        llm_context[0],
+                        r"Reviewed municipality research|Published values are|town listing data|property valuation",
+                    )
+                else:
+                    self.assertRegex(llm_context[0], r"^Reviewed municipality research for ")
+
+        leaked = visibleish_text(
+            '<meta name="llm-context" content="Reviewed municipality research for a town. '
+            'Published values are finalized averages, not town listing data or a property valuation.">'
+        )
+        self.assertRegex(leaked, re.compile(PATTERNS["english_context_words"], re.I))
 
     def test_visible_metrics_are_exactly_labeled_2025_averages(self) -> None:
         for path in paths():
@@ -452,6 +493,50 @@ class TownMarketPageTests(unittest.TestCase):
                 self.assertIn(REVIEWED_ON, text)
                 self.assertTrue(COMMON_SOURCES <= set(parser.links))
                 self.assertIn(expected["official_url"], parser.links)
+
+    def test_pages_lead_with_a_concise_source_attributed_direct_answer(self) -> None:
+        for path in paths():
+            source, _ = parse(path)
+            expected = REPORTS[path.stem]
+            line_items, assessment, tax_bill, sales, sales_price = expected["metrics"]
+            direct_values = {
+                f"${assessment:,}",
+                f"${tax_bill:,}",
+                f"{sales:,}",
+                f"${float(sales_price):,.2f}",
+            }
+            match = re.search(
+                r'<p class="dek" data-direct-answer="finalized-2025-treasury-row">(.*?)</p>',
+                source,
+                re.I | re.S,
+            )
+            self.assertIsNotNone(match, path)
+            answer = " ".join(
+                html.unescape(re.sub(r"<[^>]+>", " ", match.group(1))).split()
+            )
+            with self.subTest(path=path.relative_to(ROOT)):
+                self.assertGreaterEqual(len(answer.split()), 40)
+                self.assertLessEqual(len(answer.split()), 60)
+                self.assertLess(
+                    source.index(match.group(0)), source.index('<div class="content">')
+                )
+                self.assertIn("2025", answer)
+                self.assertIn("New Jersey Treasury", answer)
+                self.assertIn(expected["county"], answer)
+                self.assertIn(f"C/D {expected['code']}", answer)
+                for value in direct_values:
+                    self.assertIn(value, answer)
+                self.assertRegex(
+                    answer,
+                    r"not current listing data|no listados vigentes",
+                )
+                if path.parts[-3:-1] == ("es", "blog"):
+                    self.assertIn("un avalúo promedio de", answer)
+                    self.assertNotIn("una tasación promedio de", answer)
+                    self.assertIn(
+                        "El avalúo promedio de la tabla estatal; no es precio de oferta ni tasación.",
+                        source,
+                    )
 
     def test_pages_explain_scope_method_updates_and_property_limits(self) -> None:
         for path in paths():
@@ -499,7 +584,19 @@ class TownMarketPageTests(unittest.TestCase):
             with self.subTest(path=path.relative_to(ROOT)):
                 self.assertEqual({"BlogPosting", "BreadcrumbList"}, types)
                 self.assertEqual(REPORTS[path.stem]["published"], article["datePublished"])
-                self.assertEqual(REVIEWED_ON, article["dateModified"])
+                self.assertEqual(PAGE_MODIFIED_ON, article["dateModified"])
+                self.assertIn(
+                    f'<meta name="last-updated" content="{PAGE_MODIFIED_ON}">',
+                    source,
+                )
+                self.assertIn(
+                    f'<meta property="article:modified_time" content="{PAGE_MODIFIED_ON}">',
+                    source,
+                )
+                self.assertIn(
+                    f'<time datetime="{REVIEWED_ON}">{REVIEWED_ON}</time>',
+                    source,
+                )
                 self.assertEqual(SITE + route(path.stem, language), article["url"])
                 self.assertNotRegex(
                     source,
@@ -550,6 +647,15 @@ class TownMarketPageTests(unittest.TestCase):
                         r"\.market-nav-links\s*\{[^}]*display:\s*none",
                         re.S,
                     ),
+                )
+                self.assertIn(
+                    ".market-brand { flex: 1 1 auto; min-width: 0; max-width: none; "
+                    "white-space: normal; line-height: 1.05; }",
+                    source,
+                )
+                self.assertIn(
+                    ".market-menu-button { flex: 0 0 auto; }",
+                    source,
                 )
 
     def test_links_fragments_images_and_interactive_names_are_valid(self) -> None:

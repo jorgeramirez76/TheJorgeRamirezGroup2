@@ -90,6 +90,16 @@ class SpanishSnippetBacklogTests(unittest.TestCase):
         cls.managed_town_paths = {
             f"es/towns/{slug}.html" for slug in town_manifest["decisions"]
         }
+        spec = importlib.util.spec_from_file_location("apply_spanish_snippets", SCRIPT)
+        assert spec and spec.loader
+        cls.snippet_module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.snippet_module)
+        cls.generator_managed_paths = (
+            cls.snippet_module.MANAGED_GENERATED_SPANISH_PATHS
+        )
+        cls.market_generator_paths = (
+            cls.snippet_module.generator_managed_market_paths()
+        )
 
     def test_mapping_has_exact_original_backlog_scope(self) -> None:
         self.assertEqual(self.mapping["expected_pages"], len(self.pages))
@@ -114,6 +124,13 @@ class SpanishSnippetBacklogTests(unittest.TestCase):
                     source,
                     r'data-spanish-town-(?:guide|fallback|redirect)="v1"',
                     relative,
+                )
+                continue
+            if relative in self.generator_managed_paths:
+                self.assertNotIn(
+                    relative,
+                    self.snippet_module.load_pages(),
+                    f"generator-owned metadata must not be mutated: {relative}",
                 )
                 continue
             parser = parse(ROOT / relative)
@@ -177,7 +194,10 @@ class SpanishSnippetBacklogTests(unittest.TestCase):
             )
 
         for relative in self.pages:
-            if relative in self.managed_town_paths:
+            if (
+                relative in self.managed_town_paths
+                or relative in self.generator_managed_paths
+            ):
                 continue
             parser = parse(ROOT / relative)
             if "noindex" in parser.meta("name", "robots").lower():
@@ -243,6 +263,20 @@ class SpanishSnippetBacklogTests(unittest.TestCase):
             [expected["description"], expected["description"]],
             parser.social_values("og:description"),
         )
+
+    def test_market_generators_own_overlapping_backlog_routes(self) -> None:
+        overlaps = set(self.pages) & self.market_generator_paths
+        self.assertEqual(
+            {
+                "es/blog/hudson-county-real-estate-market-q2-2026.html",
+                "es/blog/market-report-cranford-nj-2026.html",
+                "es/blog/market-report-denville-nj-2026.html",
+                "es/blog/market-report-morristown-nj-2026.html",
+                "es/blog/market-report-rahway-nj-2026.html",
+            },
+            overlaps,
+        )
+        self.assertTrue(overlaps.isdisjoint(self.snippet_module.load_pages()))
 
 
 if __name__ == "__main__":

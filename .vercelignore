@@ -2,6 +2,9 @@
 # (These are currently publicly downloadable on GitHub Pages — this fixes that.)
 .git
 .gitignore
+.gitattributes
+CNAME
+**/.gitkeep
 .claude
 .DS_Store
 __pycache__
@@ -20,6 +23,23 @@ tools/blog-automation
 tools/seo-optimizer
 office-status.json
 schema-realtor.json
+# Keep the historical town-photo archive in source control, but deploy only
+# the verified photo files and responsive derivatives referenced by public pages.
+images/towns/*.webp
+images/towns/credits.json
+!images/towns/berkeley-heights-1.webp
+!images/towns/chatham-borough-1.webp
+!images/towns/chatham-township-2.webp
+!images/towns/chatham-township-2-640.webp
+!images/towns/chatham-township-2-960.webp
+!images/towns/cranford-1.webp
+!images/towns/denville-1.webp
+!images/towns/east-hanover-1.webp
+!images/towns/fanwood-1.webp
+!images/towns/morris-plains-1.webp
+!images/towns/new-providence-1.webp
+!images/towns/roselle-park-1.webp
+!images/towns/springfield-1.webp
 *.md
 .design-screens
 *.pdf

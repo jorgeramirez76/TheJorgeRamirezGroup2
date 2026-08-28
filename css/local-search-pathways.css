@@ -31,9 +31,19 @@
 }
 
 .local-search-pathways__links {
+  /* This element is a contextual nav, not the fixed site header. Neutralize
+     the shared homepage `nav` shell before applying the pathway grid. */
+  position: static;
+  top: auto;
+  z-index: auto;
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .local-search-pathways__links a {

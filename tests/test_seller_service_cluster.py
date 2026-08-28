@@ -42,6 +42,16 @@ SOURCE_IDS = {
     "irs-publication-544",
     "njcourts-divorce",
 }
+EDITORIAL_VISUALS = {
+    "sell-your-home": "valuation",
+    "how-we-sell-your-home": "valuation",
+    "expired-listing-help": "fsbo",
+    "fsbo-help": "fsbo",
+    "cash-offer-nj": "offer",
+    "relocating-from-nj": "relocation",
+    "divorce-home-sale-nj": "offer",
+    "sell-rental-property-nj": "rental",
+}
 OFFICIAL_HOSTS = {
     "www.nj.gov",
     "nj.gov",
@@ -157,6 +167,10 @@ class SellerServiceClusterTests(unittest.TestCase):
         self.assertEqual("2026-08-26", document["reviewedOn"])
         self.assertEqual("tools/generate_seller_services.py", document["renderer"])
         self.assertEqual(SLUGS, {item["slug"] for item in document["routes"]})
+        self.assertEqual(
+            EDITORIAL_VISUALS,
+            {item["slug"]: item["editorialVisual"] for item in document["routes"]},
+        )
         self.assertEqual(SOURCE_IDS, {item["id"] for item in document["sources"]})
         for item in document["sources"]:
             self.assertEqual("https", urlparse(item["url"]).scheme)
@@ -224,6 +238,24 @@ class SellerServiceClusterTests(unittest.TestCase):
                     self.assertIn('href="#main"', source)
                     self.assertIn('aria-label="Primary navigation"', source)
                     self.assertIn('data-source-review="2026-08-26"', source)
+                    self.assertIn('"dateModified":"2026-08-27"', source)
+                    self.assertEqual(1, source.count("<!-- JRG editorial visual:start -->"))
+                    self.assertEqual(1, source.count("<!-- JRG editorial visual:end -->"))
+                    self.assertIn(
+                        f'data-editorial-visual="{EDITORIAL_VISUALS[slug]}"', source
+                    )
+                    self.assertRegex(
+                        source,
+                        r'<source srcset="/images/[^" ]+-768\.webp 768w, '
+                        r'/images/[^" ]+-1280\.webp 1280w" '
+                        r'sizes="\(max-width: 900px\) calc\(100vw - 32px\), 960px" '
+                        r'type="image/webp">',
+                    )
+                    self.assertRegex(
+                        source,
+                        r'<img src="/images/[^" ]+-1280\.webp" width="1280" '
+                        r'height="85[34]" loading="lazy" decoding="async" alt="[^"]+">',
+                    )
                     self.assertIn("G-KMS6H85LB0", source)
                     self.assertIn("tel:+19082307844", parser.links)
                     self.assertIn(

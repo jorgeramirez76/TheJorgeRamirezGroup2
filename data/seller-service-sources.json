@@ -98,41 +98,49 @@
   "routes": [
     {
       "slug": "sell-your-home",
+      "editorialVisual": "valuation",
       "intent": "Primary New Jersey home-selling service and pricing-planning hub.",
       "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
     },
     {
       "slug": "how-we-sell-your-home",
+      "editorialVisual": "valuation",
       "intent": "Transparent explanation of the listing, launch, communication, offer-review, and closing process.",
       "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
     },
     {
       "slug": "expired-listing-help",
+      "editorialVisual": "fsbo",
       "intent": "Evidence-based audit and relaunch planning for an expired New Jersey listing.",
       "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
     },
     {
       "slug": "fsbo-help",
+      "editorialVisual": "fsbo",
       "intent": "Decision support for New Jersey owners considering a transition from an owner-led sale to brokerage representation.",
       "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
     },
     {
       "slug": "cash-offer-nj",
+      "editorialVisual": "offer",
       "intent": "A neutral, written-term comparison between a cash proposal and a public-market listing path.",
       "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
     },
     {
       "slug": "relocating-from-nj",
+      "editorialVisual": "relocation",
       "intent": "Remote-capable sale planning for an owner moving away from New Jersey.",
       "sourceIds": ["nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
     },
     {
       "slug": "divorce-home-sale-nj",
+      "editorialVisual": "offer",
       "intent": "Property-marketing coordination during a New Jersey divorce, separated from legal decision-making.",
       "sourceIds": ["njcourts-divorce", "nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
     },
     {
       "slug": "sell-rental-property-nj",
+      "editorialVisual": "rental",
       "intent": "Occupied-or-vacant rental-property sale planning with lease, disclosure, and tax questions routed to the proper professionals.",
       "sourceIds": ["nj-dca-landlord-tenant", "irs-like-kind-exchanges", "irs-publication-544", "nj-dobi-24-11", "nj-treasury-rtf", "nj-property-condition-disclosure", "njdep-flood-disclosure", "epa-lead-disclosure"]
     }

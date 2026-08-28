@@ -42,6 +42,9 @@ RENDERERS = (
     "tools/generate_high_value_legal_fair_housing.py",
     "tools/generate_seller_editorial_rebuild.py",
     "tools/generate_town_market_research_essex_middlesex.py",
+    "scripts/remediate_indexable_towns.py",
+    "scripts/remediate_spanish_towns.py",
+    "tools/apply_priority_town_provenance.py",
 )
 
 UNSUPPORTED = re.compile(
@@ -157,6 +160,110 @@ class AuthorshipIntegrityTests(unittest.TestCase):
                     f'<meta name="ai-content-declaration" content="{declaration}">',
                     source,
                 )
+
+    def test_town_provenance_scope_is_complete_and_never_assigns_person_authorship(self) -> None:
+        indexable = json.loads((ROOT / "data" / "indexable-town-risk-decisions.json").read_text(encoding="utf-8"))
+        spanish = json.loads((ROOT / "data" / "spanish-town-risk-decisions.json").read_text(encoding="utf-8"))
+        priority = json.loads((ROOT / "data" / "other-priority-town-sources.json").read_text(encoding="utf-8"))
+        paths = {
+            f"towns/{slug}.html"
+            for slug, item in indexable["decisions"].items()
+            if item["action"] == "rebuild"
+        }
+        paths.update(f"towns/{slug}.html" for slug in priority["municipalities"])
+        paths.update(
+            f"es/towns/{slug}.html"
+            for slug, item in spanish["decisions"].items()
+            if item["action"] == "rebuild"
+        )
+        self.assertEqual(49, len(paths))
+
+        failures: list[str] = []
+        organization_id = "https://thejorgeramirezgroup.com/#organization"
+        person_id = "https://thejorgeramirezgroup.com/#jorge-ramirez"
+        for name in sorted(paths):
+            source = (ROOT / name).read_text(encoding="utf-8")
+            if '<meta name="ai-content-declaration" content="ai-assisted, source-checked">' not in source:
+                failures.append(f"{name}: truthful AI declaration missing")
+            if source.count('data-content-provenance="v1"') != 1:
+                failures.append(f"{name}: visible provenance marker mismatch")
+            blocks = [
+                json.loads(block)
+                for block in re.findall(
+                    r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                    source,
+                    flags=re.I | re.S,
+                )
+            ]
+            nodes = [node for block in blocks for node in schema_nodes(block)]
+            web_pages = [node for node in nodes if node.get("@type") == "WebPage"]
+            organizations = [node for node in nodes if node.get("@type") == "Organization" and node.get("@id") == organization_id]
+            people = [node for node in nodes if node.get("@type") == "Person" and node.get("@id") == person_id]
+            if len(web_pages) != 1 or web_pages[0].get("publisher") != {"@id": organization_id}:
+                failures.append(f"{name}: Organization publisher mismatch")
+            elif any(key in web_pages[0] for key in ("author", "reviewedBy")):
+                failures.append(f"{name}: Person is assigned as author or reviewer")
+            if len(organizations) != 1:
+                failures.append(f"{name}: Organization entity mismatch")
+            if len(people) != 1 or people[0].get("worksFor") != {"@id": organization_id}:
+                failures.append(f"{name}: Person/Organization relationship mismatch")
+        self.assertEqual([], failures)
+
+    def test_town_market_pages_publish_visible_organization_provenance_without_person_authorship(self) -> None:
+        document = json.loads(
+            (ROOT / "data" / "town-market-research-essex-middlesex-somerset.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        paths = {
+            route.lstrip("/") + ".html"
+            for report in document["reports"]
+            for route in report["routes"].values()
+        }
+        self.assertEqual(22, len(paths))
+
+        failures: list[str] = []
+        organization_id = "https://thejorgeramirezgroup.com/#organization"
+        person_id = "https://thejorgeramirezgroup.com/#jorge-ramirez"
+        for name in sorted(paths):
+            source = (ROOT / name).read_text(encoding="utf-8")
+            if '<meta name="author"' in source:
+                failures.append(f"{name}: unsupported author meta remains")
+            if '<meta name="ai-content-declaration" content="ai-assisted, source-checked">' not in source:
+                failures.append(f"{name}: truthful AI declaration missing")
+            if source.count('data-content-provenance="v1"') != 1:
+                failures.append(f"{name}: visible provenance marker mismatch")
+            blocks = [
+                json.loads(block)
+                for block in re.findall(
+                    r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                    source,
+                    flags=re.I | re.S,
+                )
+            ]
+            nodes = [node for block in blocks for node in schema_nodes(block)]
+            articles = [node for node in nodes if node.get("@type") == "Article"]
+            web_pages = [node for node in nodes if node.get("@type") == "WebPage"]
+            organizations = [
+                node
+                for node in nodes
+                if node.get("@type") == "Organization" and node.get("@id") == organization_id
+            ]
+            people = [
+                node
+                for node in nodes
+                if node.get("@type") == "Person" and node.get("@id") == person_id
+            ]
+            for node_type, matches in (("Article", articles), ("WebPage", web_pages)):
+                if len(matches) != 1 or matches[0].get("publisher") != {"@id": organization_id}:
+                    failures.append(f"{name}: {node_type} Organization publisher mismatch")
+                elif any(key in matches[0] for key in ("author", "reviewedBy")):
+                    failures.append(f"{name}: {node_type} assigns unsupported Person credit")
+            if len(organizations) != 1 or organizations[0].get("name") != "The Jorge Ramirez Group":
+                failures.append(f"{name}: Organization entity mismatch")
+            if len(people) != 1 or people[0].get("worksFor") != {"@id": organization_id}:
+                failures.append(f"{name}: Person is not limited to verified business contact")
+        self.assertEqual([], failures)
 
 
 if __name__ == "__main__":

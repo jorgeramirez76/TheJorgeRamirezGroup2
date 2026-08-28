@@ -28,7 +28,21 @@ GSC_COMPARISON = ROOT / "tests" / "fixtures" / "gsc-spanish-town-pages.csv"
 GSC_HISTORICAL = ROOT / "tests" / "fixtures" / "gsc-spanish-town-pages-16m.csv"
 SHARE_IMAGE = f"{SITE}/images/hero.jpg"
 SHARE_IMAGE_ALT_ES = "Imagen residencial del sitio web de The Jorge Ramirez Group"
-EFFECTIVE_DATE = "2026-08-26"
+SOURCE_REVIEWED_ON = "2026-08-26"
+PAGE_MODIFIED_ON = "2026-08-27"
+ORGANIZATION_ID = f"{SITE}/#organization"
+PERSON_ID = f"{SITE}/#jorge-ramirez"
+PROVENANCE_POLICY = {
+    "publisher": "The Jorge Ramirez Group",
+    "declaration": "ai-assisted, source-checked",
+    "sourceCheckedDate": SOURCE_REVIEWED_ON,
+    "responsibleContact": "Jorge Ramirez",
+    "njRealEstateLicense": "1754604",
+    "structuredDataRule": (
+        "The WebPage publisher is the Organization; Jorge Ramirez is a Person "
+        "who works for that Organization and is not represented as the page author or reviewer."
+    ),
+}
 
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -399,7 +413,7 @@ def _selected_sources(slug: str, town: str) -> list[dict[str, str]]:
             "label": _source_label(_source_type(url), town, url),
             "url": url,
             "purpose": _source_purpose(_source_type(url), town),
-            "accessed": EFFECTIVE_DATE,
+            "accessed": SOURCE_REVIEWED_ON,
         }
         for url in selected
     ]
@@ -488,8 +502,9 @@ def build_manifest() -> dict[str, object]:
     }
     return {
         "schemaVersion": 1,
-        "effectiveDate": EFFECTIVE_DATE,
+        "effectiveDate": PAGE_MODIFIED_ON,
         "scope": "All rendered HTML routes under es/towns; English and blog market-report files are excluded.",
+        "provenancePolicy": dict(PROVENANCE_POLICY),
         "decisionPolicy": {
             "rebuildRule": "Rebuild every route in the current canonical English inventory so reciprocal bilingual routes remain useful and source-backed.",
             "quarantineRule": "Use a compact noindex/follow fallback for every noncanonical route that is not a justified geographic alias.",
@@ -588,12 +603,35 @@ def _schema(slug: str, town: str, description: str) -> str:
                 "name": title,
                 "description": description,
                 "inLanguage": "es-US",
-                "dateModified": EFFECTIVE_DATE,
+                "dateModified": PAGE_MODIFIED_ON,
+                "about": {"@type": "Place", "name": town},
+                "publisher": {"@id": ORGANIZATION_ID},
                 "isPartOf": {
                     "@type": "WebSite",
                     "name": "The Jorge Ramirez Group",
                     "url": f"{SITE}/",
                 },
+            },
+            {
+                "@type": "Organization",
+                "@id": ORGANIZATION_ID,
+                "name": PROVENANCE_POLICY["publisher"],
+                "url": f"{SITE}/",
+                "telephone": "+1-908-230-7844",
+                "email": "jorge.ramirez@kw.com",
+            },
+            {
+                "@type": "Person",
+                "@id": PERSON_ID,
+                "name": PROVENANCE_POLICY["responsibleContact"],
+                "url": f"{SITE}/es/ai-authority",
+                "jobTitle": "Vendedor de bienes raíces con licencia de Nueva Jersey",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "Licencia de vendedor de bienes raíces de Nueva Jersey",
+                    "value": PROVENANCE_POLICY["njRealEstateLicense"],
+                },
+                "worksFor": {"@id": ORGANIZATION_ID},
             },
             {
                 "@type": "BreadcrumbList",
@@ -605,8 +643,10 @@ def _schema(slug: str, town: str, description: str) -> str:
             },
             {
                 "@type": "LocalBusiness",
+                "@id": f"{SITE}/#summit-office",
                 "name": "The Jorge Ramirez Group",
                 "url": f"{SITE}/",
+                "parentOrganization": {"@id": ORGANIZATION_ID},
                 "telephone": "+1-908-230-7844",
                 "address": {
                     "@type": "PostalAddress",
@@ -659,6 +699,7 @@ def render_rebuild(slug: str, decision: dict[str, object]) -> str:
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description, quote=True)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="ai-content-declaration" content="{html.escape(PROVENANCE_POLICY['declaration'], quote=True)}">
   <link rel="canonical" href="{canonical}">
 {_alternate_tags(slug)}  <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Jorge Ramirez Group">
@@ -704,7 +745,7 @@ def render_rebuild(slug: str, decision: dict[str, object]) -> str:
       </a>
       <ul class="town-guide__nav-links">
         <li><a href="/es/communities">Comunidades</a></li>
-        <li><a href="/contact">Contactar a Jorge</a></li>
+        <li><a href="/es#contact">Contactar a Jorge</a></li>
       </ul>
     </div>
   </nav>
@@ -757,6 +798,9 @@ def render_rebuild(slug: str, decision: dict[str, object]) -> str:
           <p>Registra en una hoja de trabajo la fuente, la fecha de consulta y el resultado para cada dirección. Mantén aparte tus preferencias personales, como tipo de vivienda, presupuesto, accesibilidad, conexiones de transporte o cercanía a servicios concretos. Así puedes comparar propiedades con un método repetible sin convertir características personales o suposiciones sobre residentes en criterios de vivienda.</p>
           <p>Esta guía no clasifica municipios ni predice precios, horarios, resultados escolares, condiciones de una zona, rendimientos financieros o resultados de una operación. Para cualquier cifra de mercado, solicita un análisis actual que identifique su fuente, periodo, universo de propiedades y método de cálculo.</p>
         </section>
+        <aside class="town-guide__notice" data-content-provenance="v1" aria-label="Procedencia del contenido">
+          <p><strong>Publicado por The Jorge Ramirez Group.</strong> Contenido elaborado con asistencia de IA y fuentes verificadas el 26 de agosto de 2026. Jorge Ramirez es vendedor de bienes raíces con licencia de Nueva Jersey (#1754604). <a href="/es#contact">Contacta a Jorge o solicita una corrección.</a></p>
+        </aside>
       </article>
 
       <aside class="town-guide__aside" aria-labelledby="aside-heading">
@@ -771,7 +815,7 @@ def render_rebuild(slug: str, decision: dict[str, object]) -> str:
       <div class="town-guide__cta-inner">
         <h2 id="contact-heading">¿Necesitas un plan para una dirección concreta?</h2>
         <p>Envía la dirección y las preguntas de registro o transacción que quieres investigar. Esta página no envía ningún formulario por sí sola.</p>
-        <a class="town-guide__button" href="/contact">Contactar a Jorge</a>
+        <a class="town-guide__button" href="/es#contact">Contactar a Jorge</a>
       </div>
     </section>
   </main>
@@ -858,7 +902,7 @@ def render_quarantine(slug: str, decision: dict[str, object]) -> str:
       <a class="town-fallback__brand" href="/es/" aria-label="Inicio de The Jorge Ramirez Group">
         <picture><source srcset="/images/jorge-logo.webp" type="image/webp"><img src="/images/jorge-logo.jpg" width="250" height="100" alt="The Jorge Ramirez Group"></picture>
       </a>
-      <ul class="town-fallback__nav-links"><li><a href="/es/communities">Comunidades</a></li><li><a href="/contact" data-contact-link>Contactar a Jorge</a></li></ul>
+      <ul class="town-fallback__nav-links"><li><a href="/es/communities">Comunidades</a></li><li><a href="/es#contact" data-contact-link>Contactar a Jorge</a></li></ul>
     </div>
   </nav>
   <main id="main" tabindex="-1">
@@ -875,7 +919,7 @@ def render_quarantine(slug: str, decision: dict[str, object]) -> str:
         <p>Usa el recurso regional para obtener el contexto que el sitio mantiene actualmente. Si tu pregunta corresponde a una vivienda, compra, venta o traslado concreto, comparte la dirección y el dato que quieres comprobar. La orientación debe basarse en expedientes actuales, información vigente de la propiedad cuando esté disponible y los hechos que proporciones.</p>
         <div class="town-fallback__actions">
           <a class="town-fallback__button town-fallback__button--primary" href="{county_href}">Abrir {html.escape(county_label)}</a>
-          <a class="town-fallback__button town-fallback__button--secondary" href="/contact">Contactar a Jorge</a>
+          <a class="town-fallback__button town-fallback__button--secondary" href="/es#contact">Contactar a Jorge</a>
         </div>
         <p class="town-fallback__note">Esta página de transición se excluye intencionalmente de los sitemaps de búsqueda. No publica cifras locales, puntuaciones, duraciones, perfiles de residentes ni promesas de resultado.</p>
       </article>
@@ -946,7 +990,7 @@ def _sitemap_block(slug: str) -> str:
     return (
         "  <url>\n"
         f"    <loc>{canonical}</loc>\n"
-        f"    <lastmod>{EFFECTIVE_DATE}</lastmod>\n"
+        f"    <lastmod>{PAGE_MODIFIED_ON}</lastmod>\n"
         "    <changefreq>weekly</changefreq>\n"
         "    <priority>0.8</priority>\n"
         f"{xhtml}"

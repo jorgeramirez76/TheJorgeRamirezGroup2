@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REVIEWED_ISO = "2026-08-26"
+PAGE_MODIFIED_ISO = "2026-08-27"
 GTFS_DATE = "2026-08-19"
 
 CANONICALS = {
@@ -467,6 +468,22 @@ def faq_markup(copy: dict) -> str:
     )
 
 
+def editorial_visual(language: str) -> str:
+    alt = (
+        "Dos modelos de casa iguales, juegos de llaves, hoja de rutas y cuaderno de comparación preparados para una decisión neutral de vivienda"
+        if language == "es"
+        else "Two equal house models, key sets, route sheet, and blank comparison notebook arranged for a neutral housing decision"
+    )
+    return f'''    <!-- JRG editorial visual:start -->
+    <figure class="jrg-editorial-figure" data-editorial-visual="comparison">
+      <picture>
+        <source srcset="/images/editorial/nj-housing-comparison-2026-768.webp 768w, /images/editorial/nj-housing-comparison-2026-1280.webp 1280w" sizes="(max-width: 900px) calc(100vw - 32px), 960px" type="image/webp">
+        <img src="/images/editorial/nj-housing-comparison-2026-1280.webp" width="1280" height="854" loading="lazy" decoding="async" alt="{esc(alt)}">
+      </picture>
+    </figure>
+    <!-- JRG editorial visual:end -->'''
+
+
 def sources_markup(copy: dict) -> str:
     links = []
     for key, label in copy["source_labels"].items():
@@ -489,7 +506,7 @@ def schema_blocks(language: str, copy: dict) -> str:
         "description": copy["description"],
         "inLanguage": copy["locale"],
         "datePublished": "2026-03-17",
-        "dateModified": REVIEWED_ISO,
+        "dateModified": PAGE_MODIFIED_ISO,
         "mainEntityOfPage": {"@type": "WebPage", "@id": canonical},
         "author": {
             "@type": "Person",
@@ -576,7 +593,7 @@ def render(language: str) -> str:
   <meta property="og:url" content="{canonical}">
   <meta property="og:image" content="https://thejorgeramirezgroup.com/images/site/commute-map-teaser.jpg">
   <meta property="article:published_time" content="2026-03-17">
-  <meta property="article:modified_time" content="{REVIEWED_ISO}">
+  <meta property="article:modified_time" content="{PAGE_MODIFIED_ISO}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{esc(copy['title'])}">
   <meta name="twitter:description" content="{esc(copy['description'])}">
@@ -736,6 +753,8 @@ def render(language: str) -> str:
         </div>
       </div>
     </section>
+
+{editorial_visual(language)}
 
     <section class="section section--paper">
       <div class="container">

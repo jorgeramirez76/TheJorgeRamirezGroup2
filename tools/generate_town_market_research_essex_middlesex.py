@@ -16,6 +16,8 @@ MANIFEST = ROOT / "data" / "town-market-research-essex-middlesex-somerset.json"
 SITE_FACTS = ROOT / "data" / "site-facts.json"
 SITE = "https://thejorgeramirezgroup.com"
 REVIEWED_ON = "2026-08-26"
+PAGE_MODIFIED_ON = "2026-08-27"
+AI_DECLARATION = "ai-assisted, source-checked"
 RENDERER_NAME = "tools/generate_town_market_research_essex_middlesex.py"
 EXPECTED_SLUGS = {
     "glen-ridge",
@@ -59,6 +61,11 @@ def load_manifest(path: Path = MANIFEST) -> dict[str, Any]:
         raise ValueError(f"town market sources must be reviewed on {REVIEWED_ON}")
     if document.get("renderer") != RENDERER_NAME:
         raise ValueError("town market manifest points to another renderer")
+    direct_answer_rule = document.get("publicationPolicy", {}).get(
+        "directAnswerRule", ""
+    )
+    if not str(direct_answer_rule).startswith("Lead with a 40-60-word"):
+        raise ValueError("town market manifest lacks the direct-answer publication rule")
 
     reports = document.get("reports")
     if not isinstance(reports, list) or len(reports) != 11:
@@ -161,11 +168,15 @@ def page_copy(report: Mapping[str, Any], language: str) -> dict[str, Any]:
             "eyebrow": "Official-source town research",
             "h1": f"{name} real estate research: verified 2025 public data",
             "dek": (
-                "One finalized New Jersey tax-district row, a current county-report path, "
-                "and a method that keeps geography, dates, and field definitions together."
+                f"This page’s finalized 2025 New Jersey Treasury source row is {district} in {county} County. "
+                f"It reports {report['statistics']['# of Sales']} sales, an average sales price of "
+                f"{report['statistics']['Avg Sales Price']}, an average assessment of "
+                f"{report['statistics']['Avg Assessment']}, and an average tax bill of "
+                f"{report['statistics']['Avg Tax Bill']}. These are historical district averages, "
+                "not current listing data or a home valuation."
             ),
             "reviewed": "Sources reviewed",
-            "prepared": "AI-assisted, source-checked",
+            "prepared": "The Jorge Ramirez Group · AI-assisted, source-checked",
             "geography_heading": "Start with the exact geography",
             "geography_lead": report["identityEn"],
             "research_note": report["researchNoteEn"],
@@ -229,11 +240,17 @@ def page_copy(report: Mapping[str, Any], language: str) -> dict[str, Any]:
                 f"The source links and the {district} row on this page were reviewed on {REVIEWED_ON}. "
                 "Publishers control their definitions, revisions, and availability."
             ),
+            "publisher_label": "Published by The Jorge Ramirez Group.",
+            "provenance_text": (
+                "Prepared with AI assistance; sources were checked on August 26, 2026."
+            ),
             "correction": (
                 "To report a source-link, district-label, field-label, or transcription issue, "
                 "send the page URL and the source in question through the contact section."
             ),
             "credential_heading": "Verified business information",
+            "responsible_contact_label": "Licensed business contact",
+            "agent_role": "New Jersey real estate salesperson",
             "license_label": "New Jersey real estate license",
             "office_label": "Office",
             "phone_label": "Direct",
@@ -265,11 +282,15 @@ def page_copy(report: Mapping[str, Any], language: str) -> dict[str, Any]:
         "eyebrow": "Investigación municipal con fuentes oficiales",
         "h1": f"Investigación inmobiliaria de {name}: datos públicos verificados de 2025",
         "dek": (
-            "Una fila final de distrito fiscal de Nueva Jersey, una ruta a informes vigentes "
-            "del condado y un método que mantiene juntos geografía, fechas y definiciones."
+            f"Esta guía usa la fila finalizada de 2025 del New Jersey Treasury para {district}, "
+            f"en el condado de {county}. Informa {report['statistics']['# of Sales']} ventas, un precio "
+            f"de venta promedio de {report['statistics']['Avg Sales Price']}, un avalúo promedio de "
+            f"{report['statistics']['Avg Assessment']} y una factura fiscal promedio de "
+            f"{report['statistics']['Avg Tax Bill']}. Son promedios históricos del distrito, no datos "
+            "vigentes de listados ni una valoración."
         ),
         "reviewed": "Fuentes revisadas",
-        "prepared": "Asistido por IA, fuentes verificadas",
+        "prepared": "The Jorge Ramirez Group · asistencia de IA, fuentes verificadas",
         "geography_heading": "Empiece por la geografía exacta",
         "geography_lead": report["identityEs"],
         "research_note": report["researchNoteEs"],
@@ -333,11 +354,17 @@ def page_copy(report: Mapping[str, Any], language: str) -> dict[str, Any]:
             f"Los enlaces y la fila {district} de esta página se revisaron el {REVIEWED_ON}. "
             "Cada editor controla sus definiciones, revisiones y disponibilidad."
         ),
+        "publisher_label": "Publicado por The Jorge Ramirez Group.",
+        "provenance_text": (
+            "Elaborado con asistencia de IA; fuentes verificadas el 26 de agosto de 2026."
+        ),
         "correction": (
             "Para informar un problema de enlace, distrito, etiqueta o transcripción, envíe "
             "la URL de esta página y la fuente correspondiente desde la sección de contacto."
         ),
         "credential_heading": "Información comercial verificada",
+        "responsible_contact_label": "Contacto comercial con licencia",
+        "agent_role": "Vendedor de bienes raíces con licencia de Nueva Jersey",
         "license_label": "Licencia inmobiliaria de Nueva Jersey",
         "office_label": "Oficina",
         "phone_label": "Teléfono directo",
@@ -367,7 +394,7 @@ def schema_graph(
             {
                 "@type": "Organization",
                 "@id": org_id,
-                "name": f"{business['name']} at {business['brokerage']['displayName']}",
+                "name": business["name"],
                 "url": SITE,
                 "telephone": business["directPhone"]["e164"],
                 "email": business["email"],
@@ -387,7 +414,7 @@ def schema_graph(
                 "url": f"{SITE}{prefix}/ai-authority",
                 "telephone": business["directPhone"]["e164"],
                 "email": business["email"],
-                "jobTitle": "New Jersey real estate salesperson",
+                "jobTitle": copy["agent_role"],
                 "identifier": {
                     "@type": "PropertyValue",
                     "propertyID": "New Jersey Real Estate License",
@@ -403,9 +430,10 @@ def schema_graph(
                 "description": copy["description"],
                 "inLanguage": in_language,
                 "datePublished": report["publishedOn"],
-                "dateModified": REVIEWED_ON,
+                "dateModified": PAGE_MODIFIED_ON,
                 "breadcrumb": {"@id": breadcrumb_id},
                 "isPartOf": {"@id": org_id},
+                "publisher": {"@id": org_id},
             },
             {
                 "@type": "Article",
@@ -414,9 +442,8 @@ def schema_graph(
                 "description": copy["description"],
                 "inLanguage": in_language,
                 "datePublished": report["publishedOn"],
-                "dateModified": REVIEWED_ON,
+                "dateModified": PAGE_MODIFIED_ON,
                 "mainEntityOfPage": {"@id": webpage_id},
-                "author": {"@id": agent_id},
                 "publisher": {"@id": org_id},
                 "articleSection": "New Jersey town market research",
                 "citation": [
@@ -475,7 +502,7 @@ def render_page(
     prefix = "/es" if language == "es" else ""
     home_route = "/es/" if language == "es" else "/"
     communities_route = "/es/#communities" if language == "es" else "/#communities"
-    contact_route = "/es/#contact" if language == "es" else "/#contact"
+    contact_route = "/es#contact" if language == "es" else "/#contact"
     in_language = "es-US" if language == "es" else "en-US"
     source_2025 = sources["nj-treasury-average-residential-2025"]
     source_2026 = sources["nj-treasury-average-residential-2026-context"]
@@ -493,7 +520,7 @@ def render_page(
     }
     metric_help_es = {
         "# of Line Items": "Partidas residenciales en la fila distrital publicada",
-        "Avg Assessment": "Tasación promedio, con la etiqueta exacta de la fuente",
+        "Avg Assessment": "Avalúo promedio, con la etiqueta exacta de la fuente",
         "Avg Tax Bill": "Factura fiscal promedio, con la etiqueta exacta de la fuente",
         "# of Sales": "Cantidad de ventas en la fila anual publicada",
         "Avg Sales Price": "Precio de venta promedio, con la etiqueta exacta de la fuente",
@@ -524,10 +551,10 @@ def render_page(
   <meta name="theme-color" content="#1A1A1A">
   <title>{esc(copy["title"])}</title>
   <meta name="description" content="{esc(copy["description"])}">
-  <meta name="author" content="Jorge Ramirez">
   <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="ai-content-declaration" content="{AI_DECLARATION}">
   <meta name="llm-context" content="{esc(copy['llm'])}">
-  <meta name="last-updated" content="{REVIEWED_ON}">
+  <meta name="last-updated" content="{PAGE_MODIFIED_ON}">
   <meta name="geo.region" content="US-NJ">
   <meta name="geo.placename" content="{esc(report['displayName'])}, New Jersey">
   <link rel="canonical" href="{canonical}">
@@ -541,7 +568,7 @@ def render_page(
   <meta property="og:image" content="{SITE}/images/hero.jpg">
   <meta property="og:site_name" content="The Jorge Ramirez Group">
   <meta property="article:published_time" content="{esc(report['publishedOn'])}">
-  <meta property="article:modified_time" content="{REVIEWED_ON}">
+  <meta property="article:modified_time" content="{PAGE_MODIFIED_ON}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{esc(copy['title'])}">
   <meta name="twitter:description" content="{esc(copy['description'])}">
@@ -694,7 +721,7 @@ def render_page(
         <div class="hero-inner">
           <p class="eyebrow">{esc(copy['eyebrow'])}</p>
           <h1>{esc(copy['h1'])}</h1>
-          <p class="dek">{esc(copy['dek'])}</p>
+          <p class="dek" data-direct-answer="finalized-2025-treasury-row">{esc(copy['dek'])}</p>
           <div class="hero-meta">
             <span>{esc(copy['reviewed'])}:&nbsp;<time datetime="{REVIEWED_ON}">{REVIEWED_ON}</time></span>
             <span>{esc(copy['prepared'])}</span>
@@ -775,8 +802,9 @@ def render_page(
           </div>
         </section>
 
-        <aside class="record" aria-labelledby="record-heading">
+        <aside class="record" data-content-provenance="v1" aria-labelledby="record-heading">
           <h2 id="record-heading">{esc(copy['record_heading'])}</h2>
+          <p><strong>{esc(copy['publisher_label'])}</strong> {esc(copy['provenance_text'])}</p>
           <p>{esc(copy['record_text'])}</p>
           <p>{esc(copy['correction'])}</p>
         </aside>
@@ -784,6 +812,7 @@ def render_page(
         <aside class="credential" aria-labelledby="credential-heading">
           <h2 id="credential-heading">{esc(copy['credential_heading'])}</h2>
           <dl class="credential-list">
+            <div><dt>{esc(copy['responsible_contact_label'])}</dt><dd>{esc(business['agentName'])}<br>{esc(copy['agent_role'])}</dd></div>
             <div><dt>{esc(copy['license_label'])}</dt><dd>#{esc(business['njRealEstateLicense'])}</dd></div>
             <div><dt>{esc(copy['office_label'])}</dt><dd>{esc(business['brokerage']['displayName'])}<br>{esc(address['street'])}, {esc(address['city'])}, {esc(address['region'])} {esc(address['postalCode'])}</dd></div>
             <div><dt>{esc(copy['phone_label'])}</dt><dd><a href="tel:{esc(business['directPhone']['e164'])}">{esc(business['directPhone']['display'])}</a></dd></div>

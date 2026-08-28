@@ -105,6 +105,20 @@ class IndexableTownRiskRemediationTests(unittest.TestCase):
             self.manifest["decisionPolicy"]["measuredDemandRule"],
         )
         self.assertIn("Basking Ridge", self.manifest["decisionPolicy"]["relationshipException"])
+        self.assertEqual(
+            {
+                "publisher": "The Jorge Ramirez Group",
+                "declaration": "ai-assisted, source-checked",
+                "sourceCheckedDate": "2026-08-26",
+                "responsibleContact": "Jorge Ramirez",
+                "njRealEstateLicense": "1754604",
+                "structuredDataRule": (
+                    "The WebPage publisher is the Organization; Jorge Ramirez is a Person "
+                    "who works for that Organization and is not represented as the page author or reviewer."
+                ),
+            },
+            self.manifest["provenancePolicy"],
+        )
 
         for slug, item in decisions.items():
             with self.subTest(slug=slug):
@@ -214,6 +228,53 @@ class IndexableTownRiskRemediationTests(unittest.TestCase):
             if types & {"ItemList", "Review", "AggregateRating", "Rating"}:
                 failures.append(f"{relative}: scoring schema present")
 
+        self.assertEqual([], failures)
+
+    def test_rebuilt_routes_publish_truthful_visible_and_structured_provenance(self) -> None:
+        organization_id = f"{SITE}/#organization"
+        person_id = f"{SITE}/#jorge-ramirez"
+        failures: list[str] = []
+        for slug in sorted(REBUILDS):
+            relative = f"towns/{slug}.html"
+            source = read(relative)
+            blocks = re.findall(
+                r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                source,
+                re.I | re.S,
+            )
+            nodes = [
+                node
+                for payload in (json.loads(block) for block in blocks)
+                for node in payload.get("@graph", [payload])
+                if isinstance(node, dict)
+            ]
+            organizations = [node for node in nodes if node.get("@type") == "Organization" and node.get("@id") == organization_id]
+            people = [node for node in nodes if node.get("@type") == "Person" and node.get("@id") == person_id]
+            web_pages = [node for node in nodes if node.get("@type") == "WebPage"]
+            if '<meta name="ai-content-declaration" content="ai-assisted, source-checked">' not in source:
+                failures.append(f"{relative}: AI declaration missing")
+            if source.count('data-content-provenance="v1"') != 1:
+                failures.append(f"{relative}: visible provenance marker mismatch")
+            for phrase in (
+                "Published by The Jorge Ramirez Group",
+                "AI-assisted, source-checked August 26, 2026",
+                "license #1754604",
+                "Contact Jorge or request a correction",
+            ):
+                if phrase not in visible_main(source):
+                    failures.append(f"{relative}: visible provenance missing {phrase!r}")
+            if len(organizations) != 1:
+                failures.append(f"{relative}: Organization entity mismatch")
+            if len(people) != 1 or people[0].get("worksFor") != {"@id": organization_id}:
+                failures.append(f"{relative}: Person/Organization relationship mismatch")
+            elif people[0].get("identifier", {}).get("value") != "1754604":
+                failures.append(f"{relative}: license identifier mismatch")
+            if len(web_pages) != 1 or web_pages[0].get("publisher") != {"@id": organization_id}:
+                failures.append(f"{relative}: Organization publisher mismatch")
+            elif "author" in web_pages[0] or "reviewedBy" in web_pages[0]:
+                failures.append(f"{relative}: unsupported author/reviewer relationship")
+            elif web_pages[0].get("dateModified") != "2026-08-27":
+                failures.append(f"{relative}: stale page modification date")
         self.assertEqual([], failures)
 
     def test_quarantines_are_compact_noindex_fallbacks_and_absent_from_hubs(self) -> None:

@@ -25,7 +25,7 @@ PATTERNS: dict[str, str] = {
     "english_real_estate": r"\b(?:Looking\s+to|Expert\s+guidance|Expert\s+bienes|buyer\s+and\s+seller|buyer\s+representation|seller\s+representation|Licensed\s+Agente|top[- ]rated|full[- ]time|since\s+2017)\b",
     # "Property Tax Statistics" is an official source title and is allowed.
     "english_metrics": r"\b(?:Median\s+price|Average\s+price|Days\s+on\s+Market|Closing\s+Costs|Down\s+Payment)\b",
-    "english_context_words": r"\b(?:neighborhood\s+names|commute\s+(?:promise|time)|market\s+data|home\s+value|home\s+buyer|home\s+seller|homes\s+for\s+sale)\b",
+    "english_context_words": r"\b(?:neighborhood\s+names|commute\s+(?:promise|time)|market\s+data|home\s+value|home\s+buyer|home\s+seller|homes\s+for\s+sale|official[- ]source\s+research\s+guide|it\s+distinguishes\s+(?:county|municipality|property)|no\s+copied\s+market\s+tables|forward[- ]looking\s+claims|reviewed\s+municipality\s+research|published\s+values\s+are|town\s+listing\s+data|property\s+valuation)\b",
     "english_source_ui": r"\b(?:Buyer\s+and\s+seller\s+research\s+sequences|Open\s+the\s+primary\s+source|Official\s+municipal\s+website|Official\s+district\s+website)\b",
     "english_source_kinds": r"\b(?:federal\s+geographic\s+profile|primary\s+municipal\s+source|official\s+station\s+page|state\s+fair\s+housing\s+guidance|state\s+civil\s+rights\s+guidance|state\s+property-tax\s+data\s+library|state\s+education\s+data\s+portal|official\s+transit\s+planning\s+tool|public-school\s+district\s+primary\s+source)\b",
     "english_source_sentences": r"\b(?:Select\s+a\s+county|County\s+reports\s+do\s+not\s+establish|Review\s+the\s+state(?:'s|’s)|Averages,\s+assessments,\s+and\s+equalization\s+data|Search\s+current\s+state-published|Confirm\s+the\s+district\s+and\s+attendance\s+assignment|Confirm\s+whether\s+a\s+place\s+name|Check\s+the\s+current\s+route|Travel\s+time\s+varies|Postal\s+and\s+neighborhood\s+names|does\s+not\s+(?:establish|describe|promise|rank|predict))\b",
@@ -36,6 +36,7 @@ IGNORED_ELEMENTS = {"script", "style", "template", "noscript", "svg"}
 USER_FACING_ATTRIBUTES = {"alt", "aria-label", "placeholder", "title"}
 META_FIELDS = {
     "description",
+    "llm-context",
     "og:title",
     "og:description",
     "twitter:title",

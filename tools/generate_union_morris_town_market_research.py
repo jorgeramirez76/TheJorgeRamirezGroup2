@@ -33,6 +33,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "union-morris-town-market-sources-2026-08-26.json"
 SITE = "https://thejorgeramirezgroup.com"
 REVIEWED_ON = "2026-08-26"
+PAGE_MODIFIED_ON = "2026-08-27"
 RENDERER = "tools/generate_union_morris_town_market_research.py"
 METRIC_KEYS = {
     "lineItems",
@@ -129,6 +130,11 @@ def load_manifest(path: Path = MANIFEST) -> dict:
         raise ValueError(f"town market sources must be reviewed on {REVIEWED_ON}")
     if document.get("renderer") != RENDERER:
         raise ValueError("town market source manifest points to another renderer")
+    direct_answer_rule = document.get("publicationPolicy", {}).get(
+        "directAnswerRule", ""
+    )
+    if not str(direct_answer_rule).startswith("Lead with a 40-60-word"):
+        raise ValueError("town market source manifest lacks the direct-answer rule")
     if document.get("reviewStatus") != "approved":
         raise ProvenanceError("reviewStatus must be approved")
     if document.get("reviewedAt") != REVIEWED_ON:
@@ -225,12 +231,21 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
     name = report["name"]
     county = report["county"]
     official = report["officialGeography"]
+    values = metric_values(report)
+    sales = f"{int(values['numberOfSales']):,}"
+    average_sales_price = f"${float(values['averageSalesPrice']):,.2f}"
+    average_assessment = f"${int(values['averageAssessment']):,}"
+    average_tax_bill = f"${int(values['averageTaxBill']):,}"
     if language == "en":
         return {
-            "title": f"{name} NJ Real Estate Market 2026 | Official Sources",
+            "title": f"{name} Market Research Guide 2026 | 2025 Data",
             "description": (
                 f"Research the {name}, NJ real estate market with the finalized 2025 State row, "
                 f"official local records, and a clear path to current {county} County reports."
+            ),
+            "llm": (
+                f"Reviewed municipality research for {official}, New Jersey. Published values are "
+                "the finalized 2025 State table averages, not 2026 town listing data or a property valuation."
             ),
             "skip": "Skip to main content",
             "nav_label": "Primary navigation",
@@ -243,10 +258,13 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
             "language": "Español",
             "valuation": "Request a home valuation",
             "eyebrow": "Official-source municipality research",
-            "h1": f"{name}, NJ real estate market: 2026 research guide",
+            "h1": f"{name}, NJ market research guide 2026: finalized 2025 public data",
             "dek": (
-                f"A source-led view of {official}: one finalized 2025 State row, "
-                f"a live path to {county} County conditions, and no invented town-level 2026 figures."
+                f"This page’s finalized 2025 New Jersey Treasury source row is {official} "
+                f"(C/D {report['districtCode']}) in {county} County. It reports {sales} sales, "
+                f"an average sales price of {average_sales_price}, an average assessment of "
+                f"{average_assessment}, and an average tax bill of {average_tax_bill}. These are "
+                "historical taxing-district averages, not current listing data or a home valuation."
             ),
             "reviewed": "Sources reviewed",
             "prepared": "Prepared by Jorge Ramirez",
@@ -357,10 +375,15 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
         }
 
     return {
-        "title": f"Mercado inmobiliario de {name}, NJ 2026 | Fuentes",
+        "title": f"Investigación de {name} 2026 | Datos oficiales 2025",
         "description": (
             f"Investigue el mercado inmobiliario de {name}, NJ con la fila estatal final de 2025, "
             f"registros oficiales y acceso a informes vigentes del condado de {county}."
+        ),
+        "llm": (
+            f"Guía de investigación municipal para {report['officialGeographyEs']}, Nueva Jersey. "
+            "Los valores publicados son promedios de la tabla estatal finalizada de 2025, no datos "
+            "de listados de 2026 ni una valoración de una propiedad."
         ),
         "skip": "Saltar al contenido principal",
         "nav_label": "Navegación principal",
@@ -373,10 +396,14 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
         "language": "English",
         "valuation": "Solicitar una valoración",
         "eyebrow": "Investigación municipal con fuentes oficiales",
-        "h1": f"Mercado inmobiliario de {name}, NJ: guía de investigación 2026",
+        "h1": f"Investigación inmobiliaria de {name}, NJ en 2026: datos públicos verificados de 2025",
         "dek": (
-            f"Una lectura basada en fuentes municipales sobre {name}: una fila estatal finalizada de 2025, "
-            f"acceso al contexto vigente del condado de {county} y ningún dato municipal inventado para 2026."
+            f"La fila finalizada de 2025 del New Jersey Treasury usa la geografía oficial "
+            f"“{report['officialGeographyEs']}” (C/D {report['districtCode']}), condado de {county}. "
+            f"Informa {sales} ventas, un precio de venta promedio de {average_sales_price}, un "
+            f"avalúo promedio de {average_assessment} y una factura fiscal promedio de "
+            f"{average_tax_bill}. Son promedios históricos del distrito fiscal, no listados "
+            "vigentes ni una valoración."
         ),
         "reviewed": "Fuentes revisadas",
         "prepared": "Preparado por Jorge Ramirez",
@@ -516,7 +543,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
         "mainEntityOfPage": canonical,
         "inLanguage": in_language,
         "datePublished": report["publishedOn"],
-        "dateModified": REVIEWED_ON,
+        "dateModified": PAGE_MODIFIED_ON,
         "author": {
             "@type": "Person",
             "@id": f"{SITE}/#jorge-ramirez",
@@ -568,8 +595,8 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
   <meta name="description" content="{esc(copy["description"])}">
   <meta name="author" content="Jorge Ramirez">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="llm-context" content="Reviewed municipality research for {esc(report['officialGeography'])}, New Jersey. Published values are the finalized 2025 State table averages, not 2026 town listing data or a property valuation.">
-  <meta name="last-updated" content="{REVIEWED_ON}">
+  <meta name="llm-context" content="{esc(copy['llm'])}">
+  <meta name="last-updated" content="{PAGE_MODIFIED_ON}">
   <meta name="geo.region" content="US-NJ">
   <meta name="geo.placename" content="{esc(name)}, New Jersey">
   <link rel="canonical" href="{canonical}">
@@ -584,7 +611,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
   <meta property="og:image" content="{SITE}/images/hero.jpg">
   <meta property="og:site_name" content="The Jorge Ramirez Group">
   <meta property="article:published_time" content="{esc(report['publishedOn'])}">
-  <meta property="article:modified_time" content="{REVIEWED_ON}">
+  <meta property="article:modified_time" content="{PAGE_MODIFIED_ON}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{esc(copy["title"])}">
   <meta name="twitter:description" content="{esc(copy["description"])}">
@@ -701,7 +728,8 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
       .next-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
     }}
     @media (max-width: 600px) {{
-      .market-brand {{ max-width: 230px; }}
+      .market-brand {{ flex: 1 1 auto; min-width: 0; max-width: none; white-space: normal; line-height: 1.05; }}
+      .market-menu-button {{ flex: 0 0 auto; }}
       .metric-grid, .scope-grid, .source-grid, .next-grid {{ grid-template-columns: minmax(0, 1fr); }}
       .hero-inner, .content {{ width: min(100% - 1.25rem, 1080px); }}
       .button-row {{ flex-direction: column; }}
@@ -735,7 +763,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
         <div class="hero-inner">
           <p class="eyebrow">{esc(copy['eyebrow'])}</p>
           <h1>{esc(copy['h1'])}</h1>
-          <p class="dek">{esc(copy['dek'])}</p>
+          <p class="dek" data-direct-answer="finalized-2025-treasury-row">{esc(copy['dek'])}</p>
           <div class="hero-meta">
             <span>{esc(copy['reviewed'])}: <time datetime="{REVIEWED_ON}">{REVIEWED_ON}</time></span>
             <span>{esc(copy['prepared'])}</span>

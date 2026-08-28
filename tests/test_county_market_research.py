@@ -11,6 +11,7 @@ import subprocess
 import sys
 import unittest
 import xml.etree.ElementTree as ET
+from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -25,35 +26,40 @@ REPORTS = {
     "essex-county-nj-real-estate-market-2026": {
         "county": "Essex",
         "fips": "34013",
-        "period": "2026 research path",
+        "period": "2026 source guide",
+        "legacy_q2": False,
         "published": "2026-03-08",
         "directory": "https://essexcountynj.org/",
     },
     "morris-county-nj-real-estate-market-2026": {
         "county": "Morris",
         "fips": "34027",
-        "period": "2026 research path",
+        "period": "2026 source guide",
+        "legacy_q2": False,
         "published": "2026-03-08",
         "directory": "https://www.morriscountynj.gov/Residents/Community-Information/Cities-and-Towns",
     },
     "hudson-county-real-estate-market-q2-2026": {
         "county": "Hudson",
         "fips": "34017",
-        "period": "Q2 2026 research path",
+        "period": "2026 source guide",
+        "legacy_q2": True,
         "published": "2026-04-16",
         "directory": "https://www.hudsoncountynj.org/",
     },
     "middlesex-county-real-estate-market-q2-2026": {
         "county": "Middlesex",
         "fips": "34023",
-        "period": "Q2 2026 research path",
+        "period": "2026 source guide",
+        "legacy_q2": True,
         "published": "2026-04-16",
         "directory": "https://www.middlesexcountynj.gov/government/municipalities",
     },
     "union-county-nj-real-estate-market-report-2026": {
         "county": "Union",
         "fips": "34039",
-        "period": "2026 research path",
+        "period": "2026 source guide",
+        "legacy_q2": False,
         "published": "2026-03-08",
         "directory": "https://ucnj.org/municipalities/",
     },
@@ -62,6 +68,7 @@ REPORTS = {
 COMMON_SOURCES = {
     "https://www.njrealtor.com/research/10k/",
     "https://njar-public.stats.10kresearch.com/reports",
+    "https://www.njrealtor.com/terms-of-service/",
     "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
     "https://www.nj.gov/treasury/taxation/pdf/lpt/class4/2025AvgResStat.pdf",
     "https://www.nj.gov/treasury/taxation/lpt/county_equalized.shtml",
@@ -158,6 +165,21 @@ def hashes(items: list[Path]) -> dict[str, str]:
     }
 
 
+def newest_linked_review_dates(document: dict) -> dict[str, str]:
+    shared_dates = {
+        document["reviewedOn"],
+        document["publicationRightsReview"]["reviewedOn"],
+        *(item["accessedOn"] for item in document["sharedSources"]),
+    }
+    return {
+        item["slug"]: max(
+            {*shared_dates, item["countyDirectory"]["accessedOn"]},
+            key=date.fromisoformat,
+        )
+        for item in document["reports"]
+    }
+
+
 def protected_market_and_fallback_paths() -> list[Path]:
     market = json.loads(
         (ROOT / "data" / "market-report-containment.json").read_text(encoding="utf-8")
@@ -208,8 +230,13 @@ class CountySourceManifestTests(unittest.TestCase):
 
         sources = {item["url"]: item for item in document["sharedSources"]}
         self.assertTrue(COMMON_SOURCES <= set(sources))
-        for item in sources.values():
-            self.assertEqual("2026-08-26", item["accessedOn"])
+        for url, item in sources.items():
+            expected_access = (
+                "2026-08-27"
+                if url == "https://www.njrealtor.com/terms-of-service/"
+                else "2026-08-26"
+            )
+            self.assertEqual(expected_access, item["accessedOn"])
             self.assertTrue(item["url"].startswith("https://"))
             self.assertIn("use", item)
             self.assertIn("limit", item)
@@ -217,6 +244,13 @@ class CountySourceManifestTests(unittest.TestCase):
             "direct public county-report portal linked by NJ Realtors; tables are viewed at the source and are not reproduced",
             sources["https://njar-public.stats.10kresearch.com/reports"]["publicationHandling"],
         )
+        rights = document["publicationRightsReview"]
+        self.assertEqual("2026-08-27", rights["reviewedOn"])
+        self.assertEqual(
+            "https://www.njrealtor.com/terms-of-service/", rights["termsUrl"]
+        )
+        self.assertRegex(rights["finding"], r"copyrighted.*do not grant express")
+        self.assertIn("do not reproduce", rights["decision"])
 
         by_slug = {item["slug"]: item for item in document["reports"]}
         for slug, expected in REPORTS.items():
@@ -224,6 +258,11 @@ class CountySourceManifestTests(unittest.TestCase):
             self.assertEqual(expected["county"], item["county"])
             self.assertEqual(expected["fips"], item["countyFips"])
             self.assertEqual(expected["period"], item["periodLabel"])
+            self.assertEqual("source-guide-no-market-snapshot", item["contentMode"])
+            self.assertEqual(
+                "Q2 2026" if expected["legacy_q2"] else None,
+                item.get("legacyRoutePeriod"),
+            )
             self.assertEqual(expected["published"], item["publishedOn"])
             self.assertEqual(expected["directory"], item["countyDirectory"]["url"])
             self.assertEqual("2026-08-26", item["countyDirectory"]["accessedOn"])
@@ -258,6 +297,49 @@ class CountySourceManifestTests(unittest.TestCase):
 
 
 class CountyPageContractTests(unittest.TestCase):
+    def test_english_county_scope_uses_the_correct_indefinite_article(self) -> None:
+        for slug, expected in REPORTS.items():
+            path = ROOT / "blog" / f"{slug}.html"
+            text = visible_text(path.read_text(encoding="utf-8"))
+            article = "An" if expected["county"] == "Essex" else "A"
+            with self.subTest(path=path.relative_to(ROOT)):
+                self.assertIn(
+                    f"{article} {expected['county']} County result is a county-level reference.",
+                    text,
+                )
+                self.assertNotIn("A Essex County result", text)
+
+    def test_modified_dates_cover_newest_linked_review_and_access_date(self) -> None:
+        document = json.loads(MANIFEST.read_text(encoding="utf-8"))
+        newest_by_slug = newest_linked_review_dates(document)
+        self.assertEqual({"2026-08-27"}, set(newest_by_slug.values()))
+
+        for path in paths():
+            newest = newest_by_slug[path.stem]
+            source, parser = parse(path)
+            blocks = re.findall(
+                r'<script type="application/ld\+json">(.*?)</script>',
+                source,
+                re.IGNORECASE | re.DOTALL,
+            )
+            article = next(
+                item
+                for item in (json.loads(block) for block in blocks)
+                if item.get("@type") == "BlogPosting"
+            )
+            with self.subTest(path=path.relative_to(ROOT)):
+                self.assertEqual([newest], meta_value(parser, "name", "last-updated"))
+                self.assertEqual(
+                    [newest],
+                    meta_value(parser, "property", "article:modified_time"),
+                )
+                self.assertEqual(newest, article["dateModified"])
+                self.assertIn(f'<time datetime="{newest}">{newest}</time>', source)
+                self.assertRegex(
+                    visible_text(source),
+                    rf"(?:current through|vigente hasta) {re.escape(newest)}",
+                )
+
     def test_exact_ten_pages_keep_canonical_routes_and_reciprocal_hreflang(self) -> None:
         self.assertEqual(10, len(paths()))
         english_sitemap = sitemap_urls("sitemap.xml")
@@ -292,13 +374,26 @@ class CountyPageContractTests(unittest.TestCase):
             description = meta_value(parser, "name", "description")
             self.assertEqual(1, len(description))
             county = REPORTS[path.stem]["county"]
+            legacy_q2 = REPORTS[path.stem]["legacy_q2"]
+            h1 = html.unescape(
+                re.search(r"<h1>(.*?)</h1>", source, re.I | re.S).group(1)
+            )
             with self.subTest(path=path.relative_to(ROOT)):
                 self.assertIn(county, title)
-                self.assertIn("2026", title)
                 self.assertRegex(
                     title.lower(), r"(?:real estate|inmobiliari[oa]|bienes ra[ií]ces)"
                 )
                 self.assertRegex(title.lower(), r"(?:market|mercado)")
+                if legacy_q2:
+                    self.assertNotRegex(title.lower(), r"\bq2\b|2026")
+                    self.assertNotRegex(description[0].lower(), r"\bq2\b")
+                    self.assertNotRegex(h1.lower(), r"\bq2\b|2026")
+                    self.assertRegex(
+                        f"{title} {description[0]} {h1}".lower(),
+                        r"source|fuentes",
+                    )
+                else:
+                    self.assertIn("2026", title)
                 self.assertNotRegex(title.lower(), r"price|forecast|hottest|precio|pron[oó]stico")
                 self.assertNotRegex(description[0].lower(), r"\$|forecast|hottest|pron[oó]stico")
                 self.assertEqual([title], meta_value(parser, "property", "og:title"))
@@ -306,7 +401,60 @@ class CountyPageContractTests(unittest.TestCase):
                 self.assertEqual([title], meta_value(parser, "name", "twitter:title"))
                 self.assertEqual(description, meta_value(parser, "name", "twitter:description"))
 
+    def test_llm_context_is_idiomatic_for_each_language_and_the_spanish_audit_detects_leaks(self) -> None:
+        from tools.audit_spanish_quality import PATTERNS, visibleish_text
+
+        for path in paths():
+            _, parser = parse(path)
+            context = meta_value(parser, "name", "llm-context")
+            spanish = path.parts[-3:-1] == ("es", "blog")
+            with self.subTest(path=path.relative_to(ROOT)):
+                self.assertEqual(1, len(context))
+                if spanish:
+                    self.assertRegex(
+                        context[0],
+                        r"^Guía de investigación .* basada en fuentes oficiales\.",
+                    )
+                    self.assertNotRegex(
+                        context[0],
+                        r"Official-source|It distinguishes|no copied market tables|forward-looking",
+                    )
+                else:
+                    self.assertRegex(context[0], r"^Official-source research guide")
+
+        leaked = visibleish_text(
+            '<meta name="llm-context" content="Official-source research guide for a county. '
+            'It distinguishes county reports; no copied market tables or forward-looking claims are published.">'
+        )
+        self.assertRegex(leaked, re.compile(PATTERNS["english_context_words"], re.I))
+
+    def test_every_page_leads_with_a_concise_honest_direct_answer(self) -> None:
+        for path in paths():
+            source, _ = parse(path)
+            match = re.search(
+                r'<p class="dek" data-direct-answer="county-source-guide">(.*?)</p>',
+                source,
+                re.I | re.S,
+            )
+            self.assertIsNotNone(match, path)
+            answer = " ".join(html.unescape(re.sub(r"<[^>]+>", " ", match.group(1))).split())
+            words = answer.split()
+            legacy_q2 = REPORTS[path.stem]["legacy_q2"]
+            with self.subTest(path=path.relative_to(ROOT)):
+                self.assertGreaterEqual(len(words), 40)
+                self.assertLessEqual(len(words), 60)
+                self.assertLess(source.index(match.group(0)), source.index('<div class="content">'))
+                self.assertRegex(answer, r"source guide|guía de fuentes")
+                self.assertRegex(answer, r"County|condado")
+                if legacy_q2:
+                    self.assertRegex(
+                        answer,
+                        r"does not publish a Q2 2026 market snapshot|no publica una radiografía del mercado para el Q2 de 2026",
+                    )
+
     def test_visible_research_method_separates_county_municipality_and_property(self) -> None:
+        document = json.loads(MANIFEST.read_text(encoding="utf-8"))
+        newest_by_slug = newest_linked_review_dates(document)
         treasury_labels = (
             "# of Line Items",
             "Avg Assessment",
@@ -321,7 +469,7 @@ class CountyPageContractTests(unittest.TestCase):
             with self.subTest(path=path.relative_to(ROOT)):
                 self.assertIn('data-geography-scope="county-not-municipality"', source)
                 self.assertIn('data-publication-policy="links-not-tables"', source)
-                self.assertIn("2026-08-26", source)
+                self.assertIn(newest_by_slug[path.stem], source)
                 self.assertIn("2025 Average Residential Statistics", text)
                 for label in treasury_labels:
                     self.assertIn(label, text)
@@ -376,6 +524,8 @@ class CountyPageContractTests(unittest.TestCase):
                 )
 
     def test_schema_is_limited_to_visible_article_and_breadcrumb_content(self) -> None:
+        document = json.loads(MANIFEST.read_text(encoding="utf-8"))
+        newest_by_slug = newest_linked_review_dates(document)
         for path in paths():
             source, _ = parse(path)
             blocks = re.findall(
@@ -388,7 +538,7 @@ class CountyPageContractTests(unittest.TestCase):
             article = next(item for item in documents if item["@type"] == "BlogPosting")
             with self.subTest(path=path.relative_to(ROOT)):
                 self.assertEqual({"BlogPosting", "BreadcrumbList"}, types)
-                self.assertEqual("2026-08-26", article["dateModified"])
+                self.assertEqual(newest_by_slug[path.stem], article["dateModified"])
                 self.assertEqual(REPORTS[path.stem]["published"], article["datePublished"])
                 language = "es" if path.parts[-3:-1] == ("es", "blog") else "en"
                 self.assertEqual(SITE + route(path.stem, language), article["url"])

@@ -13,6 +13,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 ACCESSED = "2026-08-26"
+PAGE_MODIFIED = "2026-08-27"
 EN_URL = "https://thejorgeramirezgroup.com/blog/best-nj-towns-for-families-2026"
 ES_URL = "https://thejorgeramirezgroup.com/es/blog/best-nj-towns-for-families"
 TOWN_KEYS = {
@@ -238,7 +239,7 @@ class FairHousingTownComparisonTests(unittest.TestCase):
                 self.assertFalse(types & forbidden)
                 article = next(node for node in nodes if node.get("@type") == "Article")
                 self.assertEqual(canonical, article["mainEntityOfPage"])
-                self.assertEqual("2026-08-26", article["dateModified"])
+                self.assertEqual(PAGE_MODIFIED, article["dateModified"])
 
     def test_objective_framework_and_municipal_distinctions_are_explicit(self) -> None:
         for source in (self.en, self.es):

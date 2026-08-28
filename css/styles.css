@@ -3298,6 +3298,43 @@ main:focus {
     outline: none;
 }
 
+/* Contextual editorial imagery for long-form guides.
+   The gold hairline and restrained shadow carry the homepage visual language
+   into dense research pages without turning the image into a faux listing. */
+.jrg-editorial-figure {
+    position: relative;
+    width: min(100% - 44px, 960px);
+    margin: clamp(2rem, 5vw, 3.75rem) auto;
+    overflow: hidden;
+    border: 1px solid rgba(184, 150, 46, 0.44);
+    border-radius: 14px;
+    background: #1A1A1A;
+    box-shadow: 0 22px 55px rgba(10, 10, 10, 0.16);
+    isolation: isolate;
+}
+
+.jrg-editorial-figure::before {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 1;
+    height: 4px;
+    background: linear-gradient(90deg, #8B0D22, #C41230 42%, #B8962E);
+    content: "";
+    pointer-events: none;
+}
+
+.jrg-editorial-figure picture,
+.jrg-editorial-figure img {
+    display: block;
+    width: 100%;
+}
+
+.jrg-editorial-figure img {
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
 @media (pointer: coarse) {
     .nav-links a,
     .social-links a,
@@ -3322,6 +3359,13 @@ main:focus {
 }
 
 @media (max-width: 640px) {
+    .jrg-editorial-figure {
+        width: calc(100% - 32px);
+        margin-block: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 14px 34px rgba(10, 10, 10, 0.14);
+    }
+
     .hero,
     .hero-carousel,
     .hero-slide,

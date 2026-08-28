@@ -522,6 +522,34 @@ h1 span {
   }
 }
 
+@media (max-width: 380px) {
+  .topnav {
+    gap: 10px;
+    padding-inline: 12px;
+  }
+
+  .topnav-logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 1rem;
+    line-height: 1.15;
+  }
+
+  .topnav-links {
+    flex: 0 1 auto;
+    min-width: 0;
+    gap: 0;
+  }
+
+  .topnav-links .topnav-cta {
+    min-width: 0;
+    padding-inline: 12px;
+    font-size: 0.72rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

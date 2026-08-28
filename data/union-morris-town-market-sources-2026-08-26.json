@@ -9,6 +9,7 @@
   "publicationPolicy": {
     "scope": "Eleven retained English and Spanish municipality market-research routes in Union and Morris counties",
     "municipalityDataRule": "Publish only the exact finalized 2025 municipality row and field labels from the New Jersey Division of Taxation table.",
+    "directAnswerRule": "Lead with a 40-60-word source-attributed answer assembled from the reviewed municipality, county, district code, and finalized 2025 values in each report record.",
     "averageRule": "Avg Assessment, Avg Tax Bill, and Avg Sales Price are averages, never medians.",
     "currentMarketRule": "Changing 2026 conditions remain at the linked New Jersey Realtors county portal; county results are not represented as municipality results.",
     "propertyRule": "A municipality average or county report is not a property valuation. A CMA requires current comparable properties and property details.",

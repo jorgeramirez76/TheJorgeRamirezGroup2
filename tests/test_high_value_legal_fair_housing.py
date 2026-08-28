@@ -17,6 +17,13 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
 REVIEWED_ON = "2026-08-26"
+PAGE_MODIFIED_ON = "2026-08-27"
+RELEASE_MODIFIED = {
+    "blog/maplewood-vs-south-orange-nj.html",
+    "es/blog/maplewood-vs-south-orange-nj.html",
+    "blog/summit-vs-westfield-nj.html",
+    "es/blog/summit-vs-westfield-nj.html",
+}
 MANIFEST = ROOT / "data" / "high-value-legal-fair-housing-sources.json"
 RENDERER = ROOT / "tools" / "generate_high_value_legal_fair_housing.py"
 
@@ -264,8 +271,19 @@ class HighValueLegalFairHousingTests(unittest.TestCase):
                 self.assertFalse(types & forbidden)
                 self.assertEqual(SITE + route + "#webpage", article["mainEntityOfPage"]["@id"])
                 self.assertEqual(SITE + route, webpage["url"])
-                self.assertEqual(REVIEWED_ON, article["dateModified"])
-                self.assertEqual(REVIEWED_ON, webpage["dateModified"])
+                expected_modified = (
+                    PAGE_MODIFIED_ON if relative in RELEASE_MODIFIED else REVIEWED_ON
+                )
+                self.assertEqual(expected_modified, article["dateModified"])
+                self.assertEqual(expected_modified, webpage["dateModified"])
+                self.assertIn(
+                    f'<meta name="last-updated" content="{expected_modified}">',
+                    source,
+                )
+                self.assertIn(
+                    f'<meta property="article:modified_time" content="{expected_modified}">',
+                    source,
+                )
                 self.assertIn(article["headline"], visible_text(source))
 
     def test_every_cluster_source_is_visible_and_copy_avoids_prohibited_claims(self) -> None:
@@ -425,7 +443,13 @@ class HighValueLegalFairHousingTests(unittest.TestCase):
             with self.subTest(route=route):
                 self.assertIn(SITE + route, urls)
                 node = urls[SITE + route]
-                self.assertEqual(REVIEWED_ON, node.find("{*}lastmod").text)
+                relative = next(
+                    path for path, value in INDEXABLE.items() if value == route
+                )
+                expected_modified = (
+                    PAGE_MODIFIED_ON if relative in RELEASE_MODIFIED else REVIEWED_ON
+                )
+                self.assertEqual(expected_modified, node.find("{*}lastmod").text)
                 alternates = {
                     link.attrib["hreflang"]: link.attrib["href"]
                     for link in node.findall("{*}link")

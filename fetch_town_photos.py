@@ -15,6 +15,8 @@ import time
 import urllib.parse
 import urllib.request
 
+from town_photo_integrity import filter_photo_credits, is_rejected_source
+
 UA = {"User-Agent": "TheJorgeRamirezGroupSite/1.0 (jorge.ramirez@kw.com) python-urllib"}
 API = "https://en.wikipedia.org/w/api.php"
 COMMONS = "https://commons.wikimedia.org/w/api.php"
@@ -93,10 +95,11 @@ def rank_score(title):
     return 0
 
 
-def pick(cands):
+def pick(town, cands):
     ok = [c for c in cands
           if LICENSE_OK.match(c["license"].strip()) and c["width"] >= 900
-          and c["width"] >= c["height"] * 0.85]         # landscape-ish only
+          and c["width"] >= c["height"] * 0.85
+          and not is_rejected_source(town, c["title"])]  # landscape-ish only
     ok.sort(key=lambda c: (rank_score(c["title"]), c["width"]), reverse=True)
     # require a recognizable landmark for the lead photo
     ok = [c for c in ok if rank_score(c["title"]) > 0] or ok
@@ -117,7 +120,7 @@ def main():
     towns = sys.argv[1:]
     credits = {}
     if os.path.exists(f"{OUT}/credits.json"):
-        credits = json.load(open(f"{OUT}/credits.json"))
+        credits = filter_photo_credits(json.load(open(f"{OUT}/credits.json")))
     for town in towns:
         if town in credits:
             print(f"{town}: cached", flush=True)
@@ -131,7 +134,7 @@ def main():
             if len(files) < 2:                      # fallback: wiki article images
                 files += [f for f in page_images(title) if f not in files]
             cands = image_meta(files)
-            chosen = pick(cands)
+            chosen = pick(town, cands)
             entry = []
             for n, c in enumerate(chosen, 1):
                 dest = f"{OUT}/{town}-{n}.webp"

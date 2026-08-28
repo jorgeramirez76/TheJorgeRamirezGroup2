@@ -166,9 +166,26 @@ class SpanishTownRiskRemediationTests(unittest.TestCase):
         self.assertEqual(104, len(quarantined))
         self.assertEqual(REDIRECTS, redirected)
         self.assertEqual(138, len(rebuilt | quarantined | set(redirected)))
-        self.assertEqual("2026-08-26", self.manifest["effectiveDate"])
+        self.assertEqual("2026-08-27", self.manifest["effectiveDate"])
         self.assertIn("current canonical English inventory", self.manifest["decisionPolicy"]["rebuildRule"])
         self.assertIn("no gated", self.manifest["evidencePolicy"])
+        self.assertEqual(
+            {
+                "publisher": "The Jorge Ramirez Group",
+                "declaration": "ai-assisted, source-checked",
+                "sourceCheckedDate": "2026-08-26",
+                "responsibleContact": "Jorge Ramirez",
+                "njRealEstateLicense": "1754604",
+                "structuredDataRule": (
+                    "The WebPage publisher is the Organization; Jorge Ramirez is a Person "
+                    "who works for that Organization and is not represented as the page author or reviewer."
+                ),
+            },
+            self.manifest["provenancePolicy"],
+        )
+        for item in self.decisions.values():
+            for evidence in item["sources"]:
+                self.assertEqual("2026-08-26", evidence["accessed"])
 
         spec = importlib.util.spec_from_file_location("spanish_town_renderer", RENDERER_PATH)
         module = importlib.util.module_from_spec(spec)
@@ -238,6 +255,101 @@ class SpanishTownRiskRemediationTests(unittest.TestCase):
                 host = urlparse(evidence["url"]).netloc.casefold()
                 if not any(host == suffix or host.endswith("." + suffix.lstrip(".")) for suffix in OFFICIAL_HOST_SUFFIXES):
                     failures.append(f"{relative}: nonofficial source: {host}")
+        self.assertEqual([], failures)
+
+    def test_rebuilt_pages_publish_truthful_bilingual_provenance(self) -> None:
+        organization_id = f"{SITE}/#organization"
+        person_id = f"{SITE}/#jorge-ramirez"
+        failures: list[str] = []
+        for slug, item in sorted(self.decisions.items()):
+            if item["action"] != "rebuild":
+                continue
+            relative = f"es/towns/{slug}.html"
+            source = read(relative)
+            blocks = re.findall(
+                r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                source,
+                re.I | re.S,
+            )
+            nodes = [
+                node
+                for payload in (json.loads(block) for block in blocks)
+                for node in payload.get("@graph", [payload])
+                if isinstance(node, dict)
+            ]
+            organizations = [node for node in nodes if node.get("@type") == "Organization" and node.get("@id") == organization_id]
+            people = [node for node in nodes if node.get("@type") == "Person" and node.get("@id") == person_id]
+            web_pages = [node for node in nodes if node.get("@type") == "WebPage"]
+            visible = visible_main(source)
+            if '<meta name="ai-content-declaration" content="ai-assisted, source-checked">' not in source:
+                failures.append(f"{relative}: declaración de IA ausente")
+            if source.count('data-content-provenance="v1"') != 1:
+                failures.append(f"{relative}: marcador de procedencia incorrecto")
+            for phrase in (
+                "Publicado por The Jorge Ramirez Group",
+                "asistencia de IA y fuentes verificadas el 26 de agosto de 2026",
+                "licencia de Nueva Jersey (#1754604)",
+                "Contacta a Jorge o solicita una corrección",
+            ):
+                if phrase not in visible:
+                    failures.append(f"{relative}: procedencia visible ausente: {phrase!r}")
+            if len(organizations) != 1:
+                failures.append(f"{relative}: entidad Organization incorrecta")
+            if len(people) != 1 or people[0].get("worksFor") != {"@id": organization_id}:
+                failures.append(f"{relative}: relación Person/Organization incorrecta")
+            elif people[0].get("identifier", {}).get("value") != "1754604":
+                failures.append(f"{relative}: licencia estructurada incorrecta")
+            if len(web_pages) != 1 or web_pages[0].get("publisher") != {"@id": organization_id}:
+                failures.append(f"{relative}: publisher estructurado incorrecto")
+            elif "author" in web_pages[0] or "reviewedBy" in web_pages[0]:
+                failures.append(f"{relative}: autor/revisor no sustentado")
+        self.assertEqual([], failures)
+
+    def test_rebuilt_page_modified_dates_and_sitemap_lastmods_match_this_release(self) -> None:
+        sitemap = ET.parse(ROOT / "sitemap-es.xml").getroot()
+        submitted = {
+            (url.findtext("{*}loc") or "").strip(): (url.findtext("{*}lastmod") or "").strip()
+            for url in sitemap.findall("{*}url")
+        }
+        failures: list[str] = []
+        for slug, item in sorted(self.decisions.items()):
+            if item["action"] != "rebuild":
+                continue
+            relative = f"es/towns/{slug}.html"
+            source = read(relative)
+            canonical = f"{SITE}/es/towns/{slug}"
+            blocks = re.findall(
+                r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                source,
+                re.I | re.S,
+            )
+            web_pages = [
+                node
+                for payload in (json.loads(block) for block in blocks)
+                for node in payload.get("@graph", [payload])
+                if isinstance(node, dict) and node.get("@type") == "WebPage"
+            ]
+            if len(web_pages) != 1 or web_pages[0].get("dateModified") != "2026-08-27":
+                failures.append(f"{relative}: dateModified no refleja la publicación del 27 de agosto")
+            if submitted.get(canonical) != "2026-08-27":
+                failures.append(f"{relative}: lastmod del sitemap no coincide con dateModified")
+            if "fuentes verificadas el 26 de agosto de 2026" not in visible_main(source):
+                failures.append(f"{relative}: fecha visible de revisión de fuentes cambió")
+        self.assertEqual([], failures)
+
+    def test_managed_contact_links_keep_spanish_visitors_in_the_spanish_experience(self) -> None:
+        failures: list[str] = []
+        localized_actions = {"rebuild", "quarantine"}
+        for slug, item in sorted(self.decisions.items()):
+            relative = f"es/towns/{slug}.html"
+            source = read(relative)
+            if item["action"] in localized_actions:
+                if 'href="/es#contact"' not in source:
+                    failures.append(f"{relative}: falta el destino de contacto localizado")
+                if 'href="/contact"' in source:
+                    failures.append(f"{relative}: conserva un destino de contacto en inglés")
+            elif item["action"] == "redirect" and 'href="/contact"' in source:
+                failures.append(f"{relative}: el alias introdujo un contacto en inglés")
         self.assertEqual([], failures)
 
     def test_quarantined_routes_are_compact_safe_fallbacks(self) -> None:

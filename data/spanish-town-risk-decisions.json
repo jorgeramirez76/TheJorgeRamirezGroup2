@@ -1,7 +1,15 @@
 {
   "schemaVersion": 1,
-  "effectiveDate": "2026-08-26",
+  "effectiveDate": "2026-08-27",
   "scope": "All rendered HTML routes under es/towns; English and blog market-report files are excluded.",
+  "provenancePolicy": {
+    "publisher": "The Jorge Ramirez Group",
+    "declaration": "ai-assisted, source-checked",
+    "sourceCheckedDate": "2026-08-26",
+    "responsibleContact": "Jorge Ramirez",
+    "njRealEstateLicense": "1754604",
+    "structuredDataRule": "The WebPage publisher is the Organization; Jorge Ramirez is a Person who works for that Organization and is not represented as the page author or reviewer."
+  },
   "decisionPolicy": {
     "rebuildRule": "Rebuild every route in the current canonical English inventory so reciprocal bilingual routes remain useful and source-backed.",
     "quarantineRule": "Use a compact noindex/follow fallback for every noncanonical route that is not a justified geographic alias.",

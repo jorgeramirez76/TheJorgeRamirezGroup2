@@ -215,7 +215,7 @@ class FirstTimeBuyerGuideTests(unittest.TestCase):
                 self.assertFalse({"Review", "AggregateRating", "HowTo"} & types)
                 encoded = json.dumps(schemas)
                 self.assertNotIn("ratingValue", encoded)
-                self.assertIn('"dateModified": "2026-08-26"', encoded)
+                self.assertIn('"dateModified": "2026-08-27"', encoded)
                 self.assertIn(expected["canonical"], encoded)
 
     def test_financial_legal_and_market_claims_are_durable_and_qualified(self) -> None:
@@ -308,6 +308,24 @@ class FirstTimeBuyerGuideTests(unittest.TestCase):
                 )
                 self.assertRegex(raw, r"min-height:\s*44px")
                 self.assertIn("@media (max-width: 760px)", raw)
+                self.assertIn("@media (max-width: 380px)", raw)
+                narrow = re.search(
+                    r"@media\s*\(max-width:\s*380px\)\s*\{(?P<body>.*?)\n\s*\}",
+                    raw,
+                    re.S,
+                )
+                self.assertIsNotNone(narrow)
+                rules = narrow.group("body")
+                self.assertRegex(rules, r"\.topnav\s*\{[^}]*gap:\s*10px")
+                self.assertRegex(
+                    rules,
+                    r"\.brand\s*\{[^}]*flex:\s*1\s+1\s+auto[^}]*min-width:\s*0[^}]*white-space:\s*normal",
+                )
+                self.assertRegex(
+                    rules,
+                    r"\.nav-links\s*\{[^}]*flex:\s*0\s+1\s+auto[^}]*min-width:\s*0",
+                )
+                self.assertRegex(rules, r"\.nav-cta\s*\{[^}]*min-width:\s*0")
                 self.assertIn("@media (prefers-reduced-motion: reduce)", raw)
 
 

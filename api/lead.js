@@ -16,9 +16,9 @@ const SMS_CONSENT_LANGUAGE =
   "I agree to receive text messages from The Jorge Ramirez Group about this home valuation request. Message and data rates may apply. Reply STOP to opt out. Consent is optional and is not a condition of service.";
 const GUIDE_CONSENT_LANGUAGE =
   "I agree that Jorge Ramirez, licensed NJ real estate agent (The Jorge Ramirez Group at Keller Williams, brokerage of record), may call and text me, including by automated technology, about my real estate request and to send related updates such as appointment and showing reminders, new-listing and price alerts, home-value follow-ups, and transaction updates. Consent is not a condition of getting the guide or of any purchase. Message frequency varies, typically a few per month. Message and data rates may apply. Reply STOP to opt out, HELP for help.";
-const VALUATION_RATE_WINDOW_MS = 10 * 60 * 1000;
-const VALUATION_RATE_MAX = 5;
-const valuationAttempts = new Map();
+const LEAD_RATE_WINDOW_MS = 10 * 60 * 1000;
+const LEAD_RATE_MAX = 5;
+const leadAttempts = new Map();
 
 function safeNext(next, fallback = "/thank-you") {
   if (typeof next === "string") {
@@ -68,21 +68,23 @@ function clientIp(headers) {
   return forwarded || clean(headers["x-real-ip"], 100);
 }
 
-function isValuationRateLimited(ip) {
-  if (!ip) return false;
+function isLeadRateLimited(ip) {
+  // Vercel supplies a client IP on production requests. If that identity is
+  // unavailable, do not bypass the abuse control and fan out to providers.
+  if (!ip) return true;
   const now = Date.now();
-  const cutoff = now - VALUATION_RATE_WINDOW_MS;
+  const cutoff = now - LEAD_RATE_WINDOW_MS;
 
-  for (const [key, timestamps] of valuationAttempts) {
+  for (const [key, timestamps] of leadAttempts) {
     const recent = timestamps.filter((timestamp) => timestamp > cutoff);
-    if (recent.length) valuationAttempts.set(key, recent);
-    else valuationAttempts.delete(key);
+    if (recent.length) leadAttempts.set(key, recent);
+    else leadAttempts.delete(key);
   }
 
-  const attempts = valuationAttempts.get(ip) || [];
-  if (attempts.length >= VALUATION_RATE_MAX) return true;
+  const attempts = leadAttempts.get(ip) || [];
+  if (attempts.length >= LEAD_RATE_MAX) return true;
   attempts.push(now);
-  valuationAttempts.set(ip, attempts);
+  leadAttempts.set(ip, attempts);
   return false;
 }
 
@@ -250,6 +252,7 @@ export default async function handler(req, res) {
 
   const b = (req.body && typeof req.body === "object" && !Array.isArray(req.body)) ? req.body : {};
   const headers = req.headers || {};
+  const ip = clientIp(headers);
   const wantsJson =
     (headers.accept || "").includes("application/json") ||
     (headers["x-requested-with"] || "").toLowerCase() === "xmlhttprequest";
@@ -297,7 +300,7 @@ export default async function handler(req, res) {
     smsConsent,
     consentLanguage: smsConsent ? canonicalConsentLanguage : "",
     consentAt: smsConsent ? receivedAt : "",
-    consentIp: smsConsent ? clientIp(headers) : "",
+    consentIp: smsConsent ? ip : "",
     receivedAt,
   };
 
@@ -310,11 +313,13 @@ export default async function handler(req, res) {
         : errorNext);
   }
 
-  if (isValuation && isValuationRateLimited(clientIp(headers))) {
+  if (isLeadRateLimited(ip)) {
     res.setHeader("Retry-After", "600");
     return wantsJson
       ? res.status(429).json({ ok: false, code: "rate_limited" })
-      : res.redirect(303, valuationState(next, "err=rate", "valuation-rate"));
+      : res.redirect(303, isValuation
+        ? valuationState(next, "err=rate", "valuation-rate")
+        : errorNext);
   }
 
   const results = await Promise.allSettled([textJorge(lead), pushCRM(lead), emailViaResend(lead), emailGuideToLead(lead)]);

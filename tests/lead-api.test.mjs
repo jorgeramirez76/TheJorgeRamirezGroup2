@@ -75,7 +75,7 @@ function request(body, { json = true, ip } = {}) {
     headers: {
       accept: json ? "application/json" : "text/html",
       referer: "https://thejorgeramirezgroup.com/home-valuation",
-      "x-forwarded-for": ip || `203.0.113.${requestId}`,
+      "x-forwarded-for": ip === undefined ? `203.0.113.${requestId}` : ip,
     },
   };
 }
@@ -343,6 +343,110 @@ test("rate limits repeated valid valuation delivery attempts from one IP", async
   assert.equal(state.status, 429);
   assert.deepEqual(state.body, { ok: false, code: "rate_limited" });
   assert.equal(fetchCalls, 5);
+});
+
+test("rate limits every accepted non-valuation lead type by client IP", async () => {
+  const leadTypes = [
+    {
+      label: "website contact",
+      body: {
+        leadType: "website-contact",
+        name: "Contact Visitor",
+        email: "contact@example.com",
+        _source: "/contact",
+      },
+    },
+    {
+      label: "guide download",
+      body: {
+        name: "Guide Visitor",
+        email: "guide@example.com",
+        guide: "buyer",
+        intent: "Buyer guide download",
+        _source: "/nj-home-buyer-guide",
+      },
+    },
+    {
+      label: "mortgage calculator",
+      body: {
+        leadType: "mortgage-calculator",
+        name: "Calculator Visitor",
+        email: "calculator@example.com",
+        intent: "Mortgage calculator follow-up request",
+        _source: "/tools/mortgage-calculator",
+      },
+    },
+  ];
+
+  for (const [index, scenario] of leadTypes.entries()) {
+    let fetchCalls = 0;
+    globalThis.fetch = async () => {
+      fetchCalls += 1;
+      return { ok: true, text: async () => "" };
+    };
+    process.env.CRM_WEBHOOK_URL = "https://crm.invalid.test/leads";
+    const ip = `203.0.113.${220 + index}`;
+
+    for (let attempt = 0; attempt < 5; attempt += 1) {
+      const { state, response } = createResponse();
+      await handler(request(scenario.body, { ip }), response);
+      assert.equal(state.status, 200, scenario.label);
+    }
+
+    const { state, response } = createResponse();
+    await handler(request(scenario.body, { ip }), response);
+    assert.equal(state.status, 429, scenario.label);
+    assert.deepEqual(state.body, { ok: false, code: "rate_limited" }, scenario.label);
+    assert.equal(state.headers["Retry-After"], "600", scenario.label);
+    assert.equal(fetchCalls, 5, scenario.label);
+  }
+});
+
+test("fails closed before delivery when no client IP is available", async () => {
+  let fetchCalls = 0;
+  globalThis.fetch = async () => {
+    fetchCalls += 1;
+    return { ok: true, text: async () => "" };
+  };
+  process.env.CRM_WEBHOOK_URL = "https://crm.invalid.test/leads";
+  const { state, response } = createResponse();
+
+  await handler(request({
+    leadType: "website-contact",
+    name: "Contact Visitor",
+    email: "contact@example.com",
+    _source: "/contact",
+  }, { ip: "" }), response);
+
+  assert.equal(state.status, 429);
+  assert.deepEqual(state.body, { ok: false, code: "rate_limited" });
+  assert.equal(state.headers["Retry-After"], "600");
+  assert.equal(fetchCalls, 0);
+});
+
+test("keeps rate-limited HTML contact submissions on the configured error route", async () => {
+  globalThis.fetch = async () => ({ ok: true, text: async () => "" });
+  process.env.CRM_WEBHOOK_URL = "https://crm.invalid.test/leads";
+  const ip = "203.0.113.230";
+  const body = {
+    leadType: "website-contact",
+    name: "Contact Visitor",
+    email: "contact@example.com",
+    _source: "/contact",
+    _next: "/thank-you",
+    _errorNext: "/contact#contact-error",
+  };
+
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    const { response } = createResponse();
+    await handler(request(body, { json: false, ip }), response);
+  }
+
+  const { state, response } = createResponse();
+  await handler(request(body, { json: false, ip }), response);
+  assert.equal(state.status, 303);
+  assert.equal(state.redirect, "/contact#contact-error");
+  assert.equal(state.headers["Retry-After"], "600");
 });
 
 test("does not allow a protocol-relative redirect through _next", async () => {

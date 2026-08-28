@@ -17,6 +17,7 @@ from tools.check_compiled_vercel_routes import (
     CANONICAL_ORIGIN,
     DIRECTORY_INDEX_PREEMPTIONS,
     FORMER_BULK_REDIRECTS,
+    compiled_asset_issues,
     compiled_contract_issues,
     source_contract_issues,
 )
@@ -149,6 +150,19 @@ class CompiledVercelRoutingTests(unittest.TestCase):
         self.assertIn(".vercel", check_everything.SKIP_DIR_NAMES)
         self.assertIn(".vercel", check_technical_seo.SKIP_DIRS)
 
+    def test_nested_internal_tool_html_is_excluded_from_technical_seo(self) -> None:
+        for relative in (
+            "tools/blog-automation/template_source.html",
+            "tools/blog-automation/nested/generated.html",
+            "tools/seo-optimizer/report.html",
+        ):
+            with self.subTest(relative=relative):
+                self.assertTrue(check_technical_seo.is_skipped_html(ROOT / relative))
+
+        self.assertFalse(
+            check_technical_seo.is_skipped_html(ROOT / "tools/mortgage-calculator.html")
+        )
+
     def test_checked_in_source_uses_the_host_first_explicit_contract(self) -> None:
         config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
         self.assertEqual([], source_contract_issues(config))
@@ -157,6 +171,32 @@ class CompiledVercelRoutingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             output = write_output(Path(directory))
             self.assertEqual([], compiled_contract_issues(compiled_fixture(), output))
+
+    def test_compiled_asset_closure_catches_missing_srcset_variants(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = write_output(Path(directory))
+            page = output / "static" / "index.html"
+            page.write_text(
+                '<img src="/images/towns/chatham-township-2.webp" '
+                'srcset="/images/towns/chatham-township-2-640.webp 640w, '
+                '/images/towns/chatham-township-2-960.webp 960w">',
+                encoding="utf-8",
+            )
+            issues = compiled_asset_issues(output)
+            self.assertEqual(3, len(issues))
+            self.assertTrue(
+                any("chatham-township-2-640.webp" in issue for issue in issues),
+                issues,
+            )
+            for filename in (
+                "chatham-township-2.webp",
+                "chatham-township-2-640.webp",
+                "chatham-township-2-960.webp",
+            ):
+                asset = output / "static" / "images" / "towns" / filename
+                asset.parent.mkdir(parents=True, exist_ok=True)
+                asset.write_bytes(b"fixture")
+            self.assertEqual([], compiled_asset_issues(output))
 
     def test_compiled_clean_url_route_before_host_guards_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

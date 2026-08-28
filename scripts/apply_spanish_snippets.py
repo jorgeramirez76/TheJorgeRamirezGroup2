@@ -23,6 +23,40 @@ META_TAG = re.compile(r"<meta\b[^>]*>", re.IGNORECASE | re.DOTALL)
 MANAGED_SPANISH_TOWN_PATHS = {
     f"es/towns/{slug}.html" for slug in spanish_managed_slugs()
 }
+MARKET_GENERATOR_MANIFESTS = (
+    ROOT / "data" / "union-morris-town-market-sources-2026-08-26.json",
+    ROOT / "data" / "town-market-research-essex-middlesex-somerset.json",
+    ROOT / "data" / "county-market-report-sources-2026-08-26.json",
+)
+
+
+def generator_managed_market_paths() -> set[str]:
+    """Return Spanish pages whose complete metadata is owned by market renderers."""
+
+    managed: set[str] = set()
+    for manifest_path in MARKET_GENERATOR_MANIFESTS:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        reports = manifest.get("reports")
+        if not isinstance(reports, list) or not reports:
+            raise ValueError(f"{manifest_path.name}: missing reports inventory")
+        for report in reports:
+            route = report.get("routes", {}).get("es")
+            if not isinstance(route, str) or not route.startswith("/es/"):
+                raise ValueError(
+                    f"{manifest_path.name}: report lacks an absolute Spanish route"
+                )
+            relative = route.removeprefix("/")
+            if not relative.endswith(".html"):
+                relative += ".html"
+            if relative in managed:
+                raise ValueError(f"duplicate generator-owned route: {relative}")
+            managed.add(relative)
+    return managed
+
+
+MANAGED_GENERATED_SPANISH_PATHS = (
+    MANAGED_SPANISH_TOWN_PATHS | generator_managed_market_paths()
+)
 
 
 def attribute_value(tag: str, attribute: str) -> str | None:
@@ -153,7 +187,12 @@ def load_pages() -> dict[str, dict[str, str]]:
         item["file"]
         for item in json.loads(QUARANTINE.read_text(encoding="utf-8"))["pages"]
     }
-    pages = {relative: metadata for relative, metadata in pages.items() if relative not in protected}
+    pages = {
+        relative: metadata
+        for relative, metadata in pages.items()
+        if relative not in protected
+        and relative not in MANAGED_GENERATED_SPANISH_PATHS
+    }
     for relative, metadata in pages.items():
         if not relative.startswith("es/"):
             raise ValueError(f"Spanish mapping cannot modify non-es page: {relative}")

@@ -1,6 +1,14 @@
 {
   "version": 1,
   "accessed": "2026-08-25",
+  "provenancePolicy": {
+    "publisher": "The Jorge Ramirez Group",
+    "declaration": "ai-assisted, source-checked",
+    "sourceCheckedDate": "2026-08-25",
+    "responsibleContact": "Jorge Ramirez",
+    "njRealEstateLicense": "1754604",
+    "structuredDataRule": "The WebPage publisher is the Organization; Jorge Ramirez is a Person who works for that Organization and is not represented as the page author or reviewer."
+  },
   "municipalities": {
     "east-brunswick": {
       "name": "East Brunswick Township",

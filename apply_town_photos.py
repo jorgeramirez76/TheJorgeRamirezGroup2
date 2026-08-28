@@ -11,10 +11,25 @@ import re
 
 from scripts.remediate_indexable_towns import managed_slugs
 from scripts.remediate_spanish_towns import spanish_managed_slugs
+from town_photo_integrity import filter_photo_credits
 
-CREDITS = json.load(open("images/towns/credits.json"))
+CREDITS = filter_photo_credits(json.load(open("images/towns/credits.json")))
 MANAGED_TOWN_RISK_SLUGS = managed_slugs()
 MANAGED_SPANISH_TOWN_SLUGS = spanish_managed_slugs()
+PAGE_MODIFIED_ON = "2026-08-27"
+RELEASE_MODIFIED_TOWN_SLUGS = {
+    "berkeley-heights",
+    "chatham-borough",
+    "chatham-township",
+    "cranford",
+    "denville",
+    "east-hanover",
+    "fanwood",
+    "morris-plains",
+    "new-providence",
+    "roselle-park",
+    "springfield",
+}
 
 PATS = [
     re.compile(r"^market-report-(.+?)-nj-2026\.html$"),
@@ -51,6 +66,17 @@ def town_figure(slug, photo, spanish):
     return (f'<figure class="article-figure"><img src="/images/towns/{photo["file"]}" '
             f'alt="{alt}" width="{photo["w"]}" height="{photo["h"]}" loading="lazy">'
             f'<figcaption>{cap}</figcaption></figure>')
+
+
+def align_town_page_modified(source, slug):
+    updated, count = re.subn(
+        r'(?P<prefix>"dateModified"\s*:\s*")\d{4}-\d{2}-\d{2}(?P<suffix>")',
+        rf"\g<prefix>{PAGE_MODIFIED_ON}\g<suffix>",
+        source,
+    )
+    if count != 1:
+        raise ValueError(f"towns/{slug}.html: expected one schema dateModified, found {count}")
+    return updated
 
 
 def main():
@@ -103,9 +129,12 @@ def apply_town_pages():
         if not photos:
             continue
         t = open(path, encoding="utf-8", errors="replace").read()
+        original = t
+        if path.startswith("towns/") and slug in RELEASE_MODIFIED_TOWN_SLUGS:
+            t = align_town_page_modified(t, slug)
         if "/images/towns/" in t:
-            continue
-        if path.startswith("realtor"):
+            pass
+        elif path.startswith("realtor"):
             # insert before the SECOND h2
             h2s = [m.start() for m in re.finditer(r"<h2[ >]", t)]
             if len(h2s) < 2:
@@ -121,8 +150,9 @@ def apply_town_pages():
                 if i2 > i1:
                     t = t[:i2] + town_figure(slug, photos[1], spanish) + "\n        " + t[i2:]
             t = t[:i1] + town_figure(slug, photos[0], spanish) + "\n        " + t[i1:]
-        open(path, "w", encoding="utf-8").write(t)
-        changed += 1
+        if t != original:
+            open(path, "w", encoding="utf-8").write(t)
+            changed += 1
     print(f"town/realtor pages updated: {changed}")
 
 

@@ -6,6 +6,7 @@
     "status": "reviewed-primary-sources",
     "scope": "Eleven retained English and Spanish town market-research route pairs",
     "treasuryRule": "Render only the exact single-district row from the finalized 2025 NJ Treasury Average Residential Statistics file and preserve its published labels.",
+    "directAnswerRule": "Lead with a 40-60-word source-attributed answer assembled from the reviewed district, county, year, and finalized 2025 values in each report record.",
     "currentYearRule": "Link the 2026 file for current-year context only; do not infer or render missing 2026 sales or tax fields.",
     "realtorRule": "Link the NJ Realtors public county-report portal and its publication page; do not copy member-only municipality tables.",
     "propertyRule": "A property-specific CMA requires current comparable properties and facts about the subject property.",

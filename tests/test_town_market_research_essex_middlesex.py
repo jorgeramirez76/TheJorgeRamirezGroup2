@@ -19,6 +19,7 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
 REVIEWED_ON = "2026-08-26"
+PAGE_MODIFIED_ON = "2026-08-27"
 MANIFEST = ROOT / "data" / "town-market-research-essex-middlesex-somerset.json"
 RENDERER = ROOT / "tools" / "generate_town_market_research_essex_middlesex.py"
 
@@ -260,6 +261,11 @@ class TownResearchManifestTests(unittest.TestCase):
         self.assertEqual(set(EXPECTED), {item["slug"] for item in self.document["reports"]})
         self.assertEqual(11, len(self.document["reports"]))
         self.assertEqual(SOURCE_IDS, {item["id"] for item in self.document["sharedSources"]})
+        self.assertTrue(
+            self.document["publicationPolicy"]["directAnswerRule"].startswith(
+                "Lead with a 40-60-word"
+            )
+        )
 
     def test_each_report_keeps_the_exact_2025_treasury_row(self) -> None:
         reports = {item["slug"]: item for item in self.document["reports"]}
@@ -342,6 +348,43 @@ class TownResearchPageTests(unittest.TestCase):
                     self.assertNotRegex(visible.casefold(), r"\bmedian(?:a|o|as|os)?\b")
                     self.assertNotRegex(visible.casefold(), r"\b2026\s+(?:average|promedio)")
 
+    def test_pages_lead_with_a_concise_source_attributed_direct_answer(self) -> None:
+        for slug, expected in EXPECTED.items():
+            for language in ("en", "es"):
+                source, _, _ = parse(page_path(slug, language))
+                match = re.search(
+                    r'<p class="dek" data-direct-answer="finalized-2025-treasury-row">(.*?)</p>',
+                    source,
+                    re.I | re.S,
+                )
+                self.assertIsNotNone(match, f"missing direct answer: {slug} {language}")
+                answer = " ".join(
+                    html.unescape(re.sub(r"<[^>]+>", " ", match.group(1))).split()
+                )
+                with self.subTest(slug=slug, language=language):
+                    self.assertGreaterEqual(len(answer.split()), 40)
+                    self.assertLessEqual(len(answer.split()), 60)
+                    self.assertLess(
+                        source.index(match.group(0)), source.index('<div class="content">')
+                    )
+                    self.assertIn("2025", answer)
+                    self.assertIn("New Jersey Treasury", answer)
+                    self.assertIn(expected["district"], answer)
+                    self.assertIn(expected["county"], answer)
+                    for value in expected["values"][1:]:
+                        self.assertIn(value, answer)
+                    self.assertRegex(
+                        answer,
+                        r"not current listing data|no datos vigentes de listados",
+                    )
+                    if language == "es":
+                        self.assertIn("un avalúo promedio de", answer)
+                        self.assertNotIn("una tasación promedio de", answer)
+                        self.assertIn(
+                            "Avalúo promedio, con la etiqueta exacta de la fuente",
+                            source,
+                        )
+
     def test_pages_are_source_led_neutral_and_show_methodology_limits(self) -> None:
         risky = re.compile(
             r"\b(?:safest|safe town|low[- ]crime|crime rate|family[- ]friendly|"
@@ -391,13 +434,57 @@ class TownResearchPageTests(unittest.TestCase):
         for slug in EXPECTED:
             for language in ("en", "es"):
                 current = SITE + route(slug, language)
-                _, _, blocks = parse(page_path(slug, language))
+                source, _, blocks = parse(page_path(slug, language))
                 nodes = [node for block in blocks for node in block.get("@graph", [block])]
                 by_type = {node.get("@type"): node for node in nodes}
                 with self.subTest(slug=slug, language=language):
                     self.assertTrue({"WebPage", "Article", "BreadcrumbList", "Person", "Organization"}.issubset(by_type))
                     self.assertEqual(current, by_type["WebPage"]["url"])
                     self.assertEqual(current + "#webpage", by_type["Article"]["mainEntityOfPage"]["@id"])
+                    self.assertEqual(PAGE_MODIFIED_ON, by_type["WebPage"]["dateModified"])
+                    self.assertEqual(PAGE_MODIFIED_ON, by_type["Article"]["dateModified"])
+                    organization_id = f"{SITE}/#organization"
+                    person_id = f"{SITE}/#jorge-ramirez"
+                    self.assertEqual("The Jorge Ramirez Group", by_type["Organization"]["name"])
+                    self.assertEqual({"@id": organization_id}, by_type["WebPage"]["publisher"])
+                    self.assertEqual({"@id": organization_id}, by_type["Article"]["publisher"])
+                    self.assertFalse({"author", "reviewedBy"} & set(by_type["WebPage"]))
+                    self.assertFalse({"author", "reviewedBy"} & set(by_type["Article"]))
+                    self.assertEqual(person_id, by_type["Person"]["@id"])
+                    self.assertEqual({"@id": organization_id}, by_type["Person"]["worksFor"])
+                    self.assertIn(
+                        f'<meta name="last-updated" content="{PAGE_MODIFIED_ON}">',
+                        source,
+                    )
+                    self.assertIn(
+                        f'<meta property="article:modified_time" content="{PAGE_MODIFIED_ON}">',
+                        source,
+                    )
+                    self.assertIn(
+                        f'<time datetime="{REVIEWED_ON}">{REVIEWED_ON}</time>',
+                        source,
+                    )
+                    self.assertNotIn('<meta name="author"', source)
+                    self.assertIn(
+                        '<meta name="ai-content-declaration" content="ai-assisted, source-checked">',
+                        source,
+                    )
+                    self.assertEqual(1, source.count('data-content-provenance="v1"'))
+                    visible = visible_text(source)
+                    expected_provenance = (
+                        "Published by The Jorge Ramirez Group. Prepared with AI assistance; "
+                        "sources were checked on August 26, 2026."
+                        if language == "en"
+                        else "Publicado por The Jorge Ramirez Group. Elaborado con asistencia de IA; "
+                        "fuentes verificadas el 26 de agosto de 2026."
+                    )
+                    self.assertIn(expected_provenance, visible)
+                    self.assertIn("Jorge Ramirez", visible)
+                    self.assertIn(by_type["Person"]["jobTitle"], visible)
+                    if language == "es":
+                        self.assertIn('href="/es#contact"', source)
+                        self.assertNotIn('href="/es/#contact"', source)
+                        self.assertNotIn('href="/contact"', source)
                     self.assertEqual("Jorge Ramirez", by_type["Person"]["name"])
                     self.assertEqual("1754604", by_type["Person"]["identifier"]["value"])
                     self.assertEqual("+19082307844", by_type["Organization"]["telephone"])

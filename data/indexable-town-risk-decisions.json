@@ -2,6 +2,14 @@
   "schemaVersion": 1,
   "effectiveDate": "2026-08-26",
   "scope": "Remaining indexable English town pages identified by the layer-aware fair-housing and factual-risk audit.",
+  "provenancePolicy": {
+    "publisher": "The Jorge Ramirez Group",
+    "declaration": "ai-assisted, source-checked",
+    "sourceCheckedDate": "2026-08-26",
+    "responsibleContact": "Jorge Ramirez",
+    "njRealEstateLicense": "1754604",
+    "structuredDataRule": "The WebPage publisher is the Organization; Jorge Ramirez is a Person who works for that Organization and is not represented as the page author or reviewer."
+  },
   "preRemediationBase": "2411cafd7e658b29ede321d99bc75abb1f958818",
   "decisionPolicy": {
     "measuredDemandRule": "clicks in either comparison period > 0 OR impressions in either comparison period >= 100",

@@ -3,8 +3,10 @@
 
 from __future__ import annotations
 
+import importlib.util
 import json
 import re
+import subprocess
 import sys
 import unittest
 import xml.etree.ElementTree as ET
@@ -14,6 +16,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+PROVENANCE_RENDERER = ROOT / "tools" / "apply_priority_town_provenance.py"
 
 from tools.check_town_content_quality import TownPage, near_duplicate_groups
 
@@ -231,6 +234,93 @@ class OtherPriorityTownTests(unittest.TestCase):
                 self.assertTrue({"nj.gov", "dep.nj.gov"} & hosts)
                 self.assertTrue({"www.census.gov", "data.census.gov"} & {urlsplit(i["url"]).netloc for i in sources})
 
+    def test_publisher_provenance_is_visible_truthful_and_matches_schema(self) -> None:
+        policy = self.manifest["provenancePolicy"]
+        self.assertEqual(
+            {
+                "publisher": "The Jorge Ramirez Group",
+                "declaration": "ai-assisted, source-checked",
+                "sourceCheckedDate": "2026-08-25",
+                "responsibleContact": "Jorge Ramirez",
+                "njRealEstateLicense": "1754604",
+                "structuredDataRule": (
+                    "The WebPage publisher is the Organization; Jorge Ramirez is a Person "
+                    "who works for that Organization and is not represented as the page author or reviewer."
+                ),
+            },
+            policy,
+        )
+        for slug in TARGETS:
+            source = page_source(slug)
+            parser = parse_page(slug)
+            nodes = [
+                node
+                for payload in (json.loads(script) for script in parser.json_scripts)
+                for node in payload.get("@graph", [payload])
+                if isinstance(node, dict)
+            ]
+            organizations = [
+                node
+                for node in nodes
+                if node.get("@type") == "Organization"
+                and node.get("@id") == "https://thejorgeramirezgroup.com/#organization"
+            ]
+            people = [
+                node
+                for node in nodes
+                if node.get("@type") == "Person"
+                and node.get("@id") == "https://thejorgeramirezgroup.com/#jorge-ramirez"
+            ]
+            web_pages = [node for node in nodes if node.get("@type") == "WebPage"]
+            with self.subTest(slug=slug):
+                self.assertIn(
+                    '<meta name="ai-content-declaration" content="ai-assisted, source-checked">',
+                    source,
+                )
+                self.assertEqual(1, source.count('data-content-provenance="v1"'))
+                self.assertIn("Published by The Jorge Ramirez Group", parser.text)
+                self.assertIn("AI-assisted, source-checked August 25, 2026", parser.text)
+                self.assertIn("license #1754604", parser.text)
+                self.assertIn("Contact Jorge or request a correction", parser.text)
+                self.assertEqual(1, len(organizations))
+                self.assertEqual(1, len(people))
+                self.assertEqual(
+                    {"@id": "https://thejorgeramirezgroup.com/#organization"},
+                    people[0].get("worksFor"),
+                )
+                self.assertEqual("1754604", people[0]["identifier"]["value"])
+                self.assertEqual(1, len(web_pages))
+                self.assertEqual(
+                    {"@id": "https://thejorgeramirezgroup.com/#organization"},
+                    web_pages[0].get("publisher"),
+                )
+                self.assertNotIn("author", web_pages[0])
+                self.assertNotIn("reviewedBy", web_pages[0])
+                self.assertEqual("2026-08-27", web_pages[0].get("dateModified"))
+
+    def test_provenance_renderer_is_current_and_idempotent(self) -> None:
+        result = subprocess.run(
+            [sys.executable, str(PROVENANCE_RENDERER), "--check"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+        )
+        self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+
+        spec = importlib.util.spec_from_file_location("priority_town_provenance", PROVENANCE_RENDERER)
+        self.assertIsNotNone(spec)
+        self.assertIsNotNone(spec.loader if spec else None)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        policy = self.manifest["provenancePolicy"]
+        for slug in TARGETS:
+            relative = f"towns/{slug}.html"
+            source = page_source(slug)
+            first = module.normalize_page(source, policy, relative)
+            second = module.normalize_page(first, policy, relative)
+            self.assertEqual(source, first, relative)
+            self.assertEqual(first, second, relative)
+
     def test_pages_remove_volatile_claims_and_preserve_municipal_identity(self) -> None:
         for slug, expected in TARGETS.items():
             with self.subTest(slug=slug):
@@ -315,6 +405,31 @@ class OtherPriorityTownTests(unittest.TestCase):
                 for link in parser.attrs("a"):
                     self.assertTrue(link.get("href", "").strip())
                 self.assertIn("@media (max-width: 768px)", source)
+
+    def test_narrow_mobile_navigation_can_shrink_without_clipping(self) -> None:
+        stylesheet = (ROOT / "css" / "other-priority-town-guide.css").read_text(
+            encoding="utf-8"
+        )
+        mobile = re.search(
+            r"@media\s*\(max-width:\s*380px\)\s*\{(?P<body>.*?)\n\}",
+            stylesheet,
+            re.S,
+        )
+        self.assertIsNotNone(mobile)
+        rules = mobile.group("body")
+        self.assertRegex(rules, r"\.topnav\s*\{[^}]*gap:\s*10px")
+        self.assertRegex(
+            rules,
+            r"\.topnav-logo\s*\{[^}]*flex:\s*1\s+1\s+auto[^}]*min-width:\s*0",
+        )
+        self.assertRegex(
+            rules,
+            r"\.topnav-links\s*\{[^}]*flex:\s*0\s+1\s+auto[^}]*min-width:\s*0",
+        )
+        self.assertRegex(
+            rules,
+            r"\.topnav-links\s+\.topnav-cta\s*\{[^}]*min-width:\s*0",
+        )
 
 
 if __name__ == "__main__":

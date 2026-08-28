@@ -142,7 +142,12 @@ class MidtownDirectGuideTests(unittest.TestCase):
             with self.subTest(language=language):
                 self.assertIn("2026-05-31", source)
                 self.assertIn("2026-08-19", source)
-                self.assertIn("2026-08-26", source)
+                self.assertIn(
+                    "Reviewed August 26, 2026"
+                    if language == "en"
+                    else "Revisado el 26 de agosto de 2026",
+                    text,
+                )
                 self.assertIn("NJ TRANSIT", text)
 
     def test_homepage_visual_contract_and_accessibility(self) -> None:
@@ -180,12 +185,15 @@ class MidtownDirectGuideTests(unittest.TestCase):
             self.assertGreaterEqual(len(blocks), 3)
             parsed = [json.loads(block) for block in blocks]
             encoded = json.dumps(parsed)
+            article = next(
+                item for item in parsed if item.get("@type") == "BlogPosting"
+            )
             with self.subTest(language=language):
                 self.assertIn("FAQPage", encoded)
                 self.assertIn("BlogPosting", encoded)
                 self.assertIn("BreadcrumbList", encoded)
                 self.assertIn("en-US" if language == "en" else "es-US", encoded)
-                self.assertIn(REVIEWED, encoded)
+                self.assertEqual("2026-08-27", article["dateModified"])
                 self.assertNotIn("AggregateRating", encoded)
                 self.assertNotIn('"Review"', encoded)
                 self.assertNotIn("ratingValue", encoded)

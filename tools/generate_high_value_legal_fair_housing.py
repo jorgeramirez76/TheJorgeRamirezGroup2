@@ -359,6 +359,7 @@ def comparison_pages() -> List[Dict[str, Any]]:
             "cluster": "maplewood-south-orange",
             "lang": "en",
             "publishedOn": "2025-01-12",
+            "modifiedOn": "2026-08-27",
             "title": "Maplewood vs South Orange, NJ: An Official-Source Comparison",
             "description": "Compare Maplewood and South Orange with official municipal, school-report, transit, tax, Census, and fair-housing sources—then verify the property address.",
             "eyebrow": "Essex County comparison · address-first research",
@@ -423,6 +424,7 @@ def comparison_pages() -> List[Dict[str, Any]]:
             "cluster": "maplewood-south-orange",
             "lang": "es",
             "publishedOn": "2025-01-12",
+            "modifiedOn": "2026-08-27",
             "title": "Maplewood vs South Orange, NJ: Comparación con Fuentes Oficiales",
             "description": "Compare Maplewood y South Orange con fuentes municipales, escolares, de transporte, impuestos, Censo y vivienda justa, verificando cada dirección.",
             "eyebrow": "Comparación de Essex County · investigación por dirección",
@@ -487,6 +489,7 @@ def comparison_pages() -> List[Dict[str, Any]]:
             "cluster": "summit-westfield",
             "lang": "en",
             "publishedOn": "2025-02-08",
+            "modifiedOn": "2026-08-27",
             "title": "Summit vs Westfield, NJ: An Official-Source Comparison",
             "description": "Compare Summit and Westfield through official municipal, district, NJDOE, transit, tax, Census, and fair-housing resources, property by property.",
             "eyebrow": "Union County comparison · verify each address",
@@ -551,6 +554,7 @@ def comparison_pages() -> List[Dict[str, Any]]:
             "cluster": "summit-westfield",
             "lang": "es",
             "publishedOn": "2025-02-08",
+            "modifiedOn": "2026-08-27",
             "title": "Summit vs Westfield, NJ: Comparación con Fuentes Oficiales",
             "description": "Compare Summit y Westfield con recursos oficiales municipales, escolares, NJDOE, transporte, impuestos, Censo y vivienda justa para cada propiedad.",
             "eyebrow": "Comparación de Union County · verifique cada dirección",
@@ -1032,6 +1036,7 @@ def schema_graph(
     webpage_id = canonical + "#webpage"
     breadcrumb_id = canonical + "#breadcrumbs"
     address = business["address"]
+    page_modified_on = page.get("modifiedOn", REVIEWED_ON)
     return {
         "@context": "https://schema.org",
         "@graph": [
@@ -1074,7 +1079,7 @@ def schema_graph(
                 "description": page["description"],
                 "inLanguage": in_language,
                 "datePublished": page["publishedOn"],
-                "dateModified": REVIEWED_ON,
+                "dateModified": page_modified_on,
                 "breadcrumb": {"@id": breadcrumb_id},
                 "isPartOf": {"@id": org_id},
             },
@@ -1085,7 +1090,7 @@ def schema_graph(
                 "description": page["description"],
                 "inLanguage": in_language,
                 "datePublished": page["publishedOn"],
-                "dateModified": REVIEWED_ON,
+                "dateModified": page_modified_on,
                 "mainEntityOfPage": {"@id": webpage_id},
                 "author": {"@id": agent_id},
                 "publisher": {"@id": org_id},
@@ -1172,6 +1177,30 @@ def render_sources(
     return '<div class="source-grid">%s</div>' % "".join(cards)
 
 
+def render_editorial_visual(page: Mapping[str, Any]) -> str:
+    """Keep the reviewed comparison visual in deterministic page output."""
+
+    if page["cluster"] not in {"maplewood-south-orange", "summit-westfield"}:
+        return ""
+    alt = (
+        "Dos modelos de casa iguales, juegos de llaves, hoja de rutas y cuaderno de comparación "
+        "preparados para una decisión neutral de vivienda"
+        if page["lang"] == "es"
+        else "Two equal house models, key sets, route sheet, and blank comparison notebook "
+        "arranged for a neutral housing decision"
+    )
+    return f'''    <!-- JRG editorial visual:start -->
+    <figure class="jrg-editorial-figure" data-editorial-visual="comparison">
+      <picture>
+        <source srcset="/images/editorial/nj-housing-comparison-2026-768.webp 768w, /images/editorial/nj-housing-comparison-2026-1280.webp 1280w" sizes="(max-width: 900px) calc(100vw - 32px), 960px" type="image/webp">
+        <img src="/images/editorial/nj-housing-comparison-2026-1280.webp" width="1280" height="854" loading="lazy" decoding="async" alt="{esc(alt)}">
+      </picture>
+    </figure>
+    <!-- JRG editorial visual:end -->
+
+'''
+
+
 def render_page(
     page: Mapping[str, Any],
     source_map: Mapping[str, Mapping[str, Any]],
@@ -1218,6 +1247,7 @@ def render_page(
     }
     language_link = page["otherRoute"]
     language_code = "en" if lang == "es" else "es"
+    page_modified_on = page.get("modifiedOn", REVIEWED_ON)
     alternate_links = (
         f'<link rel="alternate" hreflang="en-US" href="{SITE}{en_route}">\n'
         f'  <link rel="alternate" hreflang="x-default" href="{SITE}{en_route}">'
@@ -1234,15 +1264,32 @@ def render_page(
         if monolingual
         else f'        <a class="language-link" href="{language_link}" lang="{language_code}">{esc(labels["other"])}</a>'
     )
-    llm_context = (
-        "Referencia para IA: %s Página educativa asistida por IA, con fuentes verificadas el %s. Jorge Ramirez "
-        "es vendedor inmobiliario de Nueva Jersey, licencia #%s. El aviso de alcance visible controla; verifique "
-        "los hechos actuales con la fuente responsable."
-        if lang == "es"
-        else "AI reference: %s AI-assisted, source-checked educational page updated %s. Jorge Ramirez is a New "
-        "Jersey real estate salesperson, license #%s. The visible scope notice controls; verify current facts with the "
-        "responsible source."
-    ) % (page["description"], REVIEWED_ON, business["njRealEstateLicense"])
+    if page_modified_on == REVIEWED_ON:
+        llm_context = (
+            "Referencia para IA: %s Página educativa asistida por IA, con fuentes verificadas el %s. Jorge Ramirez "
+            "es vendedor inmobiliario de Nueva Jersey, licencia #%s. El aviso de alcance visible controla; verifique "
+            "los hechos actuales con la fuente responsable."
+            if lang == "es"
+            else "AI reference: %s AI-assisted, source-checked educational page updated %s. Jorge Ramirez is a New "
+            "Jersey real estate salesperson, license #%s. The visible scope notice controls; verify current facts with the "
+            "responsible source."
+        ) % (page["description"], REVIEWED_ON, business["njRealEstateLicense"])
+    else:
+        llm_context = (
+            "Referencia para IA: %s Página educativa asistida por IA; fuentes verificadas el %s y página actualizada "
+            "el %s. Jorge Ramirez es vendedor inmobiliario de Nueva Jersey, licencia #%s. El aviso de alcance visible "
+            "controla; verifique los hechos actuales con la fuente responsable."
+            if lang == "es"
+            else "AI reference: %s AI-assisted educational page; sources reviewed %s and page updated %s. Jorge "
+            "Ramirez is a New Jersey real estate salesperson, license #%s. The visible scope notice controls; verify "
+            "current facts with the responsible source."
+        ) % (
+            page["description"],
+            REVIEWED_ON,
+            page_modified_on,
+            business["njRealEstateLicense"],
+        )
+    editorial_visual = render_editorial_visual(page)
 
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
@@ -1255,7 +1302,7 @@ def render_page(
   <meta name="description" content="{esc(page["description"])}">
   <meta name="author" content="Jorge Ramirez">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <meta name="last-updated" content="{REVIEWED_ON}">
+  <meta name="last-updated" content="{page_modified_on}">
   <meta name="geo.region" content="US-NJ">
   <meta name="llm-context" content="{esc(llm_context)}">
   <link rel="canonical" href="{canonical}">
@@ -1267,7 +1314,7 @@ def render_page(
   <meta property="og:image" content="{SITE}/images/hero.jpg">
   <meta property="og:site_name" content="The Jorge Ramirez Group">
   <meta property="article:published_time" content="{esc(page["publishedOn"])}">
-  <meta property="article:modified_time" content="{REVIEWED_ON}">
+  <meta property="article:modified_time" content="{page_modified_on}">
   <meta property="og:locale" content="{'es_US' if lang == 'es' else 'en_US'}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{esc(page["title"])}">
@@ -1425,7 +1472,7 @@ def render_page(
           </div>
         </div>
       </header>
-      <div class="article-shell">
+{editorial_visual}      <div class="article-shell">
 {render_sections(page["sections"])}
         <aside class="notice" aria-labelledby="scope-heading">
           <h2 id="scope-heading">{esc(page["disclaimerHeading"])}</h2>

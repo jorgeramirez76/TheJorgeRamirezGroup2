@@ -4,10 +4,13 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
+import posixpath
 import re
 from pathlib import Path
 from typing import Any
+from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,6 +18,35 @@ CANONICAL_HOST = "thejorgeramirezgroup.com"
 CANONICAL_ORIGIN = f"https://{CANONICAL_HOST}"
 WWW_HOST = "www.thejorgeramirezgroup.com"
 VERCEL_HOST = "thejorgeramirezgroup.vercel.app"
+
+ASSET_EXTENSIONS = {
+    ".avif",
+    ".css",
+    ".gif",
+    ".ico",
+    ".jpeg",
+    ".jpg",
+    ".js",
+    ".json",
+    ".mp4",
+    ".pdf",
+    ".png",
+    ".svg",
+    ".webmanifest",
+    ".webm",
+    ".webp",
+    ".woff",
+    ".woff2",
+}
+HTML_ASSET_ATTRIBUTES = re.compile(
+    r'''\b(?:src|href|poster|content)\s*=\s*(["'])(.*?)\1''',
+    re.IGNORECASE | re.DOTALL,
+)
+HTML_SRCSET_ATTRIBUTES = re.compile(
+    r'''\bsrcset\s*=\s*(["'])(.*?)\1''',
+    re.IGNORECASE | re.DOTALL,
+)
+CSS_URLS = re.compile(r'''url\(\s*(["']?)(.*?)\1\s*\)''', re.IGNORECASE)
 
 FORMER_BULK_REDIRECTS = [
     ("/blog/renting-vs-buying-nj-2026", "/rent-vs-buy-nj"),
@@ -198,6 +230,70 @@ def _resources(output_dir: Path) -> tuple[set[str], set[str]]:
     return static, functions
 
 
+def _local_asset_path(reference: str, document_path: str) -> str | None:
+    """Resolve one deploy-time local asset reference to its public path."""
+
+    reference = html.unescape(reference.strip())
+    if not reference or reference.startswith(("#", "data:", "mailto:", "tel:", "javascript:")):
+        return None
+    if reference.startswith("//"):
+        parsed = urlsplit("https:" + reference)
+    else:
+        parsed = urlsplit(reference)
+    if parsed.scheme or parsed.netloc:
+        if parsed.scheme not in {"http", "https"} or parsed.hostname not in {
+            CANONICAL_HOST,
+            WWW_HOST,
+        }:
+            return None
+        candidate = parsed.path
+    else:
+        candidate = parsed.path
+    candidate = unquote(candidate)
+    if Path(candidate).suffix.lower() not in ASSET_EXTENSIONS:
+        return None
+    if candidate.startswith("/"):
+        return posixpath.normpath(candidate)
+    base = posixpath.dirname(document_path)
+    return posixpath.normpath(posixpath.join(base, candidate))
+
+
+def compiled_asset_issues(output_dir: Path) -> list[str]:
+    """Require every local asset referenced by compiled HTML/CSS to exist."""
+
+    static_root = output_dir / "static"
+    if not static_root.is_dir():
+        return ["compiled static directory is missing"]
+    deployed = {
+        "/" + path.relative_to(static_root).as_posix()
+        for path in static_root.rglob("*")
+        if path.is_file()
+    }
+    missing: dict[str, set[str]] = {}
+    for path in sorted(static_root.rglob("*")):
+        if not path.is_file() or path.suffix.lower() not in {".html", ".css"}:
+            continue
+        document_path = "/" + path.relative_to(static_root).as_posix()
+        source = path.read_text(encoding="utf-8", errors="replace")
+        references = [match.group(2) for match in HTML_ASSET_ATTRIBUTES.finditer(source)]
+        references.extend(match.group(2) for match in CSS_URLS.finditer(source))
+        for match in HTML_SRCSET_ATTRIBUTES.finditer(source):
+            if not match.group(2).lstrip().startswith("data:"):
+                references.extend(
+                    candidate.strip().split()[0]
+                    for candidate in match.group(2).split(",")
+                    if candidate.strip()
+                )
+        for reference in references:
+            asset_path = _local_asset_path(reference, document_path)
+            if asset_path and asset_path not in deployed:
+                missing.setdefault(asset_path, set()).add(document_path)
+    return [
+        f"compiled local asset missing: {asset} (referenced by {sorted(owners)[:3]})"
+        for asset, owners in sorted(missing.items())
+    ]
+
+
 def resolve_request(
     routes: list[dict[str, Any]],
     hostname: str,
@@ -378,6 +474,7 @@ def compiled_contract_issues(
         issues.append(f"compiled raw HTML duplicates served: {raw_html_served[:5]}")
     if raw_index_served:
         issues.append(f"compiled index duplicates served: {raw_index_served[:5]}")
+    issues.extend(compiled_asset_issues(output_dir))
     return issues
 
 

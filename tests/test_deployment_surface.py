@@ -4,11 +4,29 @@
 from __future__ import annotations
 
 import json
+import re
 import unittest
 from pathlib import Path
 
+import audit_site
+
 
 ROOT = Path(__file__).resolve().parents[1]
+DEPLOYED_TOWN_IMAGES = {
+    "berkeley-heights-1.webp",
+    "chatham-borough-1.webp",
+    "chatham-township-2.webp",
+    "chatham-township-2-640.webp",
+    "chatham-township-2-960.webp",
+    "cranford-1.webp",
+    "denville-1.webp",
+    "east-hanover-1.webp",
+    "fanwood-1.webp",
+    "morris-plains-1.webp",
+    "new-providence-1.webp",
+    "roselle-park-1.webp",
+    "springfield-1.webp",
+}
 
 
 class DeploymentSurfaceTests(unittest.TestCase):
@@ -21,6 +39,9 @@ class DeploymentSurfaceTests(unittest.TestCase):
         required = {
             ".git",
             ".gitignore",
+            ".gitattributes",
+            "CNAME",
+            "**/.gitkeep",
             ".claude",
             "node_modules",
             "tests",
@@ -43,6 +64,23 @@ class DeploymentSurfaceTests(unittest.TestCase):
             "*.backup",
         }
         self.assertEqual(set(), required - entries)
+
+    def test_historical_town_photo_archive_is_not_deployed(self) -> None:
+        source = (ROOT / ".vercelignore").read_text(encoding="utf-8")
+        self.assertIn("images/towns/*.webp", source)
+        self.assertIn("images/towns/credits.json", source)
+        allowlisted = {
+            line.removeprefix("!images/towns/")
+            for line in source.splitlines()
+            if line.startswith("!images/towns/")
+        }
+        self.assertEqual(DEPLOYED_TOWN_IMAGES, allowlisted)
+
+        referenced: set[str] = set()
+        for path in audit_site.all_html_files():
+            text = path.read_text(encoding="utf-8", errors="replace")
+            referenced.update(re.findall(r"/images/towns/([A-Za-z0-9._-]+\.webp)", text))
+        self.assertEqual(DEPLOYED_TOWN_IMAGES, referenced)
 
     def test_public_tools_and_downloadable_guides_remain_deployable(self) -> None:
         source = (ROOT / ".vercelignore").read_text(encoding="utf-8")

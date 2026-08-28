@@ -68,15 +68,6 @@
    "artist": "Adam Moss",
    "source": "File:Bloomfield Avenue Station - Feb 2015.jpg",
    "wiki": "Bloomfield, New Jersey"
-  },
-  {
-   "file": "bloomfield-2.webp",
-   "w": 1280,
-   "h": 960,
-   "license": "CC BY 2.0",
-   "artist": "JJBers from Willimantic, Connecticut, USA",
-   "source": "File:Home Depot (Bloomfield, Connecticut) (51688036059).jpg",
-   "wiki": "Bloomfield, New Jersey"
   }
  ],
  "chatham": [
@@ -138,15 +129,6 @@
    "license": "CC BY-SA 4.0",
    "artist": "Freeholdman12",
    "source": "File:Welcome to East Brunswick.jpg",
-   "wiki": "East Brunswick, New Jersey"
-  },
-  {
-   "file": "east-brunswick-2.webp",
-   "w": 1280,
-   "h": 854,
-   "license": "CC BY-SA 4.0",
-   "artist": "Zeete",
-   "source": "File:166 Main Street, Old Bridge, NJ.jpg",
    "wiki": "East Brunswick, New Jersey"
   }
  ],
@@ -686,15 +668,6 @@
   }
  ],
  "south-brunswick": [
-  {
-   "file": "south-brunswick-1.webp",
-   "w": 1280,
-   "h": 1025,
-   "license": "CC0",
-   "artist": "L'Mainerque",
-   "source": "File:Downtown South Bristol, Maine.jpg",
-   "wiki": "South Brunswick, New Jersey"
-  },
   {
    "file": "south-brunswick-2.webp",
    "w": 1280,
@@ -2396,37 +2369,8 @@
    "wiki": "South Amboy, New Jersey"
   }
  ],
- "south-bound-brook": [
-  {
-   "file": "south-bound-brook-1.webp",
-   "w": 1280,
-   "h": 1025,
-   "license": "CC0",
-   "artist": "L'Mainerque",
-   "source": "File:Downtown South Bristol, Maine.jpg",
-   "wiki": "South Bound Brook, New Jersey"
-  }
- ],
- "south-plainfield": [
-  {
-   "file": "south-plainfield-1.webp",
-   "w": 1280,
-   "h": 1025,
-   "license": "CC0",
-   "artist": "L'Mainerque",
-   "source": "File:Downtown South Bristol, Maine.jpg",
-   "wiki": "South Plainfield, New Jersey"
-  },
-  {
-   "file": "south-plainfield-2.webp",
-   "w": 1280,
-   "h": 854,
-   "license": "CC BY-SA 4.0",
-   "artist": "Zeete",
-   "source": "File:Raritan River Bridge, Highland Park, NJ.jpg",
-   "wiki": "South Plainfield, New Jersey"
-  }
- ],
+ "south-bound-brook": [],
+ "south-plainfield": [],
  "south-river": [
   {
    "file": "south-river-1.webp",
@@ -2435,15 +2379,6 @@
    "license": "CC BY-SA 4.0",
    "artist": "Famartin",
    "source": "File:2018-05-18 11 48 00 View south along Middlesex County Route 535 (Main Street) at Middlesex County Route 677 (Ferry Street) in South River, Middlesex County, New Jersey.jpg",
-   "wiki": "South River, New Jersey"
-  },
-  {
-   "file": "south-river-2.webp",
-   "w": 1280,
-   "h": 1025,
-   "license": "CC0",
-   "artist": "L'Mainerque",
-   "source": "File:Downtown South Bristol, Maine.jpg",
    "wiki": "South River, New Jersey"
   }
  ],

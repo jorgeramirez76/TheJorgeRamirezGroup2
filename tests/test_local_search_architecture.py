@@ -238,6 +238,24 @@ class LocalSearchArchitectureTests(unittest.TestCase):
             self.assertIn(token, css)
         self.assertIn("'Playfair Display'", css)
         self.assertIn("'Inter'", css)
+        pathway_nav = re.search(
+            r"\.local-search-pathways__links\s*\{(?P<body>.*?)\}",
+            css,
+            re.S,
+        )
+        self.assertIsNotNone(pathway_nav)
+        pathway_rules = pathway_nav.group("body")
+        for rule in (
+            "position: static",
+            "top: auto",
+            "z-index: auto",
+            "width: 100%",
+            "padding: 0",
+            "background: transparent",
+            "box-shadow: none",
+            "backdrop-filter: none",
+        ):
+            self.assertIn(rule, pathway_rules)
 
     def test_communities_hubs_explain_the_directory_and_link_the_research_layers(self) -> None:
         aliases = (

@@ -18,6 +18,9 @@ MANIFEST_PATH = ROOT / "data" / "indexable-town-risk-decisions.json"
 SITE = "https://thejorgeramirezgroup.com"
 SHARE_IMAGE = f"{SITE}/images/hero.jpg"
 SHARE_ALT = "Residential property image from The Jorge Ramirez Group website"
+ORGANIZATION_ID = f"{SITE}/#organization"
+PERSON_ID = f"{SITE}/#jorge-ramirez"
+PAGE_MODIFIED_ON = "2026-08-27"
 HREFLANG_LINE = re.compile(
     r"^[ \t]*<link\b[^>]*\bhreflang=[\"'][^\"']+[\"'][^>]*>[ \t]*\n?",
     re.I | re.M,
@@ -44,6 +47,20 @@ def load_manifest(path: Path = MANIFEST_PATH) -> dict[str, object]:
         actions[action] += 1
     if actions != {"rebuild": 12, "redirect": 2, "quarantine": 30}:
         raise RuntimeError(f"{path}: unexpected action counts: {actions}")
+    provenance = manifest.get("provenancePolicy")
+    expected_provenance = {
+        "publisher": "The Jorge Ramirez Group",
+        "declaration": "ai-assisted, source-checked",
+        "sourceCheckedDate": "2026-08-26",
+        "responsibleContact": "Jorge Ramirez",
+        "njRealEstateLicense": "1754604",
+        "structuredDataRule": (
+            "The WebPage publisher is the Organization; Jorge Ramirez is a Person "
+            "who works for that Organization and is not represented as the page author or reviewer."
+        ),
+    }
+    if provenance != expected_provenance:
+        raise RuntimeError(f"{path}: provenance policy mismatch")
     return manifest
 
 
@@ -154,7 +171,11 @@ def navigation() -> str:
   </nav>'''
 
 
-def render_guide(slug: str, decision: dict[str, object]) -> str:
+def render_guide(
+    slug: str,
+    decision: dict[str, object],
+    provenance: dict[str, object],
+) -> str:
     town = str(decision["displayName"])
     county = str(decision["county"])
     place_type = str(decision["placeType"])
@@ -175,12 +196,35 @@ def render_guide(slug: str, decision: dict[str, object]) -> str:
                 "name": title,
                 "description": description,
                 "inLanguage": "en-US",
-                "dateModified": "2026-08-26",
+                "dateModified": PAGE_MODIFIED_ON,
+                "about": {"@type": "Place", "name": town},
+                "publisher": {"@id": ORGANIZATION_ID},
                 "isPartOf": {
                     "@type": "WebSite",
                     "name": "The Jorge Ramirez Group",
                     "url": SITE + "/",
                 },
+            },
+            {
+                "@type": "Organization",
+                "@id": ORGANIZATION_ID,
+                "name": str(provenance["publisher"]),
+                "url": SITE + "/",
+                "telephone": "+1-908-230-7844",
+                "email": "jorge.ramirez@kw.com",
+            },
+            {
+                "@type": "Person",
+                "@id": PERSON_ID,
+                "name": str(provenance["responsibleContact"]),
+                "url": SITE + "/ai-authority",
+                "jobTitle": "New Jersey real estate salesperson",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "New Jersey real estate salesperson license",
+                    "value": str(provenance["njRealEstateLicense"]),
+                },
+                "worksFor": {"@id": ORGANIZATION_ID},
             },
             {
                 "@type": "BreadcrumbList",
@@ -192,8 +236,10 @@ def render_guide(slug: str, decision: dict[str, object]) -> str:
             },
             {
                 "@type": "LocalBusiness",
+                "@id": SITE + "/#summit-office",
                 "name": "The Jorge Ramirez Group",
                 "url": SITE + "/",
+                "parentOrganization": {"@id": ORGANIZATION_ID},
                 "telephone": "+1-908-230-7844",
                 "address": {
                     "@type": "PostalAddress",
@@ -246,6 +292,7 @@ def render_guide(slug: str, decision: dict[str, object]) -> str:
 <html lang="en">
 <head>
 {shared_head(title=title, description=description, canonical=canonical, robots="index, follow, max-image-preview:large")}
+  <meta name="ai-content-declaration" content="{html.escape(str(provenance['declaration']), quote=True)}">
   <meta name="llm-context" content="Official-source {html.escape(town, quote=True)} property research guide. It identifies the correct municipality and links directly to public records without price, travel-duration, rating, or outcome claims.">
   <link rel="stylesheet" href="/css/town-evidence-guide.css">
   <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
@@ -296,6 +343,9 @@ def render_guide(slug: str, decision: dict[str, object]) -> str:
           <p>For each address, record the municipality, block and lot, property type, current tax record, zoning district, permit history, disclosures, association documents when applicable, insurance questions, and the date-specific transportation plan you tested. Apply the same checklist to every property you compare.</p>
         </section>
 {related_markup}
+        <aside class="town-guide__notice" data-content-provenance="v1" aria-label="Content provenance">
+          <p><strong>Published by {html.escape(str(provenance["publisher"]))}.</strong> AI-assisted, source-checked August 26, 2026. Jorge Ramirez is a New Jersey real estate salesperson (license #{html.escape(str(provenance["njRealEstateLicense"]))}). <a href="/contact">Contact Jorge or request a correction.</a></p>
+        </aside>
       </article>
 
       <aside class="town-guide__aside" aria-labelledby="method-heading">
@@ -453,7 +503,7 @@ def render_redirect_stub(
 def expected_page(slug: str, manifest: dict[str, object]) -> str:
     decision = manifest["decisions"][slug]
     if decision["action"] == "rebuild":
-        return render_guide(slug, decision)
+        return render_guide(slug, decision, manifest["provenancePolicy"])
     if decision["action"] == "redirect":
         return render_redirect_stub(slug, str(decision["destination"]))
     return render_fallback(slug)

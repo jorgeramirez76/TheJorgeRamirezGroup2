@@ -12,6 +12,7 @@ import argparse
 import html
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 
@@ -19,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "county-market-report-sources-2026-08-26.json"
 SITE = "https://thejorgeramirezgroup.com"
 REVIEWED_ON = "2026-08-26"
+RIGHTS_REVIEWED_ON = "2026-08-27"
 EXPECTED_SLUGS = {
     "essex-county-nj-real-estate-market-2026",
     "morris-county-nj-real-estate-market-2026",
@@ -29,16 +31,48 @@ EXPECTED_SLUGS = {
 EXPECTED_SOURCE_IDS = {
     "njr-market-data",
     "njr-public-county-portal",
+    "njr-terms-of-service",
     "nj-treasury-property-tax-statistics",
     "nj-treasury-average-residential-2025",
     "nj-treasury-equalization-tables",
     "nj-dca-construction-reporter",
     "census-acs-data-profiles",
 }
+LEGACY_Q2_SLUGS = {
+    "hudson-county-real-estate-market-q2-2026",
+    "middlesex-county-real-estate-market-q2-2026",
+}
 
 
 def esc(value: object) -> str:
     return html.escape(str(value), quote=True)
+
+
+def newest_linked_review_date(document: dict, report: dict) -> str:
+    """Return the newest review/access date for evidence linked by one page."""
+
+    values = [
+        document["reviewedOn"],
+        document["publicationRightsReview"]["reviewedOn"],
+        report["countyDirectory"]["accessedOn"],
+        *(source["accessedOn"] for source in document["sharedSources"]),
+    ]
+    try:
+        return max(values, key=lambda value: date.fromisoformat(str(value)))
+    except (TypeError, ValueError) as error:
+        raise ValueError("county source review/access dates must use YYYY-MM-DD") from error
+
+
+def county_result_article(county: str) -> str:
+    """Choose the English article for the current county-name inventory."""
+
+    normalized = county.casefold()
+    consonant_sound_prefixes = ("uni",)
+    has_vowel_sound = (
+        normalized.startswith(tuple("aeiou"))
+        and not normalized.startswith(consonant_sound_prefixes)
+    )
+    return "An" if has_vowel_sound else "A"
 
 
 def load_manifest() -> dict:
@@ -49,6 +83,15 @@ def load_manifest() -> dict:
         raise ValueError(f"county sources must be reviewed on {REVIEWED_ON}")
     if document.get("renderer") != "tools/generate_county_market_research.py":
         raise ValueError("county source manifest points to another renderer")
+    rights_review = document.get("publicationRightsReview", {})
+    if rights_review.get("reviewedOn") != RIGHTS_REVIEWED_ON:
+        raise ValueError("county publication-rights review is stale or missing")
+    if rights_review.get("portalUrl") != "https://njar-public.stats.10kresearch.com/reports":
+        raise ValueError("county publication-rights review changed the reviewed portal")
+    if rights_review.get("termsUrl") != "https://www.njrealtor.com/terms-of-service/":
+        raise ValueError("county publication-rights review changed the reviewed terms")
+    if "do not reproduce" not in str(rights_review.get("decision", "")).lower():
+        raise ValueError("county publication-rights review lacks a no-reproduction decision")
 
     reports = document.get("reports", [])
     if {item.get("slug") for item in reports} != EXPECTED_SLUGS:
@@ -58,39 +101,65 @@ def load_manifest() -> dict:
         raise ValueError("county source manifest must contain the exact reviewed sources")
 
     for source in document["sharedSources"]:
-        if source.get("accessedOn") != REVIEWED_ON:
+        expected_access = (
+            RIGHTS_REVIEWED_ON
+            if source.get("id") == "njr-terms-of-service"
+            else REVIEWED_ON
+        )
+        if source.get("accessedOn") != expected_access:
             raise ValueError(f"source {source.get('id')} lacks the reviewed access date")
         if not str(source.get("url", "")).startswith("https://"):
             raise ValueError(f"source {source.get('id')} is not an HTTPS primary source")
     for report in reports:
+        slug = report.get("slug")
         if report.get("countyDirectory", {}).get("accessedOn") != REVIEWED_ON:
-            raise ValueError(f"report {report.get('slug')} has an unreviewed directory")
+            raise ValueError(f"report {slug} has an unreviewed directory")
+        if report.get("contentMode") != "source-guide-no-market-snapshot":
+            raise ValueError(f"report {slug} changed its source-guide content mode")
+        if report.get("periodLabel") != "2026 source guide":
+            raise ValueError(f"report {slug} changed its honest period label")
+        expected_legacy_period = "Q2 2026" if slug in LEGACY_Q2_SLUGS else None
+        if report.get("legacyRoutePeriod") != expected_legacy_period:
+            raise ValueError(f"report {slug} changed its legacy-route disclosure")
         expected_routes = {
             "en": f"/blog/{report['slug']}",
             "es": f"/es/blog/{report['slug']}",
         }
         if report.get("routes") != expected_routes:
             raise ValueError(f"report {report.get('slug')} changed its canonical routes")
+        newest_linked_review_date(document, report)
     return document
 
 
-def page_copy(report: dict, language: str) -> dict[str, object]:
+def page_copy(
+    report: dict,
+    language: str,
+    modified_on: str,
+) -> dict[str, object]:
     county = report["county"]
-    q2 = report["periodLabel"].startswith("Q2")
+    q2 = report.get("legacyRoutePeriod") == "Q2 2026"
     if language == "en":
-        period_short = "Q2 2026" if q2 else "2026"
+        period_short = "2026"
         title = (
-            f"{county} County Real Estate Market Q2 2026 | Research"
+            f"{county} County Real Estate Market Research | Source Guide"
             if q2
             else f"{county} County NJ Real Estate Market 2026 | Research Guide"
         )
         description = (
-            f"Official-source guide to the {county} County real estate market in {period_short}, "
+            f"Official-source guide to the {county} County real estate market, with the public report "
+            "portal and clear period, property-category, and geography limits."
+            if q2
+            else f"Official-source guide to the {county} County real estate market in {period_short}, "
             "with clear county, municipality, and property-level boundaries."
         )
         return {
             "title": title,
             "description": description,
+            "llm": (
+                f"Official-source research guide for the {county} County, New Jersey real estate market. "
+                "It distinguishes county reports, municipality records, and a property-specific CMA; "
+                "no copied market tables or forward-looking claims are published."
+            ),
             "lang_label": "Español",
             "skip": "Skip to main content",
             "nav_label": "Primary navigation",
@@ -101,12 +170,23 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
             "contact": "Contact",
             "nav_cta": "Request a home valuation",
             "eyebrow": "Official-source county research",
-            "h1": f"{county} County real estate market: {period_short} research guide",
-            "dek": (
-                f"A repeatable way to research the {county} County market at its original sources—"
-                "without freezing a changing report into an undated claim."
+            "h1": (
+                f"{county} County real estate market research: source guide"
+                if q2
+                else f"{county} County real estate market: {period_short} research guide"
             ),
-            "reviewed": "Sources reviewed",
+            "dek": (
+                f"This page does not publish a Q2 2026 market snapshot. It is a source guide for researching "
+                f"{county} County: use the linked New Jersey Realtors public portal to select the exact available "
+                "period and property category, then keep those labels with every figure. County results are context, "
+                "not municipality data or a valuation of one property."
+                if q2
+                else f"This page is a source guide, not a live {county} County market snapshot. It links New Jersey "
+                "Realtors’ public county portal and explains how to select an exact available period and property "
+                "category, preserve the source labels, and separate county context from municipality data and a "
+                "property-specific valuation."
+            ),
+            "reviewed": "Source review current through",
             "byline": "Prepared by Jorge Ramirez",
             "start": "Start with the current county report",
             "start_intro": (
@@ -114,8 +194,8 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
                 "Use the source controls so the county, reporting period, and available property category are explicit."
             ),
             "q2_note": (
-                "For this Q2 research route, choose a Q2 or year-to-date option only when the portal offers that exact label; "
-                "record the label you actually selected."
+                "This retained URL includes Q2 2026 for continuity, but this page does not claim or reproduce a Q2 snapshot. "
+                "Use only the exact period and property category displayed by the source."
                 if q2
                 else "For a 2026 review, record the exact month, year-to-date range, or other period displayed by the source."
             ),
@@ -128,13 +208,16 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
             "njr_page": "New Jersey Realtors market-data page",
             "portal": "Open the public county-report portal",
             "publication_note": (
-                "We link directly to the public source. We do not reproduce its report tables, "
-                "and no affiliation or endorsement is implied."
+                "The public portal identifies its reports as copyrighted, and the reviewed New Jersey Realtors terms "
+                "do not grant express republication permission. Because reuse permission was not verified, this guide "
+                "links to the report selector instead of copying a monthly or quarterly table. We do not reproduce the tables."
             ),
+            "terms_label": "Review the publisher's terms",
             "scope": "Three different questions require three different scopes",
             "county_label": "County",
             "county_text": (
-                f"A {county} County result is a county-level reference. A county result does not describe every municipality."
+                f"{county_result_article(county)} {county} County result is a county-level reference. "
+                "A county result does not describe every municipality."
             ),
             "municipality_label": "Municipality",
             "municipality_text": (
@@ -198,7 +281,7 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
             "contact_cta": "Ask a county or property question",
             "record_heading": "Sources, access date, and corrections",
             "record_text": (
-                f"All source links on this {county} County guide were reviewed on {REVIEWED_ON}. "
+                f"The source-link and publication-rights review for this {county} County guide is current through {modified_on}. "
                 "The source publisher controls its definitions, release schedule, availability, and revisions."
             ),
             "correction": (
@@ -210,19 +293,28 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
             "breadcrumbs": ("Home", "Research", f"{county} County market research"),
         }
 
-    period_short = "Q2 de 2026" if q2 else "2026"
+    period_short = "2026"
     title = (
-        f"Mercado inmobiliario del condado de {county}: Q2 2026"
+        f"Mercado inmobiliario de {county} | Guía de fuentes"
         if q2
         else f"Mercado inmobiliario del condado de {county} 2026 | Fuentes"
     )
     description = (
-        f"Guía de fuentes oficiales para investigar el mercado inmobiliario del condado de {county} en {period_short}, "
+        f"Guía de fuentes del mercado inmobiliario del condado de {county}, con el portal público vigente "
+        "y límites claros de período, categoría y geografía."
+        if q2
+        else f"Guía de fuentes oficiales para investigar el mercado inmobiliario del condado de {county} en {period_short}, "
         "con límites claros por condado, municipio y propiedad."
     )
     return {
         "title": title,
         "description": description,
+        "llm": (
+            f"Guía de investigación del mercado inmobiliario del condado de {county}, Nueva Jersey, "
+            "basada en fuentes oficiales. Separa los informes del condado, los registros municipales "
+            "y la valoración específica de una propiedad; no publica tablas de mercado copiadas ni "
+            "afirmaciones sobre resultados futuros."
+        ),
         "lang_label": "English",
         "skip": "Saltar al contenido principal",
         "nav_label": "Navegación principal",
@@ -233,12 +325,23 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
         "contact": "Contacto",
         "nav_cta": "Solicitar una valoración",
         "eyebrow": "Investigación del condado con fuentes oficiales",
-        "h1": f"Mercado inmobiliario del condado de {county}: guía de investigación {period_short}",
-        "dek": (
-            f"Un método repetible para investigar el mercado del condado de {county} en sus fuentes originales, "
-            "sin convertir un informe cambiante en una afirmación sin fecha."
+        "h1": (
+            f"Investigación del mercado inmobiliario del condado de {county}: guía de fuentes"
+            if q2
+            else f"Mercado inmobiliario del condado de {county}: guía de investigación {period_short}"
         ),
-        "reviewed": "Fuentes revisadas",
+        "dek": (
+            "Esta página no publica una radiografía del mercado para el Q2 de 2026. Es una guía de fuentes para "
+            f"investigar el condado de {county}: use el portal público enlazado de New Jersey Realtors, seleccione "
+            "el período y la categoría disponibles y conserve esas etiquetas con cada cifra. Los resultados del "
+            "condado no son datos municipales ni una valoración."
+            if q2
+            else f"Esta página es una guía de fuentes, no una radiografía vigente del mercado del condado de {county}. "
+            "Enlaza al portal público de New Jersey Realtors y explica cómo seleccionar el período y la categoría "
+            "disponibles, conservar las etiquetas de la fuente y separar el contexto del condado de los datos "
+            "municipales y de una valoración específica."
+        ),
+        "reviewed": "Revisión de fuentes vigente hasta",
         "byline": "Preparado por Jorge Ramirez",
         "start": "Comience con el informe vigente del condado",
         "start_intro": (
@@ -246,8 +349,8 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
             "Use los controles de la fuente para identificar el condado, el período y la categoría de propiedad disponible."
         ),
         "q2_note": (
-            "Para esta ruta de Q2, elija una opción de Q2 o del año hasta la fecha solo si el portal muestra esa etiqueta exacta; "
-            "anote la etiqueta que seleccionó."
+            "Esta URL conservada incluye Q2 2026 por continuidad, pero la página no afirma ni reproduce una radiografía de Q2. "
+            "Use solo el período y la categoría de propiedad exactos que muestre la fuente."
             if q2
             else "Para una revisión de 2026, anote el mes, el período del año hasta la fecha u otra fecha exacta que muestre la fuente."
         ),
@@ -260,9 +363,12 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
         "njr_page": "Página de datos de mercado de New Jersey Realtors",
         "portal": "Abrir el portal público de informes por condado",
         "publication_note": (
-            "Enlazamos directamente a la fuente pública. Este sitio no reproduce sus tablas "
-            "y no implica afiliación ni respaldo."
+            "El portal público identifica sus informes como material protegido por derechos de autor y los términos "
+            "revisados de New Jersey Realtors no conceden permiso expreso para republicarlos. Como no se verificó el "
+            "permiso de reutilización, esta guía enlaza al selector original en vez de copiar una tabla mensual o trimestral. "
+            "Este sitio no reproduce las tablas."
         ),
+        "terms_label": "Revisar los términos de la entidad publicadora",
         "scope": "Tres preguntas distintas requieren tres escalas distintas",
         "county_label": "Condado",
         "county_text": (
@@ -330,7 +436,7 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
         "contact_cta": "Hacer una pregunta sobre el condado o la propiedad",
         "record_heading": "Fuentes, fecha de consulta y correcciones",
         "record_text": (
-            f"Todos los enlaces de esta guía del condado de {county} se revisaron el {REVIEWED_ON}. "
+            f"La revisión de enlaces y derechos de publicación de esta guía del condado de {county} está vigente hasta {modified_on}. "
             "Cada entidad fuente controla sus definiciones, calendario, disponibilidad y revisiones."
         ),
         "correction": (
@@ -343,8 +449,13 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
     }
 
 
-def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
-    copy = page_copy(report, language)
+def render_page(
+    report: dict,
+    sources: dict[str, dict],
+    language: str,
+    modified_on: str,
+) -> str:
+    copy = page_copy(report, language, modified_on)
     county = report["county"]
     county_slug = county.lower()
     route = report["routes"][language]
@@ -368,7 +479,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
         "mainEntityOfPage": canonical,
         "inLanguage": in_language,
         "datePublished": report["publishedOn"],
-        "dateModified": REVIEWED_ON,
+        "dateModified": modified_on,
         "author": {
             "@type": "Person",
             "@id": f"{SITE}/#jorge-ramirez",
@@ -424,8 +535,8 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
   <meta name="description" content="{esc(copy["description"])}">
   <meta name="author" content="Jorge Ramirez">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="llm-context" content="Official-source research guide for the {esc(county)} County, New Jersey real estate market. It distinguishes county reports, municipality records, and a property-specific CMA; no copied market tables or forward-looking claims are published.">
-  <meta name="last-updated" content="{REVIEWED_ON}">
+  <meta name="llm-context" content="{esc(copy['llm'])}">
+  <meta name="last-updated" content="{modified_on}">
   <meta name="geo.region" content="US-NJ">
   <meta name="geo.placename" content="{esc(county)} County, New Jersey">
   <link rel="canonical" href="{canonical}">
@@ -440,7 +551,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
   <meta property="og:image" content="{SITE}/images/hero.jpg">
   <meta property="og:site_name" content="The Jorge Ramirez Group">
   <meta property="article:published_time" content="{esc(report["publishedOn"])}">
-  <meta property="article:modified_time" content="{REVIEWED_ON}">
+  <meta property="article:modified_time" content="{modified_on}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{esc(copy["title"])}">
   <meta name="twitter:description" content="{esc(copy["description"])}">
@@ -573,9 +684,9 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
         <div class="hero-inner">
           <p class="eyebrow">{esc(copy["eyebrow"])}</p>
           <h1>{esc(copy["h1"])}</h1>
-          <p class="dek">{esc(copy["dek"])}</p>
+          <p class="dek" data-direct-answer="county-source-guide">{esc(copy["dek"])}</p>
           <div class="hero-meta">
-            <span>{esc(copy["reviewed"])}: <time datetime="{REVIEWED_ON}">{REVIEWED_ON}</time></span>
+            <span>{esc(copy["reviewed"])}: <time datetime="{modified_on}">{modified_on}</time></span>
             <span>{esc(copy["byline"])}</span>
           </div>
         </div>
@@ -593,7 +704,9 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
             <a class="button" href="{esc(sources['njr-market-data']['url'])}" rel="noopener">{esc(copy["njr_page"])}</a>
             <a class="button btn-primary" href="{esc(sources['njr-public-county-portal']['url'])}" rel="noopener">{esc(copy["portal"])}</a>
           </div>
-          <p class="notice">{esc(copy["publication_note"])}</p>
+          <p class="notice">{esc(copy["publication_note"])}<br>
+            <a href="{esc(sources['njr-terms-of-service']['url'])}" rel="noopener">{esc(copy["terms_label"])}</a>
+          </p>
         </section>
 
         <section class="section" aria-labelledby="scope-heading">
@@ -711,12 +824,15 @@ def targets(document: dict) -> list[tuple[Path, str]]:
     sources = {item["id"]: item for item in document["sharedSources"]}
     rendered: list[tuple[Path, str]] = []
     for report in sorted(document["reports"], key=lambda item: item["slug"]):
+        modified_on = newest_linked_review_date(document, report)
         for language in ("en", "es"):
             relative = Path(report["routes"][language].lstrip("/") + ".html")
             allowed_prefix = Path("es/blog") if language == "es" else Path("blog")
             if relative.parent != allowed_prefix or relative.stem not in EXPECTED_SLUGS:
                 raise ValueError(f"refusing unexpected output path: {relative}")
-            rendered.append((ROOT / relative, render_page(report, sources, language)))
+            rendered.append(
+                (ROOT / relative, render_page(report, sources, language, modified_on))
+            )
     return rendered
 
 

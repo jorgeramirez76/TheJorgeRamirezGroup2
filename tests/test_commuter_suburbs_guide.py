@@ -22,6 +22,7 @@ CANONICALS = {
     "es": "https://thejorgeramirezgroup.com/es/blog/best-nj-suburbs-nyc-commuters",
 }
 MANIFEST = ROOT / "data" / "commuter-suburbs-guide-sources.json"
+PAGE_MODIFIED = "2026-08-27"
 
 
 def visible_text(source: str) -> str:
@@ -85,7 +86,10 @@ class CommuterSuburbsGuideTests(unittest.TestCase):
                 self.assertGreaterEqual(len(re.findall(r'<article\b[^>]*class="town-card"', source)), 12)
                 self.assertIn('data-selection="illustrative-not-ranked"', source)
                 self.assertIn("2026-08-19", source)
-                self.assertIn("2026-08-26", source)
+                self.assertIn(
+                    "August 26, 2026" if language == "en" else "26 de agosto de 2026",
+                    source,
+                )
                 self.assertIn("/nj-train-map", source)
                 self.assertIn("/communities", source)
                 self.assertIn("/property-search", source)
@@ -160,6 +164,20 @@ class CommuterSuburbsGuideTests(unittest.TestCase):
                 self.assertNotIn("priceRange", encoded)
                 expected = "en-US" if language == "en" else "es-US"
                 self.assertIn(expected, encoded)
+                blog_posting = next(
+                    item for item in parsed if item.get("@type") == "BlogPosting"
+                )
+                self.assertEqual(PAGE_MODIFIED, blog_posting["dateModified"])
+                self.assertIn(
+                    f'<meta property="article:modified_time" content="{PAGE_MODIFIED}">',
+                    source,
+                )
+                reviewed_label = (
+                    "Reviewed August 26, 2026"
+                    if language == "en"
+                    else "Revisado el 26 de agosto de 2026"
+                )
+                self.assertIn(reviewed_label, visible_text(source))
 
 
 if __name__ == "__main__":

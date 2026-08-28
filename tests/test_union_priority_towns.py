@@ -194,6 +194,13 @@ class UnionPriorityTownTests(unittest.TestCase):
                 self.assertGreaterEqual(len(blocks), 1)
                 schemas = [json.loads(block) for block in blocks]
                 encoded = json.dumps(schemas)
+                web_page = next(
+                    node
+                    for payload in schemas
+                    for node in payload.get("@graph", [payload])
+                    if node.get("@type") == "WebPage"
+                )
+                self.assertEqual("2026-08-27", web_page.get("dateModified"))
                 self.assertNotIn("AggregateRating", encoded)
                 self.assertNotRegex(encoded, r'"@type"\s*:\s*"Review"')
                 self.assertIn("FAQPage", encoded)

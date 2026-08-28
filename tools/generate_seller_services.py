@@ -14,6 +14,7 @@ MANIFEST = ROOT / "data" / "seller-service-sources.json"
 COPY = ROOT / "data" / "seller-service-copy.json"
 SITE = "https://thejorgeramirezgroup.com"
 REVIEWED_ON = "2026-08-26"
+PAGE_MODIFIED_ON = "2026-08-27"
 EXPECTED_SLUGS = {
     "sell-your-home",
     "how-we-sell-your-home",
@@ -34,6 +35,49 @@ EXPECTED_SOURCE_IDS = {
     "irs-like-kind-exchanges",
     "irs-publication-544",
     "njcourts-divorce",
+}
+
+EDITORIAL_VISUALS = {
+    "valuation": {
+        "base": "/images/editorial/nj-home-valuation-review-2026",
+        "height": 854,
+        "alt": {
+            "en": "House model, blank valuation notes, measuring tape, calculator, keys, and room photos arranged for a property review",
+            "es": "Modelo de casa, notas de valoración, cinta de medir, calculadora, llaves y fotos de habitaciones preparados para revisar una propiedad",
+        },
+    },
+    "offer": {
+        "base": "/images/editorial/nj-written-offer-comparison-2026",
+        "height": 854,
+        "alt": {
+            "en": "Two equal document folders, blank offer sheets, house model, key, calculator, and calendar arranged for a side-by-side review",
+            "es": "Dos carpetas iguales, hojas de oferta en blanco, modelo de casa, llave, calculadora y calendario preparados para comparar opciones",
+        },
+    },
+    "rental": {
+        "base": "/images/editorial/nj-rental-property-transition-2026",
+        "height": 854,
+        "alt": {
+            "en": "Rental-property transition checklist, document folder, keys, calendar, measuring tape, and tool pouch on a wood table",
+            "es": "Lista de transición de una propiedad de alquiler, carpeta, llaves, calendario, cinta de medir y bolsa de herramientas sobre una mesa",
+        },
+    },
+    "fsbo": {
+        "base": "/images/nj-fsbo-selling-plan-2026",
+        "height": 853,
+        "alt": {
+            "en": "Home-selling checklist, measuring tape, phone, keys, and blank sign arranged on a table near the front door",
+            "es": "Lista para vender una casa, cinta de medir, teléfono, llaves y letrero en blanco sobre una mesa cerca de la entrada",
+        },
+    },
+    "relocation": {
+        "base": "/images/nyc-to-nj-relocation-plan-2026",
+        "height": 853,
+        "alt": {
+            "en": "Moving boxes and keys inside an open front door with a moving truck waiting outside",
+            "es": "Cajas de mudanza y llaves dentro de una entrada abierta con un camión de mudanza afuera",
+        },
+    },
 }
 
 
@@ -68,6 +112,8 @@ def validate_manifest(document: dict) -> None:
             raise ValueError(f"route {route.get('slug')} lacks intent or sources")
         if not set(route["sourceIds"]) <= source_ids:
             raise ValueError(f"route {route['slug']} references an unknown source")
+        if route.get("editorialVisual") not in EDITORIAL_VISUALS:
+            raise ValueError(f"route {route['slug']} references an unknown editorial visual")
 
 
 def load_data() -> tuple[dict, dict]:
@@ -276,6 +322,22 @@ def doorway_retirement_links(slug: str, language: str) -> str:
             </section>'''
 
 
+def editorial_visual(kind: str, language: str) -> str:
+    """Render the reviewed responsive visual assigned to a seller-service route."""
+    visual = EDITORIAL_VISUALS[kind]
+    base = visual["base"]
+    return f'''    <!-- JRG editorial visual:start -->
+    <figure class="jrg-editorial-figure" data-editorial-visual="{esc(kind, quote=True)}">
+      <picture>
+        <source srcset="{base}-768.webp 768w, {base}-1280.webp 1280w" sizes="(max-width: 900px) calc(100vw - 32px), 960px" type="image/webp">
+        <img src="{base}-1280.webp" width="1280" height="{visual["height"]}" loading="lazy" decoding="async" alt="{esc(visual["alt"][language], quote=True)}">
+      </picture>
+    </figure>
+    <!-- JRG editorial visual:end -->
+
+'''
+
+
 def render(document: dict, copy: dict, route_data: dict, language: str) -> str:
     slug = route_data["slug"]
     page = copy["pages"][slug][language]
@@ -305,6 +367,7 @@ def render(document: dict, copy: dict, route_data: dict, language: str) -> str:
         for item in page["faq"]
     )
     doorway_links = doorway_retirement_links(slug, language)
+    editorial = editorial_visual(route_data["editorialVisual"], language)
     structured = {
         "@context": "https://schema.org",
         "@graph": [
@@ -315,7 +378,7 @@ def render(document: dict, copy: dict, route_data: dict, language: str) -> str:
                 "name": page["title"],
                 "description": page["description"],
                 "inLanguage": "es-US" if language == "es" else "en-US",
-                "dateModified": REVIEWED_ON,
+                "dateModified": PAGE_MODIFIED_ON,
                 "isPartOf": {"@id": SITE + "/#website"},
                 "about": {"@id": SITE + own_route + "#service"},
             },
@@ -422,8 +485,7 @@ def render(document: dict, copy: dict, route_data: dict, language: str) -> str:
         <div class="seller-actions"><a class="seller-button seller-button--primary" href="{prefix}/home-valuation">{esc(common["primary"])}</a><a class="seller-button seller-button--outline" href="tel:+19082307844">{esc(common["secondary"])}</a></div>
       </div>
     </header>
-
-    <section class="seller-section" aria-labelledby="focus-title">
+{editorial}<section class="seller-section" aria-labelledby="focus-title">
       <div class="seller-wrap">
         <div class="seller-heading"><p class="seller-section-label">{esc(common["focusLabel"])}</p><h2 id="focus-title">{esc(page["focusTitle"])}</h2><p>{esc(page["focusIntro"])}</p></div>
         <div class="seller-grid--three">{focus_cards}</div>
