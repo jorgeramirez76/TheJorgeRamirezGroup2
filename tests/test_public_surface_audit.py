@@ -20,6 +20,11 @@ class PublicSurfaceAuditTests(unittest.TestCase):
             ["communities.html", "communities/index.html"],
         )
 
+    def test_redirect_inventory_distinguishes_clean_migrations_from_raw_normalizers(self):
+        redirect_sources = audit_site.load_redirect_sources()
+        self.assertIn("/best-real-estate-agents-union-county-nj-2026", redirect_sources)
+        self.assertNotIn("/communities", redirect_sources)
+
     def test_public_indexable_surface_has_no_actionable_defects(self):
         self.assertEqual(self.audit["actionable_count"], 0)
         self.assertFalse(self.audit["missing_from_sitemap"])

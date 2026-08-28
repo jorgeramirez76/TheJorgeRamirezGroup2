@@ -116,7 +116,14 @@ def load_redirect_sources() -> set[str]:
             continue
         # Dynamic patterns cannot correspond to a single checked HTML file.
         if source and not any(char in source for char in (":", "*", "(", ")")):
-            routes.add(normalize_route(source))
+            normalized = normalize_route(source)
+            # A raw compatibility address such as ``/page.html`` or
+            # ``/directory/index.html`` can redirect while its clean route is
+            # still served. Only an exact clean-form source retires that clean
+            # route from the indexable surface. Paired clean/.html migrations
+            # remain redirects because their clean source is present too.
+            if source == normalized:
+                routes.add(normalized)
     return routes
 
 
