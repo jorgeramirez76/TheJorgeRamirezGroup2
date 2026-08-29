@@ -28,6 +28,36 @@
       "permanent": true
     },
     {
+      "source": "/towns/middlesex-borough",
+      "destination": "/towns/middlesex",
+      "permanent": true
+    },
+    {
+      "source": "/towns/middlesex-borough.html",
+      "destination": "/towns/middlesex",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/middlesex-borough",
+      "destination": "/es/towns/middlesex",
+      "permanent": true
+    },
+    {
+      "source": "/es/towns/middlesex-borough.html",
+      "destination": "/es/towns/middlesex",
+      "permanent": true
+    },
+    {
+      "source": "/realtor/middlesex-borough-nj.html",
+      "destination": "/towns/middlesex",
+      "permanent": true
+    },
+    {
+      "source": "/communities/middlesex-borough.html",
+      "destination": "/towns/middlesex",
+      "permanent": true
+    },
+    {
       "source": "/nj-real-estate-agent",
       "destination": "/ai-authority",
       "permanent": true
@@ -245,6 +275,56 @@
     {
       "source": "/blog/is-it-cheaper-to-live-in-nj-or-ny.html",
       "destination": "/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fall-home-prep-signs-nj-sellers-2026",
+      "destination": "/blog/best-time-to-sell-home-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fall-home-prep-signs-nj-sellers-2026.html",
+      "destination": "/blog/best-time-to-sell-home-nj",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fall-mortgage-strategy-nj-buyers-2026",
+      "destination": "/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fall-mortgage-strategy-nj-buyers-2026.html",
+      "destination": "/blog/first-time-home-buyer-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/pre-listing-inspection-nj-sellers-2026",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/pre-listing-inspection-nj-sellers-2026.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/show-ready-home-nj-sellers-30-days-2026",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/show-ready-home-nj-sellers-30-days-2026.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/smart-home-upgrades-nj-home-value-2026",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/blog/smart-home-upgrades-nj-home-value-2026.html",
+      "destination": "/sell-your-home",
       "permanent": true
     },
     {
@@ -1904,7 +1984,7 @@
     },
     {
       "source": "/realtor/middlesex-borough-nj",
-      "destination": "/towns/middlesex-borough",
+      "destination": "/towns/middlesex",
       "permanent": true
     },
     {
@@ -2599,7 +2679,7 @@
     },
     {
       "source": "/communities/middlesex-borough",
-      "destination": "/towns/middlesex-borough",
+      "destination": "/towns/middlesex",
       "permanent": true
     },
     {

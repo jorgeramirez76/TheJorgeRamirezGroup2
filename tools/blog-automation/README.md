@@ -36,6 +36,15 @@ Only an explicit reviewed-publication command can change the site:
 python3 daily_blog.py --content-file reviewed.json --slug reviewed-slug --publish-reviewed
 ```
 
+Before that command changes a blog file, index, sitemap, state, commit, or
+remote branch, it runs a fail-closed production/source inventory check. The
+check reads the production blog index and sitemap once, then inspects only
+production-discovered article routes that are missing or nonindex in source.
+Requests are sequential and deliberately delayed. Publication stops if an
+indexable production article is absent from the checkout or if the comparison
+cannot complete. Normal scheduled drafts and preview commands remain offline.
+The live comparison pauses five seconds between requests by default.
+
 Use `--no-push` with that command when a local commit should be inspected before
 remote publication:
 
@@ -83,3 +92,9 @@ at 7:00 AM. Its no-argument command is intentionally review-only.
 - `ai-content-declaration` remains `ai-assisted`.
 - Only a human-reviewed content file with `--publish-reviewed` may enter the
   public publication path.
+- Reviewed publication cannot begin while production contains an indexable blog
+  route absent from source; an inconclusive comparison also blocks publication.
+- A failed commit or push is reported as a failed publication, never success.
+- The push defaults to the deployment remote `github` and branch `main`; another
+  reviewed checkout must explicitly set `JRG_BLOG_PUBLISH_REMOTE` or
+  `JRG_BLOG_PUBLISH_BRANCH`. A rejected push stops without pulling or rebasing.

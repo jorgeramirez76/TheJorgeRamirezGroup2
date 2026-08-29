@@ -17,6 +17,10 @@ BUSINESS_ID = f"{ORIGIN}/#agent"
 PERSON_ID = f"{ORIGIN}/#jorge-ramirez"
 SKIP_DIRS = {".git", ".vercel", "node_modules", "crm", "docs", "property-leads-system", "staging"}
 PERSON_REFERENCE_KEYS = {"author", "creator", "founder", "mainEntity"}
+BUSINESS_TYPES = {
+    "Corporation", "LocalBusiness", "Organization", "ProfessionalService",
+    "RealEstateAgent", "RealEstateOrganization",
+}
 JSON_LD_RE = re.compile(
     r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
     re.IGNORECASE | re.DOTALL,
@@ -94,6 +98,28 @@ class SchemaEntityIdentityTests(unittest.TestCase):
                         f"business ID used as {parent_key} in {path.relative_to(ROOT)}",
                     )
         self.assertGreater(business_occurrences, 0)
+
+    def test_person_identifier_is_never_typed_as_a_business(self) -> None:
+        typed_occurrences = 0
+        for path in public_html_files():
+            for payload in jsonld_payloads(path):
+                for node, _ in walk(payload):
+                    if node.get("@id") != PERSON_ID:
+                        continue
+                    types = entity_types(node)
+                    if not types:
+                        continue
+                    typed_occurrences += 1
+                    self.assertIn(
+                        "Person",
+                        types,
+                        f"person ID lacks Person type in {path.relative_to(ROOT)}",
+                    )
+                    self.assertFalse(
+                        types & BUSINESS_TYPES,
+                        f"person ID has business type in {path.relative_to(ROOT)}",
+                    )
+        self.assertGreater(typed_occurrences, 0)
 
     def test_verified_business_contract_retains_business_identifier(self) -> None:
         standalone = json.loads((ROOT / "schema-realtor.json").read_text(encoding="utf-8"))

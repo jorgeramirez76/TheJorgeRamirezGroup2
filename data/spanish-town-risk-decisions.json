@@ -12,8 +12,8 @@
   },
   "decisionPolicy": {
     "rebuildRule": "Rebuild every route in the current canonical English inventory so reciprocal bilingual routes remain useful and source-backed.",
-    "quarantineRule": "Use a compact noindex/follow fallback for every noncanonical route that is not a justified geographic alias.",
-    "redirectRule": "Keep only the two established one-hop geographic aliases; never redirect to another redirect or noindex page.",
+    "quarantineRule": "Use a compact noindex/follow fallback for every noncanonical route that is neither an established geographic alias nor an English-owner town-route consolidation.",
+    "redirectRule": "Keep the two established one-hop geographic aliases and mirror explicit town redirects from the English route owner; never redirect to another redirect or noindex page.",
     "demandRule": "Preserve supplied GSC demand as context, while canonical inventory and content quality determine index eligibility."
   },
   "evidencePolicy": "Primary public sources only; no gated or scraped market tables, no town-price substitutions, no rankings, travel-duration promises, forecasts, or demographic targeting.",
@@ -71,8 +71,8 @@
     "total": 138,
     "actions": {
       "rebuild": 32,
-      "quarantine": 104,
-      "redirect": 2
+      "quarantine": 103,
+      "redirect": 3
     },
     "sitemapEligible": 32
   },
@@ -3093,10 +3093,10 @@
     },
     "middlesex-borough": {
       "displayName": "Middlesex Borough",
-      "county": "",
-      "action": "quarantine",
-      "destination": null,
-      "reason": "The route is no longer part of the canonical town inventory and the retired template lacked sufficient verified local value; retain a compact noindex/follow fallback without town figures or outcome claims.",
+      "county": "Middlesex",
+      "action": "redirect",
+      "destination": "/es/towns/middlesex",
+      "reason": "The English town-route owner consolidates this duplicate route into /towns/middlesex; mirror that relationship at the equivalent one-hop Spanish destination.",
       "gsc": {
         "current3m": {
           "rows": 0,

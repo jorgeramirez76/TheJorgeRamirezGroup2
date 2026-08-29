@@ -1,0 +1,88 @@
+{
+  "incident_id": "live-blog-source-drift-2026-08-29",
+  "captured_on": "2026-08-29",
+  "production_origin": "https://thejorgeramirezgroup.com",
+  "disposition": "retire_to_reviewed_evergreen_guides",
+  "reason": "Five indexable production articles were published outside the reviewed source tree. Each contains unsupported or time-sensitive claims, lacks visible external sourcing, uses inconsistent author/entity markup, or relies on a remote image. The URLs are preserved with permanent redirects and compact noindex fallbacks, but the articles are not adopted into the indexable source surface.",
+  "evidence": {
+    "capture_archive_id": "jrg-live-reconciliation-2026-08-29",
+    "blog_index_sha256": "2b8d1bc22fa0f665d90a8c6751e446a560d1bbe86b71d1ae9dbb8d73de3ab6b9",
+    "production_last_modified": "Sat, 29 Aug 2026 14:07:16 GMT"
+  },
+  "pages": [
+    {
+      "file": "blog/fall-home-prep-signs-nj-sellers-2026.html",
+      "path": "/blog/fall-home-prep-signs-nj-sellers-2026",
+      "source_url": "https://thejorgeramirezgroup.com/blog/fall-home-prep-signs-nj-sellers-2026",
+      "published_on": "2026-08-28",
+      "sha256": "8351523e9575b46f031970417b7929d61b4f1d1bdd26f2fbbf11ac693119b55a",
+      "destination": "/blog/best-time-to-sell-home-nj",
+      "issues": [
+        "no visible external sources",
+        "unsupported seasonal certainty",
+        "inconsistent author and publisher entity markup",
+        "remote runtime image"
+      ]
+    },
+    {
+      "file": "blog/fall-mortgage-strategy-nj-buyers-2026.html",
+      "path": "/blog/fall-mortgage-strategy-nj-buyers-2026",
+      "source_url": "https://thejorgeramirezgroup.com/blog/fall-mortgage-strategy-nj-buyers-2026",
+      "published_on": "2026-08-29",
+      "sha256": "ee50b16b52f46d289068787b04a92fbe8404ec667c3c4e8ed5e45b2891362d08",
+      "destination": "/blog/first-time-home-buyer-nj-guide",
+      "issues": [
+        "no visible external sources",
+        "unsupported experience claim",
+        "unsourced time-sensitive mortgage and payment claims",
+        "direct financial guidance",
+        "inconsistent author and publisher entity markup",
+        "remote runtime image"
+      ]
+    },
+    {
+      "file": "blog/pre-listing-inspection-nj-sellers-2026.html",
+      "path": "/blog/pre-listing-inspection-nj-sellers-2026",
+      "source_url": "https://thejorgeramirezgroup.com/blog/pre-listing-inspection-nj-sellers-2026",
+      "published_on": "2026-08-29",
+      "sha256": "94ef012e43e2270b59ef2f188f0bb87882a3665423dbc376403923a23012b569",
+      "destination": "/sell-your-home",
+      "issues": [
+        "no visible external sources",
+        "unsupported seller trend claim",
+        "overstated negotiation outcome language",
+        "inconsistent author and publisher entity markup",
+        "remote runtime image"
+      ]
+    },
+    {
+      "file": "blog/show-ready-home-nj-sellers-30-days-2026.html",
+      "path": "/blog/show-ready-home-nj-sellers-30-days-2026",
+      "source_url": "https://thejorgeramirezgroup.com/blog/show-ready-home-nj-sellers-30-days-2026",
+      "published_on": "2026-08-28",
+      "sha256": "e23a1e2631f24c83ef4951824f3aa919e66399f81adf884c7e698ffcb5394797",
+      "destination": "/sell-your-home",
+      "issues": [
+        "no visible external sources",
+        "unsupported outcome implications",
+        "inconsistent author and publisher entity markup",
+        "remote runtime image"
+      ]
+    },
+    {
+      "file": "blog/smart-home-upgrades-nj-home-value-2026.html",
+      "path": "/blog/smart-home-upgrades-nj-home-value-2026",
+      "source_url": "https://thejorgeramirezgroup.com/blog/smart-home-upgrades-nj-home-value-2026",
+      "published_on": "2026-08-29",
+      "sha256": "08993d624f85a63b95b4617122d0c4f974cc3b3984671d4840bc8610dc05fc16",
+      "destination": "/sell-your-home",
+      "issues": [
+        "no visible external sources",
+        "unsupported transaction-volume claim",
+        "unsourced price, ROI, value, and buyer-demand claims",
+        "inconsistent author and publisher entity markup",
+        "broken remote runtime image"
+      ]
+    }
+  ]
+}

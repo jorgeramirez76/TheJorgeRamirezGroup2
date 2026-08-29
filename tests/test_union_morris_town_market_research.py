@@ -17,6 +17,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from PIL import Image
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
@@ -136,6 +138,7 @@ REPORTS = {
         "metrics": (7395, 493400, 14467, 239, "833332.49"),
     },
 }
+NONINDEX_TOWN_SLUGS = {"linden", "rahway", "randolph", "scotch-plains"}
 
 COMMON_SOURCES = {
     "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
@@ -568,6 +571,11 @@ class TownMarketPageTests(unittest.TestCase):
         self.assertEqual([], findings, f"fair-housing risky phrase count: {len(findings)}")
 
     def test_schema_matches_visible_article_and_breadcrumb_content_only(self) -> None:
+        image_asset = ROOT / "images" / "hero.jpg"
+        self.assertTrue(image_asset.is_file())
+        with Image.open(image_asset) as image:
+            self.assertEqual((1400, 933), image.size)
+
         for path in paths():
             source, _ = parse(path)
             documents = [
@@ -585,6 +593,15 @@ class TownMarketPageTests(unittest.TestCase):
                 self.assertEqual({"BlogPosting", "BreadcrumbList"}, types)
                 self.assertEqual(REPORTS[path.stem]["published"], article["datePublished"])
                 self.assertEqual(PAGE_MODIFIED_ON, article["dateModified"])
+                self.assertEqual(
+                    {
+                        "@type": "ImageObject",
+                        "url": f"{SITE}/images/hero.jpg",
+                        "width": 1400,
+                        "height": 933,
+                    },
+                    article["image"],
+                )
                 self.assertIn(
                     f'<meta name="last-updated" content="{PAGE_MODIFIED_ON}">',
                     source,
@@ -610,8 +627,13 @@ class TownMarketPageTests(unittest.TestCase):
             prefix = "/es" if spanish else ""
             town_slug = path.stem.removeprefix("market-report-").removesuffix("-nj-2026")
             county_slug = REPORTS[path.stem]["county"].lower()
+            town_research_link = (
+                "#source-heading"
+                if town_slug in NONINDEX_TOWN_SLUGS
+                else f"{prefix}/towns/{town_slug}"
+            )
             expected_links = {
-                f"{prefix}/towns/{town_slug}",
+                town_research_link,
                 f"{prefix}/counties/{county_slug}-county",
                 f"{prefix}/home-valuation",
                 "/es#contact" if spanish else "/contact",
@@ -624,6 +646,9 @@ class TownMarketPageTests(unittest.TestCase):
                 self.assertEqual([], parser.duplicate_attributes)
                 self.assertIn('href="#main"', source)
                 self.assertTrue(expected_links <= set(parser.links))
+                if town_slug in NONINDEX_TOWN_SLUGS:
+                    self.assertNotIn(f"{prefix}/towns/{town_slug}", parser.links)
+                    self.assertGreaterEqual(parser.links.count("#source-heading"), 2)
                 self.assertIn("/css/styles.css", source)
                 self.assertIn("/js/site-cta.js", source)
                 self.assertIn("G-KMS6H85LB0", source)

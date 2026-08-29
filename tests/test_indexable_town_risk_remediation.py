@@ -22,6 +22,7 @@ sys.path.insert(0, str(ROOT))
 SITE = "https://thejorgeramirezgroup.com"
 MANIFEST_PATH = ROOT / "data" / "indexable-town-risk-decisions.json"
 RENDERER_PATH = ROOT / "scripts" / "remediate_indexable_towns.py"
+SNAPSHOT_BUILDER_PATH = ROOT / "scripts" / "build_indexable_town_risk_manifest.py"
 
 CANDIDATES = {
     "basking-ridge", "bernards-township", "boonton-township", "caldwell", "chatham",
@@ -39,6 +40,7 @@ REBUILDS = {
 }
 REDIRECTS = {
     "bernards-township": "basking-ridge",
+    "middlesex-borough": "middlesex",
     "short-hills": "millburn",
 }
 QUARANTINES = CANDIDATES - REBUILDS - set(REDIRECTS)
@@ -147,6 +149,39 @@ class IndexableTownRiskRemediationTests(unittest.TestCase):
                     expected = self.manifest["decisions"][slug]["gsc"][period]
                     self.assertEqual(expected, folded[f"/towns/{slug}"][period])
 
+    def test_historical_snapshot_builder_cannot_restore_obsolete_actions(self) -> None:
+        spec = importlib.util.spec_from_file_location(
+            "indexable_town_snapshot_builder", SNAPSHOT_BUILDER_PATH
+        )
+        self.assertIsNotNone(spec)
+        self.assertIsNotNone(spec.loader if spec else None)
+        builder = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(builder)
+
+        self.assertEqual(
+            {slug: f"/towns/{destination}" for slug, destination in REDIRECTS.items()},
+            builder.REDIRECTS,
+        )
+        self.assertEqual(QUARANTINES, builder.QUARANTINES)
+        self.assertEqual([], builder.check_action_inventory())
+
+        protected = [
+            MANIFEST_PATH,
+            ROOT / "tests" / "fixtures" / "gsc-indexable-town-pages.csv",
+            ROOT / "tests" / "fixtures" / "gsc-indexable-town-pages-16m.csv",
+        ]
+        before = {path: path.read_bytes() for path in protected}
+        result = subprocess.run(
+            [sys.executable, str(SNAPSHOT_BUILDER_PATH)],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+        )
+        after = {path: path.read_bytes() for path in protected}
+        self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+        self.assertIn("read-only action check passed", result.stdout)
+        self.assertEqual(before, after)
+
     def test_incoming_clicked_redirect_families_land_outside_town_quarantine(self) -> None:
         expected = {
             "/blog/neighborhoods-maplewood-nj": "/counties/essex-county",
@@ -231,7 +266,7 @@ class IndexableTownRiskRemediationTests(unittest.TestCase):
         self.assertEqual([], failures)
 
     def test_rebuilt_routes_publish_truthful_visible_and_structured_provenance(self) -> None:
-        organization_id = f"{SITE}/#organization"
+        business_id = f"{SITE}/#agent"
         person_id = f"{SITE}/#jorge-ramirez"
         failures: list[str] = []
         for slug in sorted(REBUILDS):
@@ -248,7 +283,12 @@ class IndexableTownRiskRemediationTests(unittest.TestCase):
                 for node in payload.get("@graph", [payload])
                 if isinstance(node, dict)
             ]
-            organizations = [node for node in nodes if node.get("@type") == "Organization" and node.get("@id") == organization_id]
+            businesses = [
+                node
+                for node in nodes
+                if node.get("@id") == business_id
+                and node.get("@type") in {"Organization", "RealEstateAgent"}
+            ]
             people = [node for node in nodes if node.get("@type") == "Person" and node.get("@id") == person_id]
             web_pages = [node for node in nodes if node.get("@type") == "WebPage"]
             if '<meta name="ai-content-declaration" content="ai-assisted, source-checked">' not in source:
@@ -263,18 +303,100 @@ class IndexableTownRiskRemediationTests(unittest.TestCase):
             ):
                 if phrase not in visible_main(source):
                     failures.append(f"{relative}: visible provenance missing {phrase!r}")
-            if len(organizations) != 1:
-                failures.append(f"{relative}: Organization entity mismatch")
-            if len(people) != 1 or people[0].get("worksFor") != {"@id": organization_id}:
-                failures.append(f"{relative}: Person/Organization relationship mismatch")
+            if len(businesses) != 1:
+                failures.append(f"{relative}: stable business entity mismatch")
+            if any(node.get("@id") == f"{SITE}/#organization" for node in nodes):
+                failures.append(f"{relative}: alternate business entity ID remains")
+            if len(people) != 1 or people[0].get("worksFor") != {"@id": business_id}:
+                failures.append(f"{relative}: Person/business relationship mismatch")
             elif people[0].get("identifier", {}).get("value") != "1754604":
                 failures.append(f"{relative}: license identifier mismatch")
-            if len(web_pages) != 1 or web_pages[0].get("publisher") != {"@id": organization_id}:
-                failures.append(f"{relative}: Organization publisher mismatch")
+            if len(web_pages) != 1 or web_pages[0].get("publisher") != {"@id": business_id}:
+                failures.append(f"{relative}: business publisher mismatch")
             elif "author" in web_pages[0] or "reviewedBy" in web_pages[0]:
                 failures.append(f"{relative}: unsupported author/reviewer relationship")
-            elif web_pages[0].get("dateModified") != "2026-08-27":
+            elif web_pages[0].get("dateModified") != "2026-08-29":
                 failures.append(f"{relative}: stale page modification date")
+        self.assertEqual([], failures)
+
+    def test_rebuilt_routes_target_local_service_intent_and_show_verified_operator(self) -> None:
+        failures: list[str] = []
+        zillow = "https://www.zillow.com/profile/TheJorgeRamirezGroup"
+        for slug in sorted(REBUILDS):
+            relative = f"towns/{slug}.html"
+            source = read(relative)
+            town = self.manifest["decisions"][slug]["displayName"]
+            query_town = "Millburn" if slug == "millburn" else town
+            title_match = re.search(r"<title>(.*?)</title>", source, re.I | re.S)
+            description_match = re.search(
+                r'<meta\b[^>]*name=["\']description["\'][^>]*content=["\']([^"\']+)',
+                source,
+                re.I,
+            )
+            title = html.unescape(title_match.group(1)).strip() if title_match else ""
+            description = html.unescape(description_match.group(1)).strip() if description_match else ""
+            expected_title = f"{query_town} NJ Real Estate Agent & Guide | Jorge Ramirez"
+            if title != expected_title or not 50 <= len(title) <= 60:
+                failures.append(f"{relative}: search title mismatch {title!r}")
+            if not 150 <= len(description) <= 160:
+                failures.append(f"{relative}: meta description length {len(description)}")
+            for phrase in (query_town, "Jorge Ramirez", "buyer and seller", "home value review"):
+                if phrase not in description:
+                    failures.append(f"{relative}: description missing {phrase!r}")
+            if f">{query_town} NJ real estate guide for buyers and sellers</h1>" not in source:
+                failures.append(f"{relative}: town-and-state H1 mismatch")
+
+            trust_match = re.search(
+                r'<section\b[^>]*data-local-agent-trust=["\']v1["\'][^>]*>(.*?)</section>',
+                source,
+                re.I | re.S,
+            )
+            trust = trust_match.group(1) if trust_match else ""
+            trust_visible = " ".join(
+                html.unescape(re.sub(r"<[^>]+>", " ", trust)).split()
+            )
+            if source.count('data-local-agent-trust="v1"') != 1:
+                failures.append(f"{relative}: verified operator marker mismatch")
+            for phrase in (
+                "Jorge Ramirez",
+                "full-time at Keller Williams since 2017",
+                "NJ license #1754604",
+                town,
+            ):
+                if phrase not in trust_visible:
+                    failures.append(f"{relative}: trust block missing {phrase!r}")
+            for required in (
+                '/images/jorge-ramirez-headshot.webp',
+                '/images/jorge-ramirez-headshot.jpg',
+                'alt="Jorge Ramirez, licensed New Jersey real estate agent"',
+                'width="955"',
+                'height="1280"',
+                'loading="lazy"',
+                'href="/ai-authority"',
+                f'href="{zillow}"',
+            ):
+                if required not in trust:
+                    failures.append(f"{relative}: trust block missing {required!r}")
+
+            blocks = re.findall(
+                r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                source,
+                re.I | re.S,
+            )
+            nodes = [
+                node
+                for payload in (json.loads(block) for block in blocks)
+                for node in payload.get("@graph", [payload])
+                if isinstance(node, dict)
+            ]
+            people = [node for node in nodes if node.get("@id") == f"{SITE}/#jorge-ramirez"]
+            if len(people) != 1 or zillow not in people[0].get("sameAs", []):
+                failures.append(f"{relative}: verified profile identity is not connected")
+            businesses = [node for node in nodes if node.get("@id") == f"{SITE}/#agent"]
+            if len(businesses) != 1:
+                failures.append(f"{relative}: verified business identity is not connected")
+            elif people and set(people[0].get("sameAs", [])) & set(businesses[0].get("sameAs", [])):
+                failures.append(f"{relative}: Person and business sameAs profiles overlap")
         self.assertEqual([], failures)
 
     def test_quarantines_are_compact_noindex_fallbacks_and_absent_from_hubs(self) -> None:
@@ -309,23 +431,26 @@ class IndexableTownRiskRemediationTests(unittest.TestCase):
         failures: list[str] = []
         for slug, destination_slug in REDIRECTS.items():
             for prefix in ("", "es/"):
-                route = f"/{prefix}towns/{slug}"
                 destination = f"/{prefix}towns/{destination_slug}"
-                source = read(f"{prefix}towns/{slug}.html")
-                if redirects.get(route) != destination:
-                    failures.append(f"{route}: server redirect mismatch")
-                if destination in sources:
-                    failures.append(f"{route}: destination is another redirect")
-                if destination not in source:
-                    failures.append(f"{route}: fallback redirect mismatch")
+                source_text = read(f"{prefix}towns/{slug}.html")
+                for suffix in ("", ".html"):
+                    route = f"/{prefix}towns/{slug}{suffix}"
+                    if redirects.get(route) != destination:
+                        failures.append(f"{route}: server redirect mismatch")
+                    if destination in sources:
+                        failures.append(f"{route}: destination is another redirect")
+                    if destination not in source_text:
+                        failures.append(f"{route}: fallback redirect mismatch")
                 submitted = submitted_es if prefix else submitted_en
-                if SITE + route in submitted:
-                    failures.append(f"{route}: redirect source submitted")
+                if SITE + f"/{prefix}towns/{slug}" in submitted:
+                    failures.append(f"/{prefix}towns/{slug}: redirect source submitted")
 
             for legacy_prefix in ("/realtor/", "/communities/"):
-                source = f"{legacy_prefix}{slug}{'-nj' if legacy_prefix == '/realtor/' else ''}"
-                self.assertEqual(f"/towns/{destination_slug}", redirects[source])
-                self.assertNotIn(redirects[source], sources)
+                base = f"{legacy_prefix}{slug}{'-nj' if legacy_prefix == '/realtor/' else ''}"
+                for suffix in ("", ".html"):
+                    source = base + suffix
+                    self.assertEqual(f"/towns/{destination_slug}", redirects[source])
+                    self.assertNotIn(redirects[source], sources)
 
     def test_old_managed_fallbacks_and_priority_guides_remain_protected(self) -> None:
         old_policy = json.loads(read("data/english-noindex-town-fallbacks.json"))

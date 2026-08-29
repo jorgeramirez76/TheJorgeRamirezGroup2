@@ -96,7 +96,7 @@ TOWNS = {
             ("Can a zoning map confirm that I can renovate?", "No. A map identifies a starting district, but an official parcel review must account for overlays, lot conditions, prior approvals, current ordinances, and the exact scope of work."),
             ("What should a Cranford seller assemble before listing?", "Useful records include the current tax card, survey, permits and approvals, improvement invoices, known flood or water information, utility and system details, and disclosures reviewed with the appropriate professionals."),
         ],
-        "nearby": [("Westfield", "westfield"), ("Garwood", "garwood"), ("Fanwood", "fanwood"), ("Roselle Park", "roselle-park"), ("Springfield", "springfield")],
+        "nearby": [("Westfield", "westfield"), ("Cranford vs. Garwood Official-Record Comparison", "/cranford-vs-garwood-nj"), ("Fanwood", "fanwood"), ("Roselle Park", "roselle-park"), ("Springfield", "springfield")],
     },
     "fanwood": {
         "name": "Fanwood",
@@ -177,7 +177,7 @@ TOWNS = {
             ("How do I verify Fanwood property taxes?", "Use the Borough tax page and official parcel record for the assessment and current bill, then ask the assessor or collector about questions tied to that property."),
             ("What should a Fanwood seller prepare?", "Prepare the survey, permits and approvals, improvement documentation, current tax and assessment record, known property-condition information, and disclosures for professional review."),
         ],
-        "nearby": [("Scotch Plains", "scotch-plains"), ("Westfield", "westfield"), ("Garwood", "garwood"), ("Cranford", "cranford"), ("Berkeley Heights", "berkeley-heights")],
+        "nearby": [("Scotch Plains Market Research", "/blog/market-report-scotch-plains-nj-2026"), ("Westfield", "westfield"), ("Cranford vs. Garwood Official-Record Comparison", "/cranford-vs-garwood-nj"), ("Cranford", "cranford"), ("Berkeley Heights", "berkeley-heights")],
     },
     "roselle-park": {
         "name": "Roselle Park",
@@ -258,7 +258,7 @@ TOWNS = {
             ("Where can I find Roselle Park tax maps?", "The Borough Tax Assessor page links tax maps and assessment-appeal resources. Use the exact block and lot and contact the assessor for parcel-record questions."),
             ("How should a seller handle unclosed work?", "Gather permits, inspections, approvals, contractor records, and the survey, then ask the municipal office and transaction professionals what must be resolved or disclosed before closing."),
         ],
-        "nearby": [("Cranford", "cranford"), ("Garwood", "garwood"), ("Kenilworth", "kenilworth"), ("Linden", "linden"), ("Union", "union")],
+        "nearby": [("Cranford", "cranford"), ("Cranford vs. Garwood Official-Record Comparison", "/cranford-vs-garwood-nj"), ("Linden Market Research", "/blog/market-report-linden-nj-2026"), ("Springfield", "springfield"), ("Westfield", "westfield")],
     },
     "new-providence": {
         "name": "New Providence",
@@ -420,7 +420,7 @@ TOWNS = {
             ("Do tree removals require township review?", "The Zoning and Tree Inspections office publishes permit requirements for qualifying trees and right-of-way trees. Ask the office to apply the current ordinance to the specific tree and project."),
             ("Where do I ask about flood or wetlands maps?", "The Township Responsible Department directory routes flood-map and wetlands-map questions to the appropriate engineering or zoning contacts. Use the exact block, lot, and survey."),
         ],
-        "nearby": [("New Providence", "new-providence"), ("Summit", "summit"), ("Fanwood", "fanwood"), ("Mountainside", "mountainside"), ("Springfield", "springfield")],
+        "nearby": [("New Providence", "new-providence"), ("Summit", "summit"), ("Fanwood", "fanwood"), ("Union County Official-Source Research", "/counties/union-county"), ("Springfield", "springfield")],
     },
     "springfield": {
         "name": "Springfield",
@@ -501,7 +501,7 @@ TOWNS = {
             ("Why is a survey important for Springfield zoning?", "The municipal zoning application asks applicants to show proposed work on a scaled property survey. The official review also considers the scope and any prior land-use-board action."),
             ("Where can I check Springfield parks?", "Union County's official directory identifies county park locations and activities, including Washington Avenue Park and Watchung Reservation context. Verify current facility rules with the County or Township as appropriate."),
         ],
-        "nearby": [("Summit", "summit"), ("Millburn", "millburn"), ("Union", "union"), ("Mountainside", "mountainside"), ("New Providence", "new-providence")],
+        "nearby": [("Summit", "summit"), ("Millburn", "millburn"), ("Union County Official-Source Research", "/counties/union-county"), ("Berkeley Heights", "berkeley-heights"), ("New Providence", "new-providence")],
     },
 }
 
@@ -810,8 +810,14 @@ def rebuild(slug: str, town: dict) -> None:
     )
 
     related_items = "\n".join(
-        f'        <li><a href="/towns/{nearby_slug}">{html.escape(nearby_name)} NJ Real Estate Research</a></li>'
-        for nearby_name, nearby_slug in town["nearby"]
+        (
+            f'        <li><a href="{html.escape(nearby_target, quote=True)}">'
+            f'{html.escape(nearby_name)}</a></li>'
+            if nearby_target.startswith("/")
+            else f'        <li><a href="/towns/{nearby_target}">'
+            f'{html.escape(nearby_name)} NJ Real Estate Research</a></li>'
+        )
+        for nearby_name, nearby_target in town["nearby"]
     )
     related = f'''<section class="related-pages">
     <div class="container">

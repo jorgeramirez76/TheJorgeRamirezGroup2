@@ -181,13 +181,13 @@ class ContentIntegrityTests(unittest.TestCase):
             self.assertIn(f"{county} County", text)
         self.assertNotIn("2©", text)
         self.assertNotRegex(source, r"\b138\s+communities\b")
-        agents = [
+        people = [
             obj
             for obj in json_ld_objects(source)
-            if isinstance(obj, dict) and obj.get("@type") == "RealEstateAgent"
+            if isinstance(obj, dict) and obj.get("@type") == "Person"
         ]
-        self.assertEqual(1, len(agents))
-        served = {place["name"] for place in agents[0]["areaServed"]}
+        self.assertEqual(1, len(people))
+        served = {place["name"] for place in people[0]["areaServed"]}
         self.assertEqual(
             {f"{county} County, NJ" for county in self.facts["serviceCounties"]},
             served,

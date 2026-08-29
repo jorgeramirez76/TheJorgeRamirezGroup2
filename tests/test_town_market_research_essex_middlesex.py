@@ -15,6 +15,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from PIL import Image
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
@@ -431,6 +433,11 @@ class TownResearchPageTests(unittest.TestCase):
         self.assertEqual([], hits, f"managed-page fair-housing phrase hits: {hits}")
 
     def test_schema_is_grounded_to_the_page_business_and_breadcrumbs(self) -> None:
+        image_asset = ROOT / "images" / "hero.jpg"
+        self.assertTrue(image_asset.is_file())
+        with Image.open(image_asset) as image:
+            self.assertEqual((1400, 933), image.size)
+
         for slug in EXPECTED:
             for language in ("en", "es"):
                 current = SITE + route(slug, language)
@@ -449,7 +456,17 @@ class TownResearchPageTests(unittest.TestCase):
                     self.assertEqual({"@id": organization_id}, by_type["WebPage"]["publisher"])
                     self.assertEqual({"@id": organization_id}, by_type["Article"]["publisher"])
                     self.assertFalse({"author", "reviewedBy"} & set(by_type["WebPage"]))
-                    self.assertFalse({"author", "reviewedBy"} & set(by_type["Article"]))
+                    self.assertEqual({"@id": organization_id}, by_type["Article"]["author"])
+                    self.assertNotIn("reviewedBy", by_type["Article"])
+                    self.assertEqual(
+                        {
+                            "@type": "ImageObject",
+                            "url": f"{SITE}/images/hero.jpg",
+                            "width": 1400,
+                            "height": 933,
+                        },
+                        by_type["Article"]["image"],
+                    )
                     self.assertEqual(person_id, by_type["Person"]["@id"])
                     self.assertEqual({"@id": organization_id}, by_type["Person"]["worksFor"])
                     self.assertIn(

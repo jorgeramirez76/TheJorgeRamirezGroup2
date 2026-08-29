@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Snapshot GSC/link evidence and build the managed town decision manifest.
+"""Audit or rebuild the managed town decision manifest from legacy evidence.
 
-Run this only against the exact pre-remediation integration base. It captures
-the legacy-page evidence before the renderer replaces that content. The two
-filtered Search Console fixtures make the numerical decision reproducible in
-CI without shipping or requiring access to a Search Console account.
+The default mode is a read-only action-inventory check. Snapshot writes require
+``--write-snapshot`` and are accepted only on the exact pre-remediation
+integration base, where the legacy pages still contain the evidence this tool
+was designed to capture. The two filtered Search Console fixtures make the
+numerical decision reproducible in CI without shipping or requiring access to
+a Search Console account.
 """
 
 from __future__ import annotations
@@ -36,6 +38,7 @@ HISTORICAL_FIXTURE = (
     ROOT / "tests" / "fixtures" / "gsc-indexable-town-pages-16m.csv"
 )
 MANIFEST = ROOT / "data" / "indexable-town-risk-decisions.json"
+EXPECTED_PRE_REMEDIATION_BASE = "2411cafd7e658b29ede321d99bc75abb1f958818"
 
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -59,6 +62,7 @@ REBUILDS = {
 }
 REDIRECTS = {
     "bernards-township": "/towns/basking-ridge",
+    "middlesex-borough": "/towns/middlesex",
     "short-hills": "/towns/millburn",
 }
 QUARANTINES = CANDIDATES - REBUILDS - set(REDIRECTS)
@@ -466,16 +470,72 @@ def rebuild_sources() -> dict[str, list[dict[str, str]]]:
     return resolved
 
 
+def check_action_inventory() -> list[str]:
+    """Compare the historical builder's action partition with the live owner."""
+    document = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    decisions = document.get("decisions")
+    if not isinstance(decisions, dict):
+        return ["managed manifest lacks a decisions object"]
+
+    actual_rebuilds = {
+        slug for slug, item in decisions.items()
+        if isinstance(item, dict) and item.get("action") == "rebuild"
+    }
+    actual_redirects = {
+        slug: str(item.get("destination", ""))
+        for slug, item in decisions.items()
+        if isinstance(item, dict) and item.get("action") == "redirect"
+    }
+    actual_quarantines = {
+        slug for slug, item in decisions.items()
+        if isinstance(item, dict) and item.get("action") == "quarantine"
+    }
+
+    failures: list[str] = []
+    if set(decisions) != CANDIDATES:
+        failures.append("candidate inventory differs from the managed manifest")
+    if actual_rebuilds != REBUILDS:
+        failures.append("rebuild inventory differs from the managed manifest")
+    if actual_redirects != REDIRECTS:
+        failures.append("redirect inventory differs from the managed manifest")
+    if actual_quarantines != QUARANTINES:
+        failures.append("quarantine inventory differs from the managed manifest")
+    return failures
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--comparison", type=Path, default=DEFAULT_COMPARE)
     parser.add_argument("--historical", type=Path, default=DEFAULT_HISTORICAL)
+    parser.add_argument(
+        "--write-snapshot",
+        action="store_true",
+        help="rewrite fixtures and the manifest on the recorded legacy base",
+    )
     args = parser.parse_args()
 
-    if len(CANDIDATES) != 44 or len(REBUILDS) != 12 or len(REDIRECTS) != 2:
+    if len(CANDIDATES) != 44 or len(REBUILDS) != 12 or len(REDIRECTS) != 3:
         raise RuntimeError("managed town action inventory changed unexpectedly")
     if CANDIDATES != REBUILDS | set(REDIRECTS) | QUARANTINES:
         raise RuntimeError("managed town action inventory is incomplete")
+
+    action_failures = check_action_inventory()
+    if action_failures:
+        print("\n".join(action_failures), file=sys.stderr)
+        return 1
+    if not args.write_snapshot:
+        print(
+            "read-only action check passed: 44 routes, 12 rebuilds, "
+            "3 redirects, 29 quarantines"
+        )
+        return 0
+    if git_head() != EXPECTED_PRE_REMEDIATION_BASE:
+        print(
+            "snapshot write refused: this checkout is not the recorded "
+            f"pre-remediation base {EXPECTED_PRE_REMEDIATION_BASE}",
+            file=sys.stderr,
+        )
+        return 2
 
     compare_fields, compare_rows = read_rows(args.comparison)
     historical_fields, historical_rows = read_rows(args.historical)

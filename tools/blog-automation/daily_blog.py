@@ -38,6 +38,9 @@ CONFIG_FILE = os.path.join(HERE, "config.json")
 TOPICS_FILE = os.path.join(HERE, "topics.json")
 STATE_FILE = os.path.join(HERE, "state.json")
 LOG_DIR = os.path.join(HERE, "logs")
+PRODUCTION_DRIFT_GUARD = os.path.join(REPO, "tools", "check_production_source_drift.py")
+PUBLISH_REMOTE = os.environ.get("JRG_BLOG_PUBLISH_REMOTE", "github")
+PUBLISH_BRANCH = os.environ.get("JRG_BLOG_PUBLISH_BRANCH", "main")
 
 SITE = "https://thejorgeramirezgroup.com"
 PHONE = "908-230-7844"
@@ -614,22 +617,43 @@ def validate(post):
 def deploy(slug, push=True):
     def git(*a):
         return subprocess.run(["git", *a], cwd=REPO, capture_output=True, text=True)
-    git("add", f"blog/{slug}.html", "blog/index.html", "sitemap.xml",
-        "tools/blog-automation/state.json")
+    staged = git("add", f"blog/{slug}.html", "blog/index.html", "sitemap.xml",
+                 "tools/blog-automation/state.json")
+    if staged.returncode != 0:
+        log(f"STAGING FAILED: {(staged.stderr or staged.stdout).strip()}")
+        return False
     msg = f"blog: add daily SEO post {slug}"
     r = git("commit", "-m", msg)
-    if r.returncode != 0 and "nothing to commit" not in (r.stdout + r.stderr):
-        log(f"commit warning: {r.stdout} {r.stderr}")
+    if r.returncode != 0:
+        log(f"COMMIT FAILED: {(r.stderr or r.stdout).strip()}")
+        return False
     if push:
-        r = git("push", "origin", "main")
-        if r.returncode != 0:
-            # someone else advanced main (other daily job / banned-number guard)
-            git("pull", "--rebase", "--autostash", "origin", "main")
-            r = git("push", "origin", "main")
+        r = git("push", PUBLISH_REMOTE, PUBLISH_BRANCH)
         if r.returncode != 0:
             log(f"PUSH FAILED: {r.stderr.strip()}")
             return False
-        log("pushed to origin/main (Vercel will auto-deploy)")
+        log(f"pushed to {PUBLISH_REMOTE}/{PUBLISH_BRANCH} (Vercel will auto-deploy)")
+    return True
+
+
+def production_source_preflight():
+    """Refuse reviewed publication while production is ahead of source."""
+    try:
+        result = subprocess.run(
+            [sys.executable, PRODUCTION_DRIFT_GUARD, "--live"],
+            cwd=REPO,
+            capture_output=True,
+            text=True,
+            timeout=360,
+        )
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        log(f"ABORT: production/source drift preflight could not run: {exc}")
+        return False
+    if result.returncode != 0:
+        detail = (result.stderr or result.stdout).strip()
+        log(f"ABORT: production/source drift preflight failed: {detail}")
+        return False
+    log(result.stdout.strip() or "production/source drift preflight passed")
     return True
 
 
@@ -662,6 +686,11 @@ def publish(post, topic, cfg, args):
         log(f"QUEUED FOR EDITORIAL REVIEW -> {out} ({len(html_out)} bytes)")
         return True
 
+    # This is intentionally after the review-only return and before the first
+    # public file or state mutation. Ordinary draft runs remain network-free.
+    if not production_source_preflight():
+        return False
+
     with open(os.path.join(BLOG_DIR, f"{slug}.html"), "w", encoding="utf-8") as f:
         f.write(html_out)
     add_to_index(post, slug)
@@ -674,7 +703,10 @@ def publish(post, topic, cfg, args):
     save_json(STATE_FILE, state)
 
     ok = deploy(slug, push=not args.no_push)
-    log(f"PUBLISHED {slug} (pushed={ok and not args.no_push})")
+    if not ok:
+        log(f"PUBLICATION FAILED {slug} (source changes remain for review)")
+        return False
+    log(f"PUBLISHED {slug} (pushed={not args.no_push})")
     return True
 
 

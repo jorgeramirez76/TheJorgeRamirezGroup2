@@ -18,9 +18,20 @@ MANIFEST_PATH = ROOT / "data" / "indexable-town-risk-decisions.json"
 SITE = "https://thejorgeramirezgroup.com"
 SHARE_IMAGE = f"{SITE}/images/hero.jpg"
 SHARE_ALT = "Residential property image from The Jorge Ramirez Group website"
-ORGANIZATION_ID = f"{SITE}/#organization"
+BUSINESS_ID = f"{SITE}/#agent"
 PERSON_ID = f"{SITE}/#jorge-ramirez"
-PAGE_MODIFIED_ON = "2026-08-27"
+PAGE_MODIFIED_ON = "2026-08-29"
+ZILLOW_PROFILE = "https://www.zillow.com/profile/TheJorgeRamirezGroup"
+PERSON_PROFILE_URLS = [
+    ZILLOW_PROFILE,
+    "https://www.linkedin.com/in/jorge-ramirez-37034025/",
+    "https://thejorgeramirezgroup.kw.com/agent/Jorge-Ramirez/520237",
+]
+BUSINESS_PROFILE_URLS = [
+    "https://www.facebook.com/thejorgeramirezgroup",
+    "https://www.instagram.com/jorgesellsnjhomes",
+    "https://www.google.com/maps/place/Jorge+Ramirez+Realtor+-+Keller+Williams+Premier+Properties/@40.7176144,-74.3613942,16z",
+]
 HREFLANG_LINE = re.compile(
     r"^[ \t]*<link\b[^>]*\bhreflang=[\"'][^\"']+[\"'][^>]*>[ \t]*\n?",
     re.I | re.M,
@@ -45,7 +56,7 @@ def load_manifest(path: Path = MANIFEST_PATH) -> dict[str, object]:
         if action not in actions:
             raise RuntimeError(f"{path}: invalid action for {slug}: {action}")
         actions[action] += 1
-    if actions != {"rebuild": 12, "redirect": 2, "quarantine": 30}:
+    if actions != {"rebuild": 12, "redirect": 3, "quarantine": 29}:
         raise RuntimeError(f"{path}: unexpected action counts: {actions}")
     provenance = manifest.get("provenancePolicy")
     expected_provenance = {
@@ -103,6 +114,12 @@ def display_name(slug: str) -> str:
         "west-orange": "West Orange",
     }
     return names.get(slug, " ".join(part.capitalize() for part in slug.split("-")))
+
+
+def search_name(slug: str, display: str) -> str:
+    """Return the common query form when it differs from the legal place name."""
+
+    return {"millburn": "Millburn"}.get(slug, display)
 
 
 def analytics() -> str:
@@ -177,14 +194,15 @@ def render_guide(
     provenance: dict[str, object],
 ) -> str:
     town = str(decision["displayName"])
+    query_town = search_name(slug, town)
     county = str(decision["county"])
     place_type = str(decision["placeType"])
     identity = str(decision["identity"])
     canonical = f"{SITE}/towns/{slug}"
-    title = f"{town} NJ Real Estate Guide | Buyers & Sellers"
+    title = f"{query_town} NJ Real Estate Agent & Guide | Jorge Ramirez"
     description = (
-        f"Research {town}, NJ real estate with official property sources, "
-        "buyer and seller checklists, county context, and an address-specific value review."
+        f"Work with Jorge Ramirez on {query_town}, NJ real estate. Get buyer and seller "
+        "guidance, official property research, and an address-specific home value review."
     )
     schema = {
         "@context": "https://schema.org",
@@ -198,7 +216,7 @@ def render_guide(
                 "inLanguage": "en-US",
                 "dateModified": PAGE_MODIFIED_ON,
                 "about": {"@type": "Place", "name": town},
-                "publisher": {"@id": ORGANIZATION_ID},
+                "publisher": {"@id": BUSINESS_ID},
                 "isPartOf": {
                     "@type": "WebSite",
                     "name": "The Jorge Ramirez Group",
@@ -206,12 +224,19 @@ def render_guide(
                 },
             },
             {
-                "@type": "Organization",
-                "@id": ORGANIZATION_ID,
+                "@type": "RealEstateAgent",
+                "@id": BUSINESS_ID,
                 "name": str(provenance["publisher"]),
                 "url": SITE + "/",
                 "telephone": "+1-908-230-7844",
                 "email": "jorge.ramirez@kw.com",
+                "image": SITE + "/images/jorge-ramirez-headshot.jpg",
+                "sameAs": BUSINESS_PROFILE_URLS,
+                "parentOrganization": {
+                    "@type": "Organization",
+                    "name": "Keller Williams Premier Properties",
+                    "url": "https://www.kw.com",
+                },
             },
             {
                 "@type": "Person",
@@ -224,7 +249,9 @@ def render_guide(
                     "propertyID": "New Jersey real estate salesperson license",
                     "value": str(provenance["njRealEstateLicense"]),
                 },
-                "worksFor": {"@id": ORGANIZATION_ID},
+                "worksFor": {"@id": BUSINESS_ID},
+                "image": SITE + "/images/jorge-ramirez-headshot.jpg",
+                "sameAs": PERSON_PROFILE_URLS,
             },
             {
                 "@type": "BreadcrumbList",
@@ -239,7 +266,7 @@ def render_guide(
                 "@id": SITE + "/#summit-office",
                 "name": "The Jorge Ramirez Group",
                 "url": SITE + "/",
-                "parentOrganization": {"@id": ORGANIZATION_ID},
+                "parentOrganization": {"@id": BUSINESS_ID},
                 "telephone": "+1-908-230-7844",
                 "address": {
                     "@type": "PostalAddress",
@@ -303,7 +330,7 @@ def render_guide(
     <section class="town-guide__hero" aria-labelledby="page-title">
       <div class="town-guide__hero-inner">
         <p class="town-guide__eyebrow">{html.escape(county)} County · Official-source planning</p>
-        <h1 id="page-title">{html.escape(town)} real estate guide for buyers and sellers</h1>
+        <h1 id="page-title">{html.escape(query_town)} NJ real estate guide for buyers and sellers</h1>
         <p class="town-guide__lede">Research the municipality, parcel, land-use records, public data, current comparable properties, and transaction questions tied to one address before planning a purchase or sale.</p>
       </div>
     </section>
@@ -316,6 +343,30 @@ def render_guide(
           <div class="town-guide__notice">
             <p><strong>Place type:</strong> {html.escape(place_type)}.</p>
             <p>{html.escape(identity)}</p>
+          </div>
+        </section>
+
+        <section class="town-guide__section" data-local-agent-trust="v1" aria-labelledby="local-agent-heading">
+          <div class="town-guide__agent-card">
+            <picture class="town-guide__agent-photo">
+              <source srcset="/images/jorge-ramirez-headshot.webp" type="image/webp">
+              <img src="/images/jorge-ramirez-headshot.jpg" width="955" height="1280" loading="lazy" alt="Jorge Ramirez, licensed New Jersey real estate agent">
+            </picture>
+            <div class="town-guide__agent-copy">
+              <p class="town-guide__eyebrow">Who stands behind this guide</p>
+              <h2 id="local-agent-heading">Work with Jorge on a {html.escape(town)} decision</h2>
+              <p><strong>Jorge Ramirez</strong> is a New Jersey real estate salesperson with Keller Williams Premier Properties and has worked full-time at Keller Williams since 2017. His office is at 488 Springfield Avenue in Summit, and his NJ license is #1754604.</p>
+              <p>For a {html.escape(town)} address, Jorge can help organize the records to verify, review current listing and comparable-sale information when available, and make the next buyer or seller decision clear without promising a price or result.</p>
+              <ul class="town-guide__agent-proof" aria-label="Verified credentials">
+                <li>Full-time at Keller Williams since 2017</li>
+                <li>NJ license #1754604</li>
+                <li>Buyer and seller service across six New Jersey counties</li>
+              </ul>
+              <div class="town-guide__agent-links">
+                <a href="/ai-authority">Verify Jorge's credentials</a>
+                <a href="{ZILLOW_PROFILE}" target="_blank" rel="noopener">See current reviews and sales on Zillow</a>
+              </div>
+            </div>
           </div>
         </section>
 

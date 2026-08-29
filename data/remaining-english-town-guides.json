@@ -1,14 +1,89 @@
 {
   "reviewed": "2026-08-26",
+  "modified": "2026-08-29",
   "pages": {
     "middlesex": {
+      "content_version": "quick-win-v2",
       "display_name": "Middlesex Borough",
       "county": "Middlesex",
       "identity": "This route refers to Middlesex Borough in Middlesex County. Confirm the municipality, block, and lot in the public record before using countywide or postal-name information for a property.",
       "municipal_label": "Middlesex Borough official website",
       "municipal_url": "https://www.middlesexboro-nj.gov/",
       "record_label": "Middlesex Borough finance and assessment resources",
-      "record_url": "https://www.middlesexboro-nj.gov/finance"
+      "record_url": "https://www.middlesexboro-nj.gov/finance",
+      "title": "Middlesex Borough NJ Real Estate Agent | Jorge Ramirez",
+      "description": "Work with Jorge Ramirez on Middlesex Borough, NJ real estate. Get buyer and seller guidance, public-record research, and a property-specific home value review.",
+      "hero": "Start with the Borough record, then connect the exact parcel, current property evidence, and transaction questions without substituting Middlesex County-wide data.",
+      "identity_heading": "Middlesex Borough is not Middlesex County",
+      "identity_paragraphs": [
+        "This guide covers Middlesex Borough, a municipality within Middlesex County. Use the Borough name and the property's block and lot when requesting municipal records; a countywide table or postal label does not establish the responsible local office.",
+        "Keep the parcel identity consistent across the deed, assessment record, tax information, survey, title work, permits, disclosures, listing data, and any professional review. Resolve a naming mismatch before using the record in a buyer or seller decision."
+      ],
+      "decision_heading": "Keep Borough assessment and permit questions in their proper records",
+      "decision_intro": "The Borough website and finance resources answer different parts of a property review. Record the source, effective date, and parcel identifier for each answer instead of treating one page as a complete property file.",
+      "decision_cards": [
+        {
+          "title": "Finance and assessment starting point",
+          "body": "Use the Borough finance and assessment resource to identify the current record and responsible contact for the parcel. Reconcile it with the deed, survey, title material, and current tax information; an assessment field is not a condition report or value opinion."
+        },
+        {
+          "title": "Permit and land-use trail",
+          "body": "Use the official Borough directory to locate the office that maintains zoning, construction, code, certificate, or public-record information relevant to the observed use and planned work. Ask the office to apply the current rule to the exact address."
+        },
+        {
+          "title": "Comparable geography",
+          "body": "Do not blend countywide results into a Borough valuation. Separate Middlesex Borough sales and listings from evidence outside the municipality, label every geography, and explain any property-specific adjustment instead of presenting a nearby result as interchangeable."
+        }
+      ],
+      "seller_heading": "Assemble the Middlesex Borough seller file before pricing",
+      "seller_intro": "A useful pricing review combines current comparable evidence with what can be verified about the subject property. It does not convert a county statistic or automated estimate into a promised sale price.",
+      "seller_steps": [
+        "Confirm the Middlesex Borough address, block and lot, current assessment, and tax record.",
+        "Collect the deed, survey, title information, permits, certificates, and approvals that apply to the property.",
+        "Document updates and known condition questions without treating unverified work as approved.",
+        "Separate active competition, pending evidence, and closed comparable sales by date and property type.",
+        "Label any evidence outside Middlesex Borough and explain why it is being considered.",
+        "Recheck time-sensitive records and obtain legal, tax, inspection, insurance, or engineering guidance when appropriate."
+      ],
+      "cta_heading": "Planning a Middlesex Borough purchase or sale?",
+      "cta_copy": "Bring the Borough address and the decision you are making, then choose the buyer, seller, or valuation path that fits the property.",
+      "sources": [
+        {
+          "category": "Municipal government",
+          "label": "Middlesex Borough official website",
+          "url": "https://www.middlesexboro-nj.gov/",
+          "purpose": "Locate current Borough departments, public notices, meeting information, and public-record contacts.",
+          "limit": "The municipal directory identifies record keepers; it does not establish a property's condition, legal use, or value."
+        },
+        {
+          "category": "Finance and assessment",
+          "label": "Middlesex Borough finance and assessment resources",
+          "url": "https://www.middlesexboro-nj.gov/finance",
+          "purpose": "Start an address-level assessment, tax, finance, or responsible-office inquiry using the correct Borough parcel.",
+          "limit": "Confirm the current record and effective date directly; an assessment is not a market appraisal or title determination."
+        },
+        {
+          "category": "State education reports",
+          "label": "New Jersey School Performance Reports",
+          "url": "https://www.nj.gov/education/spr/",
+          "purpose": "Search the state's current reports by school or district and read the reporting year and methodology.",
+          "limit": "A state report does not assign an address to a school; confirm the current assignment directly with the responsible district."
+        },
+        {
+          "category": "Transportation",
+          "label": "NJ TRANSIT schedules and fares",
+          "url": "https://www.njtransit.com/schedules-and-fares/",
+          "purpose": "Check the actual origin, destination, date, travel window, connections, and current service notices.",
+          "limit": "A Borough page cannot promise a route or travel time, and service conditions can change."
+        },
+        {
+          "category": "Flood disclosure",
+          "label": "New Jersey DEP flood-disclosure resources",
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "purpose": "Review the state's property-focused flood-disclosure resources and address-screening tools.",
+          "limit": "Screening is not an engineering conclusion or insurance quote; use the exact address and qualified guidance."
+        }
+      ]
     },
     "woodbridge": {
       "display_name": "Woodbridge Township",
@@ -20,22 +95,177 @@
       "record_url": "https://www.twp.woodbridge.nj.us/101/Departments"
     },
     "orange": {
-      "display_name": "Orange City Township",
+      "content_version": "quick-win-v2",
+      "display_name": "City of Orange Township",
       "county": "Essex",
-      "identity": "This route refers to Orange City Township in Essex County. Confirm the name shown in the parcel record; Orange, East Orange, South Orange, and West Orange are not interchangeable municipal records.",
-      "municipal_label": "Orange City Township official website",
+      "identity": "This route refers to the City of Orange Township in Essex County. Confirm the municipality shown in the parcel record; Orange, East Orange, South Orange, and West Orange are not interchangeable municipal records.",
+      "municipal_label": "City of Orange Township official website",
       "municipal_url": "https://www.orangenj.gov/",
-      "record_label": "Orange City Township Zoning Division",
-      "record_url": "https://www.orangenj.gov/355/Zoning-Division"
+      "record_label": "City of Orange Township Zoning Division",
+      "record_url": "https://www.orangenj.gov/355/Zoning-Division",
+      "title": "City of Orange Township NJ Real Estate | Jorge Ramirez",
+      "description": "Work with Jorge Ramirez in the City of Orange Township, NJ. Get buyer and seller guidance, public-record research, and a property-specific home value review.",
+      "hero": "Use the official municipal identity, then verify the parcel, approved use, planning and zoning record, physical condition, and current property evidence tied to one address.",
+      "identity_heading": "Use the City of Orange Township record",
+      "identity_paragraphs": [
+        "The maintained municipal name for this guide is the City of Orange Township in Essex County. Orange, East Orange, South Orange, and West Orange have separate governments and property records, so begin with the municipality and parcel identifiers shown in the authoritative record.",
+        "Keep the same identity across assessment, zoning, planning, construction, certificate, tax, title, survey, disclosure, and listing materials. A similar street name or broad Orange-area result is not a substitute for the subject parcel."
+      ],
+      "decision_heading": "Verify the approved unit count before relying on a multifamily label",
+      "decision_intro": "A listing description, current layout, or prior use does not by itself establish the legally approved number of units. Send each question to the office that maintains the relevant record and keep the answer tied to the exact property.",
+      "decision_cards": [
+        {
+          "title": "Zoning and existing use",
+          "body": "Use the City's Zoning Division as an official starting point for the district, permitted-use, dimensional, and application questions that apply to the parcel. Ask what current record or approval supports the represented use."
+        },
+        {
+          "title": "Planning record versus proposal",
+          "body": "Use Planning and Economic Development materials to identify adopted plans, board information, and public planning resources. A proposal, hearing, or planning document is not proof that a particular project was approved or completed."
+        },
+        {
+          "title": "Permits, certificates, and observed layout",
+          "body": "For a property marketed as multifamily, ask the responsible City offices which construction, housing, certificate, fire, or permit records apply. Reconcile the municipal response with title, inspection, appraisal, lender, and attorney review before relying on a unit count."
+        }
+      ],
+      "seller_heading": "Prepare a City of Orange Township property record before marketing",
+      "seller_intro": "A seller can reduce avoidable ambiguity by matching the marketing description to the municipal and property documents that actually exist. This workflow does not promise approval, timing, price, or a transaction result.",
+      "seller_steps": [
+        "Confirm the City of Orange Township address, block and lot, ownership record, and property type.",
+        "Verify the represented unit count and use with the responsible City offices rather than relying on an old listing.",
+        "Collect available permits, certificates, board approvals, surveys, title material, and improvement documentation.",
+        "Separate current comparable evidence by property type, condition, approved use, location, and date.",
+        "Review flood-disclosure, insurance, inspection, legal, tax, and financing questions with qualified professionals as appropriate.",
+        "Use the Español pathway when Spanish-language planning would make the same source review easier to follow."
+      ],
+      "cta_heading": "Planning a move in the City of Orange Township?",
+      "cta_copy": "Start with the exact property and verified municipal record, then choose the buyer, seller, or valuation path for the next decision.",
+      "sources": [
+        {
+          "category": "Municipal government",
+          "label": "City of Orange Township official website",
+          "url": "https://www.orangenj.gov/",
+          "purpose": "Locate current City departments, public notices, meetings, forms, and public-record contacts.",
+          "limit": "The municipal directory identifies responsible offices; it does not establish a parcel's condition, approved use, or value."
+        },
+        {
+          "category": "Zoning",
+          "label": "City of Orange Township Zoning Division",
+          "url": "https://www.orangenj.gov/355/Zoning-Division",
+          "purpose": "Start parcel-specific questions about zoning, use, applications, and the office responsible for current land-use guidance.",
+          "limit": "A general zoning page does not confirm the approved use, unit count, permit history, or certificate status of one property."
+        },
+        {
+          "category": "Planning",
+          "label": "City of Orange Township Planning and Economic Development",
+          "url": "https://www.orangenj.gov/189/Planning-Economic-Development",
+          "purpose": "Find official planning resources, board information, and current municipal planning contacts.",
+          "limit": "A plan, application, or hearing does not prove approval, completion, timing, or an effect on a specific parcel."
+        },
+        {
+          "category": "State education reports",
+          "label": "New Jersey School Performance Reports",
+          "url": "https://www.nj.gov/education/spr/",
+          "purpose": "Search the state's current reports and read the reporting period, measure definitions, and methodology.",
+          "limit": "State reports do not assign an address to a school or support a subjective school ranking."
+        },
+        {
+          "category": "Transportation",
+          "label": "NJ TRANSIT schedules and fares",
+          "url": "https://www.njtransit.com/schedules-and-fares/",
+          "purpose": "Test a trip using the exact origin, destination, date, travel window, transfers, and service notices.",
+          "limit": "A municipal guide cannot promise a route or commute duration, and service conditions can change."
+        },
+        {
+          "category": "Flood disclosure",
+          "label": "New Jersey DEP flood-disclosure resources",
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "purpose": "Review state flood-disclosure information and address-screening tools for the subject property.",
+          "limit": "Screening is not an engineering determination, environmental conclusion, or insurance quote."
+        }
+      ]
     },
     "helmetta": {
+      "content_version": "quick-win-v2",
       "display_name": "Helmetta",
       "county": "Middlesex",
       "identity": "This route refers to the Borough of Helmetta in Middlesex County. Start with the exact address and parcel identifiers, then verify which local or state office maintains each record you need.",
       "municipal_label": "Borough of Helmetta official website",
       "municipal_url": "https://www.helmettaboro.com/",
       "record_label": "New Jersey construction-code resources",
-      "record_url": "https://www.nj.gov/dca/codes/"
+      "record_url": "https://www.nj.gov/dca/codes/",
+      "title": "Helmetta NJ Real Estate Agent & Guide | Jorge Ramirez",
+      "description": "Work with Jorge Ramirez on Helmetta, NJ real estate. Get buyer and seller guidance, public-record research, and a property-specific home value review.",
+      "hero": "Keep the exact Helmetta parcel at the center of municipal records, construction-code questions, current comparable evidence, and buyer or seller planning.",
+      "identity_heading": "Keep a Helmetta parcel tied to the Borough record",
+      "identity_paragraphs": [
+        "This guide covers the Borough of Helmetta in Middlesex County. Use the exact address and block and lot when asking which municipal or state office maintains a record; a postal label or nearby-town result does not establish the governing file.",
+        "Keep the parcel identity consistent across the deed, assessment, tax information, survey, title work, permits, disclosures, current listings, and comparable sales. If two records disagree, resolve the identity before using either one in a transaction decision."
+      ],
+      "decision_heading": "Separate the Borough file from construction-code guidance",
+      "decision_intro": "The Borough website can route local record questions, while New Jersey construction-code resources explain the state framework. Neither source alone proves the condition, approval status, or value of a particular property.",
+      "decision_cards": [
+        {
+          "title": "Find the responsible record keeper",
+          "body": "Use the Borough's official website to locate current departments, ordinances, meetings, notices, forms, and public-record contacts. Ask which office holds the parcel-specific record needed for the intended purchase, sale, or project."
+        },
+        {
+          "title": "Connect code guidance to the property",
+          "body": "Use the New Jersey Department of Community Affairs code resources to understand the state construction-code framework, then confirm the enforcing agency, permit, inspection, or certificate question for the exact Helmetta address."
+        },
+        {
+          "title": "Label every cross-municipality comparable",
+          "body": "When reviewing value, keep Helmetta sales and listings separate from evidence in another municipality. If nearby evidence is considered, name its municipality, property type, date, and relevant differences rather than presenting it as an exact local match."
+        }
+      ],
+      "seller_heading": "Build the Helmetta property file before choosing a price",
+      "seller_intro": "A property-specific valuation should show the subject facts, current alternatives, and comparable evidence used. It should not turn a broad county statistic, nearby-town sale, or automated estimate into a promised result.",
+      "seller_steps": [
+        "Confirm the Helmetta address, block and lot, current assessment, tax record, and responsible municipal contacts.",
+        "Collect the deed, survey, title material, permits, inspections, certificates, and documented improvements that apply.",
+        "Review known condition, flood-disclosure, insurance, environmental, and utility questions with qualified professionals where appropriate.",
+        "Separate active competition, pending evidence, and closed comparable sales by property type, condition, location, and date.",
+        "Identify any comparable outside Helmetta and explain why it is relevant instead of blending it into the local set.",
+        "Recheck every time-sensitive public source before an offer, listing, renovation decision, or closing."
+      ],
+      "cta_heading": "Planning a Helmetta purchase or sale?",
+      "cta_copy": "Bring the exact address and the property question, then choose the buyer, seller, or valuation path that matches the next decision.",
+      "sources": [
+        {
+          "category": "Municipal government",
+          "label": "Borough of Helmetta official website",
+          "url": "https://www.helmettaboro.com/",
+          "purpose": "Locate current Borough departments, ordinances, meetings, notices, forms, and public-record contacts.",
+          "limit": "The municipal portal identifies record keepers; it does not establish a property's condition, approval status, or value."
+        },
+        {
+          "category": "Construction code",
+          "label": "New Jersey construction-code resources",
+          "url": "https://www.nj.gov/dca/codes/",
+          "purpose": "Review the state construction-code framework and identify the code or enforcement question that must be tied to the property.",
+          "limit": "State guidance does not prove that work at a particular address was permitted, inspected, approved, or completed."
+        },
+        {
+          "category": "State education reports",
+          "label": "New Jersey School Performance Reports",
+          "url": "https://www.nj.gov/education/spr/",
+          "purpose": "Search current reports by school or district and read the reporting period and methodology.",
+          "limit": "A state report does not assign an address to a school or support a subjective ranking."
+        },
+        {
+          "category": "Transportation",
+          "label": "NJ TRANSIT schedules and fares",
+          "url": "https://www.njtransit.com/schedules-and-fares/",
+          "purpose": "Build a date-specific trip using the real origin, destination, travel window, transfers, and service notices.",
+          "limit": "A town page cannot promise a route, connection, parking option, or travel duration."
+        },
+        {
+          "category": "Flood disclosure",
+          "label": "New Jersey DEP flood-disclosure resources",
+          "url": "https://dep.nj.gov/flooddisclosure/",
+          "purpose": "Review state flood-disclosure information and address-screening tools for the subject property.",
+          "limit": "Screening is not an engineering conclusion, environmental determination, or insurance quote."
+        }
+      ]
     }
   },
   "shared_sources": [

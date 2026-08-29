@@ -1375,8 +1375,9 @@
       ]
     },
     "middlesex-borough": {
-      "action": "quarantine",
-      "reason": "The route earned no clicks and fewer than 100 impressions in each supplied comparison period; its generated legacy page had blocked risk and no official citations.",
+      "action": "redirect",
+      "destination": "/towns/middlesex",
+      "reason": "This duplicate route names the same municipality as the maintained /towns/middlesex guide. Consolidate every alias into that canonical Borough page instead of sending legacy signals to a noindex fallback.",
       "gsc": {
         "current3m": {
           "rows": 0,

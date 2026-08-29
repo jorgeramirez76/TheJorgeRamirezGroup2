@@ -85,14 +85,14 @@ class AuthorityProfileTrustTests(unittest.TestCase):
         for relative in PAGES:
             text = (ROOT / relative).read_text(encoding="utf-8")
             nodes = jsonld_nodes(text)
-            agents = [node for node in nodes if node.get("@type") == "RealEstateAgent"]
-            self.assertEqual(1, len(agents), relative)
-            agent = agents[0]
-            self.assertEqual(PERSON_ID, agent["@id"], relative)
-            self.assertEqual("1754604", agent["hasCredential"]["identifier"], relative)
-            self.assertEqual(6, len(agent["areaServed"]), relative)
-            self.assertNotIn("aggregateRating", agent, relative)
-            self.assertNotIn("review", agent, relative)
+            people = [node for node in nodes if node.get("@type") == "Person"]
+            self.assertEqual(1, len(people), relative)
+            person = people[0]
+            self.assertEqual(PERSON_ID, person["@id"], relative)
+            self.assertEqual("1754604", person["hasCredential"]["identifier"], relative)
+            self.assertEqual(6, len(person["areaServed"]), relative)
+            self.assertNotIn("aggregateRating", person, relative)
+            self.assertNotIn("review", person, relative)
 
     def test_pages_keep_one_main_landmark_and_homepage_brand_tokens(self) -> None:
         for relative in PAGES:

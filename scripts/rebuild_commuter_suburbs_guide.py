@@ -13,6 +13,18 @@ REVIEWED_ISO = "2026-08-26"
 PAGE_MODIFIED_ISO = "2026-08-27"
 GTFS_DATE = "2026-08-19"
 
+
+def indexable_town_slugs() -> set[str]:
+    facts = json.loads((ROOT / "data" / "site-facts.json").read_text(encoding="utf-8"))
+    return {
+        slug
+        for slugs in facts["canonicalTownInventory"]["byCounty"].values()
+        for slug in slugs
+    }
+
+
+INDEXABLE_TOWN_SLUGS = indexable_town_slugs()
+
 CANONICALS = {
     "en": "https://thejorgeramirezgroup.com/blog/best-nj-suburbs-nyc-commuters",
     "es": "https://thejorgeramirezgroup.com/es/blog/best-nj-suburbs-nyc-commuters",
@@ -37,6 +49,10 @@ TOWNS = [
         "county": {"en": "Essex County", "es": "Condado de Essex"},
         "route": "Morris & Essex / Gladstone",
         "slug": "south-orange",
+        "guide": {
+            "en": ("/blog/market-report-south-orange-nj-2026", "Open South Orange market research"),
+            "es": ("/es/blog/market-report-south-orange-nj-2026", "Abrir la investigación de South Orange"),
+        },
         "note": {
             "en": "Check the specific departure because New York Penn, Hoboken, and transfer patterns depend on the published itinerary.",
             "es": "Revise la salida específica porque New York Penn, Hoboken y los transbordos dependen del itinerario publicado.",
@@ -167,6 +183,10 @@ TOWNS = [
         "county": {"en": "Somerset County", "es": "Condado de Somerset"},
         "route": "Raritan Valley Line",
         "slug": "somerville",
+        "guide": {
+            "en": ("/counties/somerset-county", "Open Somerset County research"),
+            "es": ("/es/counties/somerset-county", "Abrir la investigación del condado de Somerset"),
+        },
         "note": {
             "en": "Use the official planner to test the full itinerary, including Newark routing and the final New York leg.",
             "es": "Use el planificador oficial para probar el itinerario completo, incluida la ruta por Newark y el tramo final en Nueva York.",
@@ -177,6 +197,10 @@ TOWNS = [
         "county": {"en": "Union County", "es": "Condado de Union"},
         "route": "Northeast Corridor comparison group",
         "slug": "rahway",
+        "guide": {
+            "en": ("/blog/market-report-rahway-nj-2026", "Open Rahway market research"),
+            "es": ("/es/blog/market-report-rahway-nj-2026", "Abrir la investigación de Rahway"),
+        },
         "note": {
             "en": "Confirm the route serving the chosen departure and check current station, accessibility, and parking information.",
             "es": "Confirme la línea de la salida elegida y revise la información vigente de estación, accesibilidad y estacionamiento.",
@@ -197,6 +221,10 @@ TOWNS = [
         "county": {"en": "Middlesex County", "es": "Condado de Middlesex"},
         "route": "Northeast Corridor",
         "slug": "metuchen",
+        "guide": {
+            "en": ("/blog/market-report-metuchen-nj-2026", "Open Metuchen market research"),
+            "es": ("/es/blog/market-report-metuchen-nj-2026", "Abrir la investigación de Metuchen"),
+        },
         "note": {
             "en": "Test the intended travel window and station access for the property, then recheck alerts before travel.",
             "es": "Pruebe la franja horaria prevista y el acceso desde la propiedad; revise las alertas antes de viajar.",
@@ -207,6 +235,10 @@ TOWNS = [
         "county": {"en": "Middlesex County", "es": "Condado de Middlesex"},
         "route": "Northeast Corridor",
         "slug": "new-brunswick",
+        "guide": {
+            "en": ("/counties/middlesex-county", "Open Middlesex County research"),
+            "es": ("/es/counties/middlesex-county", "Abrir la investigación del condado de Middlesex"),
+        },
         "note": {
             "en": "Check the exact train and local connection; the station-area trip is only one part of a door-to-destination comparison.",
             "es": "Revise el tren exacto y la conexión local; el tramo de la estación es solo una parte del viaje completo.",
@@ -279,6 +311,8 @@ COPY = {
             ("Check fare, parking, and accessibility at the official source", "Use current operator tools. This guide intentionally does not repeat amounts or availability that can change."),
             ("Repeat the test before making a housing decision", "Schedules, work patterns, construction, and individual requirements change. Save the assumptions behind the comparison."),
         ],
+        "method_tool_intro": "Keep the two route records on the same assumptions with the",
+        "method_tool_label": "NJ commute comparison calculator",
         "fair_title": "Schools, crime data, and fair housing",
         "fair_copy": "This guide does not label or rank communities by schools, crime, demographics, or who should live there. If a reader independently wants those data, every reader receives the same links to NJDOE School Performance Reports and New Jersey State Police crime reports. Review the publication year, definitions, reporting coverage, and exact geography rather than relying on a slogan. HUD's current guidance emphasizes consistent, unbiased sharing without discriminatory intent.",
         "official_title": "Official sources and update method",
@@ -366,6 +400,8 @@ COPY = {
             ("Revise tarifa, estacionamiento y accesibilidad en la fuente oficial", "Use herramientas vigentes del operador. Esta guía no repite cantidades ni disponibilidad que pueden cambiar."),
             ("Repita la prueba antes de una decisión de vivienda", "Los horarios, el trabajo, las obras y las necesidades individuales cambian. Guarde los supuestos de la comparación."),
         ],
+        "method_tool_intro": "Mantenga los dos registros de ruta bajo los mismos supuestos con la",
+        "method_tool_label": "calculadora para comparar traslados en NJ",
         "fair_title": "Escuelas, datos de delitos y vivienda justa",
         "fair_copy": "Esta guía no etiqueta ni clasifica comunidades por escuelas, delitos, demografía o por quién debería vivir allí. Si un lector desea esos datos por decisión propia, todos reciben los mismos enlaces a los informes de NJDOE y de New Jersey State Police. Revise el año, las definiciones, la cobertura y la geografía exacta en lugar de depender de un eslogan. La guía vigente de HUD destaca compartir datos de forma consistente e imparcial y sin intención discriminatoria.",
         "official_title": "Fuentes oficiales y método de actualización",
@@ -407,10 +443,22 @@ def esc(value: str) -> str:
     return html.escape(value, quote=True)
 
 
+def guide_link(town: dict, language: str, copy: dict) -> tuple[str, str]:
+    slug = town["slug"]
+    if slug in INDEXABLE_TOWN_SLUGS:
+        prefix = "" if language == "en" else "/es"
+        return f"{prefix}/towns/{slug}", copy["guide_link"]
+    alternate = town.get("guide", {}).get(language)
+    if not alternate:
+        raise ValueError(f"{slug}: nonindex town card requires a reviewed {language} guide route")
+    return alternate
+
+
 def town_cards(language: str, copy: dict) -> str:
     cards = []
     prefix = "" if language == "en" else "/es"
     for town in TOWNS:
+        guide_route, guide_label = guide_link(town, language, copy)
         is_path = town["name"] == "Jersey City / Hoboken"
         official_url = OFFICIAL["path"] if is_path else OFFICIAL["planner"]
         official_label = copy["path_link"] if is_path else copy["planner_link"]
@@ -424,7 +472,7 @@ def town_cards(language: str, copy: dict) -> str:
               <p class="route-label">{esc(town["route"])}</p>
               <p>{esc(town["note"][language])}</p>
               <div class="card-links">
-                <a href="{prefix}/towns/{esc(town['slug'])}">{esc(copy['guide_link'])}</a>
+                <a href="{esc(guide_route)}">{esc(guide_label)}</a>
                 <a class="{external_class}" href="{official_url}" target="_blank" rel="noopener noreferrer">{esc(official_label)}</a>
               </div>
             </article>'''
@@ -682,6 +730,8 @@ def render(language: str) -> str:
     .method-list li::before {{ content: counter(steps); position: absolute; left: 22px; top: 22px; width: 38px; height: 38px; display: grid; place-items: center; background: var(--red); color: var(--paper); border-radius: 50%; font-weight: 800; }}
     .method-list h3 {{ margin: 0 0 5px; font-size: 1.18rem; }}
     .method-list p {{ margin: 0; color: #D8D2C8; }}
+    .method-tool-link {{ max-width: 820px; margin: 24px 0 0; color: #D8D2C8; }}
+    .method-tool-link a {{ color: var(--gold); font-weight: 700; }}
     .fair-note {{ margin-top: 28px; padding: 26px; background: var(--soft-gold); border-left: 5px solid var(--gold); }}
     .fair-note h2 {{ margin-top: 0; font-size: clamp(1.6rem, 3vw, 2.25rem); }}
     .fair-note p {{ margin-bottom: 0; }}
@@ -794,6 +844,7 @@ def render(language: str) -> str:
         <p class="section-kicker">04 · Repeatable method</p>
         <h2>{esc(copy['method_title'])}</h2>
         <ol class="method-list">{method_steps(copy)}</ol>
+        <p class="method-tool-link">{esc(copy['method_tool_intro'])} <a href="{prefix}/tools/commute-scorer">{esc(copy['method_tool_label'])}</a>.</p>
       </div>
     </section>
 

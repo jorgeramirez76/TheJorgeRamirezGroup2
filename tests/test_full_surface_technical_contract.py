@@ -17,6 +17,12 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
 SITEMAPS = ("sitemap.xml", "sitemap-es.xml")
+PRIORITY_AUTHORITY_ROUTES = frozenset({
+    "/blog/how-much-is-my-nj-home-worth-2026",
+    "/tools/commute-scorer",
+    "/es/tools/commute-scorer",
+    "/es/tools/market-comparison-widget",
+})
 IGNORED_SCHEMES = {"mailto", "tel", "sms", "data"}
 VOID_ELEMENTS = {
     "area", "base", "br", "col", "embed", "hr", "img", "input", "link",
@@ -175,6 +181,23 @@ def resolve_route(current: str, href: str) -> str | None:
     return path.rstrip("/") or "/"
 
 
+def canonical_inbound_sources(
+    pages: dict[str, tuple[Path, SurfaceParser]],
+) -> dict[str, set[str]]:
+    """Return unique canonical source routes for each canonical target route."""
+    incoming = {route: set() for route in pages}
+    for source_route, (_, parser) in pages.items():
+        for href in parser.hrefs:
+            target_route = resolve_route(source_route, href)
+            if target_route in incoming and target_route != source_route:
+                incoming[target_route].add(source_route)
+    return incoming
+
+
+def route_language(route: str) -> str:
+    return "es" if route == "/es" or route.startswith("/es/") else "en"
+
+
 class FullSurfaceTechnicalContractTests(unittest.TestCase):
     maxDiff = None
 
@@ -278,7 +301,7 @@ class FullSurfaceTechnicalContractTests(unittest.TestCase):
 
     def test_internal_links_assets_fragments_and_orphan_graph_resolve(self) -> None:
         failures: list[str] = []
-        incoming = {route: 0 for route in self.pages}
+        incoming = canonical_inbound_sources(self.pages)
         parser_cache: dict[Path, SurfaceParser] = {}
         for route, (path, parser) in sorted(self.pages.items()):
             relative = path.relative_to(ROOT).as_posix()
@@ -290,8 +313,6 @@ class FullSurfaceTechnicalContractTests(unittest.TestCase):
                 if target is None and target_route not in self.redirects:
                     failures.append(f"{relative}: unresolved link {raw}")
                     continue
-                if target_route in incoming and target_route != route:
-                    incoming[target_route] += 1
                 fragment = unquote(urlsplit(raw).fragment)
                 if fragment and target is not None:
                     target_parser = parser_cache.setdefault(target, parse(target))
@@ -314,8 +335,25 @@ class FullSurfaceTechnicalContractTests(unittest.TestCase):
                     asset_path = path.parent / parsed.path
                 if parsed.path and not asset_path.is_file():
                     failures.append(f"{relative}: missing {kind} asset {raw}")
-        orphans = sorted(route for route, count in incoming.items() if count == 0)
+        orphans = sorted(route for route, sources in incoming.items() if not sources)
         self.assertEqual([], orphans, "canonical sitemap pages without an inbound canonical link")
+        self.assertEqual([], failures)
+
+    def test_priority_authority_routes_have_three_same_language_sources(self) -> None:
+        incoming = canonical_inbound_sources(self.pages)
+        self.assertTrue(PRIORITY_AUTHORITY_ROUTES <= set(incoming))
+        failures: list[str] = []
+        for target in sorted(PRIORITY_AUTHORITY_ROUTES):
+            language = route_language(target)
+            same_language = sorted(
+                source
+                for source in incoming[target]
+                if route_language(source) == language
+            )
+            if len(same_language) < 3:
+                failures.append(
+                    f"{target}: {len(same_language)} same-language sources {same_language}"
+                )
         self.assertEqual([], failures)
 
     def test_runtime_images_and_homepage_loading_are_first_party_and_bounded(self) -> None:

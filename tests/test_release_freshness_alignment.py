@@ -13,6 +13,24 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGE_MODIFIED_ON = "2026-08-27"
+FOLLOWUP_TOWN_MODIFIED_ON = "2026-08-29"
+FOLLOWUP_TOWN_PATHS = {
+    f"towns/{slug}.html"
+    for slug in (
+        "basking-ridge",
+        "chatham",
+        "hoboken",
+        "jersey-city",
+        "madison",
+        "maplewood",
+        "millburn",
+        "montclair",
+        "morristown",
+        "newark",
+        "summit",
+        "westfield",
+    )
+}
 
 
 def load_json(relative: str) -> dict:
@@ -107,6 +125,11 @@ class ReleaseFreshnessAlignmentTests(unittest.TestCase):
         lastmods = sitemap_lastmods()
         for relative in sorted(self.paths):
             with self.subTest(relative=relative):
+                expected_modified = (
+                    FOLLOWUP_TOWN_MODIFIED_ON
+                    if relative in FOLLOWUP_TOWN_PATHS
+                    else PAGE_MODIFIED_ON
+                )
                 source = (ROOT / relative).read_text(encoding="utf-8")
                 canonical = re.search(
                     r'<link\s+rel="canonical"\s+href="([^"]+)"', source
@@ -115,15 +138,15 @@ class ReleaseFreshnessAlignmentTests(unittest.TestCase):
                     r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})"', source
                 )
                 self.assertGreaterEqual(len(schema_dates), 1)
-                self.assertEqual({PAGE_MODIFIED_ON}, set(schema_dates))
+                self.assertEqual({expected_modified}, set(schema_dates))
                 for pattern in (
                     r'<meta\s+property="article:modified_time"\s+content="([^"]+)"',
                     r'<meta\s+name="last-updated"\s+content="([^"]+)"',
                 ):
                     values = re.findall(pattern, source, flags=re.I)
                     if values:
-                        self.assertEqual({PAGE_MODIFIED_ON}, set(values))
-                self.assertEqual(PAGE_MODIFIED_ON, lastmods.get(canonical))
+                        self.assertEqual({expected_modified}, set(values))
+                self.assertEqual(expected_modified, lastmods.get(canonical))
 
     def test_factual_review_and_access_dates_remain_distinct(self) -> None:
         expected = {

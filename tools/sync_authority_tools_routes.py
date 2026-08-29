@@ -13,6 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
 MANIFEST_PATH = ROOT / "data" / "authority-tools-sources.json"
+TOWN_DECISIONS_PATH = ROOT / "data" / "indexable-town-risk-decisions.json"
 REVIEWED_ON = "2026-08-26"
 
 
@@ -22,6 +23,28 @@ def load_manifest() -> dict:
 
 def redirected_routes(data: dict) -> set[str]:
     return {record["route"] for record in data["consolidations"]}
+
+
+def town_alias_sources() -> set[str]:
+    """Return exact alias routes owned by the town-remediation renderer."""
+    decisions = json.loads(TOWN_DECISIONS_PATH.read_text(encoding="utf-8"))["decisions"]
+    sources: set[str] = set()
+    for slug, decision in decisions.items():
+        if decision.get("action") != "redirect":
+            continue
+        sources.update(
+            {
+                f"/towns/{slug}",
+                f"/towns/{slug}.html",
+                f"/es/towns/{slug}",
+                f"/es/towns/{slug}.html",
+                f"/realtor/{slug}-nj",
+                f"/realtor/{slug}-nj.html",
+                f"/communities/{slug}",
+                f"/communities/{slug}.html",
+            }
+        )
+    return sources
 
 
 def redirect_config(data: dict, current: str) -> str:
@@ -60,10 +83,20 @@ def redirect_config(data: dict, current: str) -> str:
         and is_canonical_host_rule(preserved[canonical_preamble_end])
     ):
         canonical_preamble_end += 1
+    # The town-remediation owner inserts newly materialized exact aliases after
+    # the host preamble. Keep that contiguous block ahead of this cleanup's
+    # rules so both deterministic owners converge regardless of run order.
+    insertion_index = canonical_preamble_end
+    town_sources = town_alias_sources()
+    while (
+        insertion_index < len(preserved)
+        and preserved[insertion_index].get("source") in town_sources
+    ):
+        insertion_index += 1
     config["redirects"] = (
-        preserved[:canonical_preamble_end]
+        preserved[:insertion_index]
         + desired
-        + preserved[canonical_preamble_end:]
+        + preserved[insertion_index:]
     )
     return json.dumps(config, ensure_ascii=False, indent=2) + "\n"
 

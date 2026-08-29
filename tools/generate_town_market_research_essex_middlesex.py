@@ -440,10 +440,17 @@ def schema_graph(
                 "@id": article_id,
                 "headline": copy["title"],
                 "description": copy["description"],
+                "image": {
+                    "@type": "ImageObject",
+                    "url": SITE + "/images/hero.jpg",
+                    "width": 1400,
+                    "height": 933,
+                },
                 "inLanguage": in_language,
                 "datePublished": report["publishedOn"],
                 "dateModified": PAGE_MODIFIED_ON,
                 "mainEntityOfPage": {"@id": webpage_id},
+                "author": {"@id": org_id},
                 "publisher": {"@id": org_id},
                 "articleSection": "New Jersey town market research",
                 "citation": [

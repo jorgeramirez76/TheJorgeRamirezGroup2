@@ -458,6 +458,7 @@ spanish, replacements = re.subn(
     <a href="/es/communities#union" class="btn">Explorar por Condado</a>
     <a href="/es/buy-a-home" class="btn">Plan para Comprar</a>
     <a href="/es/sell-your-home" class="btn">Plan para Vender</a>
+    <a href="/es/tools/market-comparison-widget" class="btn">Comparar Dos Municipios</a>
   </section>''',
     spanish,
     count=1,

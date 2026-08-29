@@ -63,6 +63,18 @@ EXPECTED = {
     "market-report-morristown-nj-2026": ("Morristown", "Morris", "1424"),
     "market-report-randolph-nj-2026": ("Randolph", "Morris", "1432"),
 }
+
+
+def indexable_town_slugs() -> set[str]:
+    facts = json.loads((ROOT / "data" / "site-facts.json").read_text(encoding="utf-8"))
+    return {
+        slug
+        for slugs in facts["canonicalTownInventory"]["byCounty"].values()
+        for slug in slugs
+    }
+
+
+INDEXABLE_TOWN_SLUGS = indexable_town_slugs()
 FORBIDDEN_KEYS = {
     "medianPrice",
     "daysOnMarket",
@@ -252,6 +264,7 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
             "menu": "Menu",
             "home": "Home",
             "town_guide": f"{name} guide",
+            "official_sources_cta": "Official town sources",
             "county_guide": f"{county} County guide",
             "research": "Research",
             "contact": "Contact",
@@ -390,6 +403,7 @@ def page_copy(report: dict, language: str) -> dict[str, object]:
         "menu": "Menú",
         "home": "Inicio",
         "town_guide": f"Guía de {name}",
+        "official_sources_cta": "Fuentes oficiales del municipio",
         "county_guide": f"Guía del condado de {county}",
         "research": "Investigación",
         "contact": "Contacto",
@@ -533,6 +547,14 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
     contact = "/es#contact" if language == "es" else "/contact"
     html_lang = "es" if language == "es" else "en"
     in_language = "es-US" if language == "es" else "en-US"
+    if town_slug in INDEXABLE_TOWN_SLUGS:
+        town_research_route = f"{prefix}/towns/{town_slug}"
+        town_research_label = copy["town_guide"]
+        town_research_cta = copy["town_cta"]
+    else:
+        town_research_route = "#source-heading"
+        town_research_label = copy["official_sources_cta"]
+        town_research_cta = copy["official_sources_cta"]
 
     article_schema = {
         "@context": "https://schema.org",
@@ -541,6 +563,12 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
         "description": copy["description"],
         "url": canonical,
         "mainEntityOfPage": canonical,
+        "image": {
+            "@type": "ImageObject",
+            "url": f"{SITE}/images/hero.jpg",
+            "width": 1400,
+            "height": 933,
+        },
         "inLanguage": in_language,
         "datePublished": report["publishedOn"],
         "dateModified": PAGE_MODIFIED_ON,
@@ -747,7 +775,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
       <button class="market-menu-button" type="button" aria-expanded="false" aria-controls="primary-links">{esc(copy['menu'])}</button>
       <div class="market-nav-links" id="primary-links">
         <a href="{home}">{esc(copy['home'])}</a>
-        <a href="{prefix}/towns/{town_slug}">{esc(copy['town_guide'])}</a>
+        <a href="{town_research_route}">{esc(town_research_label)}</a>
         <a href="{prefix}/counties/{county_slug}-county">{esc(copy['county_guide'])}</a>
         <a href="{prefix}/blog">{esc(copy['research'])}</a>
         <a href="{contact}">{esc(copy['contact'])}</a>
@@ -840,7 +868,7 @@ def render_page(report: dict, sources: dict[str, dict], language: str) -> str:
         <section class="section" aria-labelledby="next-heading">
           <h2 id="next-heading">{esc(copy['next_heading'])}</h2>
           <div class="next-grid">
-            <div class="next-card"><a href="{prefix}/towns/{town_slug}">{esc(copy['town_cta'])}</a></div>
+            <div class="next-card"><a href="{town_research_route}">{esc(town_research_cta)}</a></div>
             <div class="next-card"><a href="{prefix}/counties/{county_slug}-county">{esc(copy['county_cta'])}</a></div>
             <div class="next-card"><a href="{prefix}/home-valuation">{esc(copy['value_cta'])}</a></div>
             <div class="next-card"><a href="{contact}">{esc(copy['contact_cta'])}</a></div>

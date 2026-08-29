@@ -131,14 +131,14 @@ class AuthorshipIntegrityTests(unittest.TestCase):
             )]
             nodes = [node for block in blocks for node in schema_nodes(block)]
             profiles = [node for node in nodes if node.get("@type") == "ProfilePage"]
-            agents = [node for node in nodes if node.get("@type") == "RealEstateAgent"]
+            people = [node for node in nodes if node.get("@type") == "Person"]
             with self.subTest(path=name):
                 self.assertEqual(1, len(profiles))
                 self.assertEqual(url, profiles[0].get("url"))
                 self.assertEqual("2026-08-27", profiles[0].get("dateModified"))
-                self.assertEqual(1, len(agents))
-                self.assertIn(phrase, str(agents[0].get("description", "")).casefold())
-                self.assertNotIn("specializ", str(agents[0].get("description", "")).casefold())
+                self.assertEqual(1, len(people))
+                self.assertIn(phrase, str(people[0].get("description", "")).casefold())
+                self.assertNotIn("specializ", str(people[0].get("description", "")).casefold())
 
     def test_ai_declarations_use_truthful_nonreviewer_language_on_key_surfaces(self) -> None:
         expected = {
@@ -165,11 +165,12 @@ class AuthorshipIntegrityTests(unittest.TestCase):
         indexable = json.loads((ROOT / "data" / "indexable-town-risk-decisions.json").read_text(encoding="utf-8"))
         spanish = json.loads((ROOT / "data" / "spanish-town-risk-decisions.json").read_text(encoding="utf-8"))
         priority = json.loads((ROOT / "data" / "other-priority-town-sources.json").read_text(encoding="utf-8"))
-        paths = {
+        aligned_business_paths = {
             f"towns/{slug}.html"
             for slug, item in indexable["decisions"].items()
             if item["action"] == "rebuild"
         }
+        paths = set(aligned_business_paths)
         paths.update(f"towns/{slug}.html" for slug in priority["municipalities"])
         paths.update(
             f"es/towns/{slug}.html"
@@ -179,9 +180,13 @@ class AuthorshipIntegrityTests(unittest.TestCase):
         self.assertEqual(49, len(paths))
 
         failures: list[str] = []
-        organization_id = "https://thejorgeramirezgroup.com/#organization"
         person_id = "https://thejorgeramirezgroup.com/#jorge-ramirez"
         for name in sorted(paths):
+            business_id = (
+                "https://thejorgeramirezgroup.com/#agent"
+                if name in aligned_business_paths
+                else "https://thejorgeramirezgroup.com/#organization"
+            )
             source = (ROOT / name).read_text(encoding="utf-8")
             if '<meta name="ai-content-declaration" content="ai-assisted, source-checked">' not in source:
                 failures.append(f"{name}: truthful AI declaration missing")
@@ -197,16 +202,21 @@ class AuthorshipIntegrityTests(unittest.TestCase):
             ]
             nodes = [node for block in blocks for node in schema_nodes(block)]
             web_pages = [node for node in nodes if node.get("@type") == "WebPage"]
-            organizations = [node for node in nodes if node.get("@type") == "Organization" and node.get("@id") == organization_id]
+            businesses = [
+                node
+                for node in nodes
+                if node.get("@id") == business_id
+                and node.get("@type") in {"Organization", "RealEstateAgent"}
+            ]
             people = [node for node in nodes if node.get("@type") == "Person" and node.get("@id") == person_id]
-            if len(web_pages) != 1 or web_pages[0].get("publisher") != {"@id": organization_id}:
-                failures.append(f"{name}: Organization publisher mismatch")
+            if len(web_pages) != 1 or web_pages[0].get("publisher") != {"@id": business_id}:
+                failures.append(f"{name}: business publisher mismatch")
             elif any(key in web_pages[0] for key in ("author", "reviewedBy")):
                 failures.append(f"{name}: Person is assigned as author or reviewer")
-            if len(organizations) != 1:
-                failures.append(f"{name}: Organization entity mismatch")
-            if len(people) != 1 or people[0].get("worksFor") != {"@id": organization_id}:
-                failures.append(f"{name}: Person/Organization relationship mismatch")
+            if len(businesses) != 1:
+                failures.append(f"{name}: business entity mismatch")
+            if len(people) != 1 or people[0].get("worksFor") != {"@id": business_id}:
+                failures.append(f"{name}: Person/business relationship mismatch")
         self.assertEqual([], failures)
 
     def test_town_market_pages_publish_visible_organization_provenance_without_person_authorship(self) -> None:
@@ -254,11 +264,16 @@ class AuthorshipIntegrityTests(unittest.TestCase):
                 for node in nodes
                 if node.get("@type") == "Person" and node.get("@id") == person_id
             ]
-            for node_type, matches in (("Article", articles), ("WebPage", web_pages)):
-                if len(matches) != 1 or matches[0].get("publisher") != {"@id": organization_id}:
-                    failures.append(f"{name}: {node_type} Organization publisher mismatch")
-                elif any(key in matches[0] for key in ("author", "reviewedBy")):
-                    failures.append(f"{name}: {node_type} assigns unsupported Person credit")
+            if len(articles) != 1 or articles[0].get("publisher") != {"@id": organization_id}:
+                failures.append(f"{name}: Article Organization publisher mismatch")
+            elif articles[0].get("author") != {"@id": organization_id}:
+                failures.append(f"{name}: Article Organization author mismatch")
+            elif "reviewedBy" in articles[0]:
+                failures.append(f"{name}: Article assigns unsupported reviewer credit")
+            if len(web_pages) != 1 or web_pages[0].get("publisher") != {"@id": organization_id}:
+                failures.append(f"{name}: WebPage Organization publisher mismatch")
+            elif any(key in web_pages[0] for key in ("author", "reviewedBy")):
+                failures.append(f"{name}: WebPage assigns unsupported Person credit")
             if len(organizations) != 1 or organizations[0].get("name") != "The Jorge Ramirez Group":
                 failures.append(f"{name}: Organization entity mismatch")
             if len(people) != 1 or people[0].get("worksFor") != {"@id": organization_id}:

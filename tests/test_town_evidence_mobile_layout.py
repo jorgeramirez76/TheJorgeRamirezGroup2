@@ -57,6 +57,23 @@ class TownEvidenceMobileLayoutTests(unittest.TestCase):
                 self.assertIn('class="town-guide__nav-links"', source)
                 self.assertRegex(source, r'<nav\b[^>]*aria-label="[^"]+"')
 
+    def test_verified_agent_panel_stacks_cleanly_on_small_screens(self) -> None:
+        css = CSS.read_text(encoding="utf-8")
+        mobile = css[css.index("@media (max-width: 640px)") :]
+        self.assertRegex(
+            css,
+            r"\.town-guide__agent-card\s*\{[^}]*display:\s*grid;[^}]*"
+            r"grid-template-columns:\s*minmax\(0,\s*180px\)\s+minmax\(0,\s*1fr\);",
+        )
+        self.assertRegex(
+            mobile,
+            r"\.town-guide__agent-card\s*\{[^}]*grid-template-columns:\s*1fr;",
+        )
+        self.assertRegex(
+            css,
+            r"\.town-guide__agent-links a\s*\{[^}]*min-height:\s*44px;",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

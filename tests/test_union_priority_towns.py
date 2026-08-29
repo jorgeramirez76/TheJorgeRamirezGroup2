@@ -205,6 +205,27 @@ class UnionPriorityTownTests(unittest.TestCase):
                 self.assertNotRegex(encoded, r'"@type"\s*:\s*"Review"')
                 self.assertIn("FAQPage", encoded)
 
+    def test_related_research_uses_only_approved_indexable_routes(self) -> None:
+        forbidden = {
+            "/towns/garwood",
+            "/towns/kenilworth",
+            "/towns/linden",
+            "/towns/mountainside",
+            "/towns/scotch-plains",
+            "/towns/union",
+        }
+        approved_alternates = {
+            "/cranford-vs-garwood-nj",
+            "/blog/market-report-linden-nj-2026",
+            "/blog/market-report-scotch-plains-nj-2026",
+            "/counties/union-county",
+        }
+        combined = "\n".join(self.pages.values())
+        for route in forbidden:
+            self.assertNotIn(f'href="{route}"', combined)
+        for route in approved_alternates:
+            self.assertIn(f'href="{route}"', combined)
+
 
 if __name__ == "__main__":
     unittest.main()

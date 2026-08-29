@@ -120,11 +120,15 @@ body.town-evidence-guide {
 
 .town-guide__eyebrow {
   margin: 0 0 16px;
-  color: var(--gold-light);
+  color: var(--dark-red);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+.town-guide__hero .town-guide__eyebrow {
+  color: var(--gold-light);
 }
 
 .town-guide__hero h1,
@@ -182,6 +186,74 @@ body.town-evidence-guide {
   border-left: 4px solid var(--primary-red);
   background: #FFFDFC;
   box-shadow: 0 12px 36px rgba(34, 22, 18, 0.07);
+}
+
+.town-guide__agent-card {
+  display: grid;
+  grid-template-columns: minmax(0, 180px) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 36px);
+  align-items: start;
+  padding: clamp(22px, 4vw, 34px);
+  border: 1px solid rgba(184, 150, 46, 0.65);
+  border-radius: 16px;
+  background: var(--paper);
+  box-shadow: 0 16px 42px rgba(34, 22, 18, 0.08);
+}
+
+.town-guide__agent-photo {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #E7E0D7;
+}
+
+.town-guide__agent-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 955 / 1280;
+  display: block;
+  object-fit: cover;
+}
+
+.town-guide__agent-copy h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  line-height: 1.14;
+}
+
+.town-guide__agent-copy p {
+  margin: 0 0 14px;
+}
+
+.town-guide__agent-proof {
+  margin: 18px 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.town-guide__agent-proof li::before {
+  content: '✓';
+  margin-right: 8px;
+  color: var(--dark-red);
+}
+
+.town-guide__agent-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.town-guide__agent-links a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
 }
 
 .town-guide__checklist {
@@ -362,6 +434,14 @@ body.town-evidence-guide {
 }
 
 @media (max-width: 640px) {
+  .town-guide__agent-card {
+    grid-template-columns: 1fr;
+  }
+
+  .town-guide__agent-photo {
+    width: min(220px, 75%);
+  }
+
   .town-guide__nav-inner {
     width: min(1160px, calc(100% - 24px));
     min-height: 72px;

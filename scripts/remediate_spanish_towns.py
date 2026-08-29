@@ -3,8 +3,10 @@
 
 The 32 towns in the verified canonical English inventory receive neutral,
 Spanish-language research guides that link directly to primary public sources.
-All other non-alias Spanish town routes receive compact noindex/follow
-fallbacks. Two established geographic aliases remain one-hop redirects.
+All other non-redirect Spanish town routes receive compact noindex/follow
+fallbacks. Two established geographic aliases remain one-hop redirects, and
+explicit English town-route consolidations are mirrored to their Spanish
+counterparts.
 """
 
 from __future__ import annotations
@@ -24,6 +26,7 @@ from urllib.parse import urlparse, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://thejorgeramirezgroup.com"
 MANIFEST_PATH = ROOT / "data" / "spanish-town-risk-decisions.json"
+ENGLISH_MANIFEST_PATH = ROOT / "data" / "indexable-town-risk-decisions.json"
 GSC_COMPARISON = ROOT / "tests" / "fixtures" / "gsc-spanish-town-pages.csv"
 GSC_HISTORICAL = ROOT / "tests" / "fixtures" / "gsc-spanish-town-pages-16m.csv"
 SHARE_IMAGE = f"{SITE}/images/hero.jpg"
@@ -47,10 +50,38 @@ PROVENANCE_POLICY = {
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-REDIRECTS = {
+ESTABLISHED_GEOGRAPHIC_REDIRECTS = {
     "bernards-township": "basking-ridge",
     "short-hills": "millburn",
 }
+
+
+def _english_owned_town_redirects() -> dict[str, str]:
+    document = json.loads(ENGLISH_MANIFEST_PATH.read_text(encoding="utf-8"))
+    decisions = document.get("decisions")
+    if not isinstance(decisions, dict):
+        raise RuntimeError("English town decision manifest lacks decisions")
+
+    redirects: dict[str, str] = {}
+    for slug, decision in decisions.items():
+        if not isinstance(decision, dict) or decision.get("action") != "redirect":
+            continue
+        destination = str(decision.get("destination", ""))
+        match = re.fullmatch(r"/towns/([a-z0-9-]+)", destination)
+        if match is None:
+            raise RuntimeError(f"{slug}: unsupported English town redirect {destination!r}")
+        redirects[str(slug)] = match.group(1)
+    return redirects
+
+
+ENGLISH_OWNER_REDIRECTS = _english_owned_town_redirects()
+for alias, destination in ESTABLISHED_GEOGRAPHIC_REDIRECTS.items():
+    inherited = ENGLISH_OWNER_REDIRECTS.get(alias)
+    if inherited is not None and inherited != destination:
+        raise RuntimeError(
+            f"{alias}: Spanish geographic alias conflicts with English destination {inherited!r}"
+        )
+REDIRECTS = {**ESTABLISHED_GEOGRAPHIC_REDIRECTS, **ENGLISH_OWNER_REDIRECTS}
 
 DISPLAY_OVERRIDES = {
     "basking-ridge": "Basking Ridge",
@@ -468,7 +499,14 @@ def build_manifest() -> dict[str, object]:
             county = county_by_slug[REDIRECTS[slug]]
             sources = []
             destination = f"/es/towns/{REDIRECTS[slug]}"
-            reason = "The route is a duplicate place-name alias with an established one-hop canonical destination."
+            if slug in ESTABLISHED_GEOGRAPHIC_REDIRECTS:
+                reason = "The route is a duplicate place-name alias with an established one-hop canonical destination."
+            else:
+                reason = (
+                    "The English town-route owner consolidates this duplicate route into "
+                    f"/towns/{REDIRECTS[slug]}; mirror that relationship at the equivalent "
+                    "one-hop Spanish destination."
+                )
         else:
             action = "quarantine"
             county = ""
@@ -507,8 +545,8 @@ def build_manifest() -> dict[str, object]:
         "provenancePolicy": dict(PROVENANCE_POLICY),
         "decisionPolicy": {
             "rebuildRule": "Rebuild every route in the current canonical English inventory so reciprocal bilingual routes remain useful and source-backed.",
-            "quarantineRule": "Use a compact noindex/follow fallback for every noncanonical route that is not a justified geographic alias.",
-            "redirectRule": "Keep only the two established one-hop geographic aliases; never redirect to another redirect or noindex page.",
+            "quarantineRule": "Use a compact noindex/follow fallback for every noncanonical route that is neither an established geographic alias nor an English-owner town-route consolidation.",
+            "redirectRule": "Keep the two established one-hop geographic aliases and mirror explicit town redirects from the English route owner; never redirect to another redirect or noindex page.",
             "demandRule": "Preserve supplied GSC demand as context, while canonical inventory and content quality determine index eligibility.",
         },
         "evidencePolicy": (
@@ -1068,7 +1106,12 @@ def main() -> int:
             print(issue, file=sys.stderr)
         if issues:
             return 1
-        print("Spanish town remediation check passed: 138 routes, 32 rebuilds, 104 fallbacks, 2 aliases")
+        actions = manifest["inventorySummary"]["actions"]
+        print(
+            "Spanish town remediation check passed: "
+            f"138 routes, {actions['rebuild']} rebuilds, "
+            f"{actions['quarantine']} fallbacks, {actions['redirect']} redirects"
+        )
         return 0
 
     manifest_text = json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"

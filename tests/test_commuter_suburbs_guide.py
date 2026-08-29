@@ -96,6 +96,34 @@ class CommuterSuburbsGuideTests(unittest.TestCase):
                 self.assertIn("/home-valuation", source)
                 self.assertIn("/es/#contact" if language == "es" else "/contact", source)
 
+    def test_town_cards_link_only_to_approved_indexable_research(self) -> None:
+        expected = {
+            "en": {
+                "/blog/market-report-south-orange-nj-2026",
+                "/counties/somerset-county",
+                "/blog/market-report-rahway-nj-2026",
+                "/blog/market-report-metuchen-nj-2026",
+                "/counties/middlesex-county",
+            },
+            "es": {
+                "/es/blog/market-report-south-orange-nj-2026",
+                "/es/counties/somerset-county",
+                "/es/blog/market-report-rahway-nj-2026",
+                "/es/blog/market-report-metuchen-nj-2026",
+                "/es/counties/middlesex-county",
+            },
+        }
+        retired = {
+            "south-orange", "somerville", "rahway", "metuchen", "new-brunswick"
+        }
+        for language, source in self.sources.items():
+            with self.subTest(language=language):
+                for route in expected[language]:
+                    self.assertIn(f'href="{route}"', source)
+                prefix = "" if language == "en" else "/es"
+                for slug in retired:
+                    self.assertNotIn(f'href="{prefix}/towns/{slug}"', source)
+
     def test_official_sources_and_methodology_are_manifested(self) -> None:
         manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
         self.assertEqual("2026-08-26", manifest["reviewed"])

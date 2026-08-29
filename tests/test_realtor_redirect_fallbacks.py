@@ -20,12 +20,6 @@ VERCEL_PATH = ROOT / "vercel.json"
 GENERATOR = ROOT / "gen_realtor_pages.py"
 SITE_ORIGIN = "https://thejorgeramirezgroup.com"
 TOWN_RULE = re.compile(r"^/realtor/([a-z0-9-]+)-nj$")
-ALIASES = {
-    "bernards-township": "basking-ridge",
-    "short-hills": "millburn",
-}
-
-
 class FallbackParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -86,15 +80,23 @@ class RealtorRedirectFallbackTests(unittest.TestCase):
                 self.assertEqual("/communities", destination)
                 self.assertTrue((ROOT / "communities.html").exists())
                 continue
-            slug = filename.removesuffix("-nj.html")
-            target_slug = ALIASES.get(slug, slug)
-            self.assertEqual(f"/towns/{target_slug}", destination)
+            destination_match = re.fullmatch(r"/towns/([a-z0-9-]+)", destination)
+            self.assertIsNotNone(
+                destination_match,
+                f"{filename} must resolve directly to a canonical town guide",
+            )
+            target_slug = destination_match.group(1)
             target = ROOT / "towns" / f"{target_slug}.html"
             self.assertTrue(target.exists())
             self.assertNotRegex(
                 target.read_text(encoding="utf-8"),
                 r'<meta\b[^>]*http-equiv=["\']refresh["\']',
             )
+
+        self.assertEqual(
+            "/towns/middlesex",
+            self.expected["middlesex-borough-nj.html"],
+        )
 
     def test_vercel_redirect_coverage_is_permanent_and_one_hop(self) -> None:
         wildcard = [

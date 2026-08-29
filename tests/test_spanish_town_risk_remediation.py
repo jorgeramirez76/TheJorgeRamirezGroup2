@@ -20,11 +20,27 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 SITE = "https://thejorgeramirezgroup.com"
 MANIFEST_PATH = ROOT / "data" / "spanish-town-risk-decisions.json"
+ENGLISH_MANIFEST_PATH = ROOT / "data" / "indexable-town-risk-decisions.json"
 RENDERER_PATH = ROOT / "scripts" / "remediate_spanish_towns.py"
 
-REDIRECTS = {
+ESTABLISHED_GEOGRAPHIC_REDIRECTS = {
     "bernards-township": "basking-ridge",
     "short-hills": "millburn",
+}
+
+
+def english_owned_town_redirects() -> dict[str, str]:
+    document = json.loads(ENGLISH_MANIFEST_PATH.read_text(encoding="utf-8"))
+    return {
+        slug: item["destination"].removeprefix("/towns/")
+        for slug, item in document["decisions"].items()
+        if item["action"] == "redirect"
+    }
+
+
+REDIRECTS = {
+    **ESTABLISHED_GEOGRAPHIC_REDIRECTS,
+    **english_owned_town_redirects(),
 }
 OFFICIAL_HOST_SUFFIXES = (
     ".gov",
@@ -163,11 +179,12 @@ class SpanishTownRiskRemediationTests(unittest.TestCase):
         }
         self.assertEqual(32, len(canonical))
         self.assertEqual(canonical, rebuilt)
-        self.assertEqual(104, len(quarantined))
+        self.assertEqual(103, len(quarantined))
         self.assertEqual(REDIRECTS, redirected)
         self.assertEqual(138, len(rebuilt | quarantined | set(redirected)))
         self.assertEqual("2026-08-27", self.manifest["effectiveDate"])
         self.assertIn("current canonical English inventory", self.manifest["decisionPolicy"]["rebuildRule"])
+        self.assertIn("English route owner", self.manifest["decisionPolicy"]["redirectRule"])
         self.assertIn("no gated", self.manifest["evidencePolicy"])
         self.assertEqual(
             {
@@ -218,6 +235,16 @@ class SpanishTownRiskRemediationTests(unittest.TestCase):
         self.assertGreater(self.decisions["kinnelon"]["gsc"]["last16m"]["clicks"], 0)
         self.assertEqual("quarantine", self.decisions["kinnelon"]["action"])
         self.assertIn("no longer part of the canonical town inventory", self.decisions["kinnelon"]["reason"])
+        self.assertEqual("redirect", self.decisions["middlesex-borough"]["action"])
+        self.assertEqual(
+            "/es/towns/middlesex",
+            self.decisions["middlesex-borough"]["destination"],
+        )
+        self.assertEqual(
+            "/towns/middlesex",
+            json.loads(ENGLISH_MANIFEST_PATH.read_text(encoding="utf-8"))["decisions"]
+            ["middlesex-borough"]["destination"],
+        )
 
     def test_rebuilt_pages_are_indexable_spanish_source_backed_guides(self) -> None:
         from tools.check_spanish_town_risks import lint_source
