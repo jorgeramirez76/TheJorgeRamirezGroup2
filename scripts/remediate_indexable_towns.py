@@ -30,7 +30,7 @@ PERSON_PROFILE_URLS = [
 BUSINESS_PROFILE_URLS = [
     "https://www.facebook.com/thejorgeramirezgroup",
     "https://www.instagram.com/jorgesellsnjhomes",
-    "https://www.google.com/maps/place/Jorge+Ramirez+Realtor+-+Keller+Williams+Premier+Properties/@40.7176144,-74.3613942,16z",
+    "https://www.google.com/maps?cid=4574397105419981752",
 ]
 HREFLANG_LINE = re.compile(
     r"^[ \t]*<link\b[^>]*\bhreflang=[\"'][^\"']+[\"'][^>]*>[ \t]*\n?",
