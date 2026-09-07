@@ -76,8 +76,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Preload first hero slide for faster LCP -->
-    <link rel="preload" as="image" href="/images/properties/04-brick-stone.webp">
+    <!-- Preload the hero portrait for faster LCP -->
+    <link rel="preload" as="image" href="/images/jorge-portrait-hero.webp" media="(min-width: 701px)">
+    <link rel="preload" as="image" href="/images/jorge-portrait-hero-640.webp" media="(max-width: 700px)">
     <style>
       /* Critical above-the-fold CSS (nav + hero), extracted with `critical`
          at a 412x823 mobile viewport. Lets first paint happen without
@@ -87,6 +88,38 @@
     </style>
     <link rel="stylesheet" href="/css/styles.css?v=20260826b" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="/css/styles.css?v=20260826b"></noscript>
+    <style>
+      /* Portrait hero: one photograph of the agent on a quiet dark ground. */
+      .hero.hero-portrait-layout{min-height:0;display:block;background:linear-gradient(180deg,#131315 0%,var(--dark-bg) 100%);overflow:hidden}
+      .hero-portrait-layout .hero-inner{max-width:1320px;margin:0 auto;padding:132px 5% 0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);column-gap:clamp(2rem,5vw,5rem);align-items:end}
+      .hero-portrait-layout .hero-content{position:relative;z-index:2;max-width:640px;padding:0 0 88px;text-align:left;color:var(--white)}
+      .hero-portrait-layout .hero-kicker{margin:0 0 1.4rem;font:500 1rem/1.4 var(--font-body);color:var(--gold-light);opacity:0;animation:.8s .15s forwards fadeSlideDown}
+      .hero-portrait-layout h1{max-width:none;margin:0 0 1.4rem;font-family:var(--font-display);font-size:clamp(2.7rem,5vw,4.6rem);font-weight:600;line-height:1.04;letter-spacing:-.02em;color:var(--white);text-shadow:none;text-wrap:balance;opacity:0;animation:.9s .35s forwards fadeSlideUp}
+      .hero-portrait-layout .hero-subtitle{max-width:34em;margin:0 0 2.2rem;font-size:clamp(1.08rem,1.5vw,1.28rem);line-height:1.65;color:rgba(255,255,255,.84);text-shadow:none;animation-delay:.6s}
+      .hero-portrait-layout .hero-buttons{justify-content:flex-start;gap:.9rem;margin:0 0 2rem;animation-delay:.8s}
+      .hero-portrait-layout .hero-buttons a{padding:1.05rem 2rem;font-size:1.02rem}
+      .hero-portrait-layout .hero-credentials{margin:0;max-width:40em;font-size:.92rem;line-height:1.6;color:rgba(255,255,255,.62);opacity:0;animation:.8s 1s forwards fadeSlideUp}
+      .hero-portrait-layout .hero-figure{position:relative;z-index:1;margin:0;align-self:end;justify-self:center;width:min(100%,520px);opacity:0;animation:1.2s .2s forwards fadeIn}
+      .hero-portrait-layout .hero-figure img{display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 82% 78% at 50% 40%,#000 52%,transparent 100%);mask-image:radial-gradient(ellipse 82% 78% at 50% 40%,#000 52%,transparent 100%)}
+      .hero-portrait-layout .hero-figure::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:linear-gradient(90deg,transparent,rgba(184,150,46,.55),transparent)}
+      @media (max-width:900px){
+        .hero-portrait-layout .hero-inner{grid-template-columns:1fr;padding-top:96px;column-gap:0}
+        .hero-portrait-layout .hero-figure{order:-1;width:min(72vw,360px);margin:0 auto 10px}
+        .hero-portrait-layout .hero-figure::after{display:none}
+        .hero-portrait-layout .hero-content{max-width:none;padding:0 0 64px;text-align:center}
+        .hero-portrait-layout h1{margin-left:auto;margin-right:auto}
+        .hero-portrait-layout .hero-subtitle{margin-left:auto;margin-right:auto}
+        .hero-portrait-layout .hero-buttons{justify-content:center}
+        .hero-portrait-layout .hero-credentials{margin-left:auto;margin-right:auto}
+      }
+      @media (max-width:640px){
+        .hero-portrait-layout h1{font-size:clamp(2.3rem,9.5vw,3rem)}
+        .hero-portrait-layout .hero-buttons a{width:100%;text-align:center}
+      }
+      @media (prefers-reduced-motion:reduce){
+        .hero-portrait-layout .hero-kicker,.hero-portrait-layout h1,.hero-portrait-layout .hero-subtitle,.hero-portrait-layout .hero-buttons,.hero-portrait-layout .hero-credentials,.hero-portrait-layout .hero-figure{opacity:1;animation:none}
+      }
+    </style>
     <style>
       /* Keep every homepage resource link comfortably tappable without changing its visual treatment. */
       .resource-card a {
@@ -208,66 +241,26 @@
 
     <main id="main" tabindex="-1">
     <!-- Hero Section — Ken Burns luxury property carousel -->
-    <section class="hero" id="home">
-        <div class="hero-carousel" aria-hidden="true">
-            <div class="hero-slide active" data-bg="images/properties/04-brick-stone.webp" style="background-image:url('images/properties/04-brick-stone.webp')"></div>
-            <div class="hero-slide" data-bg="images/properties/03-shingle-porch.webp"></div>
-            <div class="hero-slide" data-bg="images/properties/01-loft-living.webp"></div>
-            <div class="hero-slide" data-bg="images/properties/08-exterior.webp"></div>
-            <div class="hero-slide" data-bg="images/properties/05-kitchen.webp"></div>
+    <section class="hero hero-portrait-layout" id="home">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <p class="hero-kicker">Jorge Ramirez, Keller Williams Premier Properties, Summit</p>
+                <h1>Sell Your NJ Home With a Clear Plan</h1>
+                <p class="hero-subtitle">Before you trust an online estimate or list too high, get a clear pricing review from a licensed NJ agent who has worked full-time at Keller Williams since 2017.</p>
+                <div class="hero-buttons">
+                    <a href="/home-valuation" class="btn-primary">Get a real home value review</a>
+                    <a href="#contact" class="btn-secondary">Talk to Jorge first</a>
+                </div>
+                <p class="hero-credentials">Serving Union, Essex, Morris, Hudson, Middlesex, and Somerset counties. New Jersey real estate license #1754604.</p>
+            </div>
+            <figure class="hero-figure">
+                <picture>
+                    <source media="(max-width: 700px)" srcset="/images/jorge-portrait-hero-640.webp">
+                    <img src="/images/jorge-portrait-hero.webp" alt="Jorge Ramirez, licensed New Jersey real estate agent with Keller Williams Premier Properties in Summit" width="1100" height="1375" fetchpriority="high" decoding="async">
+                </picture>
+            </figure>
         </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1><span class="hero-eyebrow">Union · Essex · Morris · Hudson · Middlesex · Somerset</span>
-                <span class="hero-name">Sell Your NJ Home With a Clear Plan</span>
-                <span class="hero-tagline">Jorge Ramirez · Keller Williams Premier Properties · Summit, NJ</span></h1>
-            <p class="hero-subtitle">Before you trust an online estimate or list too high, get a clear pricing review from a licensed NJ agent who has worked full-time at Keller Williams since 2017.</p>
-            <div class="hero-proof-pills" aria-label="Jorge Ramirez seller credentials">
-                <span>Keller Williams · Summit, NJ</span>
-                <span>Full-time since 2017</span>
-                <span>NJ License #1754604</span>
-                <span>6-county seller focus</span>
-            </div>
-            <div class="hero-buttons">
-                <a href="/home-valuation" class="btn-primary btn-flip" rel="noopener"><span class="flip-front">Get a Real Home Value Review</span><span class="flip-back">Know Your Number →</span></a>
-                <a href="#contact" class="btn-secondary btn-flip"><span class="flip-front">Talk to Jorge First</span><span class="flip-back">Start the Conversation →</span></a>
-            </div>
-            <div class="hero-train-wrap">
-                <a href="/nj-train-map" class="hero-train-pill" aria-label="Explore the NJ commuter rail comparison map">
-                    <svg class="htp-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-                        <path fill="currentColor" d="M12 2C7 2 5 3 5 7v8a3 3 0 0 0 3 3l-1.4 1.4a.7.7 0 0 0 .5 1.2h9.8a.7.7 0 0 0 .5-1.2L16 18a3 3 0 0 0 3-3V7c0-4-2-5-7-5Zm-4 4h8v4H8V6Zm.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
-                    </svg>
-                    <span class="htp-text">Explore the NJ commuter rail comparison map</span>
-                    <span class="htp-arrow" aria-hidden="true">→</span>
-                </a>
-            </div>
-        </div>
-        <button type="button" class="hero-scroll-indicator" aria-label="Scroll to seller credentials" onclick="document.querySelector('.stats-bar').scrollIntoView({behavior:'smooth'})">
-            <span class="scroll-arrow"></span>
-        </button>
     </section>
-    
-    <!-- Stats Bar -->
-    <div class="stats-bar">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <span class="stat-number">Local</span>
-                <span class="stat-label">Town Guides Across NJ</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number" data-target="6" data-suffix="">6</span>
-                <span class="stat-label">NJ Counties Served</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">2017</span>
-                <span class="stat-label">Full-Time Since</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">#1754604</span>
-                <span class="stat-label">NJ License</span>
-            </div>
-        </div>
-    </div>
 
     <!-- Press / Trust strip — tasteful grayscale rule of sources -->
     <section class="press-strip" aria-label="Where you'll find Jorge">
@@ -287,19 +280,19 @@
     <section class="tile-reveal-section" aria-label="Core services">
         <div class="tile-reveal-grid">
             <a href="/buy-a-home" class="reveal-tile" data-reveal-img="/images/properties/05-kitchen.webp">
-                <span class="reveal-eyebrow">01 · For Buyers</span>
+                <span class="reveal-eyebrow">For buyers</span>
                 <h2 class="reveal-title">Buy</h2>
-                <span class="reveal-cta">Find a home <span aria-hidden="true">→</span></span>
+                <span class="reveal-cta">Find a home</span>
             </a>
             <a href="/sell-your-home" class="reveal-tile" data-reveal-img="/images/properties/04-brick-stone.webp">
-                <span class="reveal-eyebrow">02 · For Sellers</span>
+                <span class="reveal-eyebrow">For sellers</span>
                 <h2 class="reveal-title">Sell</h2>
-                <span class="reveal-cta">List with Jorge <span aria-hidden="true">→</span></span>
+                <span class="reveal-cta">List with Jorge</span>
             </a>
             <a href="/home-valuation" class="reveal-tile" data-reveal-img="/images/properties/01-loft-living.webp">
-                <span class="reveal-eyebrow">03 · Free · No Obligation</span>
+                <span class="reveal-eyebrow">Free, no obligation</span>
                 <h2 class="reveal-title">Value</h2>
-                <span class="reveal-cta">What's my home worth <span aria-hidden="true">→</span></span>
+                <span class="reveal-cta">What's my home worth</span>
             </a>
         </div>
     </section>

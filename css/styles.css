@@ -468,14 +468,15 @@ a.logo:hover .logo-img {
 
 .section-tag {
     display: inline-block;
-    color: var(--gold);
-    font-size: 0.78rem;
-    margin-bottom: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--gold-light);
-    padding-bottom: 4px;
+    color: var(--gold-text);
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-bottom: 0.9rem;
+    border-bottom: 0;
+    padding-bottom: 0;
 }
 
 .section-header h2 {
@@ -1218,7 +1219,6 @@ footer {
 
 #recent-sales .section-tag {
     color: var(--gold-light);
-    border-bottom-color: var(--gold);
 }
 
 #recent-sales .section-header h2 {
@@ -1635,22 +1635,7 @@ footer {
     box-shadow: var(--shadow-hover), 0 -2px 20px rgba(184, 150, 46, 0.15);
 }
 
-/* Section tag gold underline animation */
-.section-tag {
-    position: relative;
-    overflow: hidden;
-}
-
-.section-tag::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: -100%;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    animation: tagShimmer 3s ease-in-out infinite;
-}
+/* Section tags are set as a quiet serif kicker; the looping shimmer was removed. */
 
 @keyframes tagShimmer {
     0% { left: -100%; }
@@ -3472,5 +3457,25 @@ main:focus {
 
     .contact-form {
         padding: clamp(1.25rem, 6vw, 2rem);
+    }
+}
+
+
+/* ===== CROSS-DOCUMENT VIEW TRANSITIONS =====
+   Same-origin page loads cross-fade instead of flashing white.
+   Progressive enhancement: browsers without support ignore this. */
+@view-transition {
+    navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.24s;
+    animation-timing-function: ease;
+}
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
     }
 }
