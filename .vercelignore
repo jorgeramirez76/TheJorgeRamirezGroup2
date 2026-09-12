@@ -1,6 +1,8 @@
 # Keep internal source / build / report files OFF the public web.
 # (These are currently publicly downloadable on GitHub Pages — this fixes that.)
 .git
+.vercel
+.env*
 .gitignore
 .gitattributes
 CNAME
