@@ -28,6 +28,196 @@
       "permanent": true
     },
     {
+      "source": "/fsbo-vs-realtor-new-jersey",
+      "destination": "/blog/fsbo-vs-realtor-new-jersey",
+      "permanent": true
+    },
+    {
+      "source": "/fsbo-vs-realtor-new-jersey.html",
+      "destination": "/blog/fsbo-vs-realtor-new-jersey",
+      "permanent": true
+    },
+    {
+      "source": "/es/selling-home-linden-nj-2026",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/selling-home-linden-nj-2026.html",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/probate-real-estate-nj-guide",
+      "destination": "/blog/probate-real-estate-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/probate-real-estate-nj-guide.html",
+      "destination": "/blog/probate-real-estate-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/renovation-decisions-nj-homeowners-regret",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/renovation-decisions-nj-homeowners-regret.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/selling-home-bloomfield-nj-2026",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/selling-home-bloomfield-nj-2026.html",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/market-report-cranford-nj-2026",
+      "destination": "/blog/market-report-cranford-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/market-report-cranford-nj-2026.html",
+      "destination": "/blog/market-report-cranford-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/nj-buyer-agency-inspection-offer-guide-2026",
+      "destination": "/blog/nj-buyer-agency-inspection-offer-guide-2026",
+      "permanent": true
+    },
+    {
+      "source": "/nj-buyer-agency-inspection-offer-guide-2026.html",
+      "destination": "/blog/nj-buyer-agency-inspection-offer-guide-2026",
+      "permanent": true
+    },
+    {
+      "source": "/market-report-summit-nj-2026",
+      "destination": "/blog/market-report-summit-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/market-report-summit-nj-2026.html",
+      "destination": "/blog/market-report-summit-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/es/selling-home-parsippany-nj-2026",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/selling-home-parsippany-nj-2026.html",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/market-report-clark-nj-2026",
+      "destination": "/blog/market-report-clark-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/market-report-clark-nj-2026.html",
+      "destination": "/blog/market-report-clark-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/market-report-south-brunswick-nj-2026",
+      "destination": "/blog/market-report-south-brunswick-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/market-report-south-brunswick-nj-2026.html",
+      "destination": "/blog/market-report-south-brunswick-nj-2026",
+      "permanent": true
+    },
+    {
+      "source": "/nj-smoke-certificate-selling-home-2026",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/nj-smoke-certificate-selling-home-2026.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/best-nj-suburbs-nyc-commuters",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
+      "source": "/best-nj-suburbs-nyc-commuters.html",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
+      "source": "/what-stays-with-the-house-nj-2026",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/what-stays-with-the-house-nj-2026.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/neighborhoods-chatham-nj",
+      "destination": "/es/communities",
+      "permanent": true
+    },
+    {
+      "source": "/es/neighborhoods-chatham-nj.html",
+      "destination": "/es/communities",
+      "permanent": true
+    },
+    {
+      "source": "/selling-home-basking-ridge-nj-2026",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/selling-home-basking-ridge-nj-2026.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/top-nyc-commuter-towns-nj-2026",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
+      "source": "/top-nyc-commuter-towns-nj-2026.html",
+      "destination": "/blog/best-nj-suburbs-nyc-commuters",
+      "permanent": true
+    },
+    {
+      "source": "/es/selling-home-hoboken-nj-2026",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/selling-home-hoboken-nj-2026.html",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/buying-home-scotch-plains-nj-2026",
+      "destination": "/buy-a-home",
+      "permanent": true
+    },
+    {
+      "source": "/buying-home-scotch-plains-nj-2026.html",
+      "destination": "/buy-a-home",
+      "permanent": true
+    },
+    {
       "source": "/towns/middlesex-borough",
       "destination": "/towns/middlesex",
       "permanent": true
