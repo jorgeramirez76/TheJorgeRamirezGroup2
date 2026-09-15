@@ -248,7 +248,18 @@ class PropertyTaxGuideTests(unittest.TestCase):
                     visible,
                     r"(?:county board of taxation|junta tributaria del condado)",
                 )
-                self.assertNotRegex(visible, r"\$\s*\d[\d,.]*")
+                # Monetary examples must be explicitly hypothetical; the guide
+                # must not drift back to unsupported real parcel or town bills.
+                examples = re.findall(r'<p data-hypothetical-example="[^"]+">(.*?)</p>', source(relative), re.S)
+                self.assertEqual(2, len(examples))
+                self.assertRegex(examples[0].lower(), r"hypothetical|hipotéticas")
+                self.assertRegex(examples[1].lower(), r"invented|inventado")
+                self.assertIn("$9,000", examples[0])
+                self.assertIn("$400,000", examples[1])
+                without_examples = re.sub(r'<p data-hypothetical-example="[^"]+">.*?</p>', "", source(relative), flags=re.S)
+                remaining = GuideParser()
+                remaining.feed(without_examples)
+                self.assertNotRegex(remaining.visible_text, r"\$\s*\d[\d,.]*")
                 self.assertLess(len(source(relative).encode("utf-8")), 65000)
 
     def test_homepage_visual_language_and_accessibility_contract(self) -> None:

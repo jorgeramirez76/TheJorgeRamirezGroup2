@@ -1,0 +1,24 @@
+{
+  "checked": "2026-09-15",
+  "query_evidence": "GSC tax-guide queries include NJ effective property tax rate2026 and equalization ratios; exact impressions/position in parent evidence.",
+  "scope": "Bilingual rates/equalization section and English snippet refinement; no municipal average/rate or appeal outcome invented.",
+  "sources": [
+    {
+      "url": "https://www.nj.gov/treasury/taxation/lpt/statdata.shtml",
+      "supports": "General rate unit and bill calculation; effective-rate comparison purpose; index currently lists2025 rates alongside2026 assessment/common-level-range files."
+    },
+    {
+      "url": "https://www.nj.gov/treasury/taxation/lpt/genlpt.shtml",
+      "supports": "District equalization purpose for shared public costs."
+    },
+    {
+      "url": "https://www.nj.gov/treasury/taxation/pdf/lpt/CountyTaxBoardHandbook.pdf",
+      "supports": "District ratables divided by ratio yields equalized scale; historical methodology only, not authority for2026 appeal deadlines."
+    }
+  ],
+  "examples": {
+    "general_rate": "300000*(3/100)=9000",
+    "ratio": "320000/0.80=400000",
+    "classification": "invented arithmetic inputs; not market data or parcel determination"
+  }
+}
