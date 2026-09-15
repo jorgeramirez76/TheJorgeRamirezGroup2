@@ -1,0 +1,652 @@
+{
+  "reviewed": "2026-09-15",
+  "scope": "12 household and repair guides",
+  "pages": [
+    {
+      "slug": "baseboard-dust-nj-home-sellers-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "How to Clean Baseboards Before Listing Your NJ Home",
+      "corrections": "Removed dryer-sheet dust repellence, price/ROI claims and universal semi-gloss advice.",
+      "sources": [
+        {
+          "title": "Benjamin Moore: cleaning painted walls",
+          "url": "https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/painting-101/cleaning-painted-walls",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "Benjamin Moore: avoiding paint burnishing",
+          "url": "https://www.benjaminmoore.com/en-us/contractors/job-solutions/troubleshooting/paint-burnishing",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "EPA: lead-safe renovations for DIYers",
+          "url": "https://www.epa.gov/lead/lead-safe-renovations-diyers",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-09-07",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/jorge-logo.jpg",
+      "deployed": false
+    },
+    {
+      "slug": "bathroom-products-toss-before-listing-nj-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "Bathroom Decluttering Before Listing: Keep, Pack or Dispose",
+      "corrections": "Replaced indiscriminate tossing, universal expiry schedules and invented buyer snooping claims.",
+      "sources": [
+        {
+          "title": "FDA: disposing of unused medicines",
+          "url": "https://www.fda.gov/consumers/consumer-updates/where-and-how-dispose-unused-medicines",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "FDA: cosmetic shelf life",
+          "url": "https://www.fda.gov/cosmetics/cosmetics-labeling/shelf-life-and-expiration-dating-cosmetics",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "EPA: household hazardous waste",
+          "url": "https://www.epa.gov/hw/household-hazardous-waste-hhw",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-09-13",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/jorge-logo.jpg",
+      "deployed": false
+    },
+    {
+      "slug": "cabinet-hardware-trick-nj-home-sellers-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "Loose Cabinet Handles: Diagnose the Fit Before Listing",
+      "corrections": "Removed nail-polish thread fix and buyer-confidence/ROI claims.",
+      "sources": [
+        {
+          "title": "Amerock: knob mounting hardware example",
+          "url": "https://www.amerock.com/chalice-cabinet-knob-chalice--knob",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "Amerock: measuring pull hole spacing",
+          "url": "https://www.amerock.com/internal-product-producttype-pull/backplate",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "Amerock: adjustable hinge example",
+          "url": "https://www.amerock.com/face-frame-self-close-euro-concealed-cabinet-hinge-euro--face--frame--self--close--hinge",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-09-01",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/properties/05-kitchen.webp",
+      "deployed": false
+    },
+    {
+      "slug": "clean-before-first-use-nj-new-home-buyers-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "Move-In Cleaning: What to Check Before First Use",
+      "corrections": "Replaced universal ten-item disinfection and fabricated walkthrough practice with a move-in handoff workflow.",
+      "sources": [
+        {
+          "title": "EPA: biological contaminants and cleaning",
+          "url": "https://www.epa.gov/indoor-air-quality-iaq/biological-contaminants-and-indoor-air-quality",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "Maytag: washer cleaning and model compatibility",
+          "url": "https://www.maytag.com/blog/washers-and-dryers/how-to-clean-washing-machine-agitator.html",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-09-12",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/properties/05-kitchen.webp",
+      "deployed": false
+    },
+    {
+      "slug": "clean-couch-before-showings-nj-home-sellers-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "Clean a Couch Before Showings: Start With the Care Code",
+      "corrections": "Removed blanket steam/baking-soda/laundry treatments and invented buyer behavior.",
+      "sources": [
+        {
+          "title": "Ashley: upholstery care codes",
+          "url": "https://www.ashleyfurniture.com/care-and-cleaning",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-09-14",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/properties/05-kitchen.webp",
+      "deployed": false
+    },
+    {
+      "slug": "clean-house-half-the-time-nj-home-sellers-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "A Repeatable Cleaning Plan Between NJ Home Showings",
+      "corrections": "Removed guaranteed half-time result and invented local buyer/offer claims.",
+      "sources": [
+        {
+          "title": "EPA: Safer Choice",
+          "url": "https://www.epa.gov/saferchoice",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-09-12",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/properties/05-kitchen.webp",
+      "deployed": false
+    },
+    {
+      "slug": "double-bathroom-storage-nj-home-sellers-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "Bathroom Storage Before Listing: Measure, Sort and Fit",
+      "corrections": "Removed double-capacity guarantee, buyer psychology and universal mounting advice.",
+      "sources": [
+        {
+          "title": "3M Command: surfaces, humidity and installation FAQs",
+          "url": "https://www.command.com/3M/en_US/command/contact-us/faqs/",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-09-05",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/jorge-logo.jpg",
+      "deployed": false
+    },
+    {
+      "slug": "dusting-routine-making-nj-home-dirtier-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "A Dusting Plan That Captures Dust Before NJ Showings",
+      "corrections": "Removed universal dust schedules, fragrance/coating shortcuts and sale-outcome assertions.",
+      "sources": [
+        {
+          "title": "EPA: biological contaminants and cleaning",
+          "url": "https://www.epa.gov/indoor-air-quality-iaq/biological-contaminants-and-indoor-air-quality",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "Benjamin Moore: avoiding paint burnishing",
+          "url": "https://www.benjaminmoore.com/en-us/contractors/job-solutions/troubleshooting/paint-burnishing",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "EPA: improving your indoor environment",
+          "url": "https://www.epa.gov/indoor-air-quality-iaq/improving-your-indoor-environment",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-09-12",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/jorge-logo.jpg",
+      "deployed": false
+    },
+    {
+      "slug": "five-things-method-nj-home-sellers-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "The Five Things Method for a Manageable Showing-Day Reset",
+      "corrections": "Credited original method author, removed invented origin/price claims and timed guarantees.",
+      "sources": [
+        {
+          "title": "KC Davis: Five Things method explanation",
+          "url": "https://www.strugglecare.com/podcast-rss/24-collaboration-mental-note-amp-struggle-care",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "KC Davis: functional home-care resources",
+          "url": "https://www.strugglecare.com/resources",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-09-12",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/jorge-logo.jpg",
+      "deployed": false
+    },
+    {
+      "slug": "fix-nail-holes-before-listing-nj-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "Repair Small Nail Holes Before Listing: Use the Right Filler",
+      "corrections": "Replaced no-spackle household fillers with compatible repair workflow and lead precautions.",
+      "sources": [
+        {
+          "title": "EPA: lead-safe renovations for DIYers",
+          "url": "https://www.epa.gov/lead/lead-safe-renovations-diyers",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "DAP: Spackling 101",
+          "url": "https://www.dap.com/resources/how-to/spackling-101",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-09-01",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/jorge-logo.jpg",
+      "deployed": false
+    },
+    {
+      "slug": "fix-window-screen-tears-nj-sellers-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "Torn Window Screens: Patch or Replace Before Listing",
+      "corrections": "Removed nail-polish repair, universal hole-size/time rules and invented seasonal buyer behavior.",
+      "sources": [
+        {
+          "title": "Phifer: repair or replace screening",
+          "url": "https://www.phifer.com/blog/ultimate-spring-home-maintenance-tips/",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "Andersen: cleaning insect screen mesh and frames",
+          "url": "https://helpcenter.andersenwindows.com/aw/articles/Knowledge/Clean-Your-Andersen-Insect-Screen-s-Mesh-and-Frame",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "Phifer: choosing screen spline",
+          "url": "https://www.phifer.com/screening/diy/sizing/",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "Andersen: window and door safety",
+          "url": "https://www.andersenwindows.com/support/window-and-door-safety",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-09-01",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/jorge-logo.jpg",
+      "deployed": false
+    },
+    {
+      "slug": "washing-machine-cleaning-hacks-nj-home-sellers-2026",
+      "disposition": "substantive_rewrite_keep_url",
+      "ready_for_indexing": true,
+      "title": "Household Laundry Before Listing: Check What Can Be Washed",
+      "corrections": "Replaced universal eight-item laundry hacks with label/capacity/drying decisions.",
+      "sources": [
+        {
+          "title": "Whirlpool: checking care labels for household laundry",
+          "url": "https://www.whirlpool.com/blog/washers-and-dryers/weekly-laundry-schedule-ideas.html",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "Whirlpool: washer and dryer cycles",
+          "url": "https://www.whirlpool.com/blog/washers-and-dryers/how-choose-laundry-cycles.html",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "title": "Maytag: washer cleaning and model compatibility",
+          "url": "https://www.maytag.com/blog/washers-and-dryers/how-to-clean-washing-machine-agitator.html",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "publication_date_preserved": "2026-08-30",
+      "modified": "2026-09-15",
+      "validation": {
+        "static": "passed: unique H1, canonical/indexable, metadata/schema dates, JSON-LD, FAQ parity, sources inline, internal targets and local images",
+        "mobile": {
+          "passed": true,
+          "measurements": [
+            {
+              "viewport": 320,
+              "document": 320,
+              "h1": 252,
+              "images": true
+            },
+            {
+              "viewport": 375,
+              "document": 375,
+              "h1": 307,
+              "images": true
+            },
+            {
+              "viewport": 768,
+              "document": 768,
+              "h1": 700,
+              "images": true
+            }
+          ]
+        },
+        "diff_check": "passed",
+        "mobile_menu": "shared header tested at375px, aria-expanded toggles true"
+      },
+      "image": "/images/properties/05-kitchen.webp",
+      "deployed": false
+    }
+  ],
+  "summary": {
+    "rewritten": 12,
+    "ready_for_indexing": 12,
+    "retained_url_and_self_canonical": 12,
+    "redirects_proposed": 0,
+    "noindex_proposed": 0,
+    "mobile_widths_tested": [
+      320,
+      375,
+      768
+    ],
+    "visual_review": "Reviewed hardware full-page, Five Things full-page, and final hardware375px viewport screenshot. Shared article structure remains legible; no horizontal overflow across all12.",
+    "notes": "Existing inaccurate stock asset names were not trusted. Only visually inspected local kitchen image used as illustrative interior; other articles use site identity image in metadata and omit unrelated hero photos. No commits/deployment/sitemap/shared CSS edits."
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "reviewedOn": "2026-09-15",
+  "scope": "12 safety/maintenance articles",
+  "pages": [
+    {
+      "path": "/blog/aging-in-place-features-nj-home-value-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "Planning an Accessible NJ Home: Features to Check Before You Buy",
+      "datePublished": "2026-09-12",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "CDC: preventing falls",
+          "url": "https://www.cdc.gov/falls/prevention/index.html",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "NJ DCA: construction permits and homeowner resources",
+          "url": "https://www.nj.gov/dca/codes/resources/constructionpermitforms.shtml",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed retrofit prices, buyer-pool claims, age-based buyer targeting and unsupported sales anecdotes.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    },
+    {
+      "path": "/blog/allergy-proof-home-nj-showings-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "Preparing Indoor Air for NJ Home Showings",
+      "datePublished": "2026-09-07",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "EPA: choosing air cleaners",
+          "url": "https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "EPA: a guide to indoor air quality",
+          "url": "https://www.epa.gov/indoor-air-quality-iaq/care-your-air-guide-indoor-air-quality",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed medical/allergen guarantees, equipment prices, invented showing experiences and offer-impact claims.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    },
+    {
+      "path": "/blog/appliance-maintenance-nj-home-value-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "Appliance Maintenance Records for NJ Home Sellers",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "CPSC: product recalls and safety warnings",
+          "url": "https://www.cpsc.gov/Recalls",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "Whirlpool: dishwasher cleaning and filter care",
+          "url": "https://www.whirlpool.com/blog/kitchen/dishwasher-not-cleaning.html",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "USFA: appliance and electrical fire safety",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/appliance-and-electrical/",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed universal service intervals, local prices, lifespan assumptions and inspection-protection rankings.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    },
+    {
+      "path": "/blog/burping-your-home-ventilation-nj-sellers-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "Window Condensation and Ventilation in NJ Homes",
+      "datePublished": "2026-09-12",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "EPA: mold and moisture in the home",
+          "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "EPA: a guide to indoor air quality",
+          "url": "https://www.epa.gov/indoor-air-quality-iaq/care-your-air-guide-indoor-air-quality",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed fixed ventilation prescription, inspection/foundation comparison, mold-location ranking and sales implications.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    },
+    {
+      "path": "/blog/cord-clutter-nj-home-showings-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "Safer Cord Organization Before NJ Home Showings",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "CPSC: home wiring hazards",
+          "url": "https://www.cpsc.gov/s3fs-public/518.pdf",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "USFA: appliance and electrical fire safety",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/appliance-and-electrical/",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "NJ DCA: construction permits and homeowner resources",
+          "url": "https://www.nj.gov/dca/codes/resources/constructionpermitforms.shtml",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed cheap one-hour in-wall power advice, indiscriminate enclosure advice and buyers-pay-more claims.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    },
+    {
+      "path": "/blog/design-fixes-home-eyesores-nj-sellers-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "Preparing Utility Areas for Listing Photos Without Hiding Problems",
+      "datePublished": "2026-09-12",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "USFA: basement and garage fire safety",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/basement-and-garage/",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "EPA: lead-safe renovations",
+          "url": "https://www.epa.gov/lead/lead-safe-renovations-diyers",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed blanket radiator/panel/pipe painting, hidden power strip instructions, invented buyer reactions and offer reductions.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    },
+    {
+      "path": "/blog/electrical-warning-signs-nj-home-sellers-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "Electrical Warning Signs to Address Before Listing an NJ Home",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "CPSC: home wiring hazards",
+          "url": "https://www.cpsc.gov/s3fs-public/518.pdf",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "NJ DCA: construction permits and homeowner resources",
+          "url": "https://www.nj.gov/dca/codes/resources/constructionpermitforms.shtml",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed blanket NJ code claims, panel-brand verdicts, repair prices and sales/inspection outcome promises.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    },
+    {
+      "path": "/blog/fall-home-prep-nj-sellers-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "Fall Home Preparation for NJ Sellers: Heating, Water and Records",
+      "datePublished": "2026-09-08",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "USFA: heating fire safety",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/heating/",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "EPA WaterSense: home maintenance",
+          "url": "https://www.epa.gov/watersense/home-maintenance",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed seasonal buyer certainty, tune-up/gutter prices, guaranteed inspection benefit and invented personal listing routines.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    },
+    {
+      "path": "/blog/garage-mistakes-nj-home-sellers-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "Preparing an NJ Garage for Showings and Inspection Access",
+      "datePublished": "2026-09-03",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "USFA: basement and garage fire safety",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/basement-and-garage/",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "NJ DCA: construction permits and homeowner resources",
+          "url": "https://www.nj.gov/dca/codes/resources/constructionpermitforms.shtml",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed spring-repair pricing/DIY implication, blanket epoxy fixes and negotiated-loss anecdotes.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    },
+    {
+      "path": "/blog/home-maintenance-tasks-nj-sellers-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "A Maintenance Triage Plan Before Selling an NJ Home",
+      "datePublished": "2026-09-07",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "EPA WaterSense: home maintenance",
+          "url": "https://www.epa.gov/watersense/home-maintenance",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "NJ DCA: construction permits and homeowner resources",
+          "url": "https://www.nj.gov/dca/codes/resources/constructionpermitforms.shtml",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed invented repair-to-concession ratios, local cost ranges, universal inspection findings and sales guarantees.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    },
+    {
+      "path": "/blog/skipped-cleaning-tasks-cost-nj-home-sellers-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "Cleaning or Repair? A Pre-Listing Checklist for NJ Sellers",
+      "datePublished": "2026-09-12",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "USFA: clothes dryer fire safety",
+          "url": "https://www.usfa.fema.gov/downloads/pdf/publications/clothes_dryer_fire_safety_flyer.pdf",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "Whirlpool: dishwasher cleaning and filter care",
+          "url": "https://www.whirlpool.com/blog/kitchen/dishwasher-not-cleaning.html",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "EPA: mold and moisture in the home",
+          "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed claimed dollar losses, inspection credits, universal task intervals and amateur mechanical diagnoses.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    },
+    {
+      "path": "/blog/things-never-store-in-garage-nj-home-sellers-2026",
+      "action": "substantive_source_reviewed_rewrite",
+      "title": "Garage Storage and Disposal Before an NJ Home Sale",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-15",
+      "sources": [
+        {
+          "label": "EPA: household hazardous waste",
+          "url": "https://www.epa.gov/hw/household-hazardous-waste-hhw",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "USFA: basement and garage fire safety",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/basement-and-garage/",
+          "checkedOn": "2026-09-15"
+        },
+        {
+          "label": "USFA: battery fire safety",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/batteries/",
+          "checkedOn": "2026-09-15"
+        }
+      ],
+      "claimChanges": "Removed blanket food/fridge/storage claims, buyer anecdotes, price effects and unsourced hazard rules.",
+      "readiness": "ready_for_root_validation_and_sitemap_inclusion",
+      "remainingLimits": [
+        "General planning guidance; no property inspection, code determination or individual medical assessment.",
+        "No ranking, inspection outcome or sale-price promises."
+      ],
+      "validation": {
+        "canonicalPreserved": true,
+        "visibleFaqAndSchemaGeneratedTogether": true,
+        "localImage": "/images/jorge-logo.jpg",
+        "internalTargets": "all resolve to source files",
+        "jsonLd": "3 blocks parse; headline and canonical match",
+        "faq": "2 visible questions and answers match schema exactly",
+        "mobileAndDesktop": "390px and1440px no horizontal overflow; breadcrumb static; no broken images",
+        "sourceReview": "Primary source pages read; no universal equipment lifespan, health result, resale value or local repair pricing claimed",
+        "imageReview": "Visually verified previous named living-room asset is a house exterior; removed unrelated article hero. Visually verified Jorge logo used for social and BlogPosting image with accurate social alt.",
+        "heroImage": null,
+        "socialImageAlt": "The Jorge Ramirez Group logo"
+      }
+    }
+  ],
+  "validationArtifacts": [
+    "/tmp/gsc-audit-2026-09-15/safety-static-validation.json",
+    "/tmp/gsc-audit-2026-09-15/safety-layout-validation.json"
+  ]
+}

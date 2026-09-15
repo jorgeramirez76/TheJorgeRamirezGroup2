@@ -1,0 +1,509 @@
+{
+  "reviewed": "2026-09-15",
+  "scope": "12 staging/design articles",
+  "bio_rules": "CLAUDE.md confirmed tenure/identity rules applied",
+  "outcomes": [
+    {
+      "slug": "clutter-closet-strategy-nj-sellers-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Occupied-home reset and retrieval routine, distinct from permanent closet organization.",
+      "sources": [
+        {
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": null,
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Primary links support only the specific factual safety or lighting statement next to the link; remaining suggestions explicitly subjective."
+    },
+    {
+      "slug": "decluttering-regrets-nj-home-sellers-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Pre-move disposition decisions and records, without invented regret anecdotes.",
+      "sources": [],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": null,
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Editorial checklist with no empirical market findings or technical instructions. Any uncertain collection/transaction/repair matter is a question for the relevant recipient or professional, not an asserted rule. No irrelevant source decoration added."
+    },
+    {
+      "slug": "design-mistakes-nj-home-looks-cheap-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Observable listing-photo audit instead of class-coded aesthetic/value judgments.",
+      "sources": [],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": null,
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Editorial checklist with no empirical market findings or technical instructions. Any uncertain collection/transaction/repair matter is a question for the relevant recipient or professional, not an asserted rule. No irrelevant source decoration added."
+    },
+    {
+      "slug": "design-trends-nj-sellers-regret-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Feature-by-feature keep/simplify/replace decision, not trends or regret narrative.",
+      "sources": [
+        {
+          "url": "https://www.epa.gov/lead/lead-safe-renovations-diyers",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": null,
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Primary links support only the specific factual safety or lighting statement next to the link; remaining suggestions explicitly subjective."
+    },
+    {
+      "slug": "home-setup-backward-nj-sellers-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Seller listing-preparation sequence and project dependencies; retained separately from daily-use room layout.",
+      "sources": [],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": "Keep distinct after rewrite: listing-preparation dependencies; reciprocal link to daily-use room-layout guide.",
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Editorial checklist with no empirical market findings or technical instructions. Any uncertain collection/transaction/repair matter is a question for the relevant recipient or professional, not an asserted rule. No irrelevant source decoration added."
+    },
+    {
+      "slug": "home-staging-mistakes-nj-sellers-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Showing-day usability/access/privacy handoff rather than generic design or ROI advice.",
+      "sources": [
+        {
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/AnchorItgov",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": null,
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Primary links support only the specific factual safety or lighting statement next to the link; remaining suggestions explicitly subjective."
+    },
+    {
+      "slug": "homeowners-set-up-homes-backward-nj-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Everyday activity/measurement/layout worksheet, distinct from seller project preparation.",
+      "sources": [
+        {
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/",
+          "reviewed": "2026-09-15"
+        },
+        {
+          "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/AnchorItgov",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": "Keep distinct after rewrite: daily-use activity/measurement/layout worksheet; reciprocal link to seller preparation sequence. No redirect requested.",
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Primary links support only the specific factual safety or lighting statement next to the link; remaining suggestions explicitly subjective."
+    },
+    {
+      "slug": "interior-designer-hacks-nj-home-staging-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Small reversible accessory/textile experiments, without designer authority or spending claims.",
+      "sources": [],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": null,
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Editorial checklist with no empirical market findings or technical instructions. Any uncertain collection/transaction/repair matter is a question for the relevant recipient or professional, not an asserted rule. No irrelevant source decoration added."
+    },
+    {
+      "slug": "interior-designer-secrets-nj-home-value-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Existing-light and reflection observation worksheet with limited DOE label facts.",
+      "sources": [
+        {
+          "url": "https://www.energy.gov/sites/default/files/2021-08/ES-EE%20Lighting_080921_0.pdf",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": null,
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Primary links support only the specific factual safety or lighting statement next to the link; remaining suggestions explicitly subjective."
+    },
+    {
+      "slug": "mix-design-styles-nj-home-sellers-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Mixed furniture and household preference negotiation, not buyer-demographic generalization.",
+      "sources": [],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": null,
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Editorial checklist with no empirical market findings or technical instructions. Any uncertain collection/transaction/repair matter is a question for the relevant recipient or professional, not an asserted rule. No irrelevant source decoration added."
+    },
+    {
+      "slug": "nostalgic-design-trends-nj-home-value-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Older-feature inventory and accurate description, without 2026 revival or price-premium claims.",
+      "sources": [
+        {
+          "url": "https://www.epa.gov/lead/lead-safe-renovations-diyers",
+          "reviewed": "2026-09-15"
+        }
+      ],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": null,
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Primary links support only the specific factual safety or lighting statement next to the link; remaining suggestions explicitly subjective."
+    },
+    {
+      "slug": "why-stage-nj-home-even-if-not-selling-2026",
+      "outcome": "rewritten",
+      "ready_for_root_review": true,
+      "recommended_sitemap_eligible": true,
+      "intent": "Daily-use household routines and condition records, not preemptive resale staging.",
+      "sources": [],
+      "removed": [
+        "unsupported client anecdotes",
+        "fixed prices and return or sale-outcome claims",
+        "universal buyer psychology and trend demand",
+        "runtime remote images"
+      ],
+      "metadata": "title, descriptions, social, body and FAQ schema aligned; original publication date retained; modified2026-09-15",
+      "assets": "existing local responsive editorial illustration; explicitly not client photograph",
+      "merger_recommendation": null,
+      "readiness": "ready_for_root_integration",
+      "claim_review": "No client anecdotes, transaction counts, price/ROI promises or universal buyer preferences. Aesthetic and organization choices are optional.",
+      "source_rationale": "Editorial checklist with no empirical market findings or technical instructions. Any uncertain collection/transaction/repair matter is a question for the relevant recipient or professional, not an asserted rule. No irrelevant source decoration added."
+    }
+  ],
+  "shared_files_modified": false,
+  "validation": {
+    "static": [
+      {
+        "slug": "clutter-closet-strategy-nj-sellers-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 848
+      },
+      {
+        "slug": "decluttering-regrets-nj-home-sellers-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 867
+      },
+      {
+        "slug": "design-mistakes-nj-home-looks-cheap-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 821
+      },
+      {
+        "slug": "design-trends-nj-sellers-regret-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 790
+      },
+      {
+        "slug": "home-setup-backward-nj-sellers-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 822
+      },
+      {
+        "slug": "home-staging-mistakes-nj-sellers-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 793
+      },
+      {
+        "slug": "homeowners-set-up-homes-backward-nj-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 795
+      },
+      {
+        "slug": "interior-designer-hacks-nj-home-staging-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 843
+      },
+      {
+        "slug": "interior-designer-secrets-nj-home-value-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 798
+      },
+      {
+        "slug": "mix-design-styles-nj-home-sellers-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 804
+      },
+      {
+        "slug": "nostalgic-design-trends-nj-home-value-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 814
+      },
+      {
+        "slug": "why-stage-nj-home-even-if-not-selling-2026",
+        "static": "pass",
+        "faq_schema": "exact visible match",
+        "local_links_assets": "pass",
+        "words": 827
+      }
+    ],
+    "mobile": [
+      {
+        "slug": "clutter-closet-strategy-nj-sellers-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      },
+      {
+        "slug": "decluttering-regrets-nj-home-sellers-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      },
+      {
+        "slug": "design-mistakes-nj-home-looks-cheap-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      },
+      {
+        "slug": "design-trends-nj-sellers-regret-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      },
+      {
+        "slug": "home-setup-backward-nj-sellers-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      },
+      {
+        "slug": "home-staging-mistakes-nj-sellers-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      },
+      {
+        "slug": "homeowners-set-up-homes-backward-nj-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      },
+      {
+        "slug": "interior-designer-hacks-nj-home-staging-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      },
+      {
+        "slug": "interior-designer-secrets-nj-home-value-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      },
+      {
+        "slug": "mix-design-styles-nj-home-sellers-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      },
+      {
+        "slug": "nostalgic-design-trends-nj-home-value-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      },
+      {
+        "slug": "why-stage-nj-home-even-if-not-selling-2026",
+        "viewport": 375,
+        "noHorizontalOverflow": true,
+        "headingBelowHeader": true,
+        "heroImageLoaded": true,
+        "mobileMenu": true,
+        "faqVisible": true,
+        "pageErrors": []
+      }
+    ],
+    "external_sources": {
+      "USFA": "HTTP200; primary escape guidance read",
+      "EPA": "HTTP200; primary lead-safe homeowner guidance read",
+      "DOE": "HTTP200; consumer lighting PDF read through web extraction",
+      "CPSC": "Direct Python request403; primary page successfully opened/read with web tool2026-09-15; relevant manufacturer-instructions guidance confirmed"
+    },
+    "visual_review": "Viewed local planning illustration and 375px full-page rendering. Alt describes actual house model, tape, room photos and clipboard; caption discloses illustration. No exterior image described as interior."
+  },
+  "merger_recommendations": {
+    "home-setup-backward-nj-sellers-2026": "Retain as listing-preparation project dependencies.",
+    "homeowners-set-up-homes-backward-nj-2026": "Retain as everyday room activities/measurement/layout.",
+    "rationale": "Distinct rewritten intent and reciprocal contextual links; no new redirect warranted without traffic/link evidence.",
+    "redirect_requested": false
+  }
+}
