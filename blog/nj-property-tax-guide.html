@@ -211,6 +211,10 @@
       box-shadow: 0 12px 32px rgba(26, 26, 26, 0.07);
       font-size: 1.08rem;
     }
+    .guide-nav { margin: 0 0 28px; padding: 20px; border: 1px solid var(--line); border-radius: 8px; }
+    .guide-nav ul { display: flex; flex-wrap: wrap; gap: 12px 24px; margin: 12px 0 0; padding-left: 20px; }
+    .guide-nav a { text-underline-offset: 3px; }
+    h2[id] { scroll-margin-top: 100px; }
     .section { margin-top: 62px; }
     .section > h2 {
       margin: 0 0 18px;
@@ -391,7 +395,7 @@
         "description": "A parcel-specific guide to New Jersey property assessments, general tax rates, tax bills, official records, relief resources, and assessment appeals.",
         "image": "https://thejorgeramirezgroup.com/images/hero.jpg",
         "datePublished": "2026-03-17",
-        "dateModified": "2026-09-11",
+        "dateModified": "2026-09-15",
         "inLanguage": "en-US",
         "author": {"@type": "Person", "@id": "https://thejorgeramirezgroup.com/#jorge-ramirez", "name": "Jorge Ramirez", "url": "https://thejorgeramirezgroup.com/ai-authority"},
         "publisher": {
@@ -475,6 +479,18 @@
       </nav>
 
       <article class="article">
+        <nav class="guide-nav" aria-label="In this guide">
+          <strong>In this guide</strong>
+          <ul>
+            <li><a href="#verify-property">Find a property’s tax bill</a></li>
+            <li><a href="#rates-comparison">Understand tax rates</a></li>
+            <li><a href="#appeal-process">Assessment appeals</a></li>
+            <li><a href="#deadline-checkpoint">Check appeal deadlines</a></li>
+            <li><a href="#relief-programs">Property tax relief</a></li>
+            <li><a href="#official-sources">Official records and sources</a></li>
+          </ul>
+        </nav>
+
         <p class="lede"><strong>Start with the parcel.</strong> A municipality-wide rate or statewide summary cannot tell you the current obligation for a particular home. Verify the property's block and lot, assessed value, added assessments, and current billing record with official sources.</p>
 
         <section class="section" aria-labelledby="three-numbers">

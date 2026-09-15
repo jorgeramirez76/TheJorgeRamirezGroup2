@@ -175,8 +175,8 @@
   .station-directory { padding: 56px 0; background: var(--ivory-deep); }
   .station-directory h2 { margin: 0 0 10px; color: var(--dark-gray); font: 700 clamp(2rem, 4vw, 3rem)/1.12 var(--font-display); }
   .station-list { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-top: 24px; }
-  .station-list button { min-height: 52px; border: 1px solid var(--border); border-radius: 7px; padding: 10px 12px; background: var(--white); color: var(--dark-gray); cursor: pointer; font-weight: 650; text-align: left; }
-  .station-list button:hover { border-color: var(--gold); }
+  .station-list button, .station-list > a { min-height: 52px; border: 1px solid var(--border); border-radius: 7px; padding: 10px 12px; background: var(--white); color: var(--dark-gray); cursor: pointer; font-weight: 650; text-align: left; text-decoration: none; }
+  .station-list button:hover, .station-list > a:hover { border-color: var(--gold); }
   .faq-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
   .faq-item h3 { margin-top: 0; }
   .cta-block { padding: 52px 24px; background: linear-gradient(135deg, var(--dark-red), var(--primary-red)); color: var(--white); text-align: center; }
@@ -327,8 +327,56 @@
   <section class="station-directory" aria-labelledby="directory-heading">
     <div class="content">
       <h2 id="directory-heading">Directorio de estaciones seleccionadas</h2>
-      <p>Use los filtros anteriores y elija una estación para ver su ruta y enlaces de investigación.</p>
-      <div id="stationList" class="station-list"></div>
+      <p>Use los filtros anteriores y elija una estación para ver su ruta y enlaces de investigación. Sin JavaScript, los enlaces abren la herramienta de información de estaciones de NJ TRANSIT.</p>
+      <div id="stationList" class="station-list">
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="140">South Orange<br><small>Morris &amp; Essex Line · Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="81">Maplewood<br><small>Morris &amp; Essex Line · Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="87">Millburn<br><small>Morris &amp; Essex Line · Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="136">Short Hills<br><small>Morris &amp; Essex Line · Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="145">Summit<br><small>Morris &amp; Essex Line · Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="27">Chatham<br><small>Morris &amp; Essex Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="77">Madison<br><small>Morris &amp; Essex Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="30">Convent<br><small>Morris &amp; Essex Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="92">Morristown<br><small>Morris &amp; Essex Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="91">Morris Plains<br><small>Morris &amp; Essex Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="34">Denville<br><small>Morris &amp; Essex Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="35">Dover<br><small>Morris &amp; Essex Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="104">New Providence<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="99">Murray Hill<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="17">Berkeley Heights<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="48">Gillette<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="143">Stirling<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="88">Millington<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="76">Lyons<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="12">Basking Ridge<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="18">Bernardsville<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="45">Far Hills<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="117">Peapack<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="49">Gladstone<br><small>Gladstone Branch</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="38105">Union<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="31">Roselle Park<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="32">Cranford<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="47">Garwood<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="155">Westfield<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="44">Fanwood<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="102">Netherwood<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="120">Plainfield<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="36">Dunellen<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="21">Bound Brook<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="24">Bridgewater<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="138">Somerville<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="129">Raritan<br><small>Raritan Valley Line</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="107">Newark Penn Station<br><small>Raritan Valley Line · Northeast Corridor</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="37953">Newark Airport Railroad Station<br><small>Northeast Corridor</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="109">North Elizabeth<br><small>Northeast Corridor</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="41">Elizabeth<br><small>Northeast Corridor</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="70">Linden<br><small>Northeast Corridor</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="127">Rahway<br><small>Northeast Corridor</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="83">Metropark<br><small>Northeast Corridor</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="84">Metuchen<br><small>Northeast Corridor</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="38">Edison Station<br><small>Northeast Corridor</small></a>
+        <a href="https://www.njtransit.com/station-park-ride-to" rel="nofollow noopener" data-station-id="103">New Brunswick<br><small>Northeast Corridor</small></a>
+      </div>
     </div>
   </section>
 

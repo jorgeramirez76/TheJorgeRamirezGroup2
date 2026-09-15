@@ -13,7 +13,7 @@ from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGE_MODIFIED = "2026-08-27"
+PAGE_MODIFIED = "2026-09-15"
 MANIFEST = ROOT / "data" / "property-tax-guide-sources.json"
 PAGES = {
     "blog/nj-property-tax-guide.html": {

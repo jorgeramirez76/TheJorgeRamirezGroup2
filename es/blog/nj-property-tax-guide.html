@@ -183,6 +183,10 @@
       box-shadow: 0 12px 32px rgba(26, 26, 26, 0.07);
       font-size: 1.08rem;
     }
+    .guide-nav { margin: 0 0 28px; padding: 20px; border: 1px solid var(--line); border-radius: 8px; }
+    .guide-nav ul { display: flex; flex-wrap: wrap; gap: 12px 24px; margin: 12px 0 0; padding-left: 20px; }
+    .guide-nav a { text-underline-offset: 3px; }
+    h2[id] { scroll-margin-top: 100px; }
     .section { margin-top: 62px; }
     .section > h2 { margin: 0 0 18px; font-size: clamp(1.9rem, 4vw, 2.75rem); letter-spacing: -0.015em; }
     .section-intro { max-width: 780px; margin: 0 0 26px; color: var(--muted); }
@@ -327,7 +331,7 @@
         "description": "Guía por parcela sobre tasaciones, tasas generales, facturas, registros oficiales, alivios y apelaciones de impuestos a la propiedad en Nueva Jersey.",
         "image": "https://thejorgeramirezgroup.com/images/hero.jpg",
         "datePublished": "2026-03-17",
-        "dateModified": "2026-08-27",
+        "dateModified": "2026-09-15",
         "inLanguage": "es-US",
         "author": {"@type": "Person", "@id": "https://thejorgeramirezgroup.com/#jorge-ramirez", "name": "Jorge Ramirez", "url": "https://thejorgeramirezgroup.com/es/ai-authority"},
         "publisher": {
@@ -411,6 +415,18 @@
       </nav>
 
       <article class="article">
+        <nav class="guide-nav" aria-label="En esta guía">
+          <strong>En esta guía</strong>
+          <ul>
+            <li><a href="#verificar-propiedad">Consultar la factura de una propiedad</a></li>
+            <li><a href="#comparar-tasas">Entender las tasas</a></li>
+            <li><a href="#proceso-apelacion">Apelar una tasación</a></li>
+            <li><a href="#fechas-apelacion">Verificar fechas de apelación</a></li>
+            <li><a href="#programas-alivio">Alivio tributario</a></li>
+            <li><a href="#fuentes-oficiales">Registros y fuentes oficiales</a></li>
+          </ul>
+        </nav>
+
         <p class="lede"><strong>Empieza con la parcela.</strong> Una tasa municipal o un resumen estatal no indica por sí solo la obligación vigente de una casa. Confirma el bloque y lote, el valor tasado, las tasaciones adicionales y la facturación actual en fuentes oficiales.</p>
 
         <section class="section" aria-labelledby="tres-cifras">

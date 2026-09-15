@@ -104,6 +104,18 @@ class NjTrainMapIntegrityTests(unittest.TestCase):
                 for pattern in RISKY_VISIBLE_PATTERNS:
                     self.assertIsNone(pattern.search(text), pattern.pattern)
 
+    def test_station_directory_is_useful_before_javascript(self) -> None:
+        for language, source in self.sources.items():
+            with self.subTest(language=language):
+                directory = re.search(r'<div id="stationList" class="station-list">(.*?)</div>', source, re.S)
+                self.assertIsNotNone(directory)
+                cards = re.findall(r'<a\b[^>]*data-station-id="([^"]+)"[^>]*>(.*?)</a>', directory.group(1), re.S)
+                stations = station_data(source)
+                self.assertEqual([station["id"] for station in stations], [station_id for station_id, _ in cards])
+                for station, (_, card) in zip(stations, cards):
+                    self.assertIn(station["name"], visible_text(card))
+                self.assertEqual(len(stations), directory.group(1).count('href="https://www.njtransit.com/station-park-ride-to"'))
+
     def test_station_dataset_contains_only_official_stable_fields(self) -> None:
         datasets = {language: station_data(source) for language, source in self.sources.items()}
         self.assertGreaterEqual(len(datasets["en"]), 40)
