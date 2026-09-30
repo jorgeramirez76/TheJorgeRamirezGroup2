@@ -206,7 +206,7 @@ class PropertyTaxGuideTests(unittest.TestCase):
                 self.assertNotIn("aggregateRating", " ".join(parser.json_scripts))
                 blog = next(node for node in nodes if node.get("@type") == "BlogPosting")
                 self.assertEqual(expected["canonical"], blog["mainEntityOfPage"])
-                self.assertEqual(PAGE_MODIFIED, blog["dateModified"])
+                self.assertEqual("2026-09-30" if relative == "blog/nj-property-tax-guide.html" else PAGE_MODIFIED, blog["dateModified"])
                 faq = next(node for node in nodes if node.get("@type") == "FAQPage")
                 self.assertGreaterEqual(len(faq["mainEntity"]), 5)
                 for question in faq["mainEntity"]:
@@ -251,7 +251,11 @@ class PropertyTaxGuideTests(unittest.TestCase):
                 # Monetary examples must be explicitly hypothetical; the guide
                 # must not drift back to unsupported real parcel or town bills.
                 examples = re.findall(r'<p data-hypothetical-example="[^"]+">(.*?)</p>', source(relative), re.S)
-                self.assertEqual(2, len(examples))
+                self.assertEqual(3 if relative == "blog/nj-property-tax-guide.html" else 2, len(examples))
+                if relative == "blog/nj-property-tax-guide.html":
+                    self.assertIn("invented bills", examples[2])
+                    self.assertIn("$9,600", examples[2])
+                    self.assertIn("$14,400", examples[2])
                 self.assertRegex(examples[0].lower(), r"hypothetical|hipotéticas")
                 self.assertRegex(examples[1].lower(), r"invented|inventado")
                 self.assertIn("$9,000", examples[0])

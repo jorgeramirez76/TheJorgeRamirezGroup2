@@ -28,6 +28,46 @@
       "permanent": true
     },
     {
+      "source": "/es/selling-home-ridgewood-nj-2026",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/selling-home-ridgewood-nj-2026.html",
+      "destination": "/es/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/buying-home-livingston-nj-2026",
+      "destination": "/buy-a-home",
+      "permanent": true
+    },
+    {
+      "source": "/buying-home-livingston-nj-2026.html",
+      "destination": "/buy-a-home",
+      "permanent": true
+    },
+    {
+      "source": "/selling-home-new-providence-nj-2026",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/selling-home-new-providence-nj-2026.html",
+      "destination": "/sell-your-home",
+      "permanent": true
+    },
+    {
+      "source": "/es/moving-from-nyc-to-nj-guide",
+      "destination": "/es/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/moving-from-nyc-to-nj-guide.html",
+      "destination": "/es/blog/moving-from-nyc-to-nj-guide",
+      "permanent": true
+    },
+    {
       "source": "/fsbo-vs-realtor-new-jersey",
       "destination": "/blog/fsbo-vs-realtor-new-jersey",
       "permanent": true
