@@ -76,9 +76,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Preload the hero portrait for faster LCP -->
-    <link rel="preload" as="image" href="/images/jorge-ramirez-headshot.webp" media="(min-width: 701px)">
-    <link rel="preload" as="image" href="/images/jorge-ramirez-headshot-640.webp" media="(max-width: 700px)">
+    <link rel="preload" as="image" href="/images/cinematic-hero-poster.webp" fetchpriority="high">
     <style>
       /* Critical above-the-fold CSS (nav + hero), extracted with `critical`
          at a 412x823 mobile viewport. Lets first paint happen without
@@ -203,6 +201,8 @@
   ]
 }
 </script>
+    <link rel="stylesheet" href="/css/cinematic-hero.css">
+    <script defer src="/js/cinematic-hero.js"></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -240,27 +240,33 @@
     </nav>
 
     <main id="main" tabindex="-1">
-    <!-- Hero Section — Ken Burns luxury property carousel -->
-    <section class="hero hero-portrait-layout" id="home">
-        <div class="hero-inner">
-            <div class="hero-content">
-                <p class="hero-kicker">Jorge Ramirez, Keller Williams Premier Properties, Summit</p>
-                <h1>Sell Your NJ Home With a Clear Plan</h1>
-                <p class="hero-subtitle">Before you trust an online estimate or list too high, get a clear pricing review from a licensed NJ agent who has worked full-time at Keller Williams since 2017.</p>
-                <div class="hero-buttons">
-                    <a href="/home-valuation" class="btn-primary">Get a real home value review</a>
-                    <a href="#contact" class="btn-secondary">Talk to Jorge first</a>
-                </div>
-                <p class="hero-credentials">Serving Union, Essex, Morris, Hudson, Middlesex, and Somerset counties. New Jersey real estate license #1754604.</p>
-            </div>
-            <figure class="hero-figure">
-                <picture>
-                    <source media="(max-width: 700px)" srcset="/images/jorge-ramirez-headshot-640.webp">
-                    <img src="/images/jorge-ramirez-headshot.webp" alt="Jorge Ramirez, licensed New Jersey real estate agent with Keller Williams Premier Properties in Summit" width="955" height="1280" fetchpriority="high" decoding="async">
-                </picture>
-            </figure>
+    <!-- Cinematic neighborhood film; all essential content remains real HTML. -->
+    <section class="cinema-hero" id="home" aria-labelledby="cinema-title">
+        <div class="cinema-media" aria-hidden="true">
+            <img src="/images/cinematic-hero-poster.webp" alt="" width="1600" height="900" fetchpriority="high">
+            <video id="cinema-film" muted loop playsinline preload="none" poster="/images/cinematic-hero-poster.webp" data-src="/videos/hero-loop.mp4" tabindex="-1"></video>
         </div>
+        <div class="cinema-shade" aria-hidden="true"></div>
+        <div class="cinema-inner">
+            <p class="cinema-eyebrow">NEW JERSEY REAL ESTATE · THE JORGE RAMIREZ GROUP</p>
+            <h1 id="cinema-title">Sell your NJ home.<br><em>With a clear plan.</em></h1>
+            <p class="cinema-description">Sell your New Jersey home with thoughtful pricing, standout presentation, and a local agent beside you from the first conversation to closing.</p>
+            <div class="cinema-actions">
+                <a href="/home-valuation" class="btn-primary">Get my home value review <span aria-hidden="true">↗</span></a>
+                <a href="#contact" class="btn-secondary">Talk to Jorge</a>
+            </div>
+            <div class="cinema-agent">
+                <img src="/images/jorge-ramirez-headshot-640.webp" width="48" height="48" alt="Jorge Ramirez">
+                <p><strong>Jorge Ramirez</strong><span>Licensed NJ agent since 2017<br>Keller Williams Premier Properties, Summit</span></p>
+            </div>
+        </div>
+        <div class="cinema-bottom">
+            <a href="#home-next" class="cinema-explore">Explore your next move <span aria-hidden="true">↓</span></a>
+            <button type="button" class="cinema-toggle" aria-controls="cinema-film" hidden>Play background film</button>
+        </div>
+        <span class="cinema-progress" aria-hidden="true"></span>
     </section>
+    <div id="home-next" tabindex="-1"></div>
 
     <!-- Press / Trust strip — tasteful grayscale rule of sources -->
     <section class="press-strip" aria-label="Where you'll find Jorge">
