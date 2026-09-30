@@ -447,3 +447,13 @@ body.seller-service-page summary:focus-visible {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+/* Contextual reading links remain visible on the dark process cards. */
+.seller-step p a {
+  color: #e6c778;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.seller-step p a:hover {
+  color: #fff;
+}
