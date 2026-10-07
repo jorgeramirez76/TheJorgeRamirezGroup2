@@ -55,6 +55,14 @@ def fetch(url):
 def normalized(url):
     return urldefrag(url)[0].rstrip('/')
 
+def sitemap_locations(tree):
+    # Image/video extensions also contain <loc>; only page/sitemap direct
+    # children belong in this HTML crawl.
+    kind = tree.tag.split('}')[-1]
+    item = 'sitemap' if kind == 'sitemapindex' else 'url'
+    return [loc.text for node in tree if node.tag.split('}')[-1] == item
+            for loc in node if loc.tag.split('}')[-1] == 'loc']
+
 def sitemap_urls(origin):
     pending=[origin+'/sitemap.xml']; seen=set(); urls=[]
     while pending:
@@ -64,7 +72,7 @@ def sitemap_urls(origin):
         seen.add(current)
         if len(seen)>30: raise ValueError('Sitemap nesting limit exceeded')
         _,xml,_=fetch(current); tree=ET.fromstring(xml)
-        locs=[e.text for e in tree.iter() if e.tag.split('}')[-1]=='loc']
+        locs=sitemap_locations(tree)
         if tree.tag.split('}')[-1]=='sitemapindex': pending.extend(locs)
         else: urls.extend(locs)
     if not urls: raise ValueError('Empty sitemap')

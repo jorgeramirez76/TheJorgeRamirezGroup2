@@ -14,3 +14,4 @@ jobs:
         with:
           python-version: '3.12'
       - run: python tools/check_technical_seo.py
+      - run: python tools/test_portfolio_sitemap.py
