@@ -12,6 +12,8 @@ CNAME
 __pycache__
 node_modules
 *.py
+# Needed only during the build; buildCommand removes it before static output.
+!tools/check_technical_seo.py
 *.pyc
 _posts
 tests

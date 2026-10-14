@@ -45,6 +45,28 @@ indexable production article is absent from the checkout or if the comparison
 cannot complete. Normal scheduled drafts and preview commands remain offline.
 The live comparison pauses five seconds between requests by default.
 
+After wiring the reviewed article into the index and sitemap, the publisher
+runs `tools/check_technical_seo.py` against the complete candidate site before
+staging or committing. Missing canonical URLs, validation failures, and an
+unavailable validator all block publication, including `--no-push` mode.
+
+For an approved batch prepared outside this script, include the articles,
+index, and sitemap in the same commit. Preview missing entries with
+`python3 tools/sync_sitemap.py --check`, review them, and explicitly register
+approved entries with `python3 tools/sync_sitemap.py --apply`. Then run both
+`python3 tools/check_technical_seo.py` and
+`python3 tools/test_portfolio_sitemap.py` before committing. These technical
+checks do not replace editorial approval or authorize scheduled publication.
+
+Vercel also runs the technical SEO validator as its build command, so direct
+Git pushes cannot deploy an incomplete sitemap even when GitHub CI has not
+finished. `.vercelignore` admits only this Python validator for the build;
+the command removes it after a successful check, before static files are
+served. Run that build command only in a disposable build checkout because it
+removes the build-only validator. A failed check stops deployment without
+changing the currently served site. Verify CI, Vercel, and the live sitemap
+for the exact pushed commit before reporting publication complete.
+
 Use `--no-push` with that command when a local commit should be inspected before
 remote publication:
 

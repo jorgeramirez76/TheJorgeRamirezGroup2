@@ -13,3 +13,11 @@
 
 - Template: `blog/kitchen-staging-details-nj-home-buyers-2026.html`. Match its structure exactly, but write the bio line per the rules above.
 - Standard `llm-context` bio phrasing: "Written by Jorge Ramirez, licensed NJ real estate agent since 2017 with 15+ years in real estate across Union, Morris, Essex, Hudson, and Middlesex counties."
+
+## Required publication checks
+
+- Preserve the editorial approval and production/source drift gates documented in `tools/blog-automation/README.md`. Scheduled drafts are review-only; passing SEO checks does not authorize publishing new content.
+- Every approved article batch must include its canonical URLs in `sitemap.xml` in the same commit as the articles and blog index. This applies to daily-post tasks as well as the local publisher.
+- Before committing, run `python3 tools/sync_sitemap.py --check`. Review any omissions, then explicitly run `python3 tools/sync_sitemap.py --apply` for the approved pages. Use existing page metadata for `lastmod`; never invent a freshness date.
+- Run `python3 tools/check_technical_seo.py` and `python3 tools/test_portfolio_sitemap.py` before committing or pushing. Stop on any failure; do not deploy an incomplete batch or weaken the checks.
+- After pushing, verify Technical SEO checks and the Vercel build for that exact commit, then check the production sitemap. A successful push alone is not successful publication.
