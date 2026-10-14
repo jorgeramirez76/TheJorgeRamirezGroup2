@@ -161,6 +161,7 @@ class DailyBlogReviewGateTests(unittest.TestCase):
     def test_deploy_fails_closed_on_staging_or_commit_error(self) -> None:
         failure = types.SimpleNamespace(returncode=1, stdout="", stderr="blocked")
         with (
+            mock.patch.object(self.module, "technical_seo_preflight", return_value=True),
             mock.patch.object(self.module.subprocess, "run", return_value=failure) as run,
             mock.patch.object(self.module, "log") as log,
         ):
@@ -170,6 +171,7 @@ class DailyBlogReviewGateTests(unittest.TestCase):
 
         success = types.SimpleNamespace(returncode=0, stdout="", stderr="")
         with (
+            mock.patch.object(self.module, "technical_seo_preflight", return_value=True),
             mock.patch.object(self.module.subprocess, "run", side_effect=[success, failure]) as run,
             mock.patch.object(self.module, "log") as log,
         ):
@@ -182,6 +184,7 @@ class DailyBlogReviewGateTests(unittest.TestCase):
         success = types.SimpleNamespace(returncode=0, stdout="", stderr="")
         rejection = types.SimpleNamespace(returncode=1, stdout="", stderr="rejected")
         with (
+            mock.patch.object(self.module, "technical_seo_preflight", return_value=True),
             mock.patch.object(self.module.subprocess, "run", side_effect=[success, success, rejection]) as run,
             mock.patch.object(self.module, "log") as log,
         ):
@@ -196,6 +199,37 @@ class DailyBlogReviewGateTests(unittest.TestCase):
         )
         self.assertFalse(any(command[1] in {"pull", "rebase"} for command in commands))
         self.assertTrue(any("PUSH FAILED" in call.args[0] for call in log.call_args_list))
+
+    def test_invalid_candidate_never_reaches_git_even_with_no_push(self) -> None:
+        for push in (False, True):
+            with (
+                self.subTest(push=push),
+                mock.patch.object(self.module, "technical_seo_preflight", return_value=False) as check,
+                mock.patch.object(self.module.subprocess, "run") as run,
+            ):
+                self.assertFalse(self.module.deploy("review-required", push=push))
+                check.assert_called_once_with()
+                run.assert_not_called()
+
+    def test_technical_seo_preflight_fails_closed_and_reports_validation_errors(self) -> None:
+        failure = types.SimpleNamespace(returncode=1, stdout="missing canonical URL", stderr="")
+        with (
+            mock.patch.object(self.module.subprocess, "run", return_value=failure) as run,
+            mock.patch.object(self.module, "log") as log,
+        ):
+            self.assertFalse(self.module.technical_seo_preflight())
+        self.assertEqual(
+            [self.module.sys.executable, str(ROOT / "tools/check_technical_seo.py")],
+            run.call_args.args[0],
+        )
+        self.assertTrue(any("missing canonical URL" in call.args[0] for call in log.call_args_list))
+        for error in (OSError("unavailable"), self.module.subprocess.TimeoutExpired("check", 120)):
+            with (
+                self.subTest(error=error),
+                mock.patch.object(self.module.subprocess, "run", side_effect=error),
+                mock.patch.object(self.module, "log"),
+            ):
+                self.assertFalse(self.module.technical_seo_preflight())
 
     def test_generated_content_cannot_enable_reviewed_publish_flag(self) -> None:
         with self.assertRaises(SystemExit) as raised:

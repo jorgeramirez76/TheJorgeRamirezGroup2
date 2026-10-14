@@ -615,6 +615,10 @@ def validate(post):
 
 
 def deploy(slug, push=True):
+    # Validate the complete candidate, including sitemap wiring, before staging
+    # or committing. This gate applies to --no-push publication as well.
+    if not technical_seo_preflight():
+        return False
     def git(*a):
         return subprocess.run(["git", *a], cwd=REPO, capture_output=True, text=True)
     staged = git("add", f"blog/{slug}.html", "blog/index.html", "sitemap.xml",
@@ -633,6 +637,27 @@ def deploy(slug, push=True):
             log(f"PUSH FAILED: {r.stderr.strip()}")
             return False
         log(f"pushed to {PUBLISH_REMOTE}/{PUBLISH_BRANCH} (Vercel will auto-deploy)")
+    return True
+
+
+def technical_seo_preflight():
+    """Fail closed when the candidate site violates the technical SEO contract."""
+    try:
+        result = subprocess.run(
+            [sys.executable, os.path.join(REPO, "tools", "check_technical_seo.py")],
+            cwd=REPO,
+            capture_output=True,
+            text=True,
+            timeout=120,
+        )
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        log(f"ABORT: technical SEO preflight could not run: {exc}")
+        return False
+    if result.returncode != 0:
+        detail = (result.stderr or result.stdout).strip()
+        log(f"ABORT: technical SEO preflight failed: {detail}")
+        return False
+    log(result.stdout.strip() or "technical SEO preflight passed")
     return True
 
 

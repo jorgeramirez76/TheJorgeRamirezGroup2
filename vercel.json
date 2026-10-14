@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "python3 tools/check_technical_seo.py && rm tools/check_technical_seo.py",
   "redirects": [
     {
       "source": "/(.*)",

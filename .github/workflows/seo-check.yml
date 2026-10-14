@@ -13,5 +13,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python tools/check_technical_seo.py
-      - run: python tools/test_portfolio_sitemap.py
+      - name: Technical SEO contract
+        run: python tools/check_technical_seo.py
+      - name: Portfolio sitemap parser
+        if: ${{ !cancelled() }}
+        run: python tools/test_portfolio_sitemap.py
+      - name: Sitemap publishing regression tests
+        if: ${{ !cancelled() }}
+        run: |
+          python -m unittest discover -s tests -p 'test_sync_sitemap_safety.py'
+          python -m unittest discover -s tests -p 'test_daily_blog_review_gate.py'
+          python -m unittest discover -s tests -p 'test_sitemap_publish_gate.py'
