@@ -16,7 +16,9 @@ CHECKER = Path("tools/check_technical_seo.py")
 
 class SitemapPublishGateTests(unittest.TestCase):
     def test_build_rejects_missing_article_then_accepts_complete_candidate(self) -> None:
-        command = json.loads((ROOT / "vercel.json").read_text())["buildCommand"]
+        config = json.loads((ROOT / "vercel.json").read_text())
+        self.assertEqual(".", config["outputDirectory"], "static site is served from the repository root")
+        command = config["buildCommand"]
         with tempfile.TemporaryDirectory() as directory:
             candidate = Path(directory)
             # The validator reads HTML, routing and sitemap XML only. Copy the
