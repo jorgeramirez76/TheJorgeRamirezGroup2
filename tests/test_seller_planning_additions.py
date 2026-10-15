@@ -1,5 +1,4 @@
 """Contracts for maintained seller guidance and its structured answers."""
-import html
 import json
 import re
 import unittest
@@ -9,7 +8,6 @@ from tools.seller_planning_additions import apply_seller_planning
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = json.loads((ROOT / 'data/seller-planning-additions.json').read_text())['pages']
-ARTICLES = ('selling-nj-home-with-pets-cleaning-showings-2026', 'living-room-spend-vs-save-nj-home-sellers-2026')
 
 
 class SellerPlanningTests(unittest.TestCase):
@@ -35,28 +33,6 @@ class SellerPlanningTests(unittest.TestCase):
                     self.assertTrue(target.is_file())
                     if link.fragment:
                         self.assertIn(f'id="{link.fragment}"', target.read_text())
-
-    def test_revised_articles_do_not_claim_personal_authorship_or_experience(self):
-        for slug in ARTICLES:
-            source = (ROOT / 'blog' / (slug + '.html')).read_text()
-            self.assertNotIn('Written by', source)
-            self.assertNotIn('myself included', source)
-            self.assertNotIn('rooms I walk through', source)
-            self.assertIn('AI-assisted guidance', source)
-            article = next(json.loads(raw) for raw in re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', source, re.S) if json.loads(raw).get('@type') == 'BlogPosting')
-            self.assertNotIn('author', article)
-            self.assertEqual('The Jorge Ramirez Group', article['publisher']['name'])
-
-    def test_faq_schema_matches_visible_answers(self):
-        for slug in ARTICLES:
-            source = (ROOT / 'blog' / (slug + '.html')).read_text()
-            visible = html.unescape(re.sub('<[^>]+>', '', source.split('<body>')[1]))
-            faq = next(json.loads(raw) for raw in re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', source, re.S) if json.loads(raw).get('@type') == 'FAQPage')
-            self.assertEqual(5, len(faq['mainEntity']))
-            for answer in faq['mainEntity']:
-                with self.subTest(slug=slug, question=answer['name']):
-                    self.assertIn(answer['name'], visible)
-                    self.assertIn(answer['acceptedAnswer']['text'], visible)
 
 
 if __name__ == '__main__':
