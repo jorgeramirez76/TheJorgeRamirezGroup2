@@ -12,6 +12,10 @@ from typing import Any, Dict, List, Mapping, Sequence, Tuple
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from tools.seller_planning_additions import apply_seller_planning
+
 MANIFEST_PATH = ROOT / "data" / "high-value-legal-fair-housing-sources.json"
 SITE_FACTS_PATH = ROOT / "data" / "site-facts.json"
 SITE = "https://thejorgeramirezgroup.com"
@@ -1291,7 +1295,7 @@ def render_page(
         )
     editorial_visual = render_editorial_visual(page)
 
-    return f'''<!DOCTYPE html>
+    result = f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
   <meta charset="UTF-8">
@@ -1527,6 +1531,7 @@ def render_page(
 </body>
 </html>
 '''
+    return apply_seller_planning(page["route"], result)
 
 
 def render_fallback() -> str:

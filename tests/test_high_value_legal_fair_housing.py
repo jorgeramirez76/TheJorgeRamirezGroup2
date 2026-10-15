@@ -272,6 +272,7 @@ class HighValueLegalFairHousingTests(unittest.TestCase):
                 self.assertEqual(SITE + route + "#webpage", article["mainEntityOfPage"]["@id"])
                 self.assertEqual(SITE + route, webpage["url"])
                 expected_modified = (
+                    "2026-10-15" if relative == "blog/nj-home-selling-timeline.html" else
                     PAGE_MODIFIED_ON if relative in RELEASE_MODIFIED else REVIEWED_ON
                 )
                 self.assertEqual(expected_modified, article["dateModified"])
@@ -447,6 +448,7 @@ class HighValueLegalFairHousingTests(unittest.TestCase):
                     path for path, value in INDEXABLE.items() if value == route
                 )
                 expected_modified = (
+                    "2026-10-15" if relative == "blog/nj-home-selling-timeline.html" else
                     PAGE_MODIFIED_ON if relative in RELEASE_MODIFIED else REVIEWED_ON
                 )
                 self.assertEqual(expected_modified, node.find("{*}lastmod").text)
