@@ -315,7 +315,7 @@ class IndexableTownRiskRemediationTests(unittest.TestCase):
                 failures.append(f"{relative}: business publisher mismatch")
             elif "author" in web_pages[0] or "reviewedBy" in web_pages[0]:
                 failures.append(f"{relative}: unsupported author/reviewer relationship")
-            elif web_pages[0].get("dateModified") != "2026-08-29":
+            elif web_pages[0].get("dateModified") != ("2026-10-15" if slug in {"summit", "westfield", "chatham"} else "2026-08-29"):
                 failures.append(f"{relative}: stale page modification date")
         self.assertEqual([], failures)
 

@@ -6,10 +6,15 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from tools.seller_planning_additions import apply_seller_planning
+
 MANIFEST = ROOT / "data" / "seller-service-sources.json"
 COPY = ROOT / "data" / "seller-service-copy.json"
 SITE = "https://thejorgeramirezgroup.com"
@@ -417,7 +422,7 @@ def render(document: dict, copy: dict, route_data: dict, language: str) -> str:
             },
         ],
     }
-    return f'''<!DOCTYPE html>
+    result = f'''<!DOCTYPE html>
 <html lang="{common["lang"]}">
 <head>
   <meta charset="UTF-8">
@@ -576,6 +581,7 @@ def render(document: dict, copy: dict, route_data: dict, language: str) -> str:
 </body>
 </html>
 '''
+    return apply_seller_planning(own_route, result)
 
 
 def redirect_fallback(language: str) -> str:

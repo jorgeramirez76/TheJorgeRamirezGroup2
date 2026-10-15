@@ -14,6 +14,10 @@ from typing import Iterable
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from tools.seller_planning_additions import apply_seller_planning
+
 MANIFEST_PATH = ROOT / "data" / "indexable-town-risk-decisions.json"
 SITE = "https://thejorgeramirezgroup.com"
 SHARE_IMAGE = f"{SITE}/images/hero.jpg"
@@ -315,7 +319,7 @@ def render_guide(
           <ul class="town-guide__checklist">{related_items}</ul>
         </section>'''
 
-    return f'''<!DOCTYPE html>
+    result = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
 {shared_head(title=title, description=description, canonical=canonical, robots="index, follow, max-image-preview:large")}
@@ -424,6 +428,7 @@ def render_guide(
 </body>
 </html>
 '''
+    return apply_seller_planning(f"/towns/{slug}", result)
 
 
 def render_fallback(slug: str) -> str:

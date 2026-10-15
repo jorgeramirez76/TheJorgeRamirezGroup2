@@ -234,7 +234,7 @@ class SellerEditorialRebuildTests(unittest.TestCase):
                 self.assertIn(f'hreflang="x-default" href="{SITE}{en_route}"', source)
                 if relative.startswith("es/"):
                     self.assertIn(f'hreflang="es" href="{SITE}{es_route}"', source)
-                self.assertIn('<meta property="article:modified_time" content="2026-08-26">', source)
+                self.assertIn(f'<meta property="article:modified_time" content="{"2026-10-15" if relative == "blog/nj-home-selling-costs.html" else REVIEWED_ON}">', source)
                 self.assertIn("Sources checked August 26, 2026" if not relative.startswith("es/") else "Fuentes verificadas el 26 de agosto de 2026", source)
 
     def test_homepage_design_accessibility_and_html_integrity(self) -> None:
@@ -325,7 +325,7 @@ class SellerEditorialRebuildTests(unittest.TestCase):
                 self.assertTrue({"Organization", "Person", "WebPage", "Article", "BreadcrumbList"} <= types)
                 self.assertFalse(types & forbidden)
                 self.assertEqual(SITE + route, article["url"])
-                self.assertEqual(REVIEWED_ON, article["dateModified"])
+                self.assertEqual("2026-10-15" if relative == "blog/nj-home-selling-costs.html" else REVIEWED_ON, article["dateModified"])
                 self.assertIn(article["headline"], visible_text(source))
                 self.assertTrue(article["citation"])
 

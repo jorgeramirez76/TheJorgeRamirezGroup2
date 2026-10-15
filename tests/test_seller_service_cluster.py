@@ -238,7 +238,7 @@ class SellerServiceClusterTests(unittest.TestCase):
                     self.assertIn('href="#main"', source)
                     self.assertIn('aria-label="Primary navigation"', source)
                     self.assertIn('data-source-review="2026-08-26"', source)
-                    self.assertIn('"dateModified":"2026-08-27"', source)
+                    self.assertIn('"dateModified":"2026-10-15"' if slug == "sell-your-home" and language == "en" else '"dateModified":"2026-08-27"', source)
                     self.assertEqual(1, source.count("<!-- JRG editorial visual:start -->"))
                     self.assertEqual(1, source.count("<!-- JRG editorial visual:end -->"))
                     self.assertIn(
